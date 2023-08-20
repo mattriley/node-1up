@@ -1,6 +1,6 @@
 {
     "name": "1up",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "",
     "license": "ISC",
     "homepage": "https://github.com/mattriley/node-1up",
@@ -14,7 +14,6 @@
         "url": "https://github.com/mattriley/node-1up/issues",
         "email": "m@ttriley.dev"
     },
-    "main": "index.js",
     "scripts": {
         "cov": "npx task cov",
         "deploy": "npx task deploy",
