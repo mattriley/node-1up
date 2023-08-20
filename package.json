@@ -1,0 +1,30 @@
+{
+    "name": "1up",
+    "version": "1.0.0",
+    "description": "",
+    "license": "ISC",
+    "homepage": "https://github.com//",
+    "repository": "github:/",
+    "author": {
+        "name": "undefined",
+        "email": "undefined",
+        "url": "undefined"
+    },
+    "bugs": {
+        "url": "https://github.com///issues",
+        "email": "undefined"
+    },
+    "main": "index.js",
+    "scripts": {
+        "cov": "npx task cov",
+        "deploy": "npx task deploy",
+        "lint": "npx task lint",
+        "pre": "npx task pre",
+        "setup": "npm i && npx task setup",
+        "start": "npx task start",
+        "test": "npx task test"
+    },
+    "devDependencies": {
+        "task-library": "^0.262.0"
+    }
+}
