@@ -3,16 +3,16 @@
     "version": "1.0.0",
     "description": "",
     "license": "ISC",
-    "homepage": "https://github.com//",
-    "repository": "github:/",
+    "homepage": "https://github.com/mattriley/node-1up",
+    "repository": "github:mattriley/node-1up",
     "author": {
-        "name": "undefined",
-        "email": "undefined",
-        "url": "undefined"
+        "name": "Matt Riley",
+        "email": "m@ttriley.dev",
+        "url": "https://github.com/mattriley"
     },
     "bugs": {
-        "url": "https://github.com///issues",
-        "email": "undefined"
+        "url": "https://github.com/mattriley/node-1up/issues",
+        "email": "m@ttriley.dev"
     },
     "main": "index.js",
     "scripts": {
@@ -25,6 +25,12 @@
         "test": "npx task test"
     },
     "devDependencies": {
-        "task-library": "^0.262.0"
+        "cloc": "^1.98.0-cloc",
+        "doctoc": "^2.2.1",
+        "ejs": "^3.1.9",
+        "eslint": "^8.47.0",
+        "husky": "^8.0.3",
+        "npm-check-updates": "^16.12.2",
+        "task-library": "^0.264.0"
     }
 }
