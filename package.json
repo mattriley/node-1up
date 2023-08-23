@@ -14,6 +14,7 @@
         "url": "https://github.com/mattriley/node-1up/issues",
         "email": "m@ttriley.dev"
     },
+    "main": "./src/main.js",
     "scripts": {
         "cov": "npx task cov",
         "deploy": "npx task deploy",
@@ -23,12 +24,17 @@
         "start": "npx task start",
         "test": "npx task test"
     },
+    "dependencies": {
+        "module-composer": "^0.125.0"
+    },
     "devDependencies": {
         "cloc": "^1.98.0-cloc",
         "doctoc": "^2.2.1",
         "ejs": "^3.1.9",
         "eslint": "^8.47.0",
         "husky": "^8.0.3",
+        "module-indexgen": "^0.37.0",
+        "module-testrunner": "^0.19.0",
         "npm-check-updates": "^16.12.2",
         "task-library": "^0.264.0"
     }
