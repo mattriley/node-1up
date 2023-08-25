@@ -1,4 +1,4 @@
-module.exports = ({ test, assert }) => lib => {
+module.exports = ({ test, assert }) => ({ lib }) => {
 
     test('steps', () => {
         const input = ['foo', 'bar', 'baz', 'qux'];

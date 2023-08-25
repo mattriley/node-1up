@@ -1,4 +1,4 @@
-module.exports = ({ test, assert }) => lib => {
+module.exports = ({ test, assert }) => ({ lib }) => {
 
     test('wrap', () => {
         const actual = lib.wrap('foo bar baz qux', 7);

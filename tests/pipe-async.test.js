@@ -1,4 +1,4 @@
-module.exports = ({ test, assert }) => lib => {
+module.exports = ({ test, assert }) => ({ lib }) => {
 
     test('pipe async', async () => {
         const expected = 'foo bar baz qux';
