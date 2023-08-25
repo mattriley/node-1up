@@ -5,8 +5,11 @@ const modules = require('./modules');
 module.exports = () => {
 
     const { compose } = composer(modules);
-    compose('fs', { fs });
-    compose.asis('lib');
+    compose.asis('array');
+    compose.make('filesystem', { fs });
+    compose.asis('function');
+    compose.asis('object');
+    compose.asis('stringify');
     return compose.end();
 
 };

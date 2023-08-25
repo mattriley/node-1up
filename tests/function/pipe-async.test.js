@@ -1,8 +1,8 @@
-module.exports = ({ test, assert }) => ({ lib }) => {
+module.exports = ({ test, assert }) => ({ fun }) => {
 
     test('pipe async', async () => {
         const expected = 'foo bar baz qux';
-        const pipe = await lib.pipeAsync([
+        const pipe = await fun.pipeAsync([
             async x => x + ' bar',
             async x => x + ' baz',
             async x => x + ' qux'
