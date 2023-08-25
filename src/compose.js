@@ -4,7 +4,7 @@ const modules = require('./modules');
 module.exports = () => {
 
     const { compose } = composer(modules);
-    compose.asis('array');
+    compose.asis('lib');
     return compose.end();
 
 };

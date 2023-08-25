@@ -1,3 +1,3 @@
 module.exports = {
-    array: require('./array')
+    lib: require('./lib')
 };

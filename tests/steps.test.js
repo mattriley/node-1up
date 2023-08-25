@@ -1,4 +1,4 @@
-module.exports = ({ test, assert, main }) => {
+module.exports = ({ test, assert }) => lib => {
 
     test('steps', () => {
         const input = ['foo', 'bar', 'baz', 'qux'];
@@ -8,7 +8,7 @@ module.exports = ({ test, assert, main }) => {
             ['foo', 'bar', 'baz'],
             ['foo', 'bar', 'baz', 'qux']
         ]
-        assert.deepEqual(expected, main.array.steps(input));
+        assert.deepEqual(expected, lib.steps(input));
     });
 
 };

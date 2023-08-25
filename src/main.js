@@ -1,2 +1,2 @@
 const compose = require('./compose');
-module.exports = compose().modules;
+module.exports = compose().modules.lib;
