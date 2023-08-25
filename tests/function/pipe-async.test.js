@@ -11,4 +11,14 @@ module.exports = ({ test, assert }) => ({ fun }) => {
         assert.deepEqual(actual, expected);
     });
 
+    test('pipe async', async () => {
+        const expected = 'foo bar baz qux';
+        const actual = await fun.pipeAsync([
+            async x => x + ' bar',
+            async x => x + ' baz',
+            async x => x + ' qux'
+        ], 'foo');
+        assert.deepEqual(actual, expected);
+    });
+
 };
