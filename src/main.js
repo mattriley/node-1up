@@ -7,10 +7,10 @@ const functionAliases = {
 
 const moduleAliases = {
     array: ['a', 'ar', 'arr'],
-    filesystem: ['fs'],
+    // filesystem: ['fs'],
     function: ['f', 'fn', 'fun', 'func'],
     object: ['o', 'ob', 'obj'],
-    string: ['s', 'st', 'str']
+    // string: ['s', 'st', 'str']
 };
 
 module.exports = modules.function.pipe([
@@ -28,3 +28,5 @@ module.exports = modules.function.pipe([
         }, modules);
     }
 ], modules);
+
+// console.warn(module.exports);

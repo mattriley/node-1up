@@ -25,13 +25,13 @@
         "test": "npx task test"
     },
     "dependencies": {
-        "module-composer": "^0.128.0"
+        "module-composer": "^0.130.0"
     },
     "devDependencies": {
         "cloc": "^1.98.0-cloc",
         "doctoc": "^2.2.1",
         "ejs": "^3.1.9",
-        "eslint": "^8.47.0",
+        "eslint": "^8.48.0",
         "husky": "^8.0.3",
         "module-indexgen": "^0.37.0",
         "module-testrunner": "^0.19.0",
