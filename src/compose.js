@@ -10,7 +10,7 @@ module.exports = ({ config } = {}) => {
 
     compose
         .opts({ alias: ['a', 'ar', 'arr'] })
-        .asis('array');
+        .make('array');
 
     compose
         .opts({ alias: ['fs'] })
@@ -18,15 +18,15 @@ module.exports = ({ config } = {}) => {
 
     compose
         .opts({ alias: ['f', 'fn', 'fun', 'func'] })
-        .asis('function');
+        .make('function');
 
     compose
         .opts({ alias: ['o', 'ob', 'obj'] })
-        .asis('object');
+        .make('object');
 
     compose
         .opts({ alias: ['s', 'st', 'str'] })
-        .make('string');
+        .make('string', {});
 
     return compose.end();
 
