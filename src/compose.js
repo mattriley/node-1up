@@ -3,10 +3,10 @@ const composer = require('module-composer');
 const modules = require('./modules');
 const defaultConfig = require('./default-config');
 
-module.exports = () => {
+module.exports = ({ config } = {}) => {
 
     const { configure } = composer(modules);
-    const { compose } = configure(defaultConfig);
+    const { compose } = configure(defaultConfig, config);
     compose.asis('array');
     compose.make('filesystem', { fs });
     compose.asis('function');
