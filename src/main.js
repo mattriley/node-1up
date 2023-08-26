@@ -1,7 +1,11 @@
 const compose = require('./compose');
 const { modules } = compose();
 
-const aliases = {
+const functionAliases = {
+    Value: 'Val'
+};
+
+const moduleAliases = {
     array: ['a', 'ar', 'arr'],
     filesystem: ['fs'],
     function: ['f', 'fn', 'fun', 'func'],
@@ -9,6 +13,18 @@ const aliases = {
     string: ['s', 'st', 'str']
 };
 
-module.exports = Object.entries(aliases).reduce((acc, [name, aliases]) => {
-    return { ...acc, ...Object.fromEntries(aliases.map(alias => [alias, modules[name]])) }
-}, modules);
+module.exports = modules.function.pipe([
+    modules => {
+        return modules.object.mapValues(modules, (name, module) => {
+            return Object.fromEntries(Object.entries(module).flatMap(([key, val]) => {
+                const aliasKeys = Object.entries(functionAliases).map(([from, to]) => key.replace(from, to));
+                return [[key, val], ...aliasKeys.map(key => [key, val])];
+            }));
+        });
+    },
+    modules => {
+        return Object.entries(moduleAliases).reduce((acc, [name, aliases]) => {
+            return { ...acc, ...Object.fromEntries(aliases.map(alias => [alias, modules[name]])) }
+        }, modules);
+    }
+], modules);
