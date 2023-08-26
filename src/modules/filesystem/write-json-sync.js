@@ -1,5 +1,5 @@
-module.exports = ({ fs }) => (path, data, space = 2) => {
+module.exports = ({ fs, config }) => (path, data, indent = config.indent) => {
 
-    return fs.writeFileSync(path, JSON.stringify(data, null, space));
+    return fs.writeFileSync(path, JSON.stringify(data, null, indent));
 
 };

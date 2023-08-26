@@ -1,5 +1,5 @@
-module.exports = (line, depth, unit = 4) => {
+module.exports = ({ config }) => (line, depth, indent = config.indent) => {
 
-    return ' '.repeat(depth * unit) + line;
+    return ' '.repeat(depth * indent) + line;
 
 };

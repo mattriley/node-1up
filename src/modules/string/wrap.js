@@ -1,4 +1,4 @@
-module.exports = (str, limit) => {
+module.exports = () => (str, limit) => {
 
     const lines = str.split('\n').flatMap(line => {
         const words = line.split(' ');
