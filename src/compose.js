@@ -7,11 +7,27 @@ module.exports = ({ config } = {}) => {
 
     const { configure } = composer(modules);
     const { compose } = configure(defaultConfig, config);
-    compose.asis('array');
-    compose.make('filesystem', { fs }, { alias: 'fs' });
-    compose.asis('function');
-    compose.asis('object');
-    compose.make('string', {}, { alias: ['s', 'st', 'str'] });
+
+    compose
+        .opts({ alias: ['a', 'ar', 'arr'] })
+        .asis('array');
+
+    compose
+        .opts({ alias: ['fs'] })
+        .make('filesystem', { fs });
+
+    compose
+        .opts({ alias: ['f', 'fn', 'fun', 'func'] })
+        .asis('function');
+
+    compose
+        .opts({ alias: ['o', 'ob', 'obj'] })
+        .asis('object');
+
+    compose
+        .opts({ alias: ['s', 'st', 'str'] })
+        .make('string');
+
     return compose.end();
 
 };

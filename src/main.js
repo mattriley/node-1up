@@ -5,14 +5,6 @@ const functionAliases = {
     Value: 'Val'
 };
 
-const moduleAliases = {
-    array: ['a', 'ar', 'arr'],
-    // filesystem: ['fs'],
-    function: ['f', 'fn', 'fun', 'func'],
-    object: ['o', 'ob', 'obj'],
-    // string: ['s', 'st', 'str']
-};
-
 module.exports = modules.function.pipe([
     modules => {
         return modules.object.mapValues(modules, (name, module) => {
@@ -21,11 +13,6 @@ module.exports = modules.function.pipe([
                 return [key, ...aliasKeys];
             });
         });
-    },
-    modules => {
-        return Object.entries(moduleAliases).reduce((acc, [name, aliases]) => {
-            return { ...acc, ...Object.fromEntries(aliases.map(alias => [alias, modules[name]])) }
-        }, modules);
     }
 ], modules);
 
