@@ -16,10 +16,10 @@ const moduleAliases = {
 module.exports = modules.function.pipe([
     modules => {
         return modules.object.mapValues(modules, (name, module) => {
-            return Object.fromEntries(Object.entries(module).flatMap(([key, val]) => {
+            return modules.object.flatMapKeys(module, (val, key) => {
                 const aliasKeys = Object.entries(functionAliases).map(([from, to]) => key.replace(from, to));
-                return [[key, val], ...aliasKeys.map(key => [key, val])];
-            }));
+                return [key, ...aliasKeys];
+            });
         });
     },
     modules => {
