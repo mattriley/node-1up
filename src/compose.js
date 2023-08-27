@@ -5,27 +5,31 @@ const defaultConfig = require('./default-config');
 
 module.exports = ({ config } = {}) => {
 
-    const { configure } = composer(modules);
+    const functionAlias = {
+        Value: 'Val'
+    };
+
+    const { configure } = composer(modules, { functionAlias });
     const { compose } = configure(defaultConfig, config);
 
     compose
-        .opts({ alias: ['a', 'ar', 'arr'] })
+        .opts({ moduleAlias: ['a', 'ar', 'arr'] })
         .make('array');
 
     compose
-        .opts({ alias: ['fs'] })
+        .opts({ moduleAlias: ['fs'] })
         .make('filesystem', { fs });
 
     compose
-        .opts({ alias: ['f', 'fn', 'fun', 'func'] })
+        .opts({ moduleAlias: ['f', 'fn', 'fun', 'func'] })
         .make('function');
 
     compose
-        .opts({ alias: ['o', 'ob', 'obj'] })
+        .opts({ moduleAlias: ['o', 'ob', 'obj'] })
         .make('object');
 
     compose
-        .opts({ alias: ['s', 'st', 'str'] })
+        .opts({ moduleAlias: ['s', 'st', 'str'] })
         .make('string', {});
 
     return compose.end();

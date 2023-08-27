@@ -25,7 +25,7 @@
         "test": "npx task test"
     },
     "dependencies": {
-        "module-composer": "^0.136.0"
+        "module-composer": "^0.137.0"
     },
     "devDependencies": {
         "cloc": "^1.98.0-cloc",
