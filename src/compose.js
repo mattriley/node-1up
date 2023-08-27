@@ -12,25 +12,11 @@ module.exports = ({ config } = {}) => {
     const { configure } = composer(modules, { functionAlias });
     const { compose } = configure(defaultConfig, config);
 
-    compose
-        .opts({ moduleAlias: ['a', 'ar', 'arr'] })
-        .make('array');
-
-    compose
-        .opts({ moduleAlias: ['fs'] })
-        .make('filesystem', { fs });
-
-    compose
-        .opts({ moduleAlias: ['f', 'fn', 'fun', 'func'] })
-        .make('function');
-
-    compose
-        .opts({ moduleAlias: ['o', 'ob', 'obj'] })
-        .make('object');
-
-    compose
-        .opts({ moduleAlias: ['s', 'st', 'str'] })
-        .make('string', {});
+    compose('array', null, { moduleAlias: ['a', 'ar', 'arr'] });
+    compose('filesystem', { fs }, { moduleAlias: ['fs'] });
+    compose('function', null, { moduleAlias: ['f', 'fn', 'fun', 'func'] });
+    compose('object', null, { moduleAlias: ['o', 'ob', 'obj'] });
+    compose('string', {}, { moduleAlias: ['s', 'st', 'str'] });
 
     return compose.end();
 
