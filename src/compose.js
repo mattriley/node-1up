@@ -9,15 +9,11 @@ module.exports = ({ config } = {}) => {
         Value: 'Val'
     };
 
-    const { configure } = composer(modules, { functionAlias });
-    const { compose } = configure(defaultConfig, config);
-
-    compose('array', null, { moduleAlias: ['a', 'ar', 'arr'] });
-    compose('filesystem', { fs }, { moduleAlias: ['fs'] });
-    compose('function', null, { moduleAlias: ['f', 'fn', 'fun', 'func'] });
-    compose('object', null, { moduleAlias: ['o', 'ob', 'obj'] });
-    compose('string', {}, { moduleAlias: ['s', 'st', 'str'] });
-
-    return compose.modules;
+    const { compose } = composer(modules, { functionAlias, config, defaultConfig });
+    compose.asis('array', { moduleAlias: ['a', 'ar', 'arr'] });
+    compose.make('filesystem', { fs }, { moduleAlias: ['fs'] });
+    compose.asis('function', { moduleAlias: ['f', 'fn', 'fun', 'func'] });
+    compose.asis('object', { moduleAlias: ['o', 'ob', 'obj'] });
+    return compose.make('string', {}, { moduleAlias: ['s', 'st', 'str'] });
 
 };
