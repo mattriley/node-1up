@@ -18,6 +18,6 @@ module.exports = ({ config } = {}) => {
     compose('object', null, { moduleAlias: ['o', 'ob', 'obj'] });
     compose('string', {}, { moduleAlias: ['s', 'st', 'str'] });
 
-    return compose.end();
+    return compose.modules;
 
 };
