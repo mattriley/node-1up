@@ -24,4 +24,14 @@ module.exports = ({ test, assert }) => ({ o }) => {
         assert.deepEqual(actual, expected);
     });
 
+    test('collision', () => {
+        const input = {
+            a: 1,
+            sub: {
+                a: 1
+            }
+        };
+        assert.throws(() => o.flatten(input), /Collision: a/);
+    });
+
 };
