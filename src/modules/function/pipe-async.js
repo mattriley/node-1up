@@ -1,2 +1,6 @@
-const pipeAsync = functions => initial => functions.reduce(async (inp, fun) => fun(await inp), initial);
-module.exports = (functions, initial) => initial ? pipeAsync(functions)(initial) : pipeAsync(functions);
+module.exports = () => (funs, initial) => {
+
+    const pipeAsync = funs => initial => funs.reduce(async (inp, fun) => fun(await inp), initial);
+    return initial ? pipeAsync(funs)(initial) : pipeAsync(funs);
+
+};

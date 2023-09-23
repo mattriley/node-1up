@@ -25,6 +25,7 @@
         "test": "npx task test"
     },
     "dependencies": {
+        "lodash": "^4.17.21",
         "module-composer": "^0.163.0"
     },
     "devDependencies": {
