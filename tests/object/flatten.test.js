@@ -1,15 +1,13 @@
-module.exports = ({ test, assert }) => ({ f }) => {
+module.exports = ({ test, assert }) => ({ o }) => {
 
-    test('pipe-assign', () => {
-        const input = [
-            { a: 1 },
-            { b: 2 },
-            ({ a, b }) => ({ c: a + b }),
-            { a: 4 }
-        ];
-
-        const expected = { a: 4, b: 2, c: 3 };
-        assert.deepEqual(f.pipeAssign(...input), expected);
+    test('flatten', () => {
+        const input = {
+            a: 1,
+            sub: {
+                b: 2
+            }
+        };
+        assert.deepEqual(o.flatten(input), { a: 1, b: 2 });
     });
 
 };
