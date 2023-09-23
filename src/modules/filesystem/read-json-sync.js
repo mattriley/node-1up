@@ -1,5 +1,5 @@
-module.exports = ({ fs }) => path => {
+module.exports = ({ io }) => path => {
 
-    return JSON.parse(fs.readFileSync(path, 'utf-8'));
+    return JSON.parse(io.fs.readFileSync(path, 'utf-8'));
 
 };
