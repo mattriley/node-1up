@@ -5,10 +5,7 @@ const defaultConfig = require('./default-config');
 
 module.exports = ({ config } = {}) => {
 
-    const functionAlias = {
-        Value: 'Val'
-    };
-
+    const functionAlias = [['Value', 'Val']];
     const { compose } = composer(modules, { functionAlias, config, defaultConfig });
     compose.asis('array', { moduleAlias: ['a', 'ar', 'arr'] });
     compose.make('filesystem', { fs }, { moduleAlias: ['fs'] });

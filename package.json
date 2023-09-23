@@ -25,17 +25,17 @@
         "test": "npx task test"
     },
     "dependencies": {
-        "module-composer": "^0.153.0"
+        "module-composer": "^0.163.0"
     },
     "devDependencies": {
         "cloc": "^1.98.0-cloc",
         "doctoc": "^2.2.1",
         "ejs": "^3.1.9",
-        "eslint": "^8.48.0",
+        "eslint": "^8.50.0",
         "husky": "^8.0.3",
-        "module-indexgen": "^0.39.0",
-        "module-testrunner": "^0.20.0",
-        "npm-check-updates": "^16.13.3",
-        "task-library": "^0.271.0"
+        "module-indexgen": "^0.41.0",
+        "module-testrunner": "^0.21.0",
+        "npm-check-updates": "^16.14.4",
+        "task-library": "^0.274.0"
     }
 }
