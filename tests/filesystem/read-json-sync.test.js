@@ -1,13 +1,13 @@
 module.exports = ({ test, assert, compose }) => () => {
 
-    test('read JSON sync', () => {
+    test('read a json file', () => {
         const targetPath = 'foo/bar.json';
         const overrides = {
             io: {
                 fs: {
                     readFileSync: (path, encoding) => {
                         assert.equal(path, targetPath);
-                        assert.equal(encoding, 'utf-8');
+                        assert.equal(encoding, 'utf8');
                         return '{ "foo": "bar" }';
                     }
                 }

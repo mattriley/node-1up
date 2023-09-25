@@ -1,6 +1,6 @@
 module.exports = ({ test, assert, compose }) => () => {
 
-    test('remkdir sync', () => {
+    test('remove and create a directory', () => {
         let done = false;
         const targetPath = 'foo/bar.json';
         const overrides = {

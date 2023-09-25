@@ -1,5 +1,6 @@
 module.exports = ({ io, config }) => (path, data, indent = config.indent) => {
 
-    return io.fs.writeFileSync(path, JSON.stringify(data, null, indent));
+    const json = JSON.stringify(data, null, indent);
+    return io.fs.writeFileSync(path, json);
 
 };
