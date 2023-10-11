@@ -7,8 +7,9 @@ module.exports = ({ test, assert }) => ({ arr }) => {
             ['foo', 'bar'],
             ['foo', 'bar', 'baz'],
             ['foo', 'bar', 'baz', 'qux']
-        ]
-        assert.deepEqual(expected, arr.steps(input));
+        ];
+        const actual = arr.steps(input);
+        assert.deepEqual(actual, expected);
     });
 
 };

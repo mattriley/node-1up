@@ -33,6 +33,7 @@
         "doctoc": "^2.2.1",
         "ejs": "^3.1.9",
         "eslint": "^8.50.0",
+        "eslint-plugin-import": "^2.28.1",
         "husky": "^8.0.3",
         "module-indexgen": "^0.41.0",
         "module-testrunner": "^0.21.0",

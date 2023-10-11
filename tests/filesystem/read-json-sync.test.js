@@ -12,7 +12,7 @@ module.exports = ({ test, assert, compose }) => () => {
                     }
                 }
             }
-        }
+        };
         const { fs } = compose({ overrides });
         const actual = fs.readJsonSync(targetPath);
         const expected = { foo: 'bar' };

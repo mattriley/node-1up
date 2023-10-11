@@ -18,7 +18,7 @@ module.exports = ({ test, assert, compose }) => () => {
                     }
                 }
             }
-        }
+        };
         const { fs } = compose({ overrides });
         fs.remkdirSync(targetPath);
         assert.ok(done);

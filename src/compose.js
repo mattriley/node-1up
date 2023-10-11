@@ -1,5 +1,4 @@
 const _ = require('lodash');
-const fs = require('fs');
 const composer = require('module-composer');
 const modules = require('./modules');
 const defaultConfig = require('./default-config');

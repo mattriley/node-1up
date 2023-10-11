@@ -15,12 +15,12 @@ module.exports = ({ test, assert, compose }) => () => {
                     }
                 }
             }
-        }
+        };
         const config = { indent };
         const { fs } = compose({ overrides, config });
         fs.writeJsonSync(targetPath, targetObject, indent);
         assert.ok(done);
-    }
+    };
 
     test('write a json file with default configured indent', () => {
         const expected = JSON.stringify(targetObject, null, 4);
