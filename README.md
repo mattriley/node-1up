@@ -1,6 +1,6 @@
 # 1 UP
 
-<p align="right"><code>100% cov</code>&nbsp;<code>168 sloc</code>&nbsp;<code>30 files</code>&nbsp;<code>2 deps</code>&nbsp;<code>10 dev deps</code></p>
+<p align="right"><code>100% cov</code>&nbsp;<code>160 sloc</code>&nbsp;<code>30 files</code>&nbsp;<code>2 deps</code>&nbsp;<code>10 dev deps</code></p>
 
 
 
@@ -20,6 +20,7 @@
 ```mermaid
 graph TD;
     filesystem-->io;
+    string-->arr;
 ```
 <p align="center">
   <em>This diagram was generated with <a href="https://github.com/mattriley/node-module-composer">Module Composer</a></em>

@@ -10,10 +10,10 @@ module.exports = ({ config, overrides } = {}) => {
     const functionAlias = [['Value', 'Val']];
     const { compose } = composer(modules, { functionAlias, overrides, config, defaultConfig });
     const { io } = compose.make('io');
-    compose.asis('array', { moduleAlias: ['a', 'ar', 'arr'] });
+    const { arr } = compose.asis('array', { moduleAlias: ['a', 'ar', 'arr'] });
     compose.make('filesystem', { io }, { moduleAlias: ['fs'] });
     compose.make('function', {}, { moduleAlias: ['f', 'fn', 'fun', 'func'] });
     compose.asis('object', { moduleAlias: ['o', 'ob', 'obj'] });
-    return compose.make('string', {}, { moduleAlias: ['s', 'st', 'str'] });
+    return compose.make('string', { arr }, { moduleAlias: ['s', 'st', 'str'] });
 
 };
