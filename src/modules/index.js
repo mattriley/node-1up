@@ -1,4 +1,5 @@
 module.exports = {
+    any: require('./any'),
     array: require('./array'),
     filesystem: require('./filesystem'),
     function: require('./function'),

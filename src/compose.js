@@ -14,6 +14,8 @@ module.exports = ({ config, overrides } = {}) => {
     compose.make('filesystem', { io }, { moduleAlias: ['fs'] });
     compose.make('function', {}, { moduleAlias: ['f', 'fn', 'fun', 'func'] });
     compose.asis('object', { moduleAlias: ['o', 'ob', 'obj'] });
+    compose.asis('any');
+
     return compose.make('string', { arr }, { moduleAlias: ['s', 'st', 'str'] });
 
 };
