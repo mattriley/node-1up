@@ -16,6 +16,6 @@ module.exports = ({ config, overrides } = {}) => {
     compose.asis('object', { moduleAlias: ['o', 'ob', 'obj'] });
     compose.asis('any');
 
-    return compose.make('string', { arr }, { moduleAlias: ['s', 'st', 'str'] });
+    return compose.deep('string', { arr }, { moduleAlias: ['s', 'st', 'str'] });
 
 };
