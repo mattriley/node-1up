@@ -1,10 +1,6 @@
-module.exports = ({ fun }) => (arr, iteratee) => {
+module.exports = () => paths => {
 
-    const iterateeIsFunction = fun.isPlainFunction(iteratee);
-    const paths = arr.map(obj => iterateeIsFunction ? iteratee(obj) : _.get(obj, iteratee));
-    const uniquePaths = _.uniq(paths);
-
-    return uniquePaths.reduce((acc, path) => {
+    return _.uniq(paths).reduce((acc, path) => {
         const keyPath = path.replaceAll('/', '.');
         return _.set(acc, keyPath, _.get(acc, keyPath, {}));
     }, {});
