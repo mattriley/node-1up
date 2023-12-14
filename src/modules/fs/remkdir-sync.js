@@ -1,7 +1,7 @@
-module.exports = ({ io }) => (path, options = {}) => {
+module.exports = ({ self }) => (path, options = {}) => {
 
     const { recursive = true, force = true } = options;
-    io.fs.rmSync(path, { recursive, force });
-    io.fs.mkdirSync(path, { recursive });
+    self.nodefs.rmSync(path, { recursive, force });
+    self.nodefs.mkdirSync(path, { recursive });
 
 };

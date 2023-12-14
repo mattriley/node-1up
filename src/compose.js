@@ -9,14 +9,13 @@ module.exports = ({ config, overrides } = {}) => {
 
     const functionAlias = [['Value', 'Val']];
     const { compose } = composer(modules, { functionAlias, overrides, config, defaultConfig });
-    const { io } = compose.make('io');
     const { arr } = compose.asis('arr', {}, { moduleAlias: ['a', 'ar', 'arr'] });
-    compose.make('fun', {}, { moduleAlias: ['f', 'fn', 'fun', 'func', 'function'] });
-    compose.make('fs', { io }, { moduleAlias: ['fs', 'filesystem'] });
-    compose.asis('obj', { moduleAlias: ['o', 'ob', 'obj', 'object'] });
-    compose.asis('any');
     compose.deep('str', { arr }, { moduleAlias: ['s', 'st', 'str', 'string'] });
+    compose.asis('obj', { moduleAlias: ['o', 'ob', 'obj', 'object'] });
+    compose.make('fun', {}, { moduleAlias: ['f', 'fn', 'fun', 'func', 'function'] });
+    compose.make('fs', {}, { moduleAlias: ['fs', 'filesystem'] });
+    compose.asis('any');
 
-    return _.omit(compose.modules, 'io');
+    return compose.modules;
 
 };

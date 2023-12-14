@@ -1,6 +1,6 @@
 const nodepath = require('node:path');
 
-module.exports = ({ io, fs, config }) => (path, data, indent = config.indent) => {
+module.exports = ({ self, config }) => (path, data, indent = config.indent) => {
 
     if (!_.isPlainObject(data)) throw new Error('data must be plain object');
 
@@ -8,8 +8,8 @@ module.exports = ({ io, fs, config }) => (path, data, indent = config.indent) =>
         const isJson = _.isPlainObject(data) || Array.isArray(data);
         const ext = isJson ? 'json' : 'txt';
         const file = nodepath.join(path, `${key}.${ext}`);
-        const writeJson = (file, data) => fs.writeJsonSync(file, data, indent);
-        const write = isJson ? writeJson : io.fs.writeFileSync;
+        const writeJson = (file, data) => self.writeJsonSync(file, data, indent);
+        const write = isJson ? writeJson : self.nodefs.writeFileSync;
         write(file, data);
     });
 

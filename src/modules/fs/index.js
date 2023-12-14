@@ -1,4 +1,5 @@
 module.exports = {
+    nodefs: require('./nodefs'),
     readJsonDirSync: require('./read-json-dir-sync'),
     readJsonSync: require('./read-json-sync'),
     remkdirSync: require('./remkdir-sync'),
