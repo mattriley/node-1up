@@ -14,4 +14,11 @@ module.exports = ({ test, assert }) => ({ obj }) => {
         assert.deepEqual(actual, expected);
     });
 
+    test('value is non-object', () => {
+        const input = { a: 1, b: 2 };
+        const expected = [{ key: 'a', a: 1 }, { key: 'b', b: 2 }];
+        const actual = obj.toArray(input);
+        assert.deepEqual(actual, expected);
+    });
+
 };

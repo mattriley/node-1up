@@ -1,6 +1,6 @@
 # 1 UP
 
-<p align="right"><code>90.25% cov</code>&nbsp;<code>238 sloc</code>&nbsp;<code>40 files</code>&nbsp;<code>2 deps</code>&nbsp;<code>10 dev deps</code></p>
+<p align="right"><code>90.29% cov</code>&nbsp;<code>239 sloc</code>&nbsp;<code>40 files</code>&nbsp;<code>2 deps</code>&nbsp;<code>10 dev deps</code></p>
 
 
 
