@@ -1,8 +1,7 @@
-module.exports = (obj, keyName = 'key') => {
+module.exports = (obj, keyName = 'key', valName = 'val') => {
 
     return Object.entries(obj).map(([key, val]) => {
-        const newVal = _.isPlainObject(val) ? val : { [key]: val };
-        return { [keyName]: key, ...newVal };
+        return { [keyName]: key, [valName]: val };
     });
 
 };
