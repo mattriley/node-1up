@@ -1,6 +1,6 @@
 # 1 UP
 
-<p align="right"><code>90.29% cov</code>&nbsp;<code>234 sloc</code>&nbsp;<code>39 files</code>&nbsp;<code>2 deps</code>&nbsp;<code>10 dev deps</code></p>
+<p align="right"><code>90.38% cov</code>&nbsp;<code>234 sloc</code>&nbsp;<code>39 files</code>&nbsp;<code>2 deps</code>&nbsp;<code>10 dev deps</code></p>
 
 
 
@@ -19,8 +19,8 @@
 ###### <p align="right"><em>Can't see the diagram?</em> <a id="link-1" href="https://github.com/mattriley/node-1up#user-content-link-1">View it on GitHub</a></p>
 ```mermaid
 graph TD;
-    filesystem-->io;
-    string-->arr;
+    fs-->io;
+    str-->arr;
 ```
 <p align="center">
   <em>This diagram was generated with <a href="https://github.com/mattriley/node-module-composer">Module Composer</a></em>

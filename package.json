@@ -14,7 +14,7 @@
         "url": "https://github.com/mattriley/node-1up/issues",
         "email": "m@ttriley.dev"
     },
-    "main": "./src/main.js",
+    "main": "./index.js",
     "scripts": {
         "cov": "npx task cov",
         "deploy": "npx task deploy",

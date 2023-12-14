@@ -1,3 +1,2 @@
-const compose = require('./src/compose');
-const { fs } = compose();
+const { fs } = require('./src/composed');
 module.exports = { fs };

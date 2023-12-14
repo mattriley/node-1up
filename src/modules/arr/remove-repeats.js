@@ -1,4 +1,4 @@
-module.exports = () => arr => {
+module.exports = arr => {
 
     return arr.flatMap((el, i) => {
         const prev = arr[i - 1];

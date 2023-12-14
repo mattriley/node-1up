@@ -1,4 +1,4 @@
-module.exports = () => (val, delimiter = ',') => {
+module.exports = (val, delimiter = ',') => {
 
     if (!val) return [];
     if (Array.isArray(val)) return val;

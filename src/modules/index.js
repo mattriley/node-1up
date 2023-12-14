@@ -1,9 +1,9 @@
 module.exports = {
     any: require('./any'),
-    array: require('./array'),
-    filesystem: require('./filesystem'),
-    function: require('./function'),
+    arr: require('./arr'),
+    fs: require('./fs'),
+    fun: require('./fun'),
     io: require('./io'),
-    object: require('./object'),
-    string: require('./string')
+    obj: require('./obj'),
+    str: require('./str')
 };
