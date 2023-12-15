@@ -6,6 +6,7 @@ module.exports = {
     readJsonSync: require('./read-json-sync'),
     readTextSwapExtSync: require('./read-text-swap-ext-sync'),
     remkdirSync: require('./remkdir-sync'),
+    rewriteJsonLikeSync: require('./rewrite-json-like-sync'),
     writeJsonDirSync: require('./write-json-dir-sync'),
     writeJsonLikeSync: require('./write-json-like-sync'),
     writeJsonSync: require('./write-json-sync')
