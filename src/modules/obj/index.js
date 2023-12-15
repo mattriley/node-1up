@@ -5,5 +5,6 @@ module.exports = {
     flatten: require('./flatten'),
     mapKeys: require('./map-keys'),
     mapValues: require('./map-values'),
+    sortKeys: require('./sort-keys'),
     toArray: require('./to-array')
 };
