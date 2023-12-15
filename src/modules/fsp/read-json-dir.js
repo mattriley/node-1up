@@ -2,7 +2,7 @@ const nodepath = require('node:path');
 
 module.exports = ({ self }) => async path => {
 
-    const filenames = await self.nodefs.readdir(path);
+    const filenames = await self.nodefs.promises.readdir(path);
     const files = filenames.map(file => nodepath.join(path, file));
 
     const promises = files.map(async file => {
