@@ -9,7 +9,7 @@ module.exports = ({ self, config }) => async (path, data, indent = config.indent
         const ext = isJson ? 'json' : 'txt';
         const file = nodepath.join(path, `${key}.${ext}`);
         const writeJson = (file, data) => self.writeJson(file, data, indent);
-        const write = isJson ? writeJson : self.nodefs.writeFileSync;
+        const write = isJson ? writeJson : self.nodefs.promises.writeFile;
         await write(file, data);
     });
 
