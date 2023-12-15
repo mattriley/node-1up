@@ -1,5 +1,5 @@
-module.exports = ({ f }) => (val, ...args) => {
+module.exports = ({ self }) => (val, ...args) => {
 
-    return val && f.isPlainFunction(val) ? val(...args) : val;
+    return val && self.isPlainFunction(val) ? val(...args) : val;
 
 };

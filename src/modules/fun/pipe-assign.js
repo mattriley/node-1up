@@ -1,5 +1,5 @@
-module.exports = ({ f }) => (...funs) => {
+module.exports = ({ self }) => (...funs) => {
 
-    return funs.reduce((acc, fun) => ({ ...acc, ...f.invokeOrReturn(fun, acc) }), {});
+    return funs.reduce((acc, fun) => ({ ...acc, ...self.invokeOrReturn(fun, acc) }), {});
 
 };

@@ -9,13 +9,13 @@ module.exports = ({ config, overrides } = {}) => {
 
     const functionAlias = [['Value', 'Val']];
     const { compose } = composer(modules, { functionAlias, overrides, config, defaultConfig });
-    const { arr } = compose.asis('arr', {}, { moduleAlias: ['a', 'ar', 'arr'] });
-    compose.deep('str', { arr }, { moduleAlias: ['s', 'st', 'str', 'string'] });
-    compose.asis('obj', { moduleAlias: ['o', 'ob', 'obj', 'object'] });
-    compose.make('fun', {}, { moduleAlias: ['f', 'fn', 'fun', 'func', 'function'] });
-    compose.make('fsx', {}, { moduleAlias: ['fs', 'fileSystem'] });
-    compose.make('fsp', {}, { moduleAlias: ['fsPromises', 'fileSystemPromises'] });
+    const { arr } = compose.asis('arr');
+    compose.deep('str', { arr });
+    compose.asis('obj');
     compose.asis('any');
+    compose.deep('fun');
+    compose.make('fsx');
+    compose.make('fsp');
 
     return compose.modules;
 
