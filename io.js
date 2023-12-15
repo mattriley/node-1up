@@ -1,2 +1,2 @@
-const { fs, filesystem } = require('./src/composed');
-module.exports = { fs, filesystem };
+const { fs, fsx, fsp } = require('./src/composed');
+module.exports = { fs, fsx, fsp };

@@ -1,9 +1,9 @@
-module.exports = ({ test, assert }) => ({ f }) => {
+module.exports = ({ test, assert }) => ({ fun }) => {
 
     test('invoke', () => {
         const args = ['foo', 'bar'];
         const val = (...args) => args.join('');
-        const actual = f.invokeOrReturn(val, ...args);
+        const actual = fun.invokeOrReturn(val, ...args);
         assert.equal(actual, 'foobar');
     });
 

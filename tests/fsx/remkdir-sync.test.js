@@ -4,7 +4,7 @@ module.exports = ({ test, assert, compose }) => () => {
         let done = false;
         const targetPath = 'foo/bar.json';
         const overrides = {
-            fs: {
+            fsx: {
                 nodefs: {
                     rmSync: (path, { recursive, force }) => {
                         assert.equal(path, targetPath);
@@ -19,8 +19,8 @@ module.exports = ({ test, assert, compose }) => () => {
                 }
             }
         };
-        const { fs } = compose({ overrides });
-        fs.remkdirSync(targetPath);
+        const { fsx } = compose({ overrides });
+        fsx.remkdirSync(targetPath);
         assert.ok(done);
     });
 

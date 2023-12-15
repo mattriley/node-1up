@@ -13,7 +13,8 @@ module.exports = ({ config, overrides } = {}) => {
     compose.deep('str', { arr }, { moduleAlias: ['s', 'st', 'str', 'string'] });
     compose.asis('obj', { moduleAlias: ['o', 'ob', 'obj', 'object'] });
     compose.make('fun', {}, { moduleAlias: ['f', 'fn', 'fun', 'func', 'function'] });
-    compose.make('fs', {}, { moduleAlias: ['fs', 'filesystem'] });
+    compose.make('fsx', {}, { moduleAlias: ['fs', 'fileSystem'] });
+    compose.make('fsp', {}, { moduleAlias: ['fsPromises', 'fileSystemPromises'] });
     compose.asis('any');
 
     return compose.modules;

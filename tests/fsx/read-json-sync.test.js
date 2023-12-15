@@ -3,7 +3,7 @@ module.exports = ({ test, assert, compose }) => () => {
     test('read a json file', () => {
         const targetPath = 'foo/bar.json';
         const overrides = {
-            fs: {
+            fsx: {
                 nodefs: {
                     readFileSync: (path, encoding) => {
                         assert.equal(path, targetPath);
@@ -13,8 +13,8 @@ module.exports = ({ test, assert, compose }) => () => {
                 }
             }
         };
-        const { fs } = compose({ overrides });
-        const actual = fs.readJsonSync(targetPath);
+        const { fsx } = compose({ overrides });
+        const actual = fsx.readJsonSync(targetPath);
         const expected = { foo: 'bar' };
         assert.deepEqual(actual, expected);
     });

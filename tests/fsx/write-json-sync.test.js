@@ -6,7 +6,7 @@ module.exports = ({ test, assert, compose }) => () => {
         let done = false;
         const targetPath = 'foo/bar.json';
         const overrides = {
-            fs: {
+            fsx: {
                 nodefs: {
                     writeFileSync: (path, data) => {
                         assert.equal(path, targetPath);
@@ -17,8 +17,8 @@ module.exports = ({ test, assert, compose }) => () => {
             }
         };
         const config = { indent };
-        const { fs } = compose({ overrides, config });
-        fs.writeJsonSync(targetPath, targetObject, indent);
+        const { fsx } = compose({ overrides, config });
+        fsx.writeJsonSync(targetPath, targetObject, indent);
         assert.ok(done);
     };
 

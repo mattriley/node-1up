@@ -1,4 +1,4 @@
-module.exports = ({ test, assert }) => ({ f }) => {
+module.exports = ({ test, assert }) => ({ fun }) => {
 
     test('pipe-assign', () => {
         const input = [
@@ -9,7 +9,7 @@ module.exports = ({ test, assert }) => ({ f }) => {
         ];
 
         const expected = { a: 4, b: 2, c: 3 };
-        assert.deepEqual(f.pipeAssign(...input), expected);
+        assert.deepEqual(fun.pipeAssign(...input), expected);
     });
 
 };
