@@ -9,4 +9,4 @@ const deepFreeze = obj => {
 
 };
 
-module.exports = deepFreeze;
+module.exports = () => deepFreeze;

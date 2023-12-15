@@ -1,7 +1,6 @@
-module.exports = (obj, iteratee) => {
+module.exports = () => (obj, iteratee) => {
 
-    return Object.fromEntries(Object.entries(obj).map(([key, val]) => {
-        return [key, iteratee({ key, val, obj })];
-    }));
+    const mapper = ([key, val]) => [key, iteratee({ key, val, obj })];
+    return Object.fromEntries(Object.entries(obj).map(mapper));
 
 };

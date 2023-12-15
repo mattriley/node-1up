@@ -1,4 +1,4 @@
-module.exports = (obj, opts = {}) => {
+module.exports = () => (obj, opts = {}) => {
 
     const recurse = (obj, parentKey = '', currentDepth = 0) => {
         return Object.entries(obj).reduce((acc, [key, val]) => {

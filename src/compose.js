@@ -11,11 +11,11 @@ module.exports = ({ config, overrides } = {}) => {
     const { compose } = composer(modules, { functionAlias, overrides, config, defaultConfig });
     const { arr } = compose.asis('arr');
     compose.deep('str', { arr });
-    compose.asis('obj');
-    compose.asis('any');
-    compose.deep('fun');
+    compose.make('obj');
+    compose.make('fun');
     compose.make('fsx');
     compose.make('fsp');
+    compose.asis('any');
 
     return compose.modules;
 
