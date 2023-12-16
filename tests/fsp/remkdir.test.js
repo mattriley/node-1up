@@ -1,26 +1,28 @@
 module.exports = ({ test, assert, compose }) => () => {
 
-    test('remove and create a directory', () => {
+    test('remove and create a directory', async () => {
         let done = false;
         const targetPath = 'foo/bar.json';
         const overrides = {
-            fsx: {
+            fsp: {
                 nodefs: {
                     rmSync: (path, { recursive, force }) => {
                         assert.equal(path, targetPath);
                         assert.equal(recursive, true);
                         assert.equal(force, true);
                     },
-                    mkdirSync: (path, { recursive }) => {
-                        assert.equal(path, targetPath);
-                        assert.equal(recursive, true);
-                        done = true;
+                    promises: {
+                        mkdir: (path, { recursive }) => {
+                            assert.equal(path, targetPath);
+                            assert.equal(recursive, true);
+                            done = true;
+                        }
                     }
                 }
             }
         };
-        const { fsx } = compose({ overrides });
-        fsx.remkdirSync(targetPath);
+        const { fsp } = compose({ overrides });
+        await fsp.remkdir(targetPath);
         assert.ok(done);
     });
 
