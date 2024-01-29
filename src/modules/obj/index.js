@@ -1,4 +1,5 @@
 module.exports = {
+    clean: require('./clean'),
     deepFreeze: require('./deep-freeze'),
     entries: require('./entries'),
     flatMapKeys: require('./flat-map-keys'),
