@@ -1,7 +1,12 @@
 module.exports = ({ self }) => {
 
     const _pipeAssign = (...args) => (...funs) => {
-        return funs.reduce((acc, fun) => ({ ...acc, ...self.invokeOrReturn(fun, acc, ...args) }), {});
+        const invoke = (fun, acc) => args.length ? fun(...args)(acc) : fun(acc);
+
+        return funs.reduce((acc, fun) => {
+            const res = fun && self.isPlainFunction(fun) ? invoke(fun, acc) : fun;
+            return { ...acc, ...res };
+        }, {});
     };
 
     const pipeAssign = _pipeAssign();
