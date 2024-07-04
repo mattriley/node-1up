@@ -3,7 +3,7 @@ module.exports = ({ self }) => {
     const _pipeAssign = (...args) => (...funs) => {
         const invoke = (fun, acc) => args.length ? fun(...args)(acc) : fun(acc);
 
-        return funs.reduce((acc, fun) => {
+        return funs.flat().reduce((acc, fun) => {
             const res = fun && self.isPlainFunction(fun) ? invoke(fun, acc) : fun;
             return { ...acc, ...res };
         }, {});
