@@ -4,6 +4,7 @@ module.exports = {
     entries: require('./entries'),
     flatMapKeys: require('./flat-map-keys'),
     flatten: require('./flatten'),
+    get: require('./get'),
     mapKeys: require('./map-keys'),
     mapValues: require('./map-values'),
     mapValuesAsync: require('./map-values-async'),
