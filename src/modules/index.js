@@ -5,5 +5,6 @@ module.exports = {
     fsx: require('./fsx'),
     fun: require('./fun'),
     obj: require('./obj'),
+    path: require('./path'),
     str: require('./str')
 };
