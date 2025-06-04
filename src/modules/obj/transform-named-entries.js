@@ -1,8 +1,10 @@
-module.exports = () => (obj, transform) => {
+module.exports = () => (names, obj, transform) => {
 
-    const namedEntries = Object.entries(obj).map(ent => ({ key: ent[0], val: ent[1] }));
+    const [keyName, valName] = names.split(':');
+    const entries = Object.entries(obj);
+    const namedEntries = entries.map(ent => ({ [keyName]: ent[0], [valName]: ent[1] }));
     const transformedEntries = transform(namedEntries);
-    const newEntries = transformedEntries.map(ent => Array.isArray(ent) ? ent : [ent.key, ent.val]);
+    const newEntries = transformedEntries.map(ent => Array.isArray(ent) ? ent : [ent[keyName], ent[valName]]);
     return Object.fromEntries(newEntries);
 
 };
