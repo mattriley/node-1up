@@ -10,5 +10,6 @@ module.exports = {
     mapValuesAsync: require('./map-values-async'),
     sortKeys: require('./sort-keys'),
     toArray: require('./to-array'),
-    transformEntries: require('./transform-entries')
+    transformEntries: require('./transform-entries'),
+    transformNamedEntries: require('./transform-named-entries')
 };
