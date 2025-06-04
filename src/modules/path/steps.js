@@ -1,6 +1,5 @@
 module.exports = ({ arr }) => (path, sep = require('path').sep) => {
 
-    const parts = path.split(sep);
-    return arr.steps(parts);
+    return arr.steps(path.split(sep)).map(step => step.join(sep));
 
 };
