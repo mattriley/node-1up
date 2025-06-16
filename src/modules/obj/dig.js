@@ -12,7 +12,7 @@ module.exports = ({ arr }) => (obj, path, defaultValue = undefined) => {
 
         for (const step of steps) {
             const key = step.join(DELIMITER);
-            if (currentValue[key]) {
+            if (currentValue?.[key]) {
                 const newKeysRemaining = keysRemaining.slice(step.length);
                 findKey(currentValue[key], newKeysRemaining, results);
             }
