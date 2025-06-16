@@ -11,7 +11,7 @@ module.exports = ({ config, overrides } = {}) => {
     const { compose } = composer(modules, { functionAlias, overrides, config, defaultConfig });
     const { arr } = compose.asis('arr');
     compose.deep('str', { arr });
-    compose.make('obj');
+    compose.make('obj', { arr });
     compose.make('fun');
     compose.make('fsx');
     compose.make('fsp');
