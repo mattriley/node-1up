@@ -91,6 +91,8 @@ module.exports = () => ({ city, state, country, defaultCountry }) => {
 
         if (countries.length === 1) {
             countryData = countries[0];
+        } else {
+            console.warn(`Non-unique country: ${country}. This should never happen.`);
         }
     }
 
