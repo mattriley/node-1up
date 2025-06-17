@@ -79,11 +79,21 @@ module.exports = () => (location, defaultLocation = {}) => {
     let states = findStates(state);
     let countries = findCountries(country);
 
+    const filterCities = pred => {
+        cities = cities.filter(pred);
+        if (cities.length === 1) cityData = cities[0];
+    };
+
 
     const filterStates = pred => {
         states = states.filter(pred);
         if (states.length === 1) stateData = states[0];
-    }
+    };
+
+    const filterCountries = pred => {
+        countries = countries.filter(pred);
+        if (countries.length === 1) countryData = countries[0];
+    };
 
 
     if (city && cities.length === 0) {
@@ -139,11 +149,11 @@ module.exports = () => (location, defaultLocation = {}) => {
 
 
     if (cities.length > 1 && countryData) {
-        cities = cities.filter(city => city.countryCode === countryData.isoCode);
+        filterCities(city => city.countryCode === countryData.isoCode);
     }
 
     if (cities.length > 1 && defaultCountryData) {
-        cities = cities.filter(city => city.countryCode === defaultCountryData.isoCode);
+        filterCities(city => city.countryCode === defaultCountryData.isoCode);
     }
 
     if (cities.length === 1) {
