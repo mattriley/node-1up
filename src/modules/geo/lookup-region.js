@@ -113,36 +113,18 @@ module.exports = () => (location, defaultLocation = {}) => {
     }
 
 
-    if (country) {
 
-        if (countries.length === 0) {
-            console.warn(`County not found: ${state}`);
-        }
-
-        if (countries.length === 1) {
-            countryData = countries[0];
-        }
-
-        if (countries.length > 1) {
-            console.warn(`Non-unique country: ${country}. This should never happen.`);
-        }
+    if (countries.length === 0) {
+        console.warn(`County not found: ${state}`);
     }
 
+    if (countries.length === 1) {
+        countryData = countries[0];
+    }
 
-
-
-
-
-
-    // if (cities.length > 1) {
-
-
-    //     if (country || defaultCountry) {
-    //         countryData = exactCountry(country || defaultCountry);
-    //         cityData = cities.find(city => city.countryCode === countryData.isoCode);
-    //         stateData = exactState(cityData.stateCode, cityData.countryCode);
-    //     }
-    // }
+    if (countries.length > 1) {
+        console.warn(`Non-unique country: ${country}. This should never happen.`);
+    }
 
 
 
