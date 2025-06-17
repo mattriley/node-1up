@@ -90,28 +90,28 @@ module.exports = () => (location, defaultLocation = {}) => {
         countries = findCountries(cityData.countryCode);
     }
 
-    if (state) {
 
-        if (states.length === 0) {
-            console.warn(`State not found: ${state}`);
-        }
+    if (states.length === 0) {
+        console.warn(`State not found: ${state}`);
+    }
 
-        if (states.length === 1) {
-            stateData = states[0];
-            countryData = exactCountry(stateData.countryCode);
-        }
+    if (states.length === 1) {
+        stateData = states[0];
+        countryData = exactCountry(stateData.countryCode);
+    }
 
-        if (states.length > 1) {
-            if (defaultCountry) {
-                countryData = exactCountry(defaultCountry);
-                stateData = states.find(state => state.countryCode === countryData.isoCode);
-            }
+    if (states.length > 1) {
+        if (defaultCountry) {
+            countryData = exactCountry(defaultCountry);
+            stateData = states.find(state => state.countryCode === countryData.isoCode);
         }
     }
+
 
     if (countries.length === 1) {
         countryData ??= countries[0];
     }
+
 
     if (country) {
 
