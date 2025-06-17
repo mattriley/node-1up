@@ -19,7 +19,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
         const input = { state: 'ACT' };
 
         const expected = {
-            city: null,
+            city: undefined,
             state: 'Australian Capital Territory',
             'state.iso': 'ACT',
             country: 'Australia',
@@ -34,9 +34,9 @@ module.exports = ({ test, assert }) => ({ geo }) => {
         const input = { country: 'AU' };
 
         const expected = {
-            city: null,
-            state: null,
-            'state.iso': null,
+            city: undefined,
+            state: undefined,
+            'state.iso': undefined,
             country: 'Australia',
             'country.iso2': 'AU'
         };

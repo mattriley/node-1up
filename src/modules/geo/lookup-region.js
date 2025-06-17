@@ -31,6 +31,10 @@ module.exports = () => ({ city, state, country }) => {
     let stateKey = state?.trim().toLowerCase();
     let countryKey = country?.trim().toLowerCase();
 
+    let cityData;
+    let stateData;
+    let countryData;
+
 
     if (cityKey) {
         const cities = lookup.city.byName[cityKey] || [];
@@ -40,16 +44,9 @@ module.exports = () => ({ city, state, country }) => {
         }
 
         if (cities.length === 1) {
-            const cityData = cities[0];
-            const stateData = lookup.state.byIso[cityData.stateCode.toLowerCase()].find(state => state.countryCode === cityData.countryCode);
-            const countryData = lookup.country.byIso[cityData.countryCode.toLowerCase()][0];
-            return {
-                city: cityData.name,
-                state: stateData.name,
-                'state.iso': stateData.isoCode,
-                country: countryData.name,
-                'country.iso2': countryData.isoCode
-            }
+            cityData = cities[0];
+            stateData = lookup.state.byIso[cityData.stateCode.toLowerCase()].find(state => state.countryCode === cityData.countryCode);
+            countryData = lookup.country.byIso[cityData.countryCode.toLowerCase()][0];
         }
     }
 
@@ -61,15 +58,8 @@ module.exports = () => ({ city, state, country }) => {
         }
 
         if (states.length === 1) {
-            const stateData = states[0];
-            const countryData = lookup.country.byIso[stateData.countryCode.toLowerCase()][0];
-            return {
-                city: null,
-                state: stateData.name,
-                'state.iso': stateData.isoCode,
-                country: countryData.name,
-                'country.iso2': countryData.isoCode
-            }
+            stateData = states[0];
+            countryData = lookup.country.byIso[stateData.countryCode.toLowerCase()][0];
         }
     }
 
@@ -81,15 +71,16 @@ module.exports = () => ({ city, state, country }) => {
         }
 
         if (countries.length === 1) {
-            const countryData = countries[0];
-            return {
-                city: null,
-                state: null,
-                'state.iso': null,
-                country: countryData.name,
-                'country.iso2': countryData.isoCode
-            }
+            countryData = countries[0];
         }
+    }
+
+    return {
+        city: cityData?.name,
+        state: stateData?.name,
+        'state.iso': stateData?.isoCode,
+        country: countryData?.name,
+        'country.iso2': countryData?.isoCode
     }
 
 
