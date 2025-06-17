@@ -15,8 +15,8 @@ module.exports = ({ test, assert }) => ({ geo }) => {
         assert.deepEqual(actual, expected);
     });
 
-    test('Globally non-unique city, and county', () => {
-        const input = { city: 'Melbourne', country: 'AU' };
+    test('Globally non-unique city + state', () => {
+        const input = { city: 'Melbourne', state: 'VIC' };
 
         const expected = {
             city: 'Melbourne',
