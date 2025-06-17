@@ -59,31 +59,32 @@ module.exports = () => (location, defaultLocation = {}) => {
     let countryData;
     const defaultCountryData = defaultCountry ? exactCountry(defaultCountry) : null;
 
-    let cities = lookupCity(city);
-    let states = lookupState(state);
-    let countries = lookupCountry(country);
 
-    if (city) {
-
-        if (cities.length === 0) {
-            console.warn(`City not found: ${city}`);
-        }
-
-        if (cities.length === 1) {
-            cityData = cities[0];
-            stateData = exactState(cityData.stateCode, cityData.countryCode);
-            countryData = exactCountry(cityData.countryCode);
-        }
-        if (cities.length > 1) {
-            // if (country || defaultCountry) {
-            //     countryData = exactCountry(country || defaultCountry);
-            //     cityData = cities.find(city => city.countryCode === countryData.isoCode);
-            //     stateData = exactState(cityData.stateCode, cityData.countryCode);
-            // }
+    const renderResult = () => {
+        return {
+            city: cityData?.name,
+            state: stateData?.name,
+            'state.iso': stateData?.isoCode,
+            country: countryData?.name,
+            'country.iso2': countryData?.isoCode
         }
     }
 
 
+    let cities = lookupCity(city);
+    let states = lookupState(state);
+    let countries = lookupCountry(country);
+
+    if (city && cities.length === 0) {
+        console.warn(`City not found: ${city}`);
+        return renderResult()
+    }
+
+    if (cities.length === 1) {
+        cityData = cities[0];
+        stateData = exactState(cityData.stateCode, cityData.countryCode);
+        countryData = exactCountry(cityData.countryCode);
+    }
 
     if (state) {
 
