@@ -25,6 +25,10 @@ const lookup = {
     }
 };
 
+const lookupCity = city => lookup.city.byName[city] || [];
+const lookupState = state => lookup.state.byName[state] || lookup.state.byIso[state] || [];
+const lookupCountry = country => lookup.country.byName[country] || lookup.country.byIso[country] || [];
+
 
 module.exports = () => ({ city, state, country }) => {
     let cityKey = city?.trim().toLowerCase();
@@ -35,9 +39,9 @@ module.exports = () => ({ city, state, country }) => {
     let stateData;
     let countryData;
 
-    const cities = lookup.city.byName[cityKey] || [];
-    const states = lookup.state.byName[stateKey] || lookup.state.byIso[stateKey] || [];
-    const countries = lookup.country.byName[countryKey] || lookup.country.byIso[countryKey] || [];
+    const cities = lookupCity(cityKey);
+    const states = lookupState(stateKey);
+    const countries = lookupCountry(countryKey);
 
     if (cityKey) {
 
@@ -48,8 +52,8 @@ module.exports = () => ({ city, state, country }) => {
 
         if (cities.length === 1) {
             cityData = cities[0];
-            stateData = lookup.state.byIso[cityData.stateCode.toLowerCase()].find(state => state.countryCode === cityData.countryCode);
-            countryData = lookup.country.byIso[cityData.countryCode.toLowerCase()][0];
+            stateData = lookupState(cityData.stateCode.toLowerCase()).find(state => state.countryCode === cityData.countryCode);
+            countryData = lookupCountry(cityData.countryCode.toLowerCase())[0];
         }
     }
 
@@ -63,7 +67,7 @@ module.exports = () => ({ city, state, country }) => {
 
         if (states.length === 1) {
             stateData = states[0];
-            countryData = lookup.country.byIso[stateData.countryCode.toLowerCase()][0];
+            countryData = lookupCountry(stateData.countryCode.toLowerCase())[0];
         }
     }
 
@@ -89,11 +93,9 @@ module.exports = () => ({ city, state, country }) => {
         stateData ??= states.find(state => state.countryCode === countryData.isoCode);
 
         if (cityData) {
-            stateData ??= lookup.state.byIso[cityData.stateCode.toLowerCase()][0];
+            stateData ??= lookupState(cityData.stateCode.toLowerCase())[0];
         }
     }
-
-    console.warn(cityData);
 
     return {
         city: cityData?.name,
