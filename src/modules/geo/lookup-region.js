@@ -100,11 +100,14 @@ module.exports = () => (location, defaultLocation = {}) => {
         countries = findCountries(stateData.countryCode);
     }
 
-    if (states.length > 1) {
-        if (defaultCountry) {
-            countryData = exactCountry(defaultCountry);
-            stateData = states.find(state => state.countryCode === countryData.isoCode);
-        }
+    if (states.length > 1 && defaultCountry) {
+        countryData = exactCountry(defaultCountry);
+        states = states.filter(state => state.countryCode === countryData.isoCode);
+        // stateData = states
+    }
+
+    if (states.length === 1) {
+        stateData = states[0];
     }
 
 
