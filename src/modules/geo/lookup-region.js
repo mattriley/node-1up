@@ -101,9 +101,8 @@ module.exports = () => (location, defaultLocation = {}) => {
     }
 
     if (states.length > 1 && defaultCountry) {
-        countryData = exactCountry(defaultCountry);
+        countryData = defaultCountryData;
         states = states.filter(state => state.countryCode === countryData.isoCode);
-        // stateData = states
     }
 
     if (states.length === 1) {
