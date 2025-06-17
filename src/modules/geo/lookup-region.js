@@ -64,8 +64,6 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
     const states = lookupState(stateKey);
     const countries = lookupCountry(countryKey);
 
-    const inferred = new Set();
-
     if (cityKey) {
 
         if (cities.length === 0) {
@@ -75,17 +73,13 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
         if (cities.length === 1) {
             cityData = cities[0];
             stateData = exactState(cityData.stateCode, cityData.countryCode);
-            if (stateData) inferred.add('state');
             countryData = exactCountry(cityData.countryCode);
-            if (countryData) inferred.add('country');
         }
-
         if (cities.length > 1) {
             if (countryKey || defaultCountryKey) {
                 countryData = exactCountry(countryKey || defaultCountryKey);
                 cityData = cities.find(city => city.countryCode === countryData.isoCode);
                 stateData = exactState(cityData.stateCode, cityData.countryCode);
-                if (stateData) inferred.add('state');
             }
         }
     }
@@ -101,7 +95,6 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
         if (states.length === 1) {
             stateData = states[0];
             countryData = exactCountry(stateData.countryCode);
-            if (countryData) inferred.add('country');
         }
 
         if (states.length > 1) {
@@ -141,7 +134,6 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
     if (cityData) {
         if (!stateData) {
             stateData = exactState(cityData.stateCode);
-            if (stateData) inferred.add('state');
         }
     }
 
@@ -150,8 +142,7 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
         state: stateData?.name,
         'state.iso': stateData?.isoCode,
         country: countryData?.name,
-        'country.iso2': countryData?.isoCode,
-        inferred: [...inferred]
+        'country.iso2': countryData?.isoCode
     }
 
 

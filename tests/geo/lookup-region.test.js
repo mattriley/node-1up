@@ -8,8 +8,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             state: 'Australian Capital Territory',
             'state.iso': 'ACT',
             country: 'Australia',
-            'country.iso2': 'AU',
-            inferred: ['state', 'country']
+            'country.iso2': 'AU'
         };
 
         const actual = geo.lookupRegion(input);
@@ -24,8 +23,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             state: 'Victoria',
             'state.iso': 'VIC',
             country: 'Australia',
-            'country.iso2': 'AU',
-            inferred: ['country']
+            'country.iso2': 'AU'
         };
 
         const actual = geo.lookupRegion(input);
@@ -41,8 +39,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             state: 'Victoria',
             'state.iso': 'VIC',
             country: 'Australia',
-            'country.iso2': 'AU',
-            inferred: ['state']
+            'country.iso2': 'AU'
         };
 
         const actual = geo.lookupRegion(input, defaultLocation);
@@ -57,8 +54,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             state: 'Victoria',
             'state.iso': 'VIC',
             country: 'Australia',
-            'country.iso2': 'AU',
-            inferred: ['state']
+            'country.iso2': 'AU'
         };
 
         const actual = geo.lookupRegion(input);
@@ -73,8 +69,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             state: 'Australian Capital Territory',
             'state.iso': 'ACT',
             country: 'Australia',
-            'country.iso2': 'AU',
-            inferred: ['country']
+            'country.iso2': 'AU'
         };
 
         const actual = geo.lookupRegion(input);
@@ -89,8 +84,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             state: 'Victoria',
             'state.iso': 'VIC',
             country: 'Australia',
-            'country.iso2': 'AU',
-            inferred: []
+            'country.iso2': 'AU'
         };
 
         const actual = geo.lookupRegion(input);
@@ -106,8 +100,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             state: 'Victoria',
             'state.iso': 'VIC',
             country: 'Australia',
-            'country.iso2': 'AU',
-            inferred: []
+            'country.iso2': 'AU'
         };
 
         const actual = geo.lookupRegion(input, defaultLocation);
@@ -122,8 +115,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             state: undefined,
             'state.iso': undefined,
             country: 'Australia',
-            'country.iso2': 'AU',
-            inferred: []
+            'country.iso2': 'AU'
         };
 
         const actual = geo.lookupRegion(input);
