@@ -73,6 +73,11 @@ module.exports = () => ({ city, state, country, defaultCountry }) => {
         if (states.length === 1) {
             stateData = states[0];
             countryData = lookupCountry(stateData.countryCode.toLowerCase())[0];
+        } else {
+            if (defaultCountryKey) {
+                countryData = lookupCountry(defaultCountryKey)[0];
+                stateData = states.find(state => state.countryCode === countryData.isoCode);
+            }
         }
     }
 
