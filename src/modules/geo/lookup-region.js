@@ -36,6 +36,9 @@ module.exports = () => ({ city, state, country }) => {
     let countryData;
 
     const cities = lookup.city.byName[cityKey] || [];
+    const states = lookup.state.byName[stateKey] || lookup.state.byIso[stateKey] || [];
+    const countries = lookup.country.byName[countryKey] || lookup.country.byIso[countryKey] || [];
+
 
     if (cityKey) {
 
@@ -51,7 +54,6 @@ module.exports = () => ({ city, state, country }) => {
         }
     }
 
-    const states = lookup.state.byName[stateKey] || lookup.state.byIso[stateKey] || [];
 
 
     if (stateKey) {
@@ -66,12 +68,9 @@ module.exports = () => ({ city, state, country }) => {
         }
     }
 
-    if (stateData) {
-        cityData ??= cities.find(city => city.stateCode === stateData.isoCode);
-    }
+
 
     if (countryKey) {
-        const countries = lookup.country.byName[countryKey] || lookup.country.byIso[countryKey] || [];
 
         if (countries.length === 0) {
             console.warn(`County not found: ${state}`);
@@ -82,7 +81,20 @@ module.exports = () => ({ city, state, country }) => {
         }
     }
 
+    if (stateData) {
+        cityData ??= cities.find(city => city.stateCode === stateData.isoCode);
+    }
 
+    if (countryData) {
+        cityData ??= cities.find(city => city.countryCode === countryData.isoCode);
+        stateData ??= states.find(state => state.countryCode === countryData.isoCode);
+
+        if (cityData) {
+            stateData ??= lookup.state.byIso[cityData.stateCode.toLowerCase()][0];
+        }
+    }
+
+    console.warn(cityData);
 
     return {
         city: cityData?.name,
