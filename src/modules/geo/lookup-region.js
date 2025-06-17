@@ -79,6 +79,13 @@ module.exports = () => (location, defaultLocation = {}) => {
     let states = findStates(state);
     let countries = findCountries(country);
 
+
+    const filterStates = pred => {
+        states = states.filter(pred);
+        if (states.length === 1) stateData = states[0];
+    }
+
+
     if (city && cities.length === 0) {
         console.warn(`City not found: ${city}`);
         return renderResult()
@@ -102,7 +109,8 @@ module.exports = () => (location, defaultLocation = {}) => {
 
     if (states.length > 1 && defaultCountry) {
         countryData = defaultCountryData;
-        states = states.filter(state => state.countryCode === countryData.isoCode);
+        // states = states.filter(state => state.countryCode === countryData.isoCode);
+        filterStates(state => state.countryCode === countryData.isoCode);
     }
 
     if (states.length === 1) {
@@ -152,7 +160,10 @@ module.exports = () => (location, defaultLocation = {}) => {
 
 
     cityData ??= cities.find(city => city.countryCode === countryData.isoCode);
-    stateData ??= states.find(state => state.countryCode === countryData.isoCode);
+
+    filterStates(state => state.countryCode === countryData.isoCode);
+
+    // stateData ??= states.find(state => state.countryCode === countryData.isoCode);
 
     if (stateData) {
         cityData ??= cities.find(city => city.stateCode === stateData.isoCode);
