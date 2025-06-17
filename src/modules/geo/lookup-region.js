@@ -99,6 +99,7 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
         if (states.length === 1) {
             stateData = states[0];
             countryData = exactCountry(stateData.countryCode);
+            if (countryData) inferred.add('country');
         }
 
         if (states.length > 1) {
