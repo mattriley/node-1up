@@ -135,7 +135,15 @@ module.exports = () => (location, defaultLocation = {}) => {
 
     if (cities.length > 1 && defaultCountryData) {
         cities = cities.filter(city => city.countryCode === defaultCountryData.isoCode);
-        if (cities.length === 1) countryData = defaultCountryData;
+        // if (cities.length === 1) countryData = defaultCountryData;
+    }
+
+    if (cities.length === 1) {
+        cityData = cities[0];
+    }
+
+    if (cities.length === 1) {
+        countryData = exactCountry(cityData.countryCode);
     }
 
     cityData ??= cities.find(city => city.countryCode === countryData.isoCode);
