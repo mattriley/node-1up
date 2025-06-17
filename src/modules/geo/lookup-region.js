@@ -123,16 +123,6 @@ module.exports = () => (location, defaultLocation = {}) => {
         narrowStates(state => state.countryCode === countryData.isoCode);
     }
 
-    // if (states.length === 1) {
-    //     stateData = states[0];
-    // }
-
-
-    if (countries.length === 1) {
-        countryData ??= countries[0];
-    }
-
-
 
     if (countries.length === 0) {
         console.warn(`County not found: ${state}`);
