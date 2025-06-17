@@ -30,11 +30,11 @@ const lookupState = state => lookup.state.byName[state] || lookup.state.byIso[st
 const lookupCountry = country => lookup.country.byName[country] || lookup.country.byIso[country] || [];
 
 
-module.exports = () => ({ city, state, country, defaultCountry }) => {
+module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
     let cityKey = city?.trim().toLowerCase();
     let stateKey = state?.trim().toLowerCase();
     let countryKey = country?.trim().toLowerCase();
-    let defaultCountryKey = defaultCountry?.trim().toLowerCase();
+    let defaultCountryKey = defaultLocation.country?.trim().toLowerCase();
 
     let cityData;
     let stateData;
