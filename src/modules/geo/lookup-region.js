@@ -35,9 +35,10 @@ module.exports = () => ({ city, state, country }) => {
     let stateData;
     let countryData;
 
+    const cities = lookup.city.byName[cityKey] || [];
 
     if (cityKey) {
-        const cities = lookup.city.byName[cityKey] || [];
+
 
         if (cities.length === 0) {
             console.warn(`City not found: ${city}`);
@@ -73,6 +74,10 @@ module.exports = () => ({ city, state, country }) => {
         if (countries.length === 1) {
             countryData = countries[0];
         }
+    }
+
+    if (countryData) {
+        cityData = cities.find(city => city.countryCode === countryData.isoCode);
     }
 
     return {
