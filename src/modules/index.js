@@ -4,6 +4,7 @@ module.exports = {
     fsp: require('./fsp'),
     fsx: require('./fsx'),
     fun: require('./fun'),
+    geo: require('./geo'),
     obj: require('./obj'),
     path: require('./path'),
     str: require('./str')

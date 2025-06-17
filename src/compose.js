@@ -17,6 +17,7 @@ module.exports = ({ config, overrides } = {}) => {
     compose.make('fsp');
     compose.asis('any');
     compose.make('path', { arr });
+    compose.make('geo');
 
     return compose.modules;
 
