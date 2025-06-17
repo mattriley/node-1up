@@ -141,8 +141,13 @@ module.exports = () => (location, defaultLocation = {}) => {
     }
 
     if (cities.length === 1) {
-        countryData = exactCountry(cityData.countryCode);
+        countries = findCountries(cityData.countryCode);
     }
+
+    if (countries.length === 1) {
+        countryData = countries[0];
+    }
+
 
     cityData ??= cities.find(city => city.countryCode === countryData.isoCode);
     stateData ??= states.find(state => state.countryCode === countryData.isoCode);
