@@ -179,14 +179,6 @@ module.exports = () => (location, defaultLocation = {}) => {
         }
     }
 
-    return {
-        city: cityData?.name,
-        state: stateData?.name,
-        'state.iso': stateData?.isoCode,
-        country: countryData?.name,
-        'country.iso2': countryData?.isoCode
-    }
-
-
+    return renderResult();
 
 }
