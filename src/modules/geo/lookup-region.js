@@ -75,9 +75,9 @@ module.exports = () => (location, defaultLocation = {}) => {
     }
 
 
-    let cities = findCities(city);
-    let states = findStates(state);
-    let countries = findCountries(country);
+    let cities = findCities(city) ?? allCities;
+    let states = findStates(state) ?? allStates;
+    let countries = findCountries(country) ?? allCountries;
 
     const filterCities = pred => {
         cities = cities.filter(pred);
@@ -103,7 +103,8 @@ module.exports = () => (location, defaultLocation = {}) => {
 
     if (cities.length === 1) {
         cityData = cities[0];
-        states = findStates(cityData.stateCode);
+        filterStates(state => state.isoCode === cityData.stateCode);
+        // states = findStates(cityData.stateCode);
         countries = findCountries(cityData.countryCode);
     }
 
