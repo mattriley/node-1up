@@ -81,8 +81,8 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
         }
 
         if (cities.length > 1) {
-            if (defaultCountryKey) {
-                countryData = exactCountry(defaultCountryKey);
+            if (countryKey || defaultCountryKey) {
+                countryData = exactCountry(countryKey || defaultCountryKey);
                 cityData = cities.find(city => city.countryCode === countryData.isoCode);
                 stateData = exactState(cityData.stateCode, cityData.countryCode);
                 if (stateData) inferred.add('state');
