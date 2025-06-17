@@ -39,7 +39,6 @@ module.exports = () => ({ city, state, country }) => {
     const states = lookup.state.byName[stateKey] || lookup.state.byIso[stateKey] || [];
     const countries = lookup.country.byName[countryKey] || lookup.country.byIso[countryKey] || [];
 
-
     if (cityKey) {
 
 

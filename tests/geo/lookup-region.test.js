@@ -1,6 +1,6 @@
 module.exports = ({ test, assert }) => ({ geo }) => {
 
-    test('Unique city', () => {
+    test('Globally unique city', () => {
         const input = { city: 'Canberra' };
 
         const expected = {
@@ -45,7 +45,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
         assert.deepEqual(actual, expected);
     });
 
-    test('Unique state', () => {
+    test('Globally unique state', () => {
         const input = { state: 'ACT' };
 
         const expected = {
@@ -60,7 +60,22 @@ module.exports = ({ test, assert }) => ({ geo }) => {
         assert.deepEqual(actual, expected);
     });
 
-    test('Unique country', () => {
+    test('Globally non-unique state + country', () => {
+        const input = { state: 'Victoria', country: 'AU' };
+
+        const expected = {
+            city: undefined,
+            state: 'Victoria',
+            'state.iso': 'VIC',
+            country: 'Australia',
+            'country.iso2': 'AU'
+        };
+
+        const actual = geo.lookupRegion(input);
+        assert.deepEqual(actual, expected);
+    });
+
+    test('Globally unique country (countries should be inherently unique)', () => {
         const input = { country: 'AU' };
 
         const expected = {
