@@ -74,7 +74,9 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
             cityData = cities[0];
             stateData = exactState(cityData.stateCode, cityData.countryCode);
             countryData = exactCountry(cityData.countryCode);
-        } else {
+        }
+
+        if (cities.length > 1) {
             if (defaultCountryKey) {
                 countryData = exactCountry(defaultCountryKey);
                 cityData = cities.find(city => city.countryCode === countryData.isoCode);
@@ -93,7 +95,9 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
         if (states.length === 1) {
             stateData = states[0];
             countryData = exactCountry(stateData.countryCode);
-        } else {
+        }
+
+        if (states.length > 1) {
             if (defaultCountryKey) {
                 countryData = exactCountry(defaultCountryKey);
                 stateData = states.find(state => state.countryCode === countryData.isoCode);
@@ -111,7 +115,9 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
 
         if (countries.length === 1) {
             countryData = countries[0];
-        } else {
+        }
+
+        if (countries.length > 1) {
             console.warn(`Non-unique country: ${country}. This should never happen.`);
         }
     }
