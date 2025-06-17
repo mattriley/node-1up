@@ -137,8 +137,6 @@ module.exports = () => (location, defaultLocation = {}) => {
             cities = cities.filter(city => city.countryCode === defaultCountryData.isoCode);
             if (cities.length === 1) countryData = defaultCountryData;
         }
-
-
     }
 
 
@@ -150,21 +148,12 @@ module.exports = () => (location, defaultLocation = {}) => {
     cityData ??= cities.find(city => city.countryCode === countryData.isoCode);
     stateData ??= states.find(state => state.countryCode === countryData.isoCode);
 
-
-
-
     if (stateData) {
         cityData ??= cities.find(city => city.stateCode === stateData.isoCode);
     }
 
-
-
-
-
     if (cityData) {
-        if (!stateData) {
-            stateData = exactState(cityData.stateCode);
-        }
+        stateData ??= exactState(cityData.stateCode);
     }
 
     return renderResult();
