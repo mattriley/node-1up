@@ -84,17 +84,17 @@ module.exports = () => ({ city, state, country }) => {
         }
     }
 
+    if (countryData) {
+        cityData ??= cities.find(city => city.countryCode === countryData.isoCode);
+        stateData ??= states.find(state => state.countryCode === countryData.isoCode);
+    }
+
     if (stateData) {
         cityData ??= cities.find(city => city.stateCode === stateData.isoCode);
     }
 
-    if (countryData) {
-        cityData ??= cities.find(city => city.countryCode === countryData.isoCode);
-        stateData ??= states.find(state => state.countryCode === countryData.isoCode);
-
-        if (cityData) {
-            stateData ??= lookupState(cityData.stateCode.toLowerCase())[0];
-        }
+    if (cityData) {
+        stateData ??= lookupState(cityData.stateCode.toLowerCase())[0];
     }
 
     return {
