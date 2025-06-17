@@ -87,7 +87,7 @@ module.exports = () => (location, defaultLocation = {}) => {
     if (cities.length === 1) {
         cityData = cities[0];
         states = findStates(cityData.stateCode);
-        countryData = exactCountry(cityData.countryCode);
+        countries = findCountries(cityData.countryCode);
     }
 
     if (state) {
@@ -109,7 +109,9 @@ module.exports = () => (location, defaultLocation = {}) => {
         }
     }
 
-
+    if (countries.length === 1) {
+        countryData ??= countries[0];
+    }
 
     if (country) {
 
