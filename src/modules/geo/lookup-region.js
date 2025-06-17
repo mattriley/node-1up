@@ -156,9 +156,9 @@ module.exports = () => (location, defaultLocation = {}) => {
         narrowCities(city => city.countryCode === defaultCountryData.isoCode);
     }
 
-    if (cities.length === 1) {
-        cityData = cities[0];
-    }
+    // if (cities.length === 1) {
+    //     cityData = cities[0];
+    // }
 
     if (cities.length === 1) {
         countries = findCountries(cityData.countryCode);
