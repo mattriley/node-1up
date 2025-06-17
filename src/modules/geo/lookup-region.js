@@ -30,13 +30,9 @@ const findCities = city => {
     return lookup.city.byName[city] || [];
 }
 
-const findStates = (state, country) => {
+const findStates = state => {
     state = state?.toLowerCase();
-    country = country?.toLowerCase();
-    const states = lookup.state.byName[state] || lookup.state.byIso[state] || [];
-    if (!country) return states;
-    const countryData = findCountries(country)[0];
-    return states.filter(state => state.countryCode === countryData.isoCode);
+    return lookup.state.byName[state] || lookup.state.byIso[state] || [];
 };
 
 const findCountries = country => {
@@ -90,7 +86,7 @@ module.exports = () => (location, defaultLocation = {}) => {
 
     if (cities.length === 1) {
         cityData = cities[0];
-        stateData = exactState(cityData.stateCode, cityData.countryCode);
+        states = findStates(cityData.stateCode);
         countryData = exactCountry(cityData.countryCode);
     }
 
