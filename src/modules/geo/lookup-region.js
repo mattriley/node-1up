@@ -123,9 +123,9 @@ module.exports = () => (location, defaultLocation = {}) => {
         narrowStates(state => state.countryCode === countryData.isoCode);
     }
 
-    if (states.length === 1) {
-        stateData = states[0];
-    }
+    // if (states.length === 1) {
+    //     stateData = states[0];
+    // }
 
 
     if (countries.length === 1) {
