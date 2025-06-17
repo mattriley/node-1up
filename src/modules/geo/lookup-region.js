@@ -30,10 +30,11 @@ const lookupState = state => lookup.state.byName[state] || lookup.state.byIso[st
 const lookupCountry = country => lookup.country.byName[country] || lookup.country.byIso[country] || [];
 
 
-module.exports = () => ({ city, state, country }) => {
+module.exports = () => ({ city, state, country, defaultCountry }) => {
     let cityKey = city?.trim().toLowerCase();
     let stateKey = state?.trim().toLowerCase();
     let countryKey = country?.trim().toLowerCase();
+    let defaultCountryKey = defaultCountry?.trim().toLowerCase();
 
     let cityData;
     let stateData;
@@ -45,7 +46,6 @@ module.exports = () => ({ city, state, country }) => {
 
     if (cityKey) {
 
-
         if (cities.length === 0) {
             console.warn(`City not found: ${city}`);
         }
@@ -54,6 +54,11 @@ module.exports = () => ({ city, state, country }) => {
             cityData = cities[0];
             stateData = lookupState(cityData.stateCode.toLowerCase()).find(state => state.countryCode === cityData.countryCode);
             countryData = lookupCountry(cityData.countryCode.toLowerCase())[0];
+        } else {
+            if (defaultCountryKey) {
+                countryData = lookupCountry(defaultCountryKey)[0];
+                cityData = cities.find(city => city.countryCode === countryData.isoCode);
+            }
         }
     }
 
