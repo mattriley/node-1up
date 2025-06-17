@@ -76,7 +76,7 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
             countryData = exactCountry(cityData.countryCode);
         } else {
             if (defaultCountryKey) {
-                countryData = lookupCountry(defaultCountryKey)[0];
+                countryData = exactCountry(defaultCountryKey);
                 cityData = cities.find(city => city.countryCode === countryData.isoCode);
             }
         }
@@ -92,10 +92,10 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
 
         if (states.length === 1) {
             stateData = states[0];
-            countryData = lookupCountry(stateData.countryCode.toLowerCase())[0];
+            countryData = exactCountry(stateData.countryCode);
         } else {
             if (defaultCountryKey) {
-                countryData = lookupCountry(defaultCountryKey)[0];
+                countryData = exactCountry(defaultCountryKey);
                 stateData = states.find(state => state.countryCode === countryData.isoCode);
             }
         }
@@ -126,7 +126,7 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
     }
 
     if (cityData) {
-        stateData ??= lookupState(cityData.stateCode.toLowerCase())[0];
+        stateData ??= exactState(cityData.stateCode);
     }
 
     return {
