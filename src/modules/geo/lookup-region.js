@@ -119,24 +119,13 @@ module.exports = () => (location, defaultLocation = {}) => {
 
     if (states.length > 1 && defaultCountry) {
         countryData = defaultCountryData;
-        // states = states.filter(state => state.countryCode === countryData.isoCode);
         narrowStates(state => state.countryCode === countryData.isoCode);
     }
 
 
-    if (countries.length === 0) {
-        console.warn(`County not found: ${state}`);
-    }
-
     if (countries.length === 1) {
         countryData = countries[0];
     }
-
-    if (countries.length > 1) {
-        console.warn(`Non-unique country: ${country}. This should never happen.`);
-    }
-
-
 
     if (cities.length > 1 && countryData) {
         narrowCities(city => city.countryCode === countryData.isoCode);
@@ -145,10 +134,6 @@ module.exports = () => (location, defaultLocation = {}) => {
     if (cities.length > 1 && defaultCountryData) {
         narrowCities(city => city.countryCode === defaultCountryData.isoCode);
     }
-
-    // if (cities.length === 1) {
-    //     cityData = cities[0];
-    // }
 
     if (cities.length === 1) {
         countries = findCountries(cityData.countryCode);
@@ -161,7 +146,6 @@ module.exports = () => (location, defaultLocation = {}) => {
     narrowCities(city => city.countryCode === countryData.isoCode)
     narrowStates(state => state.countryCode === countryData.isoCode);
 
-    // stateData ??= states.find(state => state.countryCode === countryData.isoCode);
 
     if (stateData) {
         narrowCities(city => city.stateCode === stateData.isoCode);
