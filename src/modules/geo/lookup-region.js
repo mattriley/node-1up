@@ -48,23 +48,21 @@ const exactCountry = (country) => {
     if (countries.length === 1) return countries[0];
 }
 
+const normalise = obj => _.mapValues(obj, val => val?.trim().toLowerCase());
 
-
-module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
-    let cityKey = city?.trim().toLowerCase();
-    let stateKey = state?.trim().toLowerCase();
-    let countryKey = country?.trim().toLowerCase();
-    let defaultCountryKey = defaultLocation.country?.trim().toLowerCase();
+module.exports = () => (location, defaultLocation = {}) => {
+    const { city, state, country } = normalise(location);
+    const { country: defaultCountry } = normalise(defaultLocation);
 
     let cityData;
     let stateData;
     let countryData;
 
-    const cities = lookupCity(cityKey);
-    const states = lookupState(stateKey);
-    const countries = lookupCountry(countryKey);
+    const cities = lookupCity(city);
+    const states = lookupState(state);
+    const countries = lookupCountry(country);
 
-    if (cityKey) {
+    if (city) {
 
         if (cities.length === 0) {
             console.warn(`City not found: ${city}`);
@@ -76,8 +74,8 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
             countryData = exactCountry(cityData.countryCode);
         }
         if (cities.length > 1) {
-            if (countryKey || defaultCountryKey) {
-                countryData = exactCountry(countryKey || defaultCountryKey);
+            if (country || defaultCountry) {
+                countryData = exactCountry(country || defaultCountry);
                 cityData = cities.find(city => city.countryCode === countryData.isoCode);
                 stateData = exactState(cityData.stateCode, cityData.countryCode);
             }
@@ -86,7 +84,7 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
 
 
 
-    if (stateKey) {
+    if (state) {
 
         if (states.length === 0) {
             console.warn(`State not found: ${state}`);
@@ -98,8 +96,8 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
         }
 
         if (states.length > 1) {
-            if (defaultCountryKey) {
-                countryData = exactCountry(defaultCountryKey);
+            if (defaultCountry) {
+                countryData = exactCountry(defaultCountry);
                 stateData = states.find(state => state.countryCode === countryData.isoCode);
             }
         }
@@ -107,7 +105,7 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
 
 
 
-    if (countryKey) {
+    if (country) {
 
         if (countries.length === 0) {
             console.warn(`County not found: ${state}`);
