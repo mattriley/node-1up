@@ -45,8 +45,6 @@ const exactState = (state, country) => {
     if (states.length === 1) return states[0];
 }
 
-
-
 const exactCountry = (country) => {
     const countries = findCountries(country.toLowerCase());
     if (countries.length === 1) return countries[0];
@@ -61,101 +59,61 @@ module.exports = () => (location, defaultLocation = {}) => {
     let cityData;
     let stateData;
     let countryData;
-    const defaultCountryData = defaultCountry ? exactCountry(defaultCountry) : null;
 
+    // Get initial matches
+    const cities = findCities(city);
+    const states = findStates(state);
+    const countries = findCountries(country || defaultCountry);
 
-    const renderResult = () => {
-        return {
-            city: cityData?.name,
-            state: stateData?.name,
-            'state.iso': stateData?.isoCode,
-            country: countryData?.name,
-            'country.iso2': countryData?.isoCode
+    // Find country first (either direct or default)
+    if (countries.length > 0) {
+        countryData = countries[0];
+    }
+
+    // Find state (with country context if available)
+    if (states.length === 1) {
+        stateData = states[0];
+        countryData ??= exactCountry(stateData.countryCode);
+    } else if (states.length > 0 && countryData) {
+        const matchingState = states.find(s => s.countryCode === countryData.isoCode);
+        if (matchingState) stateData = matchingState;
+    }
+
+    // Find city (with state and country context)
+    if (cities.length === 1) {
+        cityData = cities[0];
+        stateData ??= exactState(cityData.stateCode);
+        countryData ??= exactCountry(cityData.countryCode);
+    } else if (cities.length > 0) {
+        let matchingCities = cities;
+
+        if (countryData) {
+            matchingCities = matchingCities.filter(c => c.countryCode === countryData.isoCode);
+        }
+
+        if (stateData) {
+            matchingCities = matchingCities.filter(c => c.stateCode === stateData.isoCode);
+        }
+
+        if (matchingCities.length > 0) {
+            cityData = matchingCities[0];
+            stateData ??= exactState(cityData.stateCode);
+            countryData ??= exactCountry(cityData.countryCode);
         }
     }
 
+    // Log warnings for missing data
+    if (city && !cityData) console.warn(`City not found: ${city}`);
+    if (state && !stateData) console.warn(`State not found: ${state}`);
+    if ((country || defaultCountry) && !countryData) {
+        console.warn(`Country not found: ${country || defaultCountry}`);
+    }
 
-    let cities = findCities(city) ?? allCities;
-    let states = findStates(state) ?? allStates;
-    let countries = findCountries(country) ?? allCountries;
-
-    const narrowCities = pred => {
-        cities = cities.filter(pred);
-        if (cities.length === 1) cityData = cities[0];
+    return {
+        city: cityData?.name,
+        state: stateData?.name,
+        'state.iso': stateData?.isoCode,
+        country: countryData?.name,
+        'country.iso2': countryData?.isoCode
     };
-
-
-    const narrowStates = pred => {
-        states = states.filter(pred);
-        if (states.length === 1) stateData = states[0];
-    };
-
-    const narrowCountries = pred => {
-        countries = countries.filter(pred);
-        if (countries.length === 1) countryData = countries[0];
-    };
-
-
-    if (city && cities.length === 0) {
-        console.warn(`City not found: ${city}`);
-        return renderResult()
-    }
-
-    if (cities.length === 1) {
-        cityData = cities[0];
-        narrowStates(state => state.isoCode === cityData.stateCode);
-        narrowCountries(country => country.isoCode === cityData.countryCode);
-    }
-
-
-    if (states.length === 0) {
-        console.warn(`State not found: ${state}`);
-    }
-
-    if (states.length === 1) {
-        stateData = states[0];
-        countries = findCountries(stateData.countryCode);
-    }
-
-    if (states.length > 1 && defaultCountry) {
-        countryData = defaultCountryData;
-        narrowStates(state => state.countryCode === countryData.isoCode);
-    }
-
-
-    if (countries.length === 1) {
-        countryData = countries[0];
-    }
-
-    if (cities.length > 1 && countryData) {
-        narrowCities(city => city.countryCode === countryData.isoCode);
-    }
-
-    if (cities.length > 1 && defaultCountryData) {
-        narrowCities(city => city.countryCode === defaultCountryData.isoCode);
-    }
-
-    if (cities.length === 1) {
-        countries = findCountries(cityData.countryCode);
-    }
-
-    if (countries.length === 1) {
-        countryData = countries[0];
-    }
-
-    narrowCities(city => city.countryCode === countryData.isoCode)
-    narrowStates(state => state.countryCode === countryData.isoCode);
-
-
-    if (stateData) {
-        narrowCities(city => city.stateCode === stateData.isoCode);
-    }
-
-    if (cityData) {
-        narrowStates(state => state.isoCode === cityData.stateCode);
-        stateData ??= exactState(cityData.stateCode);
-    }
-
-    return renderResult();
-
-}
+};
