@@ -84,6 +84,8 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
             if (defaultCountryKey) {
                 countryData = exactCountry(defaultCountryKey);
                 cityData = cities.find(city => city.countryCode === countryData.isoCode);
+                stateData = exactState(cityData.stateCode, cityData.countryCode);
+                if (stateData) inferred.add('state');
             }
         }
     }
@@ -137,7 +139,10 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
     }
 
     if (cityData) {
-        stateData ??= exactState(cityData.stateCode);
+        if (!stateData) {
+            stateData = exactState(cityData.stateCode);
+            if (stateData) inferred.add('state');
+        }
     }
 
     return {

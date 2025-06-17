@@ -42,7 +42,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             'state.iso': 'VIC',
             country: 'Australia',
             'country.iso2': 'AU',
-            inferred: []
+            inferred: ['state']
         };
 
         const actual = geo.lookupRegion(input, defaultLocation);
@@ -58,7 +58,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             'state.iso': 'VIC',
             country: 'Australia',
             'country.iso2': 'AU',
-            inferred: []
+            inferred: ['state']
         };
 
         const actual = geo.lookupRegion(input);
