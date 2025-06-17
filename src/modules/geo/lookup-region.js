@@ -97,7 +97,7 @@ module.exports = () => (location, defaultLocation = {}) => {
 
     if (states.length === 1) {
         stateData = states[0];
-        countryData = exactCountry(stateData.countryCode);
+        countries = findCountries(stateData.countryCode);
     }
 
     if (states.length > 1) {
