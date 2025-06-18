@@ -174,8 +174,8 @@ module.exports = ({ arr }) => location => {
                 { // BEGIN: STATE IS KNOWN
                     if (state) {
                         const [city] = arr.findOne(cities, city => city.stateCode === state.isoCode);
-                        if (city) {
-                            const [country] = findCountries(city.countryCode);
+                        const [country] = city ? findCountries(city.countryCode) : [];
+                        if (city && country) {
                             return result(city, state, country, ['city', 'state']);
                         }
                     }
