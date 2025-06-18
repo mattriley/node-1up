@@ -6,10 +6,10 @@ const allStates = State.getAllStates();
 const allCities = City.getAllCities();
 
 const hk = allStates.find(s => s.name === 'Hong Kong SAR');
-allStates.push({ ...hk, name: 'Hong Kong' });
+hk.name = 'Hong Kong';
 
 const mo = allStates.find(s => s.name === 'Macau SAR');
-allStates.push({ ...mo, name: 'Macau' });
+mo.name = 'Macau';
 
 const lookup = {
     country: {
@@ -121,6 +121,8 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
 
     if (stateKey) {
 
+        console.warn(states)
+
         if (states.length === 0) {
             console.warn(`State not found: ${state}`);
         }
@@ -131,6 +133,12 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
         }
 
         if (states.length > 1) {
+            if (countryData) {
+                findStates(state => state.countryCode === countryData.isoCode);
+            }
+
+            console.warn({ stateData, countryData })
+
             if (defaultCountryKey) {
                 stateData = states.find(state => state.countryCode === defaultCountryData.isoCode);
                 if (stateData) findCountries(defaultCountryData.isoCode);

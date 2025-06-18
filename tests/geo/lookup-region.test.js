@@ -196,4 +196,20 @@ module.exports = ({ test, assert }) => ({ geo }) => {
         assert.deepEqual(actual, expected);
     });
 
+    test('(none), HK, CN', () => {
+        const location = { country: 'CN', state: 'HK' };
+        const defaultLocation = { country: 'AU' };
+
+        const expected = {
+            'country.iso2': 'CN',
+            'state.iso': 'HK',
+            city: undefined,
+            country: 'China',
+            state: 'Hong Kong'
+        }
+
+        const actual = geo.lookupRegion(location, defaultLocation);
+        assert.deepEqual(actual, expected);
+    });
+
 };
