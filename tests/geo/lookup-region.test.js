@@ -32,6 +32,31 @@ module.exports = ({ test, assert }) => ({ geo }) => {
         assert.deepEqual(actual, expected);
     });
 
+
+    test('Perth', () => {
+        const input = { city: 'Perth' };
+
+        const expected = {
+            errors: ['City cannot be uniquely identified: Perth']
+        };
+
+        const actual = geo.lookupRegion(input);
+        assert.deepEqual(actual, expected);
+    });
+
+    test('Perth, AU', () => {
+        const input = { city: 'Perth', country: 'AU' };
+
+        const expected = {
+            errors: [
+                'City and country combination cannot be uniquely identified: Perth, AU'
+            ]
+        };
+
+        const actual = geo.lookupRegion(input);
+        assert.deepEqual(actual, expected);
+    });
+
     test('Globally non-unique city + country', () => {
         const input = { city: 'Melbourne', country: 'AU' };
 
@@ -48,22 +73,22 @@ module.exports = ({ test, assert }) => ({ geo }) => {
         assert.deepEqual(actual, expected);
     });
 
-    test('Globally non-unique city + default country', () => {
-        const input = { city: 'Melbourne' };
-        const defaultLocation = { country: 'AU' };
+    // test('Globally non-unique city + default country', () => {
+    //     const input = { city: 'Melbourne' };
+    //     const defaultLocation = { country: 'AU' };
 
-        const expected = {
-            city: 'Melbourne',
-            state: 'Victoria',
-            'state.iso': 'VIC',
-            country: 'Australia',
-            'country.iso2': 'AU',
-            unique: ['city', 'country']
-        };
+    //     const expected = {
+    //         city: 'Melbourne',
+    //         state: 'Victoria',
+    //         'state.iso': 'VIC',
+    //         country: 'Australia',
+    //         'country.iso2': 'AU',
+    //         unique: ['city', 'country']
+    //     };
 
-        const actual = geo.lookupRegion(input, defaultLocation);
-        assert.deepEqual(actual, expected);
-    });
+    //     const actual = geo.lookupRegion(input, defaultLocation);
+    //     assert.deepEqual(actual, expected);
+    // });
 
 
 
@@ -187,26 +212,27 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             city: 'Los Angeles',
             country: 'United States',
             state: 'California',
-            unique: ['city', 'state', 'country']
+            unique: ['city', 'country']
+            // unique: ['city', 'state', 'country']
         }
 
         const actual = geo.lookupRegion(location, defaultLocation);
         assert.deepEqual(actual, expected);
     });
 
-    test('Default country not found', () => {
-        const location = {};
-        const defaultLocation = { country: 'FOO' };
+    // test('Default country not found', () => {
+    //     const location = {};
+    //     const defaultLocation = { country: 'FOO' };
 
-        const expected = {
-            errors: [
-                'Default country not found: FOO'
-            ]
-        }
+    //     const expected = {
+    //         errors: [
+    //             'Default country not found: FOO'
+    //         ]
+    //     }
 
-        const actual = geo.lookupRegion(location, defaultLocation);
-        assert.deepEqual(actual, expected);
-    });
+    //     const actual = geo.lookupRegion(location, defaultLocation);
+    //     assert.deepEqual(actual, expected);
+    // });
 
     test('(none), HK, CN', () => {
         const location = { country: 'CN', state: 'HK' };

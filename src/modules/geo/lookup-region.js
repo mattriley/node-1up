@@ -106,54 +106,146 @@ module.exports = () => {
                 return result(city, state, country, ['city']);
             }
 
+
             // CITY IS AMBIGUOUS
             if (cities) {
-                if (stateKey) {
-                    const { state, states } = findStates(stateKey);
-                    if (state) {
-                        const { city } = findCities(city => city.stateCode === state.isoCode, cities);
-                        if (city) {
-                            const { country } = findCountries(city.countryCode);
-                            return result(city, state, country, ['city', 'state']);
+
+
+                const byCountry = () => {
+
+                    if (countryKey) {
+                        const { country } = findCountries(countryKey);
+
+                        if (cityKey) {
+                            const { city, cities } = findCities(cityKey);
+                            if (city) {
+                                const { state, states } = findStates(city.stateCode);
+                                if (state) {
+                                    return result(city, state, country, ['city', 'country']);
+                                }
+                                if (states) {
+                                    const { state } = findStates(state => state.countryCode === country.isoCode, states);
+                                    return result(city, state, country, ['city', 'country']);
+                                }
+
+                            }
+                            if (cities) {
+
+                                const statesOfCountry = allStates.filter(state => state.countryCode === country.isoCode);
+
+
+                                const cities2 = cities.filter(city => statesOfCountry.filter(state => state.isoCode === city.stateCode).length === 1);
+
+                                if (cities2.length > 1) {
+                                    return { errors: [`City and country combination cannot be uniquely identified: ${location.city}, ${location.country}`] }
+                                }
+
+                                if (cities2.length === 1) {
+                                    const city = cities2[0];
+                                    const state = statesOfCountry.find(state => state.isoCode === city.stateCode);
+                                    return result(city, state, country, ['city', 'country']);
+                                }
+
+
+                            }
+
+
+
+                        }
+
+
+
+
+                        return { errors: [`City and country combination cannot be uniquely identified: ${location.city}, ${location.country}`] }
+                    }
+
+                    if (stateKey) {
+                        const { state, states } = findStates(stateKey);
+                        // we have states and cities
+
+                        const cities2 = states ? cities?.filter(city => states.filter(state => state.isoCode === city.stateCode).length === 1) : [];
+                        const states2 = cities ? states?.filter(state => cities.filter(city => city.stateCode === state.isoCode).length === 1) : [];
+
+                        if (cities2?.length !== 1 && states2?.length !== 1) {
+                            return { errors: [`City and state combination cannot be uniquely identified: ${location.city}, ${location.state}`] }
                         }
                     }
 
-                    // STATE IS AMBIGUOUS
-                    if (states) {
-                        if (countryKey) {
-                            const { country } = findCountries(countryKey);
 
-                            if (country) {
-                                const { state } = findStates(state => state.countryCode === country.isoCode, states);
-                                if (state) {
-                                    const { city } = findCities(city => city.stateCode === state.isoCode, cities);
+                    return { errors: [`City cannot be uniquely identified: ${location.city}`] }
+                }
 
-                                    if (city) {
-                                        return result(city, state, country, ['city', 'state', 'country']);
-                                    }
-                                }
+
+                const byState = () => {
+                    if (stateKey) {
+                        const { state, states } = findStates(stateKey);
+                        if (state) {
+                            const { city } = findCities(city => city.stateCode === state.isoCode, cities);
+                            if (city) {
+                                const { country } = findCountries(city.countryCode);
+                                return result(city, state, country, ['city', 'state']);
                             }
                         }
-                        return { errors: [`City and state combination cannot be uniquely identified: ${location.city}, ${location.state}`] }
-                    }
-                }
-                if (countryKey) {
-                    const { country } = findCountries(countryKey);
-                    const { city } = findCities(city => city.countryCode === country.isoCode, cities);
-                    if (city) {
-                        const { state, states } = findStates(city.stateCode);
-                        if (state) {
-                            return result(city, state, country, ['city', 'country']);
-                        }
+
+
+
+                        // STATE IS AMBIGUOUS
                         if (states) {
-                            const { state } = findStates(state => state.countryCode === country.isoCode, states);
-                            return result(city, state, country, ['city', 'country']);
+                            if (countryKey) {
+                                const { country } = findCountries(countryKey);
+
+                                if (country) {
+                                    const { state } = findStates(state => state.countryCode === country.isoCode, states);
+                                    if (state) {
+                                        const { city } = findCities(city => city.stateCode === state.isoCode, cities);
+
+                                        if (city) {
+                                            return result(city, state, country, ['city', 'state', 'country']);
+                                        }
+                                    }
+                                }
+
+                                // if (country) {
+                                //     const { state } = findStates(state => state.countryCode === country.isoCode, states);
+                                //     if (state) {
+                                //         const { city } = findCities(city => city.stateCode === state.isoCode, cities);
+
+                                //         if (city) {
+                                //             return result(city, state, country, ['city', 'state', 'country']);
+                                //         }
+                                //     }
+                                // }
+                            }
+                            return { errors: [`City and state combination cannot be uniquely identified: ${location.city}, ${location.state}`] }
                         }
                     }
-                    return { errors: [`City and country combination cannot be uniquely identified: ${location.city}, ${location.country}`] }
                 }
-                return { errors: [`City cannot be uniquely identified: ${location.city}`] }
+
+                const getResult = () => {
+                    const countryResult = byCountry();
+                    const stateResult = byState();
+
+                    // console.warn({ countryResult, stateResult })
+
+                    if (countryResult && stateResult) {
+                        if (!countryResult.errors && stateResult.errors) {
+                            const sorted = _.sortBy([countryResult, stateResult], res => res.unique.length);
+                            return sorted[0];
+                        }
+                    }
+
+                    if (countryResult && !countryResult.errors) return countryResult;
+                    if (!stateResult && countryResult) return countryResult;
+                    if (stateResult && stateResult.errors) return countryResult;
+                    if (stateResult) return stateResult;
+                }
+
+                const res = getResult();
+                // console.warn({ res })
+                return res;
+
             }
+
         }
 
         if (stateKey) {
@@ -190,11 +282,12 @@ module.exports = () => {
 
     return (location, defaultLocation) => {
         const res = lookupRegion(location, defaultLocation);
-        if (res.errors) {
-            const res2 = lookupRegion({ ...location, ...defaultLocation });
-            return res2.errors ? res : res2;
-        }
         return res;
+        // if (res.errors) {
+        //     const res2 = lookupRegion({ ...location, ...defaultLocation });
+        //     return res2.errors ? res : res2;
+        // }
+        // return res;
     }
 
 }
