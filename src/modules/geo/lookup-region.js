@@ -182,18 +182,12 @@ module.exports = ({ arr }) => location => {
                 } // END
 
                 { // BEGIN: STATE IS AMBIGUOUS
-                    if (states) {
-                        if (countryKey) {
-                            const { country } = findCountries(countryKey);
-                            if (country) {
-                                const [state] = arr.findOne(states, state => state.countryCode === country.isoCode);
-                                if (state) {
-                                    const [city] = arr.findOne(cities, city => city.stateCode === state.isoCode);
-                                    if (city) {
-                                        return result(city, state, country, ['city', 'state', 'country']);
-                                    }
-                                }
-                            }
+                    if (states && countryKey) {
+                        const { country } = findCountries(countryKey);
+                        const [state] = country ? arr.findOne(states, state => state.countryCode === country.isoCode) : [];
+                        const [city] = state ? arr.findOne(cities, city => city.stateCode === state.isoCode) : [];
+                        if (city && state && country) {
+                            return result(city, state, country, ['city', 'state', 'country']);
                         }
                     }
                 } // END
