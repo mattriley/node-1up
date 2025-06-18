@@ -62,8 +62,8 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
         return countries;
     }
 
-    const exactState = (state, country) => {
-        const states = findStates(state, country);
+    const exactState = state => {
+        const states = findStates(state);
         if (states.length === 1) return states[0];
     }
 
@@ -80,7 +80,7 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
 
 
     if (cityData) {
-        stateData = exactState(cityData.stateCode, cityData.countryCode);
+        stateData = exactState(cityData.stateCode);
         countryData = exactCountry(cityData.countryCode);
     }
 
