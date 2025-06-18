@@ -67,21 +67,21 @@ module.exports = ({ test, assert }) => ({ geo }) => {
 
 
 
-    // test('Globally unique state', () => {
-    //     const input = { state: 'ACT' };
+    test('Globally unique state', () => {
+        const input = { state: 'ACT' };
 
-    //     const expected = {
-    //         city: undefined,
-    //         state: 'Australian Capital Territory',
-    //         'state.iso': 'ACT',
-    //         country: 'Australia',
-    //         'country.iso2': 'AU',
-    //         unique: []
-    //     };
+        const expected = {
+            city: undefined,
+            state: 'Australian Capital Territory',
+            'state.iso': 'ACT',
+            country: 'Australia',
+            'country.iso2': 'AU',
+            unique: ['state']
+        };
 
-    //     const actual = geo.lookupRegion(input);
-    //     assert.deepEqual(actual, expected);
-    // });
+        const actual = geo.lookupRegion(input);
+        assert.deepEqual(actual, expected);
+    });
 
     // test('Globally non-unique state + country', () => {
     //     const input = { state: 'Victoria', country: 'AU' };
