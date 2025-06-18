@@ -25,7 +25,7 @@ const lookup = {
     }
 };
 
-module.exports = () => location => {
+module.exports = ({ arr }) => location => {
 
 
     const findCities = (cityKey, cityList = allCities) => {
@@ -172,7 +172,10 @@ module.exports = () => location => {
                 if (stateKey) {
                     const { state, states } = findStates(stateKey);
                     if (state) {
-                        const { city } = findCities(city => city.stateCode === state.isoCode, cities);
+                        // const { city } = findCities(city => city.stateCode === state.isoCode, cities);
+                        const [city] = arr.findOne(cities, city => city.stateCode === state.isoCode);
+
+                        // const city = cities.filter(city => city.stateCode === state.isoCode);
                         if (city) {
                             const { country } = findCountries(city.countryCode);
                             return result(city, state, country, ['city', 'state']);
