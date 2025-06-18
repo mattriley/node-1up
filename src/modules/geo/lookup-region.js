@@ -56,9 +56,8 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
 
     const findCountries = country => {
         country = country?.toLowerCase();
-        const countries = lookup.country.byName[country] || lookup.country.byIso[country] || [];
+        countries = lookup.country.byName[country] || lookup.country.byIso[country] || [];
         if (countries.length === 1) countryData = countries[0];
-        return countries;
     }
 
     const exactCountry = (country) => {
@@ -71,24 +70,36 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
     findCities(cityKey);
 
     let states = findStates(stateKey);
-    let countries = findCountries(countryKey);
 
+    let countries;
+    findCountries(countryKey);
 
+    const defaultCountries = defaultCountryKey ? lookup.country.byName[defaultCountryKey] || lookup.country.byIso[defaultCountryKey] || [] : [];
+    const defaultCountryData = defaultCountries[0];
+    if (defaultCountryKey && !defaultCountryData) {
+        return { errors: [`Default country not found: ${defaultLocation.country}`] }
+    }
 
     if (cityData) {
         states = findStates(cityData.stateCode);
-        countries = findCountries(cityData.countryCode);
+        findCountries(cityData.countryCode);
     }
 
     if (cities.length > 1) {
 
-        if ((countryKey || defaultCountryKey)) {
-            countries = findCountries(countryKey || defaultCountryKey);
+        if (countryKey) {
+            findCountries(countryKey);
             cityData = cities.find(city => city.countryCode === countryData.isoCode);
             if (cityData) {
                 states = findStates(cityData.stateCode);
-                console.warn(states);
-                console.warn(stateData);
+            }
+        }
+
+        if (!cityData && defaultCountryKey) {
+            cityData = cities.find(city => city.countryCode === defaultCountryData.isoCode);
+            if (cityData) {
+                findCountries(defaultCountryKey);
+                states = findStates(cityData.stateCode);
             }
         }
 
@@ -111,13 +122,14 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
 
         if (states.length === 1) {
             stateData = states[0];
-            countries = findCountries(stateData.countryCode);
+            findCountries(stateData.countryCode);
         }
 
         if (states.length > 1) {
             if (defaultCountryKey) {
-                countryData = exactCountry(defaultCountryKey);
-                stateData = states.find(state => state.countryCode === countryData.isoCode);
+                // countryData = exactCountry(defaultCountryKey);
+                stateData = states.find(state => state.countryCode === defaultCountryData.isoCode);
+                if (stateData) findCountries(defaultCountryData.isoCode);
             }
 
             if (!cityData && cityKey && !stateData && stateKey && !countryKey) {

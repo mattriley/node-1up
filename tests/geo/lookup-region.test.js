@@ -182,4 +182,18 @@ module.exports = ({ test, assert }) => ({ geo }) => {
         assert.deepEqual(actual, expected);
     });
 
+    test('Default country not found', () => {
+        const location = {};
+        const defaultLocation = { country: 'FOO' };
+
+        const expected = {
+            errors: [
+                'Default country not found: FOO'
+            ]
+        }
+
+        const actual = geo.lookupRegion(location, defaultLocation);
+        assert.deepEqual(actual, expected);
+    });
+
 };
