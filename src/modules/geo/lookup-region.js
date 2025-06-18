@@ -62,11 +62,6 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
         return countries;
     }
 
-    const exactState = state => {
-        const states = findStates(state);
-        if (states.length === 1) return states[0];
-    }
-
     const exactCountry = (country) => {
         const countries = findCountries(country.toLowerCase());
         if (countries.length === 1) return countries[0];
@@ -87,7 +82,7 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
     if (cities.length > 1) {
 
         if ((countryKey || defaultCountryKey)) {
-            countryData = exactCountry(countryKey || defaultCountryKey);
+            countries = findCountries(countryKey || defaultCountryKey);
             cityData = cities.find(city => city.countryCode === countryData.isoCode);
             if (cityData) {
                 states = findStates(cityData.stateCode);
@@ -115,7 +110,7 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
 
         if (states.length === 1) {
             stateData = states[0];
-            countryData = exactCountry(stateData.countryCode);
+            countries = findCountries(stateData.countryCode);
         }
 
         if (states.length > 1) {
