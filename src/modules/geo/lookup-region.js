@@ -147,14 +147,6 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
 
     if (countryKey) {
 
-        if (countries.length === 0) {
-            console.warn(`County not found: ${state}`);
-        }
-
-        if (countries.length === 1) {
-            countryData = countries[0];
-        }
-
         if (countries.length > 1) {
             console.warn(`Non-unique country: ${country}. This should never happen.`);
         }
