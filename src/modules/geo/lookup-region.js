@@ -90,6 +90,8 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
         findCountries(cityData.countryCode);
     }
 
+    console.warn({ cities, countries })
+
     if (cities.length > 1) {
 
         if (countryKey) {
@@ -145,7 +147,7 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
             }
 
             if (!cityData && cityKey && !stateData && stateKey && !countryKey) {
-                return { errors: [`City and state cannot be uniquely identified: ${city}, ${state}`] }
+                return { errors: [`City and state combination cannot be uniquely identified: ${city}, ${state}`] }
             }
 
         }
@@ -175,6 +177,11 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
             findStates(cityData.stateCode);
         }
     }
+
+    if (cityKey && !cityData && countryKey) {
+        return { errors: [`City and country combination cannot be uniquely identified: ${city}, ${country}`] }
+    }
+
 
     return {
         city: cityData?.name,
