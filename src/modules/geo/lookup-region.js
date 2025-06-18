@@ -25,62 +25,54 @@ const lookup = {
     }
 };
 
+
+const findCities = (cityKey) => {
+    cityKey = cityKey?.toLowerCase();
+    const cities = lookup.city.byName[cityKey] || [];
+    return [
+        cities.length === 1 ? cities[0] : null,
+        cities.length > 1 ? cities : null
+    ];
+}
+
+
+const findStates = (stateKey) => {
+    stateKey = stateKey?.toLowerCase();
+    const states = lookup.state.byName[stateKey] || lookup.state.byIso[stateKey] || [];
+    return [
+        states.length === 1 ? states[0] : null,
+        states.length > 1 ? states : null
+    ];
+};
+
+
+
+const findCountries = countryKey => {
+    countryKey = countryKey?.toLowerCase();
+    const countries = lookup.country.byName[countryKey] || lookup.country.byIso[countryKey] || [];
+    return [
+        countries.length === 1 ? countries[0] : null,
+        countries.length > 1 ? countries : null
+    ];
+}
+
+const result = (cityData, stateData, countryData, unique) => {
+    return {
+        city: cityData?.name,
+        state: stateData?.name,
+        'state.iso': stateData?.isoCode,
+        country: countryData?.name,
+        'country.iso2': countryData?.isoCode,
+        unique
+    }
+}
+
+
 module.exports = ({ arr }) => location => {
 
-
-    const findCities = (cityKey) => {
-        let resultCities = [];
-
-        cityKey = cityKey?.toLowerCase();
-        resultCities = lookup.city.byName[cityKey] || [];
-
-        return [
-            resultCities.length === 1 ? resultCities[0] : null,
-            resultCities.length > 1 ? resultCities : null
-        ];
-    }
-
-
-    const findStates = (stateKey) => {
-        let resultStates = [];
-
-        stateKey = stateKey?.toLowerCase();
-        resultStates = lookup.state.byName[stateKey] || lookup.state.byIso[stateKey] || [];
-        return [
-            resultStates.length === 1 ? resultStates[0] : null,
-            resultStates.length > 1 ? resultStates : null
-        ];
-    };
-
-
-
-    const findCountries = countryKey => {
-        countryKey = countryKey?.toLowerCase();
-        const resultCountries = lookup.country.byName[countryKey] || lookup.country.byIso[countryKey] || [];
-        return [
-            resultCountries.length === 1 ? resultCountries[0] : null,
-            resultCountries.length > 1 ? resultCountries : null
-        ];
-    }
-
-    let cityKey = location.city?.trim().toLowerCase();
-    let stateKey = location.state?.trim().toLowerCase();
-    let countryKey = location.country?.trim().toLowerCase();
-
-
-    const result = (cityData, stateData, countryData, unique) => {
-        return {
-            city: cityData?.name,
-            state: stateData?.name,
-            'state.iso': stateData?.isoCode,
-            country: countryData?.name,
-            'country.iso2': countryData?.isoCode,
-            unique
-        }
-    }
-
-
-
+    const cityKey = location.city?.trim().toLowerCase();
+    const stateKey = location.state?.trim().toLowerCase();
+    const countryKey = location.country?.trim().toLowerCase();
 
     // CITY
 
