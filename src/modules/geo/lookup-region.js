@@ -76,13 +76,24 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
             countryData = exactCountry(cityData.countryCode);
         }
         if (cities.length > 1) {
+
+
             if (countryKey || defaultCountryKey) {
                 countryData = exactCountry(countryKey || defaultCountryKey);
                 cityData = cities.find(city => city.countryCode === countryData.isoCode);
-                stateData = exactState(cityData.stateCode, cityData.countryCode);
+                if (cityData) stateData = exactState(cityData.stateCode, cityData.countryCode);
             }
+
+            if (!cityData && cityKey && !stateKey && !countryKey) {
+                return { errors: [`City cannot be uniquely identified: ${city}`] }
+            }
+
         }
     }
+
+
+
+
 
 
 
