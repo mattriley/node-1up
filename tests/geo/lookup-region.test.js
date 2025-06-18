@@ -225,18 +225,18 @@ module.exports = ({ test, assert }) => ({ geo }) => {
         assert.deepEqual(actual, expected);
     });
 
-    // test('Houston, (none), US', () => {
-    //     const location = { country: 'US', city: 'Houston' };
-    //     const defaultLocation = { country: 'AU' };
+    test('Houston, (none), US', () => {
+        const location = { country: 'US', city: 'Houston' };
+        const defaultLocation = { country: 'AU' };
 
-    //     const expected = {
-    //         errors: [
-    //             'City and country combination cannot be uniquely identified: Houston, US'
-    //         ]
-    //     }
+        const expected = {
+            errors: [
+                'City and country combination cannot be uniquely identified: Houston, US'
+            ]
+        }
 
-    //     const actual = geo.lookupRegion(location, defaultLocation);
-    //     assert.deepEqual(actual, expected);
-    // });
+        const actual = geo.lookupRegion(location, defaultLocation);
+        assert.deepEqual(actual, expected);
+    });
 
 };
