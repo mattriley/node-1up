@@ -41,9 +41,8 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
 
     const findCities = city => {
         city = city?.toLowerCase();
-        const cities = lookup.city.byName[city] || [];
+        cities = lookup.city.byName[city] || [];
         if (cities.length === 1) cityData = cities[0];
-        return cities;
     }
 
     const findStates = state => {
@@ -68,7 +67,9 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
     }
 
 
-    let cities = findCities(cityKey);
+    let cities;
+    findCities(cityKey);
+
     let states = findStates(stateKey);
     let countries = findCountries(countryKey);
 
