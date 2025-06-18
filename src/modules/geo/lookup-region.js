@@ -39,15 +39,17 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
 
 
 
-    const findCities = city => {
-        if (typeof (city) === 'function') {
-            cities = cities.filter(city);
+    const findCities = cityKey => {
+        if (typeof (cityKey) === 'function') {
+            cities = cities.filter(cityKey);
         } else {
-            city = city?.toLowerCase();
-            cities = lookup.city.byName[city] || [];
+            cityKey = cityKey?.toLowerCase();
+            cities = lookup.city.byName[cityKey] || [];
         }
         if (cities.length === 1) cityData = cities[0];
+        return { cities, city: cityData };
     }
+
 
     const findStates = state => {
         if (typeof (state) === 'function') {
@@ -57,7 +59,7 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
             states = lookup.state.byName[state] || lookup.state.byIso[state] || [];
         }
         if (states.length === 1) stateData = states[0];
-        return states;
+        return { states, state: stateData };
     };
 
 
@@ -66,6 +68,7 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
         country = country?.toLowerCase();
         countries = lookup.country.byName[country] || lookup.country.byIso[country] || [];
         if (countries.length === 1) countryData = countries[0];
+        return { countries, country: countryData };
     }
 
     let unique = [];
@@ -75,6 +78,42 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
     let states;
     let countries;
 
+    const result = (cityData, stateData, countryData, unique) => {
+        return {
+            city: cityData?.name,
+            state: stateData?.name,
+            'state.iso': stateData?.isoCode,
+            country: countryData?.name,
+            'country.iso2': countryData?.isoCode,
+            unique
+        }
+    }
+
+
+
+
+    // CITY
+
+    {
+        const { cities, city } = findCities(cityKey);
+
+        if (city) {
+            const { state } = findStates(city.stateCode);
+            const { country } = findCountries(city.countryCode);
+            return result(city, state, country, ['city']);
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
 
 
     // CITY
@@ -83,10 +122,11 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
 
     if (cityData) {
         findStates(cityData.stateCode);
+
         findCountries(cityData.countryCode);
-        if (cityData && stateData && countryData && unique.length === 0) {
-            unique = ['city'];
-        }
+        // if (cityData && stateData && countryData && unique.length === 0) {
+        //     unique = ['city'];
+        // }
     }
 
     // CITY+STATE
