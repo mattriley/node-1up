@@ -160,22 +160,22 @@ module.exports = ({ test, assert }) => ({ geo }) => {
         assert.deepEqual(actual, expected);
     });
 
-    // test('Los Angeles, (missing), US', () => {
-    //     const location = { city: 'Los Angeles', country: 'US' };
-    //     const defaultLocation = { country: 'AU' };
+    test('Los Angeles, (missing), US', () => {
+        const location = { city: 'Los Angeles', country: 'US' };
+        const defaultLocation = { country: 'AU' };
 
-    //     const expected = {
-    //         'country.iso2': 'US',
-    //         'state.iso': 'CA',
-    //         city: 'Los Angeles',
-    //         country: 'United States',
-    //         state: 'California',
-    //         unique: []
-    //     }
+        const expected = {
+            'country.iso2': 'US',
+            'state.iso': 'CA',
+            city: 'Los Angeles',
+            country: 'United States',
+            state: 'California',
+            unique: ['city', 'country']
+        }
 
-    //     const actual = geo.lookupRegion(location, defaultLocation);
-    //     assert.deepEqual(actual, expected);
-    // });
+        const actual = geo.lookupRegion(location, defaultLocation);
+        assert.deepEqual(actual, expected);
+    });
 
     // test('Los Angeles, CA, US', () => {
     //     const location = { city: 'Los Angeles', country: 'US', state: 'CA' };
