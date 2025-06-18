@@ -51,10 +51,10 @@ module.exports = ({ arr }) => location => {
             stateKey = stateKey?.toLowerCase();
             resultStates = lookup.state.byName[stateKey] || lookup.state.byIso[stateKey] || [];
         }
-        return {
-            states: resultStates.length > 1 ? resultStates : null,
-            state: resultStates.length === 1 ? resultStates[0] : null
-        };
+        return [
+            resultStates.length === 1 ? resultStates[0] : null,
+            resultStates.length > 1 ? resultStates : null
+        ];
     };
 
 
@@ -93,7 +93,7 @@ module.exports = ({ arr }) => location => {
     if (cityKey) {
         const [city, cities] = findCities(cityKey);
         if (city) {
-            const { state } = findStates(city.stateCode);
+            const [state] = findStates(city.stateCode);
             const [country] = findCountries(city.countryCode);
             return result(city, state, country, ['city']);
         }
@@ -111,12 +111,12 @@ module.exports = ({ arr }) => location => {
                     if (cityKey) {
                         const [city, cities] = findCities(cityKey);
                         if (city) {
-                            const { state, states } = findStates(city.stateCode);
+                            const [state, states] = findStates(city.stateCode);
                             if (state) {
                                 return result(city, state, country, ['city', 'country']);
                             }
                             if (states) {
-                                const { state } = findStates(state => state.countryCode === country.isoCode, states);
+                                const [state] = findStates(state => state.countryCode === country.isoCode, states);
                                 return result(city, state, country, ['city', 'country']);
                             }
 
@@ -152,7 +152,7 @@ module.exports = ({ arr }) => location => {
                 }
 
                 if (stateKey) {
-                    const { state, states } = findStates(stateKey);
+                    const [, states] = findStates(stateKey);
                     // we have states and cities
 
                     const cities2 = states ? cities?.filter(city => states.filter(state => state.isoCode === city.stateCode).length === 1) : [];
@@ -169,7 +169,7 @@ module.exports = ({ arr }) => location => {
 
 
             const byState = (stateKey) => {
-                const { state, states } = findStates(stateKey);
+                const [state, states] = findStates(stateKey);
 
                 { // BEGIN: STATE IS KNOWN
                     if (state) {
@@ -221,7 +221,7 @@ module.exports = ({ arr }) => location => {
     }
 
     if (stateKey) {
-        const { state, states } = findStates(stateKey);
+        const [state, states] = findStates(stateKey);
         if (state) {
             const [country] = findCountries(state.countryCode);
             return result(null, state, country, ['state'])
@@ -229,7 +229,7 @@ module.exports = ({ arr }) => location => {
         if (states) {
             if (countryKey) {
                 const [country] = findCountries(countryKey);
-                const { state } = findStates(state => state.countryCode === country.isoCode, states);
+                const [state] = findStates(state => state.countryCode === country.isoCode, states);
                 if (state) {
                     return result(null, state, country, ['state', 'country']);
                 }
