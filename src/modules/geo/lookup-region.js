@@ -113,6 +113,7 @@ module.exports = () => (location, defaultLocation = {}) => {
                     const { country } = findCountries(city.countryCode);
                     return result(city, state, country, ['city', 'state']);
                 }
+                return { errors: [`City and state combination cannot be uniquely identified: ${location.city}, ${location.state}`] }
             }
             if (countryKey) {
                 const { country } = findCountries(countryKey);
