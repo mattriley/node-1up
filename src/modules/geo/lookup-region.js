@@ -28,14 +28,12 @@ const lookup = {
 module.exports = ({ arr }) => location => {
 
 
-    const findCities = (cityKey, cityList = allCities) => {
+    const findCities = (cityKey) => {
         let resultCities = [];
-        if (typeof (cityKey) === 'function') {
-            resultCities = cityList.filter(cityKey);
-        } else {
-            cityKey = cityKey?.toLowerCase();
-            resultCities = lookup.city.byName[cityKey] || [];
-        }
+
+        cityKey = cityKey?.toLowerCase();
+        resultCities = lookup.city.byName[cityKey] || [];
+
         return [
             resultCities.length === 1 ? resultCities[0] : null,
             resultCities.length > 1 ? resultCities : null
@@ -43,14 +41,11 @@ module.exports = ({ arr }) => location => {
     }
 
 
-    const findStates = (stateKey, stateList = allStates) => {
+    const findStates = (stateKey) => {
         let resultStates = [];
-        if (typeof (stateKey) === 'function') {
-            resultStates = stateList.filter(stateKey);
-        } else {
-            stateKey = stateKey?.toLowerCase();
-            resultStates = lookup.state.byName[stateKey] || lookup.state.byIso[stateKey] || [];
-        }
+
+        stateKey = stateKey?.toLowerCase();
+        resultStates = lookup.state.byName[stateKey] || lookup.state.byIso[stateKey] || [];
         return [
             resultStates.length === 1 ? resultStates[0] : null,
             resultStates.length > 1 ? resultStates : null
