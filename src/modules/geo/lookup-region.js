@@ -100,7 +100,6 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
 
     if (cityKey) {
         const { city, cities } = findCities(cityKey);
-        console.warn(city);
         if (city) {
             const { state } = findStates(city.stateCode);
             const { country } = findCountries(city.countryCode);
@@ -110,7 +109,6 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
             if (stateKey) {
                 const { state } = findStates(stateKey);
                 const { city } = findCities(city => city.stateCode === state.isoCode, cities);
-                console.warn({ state, city })
                 if (city) {
                     const { country } = findCountries(city.countryCode);
                     return result(city, state, country, ['city', 'state']);
@@ -128,10 +126,19 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
     }
 
     if (stateKey) {
-        const { state } = findStates(stateKey);
+        const { state, states } = findStates(stateKey);
         if (state) {
             const { country } = findCountries(state.countryCode);
             return result(null, state, country, ['state'])
+        }
+        if (states) {
+            if (countryKey) {
+                const { country } = findCountries(countryKey);
+                const { state } = findStates(state => state.countryCode === country.isoCode, states);
+                if (state) {
+                    return result(null, state, country, ['state', 'country']);
+                }
+            }
         }
     }
 
