@@ -103,9 +103,12 @@ module.exports = () => (location, defaultLocation = {}) => {
             const { country } = findCountries(city.countryCode);
             return result(city, state, country, ['city']);
         }
+
+        // CITY IS AMBIGUOUS
         if (cities) {
             if (stateKey) {
                 const { state, states } = findStates(stateKey);
+                console.warn(state);
                 if (state) {
                     const { city } = findCities(city => city.stateCode === state.isoCode, cities);
                     if (city) {
@@ -113,7 +116,29 @@ module.exports = () => (location, defaultLocation = {}) => {
                         return result(city, state, country, ['city', 'state']);
                     }
                 }
-                return { errors: [`City and state combination cannot be uniquely identified: ${location.city}, ${location.state}`] }
+                // console.warn(lookup.state.byIso);
+
+                // STATE IS AMBIGUOUS
+                if (states) {
+                    // const state = states.find(state => cities.find(city => city.stateCode === state.isoCode));
+                    // // state = states.filter(state => cities.find(city => city.stateCode === state.isoCode));
+                    // if (state) {
+                    //     const { country } = findCountries(state.countryCode);
+                    //     return result(city, state, country, ['city', 'state']);
+                    // }
+                    if (countryKey) {
+                        // console.warn('**');
+                        const { country } = findCountries(countryKey);
+                        // console.warn(states);
+                        const { state } = findStates(state => state.countryCode === country.isoCode, states);
+                        console.warn(state);
+                        const { city } = findCities(city => city.stateCode === state.isoCode, cities);
+                        // console.warn({ city, state, country });
+                        return result(city, state, country, ['city', 'state', 'country']);
+                    }
+                    return { errors: [`City and state combination cannot be uniquely identified: ${location.city}, ${location.state}`] }
+                }
+                // return { errors: [`City and state combination cannot be uniquely identified: ${location.city}, ${location.state}`] }
             }
             if (countryKey) {
                 const { country } = findCountries(countryKey);
