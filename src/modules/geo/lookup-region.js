@@ -27,10 +27,10 @@ const lookup = {
 
 
 
-module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
-    let cityKey = city?.trim().toLowerCase();
-    let stateKey = state?.trim().toLowerCase();
-    let countryKey = country?.trim().toLowerCase();
+module.exports = () => (location, defaultLocation = {}) => {
+    let cityKey = location.city?.trim().toLowerCase();
+    let stateKey = location.state?.trim().toLowerCase();
+    let countryKey = location.country?.trim().toLowerCase();
     let defaultCountryKey = defaultLocation.country?.trim().toLowerCase();
 
 
@@ -122,6 +122,7 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
                     return result(city, state, country, ['city', 'country']);
                 }
             }
+            return { errors: [`City cannot be uniquely identified: ${location.city}`] }
         }
     }
 
