@@ -36,10 +36,10 @@ module.exports = ({ arr }) => location => {
             cityKey = cityKey?.toLowerCase();
             resultCities = lookup.city.byName[cityKey] || [];
         }
-        return {
-            cities: resultCities.length > 1 ? resultCities : null,
-            city: resultCities.length === 1 ? resultCities[0] : null
-        };
+        return [
+            resultCities.length === 1 ? resultCities[0] : null,
+            resultCities.length > 1 ? resultCities : null
+        ];
     }
 
 
@@ -91,7 +91,7 @@ module.exports = ({ arr }) => location => {
 
 
     if (cityKey) {
-        const { city, cities } = findCities(cityKey);
+        const [city, cities] = findCities(cityKey);
         if (city) {
             const { state } = findStates(city.stateCode);
             const [country] = findCountries(city.countryCode);
@@ -109,7 +109,7 @@ module.exports = ({ arr }) => location => {
                     const [country] = findCountries(countryKey);
 
                     if (cityKey) {
-                        const { city, cities } = findCities(cityKey);
+                        const [city, cities] = findCities(cityKey);
                         if (city) {
                             const { state, states } = findStates(city.stateCode);
                             if (state) {
