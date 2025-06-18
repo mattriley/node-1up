@@ -116,21 +116,21 @@ module.exports = ({ test, assert }) => ({ geo }) => {
     //     assert.deepEqual(actual, expected);
     // });
 
-    // test('Globally unique country (countries should be inherently unique)', () => {
-    //     const input = { country: 'AU' };
+    test('Globally unique country (countries should be inherently unique)', () => {
+        const input = { country: 'AU' };
 
-    //     const expected = {
-    //         city: undefined,
-    //         state: undefined,
-    //         'state.iso': undefined,
-    //         country: 'Australia',
-    //         'country.iso2': 'AU',
-    //         unique: []
-    //     };
+        const expected = {
+            city: undefined,
+            state: undefined,
+            'state.iso': undefined,
+            country: 'Australia',
+            'country.iso2': 'AU',
+            unique: ['country']
+        };
 
-    //     const actual = geo.lookupRegion(input);
-    //     assert.deepEqual(actual, expected);
-    // });
+        const actual = geo.lookupRegion(input);
+        assert.deepEqual(actual, expected);
+    });
 
     // test('Los Angeles', () => {
     //     const location = { city: 'Los Angeles' };

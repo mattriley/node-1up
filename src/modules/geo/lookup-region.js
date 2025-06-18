@@ -142,6 +142,13 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
         }
     }
 
+    if (countryKey) {
+        const { country } = findCountries(countryKey);
+        if (country) {
+            return result(null, null, country, ['country']);
+        }
+    }
+
 
 
 
