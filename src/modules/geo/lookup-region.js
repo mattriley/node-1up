@@ -68,30 +68,40 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
         if (countries.length === 1) countryData = countries[0];
     }
 
-    const unique = [];
+    let unique = [];
 
 
     let cities;
     let states;
     let countries;
 
+
+
     // CITY
+
     findCities(cityKey);
 
     if (cityData) {
         findStates(cityData.stateCode);
         findCountries(cityData.countryCode);
         if (cityData && stateData && countryData && unique.length === 0) {
-            unique.push('city');
+            unique = ['city'];
+        }
+    }
+
+    // CITY+STATE
+
+    findStates(stateKey);
+
+    if (stateData && cities.length > 1) {
+        findCities(city => city.stateCode === stateData.isoCode);
+        console.warn({ cityData, stateData })
+        if (cityData && stateData) {
+            unique = ['city', 'state'];
         }
     }
 
 
-
-
-
-
-    findStates(stateKey);
 
 
     findCountries(countryKey);
