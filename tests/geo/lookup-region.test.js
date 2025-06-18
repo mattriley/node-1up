@@ -218,7 +218,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             city: undefined,
             country: 'China',
             state: 'Hong Kong',
-            unique: []
+            unique: ['state', 'country']
         }
 
         const actual = geo.lookupRegion(location, defaultLocation);
