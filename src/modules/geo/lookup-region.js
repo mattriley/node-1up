@@ -25,8 +25,6 @@ const lookup = {
     }
 };
 
-
-
 module.exports = () => (location, defaultLocation = {}) => {
     let cityKey = location.city?.trim().toLowerCase();
     let stateKey = location.state?.trim().toLowerCase();
@@ -107,11 +105,13 @@ module.exports = () => (location, defaultLocation = {}) => {
         }
         if (cities) {
             if (stateKey) {
-                const { state } = findStates(stateKey);
-                const { city } = findCities(city => city.stateCode === state.isoCode, cities);
-                if (city) {
-                    const { country } = findCountries(city.countryCode);
-                    return result(city, state, country, ['city', 'state']);
+                const { state, states } = findStates(stateKey);
+                if (state) {
+                    const { city } = findCities(city => city.stateCode === state.isoCode, cities);
+                    if (city) {
+                        const { country } = findCountries(city.countryCode);
+                        return result(city, state, country, ['city', 'state']);
+                    }
                 }
                 return { errors: [`City and state combination cannot be uniquely identified: ${location.city}, ${location.state}`] }
             }
