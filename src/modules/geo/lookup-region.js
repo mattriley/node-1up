@@ -186,21 +186,16 @@ module.exports = ({ arr }) => location => {
                     if (states) {
                         if (countryKey) {
                             const { country } = findCountries(countryKey);
-
                             if (country) {
                                 const [state] = arr.findOne(states, state => state.countryCode === country.isoCode);
-
                                 if (state) {
-                                    const { city } = findCities(city => city.stateCode === state.isoCode, cities);
-
+                                    const [city] = arr.findOne(cities, city => city.stateCode === state.isoCode);
                                     if (city) {
                                         return result(city, state, country, ['city', 'state', 'country']);
                                     }
                                 }
                             }
-
                         }
-                        return { errors: [`City and state combination cannot be uniquely identified: ${location.city}, ${location.state}`] }
                     }
                 }
             }
