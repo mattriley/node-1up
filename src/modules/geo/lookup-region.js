@@ -62,10 +62,10 @@ module.exports = ({ arr }) => location => {
     const findCountries = countryKey => {
         countryKey = countryKey?.toLowerCase();
         const resultCountries = lookup.country.byName[countryKey] || lookup.country.byIso[countryKey] || [];
-        return {
-            countries: resultCountries.length > 1 ? resultCountries : null,
-            country: resultCountries.length === 1 ? resultCountries[0] : null
-        };
+        return [
+            resultCountries.length === 1 ? resultCountries[0] : null,
+            resultCountries.length > 1 ? resultCountries : null
+        ];
     }
 
     let cityKey = location.city?.trim().toLowerCase();
@@ -94,7 +94,7 @@ module.exports = ({ arr }) => location => {
         const { city, cities } = findCities(cityKey);
         if (city) {
             const { state } = findStates(city.stateCode);
-            const { country } = findCountries(city.countryCode);
+            const [country] = findCountries(city.countryCode);
             return result(city, state, country, ['city']);
         }
 
@@ -106,7 +106,7 @@ module.exports = ({ arr }) => location => {
             const byCountry = () => {
 
                 if (countryKey) {
-                    const { country } = findCountries(countryKey);
+                    const [country] = findCountries(countryKey);
 
                     if (cityKey) {
                         const { city, cities } = findCities(cityKey);
@@ -175,7 +175,7 @@ module.exports = ({ arr }) => location => {
                     if (state) {
                         const [city] = arr.findOne(cities, city => city.stateCode === state.isoCode);
                         if (city) {
-                            const { country } = findCountries(city.countryCode);
+                            const [country] = findCountries(city.countryCode);
                             return result(city, state, country, ['city', 'state']);
                         }
                     }
@@ -183,7 +183,7 @@ module.exports = ({ arr }) => location => {
 
                 { // BEGIN: STATE IS AMBIGUOUS
                     if (states && countryKey) {
-                        const { country } = findCountries(countryKey);
+                        const [country] = findCountries(countryKey);
                         const [state] = country ? arr.findOne(states, state => state.countryCode === country.isoCode) : [];
                         const [city] = state ? arr.findOne(cities, city => city.stateCode === state.isoCode) : [];
                         if (city && state && country) {
@@ -223,12 +223,12 @@ module.exports = ({ arr }) => location => {
     if (stateKey) {
         const { state, states } = findStates(stateKey);
         if (state) {
-            const { country } = findCountries(state.countryCode);
+            const [country] = findCountries(state.countryCode);
             return result(null, state, country, ['state'])
         }
         if (states) {
             if (countryKey) {
-                const { country } = findCountries(countryKey);
+                const [country] = findCountries(countryKey);
                 const { state } = findStates(state => state.countryCode === country.isoCode, states);
                 if (state) {
                     return result(null, state, country, ['state', 'country']);
@@ -238,7 +238,7 @@ module.exports = ({ arr }) => location => {
     }
 
     if (countryKey) {
-        const { country } = findCountries(countryKey);
+        const [country] = findCountries(countryKey);
         if (country) {
             return result(null, null, country, ['country']);
         }
