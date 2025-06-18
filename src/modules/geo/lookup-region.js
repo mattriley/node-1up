@@ -50,8 +50,12 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
     }
 
     const findStates = state => {
-        state = state?.toLowerCase();
-        states = lookup.state.byName[state] || lookup.state.byIso[state] || [];
+        if (typeof (state) === 'function') {
+            states = states.filter(state);
+        } else {
+            state = state?.toLowerCase();
+            states = lookup.state.byName[state] || lookup.state.byIso[state] || [];
+        }
         if (states.length === 1) stateData = states[0];
         return states;
     };
@@ -91,15 +95,13 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
         if (countryKey) {
             findCountries(countryKey);
             findCities(city => city.countryCode === countryData.isoCode);
-            // cities = cities.filter(city => city.countryCode === countryData.isoCode);
-            // cityData = cities.length === 1 ? cities[0] : null;
             if (cityData) {
                 findStates(cityData.stateCode);
             }
         }
 
         if (!cityData && defaultCountryKey) {
-            cityData = cities.find(city => city.countryCode === defaultCountryData.isoCode);
+            findCities(city => city.countryCode === defaultCountryData.isoCode);
             if (cityData) {
                 findCountries(defaultCountryKey);
                 findStates(cityData.stateCode);
