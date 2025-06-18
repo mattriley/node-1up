@@ -48,22 +48,22 @@ module.exports = ({ test, assert }) => ({ geo }) => {
         assert.deepEqual(actual, expected);
     });
 
-    // test('Globally non-unique city + default country', () => {
-    //     const input = { city: 'Melbourne' };
-    //     const defaultLocation = { country: 'AU' };
+    test('Globally non-unique city + default country', () => {
+        const input = { city: 'Melbourne' };
+        const defaultLocation = { country: 'AU' };
 
-    //     const expected = {
-    //         city: 'Melbourne',
-    //         state: 'Victoria',
-    //         'state.iso': 'VIC',
-    //         country: 'Australia',
-    //         'country.iso2': 'AU',
-    //         unique: [] //['city', 'country']
-    //     };
+        const expected = {
+            city: 'Melbourne',
+            state: 'Victoria',
+            'state.iso': 'VIC',
+            country: 'Australia',
+            'country.iso2': 'AU',
+            unique: ['city', 'country']
+        };
 
-    //     const actual = geo.lookupRegion(input, defaultLocation);
-    //     assert.deepEqual(actual, expected);
-    // });
+        const actual = geo.lookupRegion(input, defaultLocation);
+        assert.deepEqual(actual, expected);
+    });
 
 
 
