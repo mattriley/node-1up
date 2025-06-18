@@ -25,7 +25,8 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             'state.iso': 'VIC',
             country: 'Australia',
             'country.iso2': 'AU',
-            unique: []
+            unique: [],
+            // unique: ['city', 'state']
         };
 
         const actual = geo.lookupRegion(input);
@@ -42,7 +43,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             'state.iso': 'VIC',
             country: 'Australia',
             'country.iso2': 'AU',
-            unique: []
+            unique: [] //['city', 'country']
         };
 
         const actual = geo.lookupRegion(input, defaultLocation);

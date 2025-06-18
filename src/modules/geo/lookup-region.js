@@ -70,20 +70,13 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
 
     const unique = [];
 
+
     let cities;
-    findCities(cityKey);
-
     let states;
-    findStates(stateKey);
-
     let countries;
-    findCountries(countryKey);
 
-    const defaultCountries = defaultCountryKey ? lookup.country.byName[defaultCountryKey] || lookup.country.byIso[defaultCountryKey] || [] : [];
-    const defaultCountryData = defaultCountries[0];
-    if (defaultCountryKey && !defaultCountryData) {
-        return { errors: [`Default country not found: ${defaultLocation.country}`] }
-    }
+    // CITY
+    findCities(cityKey);
 
     if (cityData) {
         findStates(cityData.stateCode);
@@ -92,6 +85,24 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
             unique.push('city');
         }
     }
+
+
+
+
+
+
+    findStates(stateKey);
+
+
+    findCountries(countryKey);
+
+    const defaultCountries = defaultCountryKey ? lookup.country.byName[defaultCountryKey] || lookup.country.byIso[defaultCountryKey] || [] : [];
+    const defaultCountryData = defaultCountries[0];
+    if (defaultCountryKey && !defaultCountryData) {
+        return { errors: [`Default country not found: ${defaultLocation.country}`] }
+    }
+
+
 
 
     if (cities.length > 1) {
@@ -107,10 +118,16 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
         if (!cityData && defaultCountryKey) {
             findCities(city => city.countryCode === defaultCountryData.isoCode);
             if (cityData) {
+
                 findCountries(defaultCountryKey);
                 findStates(cityData.stateCode);
             }
         }
+
+        // if (cityData && stateData && !countryData && unique.length === 0) {
+        //     unique.push('city');
+        //     unique.push('country');
+        // }
 
         if (!cityData && cityKey && !stateKey && !countryKey) {
             return { errors: [`City cannot be uniquely identified: ${city}`] }
@@ -131,6 +148,9 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
 
         if (states.length === 1) {
             stateData = states[0];
+
+
+
             findCountries(stateData.countryCode);
         }
 
