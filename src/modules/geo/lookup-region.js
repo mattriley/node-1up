@@ -162,7 +162,8 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
 
 
     if (countryData) {
-        cityData ??= cities.find(city => city.countryCode === countryData.isoCode);
+        findCities(city => city.countryCode === countryData.isoCode);
+        // cityData ??= cities.find(city => city.countryCode === countryData.isoCode);
         stateData ??= states.find(state => state.countryCode === countryData.isoCode);
     }
 
