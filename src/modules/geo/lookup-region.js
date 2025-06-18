@@ -68,7 +68,7 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
         if (countries.length === 1) countryData = countries[0];
     }
 
-
+    const unique = [];
 
     let cities;
     findCities(cityKey);
@@ -88,9 +88,11 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
     if (cityData) {
         findStates(cityData.stateCode);
         findCountries(cityData.countryCode);
+        if (cityData && stateData && countryData && unique.length === 0) {
+            unique.push('city');
+        }
     }
 
-    console.warn({ cities, countries })
 
     if (cities.length > 1) {
 
@@ -121,13 +123,11 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
 
 
 
+
+
     if (stateKey) {
 
-        console.warn(states)
 
-        if (states.length === 0) {
-            console.warn(`State not found: ${state}`);
-        }
 
         if (states.length === 1) {
             stateData = states[0];
@@ -139,7 +139,6 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
                 findStates(state => state.countryCode === countryData.isoCode);
             }
 
-            console.warn({ stateData, countryData })
 
             if (defaultCountryKey) {
                 stateData = states.find(state => state.countryCode === defaultCountryData.isoCode);
@@ -154,13 +153,6 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
     }
 
 
-
-    if (countryKey) {
-
-        if (countries.length > 1) {
-            console.warn(`Non-unique country: ${country}. This should never happen.`);
-        }
-    }
 
 
     if (countryData) {
@@ -188,7 +180,8 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
         state: stateData?.name,
         'state.iso': stateData?.isoCode,
         country: countryData?.name,
-        'country.iso2': countryData?.isoCode
+        'country.iso2': countryData?.isoCode,
+        unique
     }
 
 
