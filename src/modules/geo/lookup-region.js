@@ -168,43 +168,40 @@ module.exports = ({ arr }) => location => {
             }
 
 
-            const byState = () => {
-                if (stateKey) {
-                    const { state, states } = findStates(stateKey);
+            const byState = (stateKey) => {
+                const { state, states } = findStates(stateKey);
 
-                    { // BEGIN: STATE IS KNOWN
-                        if (state) {
-                            const [city] = arr.findOne(cities, city => city.stateCode === state.isoCode);
-                            if (city) {
-                                const { country } = findCountries(city.countryCode);
-                                return result(city, state, country, ['city', 'state']);
-                            }
+                { // BEGIN: STATE IS KNOWN
+                    if (state) {
+                        const [city] = arr.findOne(cities, city => city.stateCode === state.isoCode);
+                        if (city) {
+                            const { country } = findCountries(city.countryCode);
+                            return result(city, state, country, ['city', 'state']);
                         }
-                    } // END
+                    }
+                } // END
 
-                    { // BEGIN: STATE IS AMBIGUOUS
-                        if (states) {
-                            if (countryKey) {
-                                const { country } = findCountries(countryKey);
-                                if (country) {
-                                    const [state] = arr.findOne(states, state => state.countryCode === country.isoCode);
-                                    if (state) {
-                                        const [city] = arr.findOne(cities, city => city.stateCode === state.isoCode);
-                                        if (city) {
-                                            return result(city, state, country, ['city', 'state', 'country']);
-                                        }
+                { // BEGIN: STATE IS AMBIGUOUS
+                    if (states) {
+                        if (countryKey) {
+                            const { country } = findCountries(countryKey);
+                            if (country) {
+                                const [state] = arr.findOne(states, state => state.countryCode === country.isoCode);
+                                if (state) {
+                                    const [city] = arr.findOne(cities, city => city.stateCode === state.isoCode);
+                                    if (city) {
+                                        return result(city, state, country, ['city', 'state', 'country']);
                                     }
                                 }
                             }
                         }
-                    } // END
-
-                }
+                    }
+                } // END
             }
 
             const getResult = () => {
                 const countryResult = byCountry();
-                const stateResult = byState();
+                const stateResult = stateKey ? byState(stateKey) : null;
 
                 // console.warn({ countryResult, stateResult })
 
