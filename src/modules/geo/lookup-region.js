@@ -78,39 +78,26 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
     let countries = findCountries(countryKey);
 
 
-    if (cityKey) {
 
-        if (cities.length === 0) {
-            console.warn(`City not found: ${city}`);
+    if (cityData) {
+        stateData = exactState(cityData.stateCode, cityData.countryCode);
+        countryData = exactCountry(cityData.countryCode);
+    }
+
+    if (cities.length > 1) {
+
+        if ((countryKey || defaultCountryKey)) {
+            countryData = exactCountry(countryKey || defaultCountryKey);
+            cityData = cities.find(city => city.countryCode === countryData.isoCode);
+            if (cityData) {
+                states = findStates(cityData.stateCode);
+                console.warn(states);
+                console.warn(stateData);
+            }
         }
 
-        if (cities.length === 1) {
-            cityData = cities[0];
-            stateData = exactState(cityData.stateCode, cityData.countryCode);
-            countryData = exactCountry(cityData.countryCode);
-        }
-        if (cities.length > 1) {
-
-
-            if ((countryKey || defaultCountryKey)) {
-                countryData = exactCountry(countryKey || defaultCountryKey);
-                cityData = cities.find(city => city.countryCode === countryData.isoCode);
-                console.warn(cityData);
-
-                // if (cityData) stateData = exactState(cityData.stateCode, cityData.countryCode);
-                if (cityData) {
-                    states = findStates(cityData.stateCode);
-                    console.warn(states);
-                    console.warn(stateData);
-                }
-            }
-
-            if (!cityData && cityKey && !stateKey && !countryKey) {
-                return { errors: [`City cannot be uniquely identified: ${city}`] }
-            }
-
-
-
+        if (!cityData && cityKey && !stateKey && !countryKey) {
+            return { errors: [`City cannot be uniquely identified: ${city}`] }
         }
     }
 
