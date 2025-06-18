@@ -60,10 +60,6 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
         if (countries.length === 1) countryData = countries[0];
     }
 
-    const exactCountry = (country) => {
-        const countries = findCountries(country.toLowerCase());
-        if (countries.length === 1) return countries[0];
-    }
 
 
     let cities;
@@ -127,7 +123,6 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
 
         if (states.length > 1) {
             if (defaultCountryKey) {
-                // countryData = exactCountry(defaultCountryKey);
                 stateData = states.find(state => state.countryCode === defaultCountryData.isoCode);
                 if (stateData) findCountries(defaultCountryData.isoCode);
             }
