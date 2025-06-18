@@ -26,10 +26,6 @@ const lookup = {
 };
 
 module.exports = () => (location, defaultLocation = {}) => {
-    let cityKey = location.city?.trim().toLowerCase();
-    let stateKey = location.state?.trim().toLowerCase();
-    let countryKey = location.country?.trim().toLowerCase();
-    let defaultCountryKey = defaultLocation.country?.trim().toLowerCase();
 
 
     const findCities = (cityKey, cityList = allCities) => {
@@ -72,12 +68,16 @@ module.exports = () => (location, defaultLocation = {}) => {
         };
     }
 
-    // let unique = [];
+    let cityKey = location.city?.trim().toLowerCase();
+    let stateKey = location.state?.trim().toLowerCase();
+    let countryKey = location.country?.trim().toLowerCase();
+    let defaultCountryKey = defaultLocation.country?.trim().toLowerCase();
 
+    const { country: defaultCountry } = findCountries(defaultCountryKey);
+    if (defaultCountryKey && !defaultCountry) return {
+        errors: [`Default country not found: ${defaultLocation.country}`]
+    }
 
-    // let cities;
-    // let states;
-    // let countries;
 
     const result = (cityData, stateData, countryData, unique) => {
         return {
