@@ -29,8 +29,6 @@ module.exports = () => {
 
     const lookupRegion = (location, defaultLocation = {}) => {
 
-        console.warn(location);
-
 
         const findCities = (cityKey, cityList = allCities) => {
             let resultCities = [];
@@ -112,7 +110,6 @@ module.exports = () => {
             if (cities) {
                 if (stateKey) {
                     const { state, states } = findStates(stateKey);
-                    console.warn(state);
                     if (state) {
                         const { city } = findCities(city => city.stateCode === state.isoCode, cities);
                         if (city) {
@@ -129,7 +126,6 @@ module.exports = () => {
                             if (country) {
                                 const { state } = findStates(state => state.countryCode === country.isoCode, states);
                                 if (state) {
-                                    console.warn(state);
                                     const { city } = findCities(city => city.stateCode === state.isoCode, cities);
 
                                     if (city) {
