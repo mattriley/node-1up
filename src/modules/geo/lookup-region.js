@@ -116,7 +116,7 @@ module.exports = ({ arr }) => location => {
                                 return result(city, state, country, ['city', 'country']);
                             }
                             if (states) {
-                                const [state] = findStates(state => state.countryCode === country.isoCode, states);
+                                const [state] = arr.findOne(states, state => state.countryCode === country.isoCode);
                                 return result(city, state, country, ['city', 'country']);
                             }
 
@@ -229,7 +229,7 @@ module.exports = ({ arr }) => location => {
         if (states) {
             if (countryKey) {
                 const [country] = findCountries(countryKey);
-                const [state] = findStates(state => state.countryCode === country.isoCode, states);
+                const [state] = arr.findOne(states, state => state.countryCode === country.isoCode);
                 if (state) {
                     return result(null, state, country, ['state', 'country']);
                 }
