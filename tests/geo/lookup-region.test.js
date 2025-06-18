@@ -122,6 +122,34 @@ module.exports = ({ test, assert }) => ({ geo }) => {
         assert.deepEqual(actual, expected);
     });
 
+    test('Los Angeles', () => {
+        const location = { city: 'Los Angeles' };
+        const defaultLocation = { country: 'AU' };
+
+        const expected = {
+            errors: [
+                'City cannot be uniquely identified: Los Angeles'
+            ]
+        }
+
+        const actual = geo.lookupRegion(location, defaultLocation);
+        assert.deepEqual(actual, expected);
+    });
+
+    test('Los Angeles, CA', () => {
+        const location = { city: 'Los Angeles', state: 'CA' };
+        const defaultLocation = { country: 'AU' };
+
+        const expected = {
+            errors: [
+                'City and state cannot be uniquely identified: Los Angeles, CA'
+            ]
+        }
+
+        const actual = geo.lookupRegion(location, defaultLocation);
+        assert.deepEqual(actual, expected);
+    });
+
     test('Los Angeles, CA, US', () => {
         const location = { city: 'Los Angeles', country: 'US', state: 'CA' };
         const defaultLocation = { country: 'AU' };
@@ -132,20 +160,6 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             city: 'Los Angeles',
             country: 'United States',
             state: 'California'
-        }
-
-        const actual = geo.lookupRegion(location, defaultLocation);
-        assert.deepEqual(actual, expected);
-    });
-
-    test('Los Angeles', () => {
-        const location = { city: 'Los Angeles' };
-        const defaultLocation = { country: 'AU' };
-
-        const expected = {
-            errors: [
-                'City cannot be uniquely identified: Los Angeles'
-            ]
         }
 
         const actual = geo.lookupRegion(location, defaultLocation);

@@ -64,6 +64,8 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
     const states = lookupState(stateKey);
     const countries = lookupCountry(countryKey);
 
+    console.warn(states);
+
     if (cityKey) {
 
         if (cities.length === 0) {
@@ -78,7 +80,7 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
         if (cities.length > 1) {
 
 
-            if (countryKey || defaultCountryKey) {
+            if ((countryKey || defaultCountryKey)) {
                 countryData = exactCountry(countryKey || defaultCountryKey);
                 cityData = cities.find(city => city.countryCode === countryData.isoCode);
                 if (cityData) stateData = exactState(cityData.stateCode, cityData.countryCode);
@@ -87,6 +89,8 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
             if (!cityData && cityKey && !stateKey && !countryKey) {
                 return { errors: [`City cannot be uniquely identified: ${city}`] }
             }
+
+
 
         }
     }
@@ -113,6 +117,11 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
                 countryData = exactCountry(defaultCountryKey);
                 stateData = states.find(state => state.countryCode === countryData.isoCode);
             }
+
+            if (!cityData && cityKey && !stateData && stateKey && !countryKey) {
+                return { errors: [`City and state cannot be uniquely identified: ${city}, ${state}`] }
+            }
+
         }
     }
 
