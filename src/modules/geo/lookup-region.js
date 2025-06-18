@@ -184,19 +184,15 @@ module.exports = ({ arr }) => location => {
                 const countryResult = byCountry();
                 const stateResult = stateKey ? byState(stateKey) : null;
 
-                // console.warn({ countryResult, stateResult })
+                if (countryResult && !countryResult.errors) return countryResult;
+                if (stateResult && !stateResult.errors) return stateResult;
 
                 if (countryResult && stateResult) {
-                    if (!countryResult.errors && stateResult.errors) {
-                        const sorted = _.sortBy([countryResult, stateResult], res => res.unique.length);
-                        return sorted[0];
-                    }
+                    const sorted = _.sortBy([countryResult, stateResult], res => res.unique.length);
+                    return sorted[0];
                 }
 
-                if (countryResult && !countryResult.errors) return countryResult;
-                if (!stateResult && countryResult) return countryResult;
-                if (stateResult && stateResult.errors) return countryResult;
-                if (stateResult) return stateResult;
+                return countryResult || stateResult;
             }
 
             const res = getResult();
