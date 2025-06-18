@@ -97,44 +97,32 @@ module.exports = ({ arr }) => location => {
 
                     if (cityKey) {
                         const [city, cities] = findCities(cityKey);
-                        if (city) {
+
+                        if (city) { // BEGIN: CITY IS KNOWN
                             const [state, states] = findStates(city.stateCode);
                             if (state) {
                                 return result(city, state, country, ['city', 'country']);
                             }
-                            if (states) {
+                            {
                                 const [state] = arr.findOne(states, state => state.countryCode === country.isoCode);
                                 return result(city, state, country, ['city', 'country']);
                             }
+                        } // END
 
-                        }
-                        if (cities) {
-
+                        if (cities) { // BEGIN: CITY IS AMBIGUOUS 
                             const statesOfCountry = allStates.filter(state => state.countryCode === country.isoCode);
-
-
                             const cities2 = cities.filter(city => statesOfCountry.filter(state => state.isoCode === city.stateCode).length === 1);
-
                             if (cities2.length > 1) {
                                 return { errors: [`City and country combination cannot be uniquely identified: ${location.city}, ${location.country}`] }
                             }
-
                             if (cities2.length === 1) {
                                 const city = cities2[0];
                                 const state = statesOfCountry.find(state => state.isoCode === city.stateCode);
                                 return result(city, state, country, ['city', 'country']);
                             }
-
-
-                        }
-
-
+                        } // END
 
                     }
-
-
-
-
                     return { errors: [`City and country combination cannot be uniquely identified: ${location.city}, ${location.country}`] }
                 }
 
@@ -158,24 +146,20 @@ module.exports = ({ arr }) => location => {
             const byState = (stateKey) => {
                 const [state, states] = findStates(stateKey);
 
-                { // BEGIN: STATE IS KNOWN
-                    if (state) {
-                        const [city] = arr.findOne(cities, city => city.stateCode === state.isoCode);
-                        const [country] = city ? findCountries(city.countryCode) : [];
-                        if (city && country) {
-                            return result(city, state, country, ['city', 'state']);
-                        }
+                if (state) { // BEGIN: STATE IS KNOWN
+                    const [city] = arr.findOne(cities, city => city.stateCode === state.isoCode);
+                    const [country] = city ? findCountries(city.countryCode) : [];
+                    if (city && country) {
+                        return result(city, state, country, ['city', 'state']);
                     }
                 } // END
 
-                { // BEGIN: STATE IS AMBIGUOUS
-                    if (states && countryKey) {
-                        const [country] = findCountries(countryKey);
-                        const [state] = country ? arr.findOne(states, state => state.countryCode === country.isoCode) : [];
-                        const [city] = state ? arr.findOne(cities, city => city.stateCode === state.isoCode) : [];
-                        if (city && state && country) {
-                            return result(city, state, country, ['city', 'state', 'country']);
-                        }
+                if (states && countryKey) { // BEGIN: STATE IS AMBIGUOUS
+                    const [country] = findCountries(countryKey);
+                    const [state] = country ? arr.findOne(states, state => state.countryCode === country.isoCode) : [];
+                    const [city] = state ? arr.findOne(cities, city => city.stateCode === state.isoCode) : [];
+                    if (city && state && country) {
+                        return result(city, state, country, ['city', 'state', 'country']);
                     }
                 } // END
             }
