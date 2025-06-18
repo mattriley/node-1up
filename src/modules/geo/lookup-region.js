@@ -160,7 +160,7 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
 
     if (cityData) {
         if (!stateData) {
-            stateData = exactState(cityData.stateCode);
+            states = findStates(cityData.stateCode);
         }
     }
 
