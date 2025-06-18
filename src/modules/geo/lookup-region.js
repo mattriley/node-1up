@@ -181,8 +181,7 @@ module.exports = ({ arr }) => location => {
                     }
 
 
-
-                    // STATE IS AMBIGUOUS
+                    // BEGIN: STATE IS AMBIGUOUS
                     if (states) {
                         if (countryKey) {
                             const { country } = findCountries(countryKey);
@@ -196,6 +195,8 @@ module.exports = ({ arr }) => location => {
                                 }
                             }
                         }
+                        // END
+
                     }
                 }
             }
