@@ -80,8 +80,8 @@ module.exports = () => ({ city, state, country }, defaultLocation = {}) => {
 
 
     if (cityData) {
-        stateData = exactState(cityData.stateCode);
-        countryData = exactCountry(cityData.countryCode);
+        states = findStates(cityData.stateCode);
+        countries = findCountries(cityData.countryCode);
     }
 
     if (cities.length > 1) {
