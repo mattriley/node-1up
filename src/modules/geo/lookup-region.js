@@ -195,9 +195,7 @@ module.exports = ({ arr }) => location => {
                                 }
                             }
                         }
-                        // END
-
-                    }
+                    } // END
                 }
             }
 
