@@ -1,16 +1,14 @@
+const _ = require('lodash');
 const fs = require('fs');
 const airports = require('./airports.json');
+const countries = require('country-state-city').Country.getAllCountries();
+const countriesByCode = _.keyBy(countries, 'code');
 
-const cities = airports.map(ap => {
-    const [countryCode, stateCode] = ap.iso_region.split('-');
-    return {
-        iataCode: ap.iata,
-        city: ap.city,
-        state: ap.state || null,
-        stateCode: stateCode,
-        country: ap.country,
-        countryCode: countryCode
-    };
+const cities = airports.map(airport => {
+    const { iata: iataCode, city, state } = airport;
+    const [countryCode, stateCode] = airport.iso_region.split('-');
+    const country = countriesByCode[countryCode];
+    return { iataCode, city, state, stateCode, country, countryCode };
 });
 
 const dest = __dirname + '/../src/data/cities.json';
