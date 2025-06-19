@@ -1,26 +1,33 @@
 const _ = require('lodash');
-const { Country, State, City } = require('country-state-city');
 
-const allCountries = Country.getAllCountries();
-const allStates = State.getAllStates();
-const allCities = City.getAllCities();
+const buildLookup = () => {
+    const { Country, State, City } = require('country-state-city');
 
-const hk = allStates.find(s => s.name === 'Hong Kong SAR');
-hk.name = 'Hong Kong';
+    const allCountries = Country.getAllCountries();
+    const allStates = State.getAllStates();
+    const allCities = City.getAllCities();
 
-const mo = allStates.find(s => s.name === 'Macau SAR');
-mo.name = 'Macau';
+    const hk = allStates.find(s => s.name === 'Hong Kong SAR');
+    if (hk) hk.name = 'Hong Kong';
 
-const lookupPlan = {
-    country: [allCountries, 'name', 'isoCode'],
-    state: [allStates, 'name', 'isoCode'],
-    city: [allCities, 'name']
-};
+    const mo = allStates.find(s => s.name === 'Macau SAR');
+    if (mo) mo.name = 'Macau';
 
-const lookup = _.mapValues(lookupPlan, args => {
-    const [items, ...keyNames] = args;
-    return Object.assign(...keyNames.map(keyName => _.groupBy(items, item => item[keyName].toLowerCase())));
-});
+    const lookupPlan = {
+        country: [allCountries, 'name', 'isoCode'],
+        state: [allStates, 'name', 'isoCode'],
+        city: [allCities, 'name']
+    };
+
+    const lookup = _.mapValues(lookupPlan, args => {
+        const [items, ...keyNames] = args;
+        return Object.assign(...keyNames.map(keyName => _.groupBy(items, item => item[keyName].toLowerCase())));
+    });
+
+    lookup.allStates = allStates;
+
+    return lookup;
+}
 
 const result = (cityData, stateData, countryData, unique) => {
     return {
@@ -35,6 +42,12 @@ const result = (cityData, stateData, countryData, unique) => {
 
 
 module.exports = ({ arr }) => location => {
+
+    let lookup; // Lazy load
+
+    if (!lookup) {
+        lookup = buildLookup();
+    }
 
 
     const findCities = (cityKey, cont) => {
@@ -100,7 +113,7 @@ module.exports = ({ arr }) => location => {
                         } // END
 
                         if (cities) { // BEGIN: CITY IS AMBIGUOUS 
-                            const statesOfCountry = allStates.filter(state => state.countryCode === country.isoCode);
+                            const statesOfCountry = lookup.allStates.filter(state => state.countryCode === country.isoCode);
                             const cities2 = cities.filter(city => statesOfCountry.filter(state => state.isoCode === city.stateCode).length === 1);
                             if (cities2.length > 1) {
                                 return { errors: [`City and country combination cannot be uniquely identified: ${location.city}, ${location.country}`] }
