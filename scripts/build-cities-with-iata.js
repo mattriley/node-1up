@@ -11,9 +11,12 @@ const cities = City.getAllCities().map(city => {
         return countryCode === city.countryCode;
     });
     const iataCodes = airports.map(airport => airport.iata);
-    const iataCode = iataCodes.find(code => city.name.toLowerCase().startsWith(code.toLowerCase())) ?? iataCodes[0];
+    const iataCode = iataCodes.find(code => {
+        if (city.countryCode === 'AU') return code;
+        if (city.name.toLowerCase().startsWith(code.toLowerCase())) return code;
+    });
     return { ...city, iataCode, iataCodes };
 });
 
 const dest = __dirname + '/../src/data/cities.json';
-fs.writeFileSync(dest, JSON.stringify(cities));
+fs.writeFileSync(dest, JSON.stringify(cities, null, 4));
