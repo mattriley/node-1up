@@ -9,7 +9,7 @@ module.exports = ({ config, overrides } = {}) => {
 
     const functionAlias = [['Value', 'Val']];
     const { compose } = composer(modules, { functionAlias, overrides, config, defaultConfig });
-    const { arr } = compose.asis('arr');
+    const { arr } = compose.make('arr');
     compose.deep('str', { arr });
     compose.make('obj', { arr });
     compose.make('fun');

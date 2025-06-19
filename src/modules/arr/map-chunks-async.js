@@ -1,7 +1,7 @@
 const _ = require('lodash');
 const { setImmediate } = require('timers/promises');
 
-module.exports = async (arr, chunkSize, loopPredicate, mapFunction) => {
+module.exports = () => async (arr, chunkSize, loopPredicate, mapFunction) => {
 
     loopPredicate = _.isFunction(loopPredicate) ? loopPredicate : () => loopPredicate;
     let loop = true;

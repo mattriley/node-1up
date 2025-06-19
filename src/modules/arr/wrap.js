@@ -1,4 +1,4 @@
-module.exports = (arr, limit) => {
+module.exports = () => (arr, limit) => {
 
     return arr.reduce((acc, str) => {
         const line = acc.at(-1).concat(str);

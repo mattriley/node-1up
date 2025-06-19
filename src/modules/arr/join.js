@@ -1,4 +1,4 @@
-module.exports = (arr, sep, lastSep) => {
+module.exports = () => (arr, sep, lastSep) => {
 
     const items = [...arr];
     if (items.length === 1) return items[0];
