@@ -1,5 +1,5 @@
 module.exports = {
-    _resultsContainer: require('./_results-container'),
+    _contain: require('./_contain'),
     arrayOrSplit: require('./array-or-split'),
     insertSecondLast: require('./insert-second-last'),
     join: require('./join'),

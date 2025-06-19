@@ -1,6 +1,6 @@
 module.exports = ({ self }) => (list, pred, cont) => {
 
     const vals = list.filter(pred);
-    return self.resultsContainer(vals, cont);
+    return self.contain(vals, cont);
 
 };
