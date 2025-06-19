@@ -1,6 +1,6 @@
 const _ = require('lodash');
 const fs = require('fs');
-const airports = require('./airports.json');
+const airports = require('./airports.json'); // https://github.com/aashishvanand/airport-data-js/blob/main/data/airports.json
 const countries = require('country-state-city').Country.getAllCountries();
 const countriesByCode = _.keyBy(countries, 'code');
 

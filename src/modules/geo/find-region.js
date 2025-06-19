@@ -1,12 +1,14 @@
 const _ = require('lodash');
 
-const buildLookup = (allAirports) => {
+const buildLookup = () => {
 
     const { Country, State, City } = require('country-state-city');
+    const citiesWithIata = require('../../data/cities.json');
+
 
     const allCountries = Country.getAllCountries();
     const allStates = State.getAllStates();
-    const allCities = [...City.getAllCities(), ...allAirports];
+    const allCities = [...City.getAllCities(), ...citiesWithIata];
 
     const hk = allStates.find(s => s.name === 'Hong Kong SAR');
     if (hk) hk.name = 'Hong Kong';
@@ -23,10 +25,6 @@ const buildLookup = (allAirports) => {
     const lookup = _.mapValues(lookupPlan, args => {
         const [items, ...keyNames] = args;
         return Object.assign(...keyNames.map(keyName => _.groupBy(items, item => item[keyName]?.toLowerCase())));
-    });
-
-    allAirports.forEach(ap => {
-        ap.country = lookup.country[ap.countryCode.toLowerCase()]?.[0]?.name;
     });
 
     lookup.allStates = allStates;
@@ -52,8 +50,7 @@ module.exports = ({ arr, geo }) => location => {
     let lookup; // Lazy load
 
     if (!lookup) {
-        const airports = geo.buildCitiesWithAirports();
-        lookup = buildLookup(airports);
+        lookup = buildLookup();
     }
 
 
