@@ -1,6 +1,6 @@
 const _ = require('lodash');
 
-const buildLookup = () => {
+const buildLookup = ({ geo }) => {
     const { Country, State, City } = require('country-state-city');
 
     const allCountries = Country.getAllCountries();
@@ -12,6 +12,20 @@ const buildLookup = () => {
 
     const mo = allStates.find(s => s.name === 'Macau SAR');
     if (mo) mo.name = 'Macau';
+
+
+    const allAirports = geo.airports();
+
+    // const citiesByName = _.groupBy(allCities, item => item['name'].toLowerCase())
+
+    allAirports.forEach(airport => {
+        const city = allCities.find(city => city.name === airport.city && city.state === airport.state && city.country === airport.country);
+        city.iataCode = airport.iata;
+        console.warn(city);
+    });
+
+
+
 
     const lookupPlan = {
         country: [allCountries, 'name', 'isoCode'],
