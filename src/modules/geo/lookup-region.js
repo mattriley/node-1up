@@ -104,7 +104,7 @@ module.exports = ({ arr }) => location => {
                                 return result(city, state, country, ['city', 'country']);
                             }
                             {
-                                const [state] = arr.only(states, state => state.countryCode === country.isoCode);
+                                const state = arr.only(states, state => state.countryCode === country.isoCode);
                                 return result(city, state, country, ['city', 'country']);
                             }
                         } // END
@@ -147,7 +147,7 @@ module.exports = ({ arr }) => location => {
                 const [state, states] = findStates(stateKey);
 
                 if (state) { // BEGIN: STATE IS KNOWN
-                    const [city] = arr.only(cities, city => city.stateCode === state.isoCode);
+                    const city = arr.only(cities, city => city.stateCode === state.isoCode);
                     const [country] = city ? findCountries(city.countryCode) : [];
                     if (city && country) {
                         return result(city, state, country, ['city', 'state']);
@@ -156,8 +156,8 @@ module.exports = ({ arr }) => location => {
 
                 if (states && countryKey) { // BEGIN: STATE IS AMBIGUOUS
                     const [country] = findCountries(countryKey);
-                    const [state] = country ? arr.only(states, state => state.countryCode === country.isoCode) : [];
-                    const [city] = state ? arr.only(cities, city => city.stateCode === state.isoCode) : [];
+                    const state = country ? arr.only(states, state => state.countryCode === country.isoCode) : null;
+                    const city = state ? arr.only(cities, city => city.stateCode === state.isoCode) : null;
                     if (city && state && country) {
                         return result(city, state, country, ['city', 'state', 'country']);
                     }
@@ -196,7 +196,7 @@ module.exports = ({ arr }) => location => {
         if (states) {
             if (countryKey) {
                 const [country] = findCountries(countryKey);
-                const [state] = arr.only(states, state => state.countryCode === country.isoCode);
+                const state = arr.only(states, state => state.countryCode === country.isoCode);
                 if (state) {
                     return result(null, state, country, ['state', 'country']);
                 }
