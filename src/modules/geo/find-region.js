@@ -18,16 +18,14 @@ const buildLookup = () => {
     const lookupPlan = {
         country: [allCountries, 'name', 'isoCode'],
         state: [allStates, 'name', 'isoCode'],
-        city: [allCities, 'name', 'iataCode']
+        city: [allCities, 'name', 'iataCode'],
+        statesByCountry: [allStates, 'country', 'countryCode']
     };
 
     const lookup = _.mapValues(lookupPlan, args => {
         const [items, ...keyNames] = args;
         return Object.assign(...keyNames.map(keyName => _.groupBy(items, item => item[keyName]?.toLowerCase())));
     });
-
-    lookup.allStates = allStates;
-
 
     return lookup;
 }
@@ -117,7 +115,7 @@ module.exports = ({ arr, geo }) => location => {
                         } // END
 
                         if (cities) { // BEGIN: CITY IS AMBIGUOUS 
-                            const statesOfCountry = lookup.allStates.filter(state => state.countryCode === country.isoCode);
+                            const statesOfCountry = lookup.statesByCountry[country.isoCode.toLowerCase()];
                             const cities2 = cities.filter(city => statesOfCountry.filter(state => state.isoCode === city.stateCode).length === 1);
                             if (cities2.length > 1) {
                                 return { errors: [`City and country combination cannot be uniquely identified: ${location.city}, ${location.country}`] }
