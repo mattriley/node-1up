@@ -26,35 +26,6 @@ const lookup = {
 };
 
 
-const findCities = (cityKey) => {
-    cityKey = cityKey?.toLowerCase();
-    const cities = lookup.city.byName[cityKey] || [];
-    return [
-        cities.length === 1 ? cities[0] : null,
-        cities.length > 1 ? cities : null
-    ];
-}
-
-
-const findStates = (stateKey) => {
-    stateKey = stateKey?.toLowerCase();
-    const states = lookup.state.byName[stateKey] || lookup.state.byIso[stateKey] || [];
-    return [
-        states.length === 1 ? states[0] : null,
-        states.length > 1 ? states : null
-    ];
-};
-
-
-
-const findCountries = countryKey => {
-    countryKey = countryKey?.toLowerCase();
-    const countries = lookup.country.byName[countryKey] || lookup.country.byIso[countryKey] || [];
-    return [
-        countries.length === 1 ? countries[0] : null,
-        countries.length > 1 ? countries : null
-    ];
-}
 
 const result = (cityData, stateData, countryData, unique) => {
     return {
@@ -69,6 +40,30 @@ const result = (cityData, stateData, countryData, unique) => {
 
 
 module.exports = ({ arr }) => location => {
+
+
+    const findCities = (cityKey) => {
+        cityKey = cityKey?.toLowerCase();
+        const cities = lookup.city.byName[cityKey] || [];
+        return arr.poly(cities, []);
+    }
+
+
+    const findStates = (stateKey) => {
+        stateKey = stateKey?.toLowerCase();
+        const states = lookup.state.byName[stateKey] || lookup.state.byIso[stateKey] || [];
+        return arr.poly(states, []);
+    };
+
+
+
+    const findCountries = countryKey => {
+        countryKey = countryKey?.toLowerCase();
+        const countries = lookup.country.byName[countryKey] || lookup.country.byIso[countryKey] || [];
+        return arr.poly(countries, []);
+    }
+
+
 
     const cityKey = location.city?.trim().toLowerCase();
     const stateKey = location.state?.trim().toLowerCase();
