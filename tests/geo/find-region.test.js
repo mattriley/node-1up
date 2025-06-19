@@ -16,6 +16,22 @@ module.exports = ({ test, assert }) => ({ geo }) => {
         assert.deepEqual(actual, expected);
     });
 
+    test('IATA code for Melbourne (MEL)', () => {
+        const input = { city: 'MEL' };
+
+        const expected = {
+            city: 'Melbourne',
+            state: 'Victoria',
+            'state.iso': 'VIC',
+            country: 'Australia',
+            'country.iso2': 'AU',
+            unique: ['city']
+        };
+
+        const actual = geo.findRegion(input);
+        assert.deepEqual(actual, expected);
+    });
+
     test('Globally non-unique city + state', () => {
         const input = { city: 'Melbourne', state: 'VIC' };
 

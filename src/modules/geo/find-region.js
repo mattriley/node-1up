@@ -2,13 +2,12 @@ const _ = require('lodash');
 
 const buildLookup = () => {
 
-    const { Country, State, City } = require('country-state-city');
+    const { Country, State } = require('country-state-city');
     const citiesWithIata = require('../../data/cities.json');
-
 
     const allCountries = Country.getAllCountries();
     const allStates = State.getAllStates();
-    const allCities = [...City.getAllCities(), ...citiesWithIata];
+    const allCities = [...citiesWithIata];
 
     const hk = allStates.find(s => s.name === 'Hong Kong SAR');
     if (hk) hk.name = 'Hong Kong';

@@ -1,14 +1,18 @@
 const _ = require('lodash');
 const fs = require('fs');
 const airports = require('./airports.json'); // https://github.com/aashishvanand/airport-data-js/blob/main/data/airports.json
-const countries = require('country-state-city').Country.getAllCountries();
-const countriesByCode = _.keyBy(countries, 'code');
+const airportsByCity = _.groupBy(airports, airport => airport.city.toLowerCase());
+const findAirportsByCity = city => airportsByCity[city.toLowerCase()] ?? [];
+const { City } = require('country-state-city');
 
-const cities = airports.map(airport => {
-    const { iata: iataCode, city, state } = airport;
-    const [countryCode, stateCode] = airport.iso_region.split('-');
-    const country = countriesByCode[countryCode];
-    return { iataCode, city, state, stateCode, country, countryCode };
+const cities = City.getAllCities().map(city => {
+    const airports = findAirportsByCity(city.name).filter(airport => {
+        const [countryCode] = airport.iso_region.split('-');
+        return countryCode === city.countryCode;
+    });
+    const iataCodes = airports.map(airport => airport.iata);
+    const iataCode = iataCodes.find(code => city.name.toLowerCase().startsWith(code.toLowerCase())) ?? iataCodes[0];
+    return { ...city, iataCode, iataCodes };
 });
 
 const dest = __dirname + '/../src/data/cities.json';
