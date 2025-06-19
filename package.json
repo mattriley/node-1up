@@ -26,6 +26,7 @@
     },
     "dependencies": {
         "aircodes": "^1.3.16",
+        "airport-data-js": "^1.0.6",
         "country-state-city": "^3.2.1",
         "lodash": "^4.17.21",
         "module-composer": "^0.165.0"

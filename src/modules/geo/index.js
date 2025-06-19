@@ -1,4 +1,4 @@
 module.exports = {
-    airports: require('./airports'),
+    buildCitiesWithAirports: require('./build-cities-with-airports'),
     findRegion: require('./find-region')
 };

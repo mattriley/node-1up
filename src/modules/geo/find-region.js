@@ -1,11 +1,12 @@
 const _ = require('lodash');
 
-const buildLookup = ({ geo }) => {
+const buildLookup = (allAirports) => {
+
     const { Country, State, City } = require('country-state-city');
 
     const allCountries = Country.getAllCountries();
     const allStates = State.getAllStates();
-    const allCities = City.getAllCities();
+    const allCities = [...City.getAllCities(), ...allAirports];
 
     const hk = allStates.find(s => s.name === 'Hong Kong SAR');
     if (hk) hk.name = 'Hong Kong';
@@ -13,32 +14,23 @@ const buildLookup = ({ geo }) => {
     const mo = allStates.find(s => s.name === 'Macau SAR');
     if (mo) mo.name = 'Macau';
 
-
-    const allAirports = geo.airports();
-
-    // const citiesByName = _.groupBy(allCities, item => item['name'].toLowerCase())
-
-    allAirports.forEach(airport => {
-        const city = allCities.find(city => city.name === airport.city && city.state === airport.state && city.country === airport.country);
-        city.iataCode = airport.iata;
-        console.warn(city);
-    });
-
-
-
-
     const lookupPlan = {
         country: [allCountries, 'name', 'isoCode'],
         state: [allStates, 'name', 'isoCode'],
-        city: [allCities, 'name']
+        city: [allCities, 'name', 'iataCode']
     };
 
     const lookup = _.mapValues(lookupPlan, args => {
         const [items, ...keyNames] = args;
-        return Object.assign(...keyNames.map(keyName => _.groupBy(items, item => item[keyName].toLowerCase())));
+        return Object.assign(...keyNames.map(keyName => _.groupBy(items, item => item[keyName]?.toLowerCase())));
+    });
+
+    allAirports.forEach(ap => {
+        ap.country = lookup.country[ap.countryCode.toLowerCase()]?.[0]?.name;
     });
 
     lookup.allStates = allStates;
+
 
     return lookup;
 }
@@ -55,12 +47,13 @@ const result = (cityData, stateData, countryData, unique) => {
 }
 
 
-module.exports = ({ arr }) => location => {
+module.exports = ({ arr, geo }) => location => {
 
     let lookup; // Lazy load
 
     if (!lookup) {
-        lookup = buildLookup();
+        const airports = geo.buildCitiesWithAirports();
+        lookup = buildLookup(airports);
     }
 
 
