@@ -11,23 +11,36 @@ hk.name = 'Hong Kong';
 const mo = allStates.find(s => s.name === 'Macau SAR');
 mo.name = 'Macau';
 
-const lookup = {
-    country: {
-        iso: _.groupBy(allCountries, country => country.isoCode.toLowerCase()),
-        name: _.groupBy(allCountries, country => country.name.toLowerCase())
-    },
-    state: {
-        iso: _.groupBy(allStates, state => state.isoCode.toLowerCase()),
-        name: _.groupBy(allStates, state => state.name.toLowerCase())
-    },
-    city: {
-        name: _.groupBy(allCities, city => city.name.toLowerCase())
-    }
+const lookupPlan = {
+    country: [allCountries, 'name', 'isoCode'],
+    state: [allStates, 'name', 'isoCode'],
+    city: [allCities, 'name']
 };
 
-lookup.country = Object.assign({}, lookup.country.name, lookup.country.iso);
-lookup.state = Object.assign({}, lookup.state.name, lookup.state.iso);
-lookup.city = Object.assign({}, lookup.city.name);
+const lookup = _.mapValues(lookupPlan, args => {
+    const [items, ...keyNames] = args;
+    return Object.assign(...keyNames.map(keyName => _.groupBy(items, item => item[keyName].toLowerCase())));
+});
+
+// console.dir(lookup, { depth: null });
+
+// const lookup = {
+//     country: {
+//         iso: _.groupBy(allCountries, country => country.isoCode.toLowerCase()),
+//         name: _.groupBy(allCountries, country => country.name.toLowerCase())
+//     },
+//     state: {
+//         iso: _.groupBy(allStates, state => state.isoCode.toLowerCase()),
+//         name: _.groupBy(allStates, state => state.name.toLowerCase())
+//     },
+//     city: {
+//         name: _.groupBy(allCities, city => city.name.toLowerCase())
+//     }
+// };
+
+// lookup.country = Object.assign({}, lookup.country.name, lookup.country.iso);
+// lookup.state = Object.assign({}, lookup.state.name, lookup.state.iso);
+// lookup.city = Object.assign({}, lookup.city.name);
 
 const result = (cityData, stateData, countryData, unique) => {
     return {
