@@ -25,9 +25,11 @@
         "test": "npx task test"
     },
     "dependencies": {
-        "country-state-city": "^3.2.1",
         "lodash": "^4.17.21",
         "module-composer": "^0.165.0"
+    },
+    "peerDependencies": {
+        "country-state-city": "^3.2.1"
     },
     "devDependencies": {
         "cloc": "^1.98.0-cloc",
