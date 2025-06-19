@@ -42,25 +42,25 @@ const result = (cityData, stateData, countryData, unique) => {
 module.exports = ({ arr }) => location => {
 
 
-    const findCities = (cityKey) => {
+    const findCities = (cityKey, cont) => {
         cityKey = cityKey?.toLowerCase();
         const cities = lookup.city.byName[cityKey] || [];
-        return arr.poly(cities, []);
+        return arr.poly(cities, cont);
     }
 
 
-    const findStates = (stateKey) => {
+    const findStates = (stateKey, cont) => {
         stateKey = stateKey?.toLowerCase();
         const states = lookup.state.byName[stateKey] || lookup.state.byIso[stateKey] || [];
-        return arr.poly(states, []);
+        return arr.poly(states, cont);
     };
 
 
 
-    const findCountries = countryKey => {
+    const findCountries = (countryKey, cont) => {
         countryKey = countryKey?.toLowerCase();
         const countries = lookup.country.byName[countryKey] || lookup.country.byIso[countryKey] || [];
-        return arr.poly(countries, []);
+        return arr.poly(countries, cont);
     }
 
 
@@ -73,10 +73,10 @@ module.exports = ({ arr }) => location => {
 
 
     if (cityKey) {
-        const [city, cities] = findCities(cityKey);
+        const [city, cities] = findCities(cityKey, []);
         if (city) {
-            const [state] = findStates(city.stateCode);
-            const [country] = findCountries(city.countryCode);
+            const state = findStates(city.stateCode);
+            const country = findCountries(city.countryCode);
             return result(city, state, country, ['city']);
         }
 
@@ -88,13 +88,13 @@ module.exports = ({ arr }) => location => {
             const byCountry = () => {
 
                 if (countryKey) {
-                    const [country] = findCountries(countryKey);
+                    const country = findCountries(countryKey);
 
                     if (cityKey) {
-                        const [city, cities] = findCities(cityKey);
+                        const [city, cities] = findCities(cityKey, []);
 
                         if (city) { // BEGIN: CITY IS KNOWN
-                            const [state, states] = findStates(city.stateCode);
+                            const [state, states] = findStates(city.stateCode, []);
                             if (state) {
                                 return result(city, state, country, ['city', 'country']);
                             }
@@ -122,7 +122,7 @@ module.exports = ({ arr }) => location => {
                 }
 
                 if (stateKey) {
-                    const [, states] = findStates(stateKey);
+                    const [, states] = findStates(stateKey, []);
                     // we have states and cities
 
                     const cities2 = states ? cities?.filter(city => states.filter(state => state.isoCode === city.stateCode).length === 1) : [];
@@ -139,18 +139,18 @@ module.exports = ({ arr }) => location => {
 
 
             const byState = (stateKey) => {
-                const [state, states] = findStates(stateKey);
+                const [state, states] = findStates(stateKey, []);
 
                 if (state) { // BEGIN: STATE IS KNOWN
                     const city = arr.only(cities, city => city.stateCode === state.isoCode);
-                    const [country] = city ? findCountries(city.countryCode) : [];
+                    const country = city ? findCountries(city.countryCode) : null;
                     if (city && country) {
                         return result(city, state, country, ['city', 'state']);
                     }
                 } // END
 
                 if (states && countryKey) { // BEGIN: STATE IS AMBIGUOUS
-                    const [country] = findCountries(countryKey);
+                    const country = findCountries(countryKey);
                     const state = country ? arr.only(states, state => state.countryCode === country.isoCode) : null;
                     const city = state ? arr.only(cities, city => city.stateCode === state.isoCode) : null;
                     if (city && state && country) {
@@ -183,14 +183,14 @@ module.exports = ({ arr }) => location => {
     }
 
     if (stateKey) {
-        const [state, states] = findStates(stateKey);
+        const [state, states] = findStates(stateKey, []);
         if (state) {
-            const [country] = findCountries(state.countryCode);
+            const country = findCountries(state.countryCode);
             return result(null, state, country, ['state'])
         }
         if (states) {
             if (countryKey) {
-                const [country] = findCountries(countryKey);
+                const country = findCountries(countryKey);
                 const state = arr.only(states, state => state.countryCode === country.isoCode);
                 if (state) {
                     return result(null, state, country, ['state', 'country']);
@@ -200,7 +200,7 @@ module.exports = ({ arr }) => location => {
     }
 
     if (countryKey) {
-        const [country] = findCountries(countryKey);
+        const country = findCountries(countryKey);
         if (country) {
             return result(null, null, country, ['country']);
         }
