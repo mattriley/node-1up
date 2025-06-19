@@ -1,4 +1,4 @@
 module.exports = {
     findAirport: require('./find-airport'),
-    lookupRegion: require('./lookup-region')
+    findRegion: require('./find-region')
 };
