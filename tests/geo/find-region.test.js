@@ -5,6 +5,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
 
         const expected = {
             city: 'Canberra',
+            'city.iata': 'CBR',
             state: 'Australian Capital Territory',
             'state.iso': 'ACT',
             country: 'Australia',
@@ -21,6 +22,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
 
         const expected = {
             city: 'Melbourne',
+            'city.iata': 'MEL',
             state: 'Victoria',
             'state.iso': 'VIC',
             country: 'Australia',
@@ -37,6 +39,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
 
         const expected = {
             city: 'Melbourne',
+            'city.iata': 'MEL',
             state: 'Victoria',
             'state.iso': 'VIC',
             country: 'Australia',
@@ -78,6 +81,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
 
         const expected = {
             city: 'Melbourne',
+            'city.iata': 'MEL',
             state: 'Victoria',
             'state.iso': 'VIC',
             country: 'Australia',
@@ -113,6 +117,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
 
         const expected = {
             city: undefined,
+            'city.iata': undefined,
             state: 'Australian Capital Territory',
             'state.iso': 'ACT',
             country: 'Australia',
@@ -129,6 +134,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
 
         const expected = {
             city: undefined,
+            'city.iata': undefined,
             state: 'Victoria',
             'state.iso': 'VIC',
             country: 'Australia',
@@ -162,6 +168,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
 
         const expected = {
             city: undefined,
+            'city.iata': undefined,
             state: undefined,
             'state.iso': undefined,
             country: 'Australia',
@@ -209,6 +216,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             'country.iso2': 'US',
             'state.iso': 'CA',
             city: 'Los Angeles',
+            'city.iata': 'LAX',
             country: 'United States',
             state: 'California',
             unique: ['city', 'country']
@@ -226,6 +234,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             'country.iso2': 'US',
             'state.iso': 'CA',
             city: 'Los Angeles',
+            'city.iata': 'LAX',
             country: 'United States',
             state: 'California',
             unique: ['city', 'country']
@@ -258,6 +267,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             'country.iso2': 'CN',
             'state.iso': 'HK',
             city: undefined,
+            'city.iata': undefined,
             country: 'China',
             state: 'Hong Kong',
             unique: ['state', 'country']

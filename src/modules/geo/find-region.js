@@ -35,6 +35,7 @@ const buildLookup = () => {
 const result = (cityData, stateData, countryData, unique) => {
     return {
         city: cityData?.name,
+        'city.iata': cityData?.iataCode,
         state: stateData?.name,
         'state.iso': stateData?.isoCode,
         country: countryData?.name,
