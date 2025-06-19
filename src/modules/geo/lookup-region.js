@@ -13,19 +13,21 @@ mo.name = 'Macau';
 
 const lookup = {
     country: {
-        byIso: _.groupBy(allCountries, country => country.isoCode.toLowerCase()),
-        byName: _.groupBy(allCountries, country => country.name.toLowerCase())
+        iso: _.groupBy(allCountries, country => country.isoCode.toLowerCase()),
+        name: _.groupBy(allCountries, country => country.name.toLowerCase())
     },
     state: {
-        byIso: _.groupBy(allStates, state => state.isoCode.toLowerCase()),
-        byName: _.groupBy(allStates, state => state.name.toLowerCase())
+        iso: _.groupBy(allStates, state => state.isoCode.toLowerCase()),
+        name: _.groupBy(allStates, state => state.name.toLowerCase())
     },
     city: {
-        byName: _.groupBy(allCities, city => city.name.toLowerCase())
+        name: _.groupBy(allCities, city => city.name.toLowerCase())
     }
 };
 
-
+lookup.country = Object.assign({}, lookup.country.name, lookup.country.iso);
+lookup.state = Object.assign({}, lookup.state.name, lookup.state.iso);
+lookup.city = Object.assign({}, lookup.city.name);
 
 const result = (cityData, stateData, countryData, unique) => {
     return {
@@ -44,14 +46,14 @@ module.exports = ({ arr }) => location => {
 
     const findCities = (cityKey, cont) => {
         cityKey = cityKey?.toLowerCase();
-        const cities = lookup.city.byName[cityKey] || [];
+        const cities = lookup.city[cityKey] || [];
         return arr.poly(cities, cont);
     }
 
 
     const findStates = (stateKey, cont) => {
         stateKey = stateKey?.toLowerCase();
-        const states = lookup.state.byName[stateKey] || lookup.state.byIso[stateKey] || [];
+        const states = lookup.state[stateKey];
         return arr.poly(states, cont);
     };
 
@@ -59,7 +61,7 @@ module.exports = ({ arr }) => location => {
 
     const findCountries = (countryKey, cont) => {
         countryKey = countryKey?.toLowerCase();
-        const countries = lookup.country.byName[countryKey] || lookup.country.byIso[countryKey] || [];
+        const countries = lookup.country[countryKey];
         return arr.poly(countries, cont);
     }
 
