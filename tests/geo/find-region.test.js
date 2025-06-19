@@ -216,7 +216,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             'country.iso2': 'US',
             'state.iso': 'CA',
             city: 'Los Angeles',
-            'city.iata': 'LAX',
+            'city.iata': undefined,
             country: 'United States',
             state: 'California',
             unique: ['city', 'country']
@@ -234,7 +234,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             'country.iso2': 'US',
             'state.iso': 'CA',
             city: 'Los Angeles',
-            'city.iata': 'LAX',
+            'city.iata': undefined,
             country: 'United States',
             state: 'California',
             unique: ['city', 'country']

@@ -11,10 +11,9 @@ const cities = City.getAllCities().map(city => {
         return countryCode === city.countryCode;
     });
     const iataCodes = airports.map(airport => airport.iata);
-    const iataCode = iataCodes.find(code => {
-        if (city.countryCode === 'AU') return code;
-        if (city.name.toLowerCase().startsWith(code.toLowerCase())) return code;
-    });
+    const iataCode1 = iataCodes.find(code => city.name.toLowerCase().startsWith(code.toLowerCase()));
+    const iataCode2 = city.countryCode === 'AU' ? iataCodes[0] : undefined;
+    const iataCode = iataCode1 ?? iataCode2;
     return { ...city, iataCode, iataCodes };
 });
 
