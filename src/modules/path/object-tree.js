@@ -5,7 +5,9 @@ module.exports = () => paths => {
     const result = {};
 
     for (const path of new Set(paths)) {
-        const segments = path.split('/');
+        const trimmed = path.replace(/\/+$/, '');
+        if (!trimmed) continue;
+        const segments = trimmed.split('/');
         let current = result;
 
         for (const segment of segments) {
