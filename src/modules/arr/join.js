@@ -1,8 +1,8 @@
-module.exports = () => (arr, sep, lastSep) => {
+// Last optimised on 20 June 2025.
 
-    const items = [...arr];
-    if (items.length === 1) return items[0];
-    const last = items.pop();
-    return items.join(sep) + lastSep + last;
+module.exports = () => (arr, sep = ',', finalSep = sep) => {
+
+    if (arr.length <= 1) return arr[0] || '';
+    return arr.slice(0, -1).join(sep) + finalSep + arr[arr.length - 1];
 
 };
