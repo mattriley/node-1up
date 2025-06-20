@@ -1,25 +1,32 @@
-const _ = require('lodash');
+// Last optimised on 21 June 2025.
+
 const { setImmediate } = require('timers/promises');
 
 module.exports = () => async (arr, chunkSize, loopPredicate, mapFunction) => {
 
-    loopPredicate = _.isFunction(loopPredicate) ? loopPredicate : () => loopPredicate;
-    let loop = true;
+    const shouldContinue = typeof loopPredicate === 'function'
+        ? loopPredicate
+        : () => loopPredicate;
+
     const results = [];
-    const chunks = _.chunk(arr, chunkSize);
 
-    for (const chunk of chunks) {
-        const chunkPromises = [];
+    for (let i = 0; i < arr.length; i += chunkSize) {
+        if (!shouldContinue()) break;
+
+        const chunk = arr.slice(i, i + chunkSize);
+        const chunkResults = [];
+
         for (const item of chunk) {
-            chunkPromises.push(mapFunction(item));
-            loop = loopPredicate();
-            if (!loop) break;
-
+            if (!shouldContinue()) break;
+            chunkResults.push(mapFunction(item));
         }
-        const chunkResults = await Promise.all(chunkPromises);
-        results.push(...chunkResults);
-        if (!loop) break;
-        await setImmediate(); // allows SIGINT
+
+        if (chunkResults.length > 0) {
+            const resolved = await Promise.all(chunkResults);
+            results.push(...resolved);
+        }
+
+        await setImmediate(); // allow event loop to process e.g. SIGINT
     }
 
     return results;
