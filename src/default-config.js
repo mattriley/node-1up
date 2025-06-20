@@ -1,5 +1,6 @@
 module.exports = {
 
-    indent: 4
+    indent: 4,
+    delimiter: ','
 
 };
