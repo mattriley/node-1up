@@ -1,5 +1,5 @@
 module.exports = {
-    arrayOrSplit: require('./array-or-split'),
+    ensure: require('./ensure'),
     insertSecondLast: require('./insert-second-last'),
     join: require('./join'),
     mapChunksAsync: require('./map-chunks-async'),
