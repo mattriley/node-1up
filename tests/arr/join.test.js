@@ -1,24 +1,24 @@
 module.exports = ({ test, assert }) => lib => {
 
-    test('default separator is comma', () => {
+    test('default delimiter is comma', () => {
         const expected = 'foo,bar,baz,qux';
         const actual = lib.arr.join(['foo', 'bar', 'baz', 'qux']);
         assert.deepEqual(actual, expected);
     });
 
-    test('custom separator', () => {
+    test('custom delimiter', () => {
         const expected = 'foo | bar | baz | qux';
         const actual = lib.arr.join(['foo', 'bar', 'baz', 'qux'], ' | ');
         assert.deepEqual(actual, expected);
     });
 
-    test('final separator', () => {
+    test('final delimiter', () => {
         const expected = 'foo, bar, baz & qux';
         const actual = lib.arr.join(['foo', 'bar', 'baz', 'qux'], ', ', ' & ');
         assert.deepEqual(actual, expected);
     });
 
-    test('final separator on only two items', () => {
+    test('final delimiter on only two items', () => {
         const expected = 'foo & bar';
         const actual = lib.arr.join(['foo', 'bar'], ', ', ' & ');
         assert.deepEqual(actual, expected);
