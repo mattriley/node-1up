@@ -1,6 +1,6 @@
 module.exports = {
     ensure: require('./ensure'),
-    insertSecondLast: require('./insert-second-last'),
+    insertBeforeLast: require('./insert-before-last'),
     join: require('./join'),
     mapChunksAsync: require('./map-chunks-async'),
     only: require('./only'),
