@@ -1,4 +1,4 @@
-module.exports = ({ test, assert }) => ({ obj }) => {
+module.exports = ({ test, assert }) => lib => {
 
     test('flatten', () => {
         const input = {
@@ -7,7 +7,7 @@ module.exports = ({ test, assert }) => ({ obj }) => {
                 b: 2
             }
         };
-        const actual = obj.flatten(input);
+        const actual = lib.obj.flat(input);
         const expected = { a: 1, b: 2 };
         assert.deepEqual(actual, expected);
     });
@@ -19,7 +19,7 @@ module.exports = ({ test, assert }) => ({ obj }) => {
                 b: 2
             }
         };
-        const actual = obj.flatten(input, { delimiter: '.' });
+        const actual = lib.obj.flat(input, { delimiter: '.' });
         const expected = { a: 1, 'sub.b': 2 };
         assert.deepEqual(actual, expected);
     });
@@ -31,7 +31,7 @@ module.exports = ({ test, assert }) => ({ obj }) => {
                 a: 1
             }
         };
-        assert.throws(() => obj.flatten(input), /Collision: a/);
+        assert.throws(() => lib.obj.flat(input), /Collision: a/);
     });
 
 };
