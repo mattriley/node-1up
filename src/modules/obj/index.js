@@ -9,6 +9,7 @@ module.exports = {
     mapKeys: require('./map-keys'),
     mapValues: require('./map-values'),
     mapValuesAsync: require('./map-values-async'),
+    pick: require('./pick'),
     sortKeys: require('./sort-keys'),
     toArray: require('./to-array'),
     transformEntries: require('./transform-entries'),

@@ -1,5 +1,6 @@
 module.exports = {
     indent: require('./indent'),
+    isLiteralBool: require('./is-literal-bool'),
     join: require('./join'),
     mono: require('./mono'),
     padZero: require('./pad-zero'),
