@@ -1,6 +1,6 @@
 module.exports = {
     invokeOrReturn: require('./invoke-or-return'),
-    isPlainFunction: require('./is-plain-function'),
+    isPlain: require('./is-plain'),
     pipe: require('./pipe'),
     pipeAssign: require('./pipe-assign'),
     pipeAssignWhile: require('./pipe-assign-while'),

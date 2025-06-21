@@ -9,12 +9,15 @@ module.exports = ({ config, overrides } = {}) => {
 
     const functionAlias = [['Value', 'Val']];
     const { compose } = composer(modules, { functionAlias, overrides, config, defaultConfig });
-    const { arr } = compose.make('arr');
+
+    const { is } = compose.make('is');
+    const { arr } = compose.make('arr', { is });
+
+    compose.make('obj', { is, arr });
     compose.deep('str', { arr });
-    compose.make('obj', { arr });
-    compose.make('fun');
+    compose.make('fun', { is });
     compose.make('fsx');
-    compose.make('fsp');
+    compose.make('fsp', { is });
     compose.asis('any');
     compose.make('geo', { arr });
     compose.make('bool');

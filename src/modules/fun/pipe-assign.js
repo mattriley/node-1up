@@ -1,10 +1,10 @@
-module.exports = ({ self }) => {
+module.exports = ({ is }) => {
 
     const _pipeAssign = (...args) => (...funs) => {
         const invoke = (fun, acc) => args.length ? fun(...args)(acc) : fun(acc);
 
         return funs.flat().reduce((acc, fun) => {
-            const res = fun && self.isPlainFunction(fun) ? invoke(fun, acc) : fun;
+            const res = fun && is.plainFunction(fun) ? invoke(fun, acc) : fun;
             return { ...acc, ...res };
         }, {});
     };

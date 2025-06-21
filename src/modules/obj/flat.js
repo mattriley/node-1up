@@ -1,8 +1,8 @@
-module.exports = () => (obj, opts = {}) => {
+module.exports = ({ is }) => (obj, opts = {}) => {
 
     const recurse = (obj, parentKey = '', currentDepth = 0) => {
         return Object.entries(obj).reduce((acc, [key, val]) => {
-            const done = !_.isPlainObject(val);
+            const done = !is.plainObject(val);
             const newKey = parentKey && opts.delimiter ? parentKey + opts.delimiter + key : key;
             if (done) return { ...acc, [newKey]: val };
             const changes = recurse(val, opts.delimiter ? newKey : '', currentDepth + 1);

@@ -1,11 +1,11 @@
 const nodepath = require('node:path');
 
-module.exports = ({ self, config }) => async (path, data, indent = config.indent) => {
+module.exports = ({ self, is, config }) => async (path, data, indent = config.indent) => {
 
-    if (!_.isPlainObject(data)) throw new Error('data must be plain object');
+    if (!is.plainObject(data)) throw new Error('data must be plain object');
 
     const promises = Object.entries(data).map(async ([key, data]) => {
-        const isJson = _.isPlainObject(data) || Array.isArray(data);
+        const isJson = is.plainObject(data) || Array.isArray(data);
         const ext = isJson ? 'json' : 'txt';
         const file = nodepath.join(path, `${key}.${ext}`);
         const writeJson = (file, data) => self.writeJson(file, data, indent);
