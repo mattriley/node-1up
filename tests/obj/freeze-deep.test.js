@@ -1,11 +1,11 @@
-module.exports = ({ test, assert }) => ({ obj }) => {
+module.exports = ({ test, assert }) => lib => {
 
     test('deep freeze', () => {
         const input = {
             obj: { a: 1 },
             fun: () => { }
         };
-        obj.deepFreeze(input);
+        lib.obj.freezeDeep(input);
         input.foo = 'bar';
         input.obj.foo = 'bar';
         input.fun.foo = 'bar';
