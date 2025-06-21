@@ -6,7 +6,7 @@ module.exports = () => async (arr, chunkSize, loopPredicate, mapFunction) => {
 
     const shouldContinue = typeof loopPredicate === 'function'
         ? loopPredicate
-        : () => loopPredicate;
+        : () => loopPredicate ?? true;
 
     const results = [];
 
