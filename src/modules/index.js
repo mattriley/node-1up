@@ -1,6 +1,7 @@
 module.exports = {
     any: require('./any'),
     arr: require('./arr'),
+    bool: require('./bool'),
     fsp: require('./fsp'),
     fsx: require('./fsx'),
     fun: require('./fun'),

@@ -16,8 +16,9 @@ module.exports = ({ config, overrides } = {}) => {
     compose.make('fsx');
     compose.make('fsp');
     compose.asis('any');
-    compose.make('path', { arr });
     compose.make('geo', { arr });
+    compose.make('bool');
+    compose.make('path', { arr });
 
     return compose.modules;
 
