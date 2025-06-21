@@ -28,9 +28,6 @@
         "lodash": "^4.17.21",
         "module-composer": "^0.165.0"
     },
-    "peerDependencies": {
-        "country-state-city": "^3.2.1"
-    },
     "devDependencies": {
         "cloc": "^1.98.0-cloc",
         "doctoc": "^2.2.1",
@@ -42,5 +39,8 @@
         "module-testrunner": "^0.21.0",
         "npm-check-updates": "^16.14.4",
         "task-library": "^0.274.0"
+    },
+    "peerDependencies": {
+        "country-state-city": "^3.2.1"
     }
 }

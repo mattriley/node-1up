@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export NODE_VERSION="20.5.0"
+export NODE_VERSION="22.16.0"
 
 export COV_BRANCHES=70
 export COV_LINES=70
