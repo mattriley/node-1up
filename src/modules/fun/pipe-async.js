@@ -6,11 +6,11 @@ module.exports = ({ self }) => (fns) => {
     } else if (typeof fns === 'object' && fns !== null) {
         fnList = Object.values(fns);
     } else {
-        throw new TypeError('asyncChain expects an array or object of functions');
+        throw new TypeError('pipeAsync expects an array or object of functions');
     }
 
     if (!fnList.every(fn => typeof fn === 'function')) {
-        throw new TypeError('All elements in asyncChain must be functions');
+        throw new TypeError('All elements in pipeAsync must be functions');
     }
 
     return async (initial = {}, context) => {
