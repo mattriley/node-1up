@@ -1,6 +1,6 @@
-module.exports = ({ test, assert }) => ({ fun }) => {
+module.exports = ({ test, assert }) => lib => {
 
-    const pipe = fun.pipe;
+    const pipe = lib.fun.pipe;
 
     test('pipe: array of functions', () => {
         const fn = pipe([
