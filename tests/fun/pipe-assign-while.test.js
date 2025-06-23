@@ -1,9 +1,9 @@
-module.exports = ({ test, assert }) => ({ fun }) => {
+module.exports = ({ test, assert }) => lib => {
 
-    const conditionalAssign = fun.pipeAssignWhile;
+    const pipeAssignWhile = lib.fun.pipeAssignWhile;
 
-    test('conditionalAssign: runs all functions when predicate is always true', () => {
-        const fn = conditionalAssign([
+    test('pipeAssignWhile: runs all functions when predicate is always true', () => {
+        const fn = pipeAssignWhile([
             () => ({ a: 1 }),
             () => ({ b: 2 }),
             () => ({ c: 3 })
@@ -13,8 +13,8 @@ module.exports = ({ test, assert }) => ({ fun }) => {
         assert.deepStrictEqual(result, { a: 1, b: 2, c: 3 });
     });
 
-    test('conditionalAssign: skips all functions when predicate is always false', () => {
-        const fn = conditionalAssign([
+    test('pipeAssignWhile: skips all functions when predicate is always false', () => {
+        const fn = pipeAssignWhile([
             () => ({ a: 1 }),
             () => ({ b: 2 })
         ]);
@@ -23,8 +23,8 @@ module.exports = ({ test, assert }) => ({ fun }) => {
         assert.deepStrictEqual(result, { x: 1 });
     });
 
-    test('conditionalAssign: conditionally executes based on state', () => {
-        const fn = conditionalAssign([
+    test('pipeAssignWhile: conditionally executes based on state', () => {
+        const fn = pipeAssignWhile([
             acc => ({ count: (acc.count || 0) + 1 }),
             acc => ({ count: (acc.count || 0) + 1 }),
             acc => ({ done: true }) // won't run
@@ -34,8 +34,8 @@ module.exports = ({ test, assert }) => ({ fun }) => {
         assert.deepStrictEqual(result, { count: 2 }); // Corrected expectation
     });
 
-    test('conditionalAssign: executes all steps if predicate always true', () => {
-        const fn = conditionalAssign([
+    test('pipeAssignWhile: executes all steps if predicate always true', () => {
+        const fn = pipeAssignWhile([
             acc => ({ count: (acc.count || 0) + 1 }),
             acc => ({ count: (acc.count || 0) + 1 }),
             acc => ({ done: true })
@@ -45,8 +45,8 @@ module.exports = ({ test, assert }) => ({ fun }) => {
         assert.deepStrictEqual(result, { count: 2, done: true });
     });
 
-    test('conditionalAssign: context is passed to all functions', () => {
-        const fn = conditionalAssign([
+    test('pipeAssignWhile: context is passed to all functions', () => {
+        const fn = pipeAssignWhile([
             (acc, ctx) => ({ a: ctx.value }),
             (acc, ctx) => ({ b: ctx.value + 1 })
         ]);
@@ -55,8 +55,8 @@ module.exports = ({ test, assert }) => ({ fun }) => {
         assert.deepStrictEqual(result, { a: 5, b: 6 });
     });
 
-    test('conditionalAssign: object of functions is supported', () => {
-        const fn = conditionalAssign({
+    test('pipeAssignWhile: object of functions is supported', () => {
+        const fn = pipeAssignWhile({
             one: () => ({ a: 1 }),
             two: () => ({ b: 2 })
         });
@@ -65,33 +65,33 @@ module.exports = ({ test, assert }) => ({ fun }) => {
         assert.deepStrictEqual(result, { a: 1, b: 2 });
     });
 
-    test('conditionalAssign: empty array returns initial unchanged', () => {
-        const fn = conditionalAssign([]);
+    test('pipeAssignWhile: empty array returns initial unchanged', () => {
+        const fn = pipeAssignWhile([]);
         const result = fn(() => true, { x: 1 });
         assert.deepStrictEqual(result, { x: 1 });
     });
 
-    test('conditionalAssign: empty object returns initial unchanged', () => {
-        const fn = conditionalAssign({});
+    test('pipeAssignWhile: empty object returns initial unchanged', () => {
+        const fn = pipeAssignWhile({});
         const result = fn(() => true, { x: 1 });
         assert.deepStrictEqual(result, { x: 1 });
     });
 
-    test('conditionalAssign: throws on non-function in array', () => {
+    test('pipeAssignWhile: throws on non-function in array', () => {
         assert.throws(() => {
-            conditionalAssign([() => ({}), 'bad']);
+            pipeAssignWhile([() => ({}), 'bad']);
         }, /must be functions/);
     });
 
-    test('conditionalAssign: throws on non-function in object', () => {
+    test('pipeAssignWhile: throws on non-function in object', () => {
         assert.throws(() => {
-            conditionalAssign({ ok: () => ({}), nope: 'bad' });
+            pipeAssignWhile({ ok: () => ({}), nope: 'bad' });
         }, /must be functions/);
     });
 
-    test('conditionalAssign: throws on invalid input type', () => {
+    test('pipeAssignWhile: throws on invalid input type', () => {
         assert.throws(() => {
-            conditionalAssign('not valid');
+            pipeAssignWhile('not valid');
         }, /expects an array or object/);
     });
 
