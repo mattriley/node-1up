@@ -1,3 +1,5 @@
+const merge = require('lodash.merge');
+
 module.exports = ({ self }) => (fns) => {
     let fnList;
 
@@ -6,17 +8,17 @@ module.exports = ({ self }) => (fns) => {
     } else if (typeof fns === 'object' && fns !== null) {
         fnList = Object.values(fns);
     } else {
-        throw new TypeError('assign expects an array or object of functions');
+        throw new TypeError('merge expects an array or object of functions');
     }
 
     if (!fnList.every(fn => typeof fn === 'function')) {
-        throw new TypeError('All elements in assign must be functions');
+        throw new TypeError('All elements in merge must be functions');
     }
 
     return (initial = {}, context) => {
         return fnList.reduce((acc, fn) => {
             const result = self.invokeOrReturn(fn, acc, context);
-            return { ...acc, ...result };
+            return merge({}, acc, result);
         }, initial);
     };
 };
