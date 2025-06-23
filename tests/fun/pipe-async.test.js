@@ -1,9 +1,9 @@
-module.exports = ({ test, assert }) => ({ fun }) => {
+module.exports = ({ test, assert }) => lib => {
 
-    const asyncChain = fun.pipeAsync;
+    const pipeAsync = lib.fun.pipeAsync;
 
-    test('asyncChain: runs async functions in sequence', async () => {
-        const fn = asyncChain([
+    test('pipeAsync: runs async functions in sequence', async () => {
+        const fn = pipeAsync([
             async x => ({ ...x, a: 1 }),
             async x => ({ ...x, b: 2 })
         ]);
@@ -11,8 +11,8 @@ module.exports = ({ test, assert }) => ({ fun }) => {
         assert.deepStrictEqual(result, { a: 1, b: 2 });
     });
 
-    test('asyncChain: supports object of async functions', async () => {
-        const fn = asyncChain({
+    test('pipeAsync: supports object of async functions', async () => {
+        const fn = pipeAsync({
             one: async x => ({ ...x, a: 1 }),
             two: async x => ({ ...x, b: 2 })
         });
@@ -20,8 +20,8 @@ module.exports = ({ test, assert }) => ({ fun }) => {
         assert.deepStrictEqual(result, { a: 1, b: 2 });
     });
 
-    test('asyncChain: preserves initial if all return undefined', async () => {
-        const fn = asyncChain([
+    test('pipeAsync: preserves initial if all return undefined', async () => {
+        const fn = pipeAsync([
             async () => undefined,
             async () => undefined
         ]);
@@ -29,8 +29,8 @@ module.exports = ({ test, assert }) => ({ fun }) => {
         assert.deepStrictEqual(result, { a: 1 });
     });
 
-    test('asyncChain: skips undefined results and uses last defined', async () => {
-        const fn = asyncChain([
+    test('pipeAsync: skips undefined results and uses last defined', async () => {
+        const fn = pipeAsync([
             async () => ({ a: 1 }),
             async () => undefined,
             async () => ({ b: 2 })
@@ -39,8 +39,8 @@ module.exports = ({ test, assert }) => ({ fun }) => {
         assert.deepStrictEqual(result, { b: 2 });
     });
 
-    test('asyncChain: context is passed', async () => {
-        const fn = asyncChain([
+    test('pipeAsync: context is passed', async () => {
+        const fn = pipeAsync([
             async (acc, ctx) => ({ ...acc, a: ctx.val }),
             async (acc, ctx) => ({ ...acc, b: ctx.val + 1 })
         ]);
@@ -48,21 +48,21 @@ module.exports = ({ test, assert }) => ({ fun }) => {
         assert.deepStrictEqual(result, { a: 10, b: 11 });
     });
 
-    test('asyncChain: throws on non-function in array', () => {
+    test('pipeAsync: throws on non-function in array', () => {
         assert.throws(() => {
-            asyncChain([async () => ({}), 'bad']);
+            pipeAsync([async () => ({}), 'bad']);
         }, /must be functions/);
     });
 
-    test('asyncChain: throws on non-function in object', () => {
+    test('pipeAsync: throws on non-function in object', () => {
         assert.throws(() => {
-            asyncChain({ good: async () => ({}), bad: 'nope' });
+            pipeAsync({ good: async () => ({}), bad: 'nope' });
         }, /must be functions/);
     });
 
-    test('asyncChain: throws on invalid input type', () => {
+    test('pipeAsync: throws on invalid input type', () => {
         assert.throws(() => {
-            asyncChain('not valid');
+            pipeAsync('not valid');
         }, /expects an array or object/);
     });
 
