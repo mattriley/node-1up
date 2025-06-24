@@ -1,4 +1,4 @@
-module.exports = ({ self }) => (fns) => {
+module.exports = ({ self }) => fns => {
 
     const isArray = Array.isArray(fns);
     const isObject = !isArray && typeof fns === 'object' && fns !== null;
@@ -15,17 +15,17 @@ module.exports = ({ self }) => (fns) => {
         }
     }
 
-    return (initial = {}, context) => {
-        const acc = initial;
+    return (initial = {}, context = {}) => {
+        const state = initial;
 
         for (let i = 0; i < fnList.length; i++) {
-            const result = self.invokeOrReturn(fnList[i], acc, context);
+            const result = self.invokeOrReturn(fnList[i], { state, context }, state);
             if (result && typeof result === 'object') {
-                Object.assign(acc, result);
+                Object.assign(state, result);
             }
         }
 
-        return acc;
+        return state;
     };
 
 };

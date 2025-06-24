@@ -4,36 +4,36 @@ module.exports = ({ test, assert }) => ({ fun }) => {
 
     test('pipeAssign: array of functions mutates and returns initial object', () => {
         const fn = pipeAssign([
-            acc => ({ a: 1 }),
-            acc => ({ b: 2 }),
-            acc => ({ c: 3 })
+            ({ state }) => ({ a: 1 }),
+            ({ state }) => ({ b: 2 }),
+            ({ state }) => ({ c: 3 })
         ]);
 
-        const obj = {};
-        const result = fn(obj);
+        const state = {};
+        const result = fn(state);
 
-        assert.strictEqual(result, obj); // same reference
+        assert.strictEqual(result, state);
         assert.deepStrictEqual(result, { a: 1, b: 2, c: 3 });
     });
 
     test('pipeAssign: object of functions mutates and returns initial object', () => {
         const fn = pipeAssign({
-            one: acc => ({ x: 10 }),
-            two: acc => ({ y: 20 })
+            one: ({ state }) => ({ x: 10 }),
+            two: ({ state }) => ({ y: 20 })
         });
 
-        const obj = {};
-        const result = fn(obj);
+        const state = {};
+        const result = fn(state);
 
-        assert.strictEqual(result, obj);
+        assert.strictEqual(result, state);
         assert.deepStrictEqual(result, { x: 10, y: 20 });
     });
 
     test('pipeAssign: later values overwrite earlier ones', () => {
         const fn = pipeAssign([
-            acc => ({ a: 1 }),
-            acc => ({ a: 2 }),
-            acc => ({ b: 3 })
+            () => ({ a: 1 }),
+            () => ({ a: 2 }),
+            () => ({ b: 3 })
         ]);
 
         const result = fn({});
@@ -42,28 +42,28 @@ module.exports = ({ test, assert }) => ({ fun }) => {
 
     test('pipeAssign: context is passed to all functions', () => {
         const fn = pipeAssign([
-            (acc, ctx) => ({ a: ctx.value }),
-            (acc, ctx) => ({ b: ctx.value + 1 })
+            ({ context }) => ({ a: context.value }),
+            ({ context }) => ({ b: context.value + 1 })
         ]);
 
         const result = fn({}, { value: 10 });
         assert.deepStrictEqual(result, { a: 10, b: 11 });
     });
 
-    test('pipeAssign: ignores undefined result and continues', () => {
+    test('pipeAssign: state is passed as second arg', () => {
+        const fn = pipeAssign([
+            (_, state) => ({ a: state.existing + 1 }),
+            (_, state) => ({ b: state.a + 1 })
+        ]);
+
+        const result = fn({ existing: 1 });
+        assert.deepStrictEqual(result, { existing: 1, a: 2, b: 3 });
+    });
+
+    test('pipeAssign: ignores undefined and null results', () => {
         const fn = pipeAssign([
             () => ({ a: 1 }),
             () => undefined,
-            () => ({ b: 2 })
-        ]);
-
-        const result = fn({});
-        assert.deepStrictEqual(result, { a: 1, b: 2 });
-    });
-
-    test('pipeAssign: skips null result', () => {
-        const fn = pipeAssign([
-            () => ({ a: 1 }),
             () => null,
             () => ({ b: 2 })
         ]);
@@ -72,49 +72,38 @@ module.exports = ({ test, assert }) => ({ fun }) => {
         assert.deepStrictEqual(result, { a: 1, b: 2 });
     });
 
-    test('pipeAssign: empty array returns initial unchanged', () => {
-        const fn = pipeAssign([]);
-        const obj = { z: 9 };
-        const result = fn(obj);
-        assert.strictEqual(result, obj);
-        assert.deepStrictEqual(result, { z: 9 });
-    });
-
-    test('pipeAssign: empty object returns initial unchanged', () => {
-        const fn = pipeAssign({});
-        const obj = { z: 9 };
-        const result = fn(obj);
-        assert.strictEqual(result, obj);
-        assert.deepStrictEqual(result, { z: 9 });
-    });
-
     test('pipeAssign: throws on invalid top-level input (string)', () => {
         assert.throws(() => {
-            pipeAssign('nope');
+            pipeAssign('bad');
         }, /pipeAssign expects an array or object of functions/);
     });
 
     test('pipeAssign: throws on non-function in array', () => {
         assert.throws(() => {
             pipeAssign([() => ({}), 'bad']);
-        }, /All elements in pipeAssign must be functions/);
+        }, /must be functions/);
     });
 
     test('pipeAssign: throws on non-function in object', () => {
         assert.throws(() => {
-            pipeAssign({ ok: () => ({}), bad: 123 });
-        }, /All elements in pipeAssign must be functions/);
+            pipeAssign({ ok: () => ({}), nope: 123 });
+        }, /must be functions/);
     });
 
-    test('pipeAssign: result is mutated in place', () => {
-        const fn = pipeAssign([
-            () => ({ a: 1 }),
-            () => ({ b: 2 })
-        ]);
-        const base = { existing: true };
-        const result = fn(base);
-        assert.strictEqual(result, base);
-        assert.deepStrictEqual(result, { existing: true, a: 1, b: 2 });
+    test('pipeAssign: empty array returns initial unchanged', () => {
+        const fn = pipeAssign([]);
+        const obj = { a: 1 };
+        const result = fn(obj);
+        assert.strictEqual(result, obj);
+        assert.deepStrictEqual(result, { a: 1 });
+    });
+
+    test('pipeAssign: empty object returns initial unchanged', () => {
+        const fn = pipeAssign({});
+        const obj = { a: 1 };
+        const result = fn(obj);
+        assert.strictEqual(result, obj);
+        assert.deepStrictEqual(result, { a: 1 });
     });
 
 };
