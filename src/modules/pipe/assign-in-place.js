@@ -5,10 +5,10 @@ module.exports = ({ self, is, fun }) => (...args) => {
     return (initial = {}, context) => {
         context ??= defaultContext;
         const state = initial;
-        const param = { [stateKey]: state, context };
+        Object.assign(context, { [stateKey]: state });
         for (const step of steps) {
-            const result = fun.invokeOrReturn(step, param);
-            if (is.plainObject(result)) Object.assign(initial, result);
+            const result = fun.invokeOrReturn(step, context);
+            if (is.plainObject(result)) Object.assign(state, result);
         }
         return state;
     };

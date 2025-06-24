@@ -43,7 +43,7 @@ module.exports = ({ test, assert }) => lib => {
 
     test('pipeAssign: uses defaultContext if none passed', () => {
         const fn = pipeAssignInPlace([
-            ({ context }) => ({ a: context.foo })
+            ({ foo }) => ({ a: foo })
         ], { foo: 42 });
 
         const obj = {};
@@ -54,7 +54,7 @@ module.exports = ({ test, assert }) => lib => {
 
     test('pipeAssign: context override takes precedence', () => {
         const fn = pipeAssignInPlace([
-            ({ context }) => ({ a: context.bar })
+            ({ bar }) => ({ a: bar })
         ], { bar: 'old' });
 
         const obj = {};
