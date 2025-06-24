@@ -6,7 +6,7 @@ module.exports = ({ test, assert }) => ({ fun }) => {
         const fn = pipeAssign([
             ({ state }) => ({ a: 1 }),
             ({ state }) => ({ b: 2 }),
-            ({ state }) => ({ c: 3 })
+            ({ state }) => ({ c: 3 }),
         ]);
 
         const state = {};
@@ -19,7 +19,7 @@ module.exports = ({ test, assert }) => ({ fun }) => {
     test('pipeAssign: object of functions mutates and returns initial object', () => {
         const fn = pipeAssign({
             one: ({ state }) => ({ x: 10 }),
-            two: ({ state }) => ({ y: 20 })
+            two: ({ state }) => ({ y: 20 }),
         });
 
         const state = {};
@@ -33,7 +33,7 @@ module.exports = ({ test, assert }) => ({ fun }) => {
         const fn = pipeAssign([
             () => ({ a: 1 }),
             () => ({ a: 2 }),
-            () => ({ b: 3 })
+            () => ({ b: 3 }),
         ]);
 
         const result = fn({});
@@ -43,7 +43,7 @@ module.exports = ({ test, assert }) => ({ fun }) => {
     test('pipeAssign: context is passed to all functions', () => {
         const fn = pipeAssign([
             ({ context }) => ({ a: context.value }),
-            ({ context }) => ({ b: context.value + 1 })
+            ({ context }) => ({ b: context.value + 1 }),
         ]);
 
         const result = fn({}, { value: 10 });
@@ -53,7 +53,7 @@ module.exports = ({ test, assert }) => ({ fun }) => {
     test('pipeAssign: state is passed as second arg', () => {
         const fn = pipeAssign([
             (_, state) => ({ a: state.existing + 1 }),
-            (_, state) => ({ b: state.a + 1 })
+            (_, state) => ({ b: state.a + 1 }),
         ]);
 
         const result = fn({ existing: 1 });
@@ -65,7 +65,7 @@ module.exports = ({ test, assert }) => ({ fun }) => {
             () => ({ a: 1 }),
             () => undefined,
             () => null,
-            () => ({ b: 2 })
+            () => ({ b: 2 }),
         ]);
 
         const result = fn({});
@@ -104,6 +104,16 @@ module.exports = ({ test, assert }) => ({ fun }) => {
         const result = fn(obj);
         assert.strictEqual(result, obj);
         assert.deepStrictEqual(result, { a: 1 });
+    });
+
+    test('pipeAssign: custom stateName is respected in param', () => {
+        const fn = pipeAssign([
+            ({ custom }) => ({ x: 5 }),
+            ({ custom }) => ({ y: custom.x + 2 }),
+        ], 'custom');
+
+        const result = fn({});
+        assert.deepStrictEqual(result, { x: 5, y: 7 });
     });
 
 };

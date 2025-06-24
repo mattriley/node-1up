@@ -1,4 +1,4 @@
-module.exports = ({ self }) => fns => {
+module.exports = ({ self }) => (fns, stateName = 'state') => {
 
     const isArray = Array.isArray(fns);
     const isObject = !isArray && typeof fns === 'object' && fns !== null;
@@ -17,9 +17,10 @@ module.exports = ({ self }) => fns => {
 
     return (initial = {}, context = {}) => {
         const state = initial;
+        const param = { [stateName]: state, state, context };
 
         for (let i = 0; i < fnList.length; i++) {
-            const result = self.invokeOrReturn(fnList[i], { state, context }, state);
+            const result = self.invokeOrReturn(fnList[i], param, state);
             if (result && typeof result === 'object') {
                 Object.assign(state, result);
             }
