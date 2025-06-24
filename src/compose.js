@@ -12,16 +12,17 @@ module.exports = ({ config, overrides } = {}) => {
 
     const { is } = compose.make('is');
     const { arr } = compose.make('arr', { is });
+    const { fun } = compose.make('fun', { is });
 
     compose.make('obj', { is, arr });
     compose.deep('str', { arr });
-    compose.make('fun', { is });
     compose.make('fsx');
     compose.make('fsp', { is });
     compose.asis('any');
     compose.make('geo', { arr });
     compose.make('bool');
     compose.make('path', { arr });
+    compose.make('pipe', { is, fun });
 
     return compose.modules;
 

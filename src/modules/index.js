@@ -9,5 +9,6 @@ module.exports = {
     is: require('./is'),
     obj: require('./obj'),
     path: require('./path'),
+    pipe: require('./pipe'),
     str: require('./str')
 };
