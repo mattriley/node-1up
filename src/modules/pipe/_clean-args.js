@@ -1,9 +1,11 @@
-module.exports = () => (...args) => {
+module.exports = ({ is }) => (...args) => {
 
-    let steps, defaultContext = {}, stateKey = 'state';
+    let steps, defaultContext = {}, stateKey = 'state', predicate;
 
     for (const arg of args) {
-        if (Array.isArray(arg)) {
+        if (is.plainFunction(arg)) {
+            predicate = arg;
+        } else if (Array.isArray(arg)) {
             steps = arg;
         } else if (typeof arg === 'string') {
             stateKey = arg;
@@ -28,6 +30,6 @@ module.exports = () => (...args) => {
         }
     }
 
-    return { steps, defaultContext, stateKey };
+    return { steps, defaultContext, stateKey, predicate };
 
 };

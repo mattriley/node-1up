@@ -1,14 +1,12 @@
-const merge = require('lodash.merge');
-
 module.exports = ({ self, is, fun }) => (...args) => {
 
-    return self.with(args, ({ steps, state, context }) => {
+    return self.with(args, ({ steps, state, context, predicate }) => {
         state = structuredClone(state);
         for (const step of steps) {
+            if (predicate && !predicate(state)) return state;
             const result = fun.invokeOrReturn(step, context);
-            if (is.plainObject(result)) merge(state, result);
+            if (is.plainObject(result)) Object.assign(state, result);
         }
         return state;
     });
-
-}
+};
