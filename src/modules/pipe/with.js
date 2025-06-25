@@ -4,7 +4,7 @@ module.exports = ({ self }) => (args, impl) => {
 
     return (initial = {}, context = {}) => {
         context = { ...defaultContext, ...context };
-        const state = initial;
+        const state = structuredClone(initial);
         Object.assign(context, { [stateKey]: state });
         return impl({ steps, state, context, predicate });
     };
