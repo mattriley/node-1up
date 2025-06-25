@@ -4,6 +4,5 @@ module.exports = {
     isPlain: require('./is-plain'),
     pipe: require('./pipe'),
     pipeAssignWhile: require('./pipe-assign-while'),
-    pipeAsync: require('./pipe-async'),
-    pipeMerge: require('./pipe-merge')
+    pipeAsync: require('./pipe-async')
 };
