@@ -26,7 +26,7 @@
     },
     "dependencies": {
         "lodash": "^4.17.21",
-        "module-composer": "^0.169.0"
+        "module-composer": "^0.170.0"
     },
     "devDependencies": {
         "cloc": "^1.98.0-cloc",
