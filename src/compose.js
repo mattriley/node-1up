@@ -24,6 +24,7 @@ module.exports = ({ config, overrides } = {}) => {
     compose.make('path', { arr });
     compose.make('pipe', { is, fun });
 
+
     return compose.modules;
 
 };

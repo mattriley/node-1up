@@ -6,5 +6,6 @@ module.exports = {
     assignWhile: require('./assign-while'),
     async: require('./async'),
     merge: require('./merge'),
+    setup: require('./setup'),
     with: require('./with')
 };
