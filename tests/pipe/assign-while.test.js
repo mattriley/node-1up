@@ -49,7 +49,7 @@ module.exports = ({ test, assert }) => lib => {
                 acc => ({ done: true }) // won't run
             ]);
 
-        const result = fn({});
+        const result = fn({}, {});
         assert.deepStrictEqual(result, { count: 1, done: true }); // Corrected expectation
     });
 
@@ -75,7 +75,7 @@ module.exports = ({ test, assert }) => lib => {
                 acc => ({ done: true })
             ]);
 
-        const result = fn({});
+        const result = fn({}, {});
         assert.deepStrictEqual(result, { count: 1, done: true });
     });
 

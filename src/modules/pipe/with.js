@@ -1,7 +1,7 @@
 module.exports = ({ is }) => {
 
     const cleanArgs = (...args) => {
-        let steps, defaultContext = {}, stateKey = 'state', predicate;
+        let steps, defaultContext, stateKey = 'state', predicate;
 
         for (const arg of args) {
             if (is.plainFunction(arg)) {
@@ -36,10 +36,10 @@ module.exports = ({ is }) => {
 
     return (args, impl) => {
         const { steps, defaultContext, stateKey, predicate } = cleanArgs(...args);
-        return (initial = {}, context = {}) => {
-            context = { ...defaultContext, ...context };
+        return (initial = {}, context) => {
+            context = defaultContext || context ? { ...defaultContext, ...context } : null;
             const state = structuredClone(initial);
-            Object.assign(context, { [stateKey]: state });
+            if (context) Object.assign(context, { [stateKey]: state });
             return impl({ steps, state, context, predicate });
         };
     };
