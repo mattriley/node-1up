@@ -1,5 +1,4 @@
 module.exports = {
-    _cleanArgs: require('./_clean-args'),
     _pipe: require('./_pipe'),
     assign: require('./assign'),
     assignAsync: require('./assign-async'),
