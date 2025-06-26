@@ -34,11 +34,19 @@ module.exports = ({ is }) => {
         return { steps, defaultContext, stateKey, predicate };
     };
 
+    const clone = obj => {
+        try {
+            return structuredClone(obj);
+        } catch (err) {
+            return _.cloneDeep(obj);
+        }
+    }
+
     return (args, impl) => {
         const { steps, defaultContext, stateKey, predicate } = cleanArgs(...args);
         return (initial = {}, context) => {
             context = defaultContext || context ? { ...defaultContext, ...context } : null;
-            const state = structuredClone(initial);
+            const state = clone(initial);
             if (context) Object.assign(context, { [stateKey]: state });
             return impl({ steps, state, context, predicate });
         };
