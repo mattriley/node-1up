@@ -1,4 +1,4 @@
-module.exports = ({ self, is, fun }) => (...args) => {
+module.exports = ({ self, fun }) => (...args) => {
 
     return self.with(args, async ({ steps, state, context }) => {
         for (const step of steps) {
@@ -8,4 +8,4 @@ module.exports = ({ self, is, fun }) => (...args) => {
         return state;
     });
 
-}
+};
