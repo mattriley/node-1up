@@ -17,37 +17,41 @@ const isJsonCompatible = val => {
     );
 };
 
-const compactInPlace = obj => {
-    if (Array.isArray(obj)) {
-        for (let i = obj.length - 1; i >= 0; i--) {
-            const item = obj[i];
+const compactInPlace = val => {
+    if (!isJsonCompatible(val)) return undefined;
+    if (isRemovable(val)) return undefined;
+
+    if (Array.isArray(val)) {
+        for (let i = val.length - 1; i >= 0; i--) {
+            const item = val[i];
             if (!isJsonCompatible(item)) {
-                obj.splice(i, 1);
+                val.splice(i, 1);
                 continue;
             }
             const result = compactInPlace(item);
             if (isRemovable(result)) {
-                obj.splice(i, 1);
+                val.splice(i, 1);
             }
         }
-        return obj;
+        return val.length ? val : undefined;
     }
 
-    if (typeof obj === 'object' && obj !== null) {
-        for (const key of Object.keys(obj)) {
-            const val = obj[key];
-            if (!isJsonCompatible(val)) {
-                delete obj[key];
+    if (typeof val === 'object' && val !== null) {
+        for (const key of Object.keys(val)) {
+            const item = val[key];
+            if (!isJsonCompatible(item)) {
+                delete val[key];
                 continue;
             }
-            const result = compactInPlace(val);
+            const result = compactInPlace(item);
             if (isRemovable(result)) {
-                delete obj[key];
+                delete val[key];
             }
         }
+        return Object.keys(val).length ? val : undefined;
     }
 
-    return obj;
+    return val;
 };
 
 module.exports = () => compactInPlace;

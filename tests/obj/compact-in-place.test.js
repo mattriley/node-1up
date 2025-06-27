@@ -1,5 +1,6 @@
-module.exports = ({ test, assert }) => lib => {
+const assert = require('assert');
 
+module.exports = ({ test }) => lib => {
     const compactInPlace = lib.obj.compactInPlace;
 
     test('compactInPlace: deeply removes empty values', () => {
@@ -89,5 +90,18 @@ module.exports = ({ test, assert }) => lib => {
         const copy = JSON.parse(JSON.stringify(input));
         compactInPlace(input);
         assert.deepStrictEqual(input, copy);
+    });
+
+    test('compactInPlace: primitive input returns value or undefined', () => {
+        assert.strictEqual(compactInPlace('valid'), 'valid');
+        assert.strictEqual(compactInPlace(''), undefined);
+        assert.strictEqual(compactInPlace(null), undefined);
+        assert.strictEqual(compactInPlace(undefined), undefined);
+        assert.strictEqual(compactInPlace(42), 42);
+        assert.strictEqual(compactInPlace(false), false);
+        assert.strictEqual(compactInPlace(true), true);
+        assert.strictEqual(compactInPlace(() => { }), undefined);
+        assert.strictEqual(compactInPlace(Symbol('x')), undefined);
+        assert.strictEqual(compactInPlace(BigInt(10)), undefined);
     });
 };
