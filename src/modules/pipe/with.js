@@ -45,20 +45,43 @@ module.exports = ({ is, fun }) => {
     return (args, nextState) => {
         const { steps, defaultContext, stateKey, predicate } = cleanArgs(...args);
 
-        return (initial = {}, context) => {
+        return (initial, context) => {
             context = defaultContext || context ? { ...defaultContext, ...context } : null;
             let state = clone(initial);
-            if (context) Object.assign(context, { [stateKey]: state });
+            if (context) context[stateKey] = state;
 
+            // Check if any step is async
+            let hasAsync = false;
             for (const step of steps) {
-                if (predicate && !predicate(state)) return state;
-                let stepResult = fun.invokeOrReturn(step, context ?? state);
-                if (is.promise(stepResult)) stepResult.then((val, err) => stepResult = val);
-                state = stepResult === undefined ? state : nextState({ stepResult, state });
+                if (is.promise(step)) {
+                    hasAsync = true;
+                    break;
+                }
             }
 
-            return state;
+            if (hasAsync) {
+                return (async () => {
+                    for (const step of steps) {
+                        if (predicate && !predicate(state)) break;
+                        const result = await fun.invokeOrReturn(step, context ?? state);
+                        if (result !== undefined) {
+                            state = nextState({ stepResult: result, state });
+                        }
+                    }
+                    return state;
+                })();
+            } else {
+                for (const step of steps) {
+                    if (predicate && !predicate(state)) break;
+                    const result = fun.invokeOrReturn(step, context ?? state);
+                    if (result !== undefined) {
+                        state = nextState({ stepResult: result, state });
+                    }
+                }
+                return state;
+            }
         };
     };
+
 
 };

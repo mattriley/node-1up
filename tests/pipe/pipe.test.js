@@ -22,4 +22,14 @@ module.exports = ({ test, assert }) => lib => {
         assert.deepStrictEqual(result, { num: 2 });
     });
 
+    test('pipe: state is an array', () => {
+        const fn = pipe([
+            () => [1],
+            state => [...state, 2]
+        ]);
+        const initial = undefined;
+        const result = fn(initial);
+        assert.deepStrictEqual(result, [1, 2]);
+    });
+
 };
