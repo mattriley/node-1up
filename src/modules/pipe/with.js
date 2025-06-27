@@ -42,24 +42,15 @@ module.exports = ({ is, fun }) => {
         }
     }
 
-    return (args, nextState) => {
-        const { steps, defaultContext, stateKey, predicate } = cleanArgs(...args);
+    return (config, nextState) => {
+        const { steps, defaultContext, stateKey, predicate } = cleanArgs(...config.args);
 
         return (initial, context) => {
             context = defaultContext || context ? { ...defaultContext, ...context } : null;
             let state = clone(initial);
             if (context) context[stateKey] = state;
 
-            // Check if any step is async
-            let hasAsync = false;
-            for (const step of steps) {
-                if (is.promise(step)) {
-                    hasAsync = true;
-                    break;
-                }
-            }
-
-            if (hasAsync) {
+            if (config.async) {
                 return (async () => {
                     for (const step of steps) {
                         if (predicate && !predicate(state)) break;
