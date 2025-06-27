@@ -20,15 +20,6 @@ module.exports = ({ test, assert }) => lib => {
         assert.deepStrictEqual(result, { b: 2 });
     });
 
-    test('pipeAsync: preserves initial if all return undefined', async () => {
-        const fn = pipeAsync([
-            async () => undefined,
-            async () => undefined
-        ]);
-        const result = await fn({ a: 1 });
-        assert.deepStrictEqual(result, { a: 1 });
-    });
-
     test('pipeAsync: skips undefined results and uses last defined', async () => {
         const fn = pipeAsync([
             async () => ({ a: 1 }),

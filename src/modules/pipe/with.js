@@ -1,4 +1,4 @@
-module.exports = ({ is }) => {
+module.exports = ({ is, fun }) => {
 
     const cleanArgs = (...args) => {
         let steps, defaultContext, stateKey = 'state', predicate;
@@ -42,13 +42,22 @@ module.exports = ({ is }) => {
         }
     }
 
-    return (args, impl) => {
+    return (args, nextState) => {
         const { steps, defaultContext, stateKey, predicate } = cleanArgs(...args);
+
         return (initial = {}, context) => {
             context = defaultContext || context ? { ...defaultContext, ...context } : null;
-            const state = clone(initial);
+            let state = clone(initial);
             if (context) Object.assign(context, { [stateKey]: state });
-            return impl({ steps, state, context, predicate });
+
+            for (const step of steps) {
+                if (predicate && !predicate(state)) return state;
+                let stepResult = fun.invokeOrReturn(step, context ?? state);
+                if (is.promise(stepResult)) stepResult.then((val, err) => stepResult = val);
+                state = stepResult === undefined ? state : nextState({ stepResult, state });
+            }
+
+            return state;
         };
     };
 

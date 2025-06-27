@@ -1,11 +1,7 @@
-module.exports = ({ self, fun }) => (...args) => {
+module.exports = ({ self }) => (...args) => {
 
-    return self.with(args, ({ steps, state, context }) => {
-        for (const step of steps) {
-            const result = fun.invokeOrReturn(step, context);
-            if (result) Object.assign(state, result);
-        }
-        return state;
+    return self.with(args, ({ state, stepResult }) => {
+        return Object.assign(state, stepResult);
     });
 
 }
