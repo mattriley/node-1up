@@ -2,17 +2,6 @@ module.exports = ({ test, assert }) => lib => {
 
     const pipeMerge = lib.pipe.merge;
 
-    test('pipeMerge: is immutable', () => {
-        const fn = pipeMerge([
-            () => ({ a: 1 }),
-            () => ({ b: 2 })
-        ]);
-        const initial = {};
-        const result = fn(initial);
-        assert.deepStrictEqual(result, { a: 1, b: 2 });
-        assert.notEqual(result, initial);
-    });
-
     test('pipeMerge: array of functions merges outputs', () => {
         const fn = pipeMerge([
             () => ({ a: 1 }),

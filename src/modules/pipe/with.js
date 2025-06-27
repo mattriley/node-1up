@@ -34,20 +34,12 @@ module.exports = ({ is, fun }) => {
         return { steps, defaultContext, stateKey, predicate };
     };
 
-    const clone = obj => {
-        try {
-            return structuredClone(obj);
-        } catch (err) {
-            return _.cloneDeep(obj);
-        }
-    }
-
     return (config, nextState) => {
         const { steps, defaultContext, stateKey, predicate } = cleanArgs(...config.args);
 
         return (initial, context) => {
             context = defaultContext || context ? { ...defaultContext, ...context } : null;
-            let state = clone(initial);
+            let state = initial;
             if (context) context[stateKey] = state;
 
             if (config.async) {

@@ -2,17 +2,6 @@ module.exports = ({ test, assert }) => lib => {
 
     const pipeAssign = lib.pipe.assign;
 
-    test('pipeAssign: is immutable', () => {
-        const fn = pipeAssign([
-            () => ({ a: 1 }),
-            () => ({ b: 2 })
-        ]);
-        const initial = {};
-        const result = fn(initial);
-        assert.deepStrictEqual(result, { a: 1, b: 2 });
-        assert.notEqual(result, initial);
-    });
-
     test('pipeAssign: array of functions merges outputs shallowly', () => {
         const fn = pipeAssign([
             () => ({ a: 1 }),
