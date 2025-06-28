@@ -7,6 +7,7 @@ module.exports = {
     flatMapKeys: require('./flat-map-keys'),
     freezeDeep: require('./freeze-deep'),
     getDeep: require('./get-deep'),
+    isEqual: require('./is-equal'),
     isPlain: require('./is-plain'),
     mapKeys: require('./map-keys'),
     mapValues: require('./map-values'),
