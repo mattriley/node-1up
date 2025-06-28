@@ -32,7 +32,7 @@ module.exports = () => (...args) => {
             const val = obj[key];
             const newVal = useNamed
                 ? iteratee({ [keyName]: key, [valName]: val, [objName]: obj })
-                : iteratee(key, val, obj);
+                : iteratee(val, key, obj);
             result[key] = newVal;
         }
     }

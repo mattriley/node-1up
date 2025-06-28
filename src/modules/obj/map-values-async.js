@@ -32,7 +32,7 @@ module.exports = () => async (...args) => {
             const val = obj[key];
             const newVal = useNamed
                 ? await iteratee({ [keyName]: key, [valName]: val, [objName]: obj })
-                : await iteratee(key, val, obj);
+                : await iteratee(val, key, obj);
             result[key] = newVal;
         }
     }
