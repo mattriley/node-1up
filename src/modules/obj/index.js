@@ -17,6 +17,5 @@ module.exports = {
     setDeepInPlace: require('./set-deep-in-place'),
     sortKeys: require('./sort-keys'),
     toArray: require('./to-array'),
-    transformEntries: require('./transform-entries'),
-    transformNamedEntries: require('./transform-named-entries')
+    transformEntries: require('./transform-entries')
 };
