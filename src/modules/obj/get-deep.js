@@ -1,6 +1,6 @@
 const DELIMITER = '.';
 
-module.exports = ({ arr }) => (obj, path, defaultValue = undefined) => {
+module.exports = ({ arr }) => (obj = {}, path, defaultValue = undefined) => {
 
     function findKey(currentValue, keysRemaining, results = []) {
         if (keysRemaining.length === 0) {
