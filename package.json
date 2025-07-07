@@ -42,7 +42,6 @@
         "task-library": "^0.274.0"
     },
     "peerDependencies": {
-        "country-state-city": "^3.2.1",
-        "city-state-country": "^3.0.0"
+        "country-state-city": "^3.2.1"
     }
 }

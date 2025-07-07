@@ -1,6 +1,6 @@
-const { cities } = require('city-state-country');
+module.exports = ({ self }) => (lat, lng) => {
 
-module.exports = () => (lat, lng) => {
+    const cities = require('../../data/cities.json');
 
     if (typeof lat !== 'number' || typeof lng !== 'number') {
         throw new Error('Latitude and longitude must be numbers');
@@ -14,8 +14,8 @@ module.exports = () => (lat, lng) => {
     let minA = Infinity;
 
     for (const city of cities) {
-        const cityLatRad = toRad(city.lat);
-        const cityLngRad = toRad(city.lng);
+        const cityLatRad = toRad(city.latitude);
+        const cityLngRad = toRad(city.longitude);
         const a = fastHaversineA(latRad, lngRad, cityLatRad, cityLngRad);
 
         if (a < minA) {
@@ -28,14 +28,16 @@ module.exports = () => (lat, lng) => {
 
     const distanceKm = 6371 * 2 * Math.asin(Math.sqrt(minA)); // actual distance (only once)
 
+    const location = self.findLocation({
+        city: closest.name,
+        state: closest.stateCode,
+        country: closest.countryCode
+    });
+
     return {
+        ...location,
         lat,
         lng,
-        city: closest.name,
-        state: closest.state,
-        'state.iso': closest.stateCode,
-        country: closest.country,
-        'country.iso2': closest.countryCode,
         distanceKm
     };
 }
