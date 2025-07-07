@@ -1,3 +1,4 @@
 module.exports = {
-    findRegion: require('./find-region')
+    findLocation: require('./find-location'),
+    findLocationFromLatLng: require('./find-location-from-lat-lng')
 };

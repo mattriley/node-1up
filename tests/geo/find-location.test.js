@@ -13,7 +13,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             unique: ['city']
         };
 
-        const actual = geo.findRegion(input);
+        const actual = geo.findLocation(input);
         assert.deepEqual(actual, expected);
     });
 
@@ -30,7 +30,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             unique: ['city']
         };
 
-        const actual = geo.findRegion(input);
+        const actual = geo.findLocation(input);
         assert.deepEqual(actual, expected);
     });
 
@@ -47,7 +47,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             unique: ['city', 'state']
         };
 
-        const actual = geo.findRegion(input);
+        const actual = geo.findLocation(input);
         assert.deepEqual(actual, expected);
     });
 
@@ -59,7 +59,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             errors: ['City cannot be uniquely identified: Perth']
         };
 
-        const actual = geo.findRegion(input);
+        const actual = geo.findLocation(input);
         assert.deepEqual(actual, expected);
     });
 
@@ -72,7 +72,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             ]
         };
 
-        const actual = geo.findRegion(input);
+        const actual = geo.findLocation(input);
         assert.deepEqual(actual, expected);
     });
 
@@ -89,7 +89,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             unique: ['city', 'country']
         };
 
-        const actual = geo.findRegion(input);
+        const actual = geo.findLocation(input);
         assert.deepEqual(actual, expected);
     });
 
@@ -106,7 +106,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
     //         unique: ['city', 'country']
     //     };
 
-    //     const actual = geo.findRegion(input, defaultLocation);
+    //     const actual = geo.findLocation(input, defaultLocation);
     //     assert.deepEqual(actual, expected);
     // });
 
@@ -125,7 +125,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             unique: ['state']
         };
 
-        const actual = geo.findRegion(input);
+        const actual = geo.findLocation(input);
         assert.deepEqual(actual, expected);
     });
 
@@ -142,7 +142,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             unique: ['state', 'country']
         };
 
-        const actual = geo.findRegion(input);
+        const actual = geo.findLocation(input);
         assert.deepEqual(actual, expected);
     });
 
@@ -159,7 +159,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
     //         unique: []
     //     };
 
-    //     const actual = geo.findRegion(input, defaultLocation);
+    //     const actual = geo.findLocation(input, defaultLocation);
     //     assert.deepEqual(actual, expected);
     // });
 
@@ -176,7 +176,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             unique: ['country']
         };
 
-        const actual = geo.findRegion(input);
+        const actual = geo.findLocation(input);
         assert.deepEqual(actual, expected);
     });
 
@@ -190,7 +190,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             ]
         }
 
-        const actual = geo.findRegion(location, defaultLocation);
+        const actual = geo.findLocation(location, defaultLocation);
         assert.deepEqual(actual, expected);
     });
 
@@ -204,7 +204,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             ]
         }
 
-        const actual = geo.findRegion(location, defaultLocation);
+        const actual = geo.findLocation(location, defaultLocation);
         assert.deepEqual(actual, expected);
     });
 
@@ -222,7 +222,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             unique: ['city', 'country']
         }
 
-        const actual = geo.findRegion(location, defaultLocation);
+        const actual = geo.findLocation(location, defaultLocation);
         assert.deepEqual(actual, expected);
     });
 
@@ -241,7 +241,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             // unique: ['city', 'state', 'country']
         }
 
-        const actual = geo.findRegion(location, defaultLocation);
+        const actual = geo.findLocation(location, defaultLocation);
         assert.deepEqual(actual, expected);
     });
 
@@ -255,7 +255,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
     //         ]
     //     }
 
-    //     const actual = geo.findRegion(location, defaultLocation);
+    //     const actual = geo.findLocation(location, defaultLocation);
     //     assert.deepEqual(actual, expected);
     // });
 
@@ -273,7 +273,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             unique: ['state', 'country']
         }
 
-        const actual = geo.findRegion(location, defaultLocation);
+        const actual = geo.findLocation(location, defaultLocation);
         assert.deepEqual(actual, expected);
     });
 
@@ -287,7 +287,7 @@ module.exports = ({ test, assert }) => ({ geo }) => {
             ]
         }
 
-        const actual = geo.findRegion(location, defaultLocation);
+        const actual = geo.findLocation(location, defaultLocation);
         assert.deepEqual(actual, expected);
     });
 
