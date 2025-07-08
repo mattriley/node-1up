@@ -9,10 +9,8 @@ module.exports = ({ config, overrides } = {}) => {
     Object.assign(globalThis, { _ });
 
     const functionAlias = [['Value', 'Val']];
-
-    const { configure } = composer(modules, { functionAlias, overrides });
-
-    const { compose } = configure(defaultConfig, config, buildLookups);
+    const { configure } = composer(modules, { functionAlias, overrides, defaultConfig, config });
+    const { compose } = configure(buildLookups);
 
     const { is } = compose.make('is');
     const { arr } = compose.make('arr', { is });
