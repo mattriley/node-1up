@@ -8,7 +8,27 @@ module.exports = ({ config, overrides } = {}) => {
     Object.assign(globalThis, { _ });
 
     const functionAlias = [['Value', 'Val']];
-    const { compose } = composer(modules, { functionAlias, overrides, config, defaultConfig });
+
+    const { configure } = composer(modules, { functionAlias, overrides });
+
+    const { compose } = configure(defaultConfig, config, config => {
+        const { cities, states, countries } = config.locationData;
+
+        const lookupPlan = {
+            country: [countries, 'name', 'isoCode'],
+            state: [states, 'name', 'isoCode'],
+            city: [cities, 'name', 'iataCode'],
+            statesByCountry: [states, 'country', 'countryCode']
+        };
+
+        const lookup = _.mapValues(lookupPlan, args => {
+            const [items, ...keyNames] = args;
+            return Object.assign(...keyNames.map(keyName => _.groupBy(items, item => item[keyName]?.toLowerCase())));
+        });
+
+        const locationData = { cities, states, countries, lookup };
+        return { locationData };
+    });
 
     const { is } = compose.make('is');
     const { arr } = compose.make('arr', { is });
@@ -23,7 +43,6 @@ module.exports = ({ config, overrides } = {}) => {
     compose.make('bool');
     compose.make('path', { arr });
     compose.make('pipe', { is, fun });
-
 
     return compose.modules;
 

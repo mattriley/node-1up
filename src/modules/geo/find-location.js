@@ -1,12 +1,12 @@
 const _ = require('lodash');
 
-module.exports = ({ self, arr }) => {
+module.exports = ({ self, arr, config }) => {
 
     const buildResult = (cityData, stateData, countryData, unique) => {
         return self.buildResult(cityData, stateData, countryData, { unique });
     }
 
-    const locationData = require('../../data/location-data');
+    const locationData = config.locationData;
 
     let lookup = locationData.lookup;
 

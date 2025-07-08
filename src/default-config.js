@@ -2,6 +2,7 @@ module.exports = {
 
     indent: 4,
     delimiter: ',',
-    pathDelimiter: '/'
+    pathDelimiter: '/',
+    locationData: { cities: [], states: [], countries: [] }
 
 };
