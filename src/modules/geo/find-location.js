@@ -1,58 +1,16 @@
 const _ = require('lodash');
 
-const buildLookup = () => {
+module.exports = ({ self, arr }) => {
 
-    const { Country, State } = require('country-state-city');
-    const citiesWithIata = require('../../data/cities.json');
-
-    const allCountries = Country.getAllCountries();
-    const allStates = State.getAllStates();
-    const allCities = [...citiesWithIata];
-
-    const hk = allStates.find(s => s.name === 'Hong Kong SAR');
-    if (hk) hk.name = 'Hong Kong';
-
-    const mo = allStates.find(s => s.name === 'Macau SAR');
-    if (mo) mo.name = 'Macau';
-
-    const lookupPlan = {
-        country: [allCountries, 'name', 'isoCode'],
-        state: [allStates, 'name', 'isoCode'],
-        city: [allCities, 'name', 'iataCode'],
-        statesByCountry: [allStates, 'country', 'countryCode']
-    };
-
-    const lookup = _.mapValues(lookupPlan, args => {
-        const [items, ...keyNames] = args;
-        return Object.assign(...keyNames.map(keyName => _.groupBy(items, item => item[keyName]?.toLowerCase())));
-    });
-
-    return lookup;
-}
-
-const result = (cityData, stateData, countryData, unique) => {
-    return {
-        city: cityData?.name,
-        'city.iata': cityData?.iataCode,
-        state: stateData?.name,
-        'state.iso': stateData?.isoCode,
-        country: countryData?.name,
-        'country.iso2': countryData?.isoCode,
-        unique
+    const buildResult = (cityData, stateData, countryData, unique) => {
+        return self.buildResult(cityData, stateData, countryData, { unique });
     }
-}
 
+    const locationData = require('../../data/location-data');
 
-module.exports = ({ arr }) => {
-
-    let lookup; // Lazy load
+    let lookup = locationData.lookup;
 
     return location => {
-
-        if (!lookup) {
-            lookup = buildLookup();
-        }
-
 
         const findCities = (cityKey, cont) => {
             cityKey = cityKey?.toLowerCase();
@@ -89,7 +47,7 @@ module.exports = ({ arr }) => {
             if (city) {
                 const state = findStates(city.stateCode);
                 const country = findCountries(city.countryCode);
-                return result(city, state, country, ['city']);
+                return buildResult(city, state, country, ['city']);
             }
 
 
@@ -108,11 +66,11 @@ module.exports = ({ arr }) => {
                             if (city) { // BEGIN: CITY IS KNOWN
                                 const [state, states] = findStates(city.stateCode, []);
                                 if (state) {
-                                    return result(city, state, country, ['city', 'country']);
+                                    return buildResult(city, state, country, ['city', 'country']);
                                 }
                                 {
                                     const state = arr.only(states, state => state.countryCode === country.isoCode);
-                                    return result(city, state, country, ['city', 'country']);
+                                    return buildResult(city, state, country, ['city', 'country']);
                                 }
                             } // END
 
@@ -125,7 +83,7 @@ module.exports = ({ arr }) => {
                                 if (cities2.length === 1) {
                                     const city = cities2[0];
                                     const state = statesOfCountry.find(state => state.isoCode === city.stateCode);
-                                    return result(city, state, country, ['city', 'country']);
+                                    return buildResult(city, state, country, ['city', 'country']);
                                 }
                             } // END
 
@@ -157,7 +115,7 @@ module.exports = ({ arr }) => {
                         const city = arr.only(cities, city => city.stateCode === state.isoCode);
                         const country = city ? findCountries(city.countryCode) : null;
                         if (city && country) {
-                            return result(city, state, country, ['city', 'state']);
+                            return buildResult(city, state, country, ['city', 'state']);
                         }
                     } // END
 
@@ -166,7 +124,7 @@ module.exports = ({ arr }) => {
                         const state = country ? arr.only(states, state => state.countryCode === country.isoCode) : null;
                         const city = state ? arr.only(cities, city => city.stateCode === state.isoCode) : null;
                         if (city && state && country) {
-                            return result(city, state, country, ['city', 'state', 'country']);
+                            return buildResult(city, state, country, ['city', 'state', 'country']);
                         }
                     } // END
                 }
@@ -198,14 +156,14 @@ module.exports = ({ arr }) => {
             const [state, states] = findStates(stateKey, []);
             if (state) {
                 const country = findCountries(state.countryCode);
-                return result(null, state, country, ['state'])
+                return buildResult(null, state, country, ['state'])
             }
             if (states) {
                 if (countryKey) {
                     const country = findCountries(countryKey);
                     const state = arr.only(states, state => state.countryCode === country.isoCode);
                     if (state) {
-                        return result(null, state, country, ['state', 'country']);
+                        return buildResult(null, state, country, ['state', 'country']);
                     }
                 }
             }
@@ -214,7 +172,7 @@ module.exports = ({ arr }) => {
         if (countryKey) {
             const country = findCountries(countryKey);
             if (country) {
-                return result(null, null, country, ['country']);
+                return buildResult(null, null, country, ['country']);
             }
         }
 

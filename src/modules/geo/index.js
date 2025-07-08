@@ -1,4 +1,5 @@
 module.exports = {
+    _buildResult: require('./_build-result'),
     findLocation: require('./find-location'),
-    findLocationFromLatLng: require('./find-location-from-lat-lng')
+    findNearestCityWithAirport: require('./find-nearest-city-with-airport')
 };
