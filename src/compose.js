@@ -2,6 +2,7 @@ const _ = require('lodash');
 const composer = require('module-composer');
 const modules = require('./modules');
 const defaultConfig = require('./default-config');
+const buildLookups = require('./build-lookups');
 
 module.exports = ({ config, overrides } = {}) => {
 
@@ -11,24 +12,7 @@ module.exports = ({ config, overrides } = {}) => {
 
     const { configure } = composer(modules, { functionAlias, overrides });
 
-    const { compose } = configure(defaultConfig, config, config => {
-        const { cities, states, countries } = config.locationData;
-
-        const lookupPlan = {
-            country: [countries, 'name', 'isoCode'],
-            state: [states, 'name', 'isoCode'],
-            city: [cities, 'name', 'iataCode'],
-            statesByCountry: [states, 'country', 'countryCode']
-        };
-
-        const lookup = _.mapValues(lookupPlan, args => {
-            const [items, ...keyNames] = args;
-            return Object.assign(...keyNames.map(keyName => _.groupBy(items, item => item[keyName]?.toLowerCase())));
-        });
-
-        const locationData = { cities, states, countries, lookup };
-        return { locationData };
-    });
+    const { compose } = configure(defaultConfig, config, buildLookups);
 
     const { is } = compose.make('is');
     const { arr } = compose.make('arr', { is });
