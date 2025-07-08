@@ -1,4 +1,3 @@
-const _ = require('lodash');
 const fs = require('fs');
 const airports = require('./airports.json'); // https://github.com/aashishvanand/airport-data-js/blob/main/data/airports.json
 const airportsByCity = _.groupBy(airports, airport => airport.city.toLowerCase());

@@ -1,5 +1,3 @@
-const _ = require('lodash');
-
 module.exports = ({ self, arr, config }) => {
 
     const buildResult = (cityData, stateData, countryData, unique) => {
