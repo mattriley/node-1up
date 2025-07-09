@@ -10,14 +10,14 @@ module.exports = ({ self, arr, config }) => {
 
         const findCities = (cityKey, cont) => {
             cityKey = cityKey?.toLowerCase();
-            const cities = lookup.city[cityKey] || [];
+            const cities = lookup.cities[cityKey] || [];
             return arr.poly(cities, cont);
         }
 
 
         const findStates = (stateKey, cont) => {
             stateKey = stateKey?.toLowerCase();
-            const states = lookup.state[stateKey];
+            const states = lookup.states[stateKey];
             return arr.poly(states, cont);
         };
 
@@ -25,7 +25,7 @@ module.exports = ({ self, arr, config }) => {
 
         const findCountries = (countryKey, cont) => {
             countryKey = countryKey?.toLowerCase();
-            const countries = lookup.country[countryKey];
+            const countries = lookup.countries[countryKey];
             return arr.poly(countries, cont);
         }
 

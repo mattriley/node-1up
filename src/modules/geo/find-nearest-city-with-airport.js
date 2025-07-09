@@ -39,8 +39,8 @@ module.exports = ({ self, config }) => {
         const distanceKm = 6371 * 2 * Math.asin(Math.sqrt(minA));
 
         const cityData = closest;
-        const stateData = self.locationData.lookup.state[closest.stateCode];
-        const countryData = self.locationData.lookup.country[closest.countryCode];
+        const stateData = self.locationData.lookup.states[closest.stateCode];
+        const countryData = self.locationData.lookup.countries[closest.countryCode];
 
         return self.buildResult(cityData, stateData, countryData, { lat, lng, distanceKm });
     }

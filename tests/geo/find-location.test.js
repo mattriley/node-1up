@@ -1,9 +1,8 @@
-const compose = require('../../src/compose');
 const locationData = require('../../data/location-data');
-const config = { locationData };
-const { geo } = compose({ config });
 
-module.exports = ({ test, assert }) => () => {
+module.exports = ({ test, assert }) => $ => {
+
+    const { geo } = $.configure({ locationData });
 
     test('Globally unique city', () => {
         const input = { city: 'Canberra' };

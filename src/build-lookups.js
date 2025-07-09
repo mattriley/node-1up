@@ -5,9 +5,9 @@ module.exports = config => {
     const iataCities = cities.filter(city => Array.isArray(city.iataCodes) && city.iataCodes.length > 0);
 
     const lookupPlan = {
-        country: [countries, 'name', 'isoCode'],
-        state: [states, 'name', 'isoCode'],
-        city: [cities, 'name', 'iataCode'],
+        countries: [countries, 'name', 'isoCode'],
+        states: [states, 'name', 'isoCode'],
+        cities: [cities, 'name', 'iataCode'],
         statesByCountry: [states, 'country', 'countryCode']
     };
 
