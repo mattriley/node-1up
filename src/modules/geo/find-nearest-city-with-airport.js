@@ -45,6 +45,4 @@ module.exports = ({ self, config }) => {
         return self.buildResult(cityData, stateData, countryData, { lat, lng, distanceKm });
     }
 
-
-
 };

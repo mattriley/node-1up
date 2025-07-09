@@ -1,12 +1,10 @@
 module.exports = ({ self, arr, config }) => {
 
+    const lookup = config.locationData.lookup;
+
     const buildResult = (cityData, stateData, countryData, unique) => {
         return self.buildResult(cityData, stateData, countryData, { unique });
     }
-
-    const locationData = config.locationData;
-
-    let lookup = locationData.lookup;
 
     return location => {
 
