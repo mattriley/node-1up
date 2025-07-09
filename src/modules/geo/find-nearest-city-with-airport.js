@@ -7,10 +7,9 @@ function fastHaversineA(lat1Rad, lon1Rad, lat2Rad, lon2Rad) {
     );
 };
 
-module.exports = ({ self }) => {
+module.exports = ({ self, config }) => {
 
-    const cities = require('../../data/cities.json')
-        .filter(city => Array.isArray(city.iataCodes) && city.iataCodes.length > 0);
+    const cities = config.iataCities;
 
     return (lat, lng) => {
         if (typeof lat !== 'number' || typeof lng !== 'number') {

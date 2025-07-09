@@ -1,5 +1,5 @@
 const compose = require('../../src/compose');
-const locationData = require('../../src/data/location-data');
+const locationData = require('../../data/location-data');
 const config = { locationData };
 const { geo } = compose({ config });
 
