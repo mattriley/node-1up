@@ -4,7 +4,7 @@ const modules = require('./modules');
 const defaultConfig = require('./default-config');
 const buildLookups = require('./build-lookups');
 
-const compose = ({ config, overrides } = {}) => {
+const outerCompose = ({ config, overrides } = {}) => {
 
     Object.assign(globalThis, { _ });
 
@@ -28,9 +28,9 @@ const compose = ({ config, overrides } = {}) => {
 
     return {
         ...compose.modules,
-        configure: config => compose({ config })
+        configure: config => outerCompose({ config })
     }
 
 };
 
-module.exports = compose;
+module.exports = outerCompose;
