@@ -9,8 +9,7 @@ const outerCompose = ({ config, overrides } = {}) => {
     Object.assign(globalThis, { _ });
 
     const functionAlias = [['Value', 'Val']];
-    const { configure } = composer(modules, { functionAlias, overrides, defaultConfig, config });
-    const { compose } = configure(buildLookups);
+    const { compose } = composer(modules, { functionAlias, overrides, defaultConfig, config: [config, buildLookups] });
 
     const { is } = compose.make('is');
     const { arr } = compose.make('arr', { is });
