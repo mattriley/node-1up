@@ -4,6 +4,36 @@ module.exports = ({ test, assert }) => $ => {
 
     const { geo } = $.configure({ locationData });
 
+    test('location data must be loaded to enable geo', () => {
+        const input = { city: 'MEL' };
+
+        {
+            const expected = {
+                errors: [
+                    'City, state and country combination cannot be uniquely identified: MEL, undefined, undefined'
+                ]
+            };
+            const actual = $.geo.findLocation(input);
+            assert.deepEqual(actual, expected);
+        }
+
+        $ = $.configure({ locationData });
+
+        {
+            const expected = {
+                city: 'Melbourne',
+                'city.iata': 'MEL',
+                state: 'Victoria',
+                'state.iso': 'VIC',
+                country: 'Australia',
+                'country.iso2': 'AU',
+                unique: ['city']
+            };
+            const actual = $.geo.findLocation(input);
+            assert.deepEqual(actual, expected);
+        }
+    });
+
     test('Globally unique city', () => {
         const input = { city: 'Canberra' };
 
