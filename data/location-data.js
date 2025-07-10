@@ -1,9 +1,6 @@
-const { Country, State } = require('country-state-city');
-const citiesWithIata = require('./cities.json');
-
-const countries = Country.getAllCountries();
-const states = require('./states.json');
-const cities = [...citiesWithIata];
+const cities = require('./source/cities.json');
+const states = require('./source/states.json');
+const countries = require('./source/countries.json');
 
 const hk = states.find(s => s.name === 'Hong Kong SAR');
 if (hk) hk.name = 'Hong Kong';

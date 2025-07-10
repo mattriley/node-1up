@@ -40,8 +40,5 @@
         "module-testrunner": "^0.21.0",
         "npm-check-updates": "^16.14.4",
         "task-library": "^0.274.0"
-    },
-    "peerDependencies": {
-        "country-state-city": "^3.2.1"
     }
 }
