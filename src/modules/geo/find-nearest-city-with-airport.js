@@ -9,10 +9,11 @@ function fastHaversineA(lat1Rad, lon1Rad, lat2Rad, lon2Rad) {
 
 module.exports = ({ self, config }) => {
 
-    const cities = config.iataCities;
+    const cities = config.locationData.iataCities;
 
     return (lat, lng) => {
         if (typeof lat !== 'number' || typeof lng !== 'number') {
+            console.warn(lat, lng)
             throw new Error('Latitude and longitude must be numbers');
         }
 
@@ -39,8 +40,8 @@ module.exports = ({ self, config }) => {
         const distanceKm = 6371 * 2 * Math.asin(Math.sqrt(minA));
 
         const cityData = closest;
-        const stateData = self.locationData.lookup.states[closest.stateCode];
-        const countryData = self.locationData.lookup.countries[closest.countryCode];
+        const stateData = config.locationData.lookup.states[closest.stateCode];
+        const countryData = config.locationData.lookup.countries[closest.countryCode];
 
         return self.buildResult(cityData, stateData, countryData, { lat, lng, distanceKm });
     }
