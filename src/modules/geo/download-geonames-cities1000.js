@@ -6,10 +6,7 @@ const streamPipeline = promisify(pipeline);
 
 const URL = 'https://download.geonames.org/export/dump/cities1000.txt';
 
-module.exports = () => async ({ outputDir = './' }) => {
-
-    const outputFile = path.join(outputDir, 'cities1000.txt');
-
+module.exports = () => async ({ outputDir } = {}) => {
     try {
         console.log(`📥 Downloading from ${URL}...`);
 
@@ -18,10 +15,17 @@ module.exports = () => async ({ outputDir = './' }) => {
             throw new Error(`❌ Failed to download: ${response.status} ${response.statusText}`);
         }
 
-        await streamPipeline(response.body, fs.createWriteStream(outputFile));
-        console.log(`✅ Downloaded to ${outputFile}`);
+        if (outputDir !== undefined) {
+            const outputFile = path.join(outputDir, 'cities1000.txt');
+            await streamPipeline(response.body, fs.createWriteStream(outputFile));
+            console.log(`✅ Downloaded to ${outputFile}`);
+        } else {
+            const text = await response.text();
+            console.log(`✅ Downloaded to memory (${text.length} chars)`);
+            return text;
+        }
     } catch (err) {
         console.error('❌ Error:', err.message);
+        throw err;
     }
-
-}
+};
