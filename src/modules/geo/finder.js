@@ -3,6 +3,16 @@ module.exports = ({ arr, config }) => {
     const { locationData } = config;
     const { lookup } = locationData;
 
+    const findCity = (cityKey, stateKey, countryKey) => {
+        const cities = lookup.cities[cityKey.toLowerCase()] ?? [];
+        const city = cities.find(city => {
+            return city.stateKey.toLowerCase() === stateKey.toLowerCase() &&
+                city.countryKey.toLowerCase() === countryKey.toLowerCase();
+        });
+        if (!city) throw new Error(`City not found: ${cityKey}; State: ${stateKey}; Country: ${countryKey}`);
+        return city;
+    };
+
     const findCities = (cityKey, container) => {
         const cities = lookup.cities[cityKey?.toLowerCase()] ?? [];
         return arr.poly(cities, container);
@@ -36,6 +46,6 @@ module.exports = ({ arr, config }) => {
         return lookup.statesByCountry[countryKey.toLowerCase()];
     }
 
-    return { findCities, findState, findStates, findCountries, findCountry, findStatesOfCountry };
+    return { findCity, findCities, findState, findStates, findCountries, findCountry, findStatesOfCountry };
 
 };
