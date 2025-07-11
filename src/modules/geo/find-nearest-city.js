@@ -1,12 +1,3 @@
-function fastHaversineA(lat1Rad, lon1Rad, lat2Rad, lon2Rad) {
-    const dLat = lat2Rad - lat1Rad;
-    const dLon = lon2Rad - lon1Rad;
-    return (
-        Math.sin(dLat / 2) ** 2 +
-        Math.cos(lat1Rad) * Math.cos(lat2Rad) * Math.sin(dLon / 2) ** 2
-    );
-};
-
 module.exports = ({ self, config }) => {
 
     return (lat, lng) => {
@@ -25,7 +16,7 @@ module.exports = ({ self, config }) => {
         for (const city of config.locationData.cities) {
             const cityLatRad = toRad(Number(city.latitude));
             const cityLngRad = toRad(Number(city.longitude));
-            const a = fastHaversineA(latRad, lngRad, cityLatRad, cityLngRad);
+            const a = self.haversine(latRad, lngRad, cityLatRad, cityLngRad);
 
             if (a < minA) {
                 minA = a;
