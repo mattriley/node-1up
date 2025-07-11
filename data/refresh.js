@@ -1,6 +1,6 @@
 const { geo, net } = require('..');
 
-const states = require('./states');
+const states = require('./sources/states');
 const countries = require('./source/countries.json');
 
 const refresh = async () => {
