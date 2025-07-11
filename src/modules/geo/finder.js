@@ -1,4 +1,4 @@
-module.exports = ({ arr, config }) => {
+module.exports = ({ config }) => {
 
     const { locationData } = config;
     const { lookup } = locationData;
@@ -22,8 +22,7 @@ module.exports = ({ arr, config }) => {
     }
 
     const findState = (stateKey, countryKey) => {
-        const states = lookup.states[stateKey.toLowerCase()] ?? [];
-        const state = states.find(state => state.countryCode.toLowerCase() === countryKey.toLowerCase());
+        const state = lookup.statesByCountryThenState[countryKey.toLowerCase()][stateKey.toLowerCase()];
         if (!state) throw new Error(`State not found: ${stateKey}; Country: ${countryKey}`);
         return state;
     };

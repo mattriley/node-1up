@@ -19,6 +19,14 @@ module.exports = config => {
         }));
     });
 
+    // Nested lookup: countryCode → isoCode → [state]
+    lookup.statesByCountryThenState = _.mapValues(
+        _.groupBy(states, state => state.countryCode.toLowerCase()),
+        groupedStates => _.keyBy(groupedStates, state => state.isoCode.toLowerCase())
+    );
+
+    // lookup.statesByCountry = _.groupBy(states, 'countryCode');
+
     const locationData = { cities, states, countries, lookup };
     return { locationData };
 
