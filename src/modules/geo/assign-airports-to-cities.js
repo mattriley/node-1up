@@ -41,7 +41,7 @@ module.exports = ({ self }) => async ({
     if (outputFile) {
         finalOutputPath = outputFile;
     } else if (outputDir) {
-        finalOutputPath = path.join(outputDir, 'cities-with-iata.json');
+        finalOutputPath = path.join(outputDir, 'cities.json');
     }
 
     if (finalOutputPath) {
