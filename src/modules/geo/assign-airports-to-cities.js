@@ -28,12 +28,12 @@ module.exports = ({ self }) => async ({
             .sort((a, b) => a.distanceKm - b.distanceKm)
             .slice(0, maxAirportsPerCity);
 
-        const nearestLarge = nearbyAirports.find(a => a.type === 'large_airport');
+        const international = nearbyAirports.find(ap => ap.name.includes('International'));
 
         return {
             ...city,
             nearbyAirports: nearbyAirports.length > 0 ? nearbyAirports : null,
-            iata: nearestLarge?.iata ?? null
+            iataCode: international?.iata ?? null
         };
     });
 

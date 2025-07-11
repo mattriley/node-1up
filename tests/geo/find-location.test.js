@@ -4,7 +4,7 @@ module.exports = ({ test, assert }) => $ => {
 
     const { geo } = $.configure({ locationData });
 
-    test('location data must be loaded to enable geo', () => {
+    test('location data must be loaded to enable geo', { only: true }, () => {
         const input = { city: 'MEL' };
 
         {
