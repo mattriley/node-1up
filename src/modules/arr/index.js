@@ -7,7 +7,6 @@ module.exports = {
     join: require('./join'),
     mapChunksAsync: require('./map-chunks-async'),
     only: require('./only'),
-    poly: require('./poly'),
     steps: require('./steps'),
     wrap: require('./wrap')
 };

@@ -1,6 +1,6 @@
-module.exports = ({ self }) => (list, pred, cont) => {
+module.exports = () => (list, pred) => {
 
     const vals = pred ? list.filter(pred) : list;
-    return self.poly(vals, cont);
+    return vals.length === 1 ? vals[0] : null;
 
 };
