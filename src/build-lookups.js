@@ -8,8 +8,7 @@ module.exports = config => {
         countries: [countries, 'name', 'isoCode'],
         states: [states, 'name', 'isoCode'],
         cities: [cities, 'name', 'iataCode'],
-        statesByCountry: [states, 'country', 'countryCode'],
-        statesByCountryThenState: [states, 'country', 'countryCode'],
+        statesByCountry: [states, 'country', 'countryCode']
     };
 
     const lookup = _.mapValues(lookupPlan, args => {
