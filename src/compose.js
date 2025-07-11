@@ -20,7 +20,7 @@ const outerCompose = ({ config, overrides } = {}) => {
     compose.make('fsx');
     compose.make('fsp', { is });
     compose.asis('any');
-    compose.make('geo', { arr });
+    compose.deep('geo', { arr });
     compose.make('bool');
     compose.make('path', { arr });
     compose.make('pipe', { is, fun });
