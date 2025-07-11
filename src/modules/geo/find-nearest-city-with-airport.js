@@ -9,8 +9,6 @@ function fastHaversineA(lat1Rad, lon1Rad, lat2Rad, lon2Rad) {
 
 module.exports = ({ self, config }) => {
 
-    const cities = config.locationData.iataCities;
-
     return (lat, lng) => {
         if (typeof lat !== 'number' || typeof lng !== 'number') {
             console.warn(lat, lng)
@@ -24,7 +22,7 @@ module.exports = ({ self, config }) => {
         let closest = null;
         let minA = Infinity;
 
-        for (const city of cities) {
+        for (const city of config.locationData.cities) {
             const cityLatRad = toRad(Number(city.latitude));
             const cityLngRad = toRad(Number(city.longitude));
             const a = fastHaversineA(latRad, lngRad, cityLatRad, cityLngRad);
