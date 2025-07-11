@@ -1,9 +1,10 @@
 const { geo } = require('..');
 
 const refresh = async () => {
-    const outputDir = __dirname + '/source';
-    await geo.geonamesCities1000.download({ outputDir });
-    await geo.geonamesCities1000.toJson({ sourceDir: outputDir, outputDir });
+    const sourceDir = __dirname + '/source';
+    const outputDir = sourceDir;
+    await geo.geonamesCities1000.download({ sourceDir, outputDir });
+    await geo.geonamesCities1000.toJson({ sourceDir, outputDir });
 }
 
 refresh();
