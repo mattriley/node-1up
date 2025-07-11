@@ -3,7 +3,7 @@ const path = require('path');
 const readline = require('readline');
 const { Readable } = require('stream');
 
-// GeoNames columns
+// GeoNames columns for reference (not used directly in output)
 const columns = [
     'geonameid', 'name', 'asciiname', 'alternatenames', 'latitude', 'longitude',
     'feature_class', 'feature_code', 'country_code', 'cc2', 'admin1_code',
@@ -11,22 +11,28 @@ const columns = [
     'dem', 'timezone', 'modification_date'
 ];
 
-module.exports = () => async ({ sourceDir, sourceFile, source, outputPath } = {}) => {
+module.exports = () => async ({
+    sourceDir,
+    sourceFile,
+    source,
+    outputDir,
+    outputFile
+} = {}) => {
     let inputStream;
 
     if (source) {
-        // Source is a string of the full file content
-        inputStream = Readable.from(source.split('\n'));
+        inputStream = Readable.from(
+            source.split(/\r?\n/).filter(line => line.trim().length > 0)
+        );
     } else {
-        // Resolve sourceFile or sourceDir
         const inputPath = sourceFile ?? path.join(sourceDir ?? '.', 'cities1000.txt');
 
         if (!fs.existsSync(inputPath)) {
-            throw new Error(`Input file not found: ${inputPath}`);
+            throw new Error(`❌ Input file not found: ${inputPath}`);
         }
-
         inputStream = fs.createReadStream(inputPath);
     }
+
 
     const rl = readline.createInterface({ input: inputStream });
     const cities = [];
@@ -49,9 +55,19 @@ module.exports = () => async ({ sourceDir, sourceFile, source, outputPath } = {}
         cities.push(city);
     }
 
-    if (outputPath) {
-        fs.writeFileSync(outputPath, JSON.stringify(cities, null, 4));
-        console.log(`✅ Saved ${cities.length} cities to ${outputPath}`);
+    // Determine output file path
+    let finalOutputPath = null;
+    if (outputFile) {
+        finalOutputPath = outputFile;
+    } else if (outputDir) {
+        finalOutputPath = path.join(outputDir, 'cities1000.json');
+    }
+
+    if (finalOutputPath) {
+        fs.writeFileSync(finalOutputPath, JSON.stringify(cities, null, 4), 'utf-8');
+        console.log(`✅ Saved ${cities.length} cities to ${finalOutputPath}`);
+    } else {
+        console.log(`✅ Parsed ${cities.length} cities to memory`);
     }
 
     return cities;
