@@ -1,5 +1,5 @@
 const cities = require('./source/cities.json');
-const states = require('./sources/states');
+const states = require('./source/states');
 const countries = require('./source/countries.json');
 
 const hk = states.find(s => s.name === 'Hong Kong SAR');
