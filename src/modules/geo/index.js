@@ -3,6 +3,6 @@ module.exports = {
     findLocation: require('./find-location'),
     findNearestCity: require('./find-nearest-city'),
     finder: require('./finder'),
-    geonamesCities1000: require('./geonames-cities1000'),
+    geonames: require('./geonames'),
     openflights: require('./openflights')
 };
