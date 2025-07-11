@@ -1,4 +1,5 @@
 module.exports = {
+    buildLookup: require('./build-lookup'),
     clean: require('./clean'),
     compactInPlace: require('./compact-in-place'),
     dig: require('./dig'),

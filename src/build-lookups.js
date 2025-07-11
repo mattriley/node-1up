@@ -1,3 +1,5 @@
+const { obj } = require('./modules');
+
 module.exports = config => {
 
     const { cities, states, countries } = config.locationData;
@@ -12,12 +14,7 @@ module.exports = config => {
 
     const lookup = _.mapValues(lookupPlan, args => {
         const [items, ...keyNames] = args;
-        return Object.assign(...keyNames.map(keyName => {
-            return _.groupBy(items, item => {
-                if (!item[keyName]?.toUpperCase) return 'ERROR';
-                return item[keyName]?.toUpperCase()
-            })
-        }));
+        return obj.buildLookup()(items, keyNames);
     });
 
     lookup.statesByCountryThenState = _.mapValues(
