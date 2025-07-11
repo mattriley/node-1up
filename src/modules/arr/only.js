@@ -1,6 +1,6 @@
 module.exports = ({ self }) => (list, pred, cont) => {
 
-    const vals = list.filter(pred);
+    const vals = pred ? list.filter(pred) : list;
     return self.poly(vals, cont);
 
 };

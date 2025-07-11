@@ -10,7 +10,7 @@ module.exports = ({ test, assert }) => $ => {
         {
             const expected = {
                 errors: [
-                    'City, state and country combination cannot be uniquely identified: MEL, undefined, undefined'
+                    'City cannot be uniquely identified: MEL'
                 ]
             };
             const actual = $.geo.findLocation(input);

@@ -14,11 +14,12 @@ module.exports = ({ self, arr }) => {
 
 
         if (cityKey) {
-            const [city, cities] = self.finder.findCities(cityKey, []);
+            const cities = self.finder.findCities(cityKey);
+            const city = arr.only(cities);
 
             if (city) {
-                const state = self.finder.findStates(city.stateCode);
-                const country = self.finder.findCountries(city.countryCode);
+                const state = self.finder.findState(city.stateCode, city.countryCode);
+                const country = self.finder.findCountry(city.countryCode);
                 return buildResult(city, state, country, ['city']);
             }
 
@@ -30,13 +31,17 @@ module.exports = ({ self, arr }) => {
                 const byCountry = () => {
 
                     if (countryKey) {
-                        const country = self.finder.findCountries(countryKey);
+                        const countries = self.finder.findCountries(countryKey);
+                        const country = arr.only(countries);
 
                         if (cityKey) {
-                            const [city, cities] = self.finder.findCities(cityKey, []);
+                            const cities = self.finder.findCities(cityKey);
+                            const city = arr.only(cities);
 
                             if (city) { // BEGIN: CITY IS KNOWN
-                                const [state, states] = self.finder.findStates(city.stateCode, []);
+                                const states = self.finder.findStates(city.stateCode);
+                                const state = arr.only(states);
+
                                 if (state) {
                                     return buildResult(city, state, country, ['city', 'country']);
                                 }
@@ -64,7 +69,7 @@ module.exports = ({ self, arr }) => {
                     }
 
                     if (stateKey) {
-                        const [, states] = self.finder.findStates(stateKey, []);
+                        const states = self.finder.findStates(stateKey);
                         // we have states and cities
 
                         const cities2 = states ? cities?.filter(city => states.filter(state => state.isoCode === city.stateCode).length === 1) : [];
@@ -81,18 +86,22 @@ module.exports = ({ self, arr }) => {
 
 
                 const byState = (stateKey) => {
-                    const [state, states] = self.finder.findStates(stateKey, []);
+                    const states = self.finder.findStates(stateKey);
+                    const state = arr.only(states);
 
                     if (state) { // BEGIN: STATE IS KNOWN
                         const city = arr.only(cities, city => city.stateCode === state.isoCode);
-                        const country = city ? self.finder.findCountries(city.countryCode) : null;
+                        const countries = city ? self.finder.findCountries(city.countryCode) : null;
+                        const country = arr.only(countries);
+
                         if (city && country) {
                             return buildResult(city, state, country, ['city', 'state']);
                         }
                     } // END
 
                     if (states && countryKey) { // BEGIN: STATE IS AMBIGUOUS
-                        const country = self.finder.findCountries(countryKey);
+                        const countries = self.finder.findCountries(countryKey);
+                        const country = arr.only(countries);
                         const state = country ? arr.only(states, state => state.countryCode === country.isoCode) : null;
                         const city = state ? arr.only(cities, city => city.stateCode === state.isoCode) : null;
                         if (city && state && country) {
@@ -125,14 +134,17 @@ module.exports = ({ self, arr }) => {
         }
 
         if (stateKey) {
-            const [state, states] = self.finder.findStates(stateKey, []);
+            const states = self.finder.findStates(stateKey);
+            const state = arr.only(states);
             if (state) {
-                const country = self.finder.findCountries(state.countryCode);
+                const countries = self.finder.findCountries(state.countryCode);
+                const country = arr.only(countries);
                 return buildResult(null, state, country, ['state'])
             }
             if (states) {
                 if (countryKey) {
-                    const country = self.finder.findCountries(countryKey);
+                    const countries = self.finder.findCountries(countryKey);
+                    const country = arr.only(countries);
                     const state = arr.only(states, state => state.countryCode === country.isoCode);
                     if (state) {
                         return buildResult(null, state, country, ['state', 'country']);
@@ -142,7 +154,8 @@ module.exports = ({ self, arr }) => {
         }
 
         if (countryKey) {
-            const country = self.finder.findCountries(countryKey);
+            const countries = self.finder.findCountries(countryKey);
+            const country = arr.only(countries);
             if (country) {
                 return buildResult(null, null, country, ['country']);
             }
