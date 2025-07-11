@@ -42,10 +42,10 @@ module.exports = () => async ({
         if (parts.length < columns.length) continue;
 
         const city = {
-            geonameid: parts[0],
+            // geonameid: parts[0],
             name: parts[1],
-            country_code: parts[8],
-            admin1_code: parts[10],
+            countryCode: parts[8],
+            // admin1_code: parts[10],
             latitude: parseFloat(parts[4]),
             longitude: parseFloat(parts[5]),
             population: parseInt(parts[14], 10) || 0,
