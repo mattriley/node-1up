@@ -1,6 +1,7 @@
 const { geo, net } = require('..');
 
-const states = require('./source/states');
+const states = require('./source/states.json');
+const countries = require('./source/countries.json');
 
 const refresh = async () => {
     const sourceDir = __dirname + '/source';
@@ -8,12 +9,12 @@ const refresh = async () => {
 
     await geo.geonames.cities1000.download({ sourceDir, outputDir });
     let cities = await geo.geonames.cities1000.toJson({ sourceDir, outputDir });
-    cities = geo.assignStateToCities({ cities, states });
+    // cities = geo.assignStateToCities({ cities, states });
 
     await geo.openflights.airports.download({ sourceDir, outputDir });
     const airports = await geo.openflights.airports.toJson({ sourceDir, outputDir });
 
-    await geo.assignAirportsToCities({ cities, airports, outputDir });
+    await geo.assignAirportsToCities({ countries, cities, airports, outputDir });
 }
 
 refresh();
