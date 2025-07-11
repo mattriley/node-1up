@@ -31,7 +31,7 @@ module.exports = ({ self, config }) => ({ latitude, longitude }) => {
     const distanceKm = 6371 * 2 * Math.asin(Math.sqrt(minA));
 
     const cityData = closest;
-    const stateData = self.finder.findState(closest.stateCode, closest.countryCode);
+    const stateData = closest.stateCode ? self.finder.findState(closest.stateCode, closest.countryCode) : {};
     const countryData = self.finder.findCountry(closest.countryCode);
     return self.buildResult(cityData, stateData, countryData, { latitude, longitude, distanceKm });
 

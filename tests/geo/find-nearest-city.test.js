@@ -4,7 +4,7 @@ module.exports = ({ test, assert }) => $ => {
 
     const { geo } = $.configure({ locationData });
 
-    test('location data must be loaded to enable geo', () => {
+    test('Melbourne', () => {
         const input = { latitude: -37.814, longitude: 144.96332 };
 
         const expected = {
@@ -17,6 +17,25 @@ module.exports = ({ test, assert }) => $ => {
             distanceKm: 0,
             latitude: -37.814,
             longitude: 144.96332
+        };
+
+        const actual = geo.findNearestCity(input);
+        assert.deepEqual(actual, expected);
+    });
+
+    test('Macau', () => {
+        const input = { latitude: 22.20056, longitude: 113.54611 };
+
+        const expected = {
+            city: 'Macau',
+            'city.iata': undefined,
+            state: 'Macau SAR',
+            'state.iso': 'MO',
+            country: 'China',
+            'country.iso2': 'CN',
+            distanceKm: 0,
+            latitude: 22.20056,
+            longitude: 113.54611
         };
 
         const actual = geo.findNearestCity(input);

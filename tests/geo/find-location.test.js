@@ -303,7 +303,7 @@ module.exports = ({ test, assert }) => $ => {
             city: undefined,
             'city.iata': undefined,
             country: 'China',
-            state: 'Hong Kong',
+            state: 'Hong Kong SAR',
             unique: ['state', 'country']
         }
 
