@@ -1,4 +1,4 @@
-const cities = require('./source/cities.json');
+const cities = require('./source/cities-iata.json');
 const states = require('./source/states.json');
 const countries = require('./source/countries.json');
 
