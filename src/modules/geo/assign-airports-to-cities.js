@@ -14,8 +14,10 @@ function haversine(lat1, lon1, lat2, lon2) {
 }
 
 module.exports = () => async ({
-    cities, airports,
-    outputFile = 'cities-with-iata.json',
+    cities,
+    airports: airportsRaw,
+    outputFile,
+    outputDir,
     maxDistanceKm = 100,
     maxAirportsPerCity = 3
 } = {}) => {
@@ -38,7 +40,6 @@ module.exports = () => async ({
             .sort((a, b) => a.distanceKm - b.distanceKm)
             .slice(0, maxAirportsPerCity);
 
-        // Find nearest large airport among nearbyAirports only
         const nearestLarge = nearbyAirports.find(a => a.type === 'large_airport');
 
         return {
@@ -48,8 +49,17 @@ module.exports = () => async ({
         };
     });
 
-    // fs.writeFileSync(outputFile, JSON.stringify(enriched, null, 2), 'utf-8');
-    console.log(`✅ Enriched ${enriched.length} cities → ${outputFile}`);
+    let finalOutputPath = null;
+    if (outputFile) {
+        finalOutputPath = outputFile;
+    } else if (outputDir) {
+        finalOutputPath = path.join(outputDir, 'cities-with-iata.json');
+    }
+
+    if (finalOutputPath) {
+        fs.writeFileSync(finalOutputPath, JSON.stringify(enriched, null, 2), 'utf-8');
+        console.log(`✅ Enriched ${enriched.length} cities → ${finalOutputPath}`);
+    }
 
     return enriched;
 };
