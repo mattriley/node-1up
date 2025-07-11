@@ -11,7 +11,12 @@ module.exports = config => {
 
     const lookup = _.mapValues(lookupPlan, args => {
         const [items, ...keyNames] = args;
-        return Object.assign(...keyNames.map(keyName => _.groupBy(items, item => item[keyName]?.toLowerCase())));
+        return Object.assign(...keyNames.map(keyName => {
+            return _.groupBy(items, item => {
+                if (!item[keyName]?.toLowerCase) return 'ERROR';
+                return item[keyName]?.toLowerCase()
+            })
+        }));
     });
 
     const locationData = { cities, states, countries, lookup };

@@ -9,7 +9,7 @@ const refresh = async () => {
 
     await geo.geonames.cities1000.download({ sourceDir, outputDir });
     let cities = await geo.geonames.cities1000.toJson({ sourceDir, outputDir });
-    // cities = geo.assignStateToCities({ cities, states });
+    cities = geo.assignStateToCities({ cities, states });
 
     await geo.openflights.airports.download({ sourceDir, outputDir });
     const airports = await geo.openflights.airports.toJson({ sourceDir, outputDir });

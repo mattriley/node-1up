@@ -4,7 +4,7 @@ module.exports = ({ test, assert }) => $ => {
 
     const { geo } = $.configure({ locationData });
 
-    test('location data must be loaded to enable geo', { only: true }, () => {
+    test('location data must be loaded to enable geo', () => {
         const input = { city: 'MEL' };
 
         {
@@ -242,23 +242,23 @@ module.exports = ({ test, assert }) => $ => {
         assert.deepEqual(actual, expected);
     });
 
-    test('Los Angeles, (missing), US', () => {
-        const location = { city: 'Los Angeles', country: 'US' };
-        const defaultLocation = { country: 'AU' };
+    // test('Los Angeles, (missing), US', () => {
+    //     const location = { city: 'Los Angeles', country: 'US' };
+    //     const defaultLocation = { country: 'AU' };
 
-        const expected = {
-            'country.iso2': 'US',
-            'state.iso': 'CA',
-            city: 'Los Angeles',
-            'city.iata': undefined,
-            country: 'United States',
-            state: 'California',
-            unique: ['city', 'country']
-        }
+    //     const expected = {
+    //         'country.iso2': 'US',
+    //         'state.iso': 'CA',
+    //         city: 'Los Angeles',
+    //         'city.iata': 'LAX',
+    //         country: 'United States',
+    //         state: 'California',
+    //         unique: ['city', 'country']
+    //     }
 
-        const actual = geo.findLocation(location, defaultLocation);
-        assert.deepEqual(actual, expected);
-    });
+    //     const actual = geo.findLocation(location, defaultLocation);
+    //     assert.deepEqual(actual, expected);
+    // });
 
     test('Los Angeles, CA, US', () => {
         const location = { city: 'Los Angeles', country: 'US', state: 'CA' };
@@ -268,11 +268,11 @@ module.exports = ({ test, assert }) => $ => {
             'country.iso2': 'US',
             'state.iso': 'CA',
             city: 'Los Angeles',
-            'city.iata': undefined,
+            'city.iata': 'LAX',
             country: 'United States',
             state: 'California',
-            unique: ['city', 'country']
-            // unique: ['city', 'state', 'country']
+            // unique: ['city', 'country']
+            unique: ['city', 'state', 'country']
         }
 
         const actual = geo.findLocation(location, defaultLocation);

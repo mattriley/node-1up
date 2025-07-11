@@ -41,15 +41,18 @@ module.exports = ({ self }) => async ({
                 ap.country.toLowerCase() === countriesByCode[city.countryCode.toLowerCase()].name.toLowerCase();
         });
 
-        let iataCode = matches[0]
+        let iataCode;
 
-        if (matches.length > 1) {
-            const match = matches.find(ap => ap.city.toLowerCase().startsWith(ap.iata.toLowerCase()));
+        if (matches.length) {
+            let match = matches.find(ap => {
+                return ap.city.toLowerCase().startsWith(ap.iata.toLowerCase()) ||
+                    ap.name.includes('International')
+            });
             if (match) iataCode = match.iata;
         }
 
         const nearbyAirports2 = nearbyAirports.map(ap => {
-            return _.pick(ap, ['iata', 'name', 'distanceKm']);
+            return _.pick(ap, ['iata', 'name', 'city', 'distanceKm']);
         });
 
         return {
