@@ -7,6 +7,7 @@ module.exports = () => async ({
     delimiter = '\t',
     columns = [],
     transform,
+    filter,
     defaultFilename = 'data.txt',
     source,
     sourceFile,
@@ -32,8 +33,11 @@ module.exports = () => async ({
     const results = [];
 
     for await (const line of rl) {
+        if (typeof filter === 'function' && !filter(line)) continue;
+
         const parts = line.split(delimiter);
         if (parts.length < columns.length) continue;
+
         const item = transform(parts);
         if (item) results.push(item);
     }

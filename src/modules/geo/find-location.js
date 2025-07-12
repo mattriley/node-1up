@@ -34,7 +34,7 @@ module.exports = ({ self, arr }) => {
                         const countries = self.finder.findCountries(countryKey);
                         const country = arr.only(countries);
 
-                        if (cityKey) {
+                        if (cityKey && country) {
                             const cities = self.finder.findCities(cityKey);
                             const city = arr.only(cities);
 

@@ -7,7 +7,7 @@ module.exports = config => {
     const lookupPlan = {
         countries: [countries, 'name', 'isoCode'],
         states: [states, 'name', 'isoCode'],
-        cities: [cities, 'name', 'iataCode'],
+        cities: [cities, 'name'],
         statesByCountry: [states, 'country', 'countryCode']
     };
 

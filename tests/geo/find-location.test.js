@@ -5,12 +5,12 @@ module.exports = ({ test, assert }) => $ => {
     const { geo } = $.configure({ locationData });
 
     test('location data must be loaded to enable geo', () => {
-        const input = { city: 'MEL' };
+        const input = { city: 'Melbourne', country: 'AU' };
 
         {
             const expected = {
                 errors: [
-                    'City cannot be uniquely identified: MEL'
+                    'City and country combination cannot be uniquely identified: Melbourne, AU'
                 ]
             };
             const actual = $.geo.findLocation(input);
@@ -22,12 +22,11 @@ module.exports = ({ test, assert }) => $ => {
         {
             const expected = {
                 city: 'Melbourne',
-                'city.iata': 'MEL',
                 state: 'Victoria',
                 'state.iso': 'VIC',
                 country: 'Australia',
-                'country.iso2': 'AU',
-                unique: ['city']
+                'country.iso': 'AU',
+                unique: ['city', 'country']
             };
             const actual = $.geo.findLocation(input);
             assert.deepEqual(actual, expected);
@@ -39,28 +38,10 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Canberra',
-            'city.iata': 'CBR',
             state: 'Australian Capital Territory',
             'state.iso': 'ACT',
             country: 'Australia',
-            'country.iso2': 'AU',
-            unique: ['city']
-        };
-
-        const actual = geo.findLocation(input);
-        assert.deepEqual(actual, expected);
-    });
-
-    test('IATA code for Melbourne (MEL)', () => {
-        const input = { city: 'MEL' };
-
-        const expected = {
-            city: 'Melbourne',
-            'city.iata': 'MEL',
-            state: 'Victoria',
-            'state.iso': 'VIC',
-            country: 'Australia',
-            'country.iso2': 'AU',
+            'country.iso': 'AU',
             unique: ['city']
         };
 
@@ -73,11 +54,10 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Melbourne',
-            'city.iata': 'MEL',
             state: 'Victoria',
             'state.iso': 'VIC',
             country: 'Australia',
-            'country.iso2': 'AU',
+            'country.iso': 'AU',
             unique: ['city', 'state']
         };
 
@@ -115,11 +95,10 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Melbourne',
-            'city.iata': 'MEL',
             state: 'Victoria',
             'state.iso': 'VIC',
             country: 'Australia',
-            'country.iso2': 'AU',
+            'country.iso': 'AU',
             unique: ['city', 'country']
         };
 
@@ -127,35 +106,16 @@ module.exports = ({ test, assert }) => $ => {
         assert.deepEqual(actual, expected);
     });
 
-    // test('Globally non-unique city + default country', () => {
-    //     const input = { city: 'Melbourne' };
-    //     const defaultLocation = { country: 'AU' };
-
-    //     const expected = {
-    //         city: 'Melbourne',
-    //         state: 'Victoria',
-    //         'state.iso': 'VIC',
-    //         country: 'Australia',
-    //         'country.iso2': 'AU',
-    //         unique: ['city', 'country']
-    //     };
-
-    //     const actual = geo.findLocation(input, defaultLocation);
-    //     assert.deepEqual(actual, expected);
-    // });
-
-
 
     test('Globally unique state', () => {
         const input = { state: 'ACT' };
 
         const expected = {
             city: undefined,
-            'city.iata': undefined,
             state: 'Australian Capital Territory',
             'state.iso': 'ACT',
             country: 'Australia',
-            'country.iso2': 'AU',
+            'country.iso': 'AU',
             unique: ['state']
         };
 
@@ -168,11 +128,10 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: undefined,
-            'city.iata': undefined,
             state: 'Victoria',
             'state.iso': 'VIC',
             country: 'Australia',
-            'country.iso2': 'AU',
+            'country.iso': 'AU',
             unique: ['state', 'country']
         };
 
@@ -180,33 +139,15 @@ module.exports = ({ test, assert }) => $ => {
         assert.deepEqual(actual, expected);
     });
 
-    // test('Globally non-unique state + default country', () => {
-    //     const input = { state: 'Victoria' };
-    //     const defaultLocation = { country: 'AU' };
-
-    //     const expected = {
-    //         city: undefined,
-    //         state: 'Victoria',
-    //         'state.iso': 'VIC',
-    //         country: 'Australia',
-    //         'country.iso2': 'AU',
-    //         unique: []
-    //     };
-
-    //     const actual = geo.findLocation(input, defaultLocation);
-    //     assert.deepEqual(actual, expected);
-    // });
-
     test('Globally unique country (countries should be inherently unique)', () => {
         const input = { country: 'AU' };
 
         const expected = {
             city: undefined,
-            'city.iata': undefined,
             state: undefined,
             'state.iso': undefined,
             country: 'Australia',
-            'country.iso2': 'AU',
+            'country.iso': 'AU',
             unique: ['country']
         };
 
@@ -242,33 +183,15 @@ module.exports = ({ test, assert }) => $ => {
         assert.deepEqual(actual, expected);
     });
 
-    // test('Los Angeles, (missing), US', () => {
-    //     const location = { city: 'Los Angeles', country: 'US' };
-    //     const defaultLocation = { country: 'AU' };
-
-    //     const expected = {
-    //         'country.iso2': 'US',
-    //         'state.iso': 'CA',
-    //         city: 'Los Angeles',
-    //         'city.iata': 'LAX',
-    //         country: 'United States',
-    //         state: 'California',
-    //         unique: ['city', 'country']
-    //     }
-
-    //     const actual = geo.findLocation(location, defaultLocation);
-    //     assert.deepEqual(actual, expected);
-    // });
 
     test('Los Angeles, CA, US', () => {
         const location = { city: 'Los Angeles', country: 'US', state: 'CA' };
         const defaultLocation = { country: 'AU' };
 
         const expected = {
-            'country.iso2': 'US',
+            'country.iso': 'US',
             'state.iso': 'CA',
             city: 'Los Angeles',
-            'city.iata': 'LAX',
             country: 'United States',
             state: 'California',
             // unique: ['city', 'country']
@@ -279,29 +202,14 @@ module.exports = ({ test, assert }) => $ => {
         assert.deepEqual(actual, expected);
     });
 
-    // test('Default country not found', () => {
-    //     const location = {};
-    //     const defaultLocation = { country: 'FOO' };
-
-    //     const expected = {
-    //         errors: [
-    //             'Default country not found: FOO'
-    //         ]
-    //     }
-
-    //     const actual = geo.findLocation(location, defaultLocation);
-    //     assert.deepEqual(actual, expected);
-    // });
-
     test('(none), HK, CN', () => {
         const location = { country: 'CN', state: 'HK' };
         const defaultLocation = { country: 'AU' };
 
         const expected = {
-            'country.iso2': 'CN',
+            'country.iso': 'CN',
             'state.iso': 'HK',
             city: undefined,
-            'city.iata': undefined,
             country: 'China',
             state: 'Hong Kong SAR',
             unique: ['state', 'country']

@@ -9,13 +9,12 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Melbourne',
-            'city.iata': 'MEL',
             'city.latitude': -37.814,
             'city.longitude': 144.96332,
             state: 'Victoria',
             'state.iso': 'VIC',
             country: 'Australia',
-            'country.iso2': 'AU',
+            'country.iso': 'AU',
             distanceKm: 0,
             latitude: -37.814,
             longitude: 144.96332
@@ -30,13 +29,12 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Macau',
-            'city.iata': undefined,
             'city.latitude': 22.20056,
             'city.longitude': 113.54611,
             state: 'Macau SAR',
             'state.iso': 'MO',
             country: 'China',
-            'country.iso2': 'CN',
+            'country.iso': 'CN',
             distanceKm: 0,
             latitude: 22.20056,
             longitude: 113.54611
@@ -51,13 +49,12 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Monbulk',
-            'city.iata': undefined,
             'city.latitude': -37.87427,
             'city.longitude': 145.42592,
             state: 'Victoria',
             'state.iso': 'VIC',
             country: 'Australia',
-            'country.iso2': 'AU',
+            'country.iso': 'AU',
             distanceKm: 3.1070021746990446,
             latitude: -37.84634722222223,
             longitude: 145.42723055555555
@@ -72,13 +69,12 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Monbulk',
-            'city.iata': undefined,
             'city.latitude': -37.87427,
             'city.longitude': 145.42592,
             state: 'Victoria',
             'state.iso': 'VIC',
             country: 'Australia',
-            'country.iso2': 'AU',
+            'country.iso': 'AU',
             distanceKm: 3.1070021746990446,
             latitude: -37.84634722222223,
             longitude: 145.42723055555555
