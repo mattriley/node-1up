@@ -91,7 +91,7 @@ module.exports = ({ self, arr }) => {
 
                     if (state) { // BEGIN: STATE IS KNOWN
                         const city = arr.only(cities, city => city.stateCode === state.isoCode);
-                        const countries = city ? self.finder.findCountries(city.countryCode) : null;
+                        const countries = city ? self.finder.findCountries(city.countryCode) : [];
                         const country = arr.only(countries);
 
                         if (city && country) {
