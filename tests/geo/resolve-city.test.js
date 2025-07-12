@@ -21,11 +21,14 @@ module.exports = ({ test, assert }) => $ => {
         {
             const expected = {
                 city: 'Melbourne',
-                state: 'Victoria',
-                stateCode: 'VIC',
                 country: 'Australia',
-                countryCode: 'AU'
-            };
+                countryCode: 'AU',
+                inferred: [
+                    'state'
+                ],
+                state: 'Victoria',
+                stateCode: 'VIC'
+            }
 
             const actual = $.geo.resolveCity(input);
             assert.deepEqual(actual, expected);
@@ -37,11 +40,15 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Canberra',
-            state: 'Australian Capital Territory',
-            stateCode: 'ACT',
             country: 'Australia',
-            countryCode: 'AU'
-        };
+            countryCode: 'AU',
+            inferred: [
+                'country',
+                'state'
+            ],
+            state: 'Australian Capital Territory',
+            stateCode: 'ACT'
+        }
 
         const actual = geo.resolveCity(input);
         assert.deepEqual(actual, expected);
@@ -52,11 +59,14 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Melbourne',
-            state: 'Victoria',
-            stateCode: 'VIC',
             country: 'Australia',
-            countryCode: 'AU'
-        };
+            countryCode: 'AU',
+            inferred: [
+                'country'
+            ],
+            state: 'Victoria',
+            stateCode: 'VIC'
+        }
 
         const actual = geo.resolveCity(input);
         assert.deepEqual(actual, expected);
@@ -68,11 +78,12 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Perth',
-            state: undefined,
-            stateCode: undefined,
             country: undefined,
             countryCode: undefined,
-        };
+            inferred: [],
+            state: undefined,
+            stateCode: undefined
+        }
 
         const actual = geo.resolveCity(input);
         assert.deepEqual(actual, expected);
@@ -83,10 +94,11 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Perth',
-            state: undefined,
-            stateCode: undefined,
             country: 'Australia',
-            countryCode: 'AU'
+            countryCode: 'AU',
+            inferred: [],
+            state: undefined,
+            stateCode: undefined
         }
 
         const actual = geo.resolveCity(input);
@@ -98,10 +110,13 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Melbourne',
-            state: 'Victoria',
-            stateCode: 'VIC',
             country: 'Australia',
-            countryCode: 'AU'
+            countryCode: 'AU',
+            inferred: [
+                'state'
+            ],
+            state: 'Victoria',
+            stateCode: 'VIC'
         }
 
         const actual = geo.resolveCity(input);
@@ -114,10 +129,13 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: undefined,
-            state: 'Australian Capital Territory',
-            stateCode: 'ACT',
             country: 'Australia',
-            countryCode: 'AU'
+            countryCode: 'AU',
+            inferred: [
+                'country'
+            ],
+            state: 'Australian Capital Territory',
+            stateCode: 'ACT'
         }
 
         const actual = geo.resolveCity(input);
@@ -129,11 +147,12 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: undefined,
-            state: 'Victoria',
-            stateCode: 'VIC',
             country: 'Australia',
-            countryCode: 'AU'
-        };
+            countryCode: 'AU',
+            inferred: [],
+            state: 'Victoria',
+            stateCode: 'VIC'
+        }
 
         const actual = geo.resolveCity(input);
         assert.deepEqual(actual, expected);
@@ -144,11 +163,12 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: undefined,
-            state: undefined,
-            stateCode: undefined,
             country: 'Australia',
-            countryCode: 'AU'
-        };
+            countryCode: 'AU',
+            inferred: [],
+            state: undefined,
+            stateCode: undefined
+        }
 
         const actual = geo.resolveCity(input);
         assert.deepEqual(actual, expected);
@@ -159,11 +179,12 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Los Angeles',
-            state: undefined,
-            stateCode: undefined,
             country: undefined,
-            countryCode: undefined
-        };
+            countryCode: undefined,
+            inferred: [],
+            state: undefined,
+            stateCode: undefined
+        }
 
         const actual = geo.resolveCity(location);
         assert.deepEqual(actual, expected);
@@ -174,10 +195,14 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Los Angeles',
-            state: 'California',
-            stateCode: 'CA',
             country: 'United States',
             countryCode: 'US',
+            inferred: [
+                'state',
+                'country'
+            ],
+            state: 'California',
+            stateCode: 'CA'
         }
 
         const actual = geo.resolveCity(location);
@@ -190,10 +215,11 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Los Angeles',
-            state: 'California',
-            stateCode: 'CA',
             country: 'United States',
-            countryCode: 'US'
+            countryCode: 'US',
+            inferred: [],
+            state: 'California',
+            stateCode: 'CA'
         }
 
         const actual = geo.resolveCity(location);
@@ -205,10 +231,11 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: undefined,
-            state: 'Hong Kong SAR',
-            stateCode: 'HK',
             country: 'China',
-            countryCode: 'CN'
+            countryCode: 'CN',
+            inferred: [],
+            state: 'Hong Kong SAR',
+            stateCode: 'HK'
         }
 
         const actual = geo.resolveCity(location);
@@ -220,10 +247,11 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Houston',
-            state: undefined,
-            stateCode: undefined,
             country: 'United States',
             countryCode: 'US',
+            inferred: [],
+            state: undefined,
+            stateCode: undefined
         }
 
         const actual = geo.resolveCity(location);
