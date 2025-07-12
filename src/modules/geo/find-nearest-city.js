@@ -1,25 +1,14 @@
 module.exports = ({ self, config }) => ({ latitude, longitude }) => {
-
-    const lat = latitude;
-    const lng = longitude;
-
-    if (typeof lat !== 'number' || typeof lng !== 'number') {
-        console.warn(lat, lng)
+    if (typeof latitude !== 'number' || typeof longitude !== 'number') {
+        console.warn(latitude, longitude);
         throw new Error('Latitude and longitude must be numbers');
     }
-
-    const toRad = deg => deg * Math.PI / 180;
-    const latRad = toRad(lat);
-    const lngRad = toRad(lng);
 
     let closest = null;
     let minA = Infinity;
 
     for (const city of config.locationData.cities) {
-        const cityLatRad = toRad(Number(city.latitude));
-        const cityLngRad = toRad(Number(city.longitude));
-        const a = self.haversine(latRad, lngRad, cityLatRad, cityLngRad);
-
+        const a = self.haversine(latitude, longitude, city.latitude, city.longitude); // use degrees
         if (a < minA) {
             minA = a;
             closest = city;
@@ -31,11 +20,8 @@ module.exports = ({ self, config }) => ({ latitude, longitude }) => {
     const distanceKm = 6371 * 2 * Math.asin(Math.sqrt(minA));
 
     const cityData = closest;
-
-    // console.warn(distanceKm);
-
     const stateData = closest.stateCode ? self.finder.findState(closest.stateCode, closest.countryCode) : {};
     const countryData = self.finder.findCountry(closest.countryCode);
-    return self.buildResult(cityData, stateData, countryData, { latitude, longitude, distanceKm });
 
+    return self.buildResult(cityData, stateData, countryData, { latitude, longitude, distanceKm });
 };

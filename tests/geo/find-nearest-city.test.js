@@ -52,8 +52,7 @@ module.exports = ({ test, assert }) => $ => {
             'state.iso': 'VIC',
             country: 'Australia',
             'country.iso2': 'AU',
-            // distanceKm: 0,
-            distanceKm: 2995.3269232629486, // doesn't seem right
+            distanceKm: 3.1070021746990446,
             latitude: -37.84634722222223,
             longitude: 145.42723055555555
         };
