@@ -61,4 +61,23 @@ module.exports = ({ test, assert }) => $ => {
         assert.deepEqual(actual, expected);
     });
 
+    test('Emerald', () => {
+        const input = { latitude: -37.84634722222223, longitude: 145.42723055555555 };
+
+        const expected = {
+            city: 'Monbulk',
+            'city.iata': undefined,
+            state: 'Victoria',
+            'state.iso': 'VIC',
+            country: 'Australia',
+            'country.iso2': 'AU',
+            distanceKm: 3.1070021746990446,
+            latitude: -37.84634722222223,
+            longitude: 145.42723055555555
+        };
+
+        const actual = geo.findNearestCity(input);
+        assert.deepEqual(actual, expected);
+    });
+
 };

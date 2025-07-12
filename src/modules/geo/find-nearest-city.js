@@ -5,19 +5,17 @@ module.exports = ({ self, config }) => ({ latitude, longitude }) => {
     }
 
     let closest = null;
-    let minA = Infinity;
+    let distanceKm = Infinity;
 
     for (const city of config.locationData.cities) {
         const a = self.haversine(latitude, longitude, city.latitude, city.longitude); // use degrees
-        if (a < minA) {
-            minA = a;
+        if (a < distanceKm) {
+            distanceKm = a;
             closest = city;
         }
     }
 
     if (!closest) return null;
-
-    const distanceKm = 6371 * 2 * Math.asin(Math.sqrt(minA));
 
     const cityData = closest;
     const stateData = closest.stateCode ? self.finder.findState(closest.stateCode, closest.countryCode) : {};
