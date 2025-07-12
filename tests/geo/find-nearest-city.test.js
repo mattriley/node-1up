@@ -10,6 +10,8 @@ module.exports = ({ test, assert }) => $ => {
         const expected = {
             city: 'Melbourne',
             'city.iata': 'MEL',
+            'city.latitude': -37.814,
+            'city.longitude': 144.96332,
             state: 'Victoria',
             'state.iso': 'VIC',
             country: 'Australia',
@@ -29,6 +31,8 @@ module.exports = ({ test, assert }) => $ => {
         const expected = {
             city: 'Macau',
             'city.iata': undefined,
+            'city.latitude': 22.20056,
+            'city.longitude': 113.54611,
             state: 'Macau SAR',
             'state.iso': 'MO',
             country: 'China',
@@ -48,6 +52,8 @@ module.exports = ({ test, assert }) => $ => {
         const expected = {
             city: 'Monbulk',
             'city.iata': undefined,
+            'city.latitude': -37.87427,
+            'city.longitude': 145.42592,
             state: 'Victoria',
             'state.iso': 'VIC',
             country: 'Australia',
@@ -67,6 +73,8 @@ module.exports = ({ test, assert }) => $ => {
         const expected = {
             city: 'Monbulk',
             'city.iata': undefined,
+            'city.latitude': -37.87427,
+            'city.longitude': 145.42592,
             state: 'Victoria',
             'state.iso': 'VIC',
             country: 'Australia',

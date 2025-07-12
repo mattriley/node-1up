@@ -31,6 +31,8 @@ module.exports = ({ self, config }) => ({ latitude, longitude }) => {
     const countryData = self.finder.findCountry(cityData.countryCode);
 
     return self.buildResult(cityData, stateData, countryData, {
+        'city.latitude': cityData.latitude,
+        'city.longitude': cityData.longitude,
         latitude,
         longitude,
         distanceKm: shortestDistance
