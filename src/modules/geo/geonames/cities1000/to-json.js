@@ -12,6 +12,7 @@ module.exports = ({ net }) => async ({ sourceDir, sourceFile, source, outputDir,
         defaultFilename: 'cities1000.txt',
         transform: parts => ({
             name: parts[1],
+            stateCode: parts[10],
             countryCode: parts[8],
             latitude: parseFloat(parts[4]),
             longitude: parseFloat(parts[5]),
