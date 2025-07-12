@@ -1,25 +1,39 @@
 module.exports = ({ self, config }) => ({ latitude, longitude }) => {
-    if (typeof latitude !== 'number' || typeof longitude !== 'number') {
-        console.warn(latitude, longitude);
-        throw new Error('Latitude and longitude must be numbers');
+
+    if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) {
+        console.warn('Invalid input coordinates:', latitude, longitude);
+        throw new Error('Latitude and longitude must be valid numbers');
     }
 
-    let closest = null;
-    let distanceKm = Infinity;
+    let closestCity = null;
+    let shortestDistance = Infinity;
 
     for (const city of config.locationData.cities) {
-        const a = self.haversine(latitude, longitude, city.latitude, city.longitude); // use degrees
-        if (a < distanceKm) {
-            distanceKm = a;
-            closest = city;
+        const distanceKm = self.haversineDistanceKm(
+            latitude,
+            longitude,
+            city.latitude,
+            city.longitude
+        );
+
+        if (distanceKm < shortestDistance) {
+            shortestDistance = distanceKm;
+            closestCity = city;
         }
     }
 
-    if (!closest) return null;
+    if (!closestCity) return null;
 
-    const cityData = closest;
-    const stateData = closest.stateCode ? self.finder.findState(closest.stateCode, closest.countryCode) : {};
-    const countryData = self.finder.findCountry(closest.countryCode);
+    const cityData = closestCity;
+    const stateData = cityData.stateCode
+        ? self.finder.findState(cityData.stateCode, cityData.countryCode)
+        : {};
+    const countryData = self.finder.findCountry(cityData.countryCode);
 
-    return self.buildResult(cityData, stateData, countryData, { latitude, longitude, distanceKm });
+    return self.buildResult(cityData, stateData, countryData, {
+        latitude,
+        longitude,
+        distanceKm: shortestDistance
+    });
+
 };

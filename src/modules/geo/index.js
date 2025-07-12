@@ -6,6 +6,6 @@ module.exports = {
     findNearestCity: require('./find-nearest-city'),
     finder: require('./finder'),
     geonames: require('./geonames'),
-    haversine: require('./haversine'),
+    haversineDistanceKm: require('./haversine-distance-km'),
     openflights: require('./openflights')
 };
