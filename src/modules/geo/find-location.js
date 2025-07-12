@@ -18,7 +18,7 @@ module.exports = ({ self, arr }) => {
             const city = arr.only(cities);
 
             if (city) {
-                const state = self.finder.findState(city.stateCode, city.countryCode);
+                const state = city.stateCode && city.countryCode ? self.finder.findState(city.stateCode, city.countryCode) : null;
                 const country = self.finder.findCountry(city.countryCode);
                 return buildResult(city, state, country, ['city']);
             }
