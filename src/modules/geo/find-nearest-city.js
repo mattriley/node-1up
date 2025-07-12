@@ -24,10 +24,22 @@ module.exports = ({ self, config }) => ({ latitude, longitude }) => {
 
     if (!closestCity) return null;
 
+    //  State not found: 00; Country: SG
+
     const cityData = closestCity;
-    const stateData = cityData.stateCode
-        ? self.finder.findState(cityData.stateCode, cityData.countryCode)
-        : {};
+
+    let stateData;
+
+    try {
+        if (cityData.stateCode) {
+            stateData = self.finder.findState(cityData.stateCode, cityData.countryCode);
+        }
+    } catch (err) {
+        if (cityData.state) {
+            stateData = self.finder.findState(cityData.state, cityData.countryCode);
+        }
+    }
+
     const countryData = self.finder.findCountry(cityData.countryCode);
 
     return self.buildResult(cityData, stateData, countryData, {
