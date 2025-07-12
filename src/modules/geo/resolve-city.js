@@ -1,74 +1,79 @@
 module.exports = ({ self, arr }) => csc => {
-
-    let cityKey = csc.city;
-    let stateKey = csc.state;
-    let countryKey = csc.country;
+    let { city: cityKey, state: stateKey, country: countryKey } = csc;
 
     const result = { ...csc };
 
+    const normalize = s => s?.trim();
+
+    cityKey = normalize(cityKey);
+    stateKey = normalize(stateKey);
+    countryKey = normalize(countryKey);
+
     const inferCountry = () => {
-        // Case 1: Infer from state
-        if (!countryKey && stateKey) {
-            const states = self.finder.findStates(stateKey);
-            const state = arr.only(states);
+        if (countryKey) return self.finder.findCountry(countryKey);
+
+        // Try state → country
+        if (stateKey) {
+            const state = arr.only(self.finder.findStates(stateKey));
             if (state) {
-                const country = self.finder.findCountry(state.countryCode);
-                if (country) {
-                    result.country = country.name;
-                    countryKey = country.isoCode;
-                    return country;
-                }
+                result.country = state.countryName;
+                countryKey = state.countryCode;
+                return self.finder.findCountry(state.countryCode);
             }
         }
 
-        // Case 2: Infer from city
-        if (!countryKey && cityKey) {
-            const cities = self.finder.findCities(cityKey);
-            const city = arr.only(cities);
+        // Try city → country
+        if (cityKey) {
+            const city = arr.only(self.finder.findCities(cityKey));
             if (city) {
-                const country = self.finder.findCountry(city.countryCode);
-                if (country) {
-                    result.country = country.name;
-                    countryKey = country.isoCode;
-                    return country;
-                }
+                result.country = city.countryName;
+                countryKey = city.countryCode;
+                return self.finder.findCountry(city.countryCode);
             }
         }
 
-        // ✅ New Case 3: Infer from city + state combination
-        if (!countryKey && cityKey && stateKey) {
+        // Try city + state → country
+        if (cityKey && stateKey) {
             const cities = self.finder.findCities(cityKey);
             const states = self.finder.findStates(stateKey);
-
-            const citiesInStates = cities.filter(city => states.find(state => city.stateCode === state.isoCode));
-            const city = arr.only(citiesInStates);
-
+            const city = arr.only(cities.filter(c => states.some(s => s.isoCode === c.stateCode)));
             if (city) {
                 const state = self.finder.findState(city.stateCode, city.countryCode);
-                const country = self.finder.findCountry(city.countryCode);
                 if (state) {
                     result.state = state.name;
                     stateKey = state.isoCode;
                 }
-                if (country) {
-                    result.country = country.name;
-                    countryKey = country.isoCode;
-                    return country;
+                result.country = city.countryName;
+                countryKey = city.countryCode;
+                return self.finder.findCountry(city.countryCode);
+            }
+        }
+
+        return { name: countryKey };
+    };
+
+    const inferState = () => {
+        if (stateKey && countryKey) {
+            return self.finder.findState(stateKey, countryKey);
+        }
+
+        // Try city → state
+        if (cityKey) {
+            const city = arr.only(self.finder.findCities(cityKey));
+            if (city) {
+                const state = self.finder.findState(city.stateCode, city.countryCode);
+                if (state) {
+                    result.state = state.name;
+                    stateKey = state.isoCode;
+                    countryKey = city.countryCode;
+                    return state;
                 }
             }
         }
 
-        // Case 4: Already have country key
-        const country = countryKey ? self.finder.findCountry(countryKey) : null;
-        if (country) return country;
-        return { name: countryKey };
-    };
-
-
-    const inferState = () => {
-        if (!stateKey && cityKey) {
-            const cities = self.finder.findCities(cityKey);
-            const city = arr.only(cities);
+        // Try city + country → state
+        if (cityKey && countryKey) {
+            const city = arr.only(self.finder.findCities(cityKey).filter(c => c.countryCode === countryKey));
             if (city) {
                 const state = self.finder.findState(city.stateCode, city.countryCode);
                 if (state) {
@@ -79,48 +84,25 @@ module.exports = ({ self, arr }) => csc => {
             }
         }
 
-        if (!stateKey && countryKey) {
-            const countries = self.finder.findCountries(countryKey);
-            const country = arr.only(countries);
-            if (country && cityKey) {
-                const cities = self.finder.findCities(cityKey);
-                const filteredCities = cities.filter(c => c.countryCode === country.isoCode);
-                const city = arr.only(filteredCities);
-                if (city) {
-                    const state = self.finder.findState(city.stateCode, city.countryCode);
-                    if (state) {
-                        result.state = state.name;
-                        stateKey = state.isoCode;
-                        return state;
-                    }
-                }
-            }
-        }
-
-        const state = stateKey && countryKey ? self.finder.findState(stateKey, countryKey) : null;
-        if (state) return state;
         return { name: stateKey };
     };
 
     const inferCity = () => {
+        if (cityKey && stateKey && countryKey) {
+            return self.finder.findCity(cityKey, stateKey, countryKey);
+        }
+
+        // Try cities of state → only one?
         if (!cityKey && stateKey && countryKey) {
-            const states = self.finder.findStates(stateKey);
-            const countries = self.finder.findCountries(countryKey);
-            const state = arr.only(states);
-            const country = arr.only(countries);
-            if (state && country) {
-                const cities = self.finder.findCitiesOfState(state.isoCode, country.isoCode);
-                const city = arr.only(cities);
-                if (city) {
-                    result.city = city.name;
-                    cityKey = city.name;
-                    return city;
-                }
+            const cities = self.finder.findCitiesOfState(stateKey, countryKey);
+            const city = arr.only(cities);
+            if (city) {
+                result.city = city.name;
+                cityKey = city.name;
+                return city;
             }
         }
 
-        const city = cityKey && stateKey && countryKey ? self.finder.findCity(cityKey, stateKey, countryKey) : null;
-        if (city) return city;
         return { name: cityKey };
     };
 
@@ -135,5 +117,4 @@ module.exports = ({ self, arr }) => csc => {
         country: country?.name,
         countryCode: country?.isoCode,
     };
-
 };
