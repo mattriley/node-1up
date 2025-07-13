@@ -20,7 +20,7 @@ module.exports = ({ test, assert }) => $ => {
             distanceKm: 0
         }
 
-        const actual = geo.findNearestCity(input);
+        const actual = geo.nearestCity(input);
 
         assert.deepEqual(actual, expected);
     });
@@ -41,7 +41,7 @@ module.exports = ({ test, assert }) => $ => {
             distanceKm: 0
         }
 
-        const actual = geo.findNearestCity(input);
+        const actual = geo.nearestCity(input);
 
         assert.deepEqual(actual, expected);
     });
@@ -62,7 +62,7 @@ module.exports = ({ test, assert }) => $ => {
             distanceKm: 3.1070021746990446
         }
 
-        const actual = geo.findNearestCity(input);
+        const actual = geo.nearestCity(input);
 
         assert.deepEqual(actual, expected);
     });
@@ -83,7 +83,7 @@ module.exports = ({ test, assert }) => $ => {
             distanceKm: 3.1070021746990446
         }
 
-        const actual = geo.findNearestCity(input);
+        const actual = geo.nearestCity(input);
         assert.deepEqual(actual, expected);
     });
 
