@@ -32,6 +32,14 @@ const refresh = async () => {
         city.countryCode = 'CN';
     });
 
+    cities.filter(city => ['HK', 'MO'].includes(city.countryCode)).forEach(city => {
+        city.stateCode = city.countryCode;
+        city.countryCode = 'CN';
+    });
+
+    const northShore = cities.find(state => state.name === 'North Shore' && state.countryCode === 'NZ')
+    cities.push({ ...northShore, name: 'Auckland' });
+
     cities = geo.assignStateToCities({ cities, states, admin1Codes });
     fs.writeFileSync(outputDir + '/cities.json', JSON.stringify(cities, null, 4));
 
