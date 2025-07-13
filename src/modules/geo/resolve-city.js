@@ -8,7 +8,6 @@ module.exports = ({ self, arr }) => csc => {
     };
 
     let { city: cityKey, state: stateKey, country: countryKey } = original;
-
     const result = { ...csc };
     const inferred = [];
 
@@ -16,53 +15,55 @@ module.exports = ({ self, arr }) => csc => {
         if (!original[field]) inferred.push(field);
     };
 
+    const findCityMatch = () => {
+        return (
+            (cityKey && stateKey && countryKey && self.finder.findCity(cityKey, stateKey, countryKey)) ||
+            (cityKey && countryKey && arr.only(self.finder.findCities(cityKey).filter(c => c.countryCode === countryKey))) ||
+            (cityKey && stateKey && arr.only(
+                self.finder.findCities(cityKey).filter(city =>
+                    self.finder.findStates(stateKey).some(state => city.stateCode === state.isoCode)
+                )
+            )) || // 👈 missing case: match on city + state (no country)
+            (cityKey && arr.only(self.finder.findCities(cityKey))) ||
+            (stateKey && countryKey && arr.only(self.finder.findCitiesOfState(stateKey, countryKey))) ||
+            null
+        );
+    };
+
+
     const inferCountry = () => {
         if (countryKey) return self.finder.findCountry(countryKey);
 
         if (stateKey) {
             const state = arr.only(self.finder.findStates(stateKey));
-            if (state) {
-                const country = self.finder.findCountry(state.countryCode);
-                if (country) {
-                    result.country = country.name;
-                    countryKey = country.isoCode;
-                    markInferred('country');
-                    return country;
-                }
+            const country = state && self.finder.findCountry(state.countryCode);
+            if (country) {
+                result.country = country.name;
+                countryKey = country.isoCode;
+                markInferred('country');
+                return country;
             }
         }
 
-        if (cityKey) {
-            const city = arr.only(self.finder.findCities(cityKey));
-            if (city) {
-                const country = self.finder.findCountry(city.countryCode);
-                if (country) {
-                    result.country = country.name;
-                    countryKey = country.isoCode;
-                    markInferred('country');
-                    return country;
-                }
-            }
-        }
+        const city = findCityMatch();
+        if (city) {
+            const country = self.finder.findCountry(city.countryCode);
+            if (country) {
+                result.country = country.name;
+                countryKey = country.isoCode;
+                markInferred('country');
 
-        if (cityKey && stateKey) {
-            const cities = self.finder.findCities(cityKey);
-            const states = self.finder.findStates(stateKey);
-            const city = arr.only(cities.filter(c => states.some(s => s.isoCode === c.stateCode)));
-            if (city) {
-                const state = self.finder.findState(city.stateCode, city.countryCode);
-                if (state) {
-                    result.state = state.name;
-                    stateKey = state.isoCode;
-                    markInferred('state');
+                // Also infer state if missing
+                if (!stateKey) {
+                    const state = self.finder.findState(city.stateCode, city.countryCode);
+                    if (state) {
+                        result.state = state.name;
+                        stateKey = state.isoCode;
+                        markInferred('state');
+                    }
                 }
-                const country = self.finder.findCountry(city.countryCode);
-                if (country) {
-                    result.country = country.name;
-                    countryKey = country.isoCode;
-                    markInferred('country');
-                    return country;
-                }
+
+                return country;
             }
         }
 
@@ -71,34 +72,18 @@ module.exports = ({ self, arr }) => csc => {
 
     const inferState = () => {
         if (stateKey && countryKey) {
-            const state = self.finder.findState(stateKey, countryKey);
-            if (state) return state;
+            return self.finder.findState(stateKey, countryKey);
         }
 
-        if (cityKey) {
-            const city = arr.only(self.finder.findCities(cityKey));
-            if (city) {
-                const state = self.finder.findState(city.stateCode, city.countryCode);
-                if (state) {
-                    result.state = state.name;
-                    stateKey = state.isoCode;
-                    countryKey = city.countryCode;
-                    markInferred('state');
-                    return state;
-                }
-            }
-        }
-
-        if (cityKey && countryKey) {
-            const city = arr.only(self.finder.findCities(cityKey).filter(c => c.countryCode === countryKey));
-            if (city) {
-                const state = self.finder.findState(city.stateCode, city.countryCode);
-                if (state) {
-                    result.state = state.name;
-                    stateKey = state.isoCode;
-                    markInferred('state');
-                    return state;
-                }
+        const city = findCityMatch();
+        if (city) {
+            const state = self.finder.findState(city.stateCode, city.countryCode);
+            if (state) {
+                result.state = state.name;
+                stateKey = state.isoCode;
+                countryKey = city.countryCode;
+                markInferred('state');
+                return state;
             }
         }
 
@@ -107,13 +92,11 @@ module.exports = ({ self, arr }) => csc => {
 
     const inferCity = () => {
         if (cityKey && stateKey && countryKey) {
-            const city = self.finder.findCity(cityKey, stateKey, countryKey);
-            if (city) return city;
+            return self.finder.findCity(cityKey, stateKey, countryKey);
         }
 
         if (!cityKey && stateKey && countryKey) {
-            const cities = self.finder.findCitiesOfState(stateKey, countryKey);
-            const city = arr.only(cities);
+            const city = arr.only(self.finder.findCitiesOfState(stateKey, countryKey));
             if (city) {
                 result.city = city.name;
                 cityKey = city.name;
