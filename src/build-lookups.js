@@ -16,33 +16,34 @@ module.exports = config => {
         return obj.buildLookup()(items, keyNames);
     });
 
-    // ─── Helpers ───────────────────────────────────────────────────────────────────
-    const norm = s => s.trim().toUpperCase();      // “ Victoria ” → "victoria"
-    const iso = s => s.trim().toUpperCase();      //  "us"       → "US"
 
-    // states -- assumed shape: { isoCode, name, countryCode, countryName }
-    const groupedByCountry = _.groupBy(states, st => iso(st.countryCode));
+
+
+    // ─── Helpers ───────────────────────────────────────────────────────────────────
+    const norm = s => s?.trim().toUpperCase(); // " Victoria " → "victoria", "US" → "us"
+
+    // states assumed shape: { isoCode, name, countryCode, countryName }
+    const groupedByCountry = _.groupBy(states, st => norm(st.countryCode));
 
     lookup.statesByCountryThenState = {};
 
-    for (const [countryISO, countryStates] of Object.entries(groupedByCountry)) {
-        // Build the per-country state map once
+    for (const [countryKey, countryStates] of Object.entries(groupedByCountry)) {
         const stateMap = {};
+
         for (const st of countryStates) {
-            stateMap[iso(st.isoCode)] = st;   // "CA"
-            stateMap[norm(st.name)] = st;   // "california"
+            if (st.isoCode) stateMap[norm(st.isoCode)] = st;
+            if (st.name) stateMap[norm(st.name)] = st;
         }
 
-        // Get a country name we can safely normalise
-        const countryName =
-            countryStates[0].countryName || lookup.countries[countryISO]?.name;
+        const countryISO = norm(countryStates[0].countryCode);
 
-        // Expose the SAME stateMap under both keys
-        lookup.statesByCountryThenState[iso(countryISO)] = stateMap;   // "US"
-        if (countryName) {
-            lookup.statesByCountryThenState[norm(countryName)] = stateMap; // "united states"
-        }
+        const countryName = lookup.countries[countryKey][0].name.toUpperCase();
+
+        if (countryISO) lookup.statesByCountryThenState[countryISO] = stateMap;
+        if (countryName) lookup.statesByCountryThenState[countryName] = stateMap;
     }
+
+
 
 
     lookup.citiesByStateThenCountry = {};
