@@ -154,6 +154,6 @@ module.exports = ({ self, arr }) => csc => {
         inferred,
         source,
         complete,
-        ...(errors.length > 0 ? { errors } : {})
+        ...(errors.length > 0 ? { errors: [...new Set(errors)] } : {})
     };
 };

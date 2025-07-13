@@ -100,7 +100,6 @@ module.exports = ({ test, assert }) => $ => {
             country: undefined,
             countryCode: undefined,
             errors: [
-                'Ambiguous city: Perth (5 matches across all countries)',
                 'Ambiguous city: Perth (5 matches across all countries)'
             ],
             inferred: [],
@@ -234,7 +233,6 @@ module.exports = ({ test, assert }) => $ => {
             country: undefined,
             countryCode: undefined,
             errors: [
-                'Ambiguous city: Los Angeles (4 matches across all countries)',
                 'Ambiguous city: Los Angeles (4 matches across all countries)'
             ],
             inferred: [],
