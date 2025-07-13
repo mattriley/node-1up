@@ -13,11 +13,13 @@ module.exports = ({ test, assert }) => $ => {
                 country: 'Australia',
                 countryCode: 'AU',
                 state: 'Victoria',
-                stateCode: 'VIC'
+                stateCode: 'VIC',
+                timezone: 'Australia/Melbourne'
             },
             latitude: -37.814,
             longitude: 144.96332,
-            distanceKm: 0
+            distanceKm: 0,
+
         }
 
         const actual = geo.nearestCity(input);
@@ -34,11 +36,13 @@ module.exports = ({ test, assert }) => $ => {
                 country: 'China',
                 countryCode: 'CN',
                 state: 'Macau SAR',
-                stateCode: 'MO'
+                stateCode: 'MO',
+                timezone: 'Asia/Macau'
             },
             latitude: 22.20056,
             longitude: 113.54611,
-            distanceKm: 0
+            distanceKm: 0,
+
         }
 
         const actual = geo.nearestCity(input);
@@ -55,11 +59,13 @@ module.exports = ({ test, assert }) => $ => {
                 country: 'Australia',
                 countryCode: 'AU',
                 state: 'Victoria',
-                stateCode: 'VIC'
+                stateCode: 'VIC',
+                timezone: 'Australia/Melbourne'
             },
             latitude: -37.84634722222223,
             longitude: 145.42723055555555,
-            distanceKm: 3.1070021746990446
+            distanceKm: 3.1070021746990446,
+
         }
 
         const actual = geo.nearestCity(input);
@@ -76,11 +82,13 @@ module.exports = ({ test, assert }) => $ => {
                 country: 'Australia',
                 countryCode: 'AU',
                 state: 'Victoria',
-                stateCode: 'VIC'
+                stateCode: 'VIC',
+                timezone: 'Australia/Melbourne'
             },
             latitude: -37.84634722222223,
             longitude: 145.42723055555555,
-            distanceKm: 3.1070021746990446
+            distanceKm: 3.1070021746990446,
+
         }
 
         const actual = geo.nearestCity(input);
