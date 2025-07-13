@@ -34739,5 +34739,726 @@
         "countryCode": "ZW",
         "latitude": "-17.48510290",
         "longitude": "29.78892480"
+    },
+    {
+        "name": "Ouham",
+        "isoCode": "AC",
+        "countryCode": "CF",
+        "latitude": "7.09091100",
+        "longitude": "17.66888700"
+    },
+    {
+        "name": "Bamingui-Bangoran",
+        "isoCode": "BB",
+        "countryCode": "CF",
+        "latitude": "8.27334550",
+        "longitude": "20.71224650"
+    },
+    {
+        "name": "Basse-Kotto",
+        "isoCode": "BK",
+        "countryCode": "CF",
+        "latitude": "4.87193190",
+        "longitude": "21.28450250"
+    },
+    {
+        "name": "Haute-Kotto",
+        "isoCode": "HK",
+        "countryCode": "CF",
+        "latitude": "7.79643790",
+        "longitude": "23.38235450"
+    },
+    {
+        "name": "Haut-Mbomou",
+        "isoCode": "HM",
+        "countryCode": "CF",
+        "latitude": "6.25371340",
+        "longitude": "25.47335540"
+    },
+    {
+        "name": "Nana-Grébizi Economic",
+        "isoCode": "KB",
+        "countryCode": "CF",
+        "latitude": "7.18486070",
+        "longitude": "19.37832060"
+    },
+    {
+        "name": "Kémo",
+        "isoCode": "KG",
+        "countryCode": "CF",
+        "latitude": "5.88677940",
+        "longitude": "19.37832060"
+    },
+    {
+        "name": "Lobaye",
+        "isoCode": "LB",
+        "countryCode": "CF",
+        "latitude": "4.35259810",
+        "longitude": "17.47951730"
+    },
+    {
+        "name": "Mbomou",
+        "isoCode": "MB",
+        "countryCode": "CF",
+        "latitude": "5.55683700",
+        "longitude": "23.76328280"
+    },
+    {
+        "name": "Ombella-M'Poko",
+        "isoCode": "MP",
+        "countryCode": "CF",
+        "latitude": "5.11888250",
+        "longitude": "18.42760470"
+    },
+    {
+        "name": "Nana-Mambéré",
+        "isoCode": "NM",
+        "countryCode": "CF",
+        "latitude": "5.69321350",
+        "longitude": "15.21948080"
+    },
+    {
+        "name": "Ouham-Pendé",
+        "isoCode": "OP",
+        "countryCode": "CF",
+        "latitude": "6.48509840",
+        "longitude": "16.15809370"
+    },
+    {
+        "name": "Ouaka",
+        "isoCode": "UK",
+        "countryCode": "CF",
+        "latitude": "6.31682160",
+        "longitude": "20.71224650"
+    },
+    {
+        "name": "Vakaga",
+        "isoCode": "VK",
+        "countryCode": "CF",
+        "latitude": "9.51132960",
+        "longitude": "22.23840170"
+    },
+    {
+        "name": "Beyla",
+        "isoCode": "BE",
+        "countryCode": "GN",
+        "latitude": "8.91981780",
+        "longitude": "-8.30884410"
+    },
+    {
+        "name": "Boffa",
+        "isoCode": "BF",
+        "countryCode": "GN",
+        "latitude": "10.18082540",
+        "longitude": "-14.03916150"
+    },
+    {
+        "name": "Boké",
+        "isoCode": "BK",
+        "countryCode": "GN",
+        "latitude": "11.08473790",
+        "longitude": "-14.37919120"
+    },
+    {
+        "name": "Coyah",
+        "isoCode": "CO",
+        "countryCode": "GN",
+        "latitude": "9.77155350",
+        "longitude": "-13.31252990"
+    },
+    {
+        "name": "Dabola",
+        "isoCode": "DB",
+        "countryCode": "GN",
+        "latitude": "10.72978060",
+        "longitude": "-11.11078540"
+    },
+    {
+        "name": "Dinguiraye",
+        "isoCode": "DI",
+        "countryCode": "GN",
+        "latitude": "11.68442220",
+        "longitude": "-10.80000510"
+    },
+    {
+        "name": "Dalaba",
+        "isoCode": "DL",
+        "countryCode": "GN",
+        "latitude": "10.68681760",
+        "longitude": "-12.24906970"
+    },
+    {
+        "name": "Dubréka",
+        "isoCode": "DU",
+        "countryCode": "GN",
+        "latitude": "9.79073480",
+        "longitude": "-13.51477350"
+    },
+    {
+        "name": "Faranah",
+        "isoCode": "FA",
+        "countryCode": "GN",
+        "latitude": "9.90573990",
+        "longitude": "-10.80000510"
+    },
+    {
+        "name": "Forécariah",
+        "isoCode": "FO",
+        "countryCode": "GN",
+        "latitude": "9.38861870",
+        "longitude": "-13.08179030"
+    },
+    {
+        "name": "Fria",
+        "isoCode": "FR",
+        "countryCode": "GN",
+        "latitude": "10.36745430",
+        "longitude": "-13.58418710"
+    },
+    {
+        "name": "Gaoual",
+        "isoCode": "GA",
+        "countryCode": "GN",
+        "latitude": "11.57628040",
+        "longitude": "-13.35872880"
+    },
+    {
+        "name": "Guéckédou",
+        "isoCode": "GU",
+        "countryCode": "GN",
+        "latitude": "8.56496880",
+        "longitude": "-10.13111630"
+    },
+    {
+        "name": "Kankan",
+        "isoCode": "KA",
+        "countryCode": "GN",
+        "latitude": "10.30344650",
+        "longitude": "-9.36730840"
+    },
+    {
+        "name": "Koubia",
+        "isoCode": "KB",
+        "countryCode": "GN",
+        "latitude": "11.58235400",
+        "longitude": "-11.89202370"
+    },
+    {
+        "name": "Kindia",
+        "isoCode": "KD",
+        "countryCode": "GN",
+        "latitude": "10.10132920",
+        "longitude": "-12.71351210"
+    },
+    {
+        "name": "Kérouané",
+        "isoCode": "KE",
+        "countryCode": "GN",
+        "latitude": "9.25366430",
+        "longitude": "-9.01289260"
+    },
+    {
+        "name": "Koundara",
+        "isoCode": "KN",
+        "countryCode": "GN",
+        "latitude": "12.48940210",
+        "longitude": "-13.30675620"
+    },
+    {
+        "name": "Kouroussa",
+        "isoCode": "KO",
+        "countryCode": "GN",
+        "latitude": "10.64892290",
+        "longitude": "-9.88505860"
+    },
+    {
+        "name": "Kissidougou",
+        "isoCode": "KS",
+        "countryCode": "GN",
+        "latitude": "9.22520220",
+        "longitude": "-10.08072980"
+    },
+    {
+        "name": "Labé",
+        "isoCode": "LA",
+        "countryCode": "GN",
+        "latitude": "11.35419390",
+        "longitude": "-12.34638750"
+    },
+    {
+        "name": "Lélouma",
+        "isoCode": "LE",
+        "countryCode": "GN",
+        "latitude": "11.18333300",
+        "longitude": "-12.93333300"
+    },
+    {
+        "name": "Lola",
+        "isoCode": "LO",
+        "countryCode": "GN",
+        "latitude": "7.96138180",
+        "longitude": "-8.39649380"
+    },
+    {
+        "name": "Macenta",
+        "isoCode": "MC",
+        "countryCode": "GN",
+        "latitude": "8.46157950",
+        "longitude": "-9.27855830"
+    },
+    {
+        "name": "Mandiana",
+        "isoCode": "MD",
+        "countryCode": "GN",
+        "latitude": "10.61728270",
+        "longitude": "-8.69857160"
+    },
+    {
+        "name": "Mali",
+        "isoCode": "ML",
+        "countryCode": "GN",
+        "latitude": "11.98370900",
+        "longitude": "-12.25479190"
+    },
+    {
+        "name": "Mamou",
+        "isoCode": "MM",
+        "countryCode": "GN",
+        "latitude": "10.57360240",
+        "longitude": "-11.88917210"
+    },
+    {
+        "name": "Nzérékoré",
+        "isoCode": "NZ",
+        "countryCode": "GN",
+        "latitude": "7.74783590",
+        "longitude": "-8.82525020"
+    },
+    {
+        "name": "Pita",
+        "isoCode": "PI",
+        "countryCode": "GN",
+        "latitude": "10.80620860",
+        "longitude": "-12.71351210"
+    },
+    {
+        "name": "Siguiri",
+        "isoCode": "SI",
+        "countryCode": "GN",
+        "latitude": "11.41481130",
+        "longitude": "-9.17883040"
+    },
+    {
+        "name": "Télimélé",
+        "isoCode": "TE",
+        "countryCode": "GN",
+        "latitude": "10.90893640",
+        "longitude": "-13.02993310"
+    },
+    {
+        "name": "Tougué",
+        "isoCode": "TO",
+        "countryCode": "GN",
+        "latitude": "11.38415830",
+        "longitude": "-11.61577730"
+    },
+    {
+        "name": "Yomou",
+        "isoCode": "YO",
+        "countryCode": "GN",
+        "latitude": "7.56962790",
+        "longitude": "-9.25915710"
+    },
+    {
+        "name": "Phthiotis",
+        "isoCode": "06",
+        "countryCode": "GR",
+        "latitude": "38.99978500",
+        "longitude": "22.33377690"
+    },
+    {
+        "name": "Arcadia",
+        "isoCode": "12",
+        "countryCode": "GR",
+        "latitude": "37.55578250",
+        "longitude": "22.33377690"
+    },
+    {
+        "name": "Corfu",
+        "isoCode": "22",
+        "countryCode": "GR",
+        "latitude": "39.62498380",
+        "longitude": "19.92234610"
+    },
+    {
+        "name": "Kefalonia",
+        "isoCode": "23",
+        "countryCode": "GR",
+        "latitude": "38.17536750",
+        "longitude": "20.56921790"
+    },
+    {
+        "name": "Preveza",
+        "isoCode": "34",
+        "countryCode": "GR",
+        "latitude": "38.95926490",
+        "longitude": "20.75171550"
+    },
+    {
+        "name": "Larissa",
+        "isoCode": "42",
+        "countryCode": "GR",
+        "latitude": "39.63902240",
+        "longitude": "22.41912540"
+    },
+    {
+        "name": "Grevena",
+        "isoCode": "51",
+        "countryCode": "GR",
+        "latitude": "40.08376260",
+        "longitude": "21.42732990"
+    },
+    {
+        "name": "Kozani",
+        "isoCode": "58",
+        "countryCode": "GR",
+        "latitude": "40.30055860",
+        "longitude": "21.78877370"
+    },
+    {
+        "name": "Serres",
+        "isoCode": "62",
+        "countryCode": "GR",
+        "latitude": "41.08638540",
+        "longitude": "23.54838190"
+    },
+    {
+        "name": "Hokkaidō",
+        "isoCode": "01",
+        "countryCode": "JP",
+        "latitude": "43.22032660",
+        "longitude": "142.86347370"
+    },
+    {
+        "name": "Aomori",
+        "isoCode": "02",
+        "countryCode": "JP",
+        "latitude": "40.76570770",
+        "longitude": "140.91758790"
+    },
+    {
+        "name": "Iwate",
+        "isoCode": "03",
+        "countryCode": "JP",
+        "latitude": "39.58329890",
+        "longitude": "141.25345740"
+    },
+    {
+        "name": "Miyagi",
+        "isoCode": "04",
+        "countryCode": "JP",
+        "latitude": "38.63061200",
+        "longitude": "141.11930480"
+    },
+    {
+        "name": "Akita",
+        "isoCode": "05",
+        "countryCode": "JP",
+        "latitude": "40.13762930",
+        "longitude": "140.33434100"
+    },
+    {
+        "name": "Yamagata",
+        "isoCode": "06",
+        "countryCode": "JP",
+        "latitude": "38.53705640",
+        "longitude": "140.14351980"
+    },
+    {
+        "name": "Fukushima",
+        "isoCode": "07",
+        "countryCode": "JP",
+        "latitude": "37.38343730",
+        "longitude": "140.18325160"
+    },
+    {
+        "name": "Ibaraki",
+        "isoCode": "08",
+        "countryCode": "JP",
+        "latitude": "36.21935710",
+        "longitude": "140.18325160"
+    },
+    {
+        "name": "Tochigi",
+        "isoCode": "09",
+        "countryCode": "JP",
+        "latitude": "36.67147390",
+        "longitude": "139.85472660"
+    },
+    {
+        "name": "Gunma",
+        "isoCode": "10",
+        "countryCode": "JP",
+        "latitude": "36.56053880",
+        "longitude": "138.87999720"
+    },
+    {
+        "name": "Saitama",
+        "isoCode": "11",
+        "countryCode": "JP",
+        "latitude": "35.99625130",
+        "longitude": "139.44660050"
+    },
+    {
+        "name": "Chiba",
+        "isoCode": "12",
+        "countryCode": "JP",
+        "latitude": "35.33541550",
+        "longitude": "140.18325160"
+    },
+    {
+        "name": "Kanagawa",
+        "isoCode": "14",
+        "countryCode": "JP",
+        "latitude": "35.49135350",
+        "longitude": "139.28414300"
+    },
+    {
+        "name": "Niigata",
+        "isoCode": "15",
+        "countryCode": "JP",
+        "latitude": "37.51783860",
+        "longitude": "138.92697940"
+    },
+    {
+        "name": "Toyama",
+        "isoCode": "16",
+        "countryCode": "JP",
+        "latitude": "36.69582660",
+        "longitude": "137.21370710"
+    },
+    {
+        "name": "Ishikawa",
+        "isoCode": "17",
+        "countryCode": "JP",
+        "latitude": "36.32603170",
+        "longitude": "136.52896530"
+    },
+    {
+        "name": "Fukui",
+        "isoCode": "18",
+        "countryCode": "JP",
+        "latitude": "35.89622700",
+        "longitude": "136.21115790"
+    },
+    {
+        "name": "Yamanashi",
+        "isoCode": "19",
+        "countryCode": "JP",
+        "latitude": "35.66351130",
+        "longitude": "138.63888790"
+    },
+    {
+        "name": "Nagano",
+        "isoCode": "20",
+        "countryCode": "JP",
+        "latitude": "36.15439410",
+        "longitude": "137.92182040"
+    },
+    {
+        "name": "Gifu",
+        "isoCode": "21",
+        "countryCode": "JP",
+        "latitude": "35.74374910",
+        "longitude": "136.98051030"
+    },
+    {
+        "name": "Shizuoka",
+        "isoCode": "22",
+        "countryCode": "JP",
+        "latitude": "35.09293970",
+        "longitude": "138.31902760"
+    },
+    {
+        "name": "Aichi",
+        "isoCode": "23",
+        "countryCode": "JP",
+        "latitude": "35.01825050",
+        "longitude": "137.29238930"
+    },
+    {
+        "name": "Mie",
+        "isoCode": "24",
+        "countryCode": "JP",
+        "latitude": "33.81439010",
+        "longitude": "136.04870470"
+    },
+    {
+        "name": "Shiga",
+        "isoCode": "25",
+        "countryCode": "JP",
+        "latitude": "35.32920140",
+        "longitude": "136.05632120"
+    },
+    {
+        "name": "Kyōto",
+        "isoCode": "26",
+        "countryCode": "JP",
+        "latitude": "35.15666090",
+        "longitude": "135.52519820"
+    },
+    {
+        "name": "Osaka",
+        "isoCode": "27",
+        "countryCode": "JP",
+        "latitude": "34.64133150",
+        "longitude": "135.56293940"
+    },
+    {
+        "name": "Hyōgo",
+        "isoCode": "28",
+        "countryCode": "JP",
+        "latitude": "34.85795180",
+        "longitude": "134.54537870"
+    },
+    {
+        "name": "Nara",
+        "isoCode": "29",
+        "countryCode": "JP",
+        "latitude": "34.29755280",
+        "longitude": "135.82797340"
+    },
+    {
+        "name": "Wakayama",
+        "isoCode": "30",
+        "countryCode": "JP",
+        "latitude": "33.94809140",
+        "longitude": "135.37453580"
+    },
+    {
+        "name": "Tottori",
+        "isoCode": "31",
+        "countryCode": "JP",
+        "latitude": "35.35731610",
+        "longitude": "133.40666180"
+    },
+    {
+        "name": "Shimane",
+        "isoCode": "32",
+        "countryCode": "JP",
+        "latitude": "35.12440940",
+        "longitude": "132.62934460"
+    },
+    {
+        "name": "Okayama",
+        "isoCode": "33",
+        "countryCode": "JP",
+        "latitude": "34.89634070",
+        "longitude": "133.63753140"
+    },
+    {
+        "name": "Hiroshima",
+        "isoCode": "34",
+        "countryCode": "JP",
+        "latitude": "34.88234080",
+        "longitude": "133.01948970"
+    },
+    {
+        "name": "Yamaguchi",
+        "isoCode": "35",
+        "countryCode": "JP",
+        "latitude": "34.27967690",
+        "longitude": "131.52127420"
+    },
+    {
+        "name": "Tokushima",
+        "isoCode": "36",
+        "countryCode": "JP",
+        "latitude": "33.94196550",
+        "longitude": "134.32365570"
+    },
+    {
+        "name": "Kagawa",
+        "isoCode": "37",
+        "countryCode": "JP",
+        "latitude": "34.22259150",
+        "longitude": "134.01991520"
+    },
+    {
+        "name": "Ehime",
+        "isoCode": "38",
+        "countryCode": "JP",
+        "latitude": "33.60253060",
+        "longitude": "132.78575830"
+    },
+    {
+        "name": "Kōchi",
+        "isoCode": "39",
+        "countryCode": "JP",
+        "latitude": "33.28791610",
+        "longitude": "132.27592620"
+    },
+    {
+        "name": "Fukuoka",
+        "isoCode": "40",
+        "countryCode": "JP",
+        "latitude": "33.56625590",
+        "longitude": "130.71585700"
+    },
+    {
+        "name": "Saga",
+        "isoCode": "41",
+        "countryCode": "JP",
+        "latitude": "33.30783710",
+        "longitude": "130.22712430"
+    },
+    {
+        "name": "Nagasaki",
+        "isoCode": "42",
+        "countryCode": "JP",
+        "latitude": "33.24885250",
+        "longitude": "129.69309120"
+    },
+    {
+        "name": "Kumamoto",
+        "isoCode": "43",
+        "countryCode": "JP",
+        "latitude": "32.85944270",
+        "longitude": "130.79691490"
+    },
+    {
+        "name": "Oita",
+        "isoCode": "44",
+        "countryCode": "JP",
+        "latitude": "33.15892990",
+        "longitude": "131.36111210"
+    },
+    {
+        "name": "Miyazaki",
+        "isoCode": "45",
+        "countryCode": "JP",
+        "latitude": "32.60360220",
+        "longitude": "131.44125100"
+    },
+    {
+        "name": "Kagoshima",
+        "isoCode": "46",
+        "countryCode": "JP",
+        "latitude": "31.39119580",
+        "longitude": "130.87785860"
+    },
+    {
+        "name": "Okinawa",
+        "isoCode": "47",
+        "countryCode": "JP",
+        "latitude": "26.12019110",
+        "longitude": "127.70250120"
+    },
+    {
+        "name": "Vientiane",
+        "isoCode": "VT",
+        "countryCode": "LA",
+        "latitude": "18.11054100",
+        "longitude": "102.52980280"
     }
 ]

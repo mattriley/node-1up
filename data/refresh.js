@@ -15,6 +15,13 @@ const outputDir = sourceDir;
         state.name = 'Bay of Plenty';
     });
 
+    states.filter(state => state.name.endsWith('Prefecture')).forEach(state => {
+        states.push({
+            ...state,
+            name: state.name.replace('Prefecture', '').replace('Ō', 'O').trim()
+        })
+    });
+
     const outputFile = outputDir + '/states.json';
     fs.writeFileSync(outputFile, JSON.stringify(states, null, 4));
 }
