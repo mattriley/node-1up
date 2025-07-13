@@ -42,12 +42,15 @@ module.exports = ({ self, config }) => ({ latitude, longitude }) => {
 
     const countryData = self.finder.findCountry(cityData.countryCode);
 
-    return self.buildResult(cityData, stateData, countryData, {
-        'city.latitude': cityData.latitude,
-        'city.longitude': cityData.longitude,
+    return {
+        city: cityData?.name,
+        state: stateData?.name,
+        stateCode: stateData?.isoCode,
+        country: countryData?.name,
+        countryCode: countryData?.isoCode,
         latitude,
         longitude,
         distanceKm: shortestDistance
-    });
+    }
 
 };
