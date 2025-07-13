@@ -198,7 +198,6 @@ module.exports = ({ test, assert }) => $ => {
             country: 'United States',
             countryCode: 'US',
             inferred: [
-                'state',
                 'country'
             ],
             state: 'California',

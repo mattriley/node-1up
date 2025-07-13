@@ -1,13 +1,20 @@
 module.exports = ({ self, arr }) => csc => {
-    let { city: cityKey, state: stateKey, country: countryKey } = csc;
-
     const normalize = s => s?.trim();
-    cityKey = normalize(cityKey);
-    stateKey = normalize(stateKey);
-    countryKey = normalize(countryKey);
+
+    const original = {
+        city: normalize(csc.city),
+        state: normalize(csc.state),
+        country: normalize(csc.country),
+    };
+
+    let { city: cityKey, state: stateKey, country: countryKey } = original;
 
     const result = { ...csc };
     const inferred = [];
+
+    const markInferred = field => {
+        if (!original[field]) inferred.push(field);
+    };
 
     const inferCountry = () => {
         if (countryKey) return self.finder.findCountry(countryKey);
@@ -19,7 +26,7 @@ module.exports = ({ self, arr }) => csc => {
                 if (country) {
                     result.country = country.name;
                     countryKey = country.isoCode;
-                    inferred.push('country');
+                    markInferred('country');
                     return country;
                 }
             }
@@ -32,7 +39,7 @@ module.exports = ({ self, arr }) => csc => {
                 if (country) {
                     result.country = country.name;
                     countryKey = country.isoCode;
-                    inferred.push('country');
+                    markInferred('country');
                     return country;
                 }
             }
@@ -47,13 +54,13 @@ module.exports = ({ self, arr }) => csc => {
                 if (state) {
                     result.state = state.name;
                     stateKey = state.isoCode;
-                    inferred.push('state');
+                    markInferred('state');
                 }
                 const country = self.finder.findCountry(city.countryCode);
                 if (country) {
                     result.country = country.name;
                     countryKey = country.isoCode;
-                    inferred.push('country');
+                    markInferred('country');
                     return country;
                 }
             }
@@ -76,7 +83,7 @@ module.exports = ({ self, arr }) => csc => {
                     result.state = state.name;
                     stateKey = state.isoCode;
                     countryKey = city.countryCode;
-                    inferred.push('state');
+                    markInferred('state');
                     return state;
                 }
             }
@@ -89,7 +96,7 @@ module.exports = ({ self, arr }) => csc => {
                 if (state) {
                     result.state = state.name;
                     stateKey = state.isoCode;
-                    inferred.push('state');
+                    markInferred('state');
                     return state;
                 }
             }
@@ -110,7 +117,7 @@ module.exports = ({ self, arr }) => csc => {
             if (city) {
                 result.city = city.name;
                 cityKey = city.name;
-                inferred.push('city');
+                markInferred('city');
                 return city;
             }
         }
