@@ -27,7 +27,7 @@ module.exports = ({ self, arr }) => csc => {
     };
 
     const markSource = (field, inferred) => {
-        source[field] = original[field] ? 'input' : inferred ? 'inferred' : undefined;
+        source[field] = original[field] ? 'input' : inferred ? 'inferred' : null;
     };
 
     const findCityMatch = () => {
@@ -45,7 +45,7 @@ module.exports = ({ self, arr }) => csc => {
                 ? `in ${countryKey}`
                 : stateKey
                     ? `matching state ${stateKey}`
-                    : 'across all countries';
+                    : 'globally';
 
             addError('city', ERROR_CODES.AMBIGUOUS, `Ambiguous: ${cityKey} (${byState.length} matches ${context})`);
         }
@@ -150,11 +150,17 @@ module.exports = ({ self, arr }) => csc => {
         ...(errors[field]?.length ? { errors: errors[field] } : {})
     });
 
-
     return {
         city: resolveField('city', city?.name, null),
         state: resolveField('state', state?.name, state?.isoCode),
         country: resolveField('country', country?.name, country?.isoCode),
+        csc: {
+            city: city?.name ?? original.city ?? null,
+            state: state?.name ?? original.state ?? null,
+            stateCode: state?.isoCode ?? null,
+            country: country?.name ?? original.country ?? null,
+            countryCode: country?.isoCode ?? null
+        },
         complete
     };
 };

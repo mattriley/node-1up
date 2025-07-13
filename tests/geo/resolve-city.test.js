@@ -20,6 +20,13 @@ module.exports = ({ test, assert }) => $ => {
 
         {
             const expected = {
+                csc: {
+                    city: 'Melbourne',
+                    country: 'Australia',
+                    countryCode: 'AU',
+                    state: 'Victoria',
+                    stateCode: 'VIC'
+                },
                 city: { name: 'Melbourne', code: null, source: 'input' },
                 state: { name: 'Victoria', code: 'VIC', source: 'inferred' },
                 country: { name: 'Australia', code: 'AU', source: 'input' },
@@ -36,6 +43,13 @@ module.exports = ({ test, assert }) => $ => {
         const input = { city: 'Canberra' };
 
         const expected = {
+            csc: {
+                city: 'Canberra',
+                country: 'Australia',
+                countryCode: 'AU',
+                state: 'Australian Capital Territory',
+                stateCode: 'ACT'
+            },
             city: { name: 'Canberra', code: null, source: 'input' },
             state: {
                 name: 'Australian Capital Territory',
@@ -55,6 +69,13 @@ module.exports = ({ test, assert }) => $ => {
         const input = { city: 'Melbourne', state: 'VIC' };
 
         const expected = {
+            csc: {
+                city: 'Melbourne',
+                country: 'Australia',
+                countryCode: 'AU',
+                state: 'Victoria',
+                stateCode: 'VIC'
+            },
             city: { name: 'Melbourne', code: null, source: 'input' },
             state: { name: 'Victoria', code: 'VIC', source: 'input' },
             country: { name: 'Australia', code: 'AU', source: 'inferred' },
@@ -71,6 +92,13 @@ module.exports = ({ test, assert }) => $ => {
         const input = { city: 'Perth' };
 
         const expected = {
+            csc: {
+                city: 'Perth',
+                country: null,
+                countryCode: null,
+                state: null,
+                stateCode: null
+            },
             city: {
                 name: 'Perth',
                 code: null,
@@ -78,7 +106,7 @@ module.exports = ({ test, assert }) => $ => {
                 errors: [
                     {
                         code: 'ambiguous',
-                        message: 'Ambiguous: Perth (5 matches across all countries)'
+                        message: 'Ambiguous: Perth (5 matches globally)'
                     },
                     {
                         code: 'missing',
@@ -120,6 +148,13 @@ module.exports = ({ test, assert }) => $ => {
         const input = { city: 'Perth', country: 'AU' };
 
         const expected = {
+            csc: {
+                city: 'Perth',
+                country: 'Australia',
+                countryCode: 'AU',
+                state: null,
+                stateCode: null
+            },
             city: {
                 name: 'Perth',
                 code: null,
@@ -159,6 +194,13 @@ module.exports = ({ test, assert }) => $ => {
         const input = { city: 'Melbourne', country: 'AU' };
 
         const expected = {
+            csc: {
+                city: 'Melbourne',
+                country: 'Australia',
+                countryCode: 'AU',
+                state: 'Victoria',
+                stateCode: 'VIC'
+            },
             city: { name: 'Melbourne', code: null, source: 'input' },
             state: { name: 'Victoria', code: 'VIC', source: 'inferred' },
             country: { name: 'Australia', code: 'AU', source: 'input' },
@@ -175,6 +217,13 @@ module.exports = ({ test, assert }) => $ => {
         const input = { state: 'ACT' };
 
         const expected = {
+            csc: {
+                city: null,
+                country: 'Australia',
+                countryCode: 'AU',
+                state: 'Australian Capital Territory',
+                stateCode: 'ACT'
+            },
             city: {
                 name: null,
                 code: null,
@@ -204,6 +253,13 @@ module.exports = ({ test, assert }) => $ => {
         const input = { state: 'Victoria', country: 'AU' };
 
         const expected = {
+            csc: {
+                city: null,
+                country: 'Australia',
+                countryCode: 'AU',
+                state: 'Victoria',
+                stateCode: 'VIC'
+            },
             city: {
                 name: null,
                 code: null,
@@ -229,6 +285,13 @@ module.exports = ({ test, assert }) => $ => {
         const input = { country: 'AU' };
 
         const expected = {
+            csc: {
+                city: null,
+                country: 'Australia',
+                countryCode: 'AU',
+                state: null,
+                stateCode: null
+            },
             city: {
                 name: null,
                 code: null,
@@ -264,6 +327,13 @@ module.exports = ({ test, assert }) => $ => {
         const location = { city: 'Los Angeles' };
 
         const expected = {
+            csc: {
+                city: 'Los Angeles',
+                country: null,
+                countryCode: null,
+                state: null,
+                stateCode: null
+            },
             city: {
                 name: 'Los Angeles',
                 code: null,
@@ -271,7 +341,7 @@ module.exports = ({ test, assert }) => $ => {
                 errors: [
                     {
                         code: 'ambiguous',
-                        message: 'Ambiguous: Los Angeles (4 matches across all countries)'
+                        message: 'Ambiguous: Los Angeles (4 matches globally)'
                     },
                     {
                         code: 'missing',
@@ -313,6 +383,13 @@ module.exports = ({ test, assert }) => $ => {
         const location = { city: 'Los Angeles', state: 'CA' };
 
         const expected = {
+            csc: {
+                city: 'Los Angeles',
+                country: 'United States',
+                countryCode: 'US',
+                state: 'California',
+                stateCode: 'CA'
+            },
             city: { name: 'Los Angeles', code: null, source: 'input' },
             state: { name: 'California', code: 'CA', source: 'input' },
             country: { name: 'United States', code: 'US', source: 'inferred' },
@@ -329,6 +406,13 @@ module.exports = ({ test, assert }) => $ => {
         const location = { city: 'Los Angeles', country: 'US', state: 'CA' };
 
         const expected = {
+            csc: {
+                city: 'Los Angeles',
+                country: 'United States',
+                countryCode: 'US',
+                state: 'California',
+                stateCode: 'CA'
+            },
             city: { name: 'Los Angeles', code: null, source: 'input' },
             state: { name: 'California', code: 'CA', source: 'input' },
             country: { name: 'United States', code: 'US', source: 'input' },
@@ -344,6 +428,13 @@ module.exports = ({ test, assert }) => $ => {
         const location = { country: 'CN', state: 'HK' };
 
         const expected = {
+            csc: {
+                city: null,
+                country: 'China',
+                countryCode: 'CN',
+                state: 'Hong Kong SAR',
+                stateCode: 'HK'
+            },
             city: {
                 name: null,
                 code: null,
@@ -369,6 +460,13 @@ module.exports = ({ test, assert }) => $ => {
         const location = { country: 'US', city: 'Houston' };
 
         const expected = {
+            csc: {
+                city: 'Houston',
+                country: 'United States',
+                countryCode: 'US',
+                state: null,
+                stateCode: null
+            },
             city: {
                 name: 'Houston',
                 code: null,
