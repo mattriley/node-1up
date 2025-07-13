@@ -99,9 +99,26 @@ module.exports = ({ test, assert }) => $ => {
             complete: false,
             country: undefined,
             countryCode: undefined,
-            errors: [
-                'Ambiguous city: Perth (5 matches across all countries)'
-            ],
+            errors: {
+                city: [
+                    {
+                        code: 'ambiguous',
+                        message: 'Ambiguous: Perth (5 matches across all countries)'
+                    }
+                ],
+                country: [
+                    {
+                        code: 'missing',
+                        message: 'No country could be inferred from input'
+                    }
+                ],
+                state: [
+                    {
+                        code: 'missing',
+                        message: 'State could not be inferred from city'
+                    }
+                ]
+            },
             inferred: [],
             source: {},
             state: undefined,
@@ -120,9 +137,20 @@ module.exports = ({ test, assert }) => $ => {
             complete: false,
             country: 'Australia',
             countryCode: 'AU',
-            errors: [
-                'Ambiguous city: Perth (2 matches in AU)'
-            ],
+            errors: {
+                city: [
+                    {
+                        code: 'ambiguous',
+                        message: 'Ambiguous: Perth (2 matches in AU)'
+                    }
+                ],
+                state: [
+                    {
+                        code: 'missing',
+                        message: 'State could not be inferred from city'
+                    }
+                ]
+            },
             inferred: [],
             source: {
                 country: 'input'
@@ -171,6 +199,14 @@ module.exports = ({ test, assert }) => $ => {
             inferred: [
                 'country'
             ],
+            errors: {
+                city: [
+                    {
+                        code: 'missing',
+                        message: 'City is required or must be inferred'
+                    }
+                ]
+            },
             source: {
                 country: 'inferred',
                 state: 'input'
@@ -192,6 +228,14 @@ module.exports = ({ test, assert }) => $ => {
             country: 'Australia',
             countryCode: 'AU',
             inferred: [],
+            errors: {
+                city: [
+                    {
+                        code: 'missing',
+                        message: 'City is required or must be inferred'
+                    }
+                ]
+            },
             source: {
                 country: 'input',
                 state: 'input'
@@ -213,6 +257,20 @@ module.exports = ({ test, assert }) => $ => {
             country: 'Australia',
             countryCode: 'AU',
             inferred: [],
+            errors: {
+                city: [
+                    {
+                        code: 'missing',
+                        message: 'City is required or must be inferred'
+                    }
+                ],
+                state: [
+                    {
+                        code: 'missing',
+                        message: 'State could not be inferred (no city provided)'
+                    }
+                ]
+            },
             source: {
                 country: 'input'
             },
@@ -232,9 +290,26 @@ module.exports = ({ test, assert }) => $ => {
             complete: false,
             country: undefined,
             countryCode: undefined,
-            errors: [
-                'Ambiguous city: Los Angeles (4 matches across all countries)'
-            ],
+            errors: {
+                city: [
+                    {
+                        code: 'ambiguous',
+                        message: 'Ambiguous: Los Angeles (4 matches across all countries)'
+                    }
+                ],
+                country: [
+                    {
+                        code: 'missing',
+                        message: 'No country could be inferred from input'
+                    }
+                ],
+                state: [
+                    {
+                        code: 'missing',
+                        message: 'State could not be inferred from city'
+                    }
+                ]
+            },
             inferred: [],
             source: {},
             state: undefined,
@@ -301,6 +376,14 @@ module.exports = ({ test, assert }) => $ => {
             country: 'China',
             countryCode: 'CN',
             inferred: [],
+            errors: {
+                city: [
+                    {
+                        code: 'missing',
+                        message: 'City is required or must be inferred'
+                    }
+                ]
+            },
             source: {
                 country: 'input',
                 state: 'input'
@@ -321,9 +404,20 @@ module.exports = ({ test, assert }) => $ => {
             complete: false,
             country: 'United States',
             countryCode: 'US',
-            errors: [
-                'Ambiguous city: Houston (5 matches in US)'
-            ],
+            errors: {
+                city: [
+                    {
+                        code: 'ambiguous',
+                        message: 'Ambiguous: Houston (5 matches in US)'
+                    }
+                ],
+                state: [
+                    {
+                        code: 'missing',
+                        message: 'State could not be inferred from city'
+                    }
+                ]
+            },
             inferred: [],
             source: {
                 country: 'input'

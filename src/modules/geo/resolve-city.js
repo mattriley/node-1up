@@ -1,4 +1,11 @@
 module.exports = ({ self, arr }) => csc => {
+    const ERROR_CODES = {
+        MISSING: 'missing',
+        AMBIGUOUS: 'ambiguous',
+        INVALID: 'invalid',
+        CONFLICT: 'conflict',
+    };
+
     const normalize = s => s?.trim();
 
     const original = {
@@ -11,7 +18,15 @@ module.exports = ({ self, arr }) => csc => {
     const result = { ...csc };
     const inferred = [];
     const source = {};
-    const errors = [];
+    const errors = {};
+
+    const addError = (field, code, message) => {
+        if (!errors[field]) errors[field] = [];
+        const exists = errors[field].some(e => e.code === code && e.message === message);
+        if (!exists) {
+            errors[field].push({ code, message });
+        }
+    };
 
     const markInferred = field => {
         if (!original[field]) {
@@ -23,17 +38,18 @@ module.exports = ({ self, arr }) => csc => {
     };
 
     const findCityMatch = () => {
+        if (!cityKey) return null;
+
         const all = self.finder.findCities(cityKey);
-
-        const byCountry = countryKey
-            ? all.filter(c => c.countryCode === countryKey)
-            : all;
-
+        const byCountry = countryKey ? all.filter(c => c.countryCode === countryKey) : all;
         const byState = stateKey
-            ? byCountry.filter(c => self.finder.findStates(stateKey).some(s => s.isoCode === c.stateCode))
+            ? byCountry.filter(c =>
+                self.finder.findStates(stateKey).some(s => c.stateCode === s.isoCode)
+            )
             : byCountry;
 
         const city = arr.only(byState);
+
         if (!city && byState.length > 1) {
             const context = countryKey
                 ? `in ${countryKey}`
@@ -41,7 +57,11 @@ module.exports = ({ self, arr }) => csc => {
                     ? `matching state ${stateKey}`
                     : 'across all countries';
 
-            errors.push(`Ambiguous city: ${cityKey} (${byState.length} matches ${context})`);
+            addError(
+                'city',
+                ERROR_CODES.AMBIGUOUS,
+                `Ambiguous: ${cityKey} (${byState.length} matches ${context})`
+            );
         }
 
         return city;
@@ -53,19 +73,19 @@ module.exports = ({ self, arr }) => csc => {
             if (country) {
                 markInferred('country');
                 return country;
+            } else {
+                addError('country', ERROR_CODES.INVALID, `Invalid country code: ${countryKey}`);
             }
         }
 
         if (stateKey) {
             const state = arr.only(self.finder.findStates(stateKey));
-            if (state) {
-                const country = self.finder.findCountry(state.countryCode);
-                if (country) {
-                    result.country = country.name;
-                    countryKey = country.isoCode;
-                    markInferred('country');
-                    return country;
-                }
+            const country = state && self.finder.findCountry(state.countryCode);
+            if (country) {
+                result.country = country.name;
+                countryKey = country.isoCode;
+                markInferred('country');
+                return country;
             }
         }
 
@@ -82,6 +102,10 @@ module.exports = ({ self, arr }) => csc => {
             }
         }
 
+        if (!original.country) {
+            addError('country', ERROR_CODES.MISSING, 'No country could be inferred from input');
+        }
+
         return null;
     };
 
@@ -91,21 +115,32 @@ module.exports = ({ self, arr }) => csc => {
             if (state) {
                 markInferred('state');
                 return state;
+            } else {
+                addError('state', ERROR_CODES.INVALID, `Invalid state for country: ${stateKey} / ${countryKey}`);
             }
         }
 
-        if (cityKey) {
-            const city = findCityMatch();
-            if (city) {
-                const state = self.finder.findState(city.stateCode, city.countryCode);
-                if (state) {
-                    result.state = state.name;
-                    stateKey = state.isoCode;
-                    countryKey = city.countryCode;
-                    markInferred('state');
-                    return state;
-                }
+        if (!cityKey) {
+            if (!original.state) {
+                addError('state', ERROR_CODES.MISSING, 'State could not be inferred (no city provided)');
             }
+            return null;
+        }
+
+        const city = findCityMatch();
+        if (city) {
+            const state = self.finder.findState(city.stateCode, city.countryCode);
+            if (state) {
+                result.state = state.name;
+                stateKey = state.isoCode;
+                countryKey = city.countryCode;
+                markInferred('state');
+                return state;
+            }
+        }
+
+        if (!original.state) {
+            addError('state', ERROR_CODES.MISSING, 'State could not be inferred from city');
         }
 
         return null;
@@ -131,6 +166,10 @@ module.exports = ({ self, arr }) => csc => {
             }
         }
 
+        if (!original.city) {
+            addError('city', ERROR_CODES.MISSING, 'City is required or must be inferred');
+        }
+
         return null;
     };
 
@@ -154,6 +193,6 @@ module.exports = ({ self, arr }) => csc => {
         inferred,
         source,
         complete,
-        ...(errors.length > 0 ? { errors: [...new Set(errors)] } : {})
+        ...(Object.keys(errors).length > 0 ? { errors } : {})
     };
 };
