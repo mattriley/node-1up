@@ -22603,7 +22603,7 @@
         "longitude": "102.23807100"
     },
     {
-        "name": "Melaka",
+        "name": "Malacca",
         "isoCode": "04",
         "countryCode": "MY",
         "latitude": "2.18959400",
@@ -34741,2397 +34741,2746 @@
         "longitude": "29.78892480"
     },
     {
+        "name": "Melaka",
+        "isoCode": "04",
+        "countryCode": "MY",
+        "latitude": "2.18959400",
+        "longitude": "102.25008680"
+    },
+    {
         "name": "Ouham",
         "isoCode": "AC",
         "countryCode": "CF",
         "latitude": "7.09091100",
-        "longitude": "17.66888700"
+        "longitude": "17.66888700",
+        "full": "Ouham Prefecture"
     },
     {
         "name": "Bamingui-Bangoran",
         "isoCode": "BB",
         "countryCode": "CF",
         "latitude": "8.27334550",
-        "longitude": "20.71224650"
+        "longitude": "20.71224650",
+        "full": "Bamingui-Bangoran Prefecture"
     },
     {
         "name": "Basse-Kotto",
         "isoCode": "BK",
         "countryCode": "CF",
         "latitude": "4.87193190",
-        "longitude": "21.28450250"
+        "longitude": "21.28450250",
+        "full": "Basse-Kotto Prefecture"
     },
     {
         "name": "Haute-Kotto",
         "isoCode": "HK",
         "countryCode": "CF",
         "latitude": "7.79643790",
-        "longitude": "23.38235450"
+        "longitude": "23.38235450",
+        "full": "Haute-Kotto Prefecture"
     },
     {
         "name": "Haut-Mbomou",
         "isoCode": "HM",
         "countryCode": "CF",
         "latitude": "6.25371340",
-        "longitude": "25.47335540"
+        "longitude": "25.47335540",
+        "full": "Haut-Mbomou Prefecture"
     },
     {
         "name": "Nana-Grébizi Economic",
         "isoCode": "KB",
         "countryCode": "CF",
         "latitude": "7.18486070",
-        "longitude": "19.37832060"
+        "longitude": "19.37832060",
+        "full": "Nana-Grébizi Economic Prefecture"
     },
     {
         "name": "Kémo",
         "isoCode": "KG",
         "countryCode": "CF",
         "latitude": "5.88677940",
-        "longitude": "19.37832060"
+        "longitude": "19.37832060",
+        "full": "Kémo Prefecture"
     },
     {
         "name": "Lobaye",
         "isoCode": "LB",
         "countryCode": "CF",
         "latitude": "4.35259810",
-        "longitude": "17.47951730"
+        "longitude": "17.47951730",
+        "full": "Lobaye Prefecture"
     },
     {
         "name": "Mbomou",
         "isoCode": "MB",
         "countryCode": "CF",
         "latitude": "5.55683700",
-        "longitude": "23.76328280"
+        "longitude": "23.76328280",
+        "full": "Mbomou Prefecture"
     },
     {
         "name": "Ombella-M'Poko",
         "isoCode": "MP",
         "countryCode": "CF",
         "latitude": "5.11888250",
-        "longitude": "18.42760470"
+        "longitude": "18.42760470",
+        "full": "Ombella-M'Poko Prefecture"
     },
     {
         "name": "Nana-Mambéré",
         "isoCode": "NM",
         "countryCode": "CF",
         "latitude": "5.69321350",
-        "longitude": "15.21948080"
+        "longitude": "15.21948080",
+        "full": "Nana-Mambéré Prefecture"
     },
     {
         "name": "Ouham-Pendé",
         "isoCode": "OP",
         "countryCode": "CF",
         "latitude": "6.48509840",
-        "longitude": "16.15809370"
+        "longitude": "16.15809370",
+        "full": "Ouham-Pendé Prefecture"
     },
     {
         "name": "Ouaka",
         "isoCode": "UK",
         "countryCode": "CF",
         "latitude": "6.31682160",
-        "longitude": "20.71224650"
+        "longitude": "20.71224650",
+        "full": "Ouaka Prefecture"
     },
     {
         "name": "Vakaga",
         "isoCode": "VK",
         "countryCode": "CF",
         "latitude": "9.51132960",
-        "longitude": "22.23840170"
+        "longitude": "22.23840170",
+        "full": "Vakaga Prefecture"
     },
     {
         "name": "Beyla",
         "isoCode": "BE",
         "countryCode": "GN",
         "latitude": "8.91981780",
-        "longitude": "-8.30884410"
+        "longitude": "-8.30884410",
+        "full": "Beyla Prefecture"
     },
     {
         "name": "Boffa",
         "isoCode": "BF",
         "countryCode": "GN",
         "latitude": "10.18082540",
-        "longitude": "-14.03916150"
+        "longitude": "-14.03916150",
+        "full": "Boffa Prefecture"
     },
     {
         "name": "Boké",
         "isoCode": "BK",
         "countryCode": "GN",
         "latitude": "11.08473790",
-        "longitude": "-14.37919120"
+        "longitude": "-14.37919120",
+        "full": "Boké Prefecture"
     },
     {
         "name": "Coyah",
         "isoCode": "CO",
         "countryCode": "GN",
         "latitude": "9.77155350",
-        "longitude": "-13.31252990"
+        "longitude": "-13.31252990",
+        "full": "Coyah Prefecture"
     },
     {
         "name": "Dabola",
         "isoCode": "DB",
         "countryCode": "GN",
         "latitude": "10.72978060",
-        "longitude": "-11.11078540"
+        "longitude": "-11.11078540",
+        "full": "Dabola Prefecture"
     },
     {
         "name": "Dinguiraye",
         "isoCode": "DI",
         "countryCode": "GN",
         "latitude": "11.68442220",
-        "longitude": "-10.80000510"
+        "longitude": "-10.80000510",
+        "full": "Dinguiraye Prefecture"
     },
     {
         "name": "Dalaba",
         "isoCode": "DL",
         "countryCode": "GN",
         "latitude": "10.68681760",
-        "longitude": "-12.24906970"
+        "longitude": "-12.24906970",
+        "full": "Dalaba Prefecture"
     },
     {
         "name": "Dubréka",
         "isoCode": "DU",
         "countryCode": "GN",
         "latitude": "9.79073480",
-        "longitude": "-13.51477350"
+        "longitude": "-13.51477350",
+        "full": "Dubréka Prefecture"
     },
     {
         "name": "Faranah",
         "isoCode": "FA",
         "countryCode": "GN",
         "latitude": "9.90573990",
-        "longitude": "-10.80000510"
+        "longitude": "-10.80000510",
+        "full": "Faranah Prefecture"
     },
     {
         "name": "Forécariah",
         "isoCode": "FO",
         "countryCode": "GN",
         "latitude": "9.38861870",
-        "longitude": "-13.08179030"
+        "longitude": "-13.08179030",
+        "full": "Forécariah Prefecture"
     },
     {
         "name": "Fria",
         "isoCode": "FR",
         "countryCode": "GN",
         "latitude": "10.36745430",
-        "longitude": "-13.58418710"
+        "longitude": "-13.58418710",
+        "full": "Fria Prefecture"
     },
     {
         "name": "Gaoual",
         "isoCode": "GA",
         "countryCode": "GN",
         "latitude": "11.57628040",
-        "longitude": "-13.35872880"
+        "longitude": "-13.35872880",
+        "full": "Gaoual Prefecture"
     },
     {
         "name": "Guéckédou",
         "isoCode": "GU",
         "countryCode": "GN",
         "latitude": "8.56496880",
-        "longitude": "-10.13111630"
+        "longitude": "-10.13111630",
+        "full": "Guéckédou Prefecture"
     },
     {
         "name": "Kankan",
         "isoCode": "KA",
         "countryCode": "GN",
         "latitude": "10.30344650",
-        "longitude": "-9.36730840"
+        "longitude": "-9.36730840",
+        "full": "Kankan Prefecture"
     },
     {
         "name": "Koubia",
         "isoCode": "KB",
         "countryCode": "GN",
         "latitude": "11.58235400",
-        "longitude": "-11.89202370"
+        "longitude": "-11.89202370",
+        "full": "Koubia Prefecture"
     },
     {
         "name": "Kindia",
         "isoCode": "KD",
         "countryCode": "GN",
         "latitude": "10.10132920",
-        "longitude": "-12.71351210"
+        "longitude": "-12.71351210",
+        "full": "Kindia Prefecture"
     },
     {
         "name": "Kérouané",
         "isoCode": "KE",
         "countryCode": "GN",
         "latitude": "9.25366430",
-        "longitude": "-9.01289260"
+        "longitude": "-9.01289260",
+        "full": "Kérouané Prefecture"
     },
     {
         "name": "Koundara",
         "isoCode": "KN",
         "countryCode": "GN",
         "latitude": "12.48940210",
-        "longitude": "-13.30675620"
+        "longitude": "-13.30675620",
+        "full": "Koundara Prefecture"
     },
     {
         "name": "Kouroussa",
         "isoCode": "KO",
         "countryCode": "GN",
         "latitude": "10.64892290",
-        "longitude": "-9.88505860"
+        "longitude": "-9.88505860",
+        "full": "Kouroussa Prefecture"
     },
     {
         "name": "Kissidougou",
         "isoCode": "KS",
         "countryCode": "GN",
         "latitude": "9.22520220",
-        "longitude": "-10.08072980"
+        "longitude": "-10.08072980",
+        "full": "Kissidougou Prefecture"
     },
     {
         "name": "Labé",
         "isoCode": "LA",
         "countryCode": "GN",
         "latitude": "11.35419390",
-        "longitude": "-12.34638750"
+        "longitude": "-12.34638750",
+        "full": "Labé Prefecture"
     },
     {
         "name": "Lélouma",
         "isoCode": "LE",
         "countryCode": "GN",
         "latitude": "11.18333300",
-        "longitude": "-12.93333300"
+        "longitude": "-12.93333300",
+        "full": "Lélouma Prefecture"
     },
     {
         "name": "Lola",
         "isoCode": "LO",
         "countryCode": "GN",
         "latitude": "7.96138180",
-        "longitude": "-8.39649380"
+        "longitude": "-8.39649380",
+        "full": "Lola Prefecture"
     },
     {
         "name": "Macenta",
         "isoCode": "MC",
         "countryCode": "GN",
         "latitude": "8.46157950",
-        "longitude": "-9.27855830"
+        "longitude": "-9.27855830",
+        "full": "Macenta Prefecture"
     },
     {
         "name": "Mandiana",
         "isoCode": "MD",
         "countryCode": "GN",
         "latitude": "10.61728270",
-        "longitude": "-8.69857160"
+        "longitude": "-8.69857160",
+        "full": "Mandiana Prefecture"
     },
     {
         "name": "Mali",
         "isoCode": "ML",
         "countryCode": "GN",
         "latitude": "11.98370900",
-        "longitude": "-12.25479190"
+        "longitude": "-12.25479190",
+        "full": "Mali Prefecture"
     },
     {
         "name": "Mamou",
         "isoCode": "MM",
         "countryCode": "GN",
         "latitude": "10.57360240",
-        "longitude": "-11.88917210"
+        "longitude": "-11.88917210",
+        "full": "Mamou Prefecture"
     },
     {
         "name": "Nzérékoré",
         "isoCode": "NZ",
         "countryCode": "GN",
         "latitude": "7.74783590",
-        "longitude": "-8.82525020"
+        "longitude": "-8.82525020",
+        "full": "Nzérékoré Prefecture"
     },
     {
         "name": "Pita",
         "isoCode": "PI",
         "countryCode": "GN",
         "latitude": "10.80620860",
-        "longitude": "-12.71351210"
+        "longitude": "-12.71351210",
+        "full": "Pita Prefecture"
     },
     {
         "name": "Siguiri",
         "isoCode": "SI",
         "countryCode": "GN",
         "latitude": "11.41481130",
-        "longitude": "-9.17883040"
+        "longitude": "-9.17883040",
+        "full": "Siguiri Prefecture"
     },
     {
         "name": "Télimélé",
         "isoCode": "TE",
         "countryCode": "GN",
         "latitude": "10.90893640",
-        "longitude": "-13.02993310"
+        "longitude": "-13.02993310",
+        "full": "Télimélé Prefecture"
     },
     {
         "name": "Tougué",
         "isoCode": "TO",
         "countryCode": "GN",
         "latitude": "11.38415830",
-        "longitude": "-11.61577730"
+        "longitude": "-11.61577730",
+        "full": "Tougué Prefecture"
     },
     {
         "name": "Yomou",
         "isoCode": "YO",
         "countryCode": "GN",
         "latitude": "7.56962790",
-        "longitude": "-9.25915710"
+        "longitude": "-9.25915710",
+        "full": "Yomou Prefecture"
     },
     {
         "name": "Phthiotis",
         "isoCode": "06",
         "countryCode": "GR",
         "latitude": "38.99978500",
-        "longitude": "22.33377690"
+        "longitude": "22.33377690",
+        "full": "Phthiotis Prefecture"
     },
     {
         "name": "Arcadia",
         "isoCode": "12",
         "countryCode": "GR",
         "latitude": "37.55578250",
-        "longitude": "22.33377690"
+        "longitude": "22.33377690",
+        "full": "Arcadia Prefecture"
     },
     {
         "name": "Corfu",
         "isoCode": "22",
         "countryCode": "GR",
         "latitude": "39.62498380",
-        "longitude": "19.92234610"
+        "longitude": "19.92234610",
+        "full": "Corfu Prefecture"
     },
     {
         "name": "Kefalonia",
         "isoCode": "23",
         "countryCode": "GR",
         "latitude": "38.17536750",
-        "longitude": "20.56921790"
+        "longitude": "20.56921790",
+        "full": "Kefalonia Prefecture"
     },
     {
         "name": "Preveza",
         "isoCode": "34",
         "countryCode": "GR",
         "latitude": "38.95926490",
-        "longitude": "20.75171550"
+        "longitude": "20.75171550",
+        "full": "Preveza Prefecture"
     },
     {
         "name": "Larissa",
         "isoCode": "42",
         "countryCode": "GR",
         "latitude": "39.63902240",
-        "longitude": "22.41912540"
+        "longitude": "22.41912540",
+        "full": "Larissa Prefecture"
     },
     {
         "name": "Grevena",
         "isoCode": "51",
         "countryCode": "GR",
         "latitude": "40.08376260",
-        "longitude": "21.42732990"
+        "longitude": "21.42732990",
+        "full": "Grevena Prefecture"
     },
     {
         "name": "Kozani",
         "isoCode": "58",
         "countryCode": "GR",
         "latitude": "40.30055860",
-        "longitude": "21.78877370"
+        "longitude": "21.78877370",
+        "full": "Kozani Prefecture"
     },
     {
         "name": "Serres",
         "isoCode": "62",
         "countryCode": "GR",
         "latitude": "41.08638540",
-        "longitude": "23.54838190"
+        "longitude": "23.54838190",
+        "full": "Serres Prefecture"
     },
     {
         "name": "Hokkaido",
         "isoCode": "01",
         "countryCode": "JP",
         "latitude": "43.22032660",
-        "longitude": "142.86347370"
+        "longitude": "142.86347370",
+        "full": "Hokkaidō Prefecture"
     },
     {
         "name": "Aomori",
         "isoCode": "02",
         "countryCode": "JP",
         "latitude": "40.76570770",
-        "longitude": "140.91758790"
+        "longitude": "140.91758790",
+        "full": "Aomori Prefecture"
     },
     {
         "name": "Iwate",
         "isoCode": "03",
         "countryCode": "JP",
         "latitude": "39.58329890",
-        "longitude": "141.25345740"
+        "longitude": "141.25345740",
+        "full": "Iwate Prefecture"
     },
     {
         "name": "Miyagi",
         "isoCode": "04",
         "countryCode": "JP",
         "latitude": "38.63061200",
-        "longitude": "141.11930480"
+        "longitude": "141.11930480",
+        "full": "Miyagi Prefecture"
     },
     {
         "name": "Akita",
         "isoCode": "05",
         "countryCode": "JP",
         "latitude": "40.13762930",
-        "longitude": "140.33434100"
+        "longitude": "140.33434100",
+        "full": "Akita Prefecture"
     },
     {
         "name": "Yamagata",
         "isoCode": "06",
         "countryCode": "JP",
         "latitude": "38.53705640",
-        "longitude": "140.14351980"
+        "longitude": "140.14351980",
+        "full": "Yamagata Prefecture"
     },
     {
         "name": "Fukushima",
         "isoCode": "07",
         "countryCode": "JP",
         "latitude": "37.38343730",
-        "longitude": "140.18325160"
+        "longitude": "140.18325160",
+        "full": "Fukushima Prefecture"
     },
     {
         "name": "Ibaraki",
         "isoCode": "08",
         "countryCode": "JP",
         "latitude": "36.21935710",
-        "longitude": "140.18325160"
+        "longitude": "140.18325160",
+        "full": "Ibaraki Prefecture"
     },
     {
         "name": "Tochigi",
         "isoCode": "09",
         "countryCode": "JP",
         "latitude": "36.67147390",
-        "longitude": "139.85472660"
+        "longitude": "139.85472660",
+        "full": "Tochigi Prefecture"
     },
     {
         "name": "Gunma",
         "isoCode": "10",
         "countryCode": "JP",
         "latitude": "36.56053880",
-        "longitude": "138.87999720"
+        "longitude": "138.87999720",
+        "full": "Gunma Prefecture"
     },
     {
         "name": "Saitama",
         "isoCode": "11",
         "countryCode": "JP",
         "latitude": "35.99625130",
-        "longitude": "139.44660050"
+        "longitude": "139.44660050",
+        "full": "Saitama Prefecture"
     },
     {
         "name": "Chiba",
         "isoCode": "12",
         "countryCode": "JP",
         "latitude": "35.33541550",
-        "longitude": "140.18325160"
+        "longitude": "140.18325160",
+        "full": "Chiba Prefecture"
     },
     {
         "name": "Kanagawa",
         "isoCode": "14",
         "countryCode": "JP",
         "latitude": "35.49135350",
-        "longitude": "139.28414300"
+        "longitude": "139.28414300",
+        "full": "Kanagawa Prefecture"
     },
     {
         "name": "Niigata",
         "isoCode": "15",
         "countryCode": "JP",
         "latitude": "37.51783860",
-        "longitude": "138.92697940"
+        "longitude": "138.92697940",
+        "full": "Niigata Prefecture"
     },
     {
         "name": "Toyama",
         "isoCode": "16",
         "countryCode": "JP",
         "latitude": "36.69582660",
-        "longitude": "137.21370710"
+        "longitude": "137.21370710",
+        "full": "Toyama Prefecture"
     },
     {
         "name": "Ishikawa",
         "isoCode": "17",
         "countryCode": "JP",
         "latitude": "36.32603170",
-        "longitude": "136.52896530"
+        "longitude": "136.52896530",
+        "full": "Ishikawa Prefecture"
     },
     {
         "name": "Fukui",
         "isoCode": "18",
         "countryCode": "JP",
         "latitude": "35.89622700",
-        "longitude": "136.21115790"
+        "longitude": "136.21115790",
+        "full": "Fukui Prefecture"
     },
     {
         "name": "Yamanashi",
         "isoCode": "19",
         "countryCode": "JP",
         "latitude": "35.66351130",
-        "longitude": "138.63888790"
+        "longitude": "138.63888790",
+        "full": "Yamanashi Prefecture"
     },
     {
         "name": "Nagano",
         "isoCode": "20",
         "countryCode": "JP",
         "latitude": "36.15439410",
-        "longitude": "137.92182040"
+        "longitude": "137.92182040",
+        "full": "Nagano Prefecture"
     },
     {
         "name": "Gifu",
         "isoCode": "21",
         "countryCode": "JP",
         "latitude": "35.74374910",
-        "longitude": "136.98051030"
+        "longitude": "136.98051030",
+        "full": "Gifu Prefecture"
     },
     {
         "name": "Shizuoka",
         "isoCode": "22",
         "countryCode": "JP",
         "latitude": "35.09293970",
-        "longitude": "138.31902760"
+        "longitude": "138.31902760",
+        "full": "Shizuoka Prefecture"
     },
     {
         "name": "Aichi",
         "isoCode": "23",
         "countryCode": "JP",
         "latitude": "35.01825050",
-        "longitude": "137.29238930"
+        "longitude": "137.29238930",
+        "full": "Aichi Prefecture"
     },
     {
         "name": "Mie",
         "isoCode": "24",
         "countryCode": "JP",
         "latitude": "33.81439010",
-        "longitude": "136.04870470"
+        "longitude": "136.04870470",
+        "full": "Mie Prefecture"
     },
     {
         "name": "Shiga",
         "isoCode": "25",
         "countryCode": "JP",
         "latitude": "35.32920140",
-        "longitude": "136.05632120"
+        "longitude": "136.05632120",
+        "full": "Shiga Prefecture"
     },
     {
         "name": "Kyoto",
         "isoCode": "26",
         "countryCode": "JP",
         "latitude": "35.15666090",
-        "longitude": "135.52519820"
+        "longitude": "135.52519820",
+        "full": "Kyōto Prefecture"
     },
     {
         "name": "Osaka",
         "isoCode": "27",
         "countryCode": "JP",
         "latitude": "34.64133150",
-        "longitude": "135.56293940"
+        "longitude": "135.56293940",
+        "full": "Ōsaka Prefecture"
     },
     {
         "name": "Hyogo",
         "isoCode": "28",
         "countryCode": "JP",
         "latitude": "34.85795180",
-        "longitude": "134.54537870"
+        "longitude": "134.54537870",
+        "full": "Hyōgo Prefecture"
     },
     {
         "name": "Nara",
         "isoCode": "29",
         "countryCode": "JP",
         "latitude": "34.29755280",
-        "longitude": "135.82797340"
+        "longitude": "135.82797340",
+        "full": "Nara Prefecture"
     },
     {
         "name": "Wakayama",
         "isoCode": "30",
         "countryCode": "JP",
         "latitude": "33.94809140",
-        "longitude": "135.37453580"
+        "longitude": "135.37453580",
+        "full": "Wakayama Prefecture"
     },
     {
         "name": "Tottori",
         "isoCode": "31",
         "countryCode": "JP",
         "latitude": "35.35731610",
-        "longitude": "133.40666180"
+        "longitude": "133.40666180",
+        "full": "Tottori Prefecture"
     },
     {
         "name": "Shimane",
         "isoCode": "32",
         "countryCode": "JP",
         "latitude": "35.12440940",
-        "longitude": "132.62934460"
+        "longitude": "132.62934460",
+        "full": "Shimane Prefecture"
     },
     {
         "name": "Okayama",
         "isoCode": "33",
         "countryCode": "JP",
         "latitude": "34.89634070",
-        "longitude": "133.63753140"
+        "longitude": "133.63753140",
+        "full": "Okayama Prefecture"
     },
     {
         "name": "Hiroshima",
         "isoCode": "34",
         "countryCode": "JP",
         "latitude": "34.88234080",
-        "longitude": "133.01948970"
+        "longitude": "133.01948970",
+        "full": "Hiroshima Prefecture"
     },
     {
         "name": "Yamaguchi",
         "isoCode": "35",
         "countryCode": "JP",
         "latitude": "34.27967690",
-        "longitude": "131.52127420"
+        "longitude": "131.52127420",
+        "full": "Yamaguchi Prefecture"
     },
     {
         "name": "Tokushima",
         "isoCode": "36",
         "countryCode": "JP",
         "latitude": "33.94196550",
-        "longitude": "134.32365570"
+        "longitude": "134.32365570",
+        "full": "Tokushima Prefecture"
     },
     {
         "name": "Kagawa",
         "isoCode": "37",
         "countryCode": "JP",
         "latitude": "34.22259150",
-        "longitude": "134.01991520"
+        "longitude": "134.01991520",
+        "full": "Kagawa Prefecture"
     },
     {
         "name": "Ehime",
         "isoCode": "38",
         "countryCode": "JP",
         "latitude": "33.60253060",
-        "longitude": "132.78575830"
+        "longitude": "132.78575830",
+        "full": "Ehime Prefecture"
     },
     {
         "name": "Kochi",
         "isoCode": "39",
         "countryCode": "JP",
         "latitude": "33.28791610",
-        "longitude": "132.27592620"
+        "longitude": "132.27592620",
+        "full": "Kōchi Prefecture"
     },
     {
         "name": "Fukuoka",
         "isoCode": "40",
         "countryCode": "JP",
         "latitude": "33.56625590",
-        "longitude": "130.71585700"
+        "longitude": "130.71585700",
+        "full": "Fukuoka Prefecture"
     },
     {
         "name": "Saga",
         "isoCode": "41",
         "countryCode": "JP",
         "latitude": "33.30783710",
-        "longitude": "130.22712430"
+        "longitude": "130.22712430",
+        "full": "Saga Prefecture"
     },
     {
         "name": "Nagasaki",
         "isoCode": "42",
         "countryCode": "JP",
         "latitude": "33.24885250",
-        "longitude": "129.69309120"
+        "longitude": "129.69309120",
+        "full": "Nagasaki Prefecture"
     },
     {
         "name": "Kumamoto",
         "isoCode": "43",
         "countryCode": "JP",
         "latitude": "32.85944270",
-        "longitude": "130.79691490"
+        "longitude": "130.79691490",
+        "full": "Kumamoto Prefecture"
     },
     {
         "name": "Oita",
         "isoCode": "44",
         "countryCode": "JP",
         "latitude": "33.15892990",
-        "longitude": "131.36111210"
+        "longitude": "131.36111210",
+        "full": "Ōita Prefecture"
     },
     {
         "name": "Miyazaki",
         "isoCode": "45",
         "countryCode": "JP",
         "latitude": "32.60360220",
-        "longitude": "131.44125100"
+        "longitude": "131.44125100",
+        "full": "Miyazaki Prefecture"
     },
     {
         "name": "Kagoshima",
         "isoCode": "46",
         "countryCode": "JP",
         "latitude": "31.39119580",
-        "longitude": "130.87785860"
+        "longitude": "130.87785860",
+        "full": "Kagoshima Prefecture"
     },
     {
         "name": "Okinawa",
         "isoCode": "47",
         "countryCode": "JP",
         "latitude": "26.12019110",
-        "longitude": "127.70250120"
+        "longitude": "127.70250120",
+        "full": "Okinawa Prefecture"
     },
     {
         "name": "Vientiane",
         "isoCode": "VT",
         "countryCode": "LA",
         "latitude": "18.11054100",
-        "longitude": "102.52980280"
+        "longitude": "102.52980280",
+        "full": "Vientiane Prefecture"
     },
     {
         "name": "Aragatsotn",
         "isoCode": "AG",
         "countryCode": "AM",
         "latitude": "40.33473010",
-        "longitude": "44.37482960"
+        "longitude": "44.37482960",
+        "full": "Aragatsotn Region"
     },
     {
         "name": "Armavir",
         "isoCode": "AV",
         "countryCode": "AM",
         "latitude": "40.15546310",
-        "longitude": "44.03724460"
+        "longitude": "44.03724460",
+        "full": "Armavir Region"
     },
     {
         "name": "Kotayk",
         "isoCode": "KT",
         "countryCode": "AM",
         "latitude": "40.54102140",
-        "longitude": "44.76901480"
+        "longitude": "44.76901480",
+        "full": "Kotayk Region"
     },
     {
         "name": "Lori",
         "isoCode": "LO",
         "countryCode": "AM",
         "latitude": "40.96984520",
-        "longitude": "44.49001380"
+        "longitude": "44.49001380",
+        "full": "Lori Region"
     },
     {
         "name": "Shirak",
         "isoCode": "SH",
         "countryCode": "AM",
         "latitude": "40.96308140",
-        "longitude": "43.81024610"
+        "longitude": "43.81024610",
+        "full": "Shirak Region"
     },
     {
         "name": "Tavush",
         "isoCode": "TV",
         "countryCode": "AM",
         "latitude": "40.88662960",
-        "longitude": "45.33934900"
+        "longitude": "45.33934900",
+        "full": "Tavush Region"
     },
     {
         "name": "Vayots Dzor",
         "isoCode": "VD",
         "countryCode": "AM",
         "latitude": "39.76419960",
-        "longitude": "45.33375280"
+        "longitude": "45.33375280",
+        "full": "Vayots Dzor Region"
     },
     {
         "name": "Brussels-Capital",
         "isoCode": "BRU",
         "countryCode": "BE",
         "latitude": "50.85034630",
-        "longitude": "4.35172110"
+        "longitude": "4.35172110",
+        "full": "Brussels-Capital Region"
     },
     {
         "name": "Boucle du Mouhoun",
         "isoCode": "01",
         "countryCode": "BF",
         "latitude": "12.41660000",
-        "longitude": "-3.41955270"
+        "longitude": "-3.41955270",
+        "full": "Boucle du Mouhoun Region"
     },
     {
         "name": "Cascades",
         "isoCode": "02",
         "countryCode": "BF",
         "latitude": "10.40729920",
-        "longitude": "-4.56244260"
+        "longitude": "-4.56244260",
+        "full": "Cascades Region"
     },
     {
         "name": "Centre-Est",
         "isoCode": "04",
         "countryCode": "BF",
         "latitude": "11.52476740",
-        "longitude": "-0.14949880"
+        "longitude": "-0.14949880",
+        "full": "Centre-Est Region"
     },
     {
         "name": "Centre-Nord",
         "isoCode": "05",
         "countryCode": "BF",
         "latitude": "13.17244640",
-        "longitude": "-0.90566230"
+        "longitude": "-0.90566230",
+        "full": "Centre-Nord Region"
     },
     {
         "name": "Centre-Ouest",
         "isoCode": "06",
         "countryCode": "BF",
         "latitude": "11.87984660",
-        "longitude": "-2.30244600"
+        "longitude": "-2.30244600",
+        "full": "Centre-Ouest Region"
     },
     {
         "name": "Centre-Sud",
         "isoCode": "07",
         "countryCode": "BF",
         "latitude": "11.52289110",
-        "longitude": "-1.05861350"
+        "longitude": "-1.05861350",
+        "full": "Centre-Sud Region"
     },
     {
         "name": "Est",
         "isoCode": "08",
         "countryCode": "BF",
         "latitude": "12.43655260",
-        "longitude": "0.90566230"
+        "longitude": "0.90566230",
+        "full": "Est Region"
     },
     {
         "name": "Hauts-Bassins",
         "isoCode": "09",
         "countryCode": "BF",
         "latitude": "11.49420030",
-        "longitude": "-4.23333550"
+        "longitude": "-4.23333550",
+        "full": "Hauts-Bassins Region"
     },
     {
         "name": "Plateau-Central",
         "isoCode": "11",
         "countryCode": "BF",
         "latitude": "12.25376480",
-        "longitude": "-0.75328090"
+        "longitude": "-0.75328090",
+        "full": "Plateau-Central Region"
     },
     {
         "name": "Sahel",
         "isoCode": "12",
         "countryCode": "BF",
         "latitude": "14.10008650",
-        "longitude": "-0.14949880"
+        "longitude": "-0.14949880",
+        "full": "Sahel Region"
     },
     {
         "name": "Sud-Ouest",
         "isoCode": "13",
         "countryCode": "BF",
         "latitude": "10.42314930",
-        "longitude": "-3.25836260"
+        "longitude": "-3.25836260",
+        "full": "Sud-Ouest Region"
     },
     {
         "name": "Brest",
         "isoCode": "BR",
         "countryCode": "BY",
         "latitude": "52.52966410",
-        "longitude": "25.46064800"
+        "longitude": "25.46064800",
+        "full": "Brest Region"
     },
     {
         "name": "Gomel",
         "isoCode": "HO",
         "countryCode": "BY",
         "latitude": "52.16487540",
-        "longitude": "29.13332510"
+        "longitude": "29.13332510",
+        "full": "Gomel Region"
     },
     {
         "name": "Grodno",
         "isoCode": "HR",
         "countryCode": "BY",
         "latitude": "53.65999450",
-        "longitude": "25.34485710"
+        "longitude": "25.34485710",
+        "full": "Grodno Region"
     },
     {
         "name": "Mogilev",
         "isoCode": "MA",
         "countryCode": "BY",
         "latitude": "53.51017910",
-        "longitude": "30.40064440"
+        "longitude": "30.40064440",
+        "full": "Mogilev Region"
     },
     {
         "name": "Minsk",
         "isoCode": "MI",
         "countryCode": "BY",
         "latitude": "54.10678890",
-        "longitude": "27.41292450"
+        "longitude": "27.41292450",
+        "full": "Minsk Region"
     },
     {
         "name": "Vitebsk",
         "isoCode": "VI",
         "countryCode": "BY",
         "latitude": "55.29598330",
-        "longitude": "28.75836270"
+        "longitude": "28.75836270",
+        "full": "Vitebsk Region"
     },
     {
         "name": "Savanes",
         "isoCode": "03",
         "countryCode": "CI",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "full": "Savanes Region"
     },
     {
         "name": "Vallée du Bandama",
         "isoCode": "04",
         "countryCode": "CI",
         "latitude": "8.27897800",
-        "longitude": "-4.89356270"
+        "longitude": "-4.89356270",
+        "full": "Vallée du Bandama Region"
     },
     {
         "name": "Lacs",
         "isoCode": "07",
         "countryCode": "CI",
         "latitude": "47.73958660",
-        "longitude": "-70.41866520"
+        "longitude": "-70.41866520",
+        "full": "Lacs Region"
     },
     {
         "name": "Bas-Sassandra",
         "isoCode": "09",
         "countryCode": "CI",
         "latitude": "5.35679160",
-        "longitude": "-6.74939930"
+        "longitude": "-6.74939930",
+        "full": "Bas-Sassandra Region"
     },
     {
         "name": "Denguélé",
         "isoCode": "10",
         "countryCode": "CI",
         "latitude": "9.46623720",
-        "longitude": "-7.43813550"
+        "longitude": "-7.43813550",
+        "full": "Denguélé Region"
     },
     {
         "name": "Marahoué",
         "isoCode": "12",
         "countryCode": "CI",
         "latitude": "6.88462070",
-        "longitude": "-5.89871390"
+        "longitude": "-5.89871390",
+        "full": "Marahoué Region"
     },
     {
         "name": "Bafing",
         "isoCode": "17",
         "countryCode": "CI",
         "latitude": "8.32520470",
-        "longitude": "-7.52472430"
+        "longitude": "-7.52472430",
+        "full": "Bafing Region"
     },
     {
         "name": "Zanzan",
         "isoCode": "ZZ",
         "countryCode": "CI",
         "latitude": "8.82079040",
-        "longitude": "-3.41955270"
+        "longitude": "-3.41955270",
+        "full": "Zanzan Region"
     },
     {
         "name": "Arta",
         "isoCode": "AR",
         "countryCode": "DJ",
         "latitude": "11.52555280",
-        "longitude": "42.84794740"
+        "longitude": "42.84794740",
+        "full": "Arta Region"
     },
     {
         "name": "Ali Sabieh",
         "isoCode": "AS",
         "countryCode": "DJ",
         "latitude": "11.19289730",
-        "longitude": "42.94169800"
+        "longitude": "42.94169800",
+        "full": "Ali Sabieh Region"
     },
     {
         "name": "Dikhil",
         "isoCode": "DI",
         "countryCode": "DJ",
         "latitude": "11.10543360",
-        "longitude": "42.37047440"
+        "longitude": "42.37047440",
+        "full": "Dikhil Region"
     },
     {
         "name": "Obock",
         "isoCode": "OB",
         "countryCode": "DJ",
         "latitude": "12.38956910",
-        "longitude": "43.01948970"
+        "longitude": "43.01948970",
+        "full": "Obock Region"
     },
     {
         "name": "Tadjourah",
         "isoCode": "TA",
         "countryCode": "DJ",
         "latitude": "11.93388850",
-        "longitude": "42.39383750"
+        "longitude": "42.39383750",
+        "full": "Tadjourah Region"
     },
     {
         "name": "North Denmark",
         "isoCode": "81",
         "countryCode": "DK",
         "latitude": "56.83074160",
-        "longitude": "9.49305270"
+        "longitude": "9.49305270",
+        "full": "North Denmark Region"
     },
     {
         "name": "Central Denmark",
         "isoCode": "82",
         "countryCode": "DK",
         "latitude": "56.30213900",
-        "longitude": "9.30277700"
+        "longitude": "9.30277700",
+        "full": "Central Denmark Region"
     },
     {
         "name": "Anseba",
         "isoCode": "AN",
         "countryCode": "ER",
         "latitude": "16.47455310",
-        "longitude": "37.80876930"
+        "longitude": "37.80876930",
+        "full": "Anseba Region"
     },
     {
         "name": "Southern Red Sea",
         "isoCode": "DK",
         "countryCode": "ER",
         "latitude": "13.51371030",
-        "longitude": "41.76064720"
+        "longitude": "41.76064720",
+        "full": "Southern Red Sea Region"
     },
     {
         "name": "Debub",
         "isoCode": "DU",
         "countryCode": "ER",
         "latitude": "14.94786920",
-        "longitude": "39.15436770"
+        "longitude": "39.15436770",
+        "full": "Debub Region"
     },
     {
         "name": "Gash-Barka",
         "isoCode": "GB",
         "countryCode": "ER",
         "latitude": "15.40688250",
-        "longitude": "37.63866220"
+        "longitude": "37.63866220",
+        "full": "Gash-Barka Region"
     },
     {
         "name": "Maekel",
         "isoCode": "MA",
         "countryCode": "ER",
         "latitude": "15.35514090",
-        "longitude": "38.86236830"
+        "longitude": "38.86236830",
+        "full": "Maekel Region"
     },
     {
         "name": "Northern Red Sea",
         "isoCode": "SK",
         "countryCode": "ER",
         "latitude": "16.25839970",
-        "longitude": "38.82054540"
+        "longitude": "38.82054540",
+        "full": "Northern Red Sea Region"
     },
     {
         "name": "Afar",
         "isoCode": "AF",
         "countryCode": "ET",
         "latitude": "11.75593880",
-        "longitude": "40.95868800"
+        "longitude": "40.95868800",
+        "full": "Afar Region"
     },
     {
         "name": "Amhara",
         "isoCode": "AM",
         "countryCode": "ET",
         "latitude": "11.34942470",
-        "longitude": "37.97845850"
+        "longitude": "37.97845850",
+        "full": "Amhara Region"
     },
     {
         "name": "Benishangul-Gumuz",
         "isoCode": "BE",
         "countryCode": "ET",
         "latitude": "10.78028890",
-        "longitude": "35.56578620"
+        "longitude": "35.56578620",
+        "full": "Benishangul-Gumuz Region"
     },
     {
         "name": "Gambela",
         "isoCode": "GA",
         "countryCode": "ET",
         "latitude": "7.92196870",
-        "longitude": "34.15319470"
+        "longitude": "34.15319470",
+        "full": "Gambela Region"
     },
     {
         "name": "Harari",
         "isoCode": "HA",
         "countryCode": "ET",
         "latitude": "9.31486600",
-        "longitude": "42.19677160"
+        "longitude": "42.19677160",
+        "full": "Harari Region"
     },
     {
         "name": "Oromia",
         "isoCode": "OR",
         "countryCode": "ET",
         "latitude": "7.54603770",
-        "longitude": "40.63468510"
+        "longitude": "40.63468510",
+        "full": "Oromia Region"
     },
     {
         "name": "Southern Nations, Nationalities, and Peoples'",
         "isoCode": "SN",
         "countryCode": "ET",
         "latitude": "6.51569110",
-        "longitude": "36.95410700"
+        "longitude": "36.95410700",
+        "full": "Southern Nations, Nationalities, and Peoples' Region"
     },
     {
         "name": "Somali",
         "isoCode": "SO",
         "countryCode": "ET",
         "latitude": "6.66122930",
-        "longitude": "43.79084530"
+        "longitude": "43.79084530",
+        "full": "Somali Region"
     },
     {
         "name": "Tigray",
         "isoCode": "TI",
         "countryCode": "ET",
         "latitude": "14.03233360",
-        "longitude": "38.31657250"
+        "longitude": "38.31657250",
+        "full": "Tigray Region"
     },
     {
         "name": "Boké",
         "isoCode": "B",
         "countryCode": "GN",
         "latitude": "11.18646720",
-        "longitude": "-14.10013260"
+        "longitude": "-14.10013260",
+        "full": "Boké Region"
     },
     {
         "name": "Kindia",
         "isoCode": "D",
         "countryCode": "GN",
         "latitude": "10.17816940",
-        "longitude": "-12.98961500"
+        "longitude": "-12.98961500",
+        "full": "Kindia Region"
     },
     {
         "name": "Kankan",
         "isoCode": "K",
         "countryCode": "GN",
         "latitude": "10.12092300",
-        "longitude": "-9.54509740"
+        "longitude": "-9.54509740",
+        "full": "Kankan Region"
     },
     {
         "name": "Labé",
         "isoCode": "L",
         "countryCode": "GN",
         "latitude": "11.32320420",
-        "longitude": "-12.28913140"
+        "longitude": "-12.28913140",
+        "full": "Labé Region"
     },
     {
         "name": "Mamou",
         "isoCode": "M",
         "countryCode": "GN",
         "latitude": "10.57360240",
-        "longitude": "-11.88917210"
+        "longitude": "-11.88917210",
+        "full": "Mamou Region"
     },
     {
         "name": "Nzérékoré",
         "isoCode": "N",
         "countryCode": "GN",
         "latitude": "8.03858700",
-        "longitude": "-8.83627550"
+        "longitude": "-8.83627550",
+        "full": "Nzérékoré Region"
     },
     {
         "name": "Insular",
         "isoCode": "I",
         "countryCode": "GQ",
         "latitude": "37.09024000",
-        "longitude": "-95.71289100"
+        "longitude": "-95.71289100",
+        "full": "Insular Region"
     },
     {
         "name": "West Macedonia",
         "isoCode": "C",
         "countryCode": "GR",
         "latitude": "40.30040580",
-        "longitude": "21.79035590"
+        "longitude": "21.79035590",
+        "full": "West Macedonia Region"
     },
     {
         "name": "Epirus",
         "isoCode": "D",
         "countryCode": "GR",
         "latitude": "39.57064130",
-        "longitude": "20.76428430"
+        "longitude": "20.76428430",
+        "full": "Epirus Region"
     },
     {
         "name": "Ionian Islands",
         "isoCode": "F",
         "countryCode": "GR",
         "latitude": "37.96948980",
-        "longitude": "21.38023720"
+        "longitude": "21.38023720",
+        "full": "Ionian Islands Region"
     },
     {
         "name": "West Greece",
         "isoCode": "G",
         "countryCode": "GR",
         "latitude": "38.51154960",
-        "longitude": "21.57067860"
+        "longitude": "21.57067860",
+        "full": "West Greece Region"
     },
     {
         "name": "Central Greece",
         "isoCode": "H",
         "countryCode": "GR",
         "latitude": "38.60439840",
-        "longitude": "22.71521310"
+        "longitude": "22.71521310",
+        "full": "Central Greece Region"
     },
     {
         "name": "Attica",
         "isoCode": "I",
         "countryCode": "GR",
         "latitude": "38.04575680",
-        "longitude": "23.85847370"
+        "longitude": "23.85847370",
+        "full": "Attica Region"
     },
     {
         "name": "Peloponnese",
         "isoCode": "J",
         "countryCode": "GR",
         "latitude": "37.50794720",
-        "longitude": "22.37349000"
+        "longitude": "22.37349000",
+        "full": "Peloponnese Region"
     },
     {
         "name": "Crete",
         "isoCode": "M",
         "countryCode": "GR",
         "latitude": "35.24011700",
-        "longitude": "24.80926910"
+        "longitude": "24.80926910",
+        "full": "Crete Region"
     },
     {
         "name": "Bolama",
         "isoCode": "BL",
         "countryCode": "GW",
         "latitude": "11.14805910",
-        "longitude": "-16.13457050"
+        "longitude": "-16.13457050",
+        "full": "Bolama Region"
     },
     {
         "name": "Biombo",
         "isoCode": "BM",
         "countryCode": "GW",
         "latitude": "11.85290610",
-        "longitude": "-15.73511710"
+        "longitude": "-15.73511710",
+        "full": "Biombo Region"
     },
     {
         "name": "Cacheu",
         "isoCode": "CA",
         "countryCode": "GW",
         "latitude": "12.05514160",
-        "longitude": "-16.06401790"
+        "longitude": "-16.06401790",
+        "full": "Cacheu Region"
     },
     {
         "name": "Gabú",
         "isoCode": "GA",
         "countryCode": "GW",
         "latitude": "11.89624880",
-        "longitude": "-14.10013260"
+        "longitude": "-14.10013260",
+        "full": "Gabú Region"
     },
     {
         "name": "Oio",
         "isoCode": "OI",
         "countryCode": "GW",
         "latitude": "12.27607090",
-        "longitude": "-15.31311850"
+        "longitude": "-15.31311850",
+        "full": "Oio Region"
     },
     {
         "name": "Quinara",
         "isoCode": "QU",
         "countryCode": "GW",
         "latitude": "11.79556200",
-        "longitude": "-15.17268160"
+        "longitude": "-15.17268160",
+        "full": "Quinara Region"
     },
     {
         "name": "Tombali",
         "isoCode": "TO",
         "countryCode": "GW",
         "latitude": "11.36326960",
-        "longitude": "-14.98561760"
+        "longitude": "-14.98561760",
+        "full": "Tombali Region"
     },
     {
         "name": "Capital",
         "isoCode": "1",
         "countryCode": "IS",
         "latitude": "38.56569570",
-        "longitude": "-92.18169490"
+        "longitude": "-92.18169490",
+        "full": "Capital Region"
     },
     {
         "name": "Southern Peninsula",
         "isoCode": "2",
         "countryCode": "IS",
         "latitude": "63.91548030",
-        "longitude": "-22.36496670"
+        "longitude": "-22.36496670",
+        "full": "Southern Peninsula Region"
     },
     {
         "name": "Western",
         "isoCode": "3",
         "countryCode": "IS",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "full": "Western Region"
     },
     {
         "name": "Northwestern",
         "isoCode": "5",
         "countryCode": "IS",
         "latitude": "41.91339320",
-        "longitude": "-73.04716880"
+        "longitude": "-73.04716880",
+        "full": "Northwestern Region"
     },
     {
         "name": "Northeastern",
         "isoCode": "6",
         "countryCode": "IS",
         "latitude": "43.29942850",
-        "longitude": "-74.21793260"
+        "longitude": "-74.21793260",
+        "full": "Northeastern Region"
     },
     {
         "name": "Eastern",
         "isoCode": "7",
         "countryCode": "IS",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "full": "Eastern Region"
     },
     {
         "name": "Southern",
         "isoCode": "8",
         "countryCode": "IS",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "full": "Southern Region"
     },
     {
         "name": "Batken",
         "isoCode": "B",
         "countryCode": "KG",
         "latitude": "39.97214250",
-        "longitude": "69.85974060"
+        "longitude": "69.85974060",
+        "full": "Batken Region"
     },
     {
         "name": "Chuy",
         "isoCode": "C",
         "countryCode": "KG",
         "latitude": "42.56550000",
-        "longitude": "74.40566120"
+        "longitude": "74.40566120",
+        "full": "Chuy Region"
     },
     {
         "name": "Jalal-Abad",
         "isoCode": "J",
         "countryCode": "KG",
         "latitude": "41.10680800",
-        "longitude": "72.89880690"
+        "longitude": "72.89880690",
+        "full": "Jalal-Abad Region"
     },
     {
         "name": "Naryn",
         "isoCode": "N",
         "countryCode": "KG",
         "latitude": "41.29432270",
-        "longitude": "75.34121790"
+        "longitude": "75.34121790",
+        "full": "Naryn Region"
     },
     {
         "name": "Osh",
         "isoCode": "O",
         "countryCode": "KG",
         "latitude": "39.84073660",
-        "longitude": "72.89880690"
+        "longitude": "72.89880690",
+        "full": "Osh Region"
     },
     {
         "name": "Talas",
         "isoCode": "T",
         "countryCode": "KG",
         "latitude": "42.28673390",
-        "longitude": "72.52048270"
+        "longitude": "72.52048270",
+        "full": "Talas Region"
     },
     {
         "name": "Issyk-Kul",
         "isoCode": "Y",
         "countryCode": "KG",
         "latitude": "42.18594280",
-        "longitude": "77.56194190"
+        "longitude": "77.56194190",
+        "full": "Issyk-Kul Region"
     },
     {
         "name": "Akmola",
         "isoCode": "AKM",
         "countryCode": "KZ",
         "latitude": "51.91653200",
-        "longitude": "69.41104940"
+        "longitude": "69.41104940",
+        "full": "Akmola Region"
     },
     {
         "name": "Aktobe",
         "isoCode": "AKT",
         "countryCode": "KZ",
         "latitude": "48.77970780",
-        "longitude": "57.99743780"
+        "longitude": "57.99743780",
+        "full": "Aktobe Region"
     },
     {
         "name": "Almaty",
         "isoCode": "ALM",
         "countryCode": "KZ",
         "latitude": "45.01192270",
-        "longitude": "78.42293920"
+        "longitude": "78.42293920",
+        "full": "Almaty Region"
     },
     {
         "name": "Atyrau",
         "isoCode": "ATY",
         "countryCode": "KZ",
         "latitude": "47.10761880",
-        "longitude": "51.91413300"
+        "longitude": "51.91413300",
+        "full": "Atyrau Region"
     },
     {
         "name": "Karaganda",
         "isoCode": "KAR",
         "countryCode": "KZ",
         "latitude": "47.90221820",
-        "longitude": "71.77068070"
+        "longitude": "71.77068070",
+        "full": "Karaganda Region"
     },
     {
         "name": "Kostanay",
         "isoCode": "KUS",
         "countryCode": "KZ",
         "latitude": "51.50770960",
-        "longitude": "64.04790730"
+        "longitude": "64.04790730",
+        "full": "Kostanay Region"
     },
     {
         "name": "Kyzylorda",
         "isoCode": "KZY",
         "countryCode": "KZ",
         "latitude": "44.69226130",
-        "longitude": "62.65718850"
+        "longitude": "62.65718850",
+        "full": "Kyzylorda Region"
     },
     {
         "name": "Mangystau",
         "isoCode": "MAN",
         "countryCode": "KZ",
         "latitude": "44.59080200",
-        "longitude": "53.84995080"
+        "longitude": "53.84995080",
+        "full": "Mangystau Region"
     },
     {
         "name": "Pavlodar",
         "isoCode": "PAV",
         "countryCode": "KZ",
         "latitude": "52.28784440",
-        "longitude": "76.97334530"
+        "longitude": "76.97334530",
+        "full": "Pavlodar Region"
     },
     {
         "name": "North Kazakhstan",
         "isoCode": "SEV",
         "countryCode": "KZ",
         "latitude": "54.16220660",
-        "longitude": "69.93870710"
+        "longitude": "69.93870710",
+        "full": "North Kazakhstan Region"
     },
     {
         "name": "East Kazakhstan",
         "isoCode": "VOS",
         "countryCode": "KZ",
         "latitude": "48.70626870",
-        "longitude": "80.79225340"
+        "longitude": "80.79225340",
+        "full": "East Kazakhstan Region"
     },
     {
         "name": "Turkestan",
         "isoCode": "YUZ",
         "countryCode": "KZ",
         "latitude": "43.36669580",
-        "longitude": "68.40944050"
+        "longitude": "68.40944050",
+        "full": "Turkestan Region"
     },
     {
         "name": "Jambyl",
         "isoCode": "ZHA",
         "countryCode": "KZ",
         "latitude": "44.22203080",
-        "longitude": "72.36579670"
+        "longitude": "72.36579670",
+        "full": "Jambyl Region"
     },
     {
         "name": "Kayes",
         "isoCode": "1",
         "countryCode": "ML",
         "latitude": "14.08183080",
-        "longitude": "-9.90181310"
+        "longitude": "-9.90181310",
+        "full": "Kayes Region"
     },
     {
         "name": "Taoudénit",
         "isoCode": "10",
         "countryCode": "ML",
         "latitude": "22.67641320",
-        "longitude": "-3.97891430"
+        "longitude": "-3.97891430",
+        "full": "Taoudénit Region"
     },
     {
         "name": "Koulikoro",
         "isoCode": "2",
         "countryCode": "ML",
         "latitude": "13.80180740",
-        "longitude": "-7.43813550"
+        "longitude": "-7.43813550",
+        "full": "Koulikoro Region"
     },
     {
         "name": "Sikasso",
         "isoCode": "3",
         "countryCode": "ML",
         "latitude": "10.89051860",
-        "longitude": "-7.43813550"
+        "longitude": "-7.43813550",
+        "full": "Sikasso Region"
     },
     {
         "name": "Ségou",
         "isoCode": "4",
         "countryCode": "ML",
         "latitude": "13.83944560",
-        "longitude": "-6.06791940"
+        "longitude": "-6.06791940",
+        "full": "Ségou Region"
     },
     {
         "name": "Mopti",
         "isoCode": "5",
         "countryCode": "ML",
         "latitude": "14.63380390",
-        "longitude": "-3.41955270"
+        "longitude": "-3.41955270",
+        "full": "Mopti Region"
     },
     {
         "name": "Tombouctou",
         "isoCode": "6",
         "countryCode": "ML",
         "latitude": "21.05267060",
-        "longitude": "-3.74350900"
+        "longitude": "-3.74350900",
+        "full": "Tombouctou Region"
     },
     {
         "name": "Gao",
         "isoCode": "7",
         "countryCode": "ML",
         "latitude": "16.90663320",
-        "longitude": "1.52086240"
+        "longitude": "1.52086240",
+        "full": "Gao Region"
     },
     {
         "name": "Kidal",
         "isoCode": "8",
         "countryCode": "ML",
         "latitude": "18.79868320",
-        "longitude": "1.83183340"
+        "longitude": "1.83183340",
+        "full": "Kidal Region"
     },
     {
         "name": "Ménaka",
         "isoCode": "9",
         "countryCode": "ML",
         "latitude": "15.91564210",
-        "longitude": "2.39617400"
+        "longitude": "2.39617400",
+        "full": "Ménaka Region"
     },
     {
         "name": "Sagaing",
         "isoCode": "01",
         "countryCode": "MM",
         "latitude": "24.42838100",
-        "longitude": "95.39395510"
+        "longitude": "95.39395510",
+        "full": "Sagaing Region"
     },
     {
         "name": "Magway",
         "isoCode": "03",
         "countryCode": "MM",
         "latitude": "19.88713860",
-        "longitude": "94.72775280"
+        "longitude": "94.72775280",
+        "full": "Magway Region"
     },
     {
         "name": "Mandalay",
         "isoCode": "04",
         "countryCode": "MM",
         "latitude": "21.56190580",
-        "longitude": "95.89871390"
+        "longitude": "95.89871390",
+        "full": "Mandalay Region"
     },
     {
         "name": "Tanintharyi",
         "isoCode": "05",
         "countryCode": "MM",
         "latitude": "12.47068760",
-        "longitude": "99.01289260"
+        "longitude": "99.01289260",
+        "full": "Tanintharyi Region"
     },
     {
         "name": "Yangon",
         "isoCode": "06",
         "countryCode": "MM",
         "latitude": "16.91434880",
-        "longitude": "96.15269850"
+        "longitude": "96.15269850",
+        "full": "Yangon Region"
     },
     {
         "name": "Ayeyarwady",
         "isoCode": "07",
         "countryCode": "MM",
         "latitude": "17.03421250",
-        "longitude": "95.22666750"
+        "longitude": "95.22666750",
+        "full": "Ayeyarwady Region"
     },
     {
         "name": "Hodh Ech Chargui",
         "isoCode": "01",
         "countryCode": "MR",
         "latitude": "18.67370260",
-        "longitude": "-7.09287700"
+        "longitude": "-7.09287700",
+        "full": "Hodh Ech Chargui Region"
     },
     {
         "name": "Hodh El Gharbi",
         "isoCode": "02",
         "countryCode": "MR",
         "latitude": "16.69121490",
-        "longitude": "-9.54509740"
+        "longitude": "-9.54509740",
+        "full": "Hodh El Gharbi Region"
     },
     {
         "name": "Assaba",
         "isoCode": "03",
         "countryCode": "MR",
         "latitude": "16.77595580",
-        "longitude": "-11.52480550"
+        "longitude": "-11.52480550",
+        "full": "Assaba Region"
     },
     {
         "name": "Gorgol",
         "isoCode": "04",
         "countryCode": "MR",
         "latitude": "15.97173570",
-        "longitude": "-12.62162110"
+        "longitude": "-12.62162110",
+        "full": "Gorgol Region"
     },
     {
         "name": "Brakna",
         "isoCode": "05",
         "countryCode": "MR",
         "latitude": "17.23175610",
-        "longitude": "-13.17403480"
+        "longitude": "-13.17403480",
+        "full": "Brakna Region"
     },
     {
         "name": "Trarza",
         "isoCode": "06",
         "countryCode": "MR",
         "latitude": "17.86649640",
-        "longitude": "-14.65878210"
+        "longitude": "-14.65878210",
+        "full": "Trarza Region"
     },
     {
         "name": "Adrar",
         "isoCode": "07",
         "countryCode": "MR",
         "latitude": "19.86521760",
-        "longitude": "-12.80547530"
+        "longitude": "-12.80547530",
+        "full": "Adrar Region"
     },
     {
         "name": "Tagant",
         "isoCode": "09",
         "countryCode": "MR",
         "latitude": "18.54675270",
-        "longitude": "-9.90181310"
+        "longitude": "-9.90181310",
+        "full": "Tagant Region"
     },
     {
         "name": "Guidimaka",
         "isoCode": "10",
         "countryCode": "MR",
         "latitude": "15.25573310",
-        "longitude": "-12.25479190"
+        "longitude": "-12.25479190",
+        "full": "Guidimaka Region"
     },
     {
         "name": "Tiris Zemmour",
         "isoCode": "11",
         "countryCode": "MR",
         "latitude": "24.57737640",
-        "longitude": "-9.90181310"
+        "longitude": "-9.90181310",
+        "full": "Tiris Zemmour Region"
     },
     {
         "name": "Inchiri",
         "isoCode": "12",
         "countryCode": "MR",
         "latitude": "20.02805610",
-        "longitude": "-15.40680790"
+        "longitude": "-15.40680790",
+        "full": "Inchiri Region"
     },
     {
         "name": "Nouakchott-Ouest",
         "isoCode": "13",
         "countryCode": "MR",
         "latitude": "18.15113570",
-        "longitude": "-15.99349100"
+        "longitude": "-15.99349100",
+        "full": "Nouakchott-Ouest Region"
     },
     {
         "name": "Nouakchott-Nord",
         "isoCode": "14",
         "countryCode": "MR",
         "latitude": "18.11302050",
-        "longitude": "-15.89949560"
+        "longitude": "-15.89949560",
+        "full": "Nouakchott-Nord Region"
     },
     {
         "name": "Nouakchott-Sud",
         "isoCode": "15",
         "countryCode": "MR",
         "latitude": "17.97092880",
-        "longitude": "-15.94648740"
+        "longitude": "-15.94648740",
+        "full": "Nouakchott-Sud Region"
     },
     {
         "name": "Central",
         "isoCode": "C",
         "countryCode": "MW",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "full": "Central Region"
     },
     {
         "name": "Northern",
         "isoCode": "N",
         "countryCode": "MW",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "full": "Northern Region"
     },
     {
         "name": "Southern",
         "isoCode": "S",
         "countryCode": "MW",
         "latitude": "32.75049570",
-        "longitude": "-97.33154760"
+        "longitude": "-97.33154760",
+        "full": "Southern Region"
     },
     {
         "name": "Zambezi",
         "isoCode": "CA",
         "countryCode": "NA",
         "latitude": "-17.81934190",
-        "longitude": "23.95364660"
+        "longitude": "23.95364660",
+        "full": "Zambezi Region"
     },
     {
         "name": "Erongo",
         "isoCode": "ER",
         "countryCode": "NA",
         "latitude": "-22.25656820",
-        "longitude": "15.40680790"
+        "longitude": "15.40680790",
+        "full": "Erongo Region"
     },
     {
         "name": "Hardap",
         "isoCode": "HA",
         "countryCode": "NA",
         "latitude": "-24.23101340",
-        "longitude": "17.66888700"
+        "longitude": "17.66888700",
+        "full": "Hardap Region"
     },
     {
         "name": "Karas",
         "isoCode": "KA",
         "countryCode": "NA",
         "latitude": "-26.84296450",
-        "longitude": "17.29028390"
+        "longitude": "17.29028390",
+        "full": "Karas Region"
     },
     {
         "name": "Kavango East",
         "isoCode": "KE",
         "countryCode": "NA",
         "latitude": "-18.27104800",
-        "longitude": "18.42760470"
+        "longitude": "18.42760470",
+        "full": "Kavango East Region"
     },
     {
         "name": "Khomas",
         "isoCode": "KH",
         "countryCode": "NA",
         "latitude": "-22.63778540",
-        "longitude": "17.10119310"
+        "longitude": "17.10119310",
+        "full": "Khomas Region"
     },
     {
         "name": "Kunene",
         "isoCode": "KU",
         "countryCode": "NA",
         "latitude": "-19.40863170",
-        "longitude": "13.91439900"
+        "longitude": "13.91439900",
+        "full": "Kunene Region"
     },
     {
         "name": "Kavango West",
         "isoCode": "KW",
         "countryCode": "NA",
         "latitude": "-18.27104800",
-        "longitude": "18.42760470"
+        "longitude": "18.42760470",
+        "full": "Kavango West Region"
     },
     {
         "name": "Otjozondjupa",
         "isoCode": "OD",
         "countryCode": "NA",
         "latitude": "-20.54869160",
-        "longitude": "17.66888700"
+        "longitude": "17.66888700",
+        "full": "Otjozondjupa Region"
     },
     {
         "name": "Omaheke",
         "isoCode": "OH",
         "countryCode": "NA",
         "latitude": "-21.84666510",
-        "longitude": "19.18800470"
+        "longitude": "19.18800470",
+        "full": "Omaheke Region"
     },
     {
         "name": "Oshana",
         "isoCode": "ON",
         "countryCode": "NA",
         "latitude": "-18.43050640",
-        "longitude": "15.68817880"
+        "longitude": "15.68817880",
+        "full": "Oshana Region"
     },
     {
         "name": "Omusati",
         "isoCode": "OS",
         "countryCode": "NA",
         "latitude": "-18.40702940",
-        "longitude": "14.84546190"
+        "longitude": "14.84546190",
+        "full": "Omusati Region"
     },
     {
         "name": "Oshikoto",
         "isoCode": "OT",
         "countryCode": "NA",
         "latitude": "-18.41525750",
-        "longitude": "16.91225100"
+        "longitude": "16.91225100",
+        "full": "Oshikoto Region"
     },
     {
         "name": "Ohangwena",
         "isoCode": "OW",
         "countryCode": "NA",
         "latitude": "-17.59792910",
-        "longitude": "16.81783770"
+        "longitude": "16.81783770",
+        "full": "Ohangwena Region"
     },
     {
         "name": "Agadez",
         "isoCode": "1",
         "countryCode": "NE",
         "latitude": "20.66707520",
-        "longitude": "12.07182810"
+        "longitude": "12.07182810",
+        "full": "Agadez Region"
     },
     {
         "name": "Diffa",
         "isoCode": "2",
         "countryCode": "NE",
         "latitude": "13.67686470",
-        "longitude": "12.71351210"
+        "longitude": "12.71351210",
+        "full": "Diffa Region"
     },
     {
         "name": "Dosso",
         "isoCode": "3",
         "countryCode": "NE",
         "latitude": "13.15139470",
-        "longitude": "3.41955270"
+        "longitude": "3.41955270",
+        "full": "Dosso Region"
     },
     {
         "name": "Maradi",
         "isoCode": "4",
         "countryCode": "NE",
         "latitude": "13.80180740",
-        "longitude": "7.43813550"
+        "longitude": "7.43813550",
+        "full": "Maradi Region"
     },
     {
         "name": "Tahoua",
         "isoCode": "5",
         "countryCode": "NE",
         "latitude": "16.09025430",
-        "longitude": "5.39395510"
+        "longitude": "5.39395510",
+        "full": "Tahoua Region"
     },
     {
         "name": "Tillabéri",
         "isoCode": "6",
         "countryCode": "NE",
         "latitude": "14.64895250",
-        "longitude": "2.14502450"
+        "longitude": "2.14502450",
+        "full": "Tillabéri Region"
     },
     {
         "name": "Zinder",
         "isoCode": "7",
         "countryCode": "NE",
         "latitude": "15.17188810",
-        "longitude": "10.26001250"
+        "longitude": "10.26001250",
+        "full": "Zinder Region"
     },
     {
         "name": "Central",
         "isoCode": "1",
         "countryCode": "NP",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "full": "Central Region"
     },
     {
         "name": "Mid-Western",
         "isoCode": "2",
         "countryCode": "NP",
         "latitude": "38.41118410",
-        "longitude": "-90.38320980"
+        "longitude": "-90.38320980",
+        "full": "Mid-Western Region"
     },
     {
         "name": "Western",
         "isoCode": "3",
         "countryCode": "NP",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "full": "Western Region"
     },
     {
         "name": "Eastern Development",
         "isoCode": "4",
         "countryCode": "NP",
         "latitude": "27.33090720",
-        "longitude": "87.06242610"
+        "longitude": "87.06242610",
+        "full": "Eastern Development Region"
     },
     {
         "name": "Far-Western Development",
         "isoCode": "5",
         "countryCode": "NP",
         "latitude": "29.29878710",
-        "longitude": "80.98710740"
+        "longitude": "80.98710740",
+        "full": "Far-Western Development Region"
     },
     {
         "name": "Auckland",
         "isoCode": "AUK",
         "countryCode": "NZ",
         "latitude": "-36.66753280",
-        "longitude": "174.77333250"
+        "longitude": "174.77333250",
+        "full": "Auckland Region"
     },
     {
         "name": "Bay of Plenty",
         "isoCode": "BOP",
         "countryCode": "NZ",
         "latitude": "-37.42339170",
-        "longitude": "176.74163740"
+        "longitude": "176.74163740",
+        "full": "Bay of Plenty Region"
     },
     {
         "name": "Canterbury",
         "isoCode": "CAN",
         "countryCode": "NZ",
         "latitude": "-43.75422750",
-        "longitude": "171.16372450"
+        "longitude": "171.16372450",
+        "full": "Canterbury Region"
     },
     {
         "name": "Hawke's Bay",
         "isoCode": "HKB",
         "countryCode": "NZ",
         "latitude": "-39.60165970",
-        "longitude": "176.58044730"
+        "longitude": "176.58044730",
+        "full": "Hawke's Bay Region"
     },
     {
         "name": "Marlborough",
         "isoCode": "MBH",
         "countryCode": "NZ",
         "latitude": "-41.59168830",
-        "longitude": "173.76240530"
+        "longitude": "173.76240530",
+        "full": "Marlborough Region"
     },
     {
         "name": "Manawatu-Wanganui",
         "isoCode": "MWT",
         "countryCode": "NZ",
         "latitude": "-39.72733560",
-        "longitude": "175.43755740"
+        "longitude": "175.43755740",
+        "full": "Manawatu-Wanganui Region"
     },
     {
         "name": "Nelson",
         "isoCode": "NSN",
         "countryCode": "NZ",
         "latitude": "-41.29853970",
-        "longitude": "173.24414910"
+        "longitude": "173.24414910",
+        "full": "Nelson Region"
     },
     {
         "name": "Northland",
         "isoCode": "NTL",
         "countryCode": "NZ",
         "latitude": "-35.41361720",
-        "longitude": "173.93208060"
+        "longitude": "173.93208060",
+        "full": "Northland Region"
     },
     {
         "name": "Otago",
         "isoCode": "OTA",
         "countryCode": "NZ",
         "latitude": "-45.47906710",
-        "longitude": "170.15475670"
+        "longitude": "170.15475670",
+        "full": "Otago Region"
     },
     {
         "name": "Southland",
         "isoCode": "STL",
         "countryCode": "NZ",
         "latitude": "-45.84891590",
-        "longitude": "167.67553870"
+        "longitude": "167.67553870",
+        "full": "Southland Region"
     },
     {
         "name": "Taranaki",
         "isoCode": "TKI",
         "countryCode": "NZ",
         "latitude": "-39.35381490",
-        "longitude": "174.43827210"
+        "longitude": "174.43827210",
+        "full": "Taranaki Region"
     },
     {
         "name": "Wellington",
         "isoCode": "WGN",
         "countryCode": "NZ",
         "latitude": "-41.02993230",
-        "longitude": "175.43755740"
+        "longitude": "175.43755740",
+        "full": "Wellington Region"
     },
     {
         "name": "Waikato",
         "isoCode": "WKO",
         "countryCode": "NZ",
         "latitude": "-37.61908620",
-        "longitude": "175.02334600"
+        "longitude": "175.02334600",
+        "full": "Waikato Region"
     },
     {
         "name": "West Coast",
         "isoCode": "WTC",
         "countryCode": "NZ",
         "latitude": "62.41136340",
-        "longitude": "-149.07297140"
+        "longitude": "-149.07297140",
+        "full": "West Coast Region"
     },
     {
         "name": "Al Batinah",
         "isoCode": "BA",
         "countryCode": "OM",
         "latitude": "24.34198460",
-        "longitude": "56.72989040"
+        "longitude": "56.72989040",
+        "full": "Al Batinah Region"
     },
     {
         "name": "Ash Sharqiyah",
         "isoCode": "SH",
         "countryCode": "OM",
         "latitude": "22.71411960",
-        "longitude": "58.53080640"
+        "longitude": "58.53080640",
+        "full": "Ash Sharqiyah Region"
     },
     {
         "name": "Ilocos",
         "isoCode": "01",
         "countryCode": "PH",
         "latitude": "16.08321440",
-        "longitude": "120.61998950"
+        "longitude": "120.61998950",
+        "full": "Ilocos Region"
     },
     {
         "name": "Bicol",
         "isoCode": "05",
         "countryCode": "PH",
         "latitude": "13.42098850",
-        "longitude": "123.41367360"
+        "longitude": "123.41367360",
+        "full": "Bicol Region"
     },
     {
         "name": "Davao",
         "isoCode": "11",
         "countryCode": "PH",
         "latitude": "7.30416220",
-        "longitude": "126.08934060"
+        "longitude": "126.08934060",
+        "full": "Davao Region"
     },
     {
         "name": "Cordillera Administrative",
         "isoCode": "15",
         "countryCode": "PH",
         "latitude": "17.35125420",
-        "longitude": "121.17188510"
+        "longitude": "121.17188510",
+        "full": "Cordillera Administrative Region"
     },
     {
         "name": "Banská Bystrica",
         "isoCode": "BC",
         "countryCode": "SK",
         "latitude": "48.53124990",
-        "longitude": "19.38287400"
+        "longitude": "19.38287400",
+        "full": "Banská Bystrica Region"
     },
     {
         "name": "Bratislava",
         "isoCode": "BL",
         "countryCode": "SK",
         "latitude": "48.31183040",
-        "longitude": "17.19732990"
+        "longitude": "17.19732990",
+        "full": "Bratislava Region"
     },
     {
         "name": "Košice",
         "isoCode": "KI",
         "countryCode": "SK",
         "latitude": "48.63757370",
-        "longitude": "21.08342250"
+        "longitude": "21.08342250",
+        "full": "Košice Region"
     },
     {
         "name": "Nitra",
         "isoCode": "NI",
         "countryCode": "SK",
         "latitude": "48.01437650",
-        "longitude": "18.54165040"
+        "longitude": "18.54165040",
+        "full": "Nitra Region"
     },
     {
         "name": "Prešov",
         "isoCode": "PV",
         "countryCode": "SK",
         "latitude": "49.17167730",
-        "longitude": "21.37420010"
+        "longitude": "21.37420010",
+        "full": "Prešov Region"
     },
     {
         "name": "Trnava",
         "isoCode": "TA",
         "countryCode": "SK",
         "latitude": "48.39438980",
-        "longitude": "17.72162050"
+        "longitude": "17.72162050",
+        "full": "Trnava Region"
     },
     {
         "name": "Trenčín",
         "isoCode": "TC",
         "countryCode": "SK",
         "latitude": "48.80867580",
-        "longitude": "18.23240260"
+        "longitude": "18.23240260",
+        "full": "Trenčín Region"
     },
     {
         "name": "Žilina",
         "isoCode": "ZI",
         "countryCode": "SK",
         "latitude": "49.20314350",
-        "longitude": "19.36457330"
+        "longitude": "19.36457330",
+        "full": "Žilina Region"
     },
     {
         "name": "Diourbel",
         "isoCode": "DB",
         "countryCode": "SN",
         "latitude": "14.72830850",
-        "longitude": "-16.25221430"
+        "longitude": "-16.25221430",
+        "full": "Diourbel Region"
     },
     {
         "name": "Tambacounda",
         "isoCode": "TC",
         "countryCode": "SN",
         "latitude": "13.56190110",
-        "longitude": "-13.17403480"
+        "longitude": "-13.17403480",
+        "full": "Tambacounda Region"
     },
     {
         "name": "Thiès",
         "isoCode": "TH",
         "countryCode": "SN",
         "latitude": "14.79100520",
-        "longitude": "-16.93586040"
+        "longitude": "-16.93586040",
+        "full": "Thiès Region"
     },
     {
         "name": "Awdal",
         "isoCode": "AW",
         "countryCode": "SO",
         "latitude": "10.63342850",
-        "longitude": "43.32946600"
+        "longitude": "43.32946600",
+        "full": "Awdal Region"
     },
     {
         "name": "Sanaag",
         "isoCode": "SA",
         "countryCode": "SO",
         "latitude": "10.39382180",
-        "longitude": "47.76375650"
+        "longitude": "47.76375650",
+        "full": "Sanaag Region"
     },
     {
         "name": "Togdheer",
         "isoCode": "TO",
         "countryCode": "SO",
         "latitude": "9.44605870",
-        "longitude": "45.29938620"
+        "longitude": "45.29938620",
+        "full": "Togdheer Region"
     },
     {
         "name": "Batha",
         "isoCode": "BA",
         "countryCode": "TD",
         "latitude": "13.93717750",
-        "longitude": "18.42760470"
+        "longitude": "18.42760470",
+        "full": "Batha Region"
     },
     {
         "name": "Ennedi",
         "isoCode": "EN",
         "countryCode": "TD",
         "latitude": "17.54145780",
-        "longitude": "21.85685860"
+        "longitude": "21.85685860",
+        "full": "Ennedi Region"
     },
     {
         "name": "Guéra",
         "isoCode": "GR",
         "countryCode": "TD",
         "latitude": "11.12190150",
-        "longitude": "18.42760470"
+        "longitude": "18.42760470",
+        "full": "Guéra Region"
     },
     {
         "name": "Kanem",
         "isoCode": "KA",
         "countryCode": "TD",
         "latitude": "14.87812620",
-        "longitude": "15.40680790"
+        "longitude": "15.40680790",
+        "full": "Kanem Region"
     },
     {
         "name": "Lac",
         "isoCode": "LC",
         "countryCode": "TD",
         "latitude": "13.69153770",
-        "longitude": "14.10013260"
+        "longitude": "14.10013260",
+        "full": "Lac Region"
     },
     {
         "name": "Logone Occidental",
         "isoCode": "LO",
         "countryCode": "TD",
         "latitude": "8.75967600",
-        "longitude": "15.87600400"
+        "longitude": "15.87600400",
+        "full": "Logone Occidental Region"
     },
     {
         "name": "Logone Oriental",
         "isoCode": "LR",
         "countryCode": "TD",
         "latitude": "8.31499490",
-        "longitude": "16.34637910"
+        "longitude": "16.34637910",
+        "full": "Logone Oriental Region"
     },
     {
         "name": "Mandoul",
         "isoCode": "MA",
         "countryCode": "TD",
         "latitude": "8.60309100",
-        "longitude": "17.47951730"
+        "longitude": "17.47951730",
+        "full": "Mandoul Region"
     },
     {
         "name": "Moyen-Chari",
         "isoCode": "MC",
         "countryCode": "TD",
         "latitude": "9.06399980",
-        "longitude": "18.42760470"
+        "longitude": "18.42760470",
+        "full": "Moyen-Chari Region"
     },
     {
         "name": "Mayo-Kebbi Est",
         "isoCode": "ME",
         "countryCode": "TD",
         "latitude": "9.40460390",
-        "longitude": "14.84546190"
+        "longitude": "14.84546190",
+        "full": "Mayo-Kebbi Est Region"
     },
     {
         "name": "Mayo-Kebbi Ouest",
         "isoCode": "MO",
         "countryCode": "TD",
         "latitude": "10.41130140",
-        "longitude": "15.59433880"
+        "longitude": "15.59433880",
+        "full": "Mayo-Kebbi Ouest Region"
     },
     {
         "name": "Ouaddaï",
         "isoCode": "OD",
         "countryCode": "TD",
         "latitude": "13.74847600",
-        "longitude": "20.71224650"
+        "longitude": "20.71224650",
+        "full": "Ouaddaï Region"
     },
     {
         "name": "Salamat",
         "isoCode": "SA",
         "countryCode": "TD",
         "latitude": "10.96916010",
-        "longitude": "20.71224650"
+        "longitude": "20.71224650",
+        "full": "Salamat Region"
     },
     {
         "name": "Sila",
         "isoCode": "SI",
         "countryCode": "TD",
         "latitude": "12.13074000",
-        "longitude": "21.28450250"
+        "longitude": "21.28450250",
+        "full": "Sila Region"
     },
     {
         "name": "Tandjilé",
         "isoCode": "TA",
         "countryCode": "TD",
         "latitude": "9.66257290",
-        "longitude": "16.72346390"
+        "longitude": "16.72346390",
+        "full": "Tandjilé Region"
     },
     {
         "name": "Tibesti",
         "isoCode": "TI",
         "countryCode": "TD",
         "latitude": "21.36500310",
-        "longitude": "16.91225100"
+        "longitude": "16.91225100",
+        "full": "Tibesti Region"
     },
     {
         "name": "Wadi Fira",
         "isoCode": "WF",
         "countryCode": "TD",
         "latitude": "15.08924160",
-        "longitude": "21.47528510"
+        "longitude": "21.47528510",
+        "full": "Wadi Fira Region"
     },
     {
         "name": "Centrale",
         "isoCode": "C",
         "countryCode": "TG",
         "latitude": "8.65860290",
-        "longitude": "1.05861350"
+        "longitude": "1.05861350",
+        "full": "Centrale Region"
     },
     {
         "name": "Kara",
         "isoCode": "K",
         "countryCode": "TG",
         "latitude": "9.72163930",
-        "longitude": "1.05861350"
+        "longitude": "1.05861350",
+        "full": "Kara Region"
     },
     {
         "name": "Plateaux",
         "isoCode": "P",
         "countryCode": "TG",
         "latitude": "7.61013780",
-        "longitude": "1.05861350"
+        "longitude": "1.05861350",
+        "full": "Plateaux Region"
     },
     {
         "name": "Savanes",
         "isoCode": "S",
         "countryCode": "TG",
         "latitude": "10.52917810",
-        "longitude": "0.52578230"
+        "longitude": "0.52578230",
+        "full": "Savanes Region"
     },
     {
         "name": "Ahal",
         "isoCode": "A",
         "countryCode": "TM",
         "latitude": "38.63993980",
-        "longitude": "59.47209040"
+        "longitude": "59.47209040",
+        "full": "Ahal Region"
     },
     {
         "name": "Balkan",
         "isoCode": "B",
         "countryCode": "TM",
         "latitude": "41.81014720",
-        "longitude": "21.09373110"
+        "longitude": "21.09373110",
+        "full": "Balkan Region"
     },
     {
         "name": "Daşoguz",
         "isoCode": "D",
         "countryCode": "TM",
         "latitude": "41.83687370",
-        "longitude": "59.96519040"
+        "longitude": "59.96519040",
+        "full": "Daşoguz Region"
     },
     {
         "name": "Lebap",
         "isoCode": "L",
         "countryCode": "TM",
         "latitude": "38.12724620",
-        "longitude": "64.71624150"
+        "longitude": "64.71624150",
+        "full": "Lebap Region"
     },
     {
         "name": "Mary",
         "isoCode": "M",
         "countryCode": "TM",
         "latitude": "36.94816230",
-        "longitude": "62.45041540"
+        "longitude": "62.45041540",
+        "full": "Mary Region"
     },
     {
         "name": "Central",
         "isoCode": "C",
         "countryCode": "UG",
         "latitude": "44.29687500",
-        "longitude": "-94.74017330"
+        "longitude": "-94.74017330",
+        "full": "Central Region"
     },
     {
         "name": "Eastern",
         "isoCode": "E",
         "countryCode": "UG",
         "latitude": "6.23740360",
-        "longitude": "-0.45023680"
+        "longitude": "-0.45023680",
+        "full": "Eastern Region"
     },
     {
         "name": "Northern",
         "isoCode": "N",
         "countryCode": "UG",
         "latitude": "9.54392690",
-        "longitude": "-0.90566230"
+        "longitude": "-0.90566230",
+        "full": "Northern Region"
     },
     {
         "name": "Western",
         "isoCode": "W",
         "countryCode": "UG",
         "latitude": "40.76672150",
-        "longitude": "-111.88772030"
+        "longitude": "-111.88772030",
+        "full": "Western Region"
     },
     {
         "name": "Andijan",
         "isoCode": "AN",
         "countryCode": "UZ",
         "latitude": "40.76859410",
-        "longitude": "72.23637900"
+        "longitude": "72.23637900",
+        "full": "Andijan Region"
     },
     {
         "name": "Bukhara",
         "isoCode": "BU",
         "countryCode": "UZ",
         "latitude": "40.25041620",
-        "longitude": "63.20321510"
+        "longitude": "63.20321510",
+        "full": "Bukhara Region"
     },
     {
         "name": "Fergana",
         "isoCode": "FA",
         "countryCode": "UZ",
         "latitude": "40.45680810",
-        "longitude": "71.28742090"
+        "longitude": "71.28742090",
+        "full": "Fergana Region"
     },
     {
         "name": "Jizzakh",
         "isoCode": "JI",
         "countryCode": "UZ",
         "latitude": "40.47064150",
-        "longitude": "67.57085360"
+        "longitude": "67.57085360",
+        "full": "Jizzakh Region"
     },
     {
         "name": "Namangan",
         "isoCode": "NG",
         "countryCode": "UZ",
         "latitude": "41.05100370",
-        "longitude": "71.09731700"
+        "longitude": "71.09731700",
+        "full": "Namangan Region"
     },
     {
         "name": "Navoiy",
         "isoCode": "NW",
         "countryCode": "UZ",
         "latitude": "42.69885750",
-        "longitude": "64.63376850"
+        "longitude": "64.63376850",
+        "full": "Navoiy Region"
     },
     {
         "name": "Qashqadaryo",
         "isoCode": "QA",
         "countryCode": "UZ",
         "latitude": "38.89862310",
-        "longitude": "66.04635340"
+        "longitude": "66.04635340",
+        "full": "Qashqadaryo Region"
     },
     {
         "name": "Samarqand",
         "isoCode": "SA",
         "countryCode": "UZ",
         "latitude": "39.62701200",
-        "longitude": "66.97497310"
+        "longitude": "66.97497310",
+        "full": "Samarqand Region"
     },
     {
         "name": "Sirdaryo",
         "isoCode": "SI",
         "countryCode": "UZ",
         "latitude": "40.38638080",
-        "longitude": "68.71549750"
+        "longitude": "68.71549750",
+        "full": "Sirdaryo Region"
     },
     {
         "name": "Surxondaryo",
         "isoCode": "SU",
         "countryCode": "UZ",
         "latitude": "37.94090050",
-        "longitude": "67.57085360"
+        "longitude": "67.57085360",
+        "full": "Surxondaryo Region"
     },
     {
         "name": "Tashkent",
         "isoCode": "TO",
         "countryCode": "UZ",
         "latitude": "41.22132340",
-        "longitude": "69.85974060"
+        "longitude": "69.85974060",
+        "full": "Tashkent Region"
     },
     {
         "name": "Xorazm",
         "isoCode": "XO",
         "countryCode": "UZ",
         "latitude": "41.35653360",
-        "longitude": "60.85666860"
+        "longitude": "60.85666860",
+        "full": "Xorazm Region"
     }
 ]
