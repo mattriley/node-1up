@@ -536,4 +536,43 @@ module.exports = ({ test, assert }) => $ => {
         assert.deepEqual(actual, expected);
     });
 
+    test('Kyoto', () => {
+        const location = { city: 'Kyoto' };
+
+        const expected = {
+            city: {
+                code: null,
+                name: 'Kyoto',
+                source: 'input'
+            },
+            complete: false,
+            country: {
+                code: 'JP',
+                name: 'Japan',
+                source: 'inferred'
+            },
+            csc: {
+                city: 'Kyoto',
+                country: 'Japan',
+                countryCode: 'JP',
+                state: null,
+                stateCode: null
+            },
+            state: {
+                code: null,
+                errors: [
+                    {
+                        code: 'missing',
+                        message: 'State could not be inferred from city'
+                    }
+                ],
+                name: null,
+                source: null
+            }
+        }
+
+        const actual = geo.resolveCity(location);
+        assert.deepEqual(actual, expected);
+    });
+
 };

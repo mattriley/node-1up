@@ -102,7 +102,7 @@ module.exports = ({ self, arr }) => csc => {
 
         const city = findCityMatch();
         if (city) {
-            const state = self.finder.findState(city.stateCode, city.countryCode);
+            const state = city.stateCode ? self.finder.findState(city.stateCode, city.countryCode) : null;
             if (state) {
                 result.state = state.name;
                 stateKey = state.isoCode;
@@ -122,6 +122,11 @@ module.exports = ({ self, arr }) => csc => {
             if (city) return city;
         }
 
+        if (cityKey && (!stateKey || !countryKey)) {
+            const match = findCityMatch(); // this handles filtering and ambiguity
+            if (match) return match;
+        }
+
         if (!cityKey && stateKey && countryKey) {
             const cities = self.finder.findCitiesOfState(stateKey, countryKey);
             const city = arr.only(cities);
@@ -136,6 +141,7 @@ module.exports = ({ self, arr }) => csc => {
         addError('city', ERROR_CODES.MISSING, 'City is required or must be inferred');
         return null;
     };
+
 
     const country = inferCountry();
     const state = inferState();
