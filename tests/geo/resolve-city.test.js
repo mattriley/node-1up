@@ -25,7 +25,8 @@ module.exports = ({ test, assert }) => $ => {
                     country: 'Australia',
                     countryCode: 'AU',
                     state: 'Victoria',
-                    stateCode: 'VIC'
+                    stateCode: 'VIC',
+                    timezone: 'Australia/Melbourne'
                 },
                 city: { name: 'Melbourne', code: null, source: 'input' },
                 state: { name: 'Victoria', code: 'VIC', source: 'inferred' },
@@ -48,7 +49,8 @@ module.exports = ({ test, assert }) => $ => {
                 country: 'Australia',
                 countryCode: 'AU',
                 state: 'Australian Capital Territory',
-                stateCode: 'ACT'
+                stateCode: 'ACT',
+                timezone: 'Australia/Sydney'
             },
             city: { name: 'Canberra', code: null, source: 'input' },
             state: {
@@ -74,7 +76,8 @@ module.exports = ({ test, assert }) => $ => {
                 country: 'Australia',
                 countryCode: 'AU',
                 state: 'Victoria',
-                stateCode: 'VIC'
+                stateCode: 'VIC',
+                timezone: 'Australia/Melbourne'
             },
             city: { name: 'Melbourne', code: null, source: 'input' },
             state: { name: 'Victoria', code: 'VIC', source: 'input' },
@@ -97,7 +100,8 @@ module.exports = ({ test, assert }) => $ => {
                 country: null,
                 countryCode: null,
                 state: null,
-                stateCode: null
+                stateCode: null,
+                timezone: null
             },
             city: {
                 name: 'Perth',
@@ -153,7 +157,8 @@ module.exports = ({ test, assert }) => $ => {
                 country: 'Australia',
                 countryCode: 'AU',
                 state: null,
-                stateCode: null
+                stateCode: null,
+                timezone: null
             },
             city: {
                 name: 'Perth',
@@ -199,7 +204,8 @@ module.exports = ({ test, assert }) => $ => {
                 country: 'Australia',
                 countryCode: 'AU',
                 state: 'Victoria',
-                stateCode: 'VIC'
+                stateCode: 'VIC',
+                timezone: 'Australia/Melbourne'
             },
             city: { name: 'Melbourne', code: null, source: 'input' },
             state: { name: 'Victoria', code: 'VIC', source: 'inferred' },
@@ -222,7 +228,8 @@ module.exports = ({ test, assert }) => $ => {
                 country: 'Australia',
                 countryCode: 'AU',
                 state: 'Australian Capital Territory',
-                stateCode: 'ACT'
+                stateCode: 'ACT',
+                timezone: null
             },
             city: {
                 name: null,
@@ -258,7 +265,8 @@ module.exports = ({ test, assert }) => $ => {
                 country: 'Australia',
                 countryCode: 'AU',
                 state: 'Victoria',
-                stateCode: 'VIC'
+                stateCode: 'VIC',
+                timezone: null
             },
             city: {
                 name: null,
@@ -290,7 +298,8 @@ module.exports = ({ test, assert }) => $ => {
                 country: 'Australia',
                 countryCode: 'AU',
                 state: null,
-                stateCode: null
+                stateCode: null,
+                timezone: null
             },
             city: {
                 name: null,
@@ -332,7 +341,8 @@ module.exports = ({ test, assert }) => $ => {
                 country: null,
                 countryCode: null,
                 state: null,
-                stateCode: null
+                stateCode: null,
+                timezone: null
             },
             city: {
                 name: 'Los Angeles',
@@ -388,7 +398,8 @@ module.exports = ({ test, assert }) => $ => {
                 country: 'United States',
                 countryCode: 'US',
                 state: 'California',
-                stateCode: 'CA'
+                stateCode: 'CA',
+                timezone: 'America/Los_Angeles'
             },
             city: { name: 'Los Angeles', code: null, source: 'input' },
             state: { name: 'California', code: 'CA', source: 'input' },
@@ -411,7 +422,8 @@ module.exports = ({ test, assert }) => $ => {
                 country: 'United States',
                 countryCode: 'US',
                 state: 'California',
-                stateCode: 'CA'
+                stateCode: 'CA',
+                timezone: 'America/Los_Angeles'
             },
             city: { name: 'Los Angeles', code: null, source: 'input' },
             state: { name: 'California', code: 'CA', source: 'input' },
@@ -433,7 +445,8 @@ module.exports = ({ test, assert }) => $ => {
                 country: 'China',
                 countryCode: 'CN',
                 state: 'Hong Kong SAR',
-                stateCode: 'HK'
+                stateCode: 'HK',
+                timezone: null
             },
             city: {
                 name: null,
@@ -465,7 +478,8 @@ module.exports = ({ test, assert }) => $ => {
                 country: 'United States',
                 countryCode: 'US',
                 state: null,
-                stateCode: null
+                stateCode: null,
+                timezone: null
             },
             city: {
                 name: 'Houston',
@@ -523,7 +537,8 @@ module.exports = ({ test, assert }) => $ => {
                 country: 'Malaysia',
                 countryCode: 'MY',
                 state: 'Melaka',
-                stateCode: '04'
+                stateCode: '04',
+                timezone: 'Asia/Kuala_Lumpur'
             },
             state: {
                 code: '04',
@@ -548,7 +563,8 @@ module.exports = ({ test, assert }) => $ => {
                 state: 'Kyoto',
                 stateCode: '26',
                 country: 'Japan',
-                countryCode: 'JP'
+                countryCode: 'JP',
+                timezone: 'Asia/Tokyo'
             },
             complete: true
         }

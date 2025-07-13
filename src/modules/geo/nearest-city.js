@@ -45,7 +45,7 @@ module.exports = ({ self, config }) => ({ latitude, longitude }) => {
         stateCode: stateData?.isoCode ?? null,
         country: countryData?.name ?? null,
         countryCode: countryData?.isoCode ?? null,
-        timezone: cityData?.timezone
+        timezone: cityData?.timezone ?? null
     };
 
     return {

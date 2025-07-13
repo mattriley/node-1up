@@ -165,7 +165,8 @@ module.exports = ({ self, arr }) => csc => {
             state: state?.name ?? original.state ?? null,
             stateCode: state?.isoCode ?? null,
             country: country?.name ?? original.country ?? null,
-            countryCode: country?.isoCode ?? null
+            countryCode: country?.isoCode ?? null,
+            timezone: city?.timezone ?? null
         },
         complete
     };
