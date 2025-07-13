@@ -10,6 +10,11 @@ const outputDir = sourceDir;
     states.filter(state => state.name === 'Malacca').forEach(state => {
         state.name = 'Melaka';
     });
+
+    states.filter(state => state.name === 'Bay of Plenty Region').forEach(state => {
+        state.name = 'Bay of Plenty';
+    });
+
     const outputFile = outputDir + '/states.json';
     fs.writeFileSync(outputFile, JSON.stringify(states, null, 4));
 }
