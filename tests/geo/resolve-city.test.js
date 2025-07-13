@@ -21,11 +21,17 @@ module.exports = ({ test, assert }) => $ => {
         {
             const expected = {
                 city: 'Melbourne',
+                complete: true,
                 country: 'Australia',
                 countryCode: 'AU',
                 inferred: [
                     'state'
                 ],
+                source: {
+                    city: 'input',
+                    country: 'input',
+                    state: 'inferred'
+                },
                 state: 'Victoria',
                 stateCode: 'VIC'
             }
@@ -40,12 +46,18 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Canberra',
+            complete: true,
             country: 'Australia',
             countryCode: 'AU',
             inferred: [
                 'country',
                 'state'
             ],
+            source: {
+                city: 'input',
+                country: 'inferred',
+                state: 'inferred'
+            },
             state: 'Australian Capital Territory',
             stateCode: 'ACT'
         }
@@ -59,11 +71,17 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Melbourne',
+            complete: true,
             country: 'Australia',
             countryCode: 'AU',
             inferred: [
                 'country'
             ],
+            source: {
+                city: 'input',
+                country: 'inferred',
+                state: 'input'
+            },
             state: 'Victoria',
             stateCode: 'VIC'
         }
@@ -78,9 +96,15 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Perth',
+            complete: false,
             country: undefined,
             countryCode: undefined,
+            errors: [
+                'Ambiguous city: Perth (5 matches)',
+                'Ambiguous city: Perth (5 matches)'
+            ],
             inferred: [],
+            source: {},
             state: undefined,
             stateCode: undefined
         }
@@ -94,9 +118,16 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Perth',
+            complete: false,
             country: 'Australia',
             countryCode: 'AU',
+            errors: [
+                'Ambiguous city: Perth (2 matches)'
+            ],
             inferred: [],
+            source: {
+                country: 'input'
+            },
             state: undefined,
             stateCode: undefined
         }
@@ -110,11 +141,17 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Melbourne',
+            complete: true,
             country: 'Australia',
             countryCode: 'AU',
             inferred: [
                 'state'
             ],
+            source: {
+                city: 'input',
+                country: 'input',
+                state: 'inferred'
+            },
             state: 'Victoria',
             stateCode: 'VIC'
         }
@@ -129,11 +166,16 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: undefined,
+            complete: false,
             country: 'Australia',
             countryCode: 'AU',
             inferred: [
                 'country'
             ],
+            source: {
+                country: 'inferred',
+                state: 'input'
+            },
             state: 'Australian Capital Territory',
             stateCode: 'ACT'
         }
@@ -147,9 +189,14 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: undefined,
+            complete: false,
             country: 'Australia',
             countryCode: 'AU',
             inferred: [],
+            source: {
+                country: 'input',
+                state: 'input'
+            },
             state: 'Victoria',
             stateCode: 'VIC'
         }
@@ -163,9 +210,13 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: undefined,
+            complete: false,
             country: 'Australia',
             countryCode: 'AU',
             inferred: [],
+            source: {
+                country: 'input'
+            },
             state: undefined,
             stateCode: undefined
         }
@@ -179,9 +230,15 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Los Angeles',
+            complete: false,
             country: undefined,
             countryCode: undefined,
+            errors: [
+                'Ambiguous city: Los Angeles (4 matches)',
+                'Ambiguous city: Los Angeles (4 matches)'
+            ],
             inferred: [],
+            source: {},
             state: undefined,
             stateCode: undefined
         }
@@ -195,11 +252,17 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Los Angeles',
+            complete: true,
             country: 'United States',
             countryCode: 'US',
             inferred: [
                 'country'
             ],
+            source: {
+                city: 'input',
+                country: 'inferred',
+                state: 'input'
+            },
             state: 'California',
             stateCode: 'CA'
         }
@@ -214,9 +277,15 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Los Angeles',
+            complete: true,
             country: 'United States',
             countryCode: 'US',
             inferred: [],
+            source: {
+                city: 'input',
+                country: 'input',
+                state: 'input'
+            },
             state: 'California',
             stateCode: 'CA'
         }
@@ -230,9 +299,14 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: undefined,
+            complete: false,
             country: 'China',
             countryCode: 'CN',
             inferred: [],
+            source: {
+                country: 'input',
+                state: 'input'
+            },
             state: 'Hong Kong SAR',
             stateCode: 'HK'
         }
@@ -246,9 +320,16 @@ module.exports = ({ test, assert }) => $ => {
 
         const expected = {
             city: 'Houston',
+            complete: false,
             country: 'United States',
             countryCode: 'US',
+            errors: [
+                'Ambiguous city: Houston (5 matches)'
+            ],
             inferred: [],
+            source: {
+                country: 'input'
+            },
             state: undefined,
             stateCode: undefined
         }

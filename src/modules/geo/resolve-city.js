@@ -10,93 +10,112 @@ module.exports = ({ self, arr }) => csc => {
     let { city: cityKey, state: stateKey, country: countryKey } = original;
     const result = { ...csc };
     const inferred = [];
+    const source = {};
+    const errors = [];
 
     const markInferred = field => {
-        if (!original[field]) inferred.push(field);
+        if (!original[field]) {
+            inferred.push(field);
+            source[field] = 'inferred';
+        } else {
+            source[field] = 'input';
+        }
     };
 
     const findCityMatch = () => {
-        return (
-            (cityKey && stateKey && countryKey && self.finder.findCity(cityKey, stateKey, countryKey)) ||
-            (cityKey && countryKey && arr.only(self.finder.findCities(cityKey).filter(c => c.countryCode === countryKey))) ||
-            (cityKey && stateKey && arr.only(
-                self.finder.findCities(cityKey).filter(city =>
-                    self.finder.findStates(stateKey).some(state => city.stateCode === state.isoCode)
-                )
-            )) || // 👈 missing case: match on city + state (no country)
-            (cityKey && arr.only(self.finder.findCities(cityKey))) ||
-            (stateKey && countryKey && arr.only(self.finder.findCitiesOfState(stateKey, countryKey))) ||
-            null
-        );
+        const all = self.finder.findCities(cityKey);
+
+        const byCountry = countryKey
+            ? all.filter(c => c.countryCode === countryKey)
+            : all;
+
+        const byState = stateKey
+            ? byCountry.filter(c => self.finder.findStates(stateKey).some(s => s.isoCode === c.stateCode))
+            : byCountry;
+
+        const city = arr.only(byState);
+        if (!city && byState.length > 1) {
+            errors.push(`Ambiguous city: ${cityKey} (${byState.length} matches)`);
+        }
+        return city;
     };
 
-
     const inferCountry = () => {
-        if (countryKey) return self.finder.findCountry(countryKey);
+        if (countryKey) {
+            const country = self.finder.findCountry(countryKey);
+            if (country) {
+                markInferred('country');
+                return country;
+            }
+        }
 
         if (stateKey) {
             const state = arr.only(self.finder.findStates(stateKey));
-            const country = state && self.finder.findCountry(state.countryCode);
-            if (country) {
-                result.country = country.name;
-                countryKey = country.isoCode;
-                markInferred('country');
-                return country;
-            }
-        }
-
-        const city = findCityMatch();
-        if (city) {
-            const country = self.finder.findCountry(city.countryCode);
-            if (country) {
-                result.country = country.name;
-                countryKey = country.isoCode;
-                markInferred('country');
-
-                // Also infer state if missing
-                if (!stateKey) {
-                    const state = self.finder.findState(city.stateCode, city.countryCode);
-                    if (state) {
-                        result.state = state.name;
-                        stateKey = state.isoCode;
-                        markInferred('state');
-                    }
+            if (state) {
+                const country = self.finder.findCountry(state.countryCode);
+                if (country) {
+                    result.country = country.name;
+                    countryKey = country.isoCode;
+                    markInferred('country');
+                    return country;
                 }
-
-                return country;
             }
         }
 
-        return { name: countryKey };
+        if (cityKey) {
+            const city = findCityMatch();
+            if (city) {
+                const country = self.finder.findCountry(city.countryCode);
+                if (country) {
+                    result.country = country.name;
+                    countryKey = country.isoCode;
+                    markInferred('country');
+                    return country;
+                }
+            }
+        }
+
+        return null;
     };
 
     const inferState = () => {
         if (stateKey && countryKey) {
-            return self.finder.findState(stateKey, countryKey);
-        }
-
-        const city = findCityMatch();
-        if (city) {
-            const state = self.finder.findState(city.stateCode, city.countryCode);
+            const state = self.finder.findState(stateKey, countryKey);
             if (state) {
-                result.state = state.name;
-                stateKey = state.isoCode;
-                countryKey = city.countryCode;
                 markInferred('state');
                 return state;
             }
         }
 
-        return { name: stateKey };
+        if (cityKey) {
+            const city = findCityMatch();
+            if (city) {
+                const state = self.finder.findState(city.stateCode, city.countryCode);
+                if (state) {
+                    result.state = state.name;
+                    stateKey = state.isoCode;
+                    countryKey = city.countryCode;
+                    markInferred('state');
+                    return state;
+                }
+            }
+        }
+
+        return null;
     };
 
     const inferCity = () => {
         if (cityKey && stateKey && countryKey) {
-            return self.finder.findCity(cityKey, stateKey, countryKey);
+            const city = self.finder.findCity(cityKey, stateKey, countryKey);
+            if (city) {
+                markInferred('city');
+                return city;
+            }
         }
 
         if (!cityKey && stateKey && countryKey) {
-            const city = arr.only(self.finder.findCitiesOfState(stateKey, countryKey));
+            const cities = self.finder.findCitiesOfState(stateKey, countryKey);
+            const city = arr.only(cities);
             if (city) {
                 result.city = city.name;
                 cityKey = city.name;
@@ -105,19 +124,29 @@ module.exports = ({ self, arr }) => csc => {
             }
         }
 
-        return { name: cityKey };
+        return null;
     };
 
     const country = inferCountry();
     const state = inferState();
     const city = inferCity();
 
+    const complete =
+        Boolean(city?.name) &&
+        Boolean(state?.name) &&
+        Boolean(state?.isoCode) &&
+        Boolean(country?.name) &&
+        Boolean(country?.isoCode);
+
     return {
-        city: city?.name,
-        state: state?.name,
+        city: city?.name ?? original.city,
+        state: state?.name ?? original.state,
         stateCode: state?.isoCode,
-        country: country?.name,
+        country: country?.name ?? original.country,
         countryCode: country?.isoCode,
-        inferred
+        inferred,
+        source,
+        complete,
+        ...(errors.length > 0 ? { errors } : {})
     };
 };
