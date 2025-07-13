@@ -35133,7 +35133,7 @@
         "longitude": "23.54838190"
     },
     {
-        "name": "Hokkaidō",
+        "name": "Hokkaido",
         "isoCode": "01",
         "countryCode": "JP",
         "latitude": "43.22032660",
@@ -35301,7 +35301,7 @@
         "longitude": "136.05632120"
     },
     {
-        "name": "Kyōto",
+        "name": "Kyoto",
         "isoCode": "26",
         "countryCode": "JP",
         "latitude": "35.15666090",
@@ -35315,7 +35315,7 @@
         "longitude": "135.56293940"
     },
     {
-        "name": "Hyōgo",
+        "name": "Hyogo",
         "isoCode": "28",
         "countryCode": "JP",
         "latitude": "34.85795180",
@@ -35392,7 +35392,7 @@
         "longitude": "132.78575830"
     },
     {
-        "name": "Kōchi",
+        "name": "Kochi",
         "isoCode": "39",
         "countryCode": "JP",
         "latitude": "33.28791610",

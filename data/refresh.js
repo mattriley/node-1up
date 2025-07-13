@@ -18,7 +18,7 @@ const outputDir = sourceDir;
     states.filter(state => state.name.endsWith('Prefecture')).forEach(state => {
         states.push({
             ...state,
-            name: state.name.replace('Prefecture', '').replace('Ō', 'O').trim()
+            name: state.name.replace('Prefecture', '').replace('Ō', 'O').replace('ō', 'o').trim()
         })
     });
 
