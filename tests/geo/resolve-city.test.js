@@ -20,23 +20,14 @@ module.exports = ({ test, assert }) => $ => {
 
         {
             const expected = {
-                city: 'Melbourne',
-                complete: true,
-                country: 'Australia',
-                countryCode: 'AU',
-                inferred: [
-                    'state'
-                ],
-                source: {
-                    city: 'input',
-                    country: 'input',
-                    state: 'inferred'
-                },
-                state: 'Victoria',
-                stateCode: 'VIC'
+                city: { name: 'Melbourne', code: null, source: 'input' },
+                state: { name: 'Victoria', code: 'VIC', source: 'inferred' },
+                country: { name: 'Australia', code: 'AU', source: 'input' },
+                complete: true
             }
 
             const actual = $.geo.resolveCity(input);
+
             assert.deepEqual(actual, expected);
         }
     });
@@ -45,24 +36,18 @@ module.exports = ({ test, assert }) => $ => {
         const input = { city: 'Canberra' };
 
         const expected = {
-            city: 'Canberra',
-            complete: true,
-            country: 'Australia',
-            countryCode: 'AU',
-            inferred: [
-                'country',
-                'state'
-            ],
-            source: {
-                city: 'input',
-                country: 'inferred',
-                state: 'inferred'
+            city: { name: 'Canberra', code: null, source: 'input' },
+            state: {
+                name: 'Australian Capital Territory',
+                code: 'ACT',
+                source: 'inferred'
             },
-            state: 'Australian Capital Territory',
-            stateCode: 'ACT'
+            country: { name: 'Australia', code: 'AU', source: 'inferred' },
+            complete: true
         }
 
         const actual = geo.resolveCity(input);
+
         assert.deepEqual(actual, expected);
     });
 
@@ -70,23 +55,14 @@ module.exports = ({ test, assert }) => $ => {
         const input = { city: 'Melbourne', state: 'VIC' };
 
         const expected = {
-            city: 'Melbourne',
-            complete: true,
-            country: 'Australia',
-            countryCode: 'AU',
-            inferred: [
-                'country'
-            ],
-            source: {
-                city: 'input',
-                country: 'inferred',
-                state: 'input'
-            },
-            state: 'Victoria',
-            stateCode: 'VIC'
+            city: { name: 'Melbourne', code: null, source: 'input' },
+            state: { name: 'Victoria', code: 'VIC', source: 'input' },
+            country: { name: 'Australia', code: 'AU', source: 'inferred' },
+            complete: true
         }
 
         const actual = geo.resolveCity(input);
+
         assert.deepEqual(actual, expected);
     });
 
@@ -95,37 +71,48 @@ module.exports = ({ test, assert }) => $ => {
         const input = { city: 'Perth' };
 
         const expected = {
-            city: 'Perth',
-            complete: false,
-            country: undefined,
-            countryCode: undefined,
-            errors: {
-                city: [
+            city: {
+                name: 'Perth',
+                code: null,
+                source: 'input',
+                errors: [
                     {
                         code: 'ambiguous',
                         message: 'Ambiguous: Perth (5 matches across all countries)'
-                    }
-                ],
-                country: [
+                    },
                     {
                         code: 'missing',
-                        message: 'No country could be inferred from input'
+                        message: 'City is required or must be inferred'
                     }
-                ],
-                state: [
+                ]
+            },
+            state: {
+                name: null,
+                code: null,
+                source: null,
+                errors: [
                     {
                         code: 'missing',
                         message: 'State could not be inferred from city'
                     }
                 ]
             },
-            inferred: [],
-            source: {},
-            state: undefined,
-            stateCode: undefined
+            country: {
+                name: null,
+                code: null,
+                source: null,
+                errors: [
+                    {
+                        code: 'missing',
+                        message: 'No country could be inferred from input'
+                    }
+                ]
+            },
+            complete: false
         }
 
         const actual = geo.resolveCity(input);
+
         assert.deepEqual(actual, expected);
     });
 
@@ -133,33 +120,38 @@ module.exports = ({ test, assert }) => $ => {
         const input = { city: 'Perth', country: 'AU' };
 
         const expected = {
-            city: 'Perth',
-            complete: false,
-            country: 'Australia',
-            countryCode: 'AU',
-            errors: {
-                city: [
+            city: {
+                name: 'Perth',
+                code: null,
+                source: 'input',
+                errors: [
                     {
                         code: 'ambiguous',
                         message: 'Ambiguous: Perth (2 matches in AU)'
+                    },
+                    {
+                        code: 'missing',
+                        message: 'City is required or must be inferred'
                     }
-                ],
-                state: [
+                ]
+            },
+            state: {
+                name: null,
+                code: null,
+                source: null,
+                errors: [
                     {
                         code: 'missing',
                         message: 'State could not be inferred from city'
                     }
                 ]
             },
-            inferred: [],
-            source: {
-                country: 'input'
-            },
-            state: undefined,
-            stateCode: undefined
+            country: { name: 'Australia', code: 'AU', source: 'input' },
+            complete: false
         }
 
         const actual = geo.resolveCity(input);
+
         assert.deepEqual(actual, expected);
     });
 
@@ -167,23 +159,14 @@ module.exports = ({ test, assert }) => $ => {
         const input = { city: 'Melbourne', country: 'AU' };
 
         const expected = {
-            city: 'Melbourne',
-            complete: true,
-            country: 'Australia',
-            countryCode: 'AU',
-            inferred: [
-                'state'
-            ],
-            source: {
-                city: 'input',
-                country: 'input',
-                state: 'inferred'
-            },
-            state: 'Victoria',
-            stateCode: 'VIC'
+            city: { name: 'Melbourne', code: null, source: 'input' },
+            state: { name: 'Victoria', code: 'VIC', source: 'inferred' },
+            country: { name: 'Australia', code: 'AU', source: 'input' },
+            complete: true
         }
 
         const actual = geo.resolveCity(input);
+
         assert.deepEqual(actual, expected);
     });
 
@@ -192,30 +175,28 @@ module.exports = ({ test, assert }) => $ => {
         const input = { state: 'ACT' };
 
         const expected = {
-            city: undefined,
-            complete: false,
-            country: 'Australia',
-            countryCode: 'AU',
-            inferred: [
-                'country'
-            ],
-            errors: {
-                city: [
+            city: {
+                name: null,
+                code: null,
+                source: null,
+                errors: [
                     {
                         code: 'missing',
                         message: 'City is required or must be inferred'
                     }
                 ]
             },
-            source: {
-                country: 'inferred',
-                state: 'input'
+            state: {
+                name: 'Australian Capital Territory',
+                code: 'ACT',
+                source: 'input'
             },
-            state: 'Australian Capital Territory',
-            stateCode: 'ACT'
+            country: { name: 'Australia', code: 'AU', source: 'inferred' },
+            complete: false
         }
 
         const actual = geo.resolveCity(input);
+
         assert.deepEqual(actual, expected);
     });
 
@@ -223,28 +204,24 @@ module.exports = ({ test, assert }) => $ => {
         const input = { state: 'Victoria', country: 'AU' };
 
         const expected = {
-            city: undefined,
-            complete: false,
-            country: 'Australia',
-            countryCode: 'AU',
-            inferred: [],
-            errors: {
-                city: [
+            city: {
+                name: null,
+                code: null,
+                source: null,
+                errors: [
                     {
                         code: 'missing',
                         message: 'City is required or must be inferred'
                     }
                 ]
             },
-            source: {
-                country: 'input',
-                state: 'input'
-            },
-            state: 'Victoria',
-            stateCode: 'VIC'
+            state: { name: 'Victoria', code: 'VIC', source: 'input' },
+            country: { name: 'Australia', code: 'AU', source: 'input' },
+            complete: false
         }
 
         const actual = geo.resolveCity(input);
+
         assert.deepEqual(actual, expected);
     });
 
@@ -252,33 +229,34 @@ module.exports = ({ test, assert }) => $ => {
         const input = { country: 'AU' };
 
         const expected = {
-            city: undefined,
-            complete: false,
-            country: 'Australia',
-            countryCode: 'AU',
-            inferred: [],
-            errors: {
-                city: [
+            city: {
+                name: null,
+                code: null,
+                source: null,
+                errors: [
                     {
                         code: 'missing',
                         message: 'City is required or must be inferred'
                     }
-                ],
-                state: [
+                ]
+            },
+            state: {
+                name: null,
+                code: null,
+                source: null,
+                errors: [
                     {
                         code: 'missing',
                         message: 'State could not be inferred (no city provided)'
                     }
                 ]
             },
-            source: {
-                country: 'input'
-            },
-            state: undefined,
-            stateCode: undefined
+            country: { name: 'Australia', code: 'AU', source: 'input' },
+            complete: false
         }
 
         const actual = geo.resolveCity(input);
+
         assert.deepEqual(actual, expected);
     });
 
@@ -286,37 +264,48 @@ module.exports = ({ test, assert }) => $ => {
         const location = { city: 'Los Angeles' };
 
         const expected = {
-            city: 'Los Angeles',
-            complete: false,
-            country: undefined,
-            countryCode: undefined,
-            errors: {
-                city: [
+            city: {
+                name: 'Los Angeles',
+                code: null,
+                source: 'input',
+                errors: [
                     {
                         code: 'ambiguous',
                         message: 'Ambiguous: Los Angeles (4 matches across all countries)'
-                    }
-                ],
-                country: [
+                    },
                     {
                         code: 'missing',
-                        message: 'No country could be inferred from input'
+                        message: 'City is required or must be inferred'
                     }
-                ],
-                state: [
+                ]
+            },
+            state: {
+                name: null,
+                code: null,
+                source: null,
+                errors: [
                     {
                         code: 'missing',
                         message: 'State could not be inferred from city'
                     }
                 ]
             },
-            inferred: [],
-            source: {},
-            state: undefined,
-            stateCode: undefined
+            country: {
+                name: null,
+                code: null,
+                source: null,
+                errors: [
+                    {
+                        code: 'missing',
+                        message: 'No country could be inferred from input'
+                    }
+                ]
+            },
+            complete: false
         }
 
         const actual = geo.resolveCity(location);
+
         assert.deepEqual(actual, expected);
     });
 
@@ -324,23 +313,14 @@ module.exports = ({ test, assert }) => $ => {
         const location = { city: 'Los Angeles', state: 'CA' };
 
         const expected = {
-            city: 'Los Angeles',
-            complete: true,
-            country: 'United States',
-            countryCode: 'US',
-            inferred: [
-                'country'
-            ],
-            source: {
-                city: 'input',
-                country: 'inferred',
-                state: 'input'
-            },
-            state: 'California',
-            stateCode: 'CA'
+            city: { name: 'Los Angeles', code: null, source: 'input' },
+            state: { name: 'California', code: 'CA', source: 'input' },
+            country: { name: 'United States', code: 'US', source: 'inferred' },
+            complete: true
         }
 
         const actual = geo.resolveCity(location);
+
         assert.deepEqual(actual, expected);
     });
 
@@ -349,21 +329,14 @@ module.exports = ({ test, assert }) => $ => {
         const location = { city: 'Los Angeles', country: 'US', state: 'CA' };
 
         const expected = {
-            city: 'Los Angeles',
-            complete: true,
-            country: 'United States',
-            countryCode: 'US',
-            inferred: [],
-            source: {
-                city: 'input',
-                country: 'input',
-                state: 'input'
-            },
-            state: 'California',
-            stateCode: 'CA'
+            city: { name: 'Los Angeles', code: null, source: 'input' },
+            state: { name: 'California', code: 'CA', source: 'input' },
+            country: { name: 'United States', code: 'US', source: 'input' },
+            complete: true
         }
 
         const actual = geo.resolveCity(location);
+
         assert.deepEqual(actual, expected);
     });
 
@@ -371,28 +344,24 @@ module.exports = ({ test, assert }) => $ => {
         const location = { country: 'CN', state: 'HK' };
 
         const expected = {
-            city: undefined,
-            complete: false,
-            country: 'China',
-            countryCode: 'CN',
-            inferred: [],
-            errors: {
-                city: [
+            city: {
+                name: null,
+                code: null,
+                source: null,
+                errors: [
                     {
                         code: 'missing',
                         message: 'City is required or must be inferred'
                     }
                 ]
             },
-            source: {
-                country: 'input',
-                state: 'input'
-            },
-            state: 'Hong Kong SAR',
-            stateCode: 'HK'
+            state: { name: 'Hong Kong SAR', code: 'HK', source: 'input' },
+            country: { name: 'China', code: 'CN', source: 'input' },
+            complete: false
         }
 
         const actual = geo.resolveCity(location);
+
         assert.deepEqual(actual, expected);
     });
 
@@ -400,30 +369,34 @@ module.exports = ({ test, assert }) => $ => {
         const location = { country: 'US', city: 'Houston' };
 
         const expected = {
-            city: 'Houston',
-            complete: false,
-            country: 'United States',
-            countryCode: 'US',
-            errors: {
-                city: [
+            city: {
+                name: 'Houston',
+                code: null,
+                source: 'input',
+                errors: [
                     {
                         code: 'ambiguous',
                         message: 'Ambiguous: Houston (5 matches in US)'
+                    },
+                    {
+                        code: 'missing',
+                        message: 'City is required or must be inferred'
                     }
-                ],
-                state: [
+                ]
+            },
+            state: {
+                name: null,
+                code: null,
+                source: null,
+                errors: [
                     {
                         code: 'missing',
                         message: 'State could not be inferred from city'
                     }
                 ]
             },
-            inferred: [],
-            source: {
-                country: 'input'
-            },
-            state: undefined,
-            stateCode: undefined
+            country: { name: 'United States', code: 'US', source: 'input' },
+            complete: false
         }
 
         const actual = geo.resolveCity(location);
