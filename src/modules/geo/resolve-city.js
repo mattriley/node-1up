@@ -35,8 +35,15 @@ module.exports = ({ self, arr }) => csc => {
 
         const city = arr.only(byState);
         if (!city && byState.length > 1) {
-            errors.push(`Ambiguous city: ${cityKey} (${byState.length} matches)`);
+            const context = countryKey
+                ? `in ${countryKey}`
+                : stateKey
+                    ? `matching state ${stateKey}`
+                    : 'across all countries';
+
+            errors.push(`Ambiguous city: ${cityKey} (${byState.length} matches ${context})`);
         }
+
         return city;
     };
 

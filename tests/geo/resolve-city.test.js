@@ -100,8 +100,8 @@ module.exports = ({ test, assert }) => $ => {
             country: undefined,
             countryCode: undefined,
             errors: [
-                'Ambiguous city: Perth (5 matches)',
-                'Ambiguous city: Perth (5 matches)'
+                'Ambiguous city: Perth (5 matches across all countries)',
+                'Ambiguous city: Perth (5 matches across all countries)'
             ],
             inferred: [],
             source: {},
@@ -122,7 +122,7 @@ module.exports = ({ test, assert }) => $ => {
             country: 'Australia',
             countryCode: 'AU',
             errors: [
-                'Ambiguous city: Perth (2 matches)'
+                'Ambiguous city: Perth (2 matches in AU)'
             ],
             inferred: [],
             source: {
@@ -234,8 +234,8 @@ module.exports = ({ test, assert }) => $ => {
             country: undefined,
             countryCode: undefined,
             errors: [
-                'Ambiguous city: Los Angeles (4 matches)',
-                'Ambiguous city: Los Angeles (4 matches)'
+                'Ambiguous city: Los Angeles (4 matches across all countries)',
+                'Ambiguous city: Los Angeles (4 matches across all countries)'
             ],
             inferred: [],
             source: {},
@@ -324,7 +324,7 @@ module.exports = ({ test, assert }) => $ => {
             country: 'United States',
             countryCode: 'US',
             errors: [
-                'Ambiguous city: Houston (5 matches)'
+                'Ambiguous city: Houston (5 matches in US)'
             ],
             inferred: [],
             source: {
