@@ -501,4 +501,15 @@ module.exports = ({ test, assert }) => $ => {
         assert.deepEqual(actual, expected);
     });
 
+
+
+    test('Malacca', { only: true }, () => {
+        const location = { city: 'Malacca' };
+
+        const expected = {};
+
+        const actual = geo.resolveCity(location);
+        assert.deepEqual(actual, expected);
+    });
+
 };

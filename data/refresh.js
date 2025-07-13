@@ -1,10 +1,20 @@
+const fs = require('fs');
 const { geo } = require('..');
 
-const states = require('./source/states.json');
+const states = require('./source/statesOrig.json');
+
+const sourceDir = __dirname + '/source';
+const outputDir = sourceDir;
+
+{
+    states.filter(state => state.name === 'Malacca').forEach(state => {
+        state.name = 'Melaka';
+    });
+    const outputFile = outputDir + '/states.json';
+    fs.writeFileSync(outputFile, JSON.stringify(states, null, 4));
+}
 
 const refresh = async () => {
-    const sourceDir = __dirname + '/source';
-    const outputDir = sourceDir;
 
     await geo.geonames.admin1CodesASCII.download({ sourceDir, outputDir });
     let admin1Codes = await geo.geonames.admin1CodesASCII.toJson({ sourceDir, outputDir });
@@ -12,7 +22,13 @@ const refresh = async () => {
     await geo.geonames.cities1000.download({ sourceDir, outputDir });
     let cities = await geo.geonames.cities1000.toJson({ sourceDir, outputDir });
 
+    cities.filter(city => ['HK', 'MO'].includes(city.countryCode)).forEach(city => {
+        city.stateCode = city.countryCode;
+        city.countryCode = 'CN';
+    });
+
     cities = geo.assignStateToCities({ cities, states, admin1Codes });
+    fs.writeFileSync(outputDir + '/cities.json', JSON.stringify(cities, null, 4));
 
     await geo.geonames.countryInfo.download({ sourceDir, outputDir });
     await geo.geonames.countryInfo.toJson({ sourceDir, outputFile: outputDir + '/countries.json' });
