@@ -4,5 +4,6 @@ module.exports = {
     geonames: require('./geonames'),
     haversineDistanceKm: require('./haversine-distance-km'),
     nearestCity: require('./nearest-city'),
-    resolveCity: require('./resolve-city')
+    resolveCity: require('./resolve-city'),
+    validateGpsTimestamp: require('./validate-gps-timestamp')
 };
