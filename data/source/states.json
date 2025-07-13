@@ -23786,7 +23786,7 @@
         "longitude": "174.77333250"
     },
     {
-        "name": "Bay of Plenty",
+        "name": "Bay of Plenty Region",
         "isoCode": "BOP",
         "countryCode": "NZ",
         "latitude": "-37.42339170",
@@ -35460,5 +35460,1678 @@
         "countryCode": "LA",
         "latitude": "18.11054100",
         "longitude": "102.52980280"
+    },
+    {
+        "name": "Aragatsotn",
+        "isoCode": "AG",
+        "countryCode": "AM",
+        "latitude": "40.33473010",
+        "longitude": "44.37482960"
+    },
+    {
+        "name": "Armavir",
+        "isoCode": "AV",
+        "countryCode": "AM",
+        "latitude": "40.15546310",
+        "longitude": "44.03724460"
+    },
+    {
+        "name": "Kotayk",
+        "isoCode": "KT",
+        "countryCode": "AM",
+        "latitude": "40.54102140",
+        "longitude": "44.76901480"
+    },
+    {
+        "name": "Lori",
+        "isoCode": "LO",
+        "countryCode": "AM",
+        "latitude": "40.96984520",
+        "longitude": "44.49001380"
+    },
+    {
+        "name": "Shirak",
+        "isoCode": "SH",
+        "countryCode": "AM",
+        "latitude": "40.96308140",
+        "longitude": "43.81024610"
+    },
+    {
+        "name": "Tavush",
+        "isoCode": "TV",
+        "countryCode": "AM",
+        "latitude": "40.88662960",
+        "longitude": "45.33934900"
+    },
+    {
+        "name": "Vayots Dzor",
+        "isoCode": "VD",
+        "countryCode": "AM",
+        "latitude": "39.76419960",
+        "longitude": "45.33375280"
+    },
+    {
+        "name": "Brussels-Capital",
+        "isoCode": "BRU",
+        "countryCode": "BE",
+        "latitude": "50.85034630",
+        "longitude": "4.35172110"
+    },
+    {
+        "name": "Boucle du Mouhoun",
+        "isoCode": "01",
+        "countryCode": "BF",
+        "latitude": "12.41660000",
+        "longitude": "-3.41955270"
+    },
+    {
+        "name": "Cascades",
+        "isoCode": "02",
+        "countryCode": "BF",
+        "latitude": "10.40729920",
+        "longitude": "-4.56244260"
+    },
+    {
+        "name": "Centre-Est",
+        "isoCode": "04",
+        "countryCode": "BF",
+        "latitude": "11.52476740",
+        "longitude": "-0.14949880"
+    },
+    {
+        "name": "Centre-Nord",
+        "isoCode": "05",
+        "countryCode": "BF",
+        "latitude": "13.17244640",
+        "longitude": "-0.90566230"
+    },
+    {
+        "name": "Centre-Ouest",
+        "isoCode": "06",
+        "countryCode": "BF",
+        "latitude": "11.87984660",
+        "longitude": "-2.30244600"
+    },
+    {
+        "name": "Centre-Sud",
+        "isoCode": "07",
+        "countryCode": "BF",
+        "latitude": "11.52289110",
+        "longitude": "-1.05861350"
+    },
+    {
+        "name": "Est",
+        "isoCode": "08",
+        "countryCode": "BF",
+        "latitude": "12.43655260",
+        "longitude": "0.90566230"
+    },
+    {
+        "name": "Hauts-Bassins",
+        "isoCode": "09",
+        "countryCode": "BF",
+        "latitude": "11.49420030",
+        "longitude": "-4.23333550"
+    },
+    {
+        "name": "Plateau-Central",
+        "isoCode": "11",
+        "countryCode": "BF",
+        "latitude": "12.25376480",
+        "longitude": "-0.75328090"
+    },
+    {
+        "name": "Sahel",
+        "isoCode": "12",
+        "countryCode": "BF",
+        "latitude": "14.10008650",
+        "longitude": "-0.14949880"
+    },
+    {
+        "name": "Sud-Ouest",
+        "isoCode": "13",
+        "countryCode": "BF",
+        "latitude": "10.42314930",
+        "longitude": "-3.25836260"
+    },
+    {
+        "name": "Brest",
+        "isoCode": "BR",
+        "countryCode": "BY",
+        "latitude": "52.52966410",
+        "longitude": "25.46064800"
+    },
+    {
+        "name": "Gomel",
+        "isoCode": "HO",
+        "countryCode": "BY",
+        "latitude": "52.16487540",
+        "longitude": "29.13332510"
+    },
+    {
+        "name": "Grodno",
+        "isoCode": "HR",
+        "countryCode": "BY",
+        "latitude": "53.65999450",
+        "longitude": "25.34485710"
+    },
+    {
+        "name": "Mogilev",
+        "isoCode": "MA",
+        "countryCode": "BY",
+        "latitude": "53.51017910",
+        "longitude": "30.40064440"
+    },
+    {
+        "name": "Minsk",
+        "isoCode": "MI",
+        "countryCode": "BY",
+        "latitude": "54.10678890",
+        "longitude": "27.41292450"
+    },
+    {
+        "name": "Vitebsk",
+        "isoCode": "VI",
+        "countryCode": "BY",
+        "latitude": "55.29598330",
+        "longitude": "28.75836270"
+    },
+    {
+        "name": "Savanes",
+        "isoCode": "03",
+        "countryCode": "CI",
+        "latitude": null,
+        "longitude": null
+    },
+    {
+        "name": "Vallée du Bandama",
+        "isoCode": "04",
+        "countryCode": "CI",
+        "latitude": "8.27897800",
+        "longitude": "-4.89356270"
+    },
+    {
+        "name": "Lacs",
+        "isoCode": "07",
+        "countryCode": "CI",
+        "latitude": "47.73958660",
+        "longitude": "-70.41866520"
+    },
+    {
+        "name": "Bas-Sassandra",
+        "isoCode": "09",
+        "countryCode": "CI",
+        "latitude": "5.35679160",
+        "longitude": "-6.74939930"
+    },
+    {
+        "name": "Denguélé",
+        "isoCode": "10",
+        "countryCode": "CI",
+        "latitude": "9.46623720",
+        "longitude": "-7.43813550"
+    },
+    {
+        "name": "Marahoué",
+        "isoCode": "12",
+        "countryCode": "CI",
+        "latitude": "6.88462070",
+        "longitude": "-5.89871390"
+    },
+    {
+        "name": "Bafing",
+        "isoCode": "17",
+        "countryCode": "CI",
+        "latitude": "8.32520470",
+        "longitude": "-7.52472430"
+    },
+    {
+        "name": "Zanzan",
+        "isoCode": "ZZ",
+        "countryCode": "CI",
+        "latitude": "8.82079040",
+        "longitude": "-3.41955270"
+    },
+    {
+        "name": "Arta",
+        "isoCode": "AR",
+        "countryCode": "DJ",
+        "latitude": "11.52555280",
+        "longitude": "42.84794740"
+    },
+    {
+        "name": "Ali Sabieh",
+        "isoCode": "AS",
+        "countryCode": "DJ",
+        "latitude": "11.19289730",
+        "longitude": "42.94169800"
+    },
+    {
+        "name": "Dikhil",
+        "isoCode": "DI",
+        "countryCode": "DJ",
+        "latitude": "11.10543360",
+        "longitude": "42.37047440"
+    },
+    {
+        "name": "Obock",
+        "isoCode": "OB",
+        "countryCode": "DJ",
+        "latitude": "12.38956910",
+        "longitude": "43.01948970"
+    },
+    {
+        "name": "Tadjourah",
+        "isoCode": "TA",
+        "countryCode": "DJ",
+        "latitude": "11.93388850",
+        "longitude": "42.39383750"
+    },
+    {
+        "name": "North Denmark",
+        "isoCode": "81",
+        "countryCode": "DK",
+        "latitude": "56.83074160",
+        "longitude": "9.49305270"
+    },
+    {
+        "name": "Central Denmark",
+        "isoCode": "82",
+        "countryCode": "DK",
+        "latitude": "56.30213900",
+        "longitude": "9.30277700"
+    },
+    {
+        "name": "Anseba",
+        "isoCode": "AN",
+        "countryCode": "ER",
+        "latitude": "16.47455310",
+        "longitude": "37.80876930"
+    },
+    {
+        "name": "Southern Red Sea",
+        "isoCode": "DK",
+        "countryCode": "ER",
+        "latitude": "13.51371030",
+        "longitude": "41.76064720"
+    },
+    {
+        "name": "Debub",
+        "isoCode": "DU",
+        "countryCode": "ER",
+        "latitude": "14.94786920",
+        "longitude": "39.15436770"
+    },
+    {
+        "name": "Gash-Barka",
+        "isoCode": "GB",
+        "countryCode": "ER",
+        "latitude": "15.40688250",
+        "longitude": "37.63866220"
+    },
+    {
+        "name": "Maekel",
+        "isoCode": "MA",
+        "countryCode": "ER",
+        "latitude": "15.35514090",
+        "longitude": "38.86236830"
+    },
+    {
+        "name": "Northern Red Sea",
+        "isoCode": "SK",
+        "countryCode": "ER",
+        "latitude": "16.25839970",
+        "longitude": "38.82054540"
+    },
+    {
+        "name": "Afar",
+        "isoCode": "AF",
+        "countryCode": "ET",
+        "latitude": "11.75593880",
+        "longitude": "40.95868800"
+    },
+    {
+        "name": "Amhara",
+        "isoCode": "AM",
+        "countryCode": "ET",
+        "latitude": "11.34942470",
+        "longitude": "37.97845850"
+    },
+    {
+        "name": "Benishangul-Gumuz",
+        "isoCode": "BE",
+        "countryCode": "ET",
+        "latitude": "10.78028890",
+        "longitude": "35.56578620"
+    },
+    {
+        "name": "Gambela",
+        "isoCode": "GA",
+        "countryCode": "ET",
+        "latitude": "7.92196870",
+        "longitude": "34.15319470"
+    },
+    {
+        "name": "Harari",
+        "isoCode": "HA",
+        "countryCode": "ET",
+        "latitude": "9.31486600",
+        "longitude": "42.19677160"
+    },
+    {
+        "name": "Oromia",
+        "isoCode": "OR",
+        "countryCode": "ET",
+        "latitude": "7.54603770",
+        "longitude": "40.63468510"
+    },
+    {
+        "name": "Southern Nations, Nationalities, and Peoples'",
+        "isoCode": "SN",
+        "countryCode": "ET",
+        "latitude": "6.51569110",
+        "longitude": "36.95410700"
+    },
+    {
+        "name": "Somali",
+        "isoCode": "SO",
+        "countryCode": "ET",
+        "latitude": "6.66122930",
+        "longitude": "43.79084530"
+    },
+    {
+        "name": "Tigray",
+        "isoCode": "TI",
+        "countryCode": "ET",
+        "latitude": "14.03233360",
+        "longitude": "38.31657250"
+    },
+    {
+        "name": "Boké",
+        "isoCode": "B",
+        "countryCode": "GN",
+        "latitude": "11.18646720",
+        "longitude": "-14.10013260"
+    },
+    {
+        "name": "Kindia",
+        "isoCode": "D",
+        "countryCode": "GN",
+        "latitude": "10.17816940",
+        "longitude": "-12.98961500"
+    },
+    {
+        "name": "Kankan",
+        "isoCode": "K",
+        "countryCode": "GN",
+        "latitude": "10.12092300",
+        "longitude": "-9.54509740"
+    },
+    {
+        "name": "Labé",
+        "isoCode": "L",
+        "countryCode": "GN",
+        "latitude": "11.32320420",
+        "longitude": "-12.28913140"
+    },
+    {
+        "name": "Mamou",
+        "isoCode": "M",
+        "countryCode": "GN",
+        "latitude": "10.57360240",
+        "longitude": "-11.88917210"
+    },
+    {
+        "name": "Nzérékoré",
+        "isoCode": "N",
+        "countryCode": "GN",
+        "latitude": "8.03858700",
+        "longitude": "-8.83627550"
+    },
+    {
+        "name": "Insular",
+        "isoCode": "I",
+        "countryCode": "GQ",
+        "latitude": "37.09024000",
+        "longitude": "-95.71289100"
+    },
+    {
+        "name": "West Macedonia",
+        "isoCode": "C",
+        "countryCode": "GR",
+        "latitude": "40.30040580",
+        "longitude": "21.79035590"
+    },
+    {
+        "name": "Epirus",
+        "isoCode": "D",
+        "countryCode": "GR",
+        "latitude": "39.57064130",
+        "longitude": "20.76428430"
+    },
+    {
+        "name": "Ionian Islands",
+        "isoCode": "F",
+        "countryCode": "GR",
+        "latitude": "37.96948980",
+        "longitude": "21.38023720"
+    },
+    {
+        "name": "West Greece",
+        "isoCode": "G",
+        "countryCode": "GR",
+        "latitude": "38.51154960",
+        "longitude": "21.57067860"
+    },
+    {
+        "name": "Central Greece",
+        "isoCode": "H",
+        "countryCode": "GR",
+        "latitude": "38.60439840",
+        "longitude": "22.71521310"
+    },
+    {
+        "name": "Attica",
+        "isoCode": "I",
+        "countryCode": "GR",
+        "latitude": "38.04575680",
+        "longitude": "23.85847370"
+    },
+    {
+        "name": "Peloponnese",
+        "isoCode": "J",
+        "countryCode": "GR",
+        "latitude": "37.50794720",
+        "longitude": "22.37349000"
+    },
+    {
+        "name": "Crete",
+        "isoCode": "M",
+        "countryCode": "GR",
+        "latitude": "35.24011700",
+        "longitude": "24.80926910"
+    },
+    {
+        "name": "Bolama",
+        "isoCode": "BL",
+        "countryCode": "GW",
+        "latitude": "11.14805910",
+        "longitude": "-16.13457050"
+    },
+    {
+        "name": "Biombo",
+        "isoCode": "BM",
+        "countryCode": "GW",
+        "latitude": "11.85290610",
+        "longitude": "-15.73511710"
+    },
+    {
+        "name": "Cacheu",
+        "isoCode": "CA",
+        "countryCode": "GW",
+        "latitude": "12.05514160",
+        "longitude": "-16.06401790"
+    },
+    {
+        "name": "Gabú",
+        "isoCode": "GA",
+        "countryCode": "GW",
+        "latitude": "11.89624880",
+        "longitude": "-14.10013260"
+    },
+    {
+        "name": "Oio",
+        "isoCode": "OI",
+        "countryCode": "GW",
+        "latitude": "12.27607090",
+        "longitude": "-15.31311850"
+    },
+    {
+        "name": "Quinara",
+        "isoCode": "QU",
+        "countryCode": "GW",
+        "latitude": "11.79556200",
+        "longitude": "-15.17268160"
+    },
+    {
+        "name": "Tombali",
+        "isoCode": "TO",
+        "countryCode": "GW",
+        "latitude": "11.36326960",
+        "longitude": "-14.98561760"
+    },
+    {
+        "name": "Capital",
+        "isoCode": "1",
+        "countryCode": "IS",
+        "latitude": "38.56569570",
+        "longitude": "-92.18169490"
+    },
+    {
+        "name": "Southern Peninsula",
+        "isoCode": "2",
+        "countryCode": "IS",
+        "latitude": "63.91548030",
+        "longitude": "-22.36496670"
+    },
+    {
+        "name": "Western",
+        "isoCode": "3",
+        "countryCode": "IS",
+        "latitude": null,
+        "longitude": null
+    },
+    {
+        "name": "Northwestern",
+        "isoCode": "5",
+        "countryCode": "IS",
+        "latitude": "41.91339320",
+        "longitude": "-73.04716880"
+    },
+    {
+        "name": "Northeastern",
+        "isoCode": "6",
+        "countryCode": "IS",
+        "latitude": "43.29942850",
+        "longitude": "-74.21793260"
+    },
+    {
+        "name": "Eastern",
+        "isoCode": "7",
+        "countryCode": "IS",
+        "latitude": null,
+        "longitude": null
+    },
+    {
+        "name": "Southern",
+        "isoCode": "8",
+        "countryCode": "IS",
+        "latitude": null,
+        "longitude": null
+    },
+    {
+        "name": "Batken",
+        "isoCode": "B",
+        "countryCode": "KG",
+        "latitude": "39.97214250",
+        "longitude": "69.85974060"
+    },
+    {
+        "name": "Chuy",
+        "isoCode": "C",
+        "countryCode": "KG",
+        "latitude": "42.56550000",
+        "longitude": "74.40566120"
+    },
+    {
+        "name": "Jalal-Abad",
+        "isoCode": "J",
+        "countryCode": "KG",
+        "latitude": "41.10680800",
+        "longitude": "72.89880690"
+    },
+    {
+        "name": "Naryn",
+        "isoCode": "N",
+        "countryCode": "KG",
+        "latitude": "41.29432270",
+        "longitude": "75.34121790"
+    },
+    {
+        "name": "Osh",
+        "isoCode": "O",
+        "countryCode": "KG",
+        "latitude": "39.84073660",
+        "longitude": "72.89880690"
+    },
+    {
+        "name": "Talas",
+        "isoCode": "T",
+        "countryCode": "KG",
+        "latitude": "42.28673390",
+        "longitude": "72.52048270"
+    },
+    {
+        "name": "Issyk-Kul",
+        "isoCode": "Y",
+        "countryCode": "KG",
+        "latitude": "42.18594280",
+        "longitude": "77.56194190"
+    },
+    {
+        "name": "Akmola",
+        "isoCode": "AKM",
+        "countryCode": "KZ",
+        "latitude": "51.91653200",
+        "longitude": "69.41104940"
+    },
+    {
+        "name": "Aktobe",
+        "isoCode": "AKT",
+        "countryCode": "KZ",
+        "latitude": "48.77970780",
+        "longitude": "57.99743780"
+    },
+    {
+        "name": "Almaty",
+        "isoCode": "ALM",
+        "countryCode": "KZ",
+        "latitude": "45.01192270",
+        "longitude": "78.42293920"
+    },
+    {
+        "name": "Atyrau",
+        "isoCode": "ATY",
+        "countryCode": "KZ",
+        "latitude": "47.10761880",
+        "longitude": "51.91413300"
+    },
+    {
+        "name": "Karaganda",
+        "isoCode": "KAR",
+        "countryCode": "KZ",
+        "latitude": "47.90221820",
+        "longitude": "71.77068070"
+    },
+    {
+        "name": "Kostanay",
+        "isoCode": "KUS",
+        "countryCode": "KZ",
+        "latitude": "51.50770960",
+        "longitude": "64.04790730"
+    },
+    {
+        "name": "Kyzylorda",
+        "isoCode": "KZY",
+        "countryCode": "KZ",
+        "latitude": "44.69226130",
+        "longitude": "62.65718850"
+    },
+    {
+        "name": "Mangystau",
+        "isoCode": "MAN",
+        "countryCode": "KZ",
+        "latitude": "44.59080200",
+        "longitude": "53.84995080"
+    },
+    {
+        "name": "Pavlodar",
+        "isoCode": "PAV",
+        "countryCode": "KZ",
+        "latitude": "52.28784440",
+        "longitude": "76.97334530"
+    },
+    {
+        "name": "North Kazakhstan",
+        "isoCode": "SEV",
+        "countryCode": "KZ",
+        "latitude": "54.16220660",
+        "longitude": "69.93870710"
+    },
+    {
+        "name": "East Kazakhstan",
+        "isoCode": "VOS",
+        "countryCode": "KZ",
+        "latitude": "48.70626870",
+        "longitude": "80.79225340"
+    },
+    {
+        "name": "Turkestan",
+        "isoCode": "YUZ",
+        "countryCode": "KZ",
+        "latitude": "43.36669580",
+        "longitude": "68.40944050"
+    },
+    {
+        "name": "Jambyl",
+        "isoCode": "ZHA",
+        "countryCode": "KZ",
+        "latitude": "44.22203080",
+        "longitude": "72.36579670"
+    },
+    {
+        "name": "Kayes",
+        "isoCode": "1",
+        "countryCode": "ML",
+        "latitude": "14.08183080",
+        "longitude": "-9.90181310"
+    },
+    {
+        "name": "Taoudénit",
+        "isoCode": "10",
+        "countryCode": "ML",
+        "latitude": "22.67641320",
+        "longitude": "-3.97891430"
+    },
+    {
+        "name": "Koulikoro",
+        "isoCode": "2",
+        "countryCode": "ML",
+        "latitude": "13.80180740",
+        "longitude": "-7.43813550"
+    },
+    {
+        "name": "Sikasso",
+        "isoCode": "3",
+        "countryCode": "ML",
+        "latitude": "10.89051860",
+        "longitude": "-7.43813550"
+    },
+    {
+        "name": "Ségou",
+        "isoCode": "4",
+        "countryCode": "ML",
+        "latitude": "13.83944560",
+        "longitude": "-6.06791940"
+    },
+    {
+        "name": "Mopti",
+        "isoCode": "5",
+        "countryCode": "ML",
+        "latitude": "14.63380390",
+        "longitude": "-3.41955270"
+    },
+    {
+        "name": "Tombouctou",
+        "isoCode": "6",
+        "countryCode": "ML",
+        "latitude": "21.05267060",
+        "longitude": "-3.74350900"
+    },
+    {
+        "name": "Gao",
+        "isoCode": "7",
+        "countryCode": "ML",
+        "latitude": "16.90663320",
+        "longitude": "1.52086240"
+    },
+    {
+        "name": "Kidal",
+        "isoCode": "8",
+        "countryCode": "ML",
+        "latitude": "18.79868320",
+        "longitude": "1.83183340"
+    },
+    {
+        "name": "Ménaka",
+        "isoCode": "9",
+        "countryCode": "ML",
+        "latitude": "15.91564210",
+        "longitude": "2.39617400"
+    },
+    {
+        "name": "Sagaing",
+        "isoCode": "01",
+        "countryCode": "MM",
+        "latitude": "24.42838100",
+        "longitude": "95.39395510"
+    },
+    {
+        "name": "Magway",
+        "isoCode": "03",
+        "countryCode": "MM",
+        "latitude": "19.88713860",
+        "longitude": "94.72775280"
+    },
+    {
+        "name": "Mandalay",
+        "isoCode": "04",
+        "countryCode": "MM",
+        "latitude": "21.56190580",
+        "longitude": "95.89871390"
+    },
+    {
+        "name": "Tanintharyi",
+        "isoCode": "05",
+        "countryCode": "MM",
+        "latitude": "12.47068760",
+        "longitude": "99.01289260"
+    },
+    {
+        "name": "Yangon",
+        "isoCode": "06",
+        "countryCode": "MM",
+        "latitude": "16.91434880",
+        "longitude": "96.15269850"
+    },
+    {
+        "name": "Ayeyarwady",
+        "isoCode": "07",
+        "countryCode": "MM",
+        "latitude": "17.03421250",
+        "longitude": "95.22666750"
+    },
+    {
+        "name": "Hodh Ech Chargui",
+        "isoCode": "01",
+        "countryCode": "MR",
+        "latitude": "18.67370260",
+        "longitude": "-7.09287700"
+    },
+    {
+        "name": "Hodh El Gharbi",
+        "isoCode": "02",
+        "countryCode": "MR",
+        "latitude": "16.69121490",
+        "longitude": "-9.54509740"
+    },
+    {
+        "name": "Assaba",
+        "isoCode": "03",
+        "countryCode": "MR",
+        "latitude": "16.77595580",
+        "longitude": "-11.52480550"
+    },
+    {
+        "name": "Gorgol",
+        "isoCode": "04",
+        "countryCode": "MR",
+        "latitude": "15.97173570",
+        "longitude": "-12.62162110"
+    },
+    {
+        "name": "Brakna",
+        "isoCode": "05",
+        "countryCode": "MR",
+        "latitude": "17.23175610",
+        "longitude": "-13.17403480"
+    },
+    {
+        "name": "Trarza",
+        "isoCode": "06",
+        "countryCode": "MR",
+        "latitude": "17.86649640",
+        "longitude": "-14.65878210"
+    },
+    {
+        "name": "Adrar",
+        "isoCode": "07",
+        "countryCode": "MR",
+        "latitude": "19.86521760",
+        "longitude": "-12.80547530"
+    },
+    {
+        "name": "Tagant",
+        "isoCode": "09",
+        "countryCode": "MR",
+        "latitude": "18.54675270",
+        "longitude": "-9.90181310"
+    },
+    {
+        "name": "Guidimaka",
+        "isoCode": "10",
+        "countryCode": "MR",
+        "latitude": "15.25573310",
+        "longitude": "-12.25479190"
+    },
+    {
+        "name": "Tiris Zemmour",
+        "isoCode": "11",
+        "countryCode": "MR",
+        "latitude": "24.57737640",
+        "longitude": "-9.90181310"
+    },
+    {
+        "name": "Inchiri",
+        "isoCode": "12",
+        "countryCode": "MR",
+        "latitude": "20.02805610",
+        "longitude": "-15.40680790"
+    },
+    {
+        "name": "Nouakchott-Ouest",
+        "isoCode": "13",
+        "countryCode": "MR",
+        "latitude": "18.15113570",
+        "longitude": "-15.99349100"
+    },
+    {
+        "name": "Nouakchott-Nord",
+        "isoCode": "14",
+        "countryCode": "MR",
+        "latitude": "18.11302050",
+        "longitude": "-15.89949560"
+    },
+    {
+        "name": "Nouakchott-Sud",
+        "isoCode": "15",
+        "countryCode": "MR",
+        "latitude": "17.97092880",
+        "longitude": "-15.94648740"
+    },
+    {
+        "name": "Central",
+        "isoCode": "C",
+        "countryCode": "MW",
+        "latitude": null,
+        "longitude": null
+    },
+    {
+        "name": "Northern",
+        "isoCode": "N",
+        "countryCode": "MW",
+        "latitude": null,
+        "longitude": null
+    },
+    {
+        "name": "Southern",
+        "isoCode": "S",
+        "countryCode": "MW",
+        "latitude": "32.75049570",
+        "longitude": "-97.33154760"
+    },
+    {
+        "name": "Zambezi",
+        "isoCode": "CA",
+        "countryCode": "NA",
+        "latitude": "-17.81934190",
+        "longitude": "23.95364660"
+    },
+    {
+        "name": "Erongo",
+        "isoCode": "ER",
+        "countryCode": "NA",
+        "latitude": "-22.25656820",
+        "longitude": "15.40680790"
+    },
+    {
+        "name": "Hardap",
+        "isoCode": "HA",
+        "countryCode": "NA",
+        "latitude": "-24.23101340",
+        "longitude": "17.66888700"
+    },
+    {
+        "name": "Karas",
+        "isoCode": "KA",
+        "countryCode": "NA",
+        "latitude": "-26.84296450",
+        "longitude": "17.29028390"
+    },
+    {
+        "name": "Kavango East",
+        "isoCode": "KE",
+        "countryCode": "NA",
+        "latitude": "-18.27104800",
+        "longitude": "18.42760470"
+    },
+    {
+        "name": "Khomas",
+        "isoCode": "KH",
+        "countryCode": "NA",
+        "latitude": "-22.63778540",
+        "longitude": "17.10119310"
+    },
+    {
+        "name": "Kunene",
+        "isoCode": "KU",
+        "countryCode": "NA",
+        "latitude": "-19.40863170",
+        "longitude": "13.91439900"
+    },
+    {
+        "name": "Kavango West",
+        "isoCode": "KW",
+        "countryCode": "NA",
+        "latitude": "-18.27104800",
+        "longitude": "18.42760470"
+    },
+    {
+        "name": "Otjozondjupa",
+        "isoCode": "OD",
+        "countryCode": "NA",
+        "latitude": "-20.54869160",
+        "longitude": "17.66888700"
+    },
+    {
+        "name": "Omaheke",
+        "isoCode": "OH",
+        "countryCode": "NA",
+        "latitude": "-21.84666510",
+        "longitude": "19.18800470"
+    },
+    {
+        "name": "Oshana",
+        "isoCode": "ON",
+        "countryCode": "NA",
+        "latitude": "-18.43050640",
+        "longitude": "15.68817880"
+    },
+    {
+        "name": "Omusati",
+        "isoCode": "OS",
+        "countryCode": "NA",
+        "latitude": "-18.40702940",
+        "longitude": "14.84546190"
+    },
+    {
+        "name": "Oshikoto",
+        "isoCode": "OT",
+        "countryCode": "NA",
+        "latitude": "-18.41525750",
+        "longitude": "16.91225100"
+    },
+    {
+        "name": "Ohangwena",
+        "isoCode": "OW",
+        "countryCode": "NA",
+        "latitude": "-17.59792910",
+        "longitude": "16.81783770"
+    },
+    {
+        "name": "Agadez",
+        "isoCode": "1",
+        "countryCode": "NE",
+        "latitude": "20.66707520",
+        "longitude": "12.07182810"
+    },
+    {
+        "name": "Diffa",
+        "isoCode": "2",
+        "countryCode": "NE",
+        "latitude": "13.67686470",
+        "longitude": "12.71351210"
+    },
+    {
+        "name": "Dosso",
+        "isoCode": "3",
+        "countryCode": "NE",
+        "latitude": "13.15139470",
+        "longitude": "3.41955270"
+    },
+    {
+        "name": "Maradi",
+        "isoCode": "4",
+        "countryCode": "NE",
+        "latitude": "13.80180740",
+        "longitude": "7.43813550"
+    },
+    {
+        "name": "Tahoua",
+        "isoCode": "5",
+        "countryCode": "NE",
+        "latitude": "16.09025430",
+        "longitude": "5.39395510"
+    },
+    {
+        "name": "Tillabéri",
+        "isoCode": "6",
+        "countryCode": "NE",
+        "latitude": "14.64895250",
+        "longitude": "2.14502450"
+    },
+    {
+        "name": "Zinder",
+        "isoCode": "7",
+        "countryCode": "NE",
+        "latitude": "15.17188810",
+        "longitude": "10.26001250"
+    },
+    {
+        "name": "Central",
+        "isoCode": "1",
+        "countryCode": "NP",
+        "latitude": null,
+        "longitude": null
+    },
+    {
+        "name": "Mid-Western",
+        "isoCode": "2",
+        "countryCode": "NP",
+        "latitude": "38.41118410",
+        "longitude": "-90.38320980"
+    },
+    {
+        "name": "Western",
+        "isoCode": "3",
+        "countryCode": "NP",
+        "latitude": null,
+        "longitude": null
+    },
+    {
+        "name": "Eastern Development",
+        "isoCode": "4",
+        "countryCode": "NP",
+        "latitude": "27.33090720",
+        "longitude": "87.06242610"
+    },
+    {
+        "name": "Far-Western Development",
+        "isoCode": "5",
+        "countryCode": "NP",
+        "latitude": "29.29878710",
+        "longitude": "80.98710740"
+    },
+    {
+        "name": "Auckland",
+        "isoCode": "AUK",
+        "countryCode": "NZ",
+        "latitude": "-36.66753280",
+        "longitude": "174.77333250"
+    },
+    {
+        "name": "Bay of Plenty",
+        "isoCode": "BOP",
+        "countryCode": "NZ",
+        "latitude": "-37.42339170",
+        "longitude": "176.74163740"
+    },
+    {
+        "name": "Canterbury",
+        "isoCode": "CAN",
+        "countryCode": "NZ",
+        "latitude": "-43.75422750",
+        "longitude": "171.16372450"
+    },
+    {
+        "name": "Hawke's Bay",
+        "isoCode": "HKB",
+        "countryCode": "NZ",
+        "latitude": "-39.60165970",
+        "longitude": "176.58044730"
+    },
+    {
+        "name": "Marlborough",
+        "isoCode": "MBH",
+        "countryCode": "NZ",
+        "latitude": "-41.59168830",
+        "longitude": "173.76240530"
+    },
+    {
+        "name": "Manawatu-Wanganui",
+        "isoCode": "MWT",
+        "countryCode": "NZ",
+        "latitude": "-39.72733560",
+        "longitude": "175.43755740"
+    },
+    {
+        "name": "Nelson",
+        "isoCode": "NSN",
+        "countryCode": "NZ",
+        "latitude": "-41.29853970",
+        "longitude": "173.24414910"
+    },
+    {
+        "name": "Northland",
+        "isoCode": "NTL",
+        "countryCode": "NZ",
+        "latitude": "-35.41361720",
+        "longitude": "173.93208060"
+    },
+    {
+        "name": "Otago",
+        "isoCode": "OTA",
+        "countryCode": "NZ",
+        "latitude": "-45.47906710",
+        "longitude": "170.15475670"
+    },
+    {
+        "name": "Southland",
+        "isoCode": "STL",
+        "countryCode": "NZ",
+        "latitude": "-45.84891590",
+        "longitude": "167.67553870"
+    },
+    {
+        "name": "Taranaki",
+        "isoCode": "TKI",
+        "countryCode": "NZ",
+        "latitude": "-39.35381490",
+        "longitude": "174.43827210"
+    },
+    {
+        "name": "Wellington",
+        "isoCode": "WGN",
+        "countryCode": "NZ",
+        "latitude": "-41.02993230",
+        "longitude": "175.43755740"
+    },
+    {
+        "name": "Waikato",
+        "isoCode": "WKO",
+        "countryCode": "NZ",
+        "latitude": "-37.61908620",
+        "longitude": "175.02334600"
+    },
+    {
+        "name": "West Coast",
+        "isoCode": "WTC",
+        "countryCode": "NZ",
+        "latitude": "62.41136340",
+        "longitude": "-149.07297140"
+    },
+    {
+        "name": "Al Batinah",
+        "isoCode": "BA",
+        "countryCode": "OM",
+        "latitude": "24.34198460",
+        "longitude": "56.72989040"
+    },
+    {
+        "name": "Ash Sharqiyah",
+        "isoCode": "SH",
+        "countryCode": "OM",
+        "latitude": "22.71411960",
+        "longitude": "58.53080640"
+    },
+    {
+        "name": "Ilocos",
+        "isoCode": "01",
+        "countryCode": "PH",
+        "latitude": "16.08321440",
+        "longitude": "120.61998950"
+    },
+    {
+        "name": "Bicol",
+        "isoCode": "05",
+        "countryCode": "PH",
+        "latitude": "13.42098850",
+        "longitude": "123.41367360"
+    },
+    {
+        "name": "Davao",
+        "isoCode": "11",
+        "countryCode": "PH",
+        "latitude": "7.30416220",
+        "longitude": "126.08934060"
+    },
+    {
+        "name": "Cordillera Administrative",
+        "isoCode": "15",
+        "countryCode": "PH",
+        "latitude": "17.35125420",
+        "longitude": "121.17188510"
+    },
+    {
+        "name": "Banská Bystrica",
+        "isoCode": "BC",
+        "countryCode": "SK",
+        "latitude": "48.53124990",
+        "longitude": "19.38287400"
+    },
+    {
+        "name": "Bratislava",
+        "isoCode": "BL",
+        "countryCode": "SK",
+        "latitude": "48.31183040",
+        "longitude": "17.19732990"
+    },
+    {
+        "name": "Košice",
+        "isoCode": "KI",
+        "countryCode": "SK",
+        "latitude": "48.63757370",
+        "longitude": "21.08342250"
+    },
+    {
+        "name": "Nitra",
+        "isoCode": "NI",
+        "countryCode": "SK",
+        "latitude": "48.01437650",
+        "longitude": "18.54165040"
+    },
+    {
+        "name": "Prešov",
+        "isoCode": "PV",
+        "countryCode": "SK",
+        "latitude": "49.17167730",
+        "longitude": "21.37420010"
+    },
+    {
+        "name": "Trnava",
+        "isoCode": "TA",
+        "countryCode": "SK",
+        "latitude": "48.39438980",
+        "longitude": "17.72162050"
+    },
+    {
+        "name": "Trenčín",
+        "isoCode": "TC",
+        "countryCode": "SK",
+        "latitude": "48.80867580",
+        "longitude": "18.23240260"
+    },
+    {
+        "name": "Žilina",
+        "isoCode": "ZI",
+        "countryCode": "SK",
+        "latitude": "49.20314350",
+        "longitude": "19.36457330"
+    },
+    {
+        "name": "Diourbel",
+        "isoCode": "DB",
+        "countryCode": "SN",
+        "latitude": "14.72830850",
+        "longitude": "-16.25221430"
+    },
+    {
+        "name": "Tambacounda",
+        "isoCode": "TC",
+        "countryCode": "SN",
+        "latitude": "13.56190110",
+        "longitude": "-13.17403480"
+    },
+    {
+        "name": "Thiès",
+        "isoCode": "TH",
+        "countryCode": "SN",
+        "latitude": "14.79100520",
+        "longitude": "-16.93586040"
+    },
+    {
+        "name": "Awdal",
+        "isoCode": "AW",
+        "countryCode": "SO",
+        "latitude": "10.63342850",
+        "longitude": "43.32946600"
+    },
+    {
+        "name": "Sanaag",
+        "isoCode": "SA",
+        "countryCode": "SO",
+        "latitude": "10.39382180",
+        "longitude": "47.76375650"
+    },
+    {
+        "name": "Togdheer",
+        "isoCode": "TO",
+        "countryCode": "SO",
+        "latitude": "9.44605870",
+        "longitude": "45.29938620"
+    },
+    {
+        "name": "Batha",
+        "isoCode": "BA",
+        "countryCode": "TD",
+        "latitude": "13.93717750",
+        "longitude": "18.42760470"
+    },
+    {
+        "name": "Ennedi",
+        "isoCode": "EN",
+        "countryCode": "TD",
+        "latitude": "17.54145780",
+        "longitude": "21.85685860"
+    },
+    {
+        "name": "Guéra",
+        "isoCode": "GR",
+        "countryCode": "TD",
+        "latitude": "11.12190150",
+        "longitude": "18.42760470"
+    },
+    {
+        "name": "Kanem",
+        "isoCode": "KA",
+        "countryCode": "TD",
+        "latitude": "14.87812620",
+        "longitude": "15.40680790"
+    },
+    {
+        "name": "Lac",
+        "isoCode": "LC",
+        "countryCode": "TD",
+        "latitude": "13.69153770",
+        "longitude": "14.10013260"
+    },
+    {
+        "name": "Logone Occidental",
+        "isoCode": "LO",
+        "countryCode": "TD",
+        "latitude": "8.75967600",
+        "longitude": "15.87600400"
+    },
+    {
+        "name": "Logone Oriental",
+        "isoCode": "LR",
+        "countryCode": "TD",
+        "latitude": "8.31499490",
+        "longitude": "16.34637910"
+    },
+    {
+        "name": "Mandoul",
+        "isoCode": "MA",
+        "countryCode": "TD",
+        "latitude": "8.60309100",
+        "longitude": "17.47951730"
+    },
+    {
+        "name": "Moyen-Chari",
+        "isoCode": "MC",
+        "countryCode": "TD",
+        "latitude": "9.06399980",
+        "longitude": "18.42760470"
+    },
+    {
+        "name": "Mayo-Kebbi Est",
+        "isoCode": "ME",
+        "countryCode": "TD",
+        "latitude": "9.40460390",
+        "longitude": "14.84546190"
+    },
+    {
+        "name": "Mayo-Kebbi Ouest",
+        "isoCode": "MO",
+        "countryCode": "TD",
+        "latitude": "10.41130140",
+        "longitude": "15.59433880"
+    },
+    {
+        "name": "Ouaddaï",
+        "isoCode": "OD",
+        "countryCode": "TD",
+        "latitude": "13.74847600",
+        "longitude": "20.71224650"
+    },
+    {
+        "name": "Salamat",
+        "isoCode": "SA",
+        "countryCode": "TD",
+        "latitude": "10.96916010",
+        "longitude": "20.71224650"
+    },
+    {
+        "name": "Sila",
+        "isoCode": "SI",
+        "countryCode": "TD",
+        "latitude": "12.13074000",
+        "longitude": "21.28450250"
+    },
+    {
+        "name": "Tandjilé",
+        "isoCode": "TA",
+        "countryCode": "TD",
+        "latitude": "9.66257290",
+        "longitude": "16.72346390"
+    },
+    {
+        "name": "Tibesti",
+        "isoCode": "TI",
+        "countryCode": "TD",
+        "latitude": "21.36500310",
+        "longitude": "16.91225100"
+    },
+    {
+        "name": "Wadi Fira",
+        "isoCode": "WF",
+        "countryCode": "TD",
+        "latitude": "15.08924160",
+        "longitude": "21.47528510"
+    },
+    {
+        "name": "Centrale",
+        "isoCode": "C",
+        "countryCode": "TG",
+        "latitude": "8.65860290",
+        "longitude": "1.05861350"
+    },
+    {
+        "name": "Kara",
+        "isoCode": "K",
+        "countryCode": "TG",
+        "latitude": "9.72163930",
+        "longitude": "1.05861350"
+    },
+    {
+        "name": "Plateaux",
+        "isoCode": "P",
+        "countryCode": "TG",
+        "latitude": "7.61013780",
+        "longitude": "1.05861350"
+    },
+    {
+        "name": "Savanes",
+        "isoCode": "S",
+        "countryCode": "TG",
+        "latitude": "10.52917810",
+        "longitude": "0.52578230"
+    },
+    {
+        "name": "Ahal",
+        "isoCode": "A",
+        "countryCode": "TM",
+        "latitude": "38.63993980",
+        "longitude": "59.47209040"
+    },
+    {
+        "name": "Balkan",
+        "isoCode": "B",
+        "countryCode": "TM",
+        "latitude": "41.81014720",
+        "longitude": "21.09373110"
+    },
+    {
+        "name": "Daşoguz",
+        "isoCode": "D",
+        "countryCode": "TM",
+        "latitude": "41.83687370",
+        "longitude": "59.96519040"
+    },
+    {
+        "name": "Lebap",
+        "isoCode": "L",
+        "countryCode": "TM",
+        "latitude": "38.12724620",
+        "longitude": "64.71624150"
+    },
+    {
+        "name": "Mary",
+        "isoCode": "M",
+        "countryCode": "TM",
+        "latitude": "36.94816230",
+        "longitude": "62.45041540"
+    },
+    {
+        "name": "Central",
+        "isoCode": "C",
+        "countryCode": "UG",
+        "latitude": "44.29687500",
+        "longitude": "-94.74017330"
+    },
+    {
+        "name": "Eastern",
+        "isoCode": "E",
+        "countryCode": "UG",
+        "latitude": "6.23740360",
+        "longitude": "-0.45023680"
+    },
+    {
+        "name": "Northern",
+        "isoCode": "N",
+        "countryCode": "UG",
+        "latitude": "9.54392690",
+        "longitude": "-0.90566230"
+    },
+    {
+        "name": "Western",
+        "isoCode": "W",
+        "countryCode": "UG",
+        "latitude": "40.76672150",
+        "longitude": "-111.88772030"
+    },
+    {
+        "name": "Andijan",
+        "isoCode": "AN",
+        "countryCode": "UZ",
+        "latitude": "40.76859410",
+        "longitude": "72.23637900"
+    },
+    {
+        "name": "Bukhara",
+        "isoCode": "BU",
+        "countryCode": "UZ",
+        "latitude": "40.25041620",
+        "longitude": "63.20321510"
+    },
+    {
+        "name": "Fergana",
+        "isoCode": "FA",
+        "countryCode": "UZ",
+        "latitude": "40.45680810",
+        "longitude": "71.28742090"
+    },
+    {
+        "name": "Jizzakh",
+        "isoCode": "JI",
+        "countryCode": "UZ",
+        "latitude": "40.47064150",
+        "longitude": "67.57085360"
+    },
+    {
+        "name": "Namangan",
+        "isoCode": "NG",
+        "countryCode": "UZ",
+        "latitude": "41.05100370",
+        "longitude": "71.09731700"
+    },
+    {
+        "name": "Navoiy",
+        "isoCode": "NW",
+        "countryCode": "UZ",
+        "latitude": "42.69885750",
+        "longitude": "64.63376850"
+    },
+    {
+        "name": "Qashqadaryo",
+        "isoCode": "QA",
+        "countryCode": "UZ",
+        "latitude": "38.89862310",
+        "longitude": "66.04635340"
+    },
+    {
+        "name": "Samarqand",
+        "isoCode": "SA",
+        "countryCode": "UZ",
+        "latitude": "39.62701200",
+        "longitude": "66.97497310"
+    },
+    {
+        "name": "Sirdaryo",
+        "isoCode": "SI",
+        "countryCode": "UZ",
+        "latitude": "40.38638080",
+        "longitude": "68.71549750"
+    },
+    {
+        "name": "Surxondaryo",
+        "isoCode": "SU",
+        "countryCode": "UZ",
+        "latitude": "37.94090050",
+        "longitude": "67.57085360"
+    },
+    {
+        "name": "Tashkent",
+        "isoCode": "TO",
+        "countryCode": "UZ",
+        "latitude": "41.22132340",
+        "longitude": "69.85974060"
+    },
+    {
+        "name": "Xorazm",
+        "isoCode": "XO",
+        "countryCode": "UZ",
+        "latitude": "41.35653360",
+        "longitude": "60.85666860"
     }
 ]

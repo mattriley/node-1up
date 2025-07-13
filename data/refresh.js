@@ -11,14 +11,21 @@ const outputDir = sourceDir;
         state.name = 'Melaka';
     });
 
-    states.filter(state => state.name === 'Bay of Plenty Region').forEach(state => {
-        state.name = 'Bay of Plenty';
-    });
+    // states.filter(state => state.name === 'Bay of Plenty Region').forEach(state => {
+    //     state.name = 'Bay of Plenty';
+    // });
 
     states.filter(state => state.name.endsWith('Prefecture')).forEach(state => {
         states.push({
             ...state,
             name: state.name.replace('Prefecture', '').replace('Ō', 'O').trim()
+        })
+    });
+
+    states.filter(state => state.name.endsWith('Region')).forEach(state => {
+        states.push({
+            ...state,
+            name: state.name.replace('Region', '').trim()
         })
     });
 
