@@ -17,7 +17,7 @@ module.exports = ({ net }) => async ({ sourceDir, sourceFile, source, outputDir,
             latitude: parseFloat(parts[4]),
             longitude: parseFloat(parts[5]),
             // population: parseInt(parts[14], 10) || 0,
-            // timezone: parts[17]
+            timezone: parts[17]
         })
     });
 
