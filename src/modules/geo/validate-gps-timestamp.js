@@ -1,14 +1,14 @@
-module.exports = () => gpsTime => {
+module.exports = () => GPSTimeStamp => {
 
-    if (!Array.isArray(gpsTime)) {
+    if (!Array.isArray(GPSTimeStamp)) {
         return { valid: false, reason: 'GPSTimeStamp must be an array' };
     }
 
-    if (gpsTime.length !== 3) {
+    if (GPSTimeStamp.length !== 3) {
         return { valid: false, reason: 'GPSTimeStamp must have exactly 3 elements (HH, MM, SS)' };
     }
 
-    const [hh, mm, ss] = gpsTime;
+    const [hh, mm, ss] = GPSTimeStamp;
 
     if (
         typeof hh !== 'number' || isNaN(hh) ||
