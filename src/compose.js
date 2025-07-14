@@ -25,6 +25,7 @@ const outerCompose = ({ config, overrides } = {}) => {
     compose.make('bool');
     compose.make('path', { arr });
     compose.make('pipe', { is, fun });
+    compose.deep('exif');
 
     return {
         ...compose.modules,
