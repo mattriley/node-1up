@@ -3,7 +3,7 @@ module.exports = ({ config }) => {
     const smartDeviceBrands = config.smartDeviceBrands.map(make => make.toLowerCase());
     const smartDeviceLookup = new Set(smartDeviceBrands);
 
-    return ({ exif }) => {
+    return ({ exif = {} }) => {
 
         const make = (exif.Make ?? '').toLowerCase();
         const model = (exif.Model ?? '').toLowerCase();
