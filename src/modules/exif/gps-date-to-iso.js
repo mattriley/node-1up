@@ -16,7 +16,7 @@ module.exports = ({ here }) => ({ exif, timezone, dateField = 'GPSDateStamp', ti
     const gpsTimeStr = [h, m, s].map(n => String(n).padStart(2, '0')).join(':');
 
     // Determine if GPS time is in local time instead of UTC
-    const isLocal = here.isGpsTimeActuallyLocal()(exif);
+    const isLocal = here.isGpsTimeActuallyLocal({ exif });
 
     const fullIso = `${gpsDate}T${gpsTimeStr}`;
     const baseZone = isLocal
