@@ -3,7 +3,7 @@ const { DateTime } = require('luxon');
 module.exports = () => ({ exif, timezone, dateField = 'DateTimeOriginal' }) => {
 
     const exifDate = exif[dateField];
-    if (!exifDate) throw new Error(`EXIF field not found: ${dateField}`);
+    if (!exifDate) throw new Error(`${dateField} not found`);
 
     let [date, time] = exifDate.split(' ');
     date = date.replaceAll(':', '-');

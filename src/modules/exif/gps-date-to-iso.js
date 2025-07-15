@@ -1,12 +1,15 @@
 const { DateTime } = require('luxon');
 
-module.exports = ({ here }) => ({ exif, timezone, dateField = 'GPSDateStamp', timeField = 'GPSTimeStamp' }) => {
+const DATE_FIELD = 'GPSDateStamp';
+const TIME_FIELD = 'GPSTimeStamp';
 
-    let gpsDate = exif[dateField];
-    if (!gpsDate) throw new Error(`EXIF date field not found: ${dateField}`);
+module.exports = ({ here }) => ({ exif, timezone, }) => {
 
-    const gpsTime = exif[timeField];
-    if (!gpsTime) throw new Error(`EXIF time field not found: ${timeField}`);
+    let gpsDate = exif[DATE_FIELD];
+    if (!gpsDate) throw new Error(`${DATE_FIELD} not found`);
+
+    const gpsTime = exif[TIME_FIELD];
+    if (!gpsTime) throw new Error(`${TIME_FIELD} not found`);
 
     // Normalize date string (from EXIF format: "YYYY:MM:DD")
     gpsDate = gpsDate.replaceAll(':', '-');

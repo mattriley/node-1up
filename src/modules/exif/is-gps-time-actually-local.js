@@ -1,7 +1,7 @@
-module.exports = () => ({ exif, makeField = 'Make', modelField = 'Model' }) => {
+module.exports = () => ({ exif }) => {
 
-    const make = exif[makeField];
-    const model = exif[modelField];
+    const make = exif.Make;
+    const model = exif.Model;
 
     if (!make || !model) return false;
 
