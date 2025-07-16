@@ -5,6 +5,9 @@ module.exports = {
     pathDelimiter: '/',
     locationData: { cities: [], states: [], countries: [] },
 
+    videoMajorBrands: ['mp42', 'qt', 'isom'],
+    videoFileTypes: ['mp4', 'mov', 'avi', 'mkv', 'webm', '3gp', 'mts', 'm4v'],
+
     smartDeviceBrands: [
         'Apple',
         'Samsung',
@@ -26,6 +29,8 @@ module.exports = {
         'TECNO',
         'Infinix',
         'Nothing'
-    ]
+    ],
+
+
 
 };

@@ -5,5 +5,6 @@ module.exports = {
     gpsDateToIso: require('./gps-date-to-iso'),
     isGpsTimeActuallyLocal: require('./is-gps-time-actually-local'),
     isProbablySmartDevice: require('./is-probably-smart-device'),
+    isVideo: require('./is-video'),
     validate: require('./validate')
 };
