@@ -10,7 +10,7 @@ module.exports = ({ config }) => {
         const country = findCountry(countryKey);
 
         const city = cities.find(city => {
-            return city.stateCode.toUpperCase() === state.isoCode.toUpperCase() &&
+            return (city.stateCode && city.stateCode.toUpperCase() === state.isoCode.toUpperCase()) &&
                 city.countryCode.toUpperCase() === country.isoCode.toUpperCase();
         });
         if (!city) throw new Error(`City not found: ${cityKey}; State: ${stateKey}; Country: ${countryKey}`);
