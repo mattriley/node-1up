@@ -1,8 +1,8 @@
 module.exports = {
-    assignMeta: require('./assign-meta'),
     buildLookup: require('./build-lookup'),
     clean: require('./clean'),
     compactInPlace: require('./compact-in-place'),
+    configure: require('./configure'),
     dig: require('./dig'),
     entries: require('./entries'),
     flat: require('./flat'),
