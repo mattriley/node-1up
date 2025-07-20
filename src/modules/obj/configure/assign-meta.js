@@ -19,8 +19,12 @@ module.exports = () => (config = {}) => obj => {
         if (!containsIds) {
             acc[`${key}.${config.some}`] = elements.length > 0;
 
-            for (const el of elements) {
-                acc[`${key}.${el}.${config.exists}`] = true;
+            for (let i = 0; i < elements.length; i++) {
+                const original = val[i];
+                // Only apply `.exists` for non-objects (e.g., strings, numbers)
+                if (typeof original !== 'object' || original === null) {
+                    acc[`${key}.${elements[i]}.${config.exists}`] = true;
+                }
             }
         }
     }
