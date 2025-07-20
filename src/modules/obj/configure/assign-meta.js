@@ -2,7 +2,7 @@ const DEFAULT_KEYS = ['length', 'some', 'exists'];
 
 module.exports = () => (config = {}) => obj => {
 
-    for (let key in DEFAULT_KEYS) {
+    for (let key of DEFAULT_KEYS) {
         config[key] ??= key;
     }
 
@@ -25,5 +25,5 @@ module.exports = () => (config = {}) => obj => {
         }
     }
 
-    return acc;
+    return Object.assign(obj, acc);
 };

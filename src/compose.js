@@ -16,7 +16,7 @@ const outerCompose = ({ config, overrides } = {}) => {
     const { fun } = compose.make('fun', { is });
     const { net } = compose.make('net');
 
-    compose.make('obj', { is, arr });
+    compose.deep('obj', { is, arr });
     compose.deep('str', { arr });
     compose.make('fsx');
     compose.make('fsp', { is });
