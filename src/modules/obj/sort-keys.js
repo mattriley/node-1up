@@ -1,5 +1,7 @@
-module.exports = () => obj => {
+module.exports = ({ self }) => obj => {
 
-    return _.pick(obj, Object.keys(obj).sort());
+    if (!self.isPlain(obj)) return obj;
+    const entries = Object.entries(obj).sort(([a], [b]) => a.localeCompare(b));
+    return Object.fromEntries(entries);
 
 };
