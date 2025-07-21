@@ -4,7 +4,10 @@ const modules = require('./modules');
 const defaultConfig = require('./default-config');
 const buildLookups = require('./build-lookups');
 
-const outerCompose = ({ config, overrides } = {}) => {
+const outerCompose = ({ config, overrides = {} } = {}) => {
+
+    const fs = overrides.fs ?? require('fs');
+    const fsp = overrides.fsp ?? fs.promises;
 
     Object.assign(globalThis, { _ });
 
@@ -18,8 +21,7 @@ const outerCompose = ({ config, overrides } = {}) => {
 
     compose.deep('obj', { is, arr });
     compose.deep('str', { arr });
-    compose.make('fsx');
-    compose.make('fsp', { is });
+    compose.make('fsx', { is, fs, fsp });
     compose.asis('any');
     compose.deep('geo', { arr, net });
     compose.make('bool');

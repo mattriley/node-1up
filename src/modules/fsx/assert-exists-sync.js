@@ -1,6 +1,6 @@
-module.exports = ({ self }) => path => {
+module.exports = ({ fs }) => path => {
 
-    const exists = self.nodefs.existsSync(path);
+    const exists = fs.existsSync(path);
     if (!exists) throw new Error(`Path not found: ${path}`);
 
 };

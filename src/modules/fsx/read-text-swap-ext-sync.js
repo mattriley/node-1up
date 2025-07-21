@@ -1,9 +1,9 @@
-const nodepath = require('node:path');
+const path = require('path');
 
-module.exports = ({ self }) => (path, ext) => {
+module.exports = ({ fs }) => (filepath, ext) => {
 
-    const { dir, name } = nodepath.parse(path);
-    const newPath = nodepath.join(dir, `${name}.${ext}`);
-    return self.nodefs.readFileSync(newPath, 'utf8');
+    const { dir, name } = path.parse(filepath);
+    filepath = path.join(dir, `${name}.${ext}`);
+    return fs.readFileSync(filepath, 'utf8');
 
 };

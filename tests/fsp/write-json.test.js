@@ -7,20 +7,16 @@ module.exports = ({ test, assert, compose }) => () => {
         const targetPath = 'foo/bar.json';
         const overrides = {
             fsp: {
-                nodefs: {
-                    promises: {
-                        writeFile: (path, data) => {
-                            assert.equal(path, targetPath);
-                            assert.equal(data, expected);
-                            done = true;
-                        }
-                    }
+                writeFile: (path, data) => {
+                    assert.equal(path, targetPath);
+                    assert.equal(data, expected);
+                    done = true;
                 }
             }
         };
         const config = { indent };
-        const { fsp } = compose({ overrides, config });
-        await fsp.writeJson(targetPath, targetObject, indent);
+        const { fsx } = compose({ overrides, config });
+        await fsx.writeJson(targetPath, targetObject, indent);
         assert.ok(done);
     };
 

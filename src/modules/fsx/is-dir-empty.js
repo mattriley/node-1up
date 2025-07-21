@@ -1,6 +1,4 @@
-const fsp = require('fs').promises;
-
-module.exports = () => async dirPath => {
+module.exports = ({ fsp }) => async dirPath => {
 
     const dir = await fsp.opendir(dirPath);
 
