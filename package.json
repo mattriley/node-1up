@@ -30,7 +30,7 @@
         "fast-deep-equal": "^3.1.3",
         "lodash": "^4.17.21",
         "luxon": "^3.7.1",
-        "module-composer": "^0.170.0"
+        "module-composer": "^0.171.0"
     },
     "devDependencies": {
         "cloc": "^1.98.0-cloc",

@@ -1,1 +1,1 @@
-module.exports = ({ here }) => str => here.configure.sentenceCase()(str);
+module.exports = ({ self }) => self.configure.sentenceCase();
