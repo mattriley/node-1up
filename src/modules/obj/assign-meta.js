@@ -1,1 +1,1 @@
-module.exports = ({ self }) => (...args) => self.configure.assignMeta()(...args);
+module.exports = ({ self }) => self.configure.assignMeta();
