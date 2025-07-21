@@ -1,5 +1,6 @@
 module.exports = {
     _nodefs: require('./_nodefs'),
+    isDirEmpty: require('./is-dir-empty'),
     readJson: require('./read-json'),
     readJsonDir: require('./read-json-dir'),
     readJsonLike: require('./read-json-like'),
