@@ -12,6 +12,6 @@ module.exports = ({ fsp, config }) => async (filepath, data, indent = config.ind
     if (!stringify) throw new Error(`Unrecognised JSON-like extension: ${ext}`);
 
     const jsonLike = stringify();
-    return await fsp.writeFile(filepath, jsonLike);
+    return fsp.writeFile(filepath, jsonLike);
 
 };

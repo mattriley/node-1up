@@ -1,6 +1,6 @@
 module.exports = ({ net }) => async ({ sourceDir, sourceFile, source, outputDir, outputFile } = {}) => {
 
-    return await net.parse({
+    return net.parse({
         sourceDir,
         sourceFile,
         source,

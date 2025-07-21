@@ -2,6 +2,6 @@ module.exports = ({ self, config }) => async (path, transform, indent = config.i
 
     const current = await self.readJsonLike(path);
     const updated = await transform(current);
-    return await self.writeJsonLike(path, updated, indent);
+    return self.writeJsonLike(path, updated, indent);
 
 };
