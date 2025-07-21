@@ -1,5 +1,5 @@
-module.exports = ({ fsp }) => dirPath => {
+module.exports = ({ fsp }) => dirpath => {
 
-    return fsp.mkdir(dirPath, { recursive: true });
+    return fsp.mkdir(dirpath, { recursive: true });
 
 };
