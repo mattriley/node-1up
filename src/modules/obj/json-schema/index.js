@@ -1,5 +1,6 @@
 module.exports = {
-    applyDefaults: require('./apply-defaults'),
-    deleteProperties: require('./delete-properties'),
-    removeDuplicates: require('./remove-duplicates')
+    applyDefaultValues: require('./apply-default-values'),
+    removeDeletedProps: require('./remove-deleted-props'),
+    removeDuplicates: require('./remove-duplicates'),
+    removeUnknownProps: require('./remove-unknown-props')
 };
