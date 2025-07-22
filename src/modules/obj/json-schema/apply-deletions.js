@@ -1,4 +1,4 @@
-module.exports = () => (obj, schema) => {
+module.exports = ({ self }) => (obj, schema) => {
 
     if (!self.isPlain(obj) || !schema?.properties) return obj;
 
