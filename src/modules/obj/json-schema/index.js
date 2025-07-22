@@ -1,4 +1,5 @@
 module.exports = {
     applyDefaults: require('./apply-defaults'),
-    applyDeletions: require('./apply-deletions')
+    deleteProperties: require('./delete-properties'),
+    removeDuplicates: require('./remove-duplicates')
 };
