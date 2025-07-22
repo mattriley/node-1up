@@ -2,7 +2,7 @@ module.exports = ({ self }) => (obj, remap) => {
 
     if (!self.isPlain(obj) || !remap) return obj;
 
-    const lookupByField = self.obj.transformEntries('key:corrections', remap, entries => {
+    const lookupByField = self.transformEntries('key:corrections', remap, entries => {
         return entries.map(({ key, corrections }) => {
             const lookup = {};
 
