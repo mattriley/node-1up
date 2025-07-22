@@ -11,6 +11,7 @@ module.exports = {
     freezeDeep: require('./freeze-deep'),
     isEqual: require('./is-equal'),
     isPlain: require('./is-plain'),
+    jsonSchema: require('./json-schema'),
     mapKeys: require('./map-keys'),
     mapValues: require('./map-values'),
     mapValuesAsync: require('./map-values-async'),
