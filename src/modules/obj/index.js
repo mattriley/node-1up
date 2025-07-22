@@ -1,4 +1,5 @@
 module.exports = {
+    applyCorrections: require('./apply-corrections'),
     assignMeta: require('./assign-meta'),
     buildLookup: require('./build-lookup'),
     clean: require('./clean'),
