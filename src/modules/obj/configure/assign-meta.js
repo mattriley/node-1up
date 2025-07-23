@@ -2,12 +2,14 @@ const DEFAULT_KEYS = ['length', 'some', 'exists'];
 
 module.exports = () => (config = {}) => {
 
-    for (let key of DEFAULT_KEYS) {
+    for (const key of DEFAULT_KEYS) {
         config[key] ??= key;
     }
 
+    const mutate = config.mutate ?? true;
+
     return obj => {
-        const acc = {}; // mutable accumulator
+        const acc = {}; // holds computed keys
 
         for (const [key, val] of Object.entries(obj)) {
             if (!Array.isArray(val)) continue;
@@ -22,7 +24,6 @@ module.exports = () => (config = {}) => {
 
                 for (let i = 0; i < elements.length; i++) {
                     const original = val[i];
-                    // Only apply `.exists` for non-objects (e.g., strings, numbers)
                     if (typeof original !== 'object' || original === null) {
                         acc[`${key}.${elements[i]}.${config.exists}`] = true;
                     }
@@ -30,6 +31,6 @@ module.exports = () => (config = {}) => {
             }
         }
 
-        return Object.assign(obj, acc);
+        return mutate ? Object.assign(obj, acc) : { ...obj, ...acc };
     };
 };
