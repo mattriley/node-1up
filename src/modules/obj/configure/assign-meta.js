@@ -2,11 +2,11 @@ const DEFAULT_KEYS = ['length', 'some', 'exists'];
 
 module.exports = () => (config = {}) => {
 
+    const mutate = config.mutate ?? true;
+
     for (const key of DEFAULT_KEYS) {
         config[key] ??= key;
     }
-
-    const mutate = config.mutate ?? true;
 
     return obj => {
         const acc = {}; // holds computed keys

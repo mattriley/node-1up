@@ -1,9 +1,9 @@
 const assert = require('assert');
 
 module.exports = ({ test }) => lib => {
-    const compactInPlace = lib.obj.compactInPlace;
+    const compact = lib.obj.compact;
 
-    test('compactInPlace: deeply removes empty values', () => {
+    test('compact: deeply removes empty values', () => {
         const input = {
             a: '',
             b: null,
@@ -19,11 +19,11 @@ module.exports = ({ test }) => lib => {
             g: ['value']
         };
 
-        compactInPlace(input);
+        compact(input);
         assert.deepStrictEqual(input, expected);
     });
 
-    test('compactInPlace: removes non-JSON-compatible types', () => {
+    test('compact: removes non-JSON-compatible types', () => {
         const input = {
             a: () => { },
             b: Symbol('sym'),
@@ -37,11 +37,11 @@ module.exports = ({ test }) => lib => {
             e: ['valid']
         };
 
-        compactInPlace(input);
+        compact(input);
         assert.deepStrictEqual(input, expected);
     });
 
-    test('compactInPlace: handles mixed nested structures', () => {
+    test('compact: handles mixed nested structures', () => {
         const input = {
             a: {
                 b: {
@@ -62,11 +62,11 @@ module.exports = ({ test }) => lib => {
             g: [{ i: 'yes' }]
         };
 
-        compactInPlace(input);
+        compact(input);
         assert.deepStrictEqual(input, expected);
     });
 
-    test('compactInPlace: keeps valid primitives', () => {
+    test('compact: keeps valid primitives', () => {
         const input = {
             a: 0,
             b: false,
@@ -76,11 +76,11 @@ module.exports = ({ test }) => lib => {
 
         const expected = { ...input };
 
-        compactInPlace(input);
+        compact(input);
         assert.deepStrictEqual(input, expected);
     });
 
-    test('compactInPlace: no-op on already clean object', () => {
+    test('compact: no-op on already clean object', () => {
         const input = {
             a: 'ok',
             b: [1, 2, 3],
@@ -88,20 +88,20 @@ module.exports = ({ test }) => lib => {
         };
 
         const copy = JSON.parse(JSON.stringify(input));
-        compactInPlace(input);
+        compact(input);
         assert.deepStrictEqual(input, copy);
     });
 
-    test('compactInPlace: primitive input returns value or undefined', () => {
-        assert.strictEqual(compactInPlace('valid'), 'valid');
-        assert.strictEqual(compactInPlace(''), undefined);
-        assert.strictEqual(compactInPlace(null), undefined);
-        assert.strictEqual(compactInPlace(undefined), undefined);
-        assert.strictEqual(compactInPlace(42), 42);
-        assert.strictEqual(compactInPlace(false), false);
-        assert.strictEqual(compactInPlace(true), true);
-        assert.strictEqual(compactInPlace(() => { }), undefined);
-        assert.strictEqual(compactInPlace(Symbol('x')), undefined);
-        assert.strictEqual(compactInPlace(BigInt(10)), undefined);
+    test('compact: primitive input returns value or undefined', () => {
+        assert.strictEqual(compact('valid'), 'valid');
+        assert.strictEqual(compact(''), undefined);
+        assert.strictEqual(compact(null), undefined);
+        assert.strictEqual(compact(undefined), undefined);
+        assert.strictEqual(compact(42), 42);
+        assert.strictEqual(compact(false), false);
+        assert.strictEqual(compact(true), true);
+        assert.strictEqual(compact(() => { }), undefined);
+        assert.strictEqual(compact(Symbol('x')), undefined);
+        assert.strictEqual(compact(BigInt(10)), undefined);
     });
 };
