@@ -1,14 +1,14 @@
 module.exports = ({ self }) => {
 
     const removeNonEnumValues = (obj, schema) => {
-        if (!self.isPlain(obj) || !schema?.properties) return obj;
+        if (!obj || !schema) return obj;
 
         for (const [key, propSchema] of Object.entries(schema.properties)) {
-            const val = obj[key];
+            const val = [obj[key]].flat(); // ensure array
 
             // Handle arrays with enum constraint
-            if (Array.isArray(val) && Array.isArray(propSchema.enum)) {
-                const allowed = new Set(propSchema.enum);
+            if (propSchema.items.enum) {
+                const allowed = new Set(propSchema.items.enum);
                 obj[key] = val.filter(v => allowed.has(v));
                 continue;
             }
