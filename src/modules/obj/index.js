@@ -2,7 +2,6 @@ module.exports = {
     applyCorrections: require('./apply-corrections'),
     assignMeta: require('./assign-meta'),
     buildLookup: require('./build-lookup'),
-    clean: require('./clean'),
     compact: require('./compact'),
     configure: require('./configure'),
     dig: require('./dig'),
@@ -17,8 +16,7 @@ module.exports = {
     mapValues: require('./map-values'),
     mapValuesAsync: require('./map-values-async'),
     pick: require('./pick'),
-    pickDeep: require('./pick-deep'),
-    setDeepInPlace: require('./set-deep-in-place'),
+    set: require('./set'),
     sortKeys: require('./sort-keys'),
     toArray: require('./to-array'),
     transformEntries: require('./transform-entries')
