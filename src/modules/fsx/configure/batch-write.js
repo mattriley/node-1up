@@ -1,6 +1,6 @@
 const path = require('path');
 
-module.exports = ({ fs }) => (config = {}) => {
+module.exports = ({ fsp }) => (config = {}) => {
 
     const concurrencyLimit = config.concurrencyLimit ?? 512;
 
@@ -17,12 +17,12 @@ module.exports = ({ fs }) => (config = {}) => {
                 try {
                     const dir = path.dirname(filename);
                     if (!createdDirs.has(dir)) {
-                        await fs.mkdir(dir, { recursive: true });
+                        await fsp.mkdir(dir, { recursive: true });
                         createdDirs.add(dir);
                     }
 
                     const buffer = Buffer.isBuffer(content) ? content : Buffer.from(content);
-                    await fs.writeFile(filename, buffer);
+                    await fsp.writeFile(filename, buffer);
                     onWriteCallback(filename, { success: true });
                 } catch (error) {
                     onWriteCallback(filename, { success: false, error });
@@ -33,7 +33,7 @@ module.exports = ({ fs }) => (config = {}) => {
             };
         };
 
-        function run() {
+        const run = () => {
             while (active < concurrencyLimit) {
                 const task = next();
                 if (!task) break;
