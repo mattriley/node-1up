@@ -22,7 +22,7 @@ module.exports = () => (config = {}) => {
 
         // Escape delimiter for regex
         const escaped = delimiter.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
-        const esc = allowEscaped ? '\\' : '';
+        const esc = allowEscaped ? '\\\\' : '';
         const regex = new RegExp(`^${esc}${escaped}(.*)${esc}${escaped}$`);
 
         const match = str.match(regex);
