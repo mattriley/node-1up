@@ -1,6 +1,6 @@
 const DEFAULT_KEYS = ['length', 'some', 'exists'];
 
-module.exports = () => (config = {}) => {
+module.exports = ({ self }) => (config = {}) => {
 
     const mutate = config.mutate ?? true;
 
@@ -9,6 +9,8 @@ module.exports = () => (config = {}) => {
     }
 
     return obj => {
+        if (!self.isPlain(obj)) return obj;
+
         const acc = {}; // holds computed keys
 
         for (const [key, val] of Object.entries(obj)) {
