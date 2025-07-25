@@ -1,5 +1,5 @@
 module.exports = () => str => {
-    if (!str) return '';
+    str = str.toString();
 
     const offsetNums = 0x1D7F6 - '0'.charCodeAt(0); // Offset for digits
     const offsetUpper = 0x1D670 - 'A'.charCodeAt(0); // Offset for uppercase

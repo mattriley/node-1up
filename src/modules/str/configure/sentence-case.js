@@ -1,8 +1,11 @@
 module.exports = () => (config = {}) => {
-
     config.acronyms ??= [];
 
-    return str => {
+    return (str, options = {}) => {
+
+        options.acronyms ??= config.acronyms;
+        const { acronyms } = options;
+
         if (!str) return '';
 
         const words = str
@@ -15,7 +18,7 @@ module.exports = () => (config = {}) => {
             .split(/\s+/)
             .map((word, i) => {
                 const upper = word.toUpperCase();
-                if (config.acronyms.includes(upper)) return upper;
+                if (acronyms.includes(upper)) return upper;
                 return word.toLowerCase();
             });
 
