@@ -1,11 +1,18 @@
 module.exports = ({ arr }) => (str, limit, transform) => {
 
-    const linesOfWords = str.split('\n').flatMap(line => {
-        return arr.wrap(line.split(' '), limit);
-    });
+    const result = [];
+    const lines = str.split('\n');
 
-    const lines = linesOfWords.map(words => words.join(' '));
-    const transformed = transform ? lines.map(transform) : lines;
-    return transformed.join('\n');
+    for (let i = 0; i < lines.length; i++) {
+        const words = lines[i].split(' ');
+        const wrapped = arr.wrap(words, limit);
 
+        for (let j = 0; j < wrapped.length; j++) {
+            let line = wrapped[j].join(' ');
+            if (transform) line = transform(line);
+            result.push(line);
+        }
+    }
+
+    return result.join('\n');
 };
