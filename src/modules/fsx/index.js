@@ -1,5 +1,7 @@
 module.exports = {
     assertExistsSync: require('./assert-exists-sync'),
+    batchWrite: require('./batch-write'),
+    configure: require('./configure'),
     isDirEmpty: require('./is-dir-empty'),
     mkdirp: require('./mkdirp'),
     readJson: require('./read-json'),

@@ -21,7 +21,7 @@ const outerCompose = ({ config, overrides = {} } = {}) => {
 
     compose.deep('obj', { is, arr });
     compose.deep('str', { arr });
-    compose.make('fsx', { is, fs, fsp });
+    compose.deep('fsx', { is, fs, fsp });
     compose.asis('any');
     compose.deep('geo', { arr, net });
     compose.make('bool');
