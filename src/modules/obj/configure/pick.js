@@ -1,16 +1,11 @@
-module.exports = () => (config = {}) => {
+module.exports = ({ self }) => (config = {}) => {
     config.depth ??= Infinity;
 
     const delimiters = Array.isArray(config.delimiters)
         ? config.delimiters
         : [config.delimiters ?? '.'];
 
-    // Generate regex for multi-char or single-char delimiters
-    const sortedDelims = [...delimiters].sort((a, b) => b.length - a.length);
-    const delimiterPattern = sortedDelims
-        .map(d => d.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&'))
-        .join('|');
-    const splitter = new RegExp(delimiterPattern);
+    const splitter = self.buildDelimitersRegex(delimiters);
 
     const splitPath = path => path.split(splitter);
 
