@@ -1,13 +1,8 @@
-module.exports = ({ arr }) => (config = {}) => {
-    config.delimiters ??= ['.'];
-    config.depth ??= Infinity;
+module.exports = ({ self, arr }) => (config = {}) => {
     config.defaultValue ??= undefined;
-
-    const delimiterList = config.delimiters.map(d =>
-        d.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')
-    );
-
-    const delimiterRegex = new RegExp(`(?:${delimiterList.join('|')})`);
+    config.depth ??= Infinity;
+    config.delimiters ??= ['.'];
+    const delimiterRegex = self.buildDelimitersRegex(config.delimiters);
 
     return (obj, path, defaultValue = config.defaultValue, options = {}) => {
         options.depth ??= config.depth;

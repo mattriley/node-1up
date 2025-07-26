@@ -1,4 +1,5 @@
 module.exports = {
+    _buildDelimitersRegex: require('./_build-delimiters-regex'),
     applyCorrections: require('./apply-corrections'),
     assignMeta: require('./assign-meta'),
     buildLookup: require('./build-lookup'),
