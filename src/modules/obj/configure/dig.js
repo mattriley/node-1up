@@ -1,16 +1,21 @@
 module.exports = ({ arr }) => (config = {}) => {
     config.delimiters ??= ['.'];
+    config.depth ??= Infinity;
+    config.defaultValue ??= undefined;
 
     const delimiterList = config.delimiters.map(d =>
-        d.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&') // escape for regex
+        d.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')
     );
 
     const delimiterRegex = new RegExp(`(?:${delimiterList.join('|')})`);
 
-    return (obj = {}, path, defaultValue = undefined) => {
+    return (obj, path, defaultValue = config.defaultValue, options = {}) => {
+        options.depth ??= config.depth;
 
-        function findKey(currentValue, keysRemaining, results = []) {
-            if (keysRemaining.length === 0) {
+        if (!obj) return obj;
+
+        function findKey(currentValue, keysRemaining, results = [], depth = 0) {
+            if (keysRemaining.length === 0 || depth >= options.depth) {
                 results.push(currentValue);
                 return results;
             }
@@ -19,9 +24,9 @@ module.exports = ({ arr }) => (config = {}) => {
 
             for (const step of steps) {
                 const key = step.join('.');
-                if (currentValue?.[key]) {
+                if (currentValue?.[key] !== undefined) {
                     const newKeysRemaining = keysRemaining.slice(step.length);
-                    findKey(currentValue[key], newKeysRemaining, results);
+                    findKey(currentValue[key], newKeysRemaining, results, depth + 1);
                 }
             }
 
@@ -30,8 +35,8 @@ module.exports = ({ arr }) => (config = {}) => {
 
         const keys = path.split(delimiterRegex);
         const results = findKey(obj, keys);
+
         if (results.length === 0) return defaultValue;
         return results.length === 1 ? results[0] : results;
-    }
-
+    };
 };
