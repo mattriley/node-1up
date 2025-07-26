@@ -1,6 +1,5 @@
 module.exports = () => (config = {}) => {
-
-    const maxDepth = config.depth ?? Infinity;
+    config.depth ??= Infinity;
 
     const delimiters = Array.isArray(config.delimiters)
         ? config.delimiters
@@ -15,7 +14,9 @@ module.exports = () => (config = {}) => {
 
     const splitPath = path => path.split(splitter);
 
-    return (obj, paths) => {
+    return (obj, paths, options = {}) => {
+        options.depth ??= config.depth;
+
         if (obj == null || !Array.isArray(paths)) return {};
 
         const result = {};
@@ -35,7 +36,7 @@ module.exports = () => (config = {}) => {
         // Full deep path extractor
         for (const path of paths) {
             const keys = splitPath(path);
-            if (keys.length === 0 || keys.length > maxDepth) continue;
+            if (keys.length === 0 || keys.length > options.depth) continue;
 
             let sourceCursor = obj;
             let targetCursor = result;

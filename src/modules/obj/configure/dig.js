@@ -1,5 +1,4 @@
 module.exports = ({ arr }) => (config = {}) => {
-
     config.delimiters ??= ['.'];
 
     const delimiterList = config.delimiters.map(d =>
