@@ -1,0 +1,67 @@
+[
+    {
+        "city": "Kuala Lumpur",
+        "country": "Malaysia",
+        "territory": "Federal Territory of Kuala Lumpur"
+    },
+    {
+        "city": "Putrajaya",
+        "country": "Malaysia",
+        "territory": "Federal Territory of Putrajaya"
+    },
+    {
+        "city": "Labuan",
+        "country": "Malaysia",
+        "territory": "Federal Territory of Labuan"
+    },
+    {
+        "city": "Abuja",
+        "country": "Nigeria",
+        "territory": "Federal Capital Territory"
+    },
+    {
+        "city": "Islamabad",
+        "country": "Pakistan",
+        "territory": "Islamabad Capital Territory"
+    },
+    {
+        "city": "Washington",
+        "country": "United States",
+        "territory": "District of Columbia"
+    },
+    {
+        "city": "Canberra",
+        "country": "Australia",
+        "territory": "Australian Capital Territory"
+    },
+    {
+        "city": "Port Moresby",
+        "country": "Papua New Guinea",
+        "territory": "National Capital District"
+    },
+    {
+        "city": "New Delhi",
+        "country": "India",
+        "territory": "National Capital Territory of Delhi"
+    },
+    {
+        "city": "Chandigarh",
+        "country": "India",
+        "territory": "Union Territory of Chandigarh"
+    },
+    {
+        "city": "Puducherry",
+        "country": "India",
+        "territory": "Union Territory of Puducherry"
+    },
+    {
+        "city": "Leh",
+        "country": "India",
+        "territory": "Union Territory of Ladakh"
+    },
+    {
+        "city": "Kargil",
+        "country": "India",
+        "territory": "Union Territory of Ladakh"
+    }
+]

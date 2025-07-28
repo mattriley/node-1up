@@ -1,4 +1,5 @@
 module.exports = {
+    assignFederalTerritoryToCities: require('./assign-federal-territory-to-cities'),
     assignStateToCities: require('./assign-state-to-cities'),
     finder: require('./finder'),
     geonames: require('./geonames'),

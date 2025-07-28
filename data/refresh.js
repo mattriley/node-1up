@@ -3,6 +3,7 @@ const { geo } = require('..');
 const fixStates = require('./fix-states');
 const fixCities = require('./fix-cities');
 let states = require('./source/statesOrig.json');
+const federalTerritoryCities = require('./source/federal-territory-cities.json');
 
 const sourceDir = __dirname + '/source';
 const outputDir = sourceDir;
@@ -20,6 +21,7 @@ const refresh = async () => {
 
     cities = fixCities(cities);
     cities = geo.assignStateToCities({ cities, states, admin1Codes });
+    cities = geo.assignFederalTerritoryToCities({ cities, federalTerritoryCities });
     fs.writeFileSync(outputDir + '/cities.json', JSON.stringify(cities, null, 4));
 
     await geo.geonames.countryInfo.download({ sourceDir, outputDir });
