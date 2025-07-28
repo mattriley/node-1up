@@ -609,10 +609,35 @@ module.exports = ({ test, assert }) => $ => {
     });
 
 
-    test('Kobe', { only: true }, () => {
+    test('Kobe', () => {
         const location = { city: 'Kobe', country: 'JP' };
 
-        const expected = {};
+        const expected = {
+            city: {
+                code: null,
+                name: 'Kobe',
+                source: 'input'
+            },
+            complete: true,
+            country: {
+                code: 'JP',
+                name: 'Japan',
+                source: 'input'
+            },
+            csc: {
+                city: 'Kobe',
+                country: 'Japan',
+                countryCode: 'JP',
+                state: 'Hyogo',
+                stateCode: '28',
+                timezone: 'Asia/Tokyo'
+            },
+            state: {
+                code: '28',
+                name: 'Hyogo',
+                source: 'inferred'
+            }
+        }
 
         const actual = geo.resolveCity(location);
         assert.deepEqual(actual, expected);

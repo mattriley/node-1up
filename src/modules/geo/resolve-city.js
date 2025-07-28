@@ -102,7 +102,9 @@ module.exports = ({ self, arr }) => csc => {
 
         const city = findCityMatch();
         if (city) {
-            const state = city.stateCode ? self.finder.findState(city.stateCode, city.countryCode) : null;
+            // const state = city.stateCode ? self.finder.findState(city.stateCode, city.countryCode) : null;
+            const stateSearchKey = city.state || city.stateCode;
+            const state = stateSearchKey ? self.finder.findState(stateSearchKey, city.countryCode) : null;
             if (state) {
                 result.state = state.name;
                 stateKey = state.isoCode;
