@@ -13,6 +13,12 @@ module.exports = ({ str }) => ({ cities = [], states = [], countries = [] }) => 
             city.countryCode = 'CN';
         });
 
+        // Taiwan is not a state - remove.
+        for (const city of cities) {
+            if (!city.state) continue;
+            if (city.state === 'Taiwan') delete city.state;
+        }
+
         // Apply string replacements.
         for (const city of cities) {
             if (!city.state) continue;
