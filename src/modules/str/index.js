@@ -1,4 +1,5 @@
 module.exports = {
+    applyReplacements: require('./apply-replacements'),
     configure: require('./configure'),
     indent: require('./indent'),
     join: require('./join'),

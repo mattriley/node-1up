@@ -16,14 +16,14 @@ const outerCompose = ({ config, overrides = {} } = {}) => {
 
     const { is } = compose.make('is');
     const { arr } = compose.make('arr', { is });
+    const { str } = compose.deep('str', { arr });
     const { fun } = compose.make('fun', { is });
     const { net } = compose.make('net');
 
     compose.deep('obj', { is, arr });
-    compose.deep('str', { arr });
     compose.deep('fsx', { is, fs, fsp });
     compose.asis('any');
-    compose.deep('geo', { arr, net });
+    compose.deep('geo', { str, arr, net });
     compose.make('bool');
     compose.make('path', { arr });
     compose.make('pipe', { is, fun });

@@ -22864,11 +22864,12 @@
         "longitude": "102.23807100"
     },
     {
-        "name": "Malacca",
+        "name": "Melaka",
         "isoCode": "04",
         "countryCode": "MY",
         "latitude": "2.18959400",
-        "longitude": "102.25008680"
+        "longitude": "102.25008680",
+        "nameOrig": "Malacca"
     },
     {
         "name": "Negeri Sembilan",
@@ -35112,12 +35113,5 @@
         "countryCode": "ZW",
         "latitude": "-17.48510290",
         "longitude": "29.78892480"
-    },
-    {
-        "name": "Melaka",
-        "isoCode": "04",
-        "countryCode": "MY",
-        "latitude": "2.18959400",
-        "longitude": "102.25008680"
     }
 ]
