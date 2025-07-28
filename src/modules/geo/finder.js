@@ -6,11 +6,11 @@ module.exports = ({ config }) => {
     const findCity = (cityKey, stateKey, countryKey) => {
         const cities = lookup.cities[cityKey.toUpperCase()] ?? [];
 
-        const state = findState(stateKey, countryKey);
+        const state = stateKey && findState(stateKey, countryKey);
         const country = findCountry(countryKey);
 
         const city = cities.find(city => {
-            return (city.stateCode && city.stateCode.toUpperCase() === state.isoCode.toUpperCase()) &&
+            return (state && city.stateCode && city.stateCode.toUpperCase() === state.isoCode.toUpperCase()) &&
                 city.countryCode.toUpperCase() === country.isoCode.toUpperCase();
         });
         if (!city) throw new Error(`City not found: ${cityKey}; State: ${stateKey}; Country: ${countryKey}`);
