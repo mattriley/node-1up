@@ -570,7 +570,6 @@ module.exports = ({ test, assert }) => $ => {
         }
 
         const actual = geo.resolveCity(location);
-        // console.dir(actual, { depth: null });
         assert.deepEqual(actual, expected);
     });
 

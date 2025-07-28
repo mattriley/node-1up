@@ -1,11 +1,9 @@
 const replacements = {
     'Region': '',
-    'Prefecture': '',
-    'Ō': 'O',
-    'ō': 'o'
+    'Prefecture': ''
 };
 
-module.exports = ({ str }) => ({ cities, states, countries }) => {
+module.exports = ({ str }) => ({ cities = [], states = [], countries = [] }) => {
 
     // Cities
     {
@@ -18,7 +16,8 @@ module.exports = ({ str }) => ({ cities, states, countries }) => {
         // Apply string replacements.
         for (const city of cities) {
             if (!city.state) continue;
-            const state = str.applyReplacements(city.state, replacements);
+            let state = str.applyReplacements(city.state, replacements);
+            state = str.removeAccents(state);
             if (state === city.state) continue;
             Object.assign(city, { state, stateOrig: city.state });
         }
@@ -28,11 +27,12 @@ module.exports = ({ str }) => ({ cities, states, countries }) => {
     {
         // Rename Malacca (state) to Melaka.
         const malaccaState = states.find(state => state.name === 'Malacca' && state.countryCode === 'MY');
-        Object.assign(malaccaState, { name: 'Melaka', nameOrig: malaccaState.name });
+        if (malaccaState) Object.assign(malaccaState, { name: 'Melaka', nameOrig: malaccaState.name });
 
         // Apply string replacements.
         for (const state of states) {
-            const name = str.applyReplacements(state.name, replacements);
+            let name = str.applyReplacements(state.name, replacements);
+            name = str.removeAccents(name);
             if (name === state.name) continue;
             Object.assign(state, { name, nameOrig: state.name });
         }
