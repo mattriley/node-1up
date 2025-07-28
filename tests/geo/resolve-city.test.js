@@ -574,4 +574,39 @@ module.exports = ({ test, assert }) => $ => {
         assert.deepEqual(actual, expected);
     });
 
+
+    test('Auckland', () => {
+        const location = { city: 'Auckland', country: 'NZ' };
+
+        const expected = {
+            city: {
+                code: null,
+                name: 'Auckland',
+                source: 'input'
+            },
+            complete: true,
+            country: {
+                code: 'NZ',
+                name: 'New Zealand',
+                source: 'input'
+            },
+            csc: {
+                city: 'Auckland',
+                country: 'New Zealand',
+                countryCode: 'NZ',
+                state: 'Auckland',
+                stateCode: 'AUK',
+                timezone: 'Pacific/Auckland'
+            },
+            state: {
+                code: 'AUK',
+                name: 'Auckland',
+                source: 'inferred'
+            }
+        };
+
+        const actual = geo.resolveCity(location);
+        assert.deepEqual(actual, expected);
+    });
+
 };
