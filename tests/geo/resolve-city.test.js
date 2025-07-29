@@ -333,6 +333,7 @@ module.exports = ({ test, assert }) => $ => {
     });
 
     test('Los Angeles', () => {
+        // becomes even more non-unique with only ascii chars
         const location = { city: 'Los Angeles' };
 
         const expected = {
@@ -351,7 +352,7 @@ module.exports = ({ test, assert }) => $ => {
                 errors: [
                     {
                         code: 'ambiguous',
-                        message: 'Ambiguous: Los Angeles (4 matches globally)'
+                        message: 'Ambiguous: Los Angeles (10 matches globally)'
                     },
                     {
                         code: 'missing',
