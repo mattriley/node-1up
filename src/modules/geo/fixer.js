@@ -1,6 +1,7 @@
 const replacements = {
     'Region': '',
-    'Prefecture': ''
+    'Prefecture': '',
+    'Province': ''
 };
 
 module.exports = ({ str }) => {

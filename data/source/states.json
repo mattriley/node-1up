@@ -212,11 +212,12 @@
         "longitude": "69.62145620"
     },
     {
-        "name": "Kunduz Province",
+        "name": "Kunduz",
         "isoCode": "KDZ",
         "countryCode": "AF",
         "latitude": "36.72855110",
-        "longitude": "68.86789820"
+        "longitude": "68.86789820",
+        "nameOrig": "Kunduz Province"
     },
     {
         "name": "Khost",
@@ -755,11 +756,12 @@
         "nameOrig": "Aragatsotn Region"
     },
     {
-        "name": "Ararat Province",
+        "name": "Ararat",
         "isoCode": "AR",
         "countryCode": "AM",
         "latitude": "39.91394150",
-        "longitude": "44.72000040"
+        "longitude": "44.72000040",
+        "nameOrig": "Ararat Province"
     },
     {
         "name": "Armavir",
@@ -777,11 +779,12 @@
         "longitude": "44.51520900"
     },
     {
-        "name": "Gegharkunik Province",
+        "name": "Gegharkunik",
         "isoCode": "GR",
         "countryCode": "AM",
         "latitude": "40.35264260",
-        "longitude": "45.12604140"
+        "longitude": "45.12604140",
+        "nameOrig": "Gegharkunik Province"
     },
     {
         "name": "Kotayk",
@@ -808,11 +811,12 @@
         "nameOrig": "Shirak Region"
     },
     {
-        "name": "Syunik Province",
+        "name": "Syunik",
         "isoCode": "SU",
         "countryCode": "AM",
         "latitude": "39.51331120",
-        "longitude": "46.33932340"
+        "longitude": "46.33932340",
+        "nameOrig": "Syunik Province"
     },
     {
         "name": "Tavush",
@@ -831,21 +835,23 @@
         "nameOrig": "Vayots Dzor Region"
     },
     {
-        "name": "Bengo Province",
+        "name": "Bengo",
         "isoCode": "BGO",
         "countryCode": "AO",
         "latitude": "-9.10422570",
-        "longitude": "13.72891670"
+        "longitude": "13.72891670",
+        "nameOrig": "Bengo Province"
     },
     {
-        "name": "Benguela Province",
+        "name": "Benguela",
         "isoCode": "BGU",
         "countryCode": "AO",
         "latitude": "-12.80037440",
-        "longitude": "13.91439900"
+        "longitude": "13.91439900",
+        "nameOrig": "Benguela Province"
     },
     {
-        "name": "Bie Province",
+        "name": "Bie",
         "isoCode": "BIE",
         "countryCode": "AO",
         "latitude": "-12.57279070",
@@ -853,32 +859,36 @@
         "nameOrig": "Bié Province"
     },
     {
-        "name": "Cabinda Province",
+        "name": "Cabinda",
         "isoCode": "CAB",
         "countryCode": "AO",
         "latitude": "-5.02487490",
-        "longitude": "12.34638750"
+        "longitude": "12.34638750",
+        "nameOrig": "Cabinda Province"
     },
     {
-        "name": "Cuando Cubango Province",
+        "name": "Cuando Cubango",
         "isoCode": "CCU",
         "countryCode": "AO",
         "latitude": "-16.41808240",
-        "longitude": "18.80761950"
+        "longitude": "18.80761950",
+        "nameOrig": "Cuando Cubango Province"
     },
     {
-        "name": "Cunene Province",
+        "name": "Cunene",
         "isoCode": "CNN",
         "countryCode": "AO",
         "latitude": "-16.28022210",
-        "longitude": "16.15809370"
+        "longitude": "16.15809370",
+        "nameOrig": "Cunene Province"
     },
     {
-        "name": "Cuanza Norte Province",
+        "name": "Cuanza Norte",
         "isoCode": "CNO",
         "countryCode": "AO",
         "latitude": "-9.23985130",
-        "longitude": "14.65878210"
+        "longitude": "14.65878210",
+        "nameOrig": "Cuanza Norte Province"
     },
     {
         "name": "Cuanza Sul",
@@ -888,14 +898,15 @@
         "longitude": "15.40680790"
     },
     {
-        "name": "Huambo Province",
+        "name": "Huambo",
         "isoCode": "HUA",
         "countryCode": "AO",
         "latitude": "-12.52682210",
-        "longitude": "15.59433880"
+        "longitude": "15.59433880",
+        "nameOrig": "Huambo Province"
     },
     {
-        "name": "Huila Province",
+        "name": "Huila",
         "isoCode": "HUI",
         "countryCode": "AO",
         "latitude": "-14.92805530",
@@ -903,42 +914,47 @@
         "nameOrig": "Huíla Province"
     },
     {
-        "name": "Lunda Norte Province",
+        "name": "Lunda Norte",
         "isoCode": "LNO",
         "countryCode": "AO",
         "latitude": "-8.35250220",
-        "longitude": "19.18800470"
+        "longitude": "19.18800470",
+        "nameOrig": "Lunda Norte Province"
     },
     {
-        "name": "Lunda Sul Province",
+        "name": "Lunda Sul",
         "isoCode": "LSU",
         "countryCode": "AO",
         "latitude": "-10.28665780",
-        "longitude": "20.71224650"
+        "longitude": "20.71224650",
+        "nameOrig": "Lunda Sul Province"
     },
     {
-        "name": "Luanda Province",
+        "name": "Luanda",
         "isoCode": "LUA",
         "countryCode": "AO",
         "latitude": "-9.03508800",
-        "longitude": "13.26634790"
+        "longitude": "13.26634790",
+        "nameOrig": "Luanda Province"
     },
     {
-        "name": "Malanje Province",
+        "name": "Malanje",
         "isoCode": "MAL",
         "countryCode": "AO",
         "latitude": "-9.82511830",
-        "longitude": "16.91225100"
+        "longitude": "16.91225100",
+        "nameOrig": "Malanje Province"
     },
     {
-        "name": "Moxico Province",
+        "name": "Moxico",
         "isoCode": "MOX",
         "countryCode": "AO",
         "latitude": "-13.42935790",
-        "longitude": "20.33088140"
+        "longitude": "20.33088140",
+        "nameOrig": "Moxico Province"
     },
     {
-        "name": "Uige Province",
+        "name": "Uige",
         "isoCode": "UIG",
         "countryCode": "AO",
         "latitude": "-7.17367320",
@@ -946,11 +962,12 @@
         "nameOrig": "Uíge Province"
     },
     {
-        "name": "Zaire Province",
+        "name": "Zaire",
         "isoCode": "ZAI",
         "countryCode": "AO",
         "latitude": "-6.57334580",
-        "longitude": "13.17403480"
+        "longitude": "13.17403480",
+        "nameOrig": "Zaire Province"
     },
     {
         "name": "Salta",
@@ -2626,7 +2643,7 @@
         "nameOrig": "Sud-Ouest Region"
     },
     {
-        "name": "Bale Province",
+        "name": "Bale",
         "isoCode": "BAL",
         "countryCode": "BF",
         "latitude": "11.78206020",
@@ -2634,21 +2651,23 @@
         "nameOrig": "Balé Province"
     },
     {
-        "name": "Bam Province",
+        "name": "Bam",
         "isoCode": "BAM",
         "countryCode": "BF",
         "latitude": "13.44613300",
-        "longitude": "-1.59839590"
+        "longitude": "-1.59839590",
+        "nameOrig": "Bam Province"
     },
     {
-        "name": "Banwa Province",
+        "name": "Banwa",
         "isoCode": "BAN",
         "countryCode": "BF",
         "latitude": "12.13230530",
-        "longitude": "-4.15137640"
+        "longitude": "-4.15137640",
+        "nameOrig": "Banwa Province"
     },
     {
-        "name": "Bazega Province",
+        "name": "Bazega",
         "isoCode": "BAZ",
         "countryCode": "BF",
         "latitude": "11.97676920",
@@ -2656,11 +2675,12 @@
         "nameOrig": "Bazèga Province"
     },
     {
-        "name": "Bougouriba Province",
+        "name": "Bougouriba",
         "isoCode": "BGR",
         "countryCode": "BF",
         "latitude": "10.87226460",
-        "longitude": "-3.33889170"
+        "longitude": "-3.33889170",
+        "nameOrig": "Bougouriba Province"
     },
     {
         "name": "Boulgou",
@@ -2670,7 +2690,7 @@
         "longitude": "-0.37483540"
     },
     {
-        "name": "Comoe Province",
+        "name": "Comoe",
         "isoCode": "COM",
         "countryCode": "BF",
         "latitude": "10.40729920",
@@ -2678,49 +2698,55 @@
         "nameOrig": "Comoé Province"
     },
     {
-        "name": "Ganzourgou Province",
+        "name": "Ganzourgou",
         "isoCode": "GAN",
         "countryCode": "BF",
         "latitude": "12.25376480",
-        "longitude": "-0.75328090"
+        "longitude": "-0.75328090",
+        "nameOrig": "Ganzourgou Province"
     },
     {
-        "name": "Gnagna Province",
+        "name": "Gnagna",
         "isoCode": "GNA",
         "countryCode": "BF",
         "latitude": "12.89749920",
-        "longitude": "0.07467670"
+        "longitude": "0.07467670",
+        "nameOrig": "Gnagna Province"
     },
     {
-        "name": "Gourma Province",
+        "name": "Gourma",
         "isoCode": "GOU",
         "countryCode": "BF",
         "latitude": "12.16244730",
-        "longitude": "0.67730460"
+        "longitude": "0.67730460",
+        "nameOrig": "Gourma Province"
     },
     {
-        "name": "Houet Province",
+        "name": "Houet",
         "isoCode": "HOU",
         "countryCode": "BF",
         "latitude": "11.13204470",
-        "longitude": "-4.23333550"
+        "longitude": "-4.23333550",
+        "nameOrig": "Houet Province"
     },
     {
-        "name": "Ioba Province",
+        "name": "Ioba",
         "isoCode": "IOB",
         "countryCode": "BF",
         "latitude": "11.05620340",
-        "longitude": "-3.01757120"
+        "longitude": "-3.01757120",
+        "nameOrig": "Ioba Province"
     },
     {
-        "name": "Kadiogo Province",
+        "name": "Kadiogo",
         "isoCode": "KAD",
         "countryCode": "BF",
         "latitude": "12.34258970",
-        "longitude": "-1.44346900"
+        "longitude": "-1.44346900",
+        "nameOrig": "Kadiogo Province"
     },
     {
-        "name": "Kenedougou Province",
+        "name": "Kenedougou",
         "isoCode": "KEN",
         "countryCode": "BF",
         "latitude": "11.39193950",
@@ -2728,21 +2754,23 @@
         "nameOrig": "Kénédougou Province"
     },
     {
-        "name": "Komondjari Province",
+        "name": "Komondjari",
         "isoCode": "KMD",
         "countryCode": "BF",
         "latitude": "12.71265270",
-        "longitude": "0.67730460"
+        "longitude": "0.67730460",
+        "nameOrig": "Komondjari Province"
     },
     {
-        "name": "Kompienga Province",
+        "name": "Kompienga",
         "isoCode": "KMP",
         "countryCode": "BF",
         "latitude": "11.52383620",
-        "longitude": "0.75328090"
+        "longitude": "0.75328090",
+        "nameOrig": "Kompienga Province"
     },
     {
-        "name": "Koulpelogo Province",
+        "name": "Koulpelogo",
         "isoCode": "KOP",
         "countryCode": "BF",
         "latitude": "11.52476740",
@@ -2750,21 +2778,23 @@
         "nameOrig": "Koulpélogo Province"
     },
     {
-        "name": "Kossi Province",
+        "name": "Kossi",
         "isoCode": "KOS",
         "countryCode": "BF",
         "latitude": "12.96045800",
-        "longitude": "-3.90626880"
+        "longitude": "-3.90626880",
+        "nameOrig": "Kossi Province"
     },
     {
-        "name": "Kouritenga Province",
+        "name": "Kouritenga",
         "isoCode": "KOT",
         "countryCode": "BF",
         "latitude": "12.16318130",
-        "longitude": "-0.22446620"
+        "longitude": "-0.22446620",
+        "nameOrig": "Kouritenga Province"
     },
     {
-        "name": "Kourweogo Province",
+        "name": "Kourweogo",
         "isoCode": "KOW",
         "countryCode": "BF",
         "latitude": "12.70774950",
@@ -2772,7 +2802,7 @@
         "nameOrig": "Kourwéogo Province"
     },
     {
-        "name": "Leraba Province",
+        "name": "Leraba",
         "isoCode": "LER",
         "countryCode": "BF",
         "latitude": "10.66487850",
@@ -2780,11 +2810,12 @@
         "nameOrig": "Léraba Province"
     },
     {
-        "name": "Loroum Province",
+        "name": "Loroum",
         "isoCode": "LOR",
         "countryCode": "BF",
         "latitude": "13.81298140",
-        "longitude": "-2.06651970"
+        "longitude": "-2.06651970",
+        "nameOrig": "Loroum Province"
     },
     {
         "name": "Mouhoun",
@@ -2794,49 +2825,55 @@
         "longitude": "-3.33889170"
     },
     {
-        "name": "Namentenga Province",
+        "name": "Namentenga",
         "isoCode": "NAM",
         "countryCode": "BF",
         "latitude": "13.08125840",
-        "longitude": "-0.52578230"
+        "longitude": "-0.52578230",
+        "nameOrig": "Namentenga Province"
     },
     {
-        "name": "Nahouri Province",
+        "name": "Nahouri",
         "isoCode": "NAO",
         "countryCode": "BF",
         "latitude": "11.25022670",
-        "longitude": "-1.13530200"
+        "longitude": "-1.13530200",
+        "nameOrig": "Nahouri Province"
     },
     {
-        "name": "Nayala Province",
+        "name": "Nayala",
         "isoCode": "NAY",
         "countryCode": "BF",
         "latitude": "12.69645580",
-        "longitude": "-3.01757120"
+        "longitude": "-3.01757120",
+        "nameOrig": "Nayala Province"
     },
     {
-        "name": "Noumbiel Province",
+        "name": "Noumbiel",
         "isoCode": "NOU",
         "countryCode": "BF",
         "latitude": "9.84409460",
-        "longitude": "-2.97755580"
+        "longitude": "-2.97755580",
+        "nameOrig": "Noumbiel Province"
     },
     {
-        "name": "Oubritenga Province",
+        "name": "Oubritenga",
         "isoCode": "OUB",
         "countryCode": "BF",
         "latitude": "12.70960870",
-        "longitude": "-1.44346900"
+        "longitude": "-1.44346900",
+        "nameOrig": "Oubritenga Province"
     },
     {
-        "name": "Oudalan Province",
+        "name": "Oudalan",
         "isoCode": "OUD",
         "countryCode": "BF",
         "latitude": "14.47190200",
-        "longitude": "-0.45023680"
+        "longitude": "-0.45023680",
+        "nameOrig": "Oudalan Province"
     },
     {
-        "name": "Passore Province",
+        "name": "Passore",
         "isoCode": "PAS",
         "countryCode": "BF",
         "latitude": "12.88812210",
@@ -2844,14 +2881,15 @@
         "nameOrig": "Passoré Province"
     },
     {
-        "name": "Poni Province",
+        "name": "Poni",
         "isoCode": "PON",
         "countryCode": "BF",
         "latitude": "10.33259960",
-        "longitude": "-3.33889170"
+        "longitude": "-3.33889170",
+        "nameOrig": "Poni Province"
     },
     {
-        "name": "Seno Province",
+        "name": "Seno",
         "isoCode": "SEN",
         "countryCode": "BF",
         "latitude": "14.00722340",
@@ -2859,21 +2897,23 @@
         "nameOrig": "Séno Province"
     },
     {
-        "name": "Sissili Province",
+        "name": "Sissili",
         "isoCode": "SIS",
         "countryCode": "BF",
         "latitude": "11.24412190",
-        "longitude": "-2.22366670"
+        "longitude": "-2.22366670",
+        "nameOrig": "Sissili Province"
     },
     {
-        "name": "Sanmatenga Province",
+        "name": "Sanmatenga",
         "isoCode": "SMT",
         "countryCode": "BF",
         "latitude": "13.35653040",
-        "longitude": "-1.05861350"
+        "longitude": "-1.05861350",
+        "nameOrig": "Sanmatenga Province"
     },
     {
-        "name": "Sanguie Province",
+        "name": "Sanguie",
         "isoCode": "SNG",
         "countryCode": "BF",
         "latitude": "12.15018610",
@@ -2881,63 +2921,71 @@
         "nameOrig": "Sanguié Province"
     },
     {
-        "name": "Soum Province",
+        "name": "Soum",
         "isoCode": "SOM",
         "countryCode": "BF",
         "latitude": "14.09628410",
-        "longitude": "-1.36621600"
+        "longitude": "-1.36621600",
+        "nameOrig": "Soum Province"
     },
     {
-        "name": "Sourou Province",
+        "name": "Sourou",
         "isoCode": "SOR",
         "countryCode": "BF",
         "latitude": "13.34180300",
-        "longitude": "-2.93757390"
+        "longitude": "-2.93757390",
+        "nameOrig": "Sourou Province"
     },
     {
-        "name": "Tapoa Province",
+        "name": "Tapoa",
         "isoCode": "TAP",
         "countryCode": "BF",
         "latitude": "12.24970720",
-        "longitude": "1.67606910"
+        "longitude": "1.67606910",
+        "nameOrig": "Tapoa Province"
     },
     {
-        "name": "Tuy Province",
+        "name": "Tuy",
         "isoCode": "TUI",
         "countryCode": "BF",
         "latitude": "38.88868400",
-        "longitude": "-77.00471900"
+        "longitude": "-77.00471900",
+        "nameOrig": "Tuy Province"
     },
     {
-        "name": "Yagha Province",
+        "name": "Yagha",
         "isoCode": "YAG",
         "countryCode": "BF",
         "latitude": "13.35761570",
-        "longitude": "0.75328090"
+        "longitude": "0.75328090",
+        "nameOrig": "Yagha Province"
     },
     {
-        "name": "Yatenga Province",
+        "name": "Yatenga",
         "isoCode": "YAT",
         "countryCode": "BF",
         "latitude": "13.62493440",
-        "longitude": "-2.38136210"
+        "longitude": "-2.38136210",
+        "nameOrig": "Yatenga Province"
     },
     {
-        "name": "Ziro Province",
+        "name": "Ziro",
         "isoCode": "ZIR",
         "countryCode": "BF",
         "latitude": "11.60949950",
-        "longitude": "-1.90992380"
+        "longitude": "-1.90992380",
+        "nameOrig": "Ziro Province"
     },
     {
-        "name": "Zondoma Province",
+        "name": "Zondoma",
         "isoCode": "ZON",
         "countryCode": "BF",
         "latitude": "13.11659260",
-        "longitude": "-2.42087130"
+        "longitude": "-2.42087130",
+        "nameOrig": "Zondoma Province"
     },
     {
-        "name": "Zoundweogo Province",
+        "name": "Zoundweogo",
         "isoCode": "ZOU",
         "countryCode": "BF",
         "latitude": "11.61411740",
@@ -2945,186 +2993,212 @@
         "nameOrig": "Zoundwéogo Province"
     },
     {
-        "name": "Blagoevgrad Province",
+        "name": "Blagoevgrad",
         "isoCode": "01",
         "countryCode": "BG",
         "latitude": "42.02086140",
-        "longitude": "23.09433560"
+        "longitude": "23.09433560",
+        "nameOrig": "Blagoevgrad Province"
     },
     {
-        "name": "Burgas Province",
+        "name": "Burgas",
         "isoCode": "02",
         "countryCode": "BG",
         "latitude": "42.50480000",
-        "longitude": "27.46260790"
+        "longitude": "27.46260790",
+        "nameOrig": "Burgas Province"
     },
     {
-        "name": "Varna Province",
+        "name": "Varna",
         "isoCode": "03",
         "countryCode": "BG",
         "latitude": "43.20464770",
-        "longitude": "27.91054880"
+        "longitude": "27.91054880",
+        "nameOrig": "Varna Province"
     },
     {
-        "name": "Veliko Tarnovo Province",
+        "name": "Veliko Tarnovo",
         "isoCode": "04",
         "countryCode": "BG",
         "latitude": "43.07565390",
-        "longitude": "25.61715000"
+        "longitude": "25.61715000",
+        "nameOrig": "Veliko Tarnovo Province"
     },
     {
-        "name": "Vidin Province",
+        "name": "Vidin",
         "isoCode": "05",
         "countryCode": "BG",
         "latitude": "43.99617390",
-        "longitude": "22.86795150"
+        "longitude": "22.86795150",
+        "nameOrig": "Vidin Province"
     },
     {
-        "name": "Vratsa Province",
+        "name": "Vratsa",
         "isoCode": "06",
         "countryCode": "BG",
         "latitude": "43.21018060",
-        "longitude": "23.55292100"
+        "longitude": "23.55292100",
+        "nameOrig": "Vratsa Province"
     },
     {
-        "name": "Gabrovo Province",
+        "name": "Gabrovo",
         "isoCode": "07",
         "countryCode": "BG",
         "latitude": "42.86847000",
-        "longitude": "25.31688900"
+        "longitude": "25.31688900",
+        "nameOrig": "Gabrovo Province"
     },
     {
-        "name": "Dobrich Province",
+        "name": "Dobrich",
         "isoCode": "08",
         "countryCode": "BG",
         "latitude": "43.57278600",
-        "longitude": "27.82728020"
+        "longitude": "27.82728020",
+        "nameOrig": "Dobrich Province"
     },
     {
-        "name": "Kardzhali Province",
+        "name": "Kardzhali",
         "isoCode": "09",
         "countryCode": "BG",
         "latitude": "41.63384160",
-        "longitude": "25.37766870"
+        "longitude": "25.37766870",
+        "nameOrig": "Kardzhali Province"
     },
     {
-        "name": "Kyustendil Province",
+        "name": "Kyustendil",
         "isoCode": "10",
         "countryCode": "BG",
         "latitude": "42.28687990",
-        "longitude": "22.69396350"
+        "longitude": "22.69396350",
+        "nameOrig": "Kyustendil Province"
     },
     {
-        "name": "Lovech Province",
+        "name": "Lovech",
         "isoCode": "11",
         "countryCode": "BG",
         "latitude": "43.13677980",
-        "longitude": "24.71393350"
+        "longitude": "24.71393350",
+        "nameOrig": "Lovech Province"
     },
     {
-        "name": "Montana Province",
+        "name": "Montana",
         "isoCode": "12",
         "countryCode": "BG",
         "latitude": "43.40851480",
-        "longitude": "23.22575890"
+        "longitude": "23.22575890",
+        "nameOrig": "Montana Province"
     },
     {
-        "name": "Pazardzhik Province",
+        "name": "Pazardzhik",
         "isoCode": "13",
         "countryCode": "BG",
         "latitude": "42.19275670",
-        "longitude": "24.33362260"
+        "longitude": "24.33362260",
+        "nameOrig": "Pazardzhik Province"
     },
     {
-        "name": "Pernik Province",
+        "name": "Pernik",
         "isoCode": "14",
         "countryCode": "BG",
         "latitude": "42.60519900",
-        "longitude": "23.03779160"
+        "longitude": "23.03779160",
+        "nameOrig": "Pernik Province"
     },
     {
-        "name": "Pleven Province",
+        "name": "Pleven",
         "isoCode": "15",
         "countryCode": "BG",
         "latitude": "43.41701690",
-        "longitude": "24.60667080"
+        "longitude": "24.60667080",
+        "nameOrig": "Pleven Province"
     },
     {
-        "name": "Plovdiv Province",
+        "name": "Plovdiv",
         "isoCode": "16",
         "countryCode": "BG",
         "latitude": "42.13540790",
-        "longitude": "24.74529040"
+        "longitude": "24.74529040",
+        "nameOrig": "Plovdiv Province"
     },
     {
-        "name": "Razgrad Province",
+        "name": "Razgrad",
         "isoCode": "17",
         "countryCode": "BG",
         "latitude": "43.52717050",
-        "longitude": "26.52412280"
+        "longitude": "26.52412280",
+        "nameOrig": "Razgrad Province"
     },
     {
-        "name": "Ruse Province",
+        "name": "Ruse",
         "isoCode": "18",
         "countryCode": "BG",
         "latitude": "43.83559640",
-        "longitude": "25.96561440"
+        "longitude": "25.96561440",
+        "nameOrig": "Ruse Province"
     },
     {
-        "name": "Silistra Province",
+        "name": "Silistra",
         "isoCode": "19",
         "countryCode": "BG",
         "latitude": "44.11471010",
-        "longitude": "27.26714540"
+        "longitude": "27.26714540",
+        "nameOrig": "Silistra Province"
     },
     {
-        "name": "Sliven Province",
+        "name": "Sliven",
         "isoCode": "20",
         "countryCode": "BG",
         "latitude": "42.68167020",
-        "longitude": "26.32285690"
+        "longitude": "26.32285690",
+        "nameOrig": "Sliven Province"
     },
     {
-        "name": "Smolyan Province",
+        "name": "Smolyan",
         "isoCode": "21",
         "countryCode": "BG",
         "latitude": "41.57741480",
-        "longitude": "24.70108710"
+        "longitude": "24.70108710",
+        "nameOrig": "Smolyan Province"
     },
     {
-        "name": "Sofia City Province",
+        "name": "Sofia City",
         "isoCode": "22",
         "countryCode": "BG",
         "latitude": "42.75701090",
-        "longitude": "23.45046830"
+        "longitude": "23.45046830",
+        "nameOrig": "Sofia City Province"
     },
     {
-        "name": "Sofia Province",
+        "name": "Sofia",
         "isoCode": "23",
         "countryCode": "BG",
         "latitude": "42.67344000",
-        "longitude": "23.83349370"
+        "longitude": "23.83349370",
+        "nameOrig": "Sofia Province"
     },
     {
-        "name": "Stara Zagora Province",
+        "name": "Stara Zagora",
         "isoCode": "24",
         "countryCode": "BG",
         "latitude": "42.42577090",
-        "longitude": "25.63448550"
+        "longitude": "25.63448550",
+        "nameOrig": "Stara Zagora Province"
     },
     {
-        "name": "Targovishte Province",
+        "name": "Targovishte",
         "isoCode": "25",
         "countryCode": "BG",
         "latitude": "43.24623490",
-        "longitude": "26.56912510"
+        "longitude": "26.56912510",
+        "nameOrig": "Targovishte Province"
     },
     {
-        "name": "Haskovo Province",
+        "name": "Haskovo",
         "isoCode": "26",
         "countryCode": "BG",
         "latitude": "41.93441780",
-        "longitude": "25.55546720"
+        "longitude": "25.55546720",
+        "nameOrig": "Haskovo Province"
     },
     {
         "name": "Shumen",
@@ -3134,11 +3208,12 @@
         "longitude": "26.93612860"
     },
     {
-        "name": "Yambol Province",
+        "name": "Yambol",
         "isoCode": "28",
         "countryCode": "BG",
         "latitude": "42.48414940",
-        "longitude": "26.50352960"
+        "longitude": "26.50352960",
+        "nameOrig": "Yambol Province"
     },
     {
         "name": "Capital Governorate",
@@ -3176,130 +3251,148 @@
         "longitude": "50.48251730"
     },
     {
-        "name": "Bubanza Province",
+        "name": "Bubanza",
         "isoCode": "BB",
         "countryCode": "BI",
         "latitude": "-3.15724030",
-        "longitude": "29.37149090"
+        "longitude": "29.37149090",
+        "nameOrig": "Bubanza Province"
     },
     {
-        "name": "Bujumbura Rural Province",
+        "name": "Bujumbura Rural",
         "isoCode": "BL",
         "countryCode": "BI",
         "latitude": "-3.50901440",
-        "longitude": "29.46435900"
+        "longitude": "29.46435900",
+        "nameOrig": "Bujumbura Rural Province"
     },
     {
-        "name": "Bujumbura Mairie Province",
+        "name": "Bujumbura Mairie",
         "isoCode": "BM",
         "countryCode": "BI",
         "latitude": "-3.38841410",
-        "longitude": "29.34826460"
+        "longitude": "29.34826460",
+        "nameOrig": "Bujumbura Mairie Province"
     },
     {
-        "name": "Bururi Province",
+        "name": "Bururi",
         "isoCode": "BR",
         "countryCode": "BI",
         "latitude": "-3.90068510",
-        "longitude": "29.51077080"
+        "longitude": "29.51077080",
+        "nameOrig": "Bururi Province"
     },
     {
-        "name": "Cankuzo Province",
+        "name": "Cankuzo",
         "isoCode": "CA",
         "countryCode": "BI",
         "latitude": "-3.15277880",
-        "longitude": "30.61998950"
+        "longitude": "30.61998950",
+        "nameOrig": "Cankuzo Province"
     },
     {
-        "name": "Cibitoke Province",
+        "name": "Cibitoke",
         "isoCode": "CI",
         "countryCode": "BI",
         "latitude": "-2.81028970",
-        "longitude": "29.18557850"
+        "longitude": "29.18557850",
+        "nameOrig": "Cibitoke Province"
     },
     {
-        "name": "Gitega Province",
+        "name": "Gitega",
         "isoCode": "GI",
         "countryCode": "BI",
         "latitude": "-3.49290510",
-        "longitude": "29.92779470"
+        "longitude": "29.92779470",
+        "nameOrig": "Gitega Province"
     },
     {
-        "name": "Kirundo Province",
+        "name": "Kirundo",
         "isoCode": "KI",
         "countryCode": "BI",
         "latitude": "-2.57628820",
-        "longitude": "30.11273500"
+        "longitude": "30.11273500",
+        "nameOrig": "Kirundo Province"
     },
     {
-        "name": "Karuzi Province",
+        "name": "Karuzi",
         "isoCode": "KR",
         "countryCode": "BI",
         "latitude": "-3.13403470",
-        "longitude": "30.11273500"
+        "longitude": "30.11273500",
+        "nameOrig": "Karuzi Province"
     },
     {
-        "name": "Kayanza Province",
+        "name": "Kayanza",
         "isoCode": "KY",
         "countryCode": "BI",
         "latitude": "-3.00779810",
-        "longitude": "29.64991620"
+        "longitude": "29.64991620",
+        "nameOrig": "Kayanza Province"
     },
     {
-        "name": "Makamba Province",
+        "name": "Makamba",
         "isoCode": "MA",
         "countryCode": "BI",
         "latitude": "-4.32570620",
-        "longitude": "29.69626770"
+        "longitude": "29.69626770",
+        "nameOrig": "Makamba Province"
     },
     {
-        "name": "Muramvya Province",
+        "name": "Muramvya",
         "isoCode": "MU",
         "countryCode": "BI",
         "latitude": "-3.28983980",
-        "longitude": "29.64991620"
+        "longitude": "29.64991620",
+        "nameOrig": "Muramvya Province"
     },
     {
-        "name": "Mwaro Province",
+        "name": "Mwaro",
         "isoCode": "MW",
         "countryCode": "BI",
         "latitude": "-3.50259180",
-        "longitude": "29.64991620"
+        "longitude": "29.64991620",
+        "nameOrig": "Mwaro Province"
     },
     {
-        "name": "Muyinga Province",
+        "name": "Muyinga",
         "isoCode": "MY",
         "countryCode": "BI",
         "latitude": "-2.77935110",
-        "longitude": "30.29741990"
+        "longitude": "30.29741990",
+        "nameOrig": "Muyinga Province"
     },
     {
-        "name": "Ngozi Province",
+        "name": "Ngozi",
         "isoCode": "NG",
         "countryCode": "BI",
         "latitude": "-2.89582430",
-        "longitude": "29.88152030"
+        "longitude": "29.88152030",
+        "nameOrig": "Ngozi Province"
     },
     {
-        "name": "Rumonge Province",
+        "name": "Rumonge",
         "isoCode": "RM",
         "countryCode": "BI",
         "latitude": "-3.97540490",
-        "longitude": "29.43880140"
+        "longitude": "29.43880140",
+        "nameOrig": "Rumonge Province"
     },
     {
-        "name": "Rutana Province",
+        "name": "Rutana",
         "isoCode": "RT",
         "countryCode": "BI",
         "latitude": "-3.87915230",
-        "longitude": "30.06652360"
+        "longitude": "30.06652360",
+        "nameOrig": "Rutana Province"
     },
     {
-        "name": "Ruyigi Province",
+        "name": "Ruyigi",
         "isoCode": "RY",
         "countryCode": "BI",
         "latitude": "-3.44620700",
-        "longitude": "30.25127280"
+        "longitude": "30.25127280",
+        "nameOrig": "Ruyigi Province"
     },
     {
         "name": "Atakora Department",
@@ -5926,11 +6019,12 @@
         "longitude": "-69.28775350"
     },
     {
-        "name": "Alajuela Province",
+        "name": "Alajuela",
         "isoCode": "A",
         "countryCode": "CR",
         "latitude": "10.39158300",
-        "longitude": "-84.43827210"
+        "longitude": "-84.43827210",
+        "nameOrig": "Alajuela Province"
     },
     {
         "name": "Provincia de Cartago",
@@ -5940,21 +6034,23 @@
         "longitude": "-83.92141870"
     },
     {
-        "name": "Guanacaste Province",
+        "name": "Guanacaste",
         "isoCode": "G",
         "countryCode": "CR",
         "latitude": "10.62673990",
-        "longitude": "-85.44367060"
+        "longitude": "-85.44367060",
+        "nameOrig": "Guanacaste Province"
     },
     {
-        "name": "Heredia Province",
+        "name": "Heredia",
         "isoCode": "H",
         "countryCode": "CR",
         "latitude": "10.47352300",
-        "longitude": "-84.01674230"
+        "longitude": "-84.01674230",
+        "nameOrig": "Heredia Province"
     },
     {
-        "name": "Limon Province",
+        "name": "Limon",
         "isoCode": "L",
         "countryCode": "CR",
         "latitude": "9.98963980",
@@ -5962,14 +6058,15 @@
         "nameOrig": "Limón Province"
     },
     {
-        "name": "Puntarenas Province",
+        "name": "Puntarenas",
         "isoCode": "P",
         "countryCode": "CR",
         "latitude": "9.21695310",
-        "longitude": "-83.33618800"
+        "longitude": "-83.33618800",
+        "nameOrig": "Puntarenas Province"
     },
     {
-        "name": "San Jose Province",
+        "name": "San Jose",
         "isoCode": "SJ",
         "countryCode": "CR",
         "latitude": "9.91297270",
@@ -5977,7 +6074,7 @@
         "nameOrig": "San José Province"
     },
     {
-        "name": "Pinar del Rio Province",
+        "name": "Pinar del Rio",
         "isoCode": "01",
         "countryCode": "CU",
         "latitude": "22.40762560",
@@ -5985,35 +6082,39 @@
         "nameOrig": "Pinar del Río Province"
     },
     {
-        "name": "Havana Province",
+        "name": "Havana",
         "isoCode": "03",
         "countryCode": "CU",
         "latitude": "23.05406980",
-        "longitude": "-82.34518900"
+        "longitude": "-82.34518900",
+        "nameOrig": "Havana Province"
     },
     {
-        "name": "Matanzas Province",
+        "name": "Matanzas",
         "isoCode": "04",
         "countryCode": "CU",
         "latitude": "22.57671230",
-        "longitude": "-81.33994140"
+        "longitude": "-81.33994140",
+        "nameOrig": "Matanzas Province"
     },
     {
-        "name": "Villa Clara Province",
+        "name": "Villa Clara",
         "isoCode": "05",
         "countryCode": "CU",
         "latitude": "22.49372040",
-        "longitude": "-79.91927020"
+        "longitude": "-79.91927020",
+        "nameOrig": "Villa Clara Province"
     },
     {
-        "name": "Cienfuegos Province",
+        "name": "Cienfuegos",
         "isoCode": "06",
         "countryCode": "CU",
         "latitude": "22.23797830",
-        "longitude": "-80.36586500"
+        "longitude": "-80.36586500",
+        "nameOrig": "Cienfuegos Province"
     },
     {
-        "name": "Sancti Spiritus Province",
+        "name": "Sancti Spiritus",
         "isoCode": "07",
         "countryCode": "CU",
         "latitude": "21.99382140",
@@ -6021,7 +6122,7 @@
         "nameOrig": "Sancti Spíritus Province"
     },
     {
-        "name": "Ciego de Avila Province",
+        "name": "Ciego de Avila",
         "isoCode": "08",
         "countryCode": "CU",
         "latitude": "21.93295150",
@@ -6029,7 +6130,7 @@
         "nameOrig": "Ciego de Ávila Province"
     },
     {
-        "name": "Camaguey Province",
+        "name": "Camaguey",
         "isoCode": "09",
         "countryCode": "CU",
         "latitude": "21.21672470",
@@ -6037,14 +6138,15 @@
         "nameOrig": "Camagüey Province"
     },
     {
-        "name": "Las Tunas Province",
+        "name": "Las Tunas",
         "isoCode": "10",
         "countryCode": "CU",
         "latitude": "21.06051620",
-        "longitude": "-76.91820970"
+        "longitude": "-76.91820970",
+        "nameOrig": "Las Tunas Province"
     },
     {
-        "name": "Holguin Province",
+        "name": "Holguin",
         "isoCode": "11",
         "countryCode": "CU",
         "latitude": "20.78378930",
@@ -6052,21 +6154,23 @@
         "nameOrig": "Holguín Province"
     },
     {
-        "name": "Granma Province",
+        "name": "Granma",
         "isoCode": "12",
         "countryCode": "CU",
         "latitude": "20.38449020",
-        "longitude": "-76.64127120"
+        "longitude": "-76.64127120",
+        "nameOrig": "Granma Province"
     },
     {
-        "name": "Santiago de Cuba Province",
+        "name": "Santiago de Cuba",
         "isoCode": "13",
         "countryCode": "CU",
         "latitude": "20.23976820",
-        "longitude": "-75.99276520"
+        "longitude": "-75.99276520",
+        "nameOrig": "Santiago de Cuba Province"
     },
     {
-        "name": "Guantanamo Province",
+        "name": "Guantanamo",
         "isoCode": "14",
         "countryCode": "CU",
         "latitude": "20.14559170",
@@ -6074,18 +6178,20 @@
         "nameOrig": "Guantánamo Province"
     },
     {
-        "name": "Artemisa Province",
+        "name": "Artemisa",
         "isoCode": "15",
         "countryCode": "CU",
         "latitude": "22.75229030",
-        "longitude": "-82.99316070"
+        "longitude": "-82.99316070",
+        "nameOrig": "Artemisa Province"
     },
     {
-        "name": "Mayabeque Province",
+        "name": "Mayabeque",
         "isoCode": "16",
         "countryCode": "CU",
         "latitude": "22.89265290",
-        "longitude": "-81.95348150"
+        "longitude": "-81.95348150",
+        "nameOrig": "Mayabeque Province"
     },
     {
         "name": "Isla de la Juventud",
@@ -7275,28 +7381,31 @@
         "longitude": "-69.93121170"
     },
     {
-        "name": "Azua Province",
+        "name": "Azua",
         "isoCode": "02",
         "countryCode": "DO",
         "latitude": "18.45527090",
-        "longitude": "-70.73809280"
+        "longitude": "-70.73809280",
+        "nameOrig": "Azua Province"
     },
     {
-        "name": "Baoruco Province",
+        "name": "Baoruco",
         "isoCode": "03",
         "countryCode": "DO",
         "latitude": "18.48798980",
-        "longitude": "-71.41822490"
+        "longitude": "-71.41822490",
+        "nameOrig": "Baoruco Province"
     },
     {
-        "name": "Barahona Province",
+        "name": "Barahona",
         "isoCode": "04",
         "countryCode": "DO",
         "latitude": "18.21390660",
-        "longitude": "-71.10437590"
+        "longitude": "-71.10437590",
+        "nameOrig": "Barahona Province"
     },
     {
-        "name": "Dajabon Province",
+        "name": "Dajabon",
         "isoCode": "05",
         "countryCode": "DO",
         "latitude": "19.54992410",
@@ -7304,25 +7413,28 @@
         "nameOrig": "Dajabón Province"
     },
     {
-        "name": "Duarte Province",
+        "name": "Duarte",
         "isoCode": "06",
         "countryCode": "DO",
         "latitude": "19.20908230",
-        "longitude": "-70.02700040"
+        "longitude": "-70.02700040",
+        "nameOrig": "Duarte Province"
     },
     {
-        "name": "El Seibo Province",
+        "name": "El Seibo",
         "isoCode": "08",
         "countryCode": "DO",
         "latitude": "18.76584960",
-        "longitude": "-69.04066800"
+        "longitude": "-69.04066800",
+        "nameOrig": "El Seibo Province"
     },
     {
-        "name": "Espaillat Province",
+        "name": "Espaillat",
         "isoCode": "09",
         "countryCode": "DO",
         "latitude": "19.62776580",
-        "longitude": "-70.27867750"
+        "longitude": "-70.27867750",
+        "nameOrig": "Espaillat Province"
     },
     {
         "name": "Independencia",
@@ -7332,28 +7444,31 @@
         "longitude": "-115.42892940"
     },
     {
-        "name": "La Altagracia Province",
+        "name": "La Altagracia",
         "isoCode": "11",
         "countryCode": "DO",
         "latitude": "18.58502360",
-        "longitude": "-68.62010720"
+        "longitude": "-68.62010720",
+        "nameOrig": "La Altagracia Province"
     },
     {
-        "name": "La Romana Province",
+        "name": "La Romana",
         "isoCode": "12",
         "countryCode": "DO",
         "latitude": "18.43102710",
-        "longitude": "-68.98373730"
+        "longitude": "-68.98373730",
+        "nameOrig": "La Romana Province"
     },
     {
-        "name": "La Vega Province",
+        "name": "La Vega",
         "isoCode": "13",
         "countryCode": "DO",
         "latitude": "19.22115540",
-        "longitude": "-70.52887530"
+        "longitude": "-70.52887530",
+        "nameOrig": "La Vega Province"
     },
     {
-        "name": "Maria Trinidad Sanchez Province",
+        "name": "Maria Trinidad Sanchez",
         "isoCode": "14",
         "countryCode": "DO",
         "latitude": "19.37345970",
@@ -7361,42 +7476,47 @@
         "nameOrig": "María Trinidad Sánchez Province"
     },
     {
-        "name": "Monte Cristi Province",
+        "name": "Monte Cristi",
         "isoCode": "15",
         "countryCode": "DO",
         "latitude": "19.73968990",
-        "longitude": "-71.44339840"
+        "longitude": "-71.44339840",
+        "nameOrig": "Monte Cristi Province"
     },
     {
-        "name": "Pedernales Province",
+        "name": "Pedernales",
         "isoCode": "16",
         "countryCode": "DO",
         "latitude": "17.85376260",
-        "longitude": "-71.33032090"
+        "longitude": "-71.33032090",
+        "nameOrig": "Pedernales Province"
     },
     {
-        "name": "Peravia Province",
+        "name": "Peravia",
         "isoCode": "17",
         "countryCode": "DO",
         "latitude": "18.27865940",
-        "longitude": "-70.33358870"
+        "longitude": "-70.33358870",
+        "nameOrig": "Peravia Province"
     },
     {
-        "name": "Puerto Plata Province",
+        "name": "Puerto Plata",
         "isoCode": "18",
         "countryCode": "DO",
         "latitude": "19.75432250",
-        "longitude": "-70.83328470"
+        "longitude": "-70.83328470",
+        "nameOrig": "Puerto Plata Province"
     },
     {
-        "name": "Hermanas Mirabal Province",
+        "name": "Hermanas Mirabal",
         "isoCode": "19",
         "countryCode": "DO",
         "latitude": "19.37475590",
-        "longitude": "-70.35132350"
+        "longitude": "-70.35132350",
+        "nameOrig": "Hermanas Mirabal Province"
     },
     {
-        "name": "Samana Province",
+        "name": "Samana",
         "isoCode": "20",
         "countryCode": "DO",
         "latitude": "19.20583710",
@@ -7404,7 +7524,7 @@
         "nameOrig": "Samaná Province"
     },
     {
-        "name": "San Cristobal Province",
+        "name": "San Cristobal",
         "isoCode": "21",
         "countryCode": "DO",
         "latitude": "18.41804140",
@@ -7412,11 +7532,12 @@
         "nameOrig": "San Cristóbal Province"
     },
     {
-        "name": "San Juan Province",
+        "name": "San Juan",
         "isoCode": "22",
         "countryCode": "DO",
         "latitude": "-31.52871270",
-        "longitude": "-68.53604030"
+        "longitude": "-68.53604030",
+        "nameOrig": "San Juan Province"
     },
     {
         "name": "San Pedro de Macoris",
@@ -7427,7 +7548,7 @@
         "nameOrig": "San Pedro de Macorís"
     },
     {
-        "name": "Sanchez Ramirez Province",
+        "name": "Sanchez Ramirez",
         "isoCode": "24",
         "countryCode": "DO",
         "latitude": "19.05270600",
@@ -7435,14 +7556,15 @@
         "nameOrig": "Sánchez Ramírez Province"
     },
     {
-        "name": "Santiago Province",
+        "name": "Santiago",
         "isoCode": "25",
         "countryCode": "DO",
         "latitude": "-33.45000000",
-        "longitude": "-70.66670000"
+        "longitude": "-70.66670000",
+        "nameOrig": "Santiago Province"
     },
     {
-        "name": "Santiago Rodriguez Province",
+        "name": "Santiago Rodriguez",
         "isoCode": "26",
         "countryCode": "DO",
         "latitude": "19.47131810",
@@ -7450,14 +7572,15 @@
         "nameOrig": "Santiago Rodríguez Province"
     },
     {
-        "name": "Valverde Province",
+        "name": "Valverde",
         "isoCode": "27",
         "countryCode": "DO",
         "latitude": "19.58812210",
-        "longitude": "-70.98033100"
+        "longitude": "-70.98033100",
+        "nameOrig": "Valverde Province"
     },
     {
-        "name": "Monsenor Nouel Province",
+        "name": "Monsenor Nouel",
         "isoCode": "28",
         "countryCode": "DO",
         "latitude": "18.92152340",
@@ -7465,21 +7588,23 @@
         "nameOrig": "Monseñor Nouel Province"
     },
     {
-        "name": "Monte Plata Province",
+        "name": "Monte Plata",
         "isoCode": "29",
         "countryCode": "DO",
         "latitude": "18.80808780",
-        "longitude": "-69.78691460"
+        "longitude": "-69.78691460",
+        "nameOrig": "Monte Plata Province"
     },
     {
-        "name": "Hato Mayor Province",
+        "name": "Hato Mayor",
         "isoCode": "30",
         "countryCode": "DO",
         "latitude": "18.76357990",
-        "longitude": "-69.25576370"
+        "longitude": "-69.25576370",
+        "nameOrig": "Hato Mayor Province"
     },
     {
-        "name": "San Jose de Ocoa Province",
+        "name": "San Jose de Ocoa",
         "isoCode": "31",
         "countryCode": "DO",
         "latitude": "18.54385800",
@@ -7487,11 +7612,12 @@
         "nameOrig": "San José de Ocoa Province"
     },
     {
-        "name": "Santo Domingo Province",
+        "name": "Santo Domingo",
         "isoCode": "32",
         "countryCode": "DO",
         "latitude": "18.51042530",
-        "longitude": "-69.84040540"
+        "longitude": "-69.84040540",
+        "nameOrig": "Santo Domingo Province"
     },
     {
         "name": "Adrar",
@@ -8467,11 +8593,12 @@
         "nameOrig": "Ávila"
     },
     {
-        "name": "Burgos Province",
+        "name": "Burgos",
         "isoCode": "BU",
         "countryCode": "ES",
         "latitude": "42.33807580",
-        "longitude": "-3.58126920"
+        "longitude": "-3.58126920",
+        "nameOrig": "Burgos Province"
     },
     {
         "name": "Cantabria",
@@ -8567,11 +8694,12 @@
         "longitude": "-1.67606910"
     },
     {
-        "name": "Palencia Province",
+        "name": "Palencia",
         "isoCode": "P",
         "countryCode": "ES",
         "latitude": "42.00968320",
-        "longitude": "-4.52879490"
+        "longitude": "-4.52879490",
+        "nameOrig": "Palencia Province"
     },
     {
         "name": "Balearic Islands",
@@ -8595,32 +8723,36 @@
         "longitude": "-2.53960300"
     },
     {
-        "name": "Salamanca Province",
+        "name": "Salamanca",
         "isoCode": "SA",
         "countryCode": "ES",
         "latitude": "40.95152630",
-        "longitude": "-6.23759470"
+        "longitude": "-6.23759470",
+        "nameOrig": "Salamanca Province"
     },
     {
-        "name": "Segovia Province",
+        "name": "Segovia",
         "isoCode": "SG",
         "countryCode": "ES",
         "latitude": "40.94292960",
-        "longitude": "-4.10889420"
+        "longitude": "-4.10889420",
+        "nameOrig": "Segovia Province"
     },
     {
-        "name": "Soria Province",
+        "name": "Soria",
         "isoCode": "SO",
         "countryCode": "ES",
         "latitude": "41.76654640",
-        "longitude": "-2.47903060"
+        "longitude": "-2.47903060",
+        "nameOrig": "Soria Province"
     },
     {
-        "name": "Valladolid Province",
+        "name": "Valladolid",
         "isoCode": "VA",
         "countryCode": "ES",
         "latitude": "41.65173750",
-        "longitude": "-4.72449500"
+        "longitude": "-4.72449500",
+        "nameOrig": "Valladolid Province"
     },
     {
         "name": "Valencia",
@@ -8630,11 +8762,12 @@
         "longitude": "-0.75328090"
     },
     {
-        "name": "Zamora Province",
+        "name": "Zamora",
         "isoCode": "ZA",
         "countryCode": "ES",
         "latitude": "41.60957440",
-        "longitude": "-5.89871390"
+        "longitude": "-5.89871390",
+        "nameOrig": "Zamora Province"
     },
     {
         "name": "Addis Ababa",
@@ -8851,11 +8984,12 @@
         "longitude": "22.44393690"
     },
     {
-        "name": "Eastern Finland Province",
+        "name": "Eastern Finland",
         "isoCode": "IS",
         "countryCode": "FI",
         "latitude": "62.56338910",
-        "longitude": "28.50240420"
+        "longitude": "28.50240420",
+        "nameOrig": "Eastern Finland Province"
     },
     {
         "name": "Lapland",
@@ -8865,11 +8999,12 @@
         "longitude": "26.50464380"
     },
     {
-        "name": "Oulu Province",
+        "name": "Oulu",
         "isoCode": "OL",
         "countryCode": "FI",
         "latitude": "65.01207480",
-        "longitude": "25.46504960"
+        "longitude": "25.46504960",
+        "nameOrig": "Oulu Province"
     },
     {
         "name": "Ba",
@@ -9922,14 +10057,15 @@
         "longitude": "-178.11650000"
     },
     {
-        "name": "Estuaire Province",
+        "name": "Estuaire",
         "isoCode": "1",
         "countryCode": "GA",
         "latitude": "0.44328640",
-        "longitude": "10.08072980"
+        "longitude": "10.08072980",
+        "nameOrig": "Estuaire Province"
     },
     {
-        "name": "Haut-Ogooue Province",
+        "name": "Haut-Ogooue",
         "isoCode": "2",
         "countryCode": "GA",
         "latitude": "-1.47625440",
@@ -9937,7 +10073,7 @@
         "nameOrig": "Haut-Ogooué Province"
     },
     {
-        "name": "Moyen-Ogooue Province",
+        "name": "Moyen-Ogooue",
         "isoCode": "3",
         "countryCode": "GA",
         "latitude": "-0.44278400",
@@ -9945,7 +10081,7 @@
         "nameOrig": "Moyen-Ogooué Province"
     },
     {
-        "name": "Ngounie Province",
+        "name": "Ngounie",
         "isoCode": "4",
         "countryCode": "GA",
         "latitude": "-1.49303030",
@@ -9953,14 +10089,15 @@
         "nameOrig": "Ngounié Province"
     },
     {
-        "name": "Nyanga Province",
+        "name": "Nyanga",
         "isoCode": "5",
         "countryCode": "GA",
         "latitude": "-2.88210330",
-        "longitude": "11.16173560"
+        "longitude": "11.16173560",
+        "nameOrig": "Nyanga Province"
     },
     {
-        "name": "Ogooue-Ivindo Province",
+        "name": "Ogooue-Ivindo",
         "isoCode": "6",
         "countryCode": "GA",
         "latitude": "0.88183110",
@@ -9968,7 +10105,7 @@
         "nameOrig": "Ogooué-Ivindo Province"
     },
     {
-        "name": "Ogooue-Lolo Province",
+        "name": "Ogooue-Lolo",
         "isoCode": "7",
         "countryCode": "GA",
         "latitude": "-0.88440930",
@@ -9976,7 +10113,7 @@
         "nameOrig": "Ogooué-Lolo Province"
     },
     {
-        "name": "Ogooue-Maritime Province",
+        "name": "Ogooue-Maritime",
         "isoCode": "8",
         "countryCode": "GA",
         "latitude": "-1.34659750",
@@ -9984,11 +10121,12 @@
         "nameOrig": "Ogooué-Maritime Province"
     },
     {
-        "name": "Woleu-Ntem Province",
+        "name": "Woleu-Ntem",
         "isoCode": "9",
         "countryCode": "GA",
         "latitude": "2.29898270",
-        "longitude": "11.44669140"
+        "longitude": "11.44669140",
+        "nameOrig": "Woleu-Ntem Province"
     },
     {
         "name": "Armagh, Banbridge and Craigavon",
@@ -12340,7 +12478,7 @@
         "nameOrig": "Yomou Prefecture"
     },
     {
-        "name": "Annobon Province",
+        "name": "Annobon",
         "isoCode": "AN",
         "countryCode": "GQ",
         "latitude": "-1.42687820",
@@ -12348,18 +12486,20 @@
         "nameOrig": "Annobón Province"
     },
     {
-        "name": "Bioko Norte Province",
+        "name": "Bioko Norte",
         "isoCode": "BN",
         "countryCode": "GQ",
         "latitude": "3.65950720",
-        "longitude": "8.79218360"
+        "longitude": "8.79218360",
+        "nameOrig": "Bioko Norte Province"
     },
     {
-        "name": "Bioko Sur Province",
+        "name": "Bioko Sur",
         "isoCode": "BS",
         "countryCode": "GQ",
         "latitude": "3.42097850",
-        "longitude": "8.61606740"
+        "longitude": "8.61606740",
+        "nameOrig": "Bioko Sur Province"
     },
     {
         "name": "Rio Muni",
@@ -12370,11 +12510,12 @@
         "nameOrig": "Río Muni"
     },
     {
-        "name": "Centro Sur Province",
+        "name": "Centro Sur",
         "isoCode": "CS",
         "countryCode": "GQ",
         "latitude": "1.34360840",
-        "longitude": "10.43965600"
+        "longitude": "10.43965600",
+        "nameOrig": "Centro Sur Province"
     },
     {
         "name": "Insular",
@@ -12385,7 +12526,7 @@
         "nameOrig": "Insular Region"
     },
     {
-        "name": "Kie-Ntem Province",
+        "name": "Kie-Ntem",
         "isoCode": "KN",
         "countryCode": "GQ",
         "latitude": "2.02809300",
@@ -12393,18 +12534,20 @@
         "nameOrig": "Kié-Ntem Province"
     },
     {
-        "name": "Litoral Province",
+        "name": "Litoral",
         "isoCode": "LI",
         "countryCode": "GQ",
         "latitude": "1.57502440",
-        "longitude": "9.81249350"
+        "longitude": "9.81249350",
+        "nameOrig": "Litoral Province"
     },
     {
-        "name": "Wele-Nzas Province",
+        "name": "Wele-Nzas",
         "isoCode": "WN",
         "countryCode": "GQ",
         "latitude": "1.41661620",
-        "longitude": "11.07117580"
+        "longitude": "11.07117580",
+        "nameOrig": "Wele-Nzas Province"
     },
     {
         "name": "Aetolia-Acarnania al Unit",
@@ -12899,18 +13042,20 @@
         "nameOrig": "Gabú Region"
     },
     {
-        "name": "Leste Province",
+        "name": "Leste",
         "isoCode": "L",
         "countryCode": "GW",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "nameOrig": "Leste Province"
     },
     {
-        "name": "Norte Province",
+        "name": "Norte",
         "isoCode": "N",
         "countryCode": "GW",
         "latitude": "7.87218110",
-        "longitude": "123.88577470"
+        "longitude": "123.88577470",
+        "nameOrig": "Norte Province"
     },
     {
         "name": "Oio",
@@ -12929,11 +13074,12 @@
         "nameOrig": "Quinara Region"
     },
     {
-        "name": "Sul Province",
+        "name": "Sul",
         "isoCode": "S",
         "countryCode": "GW",
         "latitude": "-10.28665780",
-        "longitude": "20.71224650"
+        "longitude": "20.71224650",
+        "nameOrig": "Sul Province"
     },
     {
         "name": "Tombali",
@@ -15105,46 +15251,52 @@
         "longitude": "13.58579780"
     },
     {
-        "name": "Province of Alessandria",
+        "name": "of Alessandria",
         "isoCode": "AL",
         "countryCode": "IT",
         "latitude": "44.81755870",
-        "longitude": "8.70466270"
+        "longitude": "8.70466270",
+        "nameOrig": "Province of Alessandria"
     },
     {
-        "name": "Province of Ancona",
+        "name": "of Ancona",
         "isoCode": "AN",
         "countryCode": "IT",
         "latitude": "43.54932450",
-        "longitude": "13.26634790"
+        "longitude": "13.26634790",
+        "nameOrig": "Province of Ancona"
     },
     {
-        "name": "Province of Ascoli Piceno",
+        "name": "of Ascoli Piceno",
         "isoCode": "AP",
         "countryCode": "IT",
         "latitude": "42.86389330",
-        "longitude": "13.58997330"
+        "longitude": "13.58997330",
+        "nameOrig": "Province of Ascoli Piceno"
     },
     {
-        "name": "Province of L'Aquila",
+        "name": "of L'Aquila",
         "isoCode": "AQ",
         "countryCode": "IT",
         "latitude": "42.12563170",
-        "longitude": "13.63627150"
+        "longitude": "13.63627150",
+        "nameOrig": "Province of L'Aquila"
     },
     {
-        "name": "Province of Asti",
+        "name": "of Asti",
         "isoCode": "AT",
         "countryCode": "IT",
         "latitude": "44.90076520",
-        "longitude": "8.20643150"
+        "longitude": "8.20643150",
+        "nameOrig": "Province of Asti"
     },
     {
-        "name": "Province of Avellino",
+        "name": "of Avellino",
         "isoCode": "AV",
         "countryCode": "IT",
         "latitude": "40.99645100",
-        "longitude": "15.12589550"
+        "longitude": "15.12589550",
+        "nameOrig": "Province of Avellino"
     },
     {
         "name": "Metropolitan City of Bari",
@@ -15154,32 +15306,36 @@
         "longitude": "16.87187150"
     },
     {
-        "name": "Province of Bergamo",
+        "name": "of Bergamo",
         "isoCode": "BG",
         "countryCode": "IT",
         "latitude": "45.69826420",
-        "longitude": "9.67726980"
+        "longitude": "9.67726980",
+        "nameOrig": "Province of Bergamo"
     },
     {
-        "name": "Province of Biella",
+        "name": "of Biella",
         "isoCode": "BI",
         "countryCode": "IT",
         "latitude": "45.56281760",
-        "longitude": "8.05827170"
+        "longitude": "8.05827170",
+        "nameOrig": "Province of Biella"
     },
     {
-        "name": "Province of Belluno",
+        "name": "of Belluno",
         "isoCode": "BL",
         "countryCode": "IT",
         "latitude": "46.24976590",
-        "longitude": "12.19695650"
+        "longitude": "12.19695650",
+        "nameOrig": "Province of Belluno"
     },
     {
-        "name": "Benevento Province",
+        "name": "Benevento",
         "isoCode": "BN",
         "countryCode": "IT",
         "latitude": "41.20350930",
-        "longitude": "14.75209390"
+        "longitude": "14.75209390",
+        "nameOrig": "Benevento Province"
     },
     {
         "name": "Metropolitan City of Bologna",
@@ -15189,25 +15345,28 @@
         "longitude": "11.34261620"
     },
     {
-        "name": "Province of Brindisi",
+        "name": "of Brindisi",
         "isoCode": "BR",
         "countryCode": "IT",
         "latitude": "40.61126630",
-        "longitude": "17.76362100"
+        "longitude": "17.76362100",
+        "nameOrig": "Province of Brindisi"
     },
     {
-        "name": "Province of Brescia",
+        "name": "of Brescia",
         "isoCode": "BS",
         "countryCode": "IT",
         "latitude": "45.54155260",
-        "longitude": "10.21180190"
+        "longitude": "10.21180190",
+        "nameOrig": "Province of Brescia"
     },
     {
-        "name": "Province of Barletta-Andria-Trani",
+        "name": "of Barletta-Andria-Trani",
         "isoCode": "BT",
         "countryCode": "IT",
         "latitude": "41.20045430",
-        "longitude": "16.20514840"
+        "longitude": "16.20514840",
+        "nameOrig": "Province of Barletta-Andria-Trani"
     },
     {
         "name": "South Tyrol",
@@ -15224,32 +15383,36 @@
         "longitude": "9.12166130"
     },
     {
-        "name": "Province of Campobasso",
+        "name": "of Campobasso",
         "isoCode": "CB",
         "countryCode": "IT",
         "latitude": "41.67388650",
-        "longitude": "14.75209390"
+        "longitude": "14.75209390",
+        "nameOrig": "Province of Campobasso"
     },
     {
-        "name": "Province of Caserta",
+        "name": "of Caserta",
         "isoCode": "CE",
         "countryCode": "IT",
         "latitude": "41.20783540",
-        "longitude": "14.10013260"
+        "longitude": "14.10013260",
+        "nameOrig": "Province of Caserta"
     },
     {
-        "name": "Province of Chieti",
+        "name": "of Chieti",
         "isoCode": "CH",
         "countryCode": "IT",
         "latitude": "42.03344280",
-        "longitude": "14.37919120"
+        "longitude": "14.37919120",
+        "nameOrig": "Province of Chieti"
     },
     {
-        "name": "Province of Carbonia-Iglesias",
+        "name": "of Carbonia-Iglesias",
         "isoCode": "CI",
         "countryCode": "IT",
         "latitude": "39.25346590",
-        "longitude": "8.57210160"
+        "longitude": "8.57210160",
+        "nameOrig": "Province of Carbonia-Iglesias"
     },
     {
         "name": "Libero consorzio comunale di Caltanissetta",
@@ -15259,32 +15422,36 @@
         "longitude": "14.06149820"
     },
     {
-        "name": "Province of Cuneo",
+        "name": "of Cuneo",
         "isoCode": "CN",
         "countryCode": "IT",
         "latitude": "44.59703140",
-        "longitude": "7.61142170"
+        "longitude": "7.61142170",
+        "nameOrig": "Province of Cuneo"
     },
     {
-        "name": "Province of Como",
+        "name": "of Como",
         "isoCode": "CO",
         "countryCode": "IT",
         "latitude": "45.80804160",
-        "longitude": "9.08517930"
+        "longitude": "9.08517930",
+        "nameOrig": "Province of Como"
     },
     {
-        "name": "Province of Cremona",
+        "name": "of Cremona",
         "isoCode": "CR",
         "countryCode": "IT",
         "latitude": "45.20143750",
-        "longitude": "9.98365820"
+        "longitude": "9.98365820",
+        "nameOrig": "Province of Cremona"
     },
     {
-        "name": "Province of Cosenza",
+        "name": "of Cosenza",
         "isoCode": "CS",
         "countryCode": "IT",
         "latitude": "39.56441050",
-        "longitude": "16.25221430"
+        "longitude": "16.25221430",
+        "nameOrig": "Province of Cosenza"
     },
     {
         "name": "Metropolitan City of Catania",
@@ -15294,11 +15461,12 @@
         "longitude": "15.05574150"
     },
     {
-        "name": "Province of Catanzaro",
+        "name": "of Catanzaro",
         "isoCode": "CZ",
         "countryCode": "IT",
         "latitude": "38.88963480",
-        "longitude": "16.44058720"
+        "longitude": "16.44058720",
+        "nameOrig": "Province of Catanzaro"
     },
     {
         "name": "Libero consorzio comunale di Enna",
@@ -15308,7 +15476,7 @@
         "longitude": "14.27953490"
     },
     {
-        "name": "Province of Forli-Cesena",
+        "name": "of Forli-Cesena",
         "isoCode": "FC",
         "countryCode": "IT",
         "latitude": "43.99476810",
@@ -15316,18 +15484,20 @@
         "nameOrig": "Province of Forlì-Cesena"
     },
     {
-        "name": "Province of Ferrara",
+        "name": "of Ferrara",
         "isoCode": "FE",
         "countryCode": "IT",
         "latitude": "44.76636800",
-        "longitude": "11.76440680"
+        "longitude": "11.76440680",
+        "nameOrig": "Province of Ferrara"
     },
     {
-        "name": "Province of Foggia",
+        "name": "of Foggia",
         "isoCode": "FG",
         "countryCode": "IT",
         "latitude": "41.63844800",
-        "longitude": "15.59433880"
+        "longitude": "15.59433880",
+        "nameOrig": "Province of Foggia"
     },
     {
         "name": "Metropolitan City of Florence",
@@ -15337,18 +15507,20 @@
         "longitude": "11.25237920"
     },
     {
-        "name": "Province of Fermo",
+        "name": "of Fermo",
         "isoCode": "FM",
         "countryCode": "IT",
         "latitude": "43.09313670",
-        "longitude": "13.58997330"
+        "longitude": "13.58997330",
+        "nameOrig": "Province of Fermo"
     },
     {
-        "name": "Province of Frosinone",
+        "name": "of Frosinone",
         "isoCode": "FR",
         "countryCode": "IT",
         "latitude": "41.65765280",
-        "longitude": "13.63627150"
+        "longitude": "13.63627150",
+        "nameOrig": "Province of Frosinone"
     },
     {
         "name": "Metropolitan City of Genoa",
@@ -15358,95 +15530,108 @@
         "longitude": "8.94625640"
     },
     {
-        "name": "Province of Gorizia",
+        "name": "of Gorizia",
         "isoCode": "GO",
         "countryCode": "IT",
         "latitude": "45.90538990",
-        "longitude": "13.51637250"
+        "longitude": "13.51637250",
+        "nameOrig": "Province of Gorizia"
     },
     {
-        "name": "Province of Grosseto",
+        "name": "of Grosseto",
         "isoCode": "GR",
         "countryCode": "IT",
         "latitude": "42.85180070",
-        "longitude": "11.25237920"
+        "longitude": "11.25237920",
+        "nameOrig": "Province of Grosseto"
     },
     {
-        "name": "Province of Imperia",
+        "name": "of Imperia",
         "isoCode": "IM",
         "countryCode": "IT",
         "latitude": "43.94186600",
-        "longitude": "7.82863680"
+        "longitude": "7.82863680",
+        "nameOrig": "Province of Imperia"
     },
     {
-        "name": "Province of Isernia",
+        "name": "of Isernia",
         "isoCode": "IS",
         "countryCode": "IT",
         "latitude": "41.58915550",
-        "longitude": "14.19309180"
+        "longitude": "14.19309180",
+        "nameOrig": "Province of Isernia"
     },
     {
-        "name": "Province of Crotone",
+        "name": "of Crotone",
         "isoCode": "KR",
         "countryCode": "IT",
         "latitude": "39.13098560",
-        "longitude": "17.00670310"
+        "longitude": "17.00670310",
+        "nameOrig": "Province of Crotone"
     },
     {
-        "name": "Province of Lecco",
+        "name": "of Lecco",
         "isoCode": "LC",
         "countryCode": "IT",
         "latitude": "45.93829410",
-        "longitude": "9.38572900"
+        "longitude": "9.38572900",
+        "nameOrig": "Province of Lecco"
     },
     {
-        "name": "Province of Lecce",
+        "name": "of Lecce",
         "isoCode": "LE",
         "countryCode": "IT",
         "latitude": "40.23473930",
-        "longitude": "18.14286690"
+        "longitude": "18.14286690",
+        "nameOrig": "Province of Lecce"
     },
     {
-        "name": "Province of Livorno",
+        "name": "of Livorno",
         "isoCode": "LI",
         "countryCode": "IT",
         "latitude": "43.02398480",
-        "longitude": "10.66471010"
+        "longitude": "10.66471010",
+        "nameOrig": "Province of Livorno"
     },
     {
-        "name": "Province of Lodi",
+        "name": "of Lodi",
         "isoCode": "LO",
         "countryCode": "IT",
         "latitude": "45.24050360",
-        "longitude": "9.52925120"
+        "longitude": "9.52925120",
+        "nameOrig": "Province of Lodi"
     },
     {
-        "name": "Province of Latina",
+        "name": "of Latina",
         "isoCode": "LT",
         "countryCode": "IT",
         "latitude": "41.40874760",
-        "longitude": "13.08179030"
+        "longitude": "13.08179030",
+        "nameOrig": "Province of Latina"
     },
     {
-        "name": "Province of Lucca",
+        "name": "of Lucca",
         "isoCode": "LU",
         "countryCode": "IT",
         "latitude": "43.83767360",
-        "longitude": "10.49505300"
+        "longitude": "10.49505300",
+        "nameOrig": "Province of Lucca"
     },
     {
-        "name": "Province of Monza and Brianza",
+        "name": "of Monza and Brianza",
         "isoCode": "MB",
         "countryCode": "IT",
         "latitude": "45.62359900",
-        "longitude": "9.25880150"
+        "longitude": "9.25880150",
+        "nameOrig": "Province of Monza and Brianza"
     },
     {
-        "name": "Province of Macerata",
+        "name": "of Macerata",
         "isoCode": "MC",
         "countryCode": "IT",
         "latitude": "43.24593220",
-        "longitude": "13.26634790"
+        "longitude": "13.26634790",
+        "nameOrig": "Province of Macerata"
     },
     {
         "name": "Metropolitan City of Messina",
@@ -15463,32 +15648,36 @@
         "longitude": "9.18187300"
     },
     {
-        "name": "Province of Mantua",
+        "name": "of Mantua",
         "isoCode": "MN",
         "countryCode": "IT",
         "latitude": "45.16677280",
-        "longitude": "10.77536130"
+        "longitude": "10.77536130",
+        "nameOrig": "Province of Mantua"
     },
     {
-        "name": "Province of Modena",
+        "name": "of Modena",
         "isoCode": "MO",
         "countryCode": "IT",
         "latitude": "44.55137990",
-        "longitude": "10.91804800"
+        "longitude": "10.91804800",
+        "nameOrig": "Province of Modena"
     },
     {
-        "name": "Province of Massa and Carrara",
+        "name": "of Massa and Carrara",
         "isoCode": "MS",
         "countryCode": "IT",
         "latitude": "44.22139980",
-        "longitude": "10.03596610"
+        "longitude": "10.03596610",
+        "nameOrig": "Province of Massa and Carrara"
     },
     {
-        "name": "Province of Matera",
+        "name": "of Matera",
         "isoCode": "MT",
         "countryCode": "IT",
         "latitude": "40.66634960",
-        "longitude": "16.60436360"
+        "longitude": "16.60436360",
+        "nameOrig": "Province of Matera"
     },
     {
         "name": "Metropolitan City of Naples",
@@ -15498,39 +15687,44 @@
         "longitude": "14.33264400"
     },
     {
-        "name": "Province of Novara",
+        "name": "of Novara",
         "isoCode": "NO",
         "countryCode": "IT",
         "latitude": "45.54851330",
-        "longitude": "8.51507930"
+        "longitude": "8.51507930",
+        "nameOrig": "Province of Novara"
     },
     {
-        "name": "Province of Nuoro",
+        "name": "of Nuoro",
         "isoCode": "NU",
         "countryCode": "IT",
         "latitude": "40.32869040",
-        "longitude": "9.45615500"
+        "longitude": "9.45615500",
+        "nameOrig": "Province of Nuoro"
     },
     {
-        "name": "Province of Ogliastra",
+        "name": "of Ogliastra",
         "isoCode": "OG",
         "countryCode": "IT",
         "latitude": "39.84105360",
-        "longitude": "9.45615500"
+        "longitude": "9.45615500",
+        "nameOrig": "Province of Ogliastra"
     },
     {
-        "name": "Province of Oristano",
+        "name": "of Oristano",
         "isoCode": "OR",
         "countryCode": "IT",
         "latitude": "40.05990680",
-        "longitude": "8.74811670"
+        "longitude": "8.74811670",
+        "nameOrig": "Province of Oristano"
     },
     {
-        "name": "Province of Olbia-Tempio",
+        "name": "of Olbia-Tempio",
         "isoCode": "OT",
         "countryCode": "IT",
         "latitude": "40.82683830",
-        "longitude": "9.27855830"
+        "longitude": "9.27855830",
+        "nameOrig": "Province of Olbia-Tempio"
     },
     {
         "name": "Metropolitan City of Palermo",
@@ -15540,95 +15734,108 @@
         "longitude": "13.36148680"
     },
     {
-        "name": "Province of Piacenza",
+        "name": "of Piacenza",
         "isoCode": "PC",
         "countryCode": "IT",
         "latitude": "44.82631120",
-        "longitude": "9.52914470"
+        "longitude": "9.52914470",
+        "nameOrig": "Province of Piacenza"
     },
     {
-        "name": "Province of Padua",
+        "name": "of Padua",
         "isoCode": "PD",
         "countryCode": "IT",
         "latitude": "45.36618640",
-        "longitude": "11.82091390"
+        "longitude": "11.82091390",
+        "nameOrig": "Province of Padua"
     },
     {
-        "name": "Province of Pescara",
+        "name": "of Pescara",
         "isoCode": "PE",
         "countryCode": "IT",
         "latitude": "42.35706550",
-        "longitude": "13.96080910"
+        "longitude": "13.96080910",
+        "nameOrig": "Province of Pescara"
     },
     {
-        "name": "Province of Perugia",
+        "name": "of Perugia",
         "isoCode": "PG",
         "countryCode": "IT",
         "latitude": "42.93800400",
-        "longitude": "12.62162110"
+        "longitude": "12.62162110",
+        "nameOrig": "Province of Perugia"
     },
     {
-        "name": "Province of Pisa",
+        "name": "of Pisa",
         "isoCode": "PI",
         "countryCode": "IT",
         "latitude": "43.72283150",
-        "longitude": "10.40171940"
+        "longitude": "10.40171940",
+        "nameOrig": "Province of Pisa"
     },
     {
-        "name": "Province of Pordenone",
+        "name": "of Pordenone",
         "isoCode": "PN",
         "countryCode": "IT",
         "latitude": "46.03788620",
-        "longitude": "12.71083500"
+        "longitude": "12.71083500",
+        "nameOrig": "Province of Pordenone"
     },
     {
-        "name": "Province of Prato",
+        "name": "of Prato",
         "isoCode": "PO",
         "countryCode": "IT",
         "latitude": "44.04539000",
-        "longitude": "11.11644520"
+        "longitude": "11.11644520",
+        "nameOrig": "Province of Prato"
     },
     {
-        "name": "Province of Parma",
+        "name": "of Parma",
         "isoCode": "PR",
         "countryCode": "IT",
         "latitude": "44.80153220",
-        "longitude": "10.32793540"
+        "longitude": "10.32793540",
+        "nameOrig": "Province of Parma"
     },
     {
-        "name": "Province of Pistoia",
+        "name": "of Pistoia",
         "isoCode": "PT",
         "countryCode": "IT",
         "latitude": "43.95437330",
-        "longitude": "10.89030990"
+        "longitude": "10.89030990",
+        "nameOrig": "Province of Pistoia"
     },
     {
-        "name": "Pesaro and Urbino Province",
+        "name": "Pesaro and Urbino",
         "isoCode": "PU",
         "countryCode": "IT",
         "latitude": "43.61301180",
-        "longitude": "12.71351210"
+        "longitude": "12.71351210",
+        "nameOrig": "Pesaro and Urbino Province"
     },
     {
-        "name": "Province of Pavia",
+        "name": "of Pavia",
         "isoCode": "PV",
         "countryCode": "IT",
         "latitude": "45.32181660",
-        "longitude": "8.84662360"
+        "longitude": "8.84662360",
+        "nameOrig": "Province of Pavia"
     },
     {
-        "name": "Province of Potenza",
+        "name": "of Potenza",
         "isoCode": "PZ",
         "countryCode": "IT",
         "latitude": "40.41821940",
-        "longitude": "15.87600400"
+        "longitude": "15.87600400",
+        "nameOrig": "Province of Potenza"
     },
     {
-        "name": "Province of Ravenna",
+        "name": "of Ravenna",
         "isoCode": "RA",
         "countryCode": "IT",
         "latitude": "44.41844430",
-        "longitude": "12.20359980"
+        "longitude": "12.20359980",
+        "nameOrig": "Province of Ravenna"
     },
     {
         "name": "Metropolitan City of Reggio Calabria",
@@ -15638,11 +15845,12 @@
         "longitude": "15.64370480"
     },
     {
-        "name": "Province of Reggio Emilia",
+        "name": "of Reggio Emilia",
         "isoCode": "RE",
         "countryCode": "IT",
         "latitude": "44.58565800",
-        "longitude": "10.55647360"
+        "longitude": "10.55647360",
+        "nameOrig": "Province of Reggio Emilia"
     },
     {
         "name": "Libero consorzio comunale di Ragusa",
@@ -15652,11 +15860,12 @@
         "longitude": "14.72551290"
     },
     {
-        "name": "Province of Rieti",
+        "name": "of Rieti",
         "isoCode": "RI",
         "countryCode": "IT",
         "latitude": "42.36744050",
-        "longitude": "12.89750980"
+        "longitude": "12.89750980",
+        "nameOrig": "Province of Rieti"
     },
     {
         "name": "Metropolitan City of Rome",
@@ -15666,46 +15875,52 @@
         "longitude": "12.49623520"
     },
     {
-        "name": "Province of Rimini",
+        "name": "of Rimini",
         "isoCode": "RN",
         "countryCode": "IT",
         "latitude": "44.06782880",
-        "longitude": "12.56951580"
+        "longitude": "12.56951580",
+        "nameOrig": "Province of Rimini"
     },
     {
-        "name": "Province of Rovigo",
+        "name": "of Rovigo",
         "isoCode": "RO",
         "countryCode": "IT",
         "latitude": "45.02418180",
-        "longitude": "11.82381620"
+        "longitude": "11.82381620",
+        "nameOrig": "Province of Rovigo"
     },
     {
-        "name": "Province of Salerno",
+        "name": "of Salerno",
         "isoCode": "SA",
         "countryCode": "IT",
         "latitude": "40.42878320",
-        "longitude": "15.21948080"
+        "longitude": "15.21948080",
+        "nameOrig": "Province of Salerno"
     },
     {
-        "name": "Province of Siena",
+        "name": "of Siena",
         "isoCode": "SI",
         "countryCode": "IT",
         "latitude": "43.29377320",
-        "longitude": "11.43391480"
+        "longitude": "11.43391480",
+        "nameOrig": "Province of Siena"
     },
     {
-        "name": "Province of Sondrio",
+        "name": "of Sondrio",
         "isoCode": "SO",
         "countryCode": "IT",
         "latitude": "46.17276360",
-        "longitude": "9.79949170"
+        "longitude": "9.79949170",
+        "nameOrig": "Province of Sondrio"
     },
     {
-        "name": "Province of La Spezia",
+        "name": "of La Spezia",
         "isoCode": "SP",
         "countryCode": "IT",
         "latitude": "44.24479130",
-        "longitude": "9.76786870"
+        "longitude": "9.76786870",
+        "nameOrig": "Province of La Spezia"
     },
     {
         "name": "Libero consorzio comunale di Siracusa",
@@ -15715,32 +15930,36 @@
         "longitude": "15.28571090"
     },
     {
-        "name": "Province of Sassari",
+        "name": "of Sassari",
         "isoCode": "SS",
         "countryCode": "IT",
         "latitude": "40.79679070",
-        "longitude": "8.57504070"
+        "longitude": "8.57504070",
+        "nameOrig": "Province of Sassari"
     },
     {
-        "name": "Province of Savona",
+        "name": "of Savona",
         "isoCode": "SV",
         "countryCode": "IT",
         "latitude": "44.28879950",
-        "longitude": "8.26505800"
+        "longitude": "8.26505800",
+        "nameOrig": "Province of Savona"
     },
     {
-        "name": "Province of Taranto",
+        "name": "of Taranto",
         "isoCode": "TA",
         "countryCode": "IT",
         "latitude": "40.57409010",
-        "longitude": "17.24299760"
+        "longitude": "17.24299760",
+        "nameOrig": "Province of Taranto"
     },
     {
-        "name": "Province of Teramo",
+        "name": "of Teramo",
         "isoCode": "TE",
         "countryCode": "IT",
         "latitude": "42.58956080",
-        "longitude": "13.63627150"
+        "longitude": "13.63627150",
+        "nameOrig": "Province of Teramo"
     },
     {
         "name": "Trentino",
@@ -15764,53 +15983,60 @@
         "longitude": "12.51482650"
     },
     {
-        "name": "Province of Terni",
+        "name": "of Terni",
         "isoCode": "TR",
         "countryCode": "IT",
         "latitude": "42.56345340",
-        "longitude": "12.52980280"
+        "longitude": "12.52980280",
+        "nameOrig": "Province of Terni"
     },
     {
-        "name": "Province of Trieste",
+        "name": "of Trieste",
         "isoCode": "TS",
         "countryCode": "IT",
         "latitude": "45.68948230",
-        "longitude": "13.78330720"
+        "longitude": "13.78330720",
+        "nameOrig": "Province of Trieste"
     },
     {
-        "name": "Province of Treviso",
+        "name": "of Treviso",
         "isoCode": "TV",
         "countryCode": "IT",
         "latitude": "45.66685170",
-        "longitude": "12.24306170"
+        "longitude": "12.24306170",
+        "nameOrig": "Province of Treviso"
     },
     {
-        "name": "Province of Udine",
+        "name": "of Udine",
         "isoCode": "UD",
         "countryCode": "IT",
         "latitude": "46.14079720",
-        "longitude": "13.16628960"
+        "longitude": "13.16628960",
+        "nameOrig": "Province of Udine"
     },
     {
-        "name": "Province of Varese",
+        "name": "of Varese",
         "isoCode": "VA",
         "countryCode": "IT",
         "latitude": "45.79902600",
-        "longitude": "8.73009450"
+        "longitude": "8.73009450",
+        "nameOrig": "Province of Varese"
     },
     {
-        "name": "Province of Verbano-Cusio-Ossola",
+        "name": "of Verbano-Cusio-Ossola",
         "isoCode": "VB",
         "countryCode": "IT",
         "latitude": "46.13996880",
-        "longitude": "8.27246490"
+        "longitude": "8.27246490",
+        "nameOrig": "Province of Verbano-Cusio-Ossola"
     },
     {
-        "name": "Province of Vercelli",
+        "name": "of Vercelli",
         "isoCode": "VC",
         "countryCode": "IT",
         "latitude": "45.32022040",
-        "longitude": "8.41850800"
+        "longitude": "8.41850800",
+        "nameOrig": "Province of Vercelli"
     },
     {
         "name": "Metropolitan City of Venice",
@@ -15820,39 +16046,44 @@
         "longitude": "12.31526720"
     },
     {
-        "name": "Province of Vicenza",
+        "name": "of Vicenza",
         "isoCode": "VI",
         "countryCode": "IT",
         "latitude": "45.69839950",
-        "longitude": "11.56614650"
+        "longitude": "11.56614650",
+        "nameOrig": "Province of Vicenza"
     },
     {
-        "name": "Province of Verona",
+        "name": "of Verona",
         "isoCode": "VR",
         "countryCode": "IT",
         "latitude": "45.44184980",
-        "longitude": "11.07353160"
+        "longitude": "11.07353160",
+        "nameOrig": "Province of Verona"
     },
     {
-        "name": "Province of Medio Campidano",
+        "name": "of Medio Campidano",
         "isoCode": "VS",
         "countryCode": "IT",
         "latitude": "39.53173890",
-        "longitude": "8.70407500"
+        "longitude": "8.70407500",
+        "nameOrig": "Province of Medio Campidano"
     },
     {
-        "name": "Province of Viterbo",
+        "name": "of Viterbo",
         "isoCode": "VT",
         "countryCode": "IT",
         "latitude": "42.40024200",
-        "longitude": "11.88917210"
+        "longitude": "11.88917210",
+        "nameOrig": "Province of Viterbo"
     },
     {
-        "name": "Province of Vibo Valentia",
+        "name": "of Vibo Valentia",
         "isoCode": "VV",
         "countryCode": "IT",
         "latitude": "38.63785650",
-        "longitude": "16.20514840"
+        "longitude": "16.20514840",
+        "nameOrig": "Province of Vibo Valentia"
     },
     {
         "name": "Kingston Parish",
@@ -17141,67 +17372,76 @@
         "longitude": "125.76252410"
     },
     {
-        "name": "South Pyongan Province",
+        "name": "South Pyongan",
         "isoCode": "02",
         "countryCode": "KP",
         "latitude": "39.35391780",
-        "longitude": "126.16827100"
+        "longitude": "126.16827100",
+        "nameOrig": "South Pyongan Province"
     },
     {
-        "name": "North Pyongan Province",
+        "name": "North Pyongan",
         "isoCode": "03",
         "countryCode": "KP",
         "latitude": "39.92556180",
-        "longitude": "125.39280250"
+        "longitude": "125.39280250",
+        "nameOrig": "North Pyongan Province"
     },
     {
-        "name": "Chagang Province",
+        "name": "Chagang",
         "isoCode": "04",
         "countryCode": "KP",
         "latitude": "40.72028090",
-        "longitude": "126.56211370"
+        "longitude": "126.56211370",
+        "nameOrig": "Chagang Province"
     },
     {
-        "name": "South Hwanghae Province",
+        "name": "South Hwanghae",
         "isoCode": "05",
         "countryCode": "KP",
         "latitude": "38.20072150",
-        "longitude": "125.47819260"
+        "longitude": "125.47819260",
+        "nameOrig": "South Hwanghae Province"
     },
     {
-        "name": "North Hwanghae Province",
+        "name": "North Hwanghae",
         "isoCode": "06",
         "countryCode": "KP",
         "latitude": "38.37860850",
-        "longitude": "126.43643630"
+        "longitude": "126.43643630",
+        "nameOrig": "North Hwanghae Province"
     },
     {
-        "name": "Kangwon Province",
+        "name": "Kangwon",
         "isoCode": "07",
         "countryCode": "KP",
         "latitude": "38.84323930",
-        "longitude": "127.55970670"
+        "longitude": "127.55970670",
+        "nameOrig": "Kangwon Province"
     },
     {
-        "name": "South Hamgyong Province",
+        "name": "South Hamgyong",
         "isoCode": "08",
         "countryCode": "KP",
         "latitude": "40.37253390",
-        "longitude": "128.29888400"
+        "longitude": "128.29888400",
+        "nameOrig": "South Hamgyong Province"
     },
     {
-        "name": "North Hamgyong Province",
+        "name": "North Hamgyong",
         "isoCode": "09",
         "countryCode": "KP",
         "latitude": "41.81487580",
-        "longitude": "129.45819550"
+        "longitude": "129.45819550",
+        "nameOrig": "North Hamgyong Province"
     },
     {
-        "name": "Ryanggang Province",
+        "name": "Ryanggang",
         "isoCode": "10",
         "countryCode": "KP",
         "latitude": "41.23189210",
-        "longitude": "128.50763590"
+        "longitude": "128.50763590",
+        "nameOrig": "Ryanggang Province"
     },
     {
         "name": "Rason",
@@ -17260,60 +17500,68 @@
         "longitude": "129.31135960"
     },
     {
-        "name": "Gyeonggi Province",
+        "name": "Gyeonggi",
         "isoCode": "41",
         "countryCode": "KR",
         "latitude": "37.41380000",
-        "longitude": "127.51830000"
+        "longitude": "127.51830000",
+        "nameOrig": "Gyeonggi Province"
     },
     {
-        "name": "Gangwon Province",
+        "name": "Gangwon",
         "isoCode": "42",
         "countryCode": "KR",
         "latitude": "37.82280000",
-        "longitude": "128.15550000"
+        "longitude": "128.15550000",
+        "nameOrig": "Gangwon Province"
     },
     {
-        "name": "North Chungcheong Province",
+        "name": "North Chungcheong",
         "isoCode": "43",
         "countryCode": "KR",
         "latitude": "36.80000000",
-        "longitude": "127.70000000"
+        "longitude": "127.70000000",
+        "nameOrig": "North Chungcheong Province"
     },
     {
-        "name": "South Chungcheong Province",
+        "name": "South Chungcheong",
         "isoCode": "44",
         "countryCode": "KR",
         "latitude": "36.51840000",
-        "longitude": "126.80000000"
+        "longitude": "126.80000000",
+        "nameOrig": "South Chungcheong Province"
     },
     {
-        "name": "North Jeolla Province",
+        "name": "North Jeolla",
         "isoCode": "45",
         "countryCode": "KR",
         "latitude": "35.71750000",
-        "longitude": "127.15300000"
+        "longitude": "127.15300000",
+        "nameOrig": "North Jeolla Province"
     },
     {
-        "name": "South Jeolla Province",
+        "name": "South Jeolla",
         "isoCode": "46",
         "countryCode": "KR",
         "latitude": "34.86790000",
-        "longitude": "126.99100000"
+        "longitude": "126.99100000",
+        "nameOrig": "South Jeolla Province"
     },
     {
-        "name": "North Gyeongsang Province",
+        "name": "North Gyeongsang",
         "isoCode": "47",
         "countryCode": "KR",
         "latitude": "36.49190000",
-        "longitude": "128.88890000"
+        "longitude": "128.88890000",
+        "nameOrig": "North Gyeongsang Province"
     },
     {
-        "name": "South Gyeongsang Province",
+        "name": "South Gyeongsang",
         "isoCode": "48",
         "countryCode": "KR",
         "latitude": "35.46060000",
-        "longitude": "128.21320000"
+        "longitude": "128.21320000",
+        "nameOrig": "South Gyeongsang Province"
     },
     {
         "name": "Jeju",
@@ -17489,11 +17737,12 @@
         "nameOrig": "Turkestan Region"
     },
     {
-        "name": "West Kazakhstan Province",
+        "name": "West Kazakhstan",
         "isoCode": "ZAP",
         "countryCode": "KZ",
         "latitude": "49.56797270",
-        "longitude": "50.80666160"
+        "longitude": "50.80666160",
+        "nameOrig": "West Kazakhstan Province"
     },
     {
         "name": "Jambyl",
@@ -17504,95 +17753,108 @@
         "nameOrig": "Jambyl Region"
     },
     {
-        "name": "Attapeu Province",
+        "name": "Attapeu",
         "isoCode": "AT",
         "countryCode": "LA",
         "latitude": "14.93634000",
-        "longitude": "107.10119310"
+        "longitude": "107.10119310",
+        "nameOrig": "Attapeu Province"
     },
     {
-        "name": "Bokeo Province",
+        "name": "Bokeo",
         "isoCode": "BK",
         "countryCode": "LA",
         "latitude": "20.28726620",
-        "longitude": "100.70978670"
+        "longitude": "100.70978670",
+        "nameOrig": "Bokeo Province"
     },
     {
-        "name": "Bolikhamsai Province",
+        "name": "Bolikhamsai",
         "isoCode": "BL",
         "countryCode": "LA",
         "latitude": "18.43629240",
-        "longitude": "104.47233010"
+        "longitude": "104.47233010",
+        "nameOrig": "Bolikhamsai Province"
     },
     {
-        "name": "Champasak Province",
+        "name": "Champasak",
         "isoCode": "CH",
         "countryCode": "LA",
         "latitude": "14.65786640",
-        "longitude": "105.96998780"
+        "longitude": "105.96998780",
+        "nameOrig": "Champasak Province"
     },
     {
-        "name": "Houaphanh Province",
+        "name": "Houaphanh",
         "isoCode": "HO",
         "countryCode": "LA",
         "latitude": "20.32541750",
-        "longitude": "104.10013260"
+        "longitude": "104.10013260",
+        "nameOrig": "Houaphanh Province"
     },
     {
-        "name": "Khammouane Province",
+        "name": "Khammouane",
         "isoCode": "KH",
         "countryCode": "LA",
         "latitude": "17.63840660",
-        "longitude": "105.21948080"
+        "longitude": "105.21948080",
+        "nameOrig": "Khammouane Province"
     },
     {
-        "name": "Luang Namtha Province",
+        "name": "Luang Namtha",
         "isoCode": "LM",
         "countryCode": "LA",
         "latitude": "20.91701870",
-        "longitude": "101.16173560"
+        "longitude": "101.16173560",
+        "nameOrig": "Luang Namtha Province"
     },
     {
-        "name": "Luang Prabang Province",
+        "name": "Luang Prabang",
         "isoCode": "LP",
         "countryCode": "LA",
         "latitude": "20.06562290",
-        "longitude": "102.62162110"
+        "longitude": "102.62162110",
+        "nameOrig": "Luang Prabang Province"
     },
     {
-        "name": "Oudomxay Province",
+        "name": "Oudomxay",
         "isoCode": "OU",
         "countryCode": "LA",
         "latitude": "20.49219290",
-        "longitude": "101.88917210"
+        "longitude": "101.88917210",
+        "nameOrig": "Oudomxay Province"
     },
     {
-        "name": "Phongsaly Province",
+        "name": "Phongsaly",
         "isoCode": "PH",
         "countryCode": "LA",
         "latitude": "21.59193770",
-        "longitude": "102.25479190"
+        "longitude": "102.25479190",
+        "nameOrig": "Phongsaly Province"
     },
     {
-        "name": "Salavan Province",
+        "name": "Salavan",
         "isoCode": "SL",
         "countryCode": "LA",
         "latitude": "15.81710730",
-        "longitude": "106.25221430"
+        "longitude": "106.25221430",
+        "nameOrig": "Salavan Province"
     },
     {
-        "name": "Savannakhet Province",
+        "name": "Savannakhet",
         "isoCode": "SV",
         "countryCode": "LA",
         "latitude": "16.50653810",
-        "longitude": "105.59433880"
+        "longitude": "105.59433880",
+        "nameOrig": "Savannakhet Province"
     },
     {
-        "name": "Vientiane Province",
+        "name": "Vientiane",
         "isoCode": "VI",
         "countryCode": "LA",
         "latitude": "18.57050630",
-        "longitude": "102.62162110"
+        "longitude": "102.62162110",
+        "nameOrig": "Vientiane Province"
     },
     {
         "name": "Vientiane",
@@ -17603,25 +17865,28 @@
         "nameOrig": "Vientiane Prefecture"
     },
     {
-        "name": "Sainyabuli Province",
+        "name": "Sainyabuli",
         "isoCode": "XA",
         "countryCode": "LA",
         "latitude": "19.39078860",
-        "longitude": "101.52480550"
+        "longitude": "101.52480550",
+        "nameOrig": "Sainyabuli Province"
     },
     {
-        "name": "Sekong Province",
+        "name": "Sekong",
         "isoCode": "XE",
         "countryCode": "LA",
         "latitude": "15.57674460",
-        "longitude": "107.00670310"
+        "longitude": "107.00670310",
+        "nameOrig": "Sekong Province"
     },
     {
-        "name": "Xiangkhouang Province",
+        "name": "Xiangkhouang",
         "isoCode": "XI",
         "countryCode": "LA",
         "latitude": "19.60930030",
-        "longitude": "103.72891670"
+        "longitude": "103.72891670",
+        "nameOrig": "Xiangkhouang Province"
     },
     {
         "name": "Xaisomboun",
@@ -17631,11 +17896,12 @@
         "longitude": null
     },
     {
-        "name": "Xaisomboun Province",
+        "name": "Xaisomboun",
         "isoCode": "XS",
         "countryCode": "LA",
         "latitude": "18.43629240",
-        "longitude": "104.47233010"
+        "longitude": "104.47233010",
+        "nameOrig": "Xaisomboun Province"
     },
     {
         "name": "Akkar Governorate",
@@ -17856,11 +18122,12 @@
         "longitude": "9.52092770"
     },
     {
-        "name": "Western Province",
+        "name": "Western",
         "isoCode": "1",
         "countryCode": "LK",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "nameOrig": "Western Province"
     },
     {
         "name": "Colombo District",
@@ -17884,11 +18151,12 @@
         "longitude": "80.14285840"
     },
     {
-        "name": "Central Province",
+        "name": "Central",
         "isoCode": "2",
         "countryCode": "LK",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "nameOrig": "Central Province"
     },
     {
         "name": "Kandy District",
@@ -17912,11 +18180,12 @@
         "longitude": "80.76927580"
     },
     {
-        "name": "Southern Province",
+        "name": "Southern",
         "isoCode": "3",
         "countryCode": "LK",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "nameOrig": "Southern Province"
     },
     {
         "name": "Galle District",
@@ -17940,11 +18209,12 @@
         "longitude": "81.12714900"
     },
     {
-        "name": "Northern Province",
+        "name": "Northern",
         "isoCode": "4",
         "countryCode": "LK",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "nameOrig": "Northern Province"
     },
     {
         "name": "Jaffna District",
@@ -17982,11 +18252,12 @@
         "longitude": "80.81282540"
     },
     {
-        "name": "Eastern Province",
+        "name": "Eastern",
         "isoCode": "5",
         "countryCode": "LK",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "nameOrig": "Eastern Province"
     },
     {
         "name": "Batticaloa District",
@@ -18010,11 +18281,12 @@
         "longitude": "81.11960750"
     },
     {
-        "name": "North Western Province",
+        "name": "North Western",
         "isoCode": "6",
         "countryCode": "LK",
         "latitude": "7.75840910",
-        "longitude": "80.18750650"
+        "longitude": "80.18750650",
+        "nameOrig": "North Western Province"
     },
     {
         "name": "Puttalam District",
@@ -18024,11 +18296,12 @@
         "longitude": "79.84712720"
     },
     {
-        "name": "North Central Province",
+        "name": "North Central",
         "isoCode": "7",
         "countryCode": "LK",
         "latitude": "8.19956380",
-        "longitude": "80.63269160"
+        "longitude": "80.63269160",
+        "nameOrig": "North Central Province"
     },
     {
         "name": "Anuradhapura District",
@@ -18045,11 +18318,12 @@
         "longitude": "81.00034030"
     },
     {
-        "name": "Uva Province",
+        "name": "Uva",
         "isoCode": "8",
         "countryCode": "LK",
         "latitude": "6.84276120",
-        "longitude": "81.33994140"
+        "longitude": "81.33994140",
+        "nameOrig": "Uva Province"
     },
     {
         "name": "Badulla District",
@@ -18066,11 +18340,12 @@
         "longitude": "81.35068320"
     },
     {
-        "name": "Sabaragamuwa Province",
+        "name": "Sabaragamuwa",
         "isoCode": "9",
         "countryCode": "LK",
         "latitude": "6.73959410",
-        "longitude": "80.36586500"
+        "longitude": "80.36586500",
+        "nameOrig": "Sabaragamuwa Province"
     },
     {
         "name": "Ratnapura district",
@@ -20996,46 +21271,52 @@
         "longitude": "20.02114490"
     },
     {
-        "name": "Toamasina Province",
+        "name": "Toamasina",
         "isoCode": "A",
         "countryCode": "MG",
         "latitude": "-18.14428110",
-        "longitude": "49.39578360"
+        "longitude": "49.39578360",
+        "nameOrig": "Toamasina Province"
     },
     {
-        "name": "Antsiranana Province",
+        "name": "Antsiranana",
         "isoCode": "D",
         "countryCode": "MG",
         "latitude": "-13.77153900",
-        "longitude": "49.52799960"
+        "longitude": "49.52799960",
+        "nameOrig": "Antsiranana Province"
     },
     {
-        "name": "Fianarantsoa Province",
+        "name": "Fianarantsoa",
         "isoCode": "F",
         "countryCode": "MG",
         "latitude": "-22.35362400",
-        "longitude": "46.82528380"
+        "longitude": "46.82528380",
+        "nameOrig": "Fianarantsoa Province"
     },
     {
-        "name": "Mahajanga Province",
+        "name": "Mahajanga",
         "isoCode": "M",
         "countryCode": "MG",
         "latitude": "-16.52388300",
-        "longitude": "46.51626200"
+        "longitude": "46.51626200",
+        "nameOrig": "Mahajanga Province"
     },
     {
-        "name": "Antananarivo Province",
+        "name": "Antananarivo",
         "isoCode": "T",
         "countryCode": "MG",
         "latitude": "-18.70514740",
-        "longitude": "46.82528380"
+        "longitude": "46.82528380",
+        "nameOrig": "Antananarivo Province"
     },
     {
-        "name": "Toliara Province",
+        "name": "Toliara",
         "isoCode": "U",
         "countryCode": "MG",
         "latitude": "-23.35161910",
-        "longitude": "43.68549360"
+        "longitude": "43.68549360",
+        "nameOrig": "Toliara Province"
     },
     {
         "name": "Ralik Chain",
@@ -21865,28 +22146,31 @@
         "longitude": "96.15269850"
     },
     {
-        "name": "Orkhon Province",
+        "name": "Orkhon",
         "isoCode": "035",
         "countryCode": "MN",
         "latitude": "49.00470500",
-        "longitude": "104.30165270"
+        "longitude": "104.30165270",
+        "nameOrig": "Orkhon Province"
     },
     {
-        "name": "Darkhan-Uul Province",
+        "name": "Darkhan-Uul",
         "isoCode": "037",
         "countryCode": "MN",
         "latitude": "49.46484340",
-        "longitude": "105.97459190"
+        "longitude": "105.97459190",
+        "nameOrig": "Darkhan-Uul Province"
     },
     {
-        "name": "Khentii Province",
+        "name": "Khentii",
         "isoCode": "039",
         "countryCode": "MN",
         "latitude": "47.60812090",
-        "longitude": "109.93728560"
+        "longitude": "109.93728560",
+        "nameOrig": "Khentii Province"
     },
     {
-        "name": "Khovsgol Province",
+        "name": "Khovsgol",
         "isoCode": "041",
         "countryCode": "MN",
         "latitude": "50.22044840",
@@ -21894,21 +22178,23 @@
         "nameOrig": "Khövsgöl Province"
     },
     {
-        "name": "Khovd Province",
+        "name": "Khovd",
         "isoCode": "043",
         "countryCode": "MN",
         "latitude": "47.11296540",
-        "longitude": "92.31107520"
+        "longitude": "92.31107520",
+        "nameOrig": "Khovd Province"
     },
     {
-        "name": "Uvs Province",
+        "name": "Uvs",
         "isoCode": "046",
         "countryCode": "MN",
         "latitude": "49.64497070",
-        "longitude": "93.27365760"
+        "longitude": "93.27365760",
+        "nameOrig": "Uvs Province"
     },
     {
-        "name": "Tov Province",
+        "name": "Tov",
         "isoCode": "047",
         "countryCode": "MN",
         "latitude": "47.21240560",
@@ -21916,14 +22202,15 @@
         "nameOrig": "Töv Province"
     },
     {
-        "name": "Selenge Province",
+        "name": "Selenge",
         "isoCode": "049",
         "countryCode": "MN",
         "latitude": "50.00592730",
-        "longitude": "106.44341080"
+        "longitude": "106.44341080",
+        "nameOrig": "Selenge Province"
     },
     {
-        "name": "Sukhbaatar Province",
+        "name": "Sukhbaatar",
         "isoCode": "051",
         "countryCode": "MN",
         "latitude": "46.56531630",
@@ -21931,7 +22218,7 @@
         "nameOrig": "Sükhbaatar Province"
     },
     {
-        "name": "Omnogovi Province",
+        "name": "Omnogovi",
         "isoCode": "053",
         "countryCode": "MN",
         "latitude": "43.50002400",
@@ -21939,7 +22226,7 @@
         "nameOrig": "Ömnögovi Province"
     },
     {
-        "name": "Ovorkhangai Province",
+        "name": "Ovorkhangai",
         "isoCode": "055",
         "countryCode": "MN",
         "latitude": "45.76243920",
@@ -21947,35 +22234,39 @@
         "nameOrig": "Övörkhangai Province"
     },
     {
-        "name": "Zavkhan Province",
+        "name": "Zavkhan",
         "isoCode": "057",
         "countryCode": "MN",
         "latitude": "48.23881470",
-        "longitude": "96.07030190"
+        "longitude": "96.07030190",
+        "nameOrig": "Zavkhan Province"
     },
     {
-        "name": "Dundgovi Province",
+        "name": "Dundgovi",
         "isoCode": "059",
         "countryCode": "MN",
         "latitude": "45.58227860",
-        "longitude": "106.76442090"
+        "longitude": "106.76442090",
+        "nameOrig": "Dundgovi Province"
     },
     {
-        "name": "Dornod Province",
+        "name": "Dornod",
         "isoCode": "061",
         "countryCode": "MN",
         "latitude": "47.46581540",
-        "longitude": "115.39271200"
+        "longitude": "115.39271200",
+        "nameOrig": "Dornod Province"
     },
     {
-        "name": "Dornogovi Province",
+        "name": "Dornogovi",
         "isoCode": "063",
         "countryCode": "MN",
         "latitude": "43.96538890",
-        "longitude": "109.17734590"
+        "longitude": "109.17734590",
+        "nameOrig": "Dornogovi Province"
     },
     {
-        "name": "Govisumber Province",
+        "name": "Govisumber",
         "isoCode": "064",
         "countryCode": "MN",
         "latitude": "46.47627540",
@@ -21983,28 +22274,31 @@
         "nameOrig": "Govisümber Province"
     },
     {
-        "name": "Govi-Altai Province",
+        "name": "Govi-Altai",
         "isoCode": "065",
         "countryCode": "MN",
         "latitude": "45.45112270",
-        "longitude": "95.85057660"
+        "longitude": "95.85057660",
+        "nameOrig": "Govi-Altai Province"
     },
     {
-        "name": "Bulgan Province",
+        "name": "Bulgan",
         "isoCode": "067",
         "countryCode": "MN",
         "latitude": "48.96909130",
-        "longitude": "102.88317230"
+        "longitude": "102.88317230",
+        "nameOrig": "Bulgan Province"
     },
     {
-        "name": "Bayankhongor Province",
+        "name": "Bayankhongor",
         "isoCode": "069",
         "countryCode": "MN",
         "latitude": "45.15267070",
-        "longitude": "100.10736670"
+        "longitude": "100.10736670",
+        "nameOrig": "Bayankhongor Province"
     },
     {
-        "name": "Bayan-Olgii Province",
+        "name": "Bayan-Olgii",
         "isoCode": "071",
         "countryCode": "MN",
         "latitude": "48.39832540",
@@ -22012,11 +22306,12 @@
         "nameOrig": "Bayan-Ölgii Province"
     },
     {
-        "name": "Arkhangai Province",
+        "name": "Arkhangai",
         "isoCode": "073",
         "countryCode": "MN",
         "latitude": "47.89711010",
-        "longitude": "100.72401650"
+        "longitude": "100.72401650",
+        "nameOrig": "Arkhangai Province"
     },
     {
         "name": "Hodh Ech Chargui",
@@ -22875,11 +23170,12 @@
         "longitude": "73.42391430"
     },
     {
-        "name": "Central Province",
+        "name": "Central",
         "isoCode": "CE",
         "countryCode": "MV",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "nameOrig": "Central Province"
     },
     {
         "name": "Male",
@@ -22890,39 +23186,44 @@
         "nameOrig": "Malé"
     },
     {
-        "name": "North Central Province",
+        "name": "North Central",
         "isoCode": "NC",
         "countryCode": "MV",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "nameOrig": "North Central Province"
     },
     {
-        "name": "North Province",
+        "name": "North",
         "isoCode": "NO",
         "countryCode": "MV",
         "latitude": "8.88550270",
-        "longitude": "80.27673270"
+        "longitude": "80.27673270",
+        "nameOrig": "North Province"
     },
     {
-        "name": "South Central Province",
+        "name": "South Central",
         "isoCode": "SC",
         "countryCode": "MV",
         "latitude": "7.25649960",
-        "longitude": "80.72144170"
+        "longitude": "80.72144170",
+        "nameOrig": "South Central Province"
     },
     {
-        "name": "South Province",
+        "name": "South",
         "isoCode": "SU",
         "countryCode": "MV",
         "latitude": "-21.74820060",
-        "longitude": "166.17837390"
+        "longitude": "166.17837390",
+        "nameOrig": "South Province"
     },
     {
-        "name": "Upper South Province",
+        "name": "Upper South",
         "isoCode": "US",
         "countryCode": "MV",
         "latitude": "0.23070000",
-        "longitude": "73.27948460"
+        "longitude": "73.27948460",
+        "nameOrig": "Upper South Province"
     },
     {
         "name": "Balaka District",
@@ -23482,39 +23783,44 @@
         "longitude": "101.69644500"
     },
     {
-        "name": "Niassa Province",
+        "name": "Niassa",
         "isoCode": "A",
         "countryCode": "MZ",
         "latitude": "-12.78262020",
-        "longitude": "36.60939260"
+        "longitude": "36.60939260",
+        "nameOrig": "Niassa Province"
     },
     {
-        "name": "Manica Province",
+        "name": "Manica",
         "isoCode": "B",
         "countryCode": "MZ",
         "latitude": "-19.50597870",
-        "longitude": "33.43835300"
+        "longitude": "33.43835300",
+        "nameOrig": "Manica Province"
     },
     {
-        "name": "Gaza Province",
+        "name": "Gaza",
         "isoCode": "G",
         "countryCode": "MZ",
         "latitude": "-23.02219280",
-        "longitude": "32.71813750"
+        "longitude": "32.71813750",
+        "nameOrig": "Gaza Province"
     },
     {
-        "name": "Inhambane Province",
+        "name": "Inhambane",
         "isoCode": "I",
         "countryCode": "MZ",
         "latitude": "-22.85279970",
-        "longitude": "34.55087580"
+        "longitude": "34.55087580",
+        "nameOrig": "Inhambane Province"
     },
     {
-        "name": "Maputo Province",
+        "name": "Maputo",
         "isoCode": "L",
         "countryCode": "MZ",
         "latitude": "-25.25698760",
-        "longitude": "32.53727410"
+        "longitude": "32.53727410",
+        "nameOrig": "Maputo Province"
     },
     {
         "name": "Maputo",
@@ -23524,39 +23830,44 @@
         "longitude": "32.57317460"
     },
     {
-        "name": "Nampula Province",
+        "name": "Nampula",
         "isoCode": "N",
         "countryCode": "MZ",
         "latitude": "-14.76049310",
-        "longitude": "39.32062410"
+        "longitude": "39.32062410",
+        "nameOrig": "Nampula Province"
     },
     {
-        "name": "Cabo Delgado Province",
+        "name": "Cabo Delgado",
         "isoCode": "P",
         "countryCode": "MZ",
         "latitude": "-12.33354740",
-        "longitude": "39.32062410"
+        "longitude": "39.32062410",
+        "nameOrig": "Cabo Delgado Province"
     },
     {
-        "name": "Zambezia Province",
+        "name": "Zambezia",
         "isoCode": "Q",
         "countryCode": "MZ",
         "latitude": "-16.56389870",
-        "longitude": "36.60939260"
+        "longitude": "36.60939260",
+        "nameOrig": "Zambezia Province"
     },
     {
-        "name": "Sofala Province",
+        "name": "Sofala",
         "isoCode": "S",
         "countryCode": "MZ",
         "latitude": "-19.20390730",
-        "longitude": "34.86241660"
+        "longitude": "34.86241660",
+        "nameOrig": "Sofala Province"
     },
     {
-        "name": "Tete Province",
+        "name": "Tete",
         "isoCode": "T",
         "countryCode": "MZ",
         "latitude": "-15.65960560",
-        "longitude": "32.71813750"
+        "longitude": "32.71813750",
+        "nameOrig": "Tete Province"
     },
     {
         "name": "Zambezi",
@@ -24822,14 +25133,15 @@
         "longitude": "54.14252140"
     },
     {
-        "name": "Bocas del Toro Province",
+        "name": "Bocas del Toro",
         "isoCode": "1",
         "countryCode": "PA",
         "latitude": "9.41655210",
-        "longitude": "-82.52077870"
+        "longitude": "-82.52077870",
+        "nameOrig": "Bocas del Toro Province"
     },
     {
-        "name": "Panama Oeste Province",
+        "name": "Panama Oeste",
         "isoCode": "10",
         "countryCode": "PA",
         "latitude": "9.11967510",
@@ -24837,7 +25149,7 @@
         "nameOrig": "Panamá Oeste Province"
     },
     {
-        "name": "Cocle Province",
+        "name": "Cocle",
         "isoCode": "2",
         "countryCode": "PA",
         "latitude": "8.62660680",
@@ -24845,7 +25157,7 @@
         "nameOrig": "Coclé Province"
     },
     {
-        "name": "Colon Province",
+        "name": "Colon",
         "isoCode": "3",
         "countryCode": "PA",
         "latitude": "9.18519890",
@@ -24853,7 +25165,7 @@
         "nameOrig": "Colón Province"
     },
     {
-        "name": "Chiriqui Province",
+        "name": "Chiriqui",
         "isoCode": "4",
         "countryCode": "PA",
         "latitude": "8.58489800",
@@ -24861,7 +25173,7 @@
         "nameOrig": "Chiriquí Province"
     },
     {
-        "name": "Darien Province",
+        "name": "Darien",
         "isoCode": "5",
         "countryCode": "PA",
         "latitude": "7.86817130",
@@ -24869,21 +25181,23 @@
         "nameOrig": "Darién Province"
     },
     {
-        "name": "Herrera Province",
+        "name": "Herrera",
         "isoCode": "6",
         "countryCode": "PA",
         "latitude": "7.77042820",
-        "longitude": "-80.72144170"
+        "longitude": "-80.72144170",
+        "nameOrig": "Herrera Province"
     },
     {
-        "name": "Los Santos Province",
+        "name": "Los Santos",
         "isoCode": "7",
         "countryCode": "PA",
         "latitude": "7.59093020",
-        "longitude": "-80.36586500"
+        "longitude": "-80.36586500",
+        "nameOrig": "Los Santos Province"
     },
     {
-        "name": "Panama Province",
+        "name": "Panama",
         "isoCode": "8",
         "countryCode": "PA",
         "latitude": "9.11967510",
@@ -24891,11 +25205,12 @@
         "nameOrig": "Panamá Province"
     },
     {
-        "name": "Veraguas Province",
+        "name": "Veraguas",
         "isoCode": "9",
         "countryCode": "PA",
         "latitude": "8.12310330",
-        "longitude": "-81.07546570"
+        "longitude": "-81.07546570",
+        "nameOrig": "Veraguas Province"
     },
     {
         "name": "Embera-Wounaan Comarca",
@@ -25100,18 +25415,20 @@
         "longitude": "-73.08774900"
     },
     {
-        "name": "Chimbu Province",
+        "name": "Chimbu",
         "isoCode": "CPK",
         "countryCode": "PG",
         "latitude": "-6.30876820",
-        "longitude": "144.87312190"
+        "longitude": "144.87312190",
+        "nameOrig": "Chimbu Province"
     },
     {
-        "name": "Central Province",
+        "name": "Central",
         "isoCode": "CPM",
         "countryCode": "PG",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "nameOrig": "Central Province"
     },
     {
         "name": "East New Britain",
@@ -25121,18 +25438,20 @@
         "longitude": "151.88773210"
     },
     {
-        "name": "Eastern Highlands Province",
+        "name": "Eastern Highlands",
         "isoCode": "EHG",
         "countryCode": "PG",
         "latitude": "-6.58616740",
-        "longitude": "145.66896360"
+        "longitude": "145.66896360",
+        "nameOrig": "Eastern Highlands Province"
     },
     {
-        "name": "Enga Province",
+        "name": "Enga",
         "isoCode": "EPW",
         "countryCode": "PG",
         "latitude": "-5.30058490",
-        "longitude": "143.56356370"
+        "longitude": "143.56356370",
+        "nameOrig": "Enga Province"
     },
     {
         "name": "Gulf",
@@ -25149,39 +25468,44 @@
         "longitude": "-83.04826180"
     },
     {
-        "name": "Jiwaka Province",
+        "name": "Jiwaka",
         "isoCode": "JWK",
         "countryCode": "PG",
         "latitude": "-5.86911540",
-        "longitude": "144.69727740"
+        "longitude": "144.69727740",
+        "nameOrig": "Jiwaka Province"
     },
     {
-        "name": "Milne Bay Province",
+        "name": "Milne Bay",
         "isoCode": "MBA",
         "countryCode": "PG",
         "latitude": "-9.52214510",
-        "longitude": "150.67496530"
+        "longitude": "150.67496530",
+        "nameOrig": "Milne Bay Province"
     },
     {
-        "name": "Morobe Province",
+        "name": "Morobe",
         "isoCode": "MPL",
         "countryCode": "PG",
         "latitude": "-6.80137370",
-        "longitude": "146.56164700"
+        "longitude": "146.56164700",
+        "nameOrig": "Morobe Province"
     },
     {
-        "name": "Madang Province",
+        "name": "Madang",
         "isoCode": "MPM",
         "countryCode": "PG",
         "latitude": "-4.98497330",
-        "longitude": "145.13758340"
+        "longitude": "145.13758340",
+        "nameOrig": "Madang Province"
     },
     {
-        "name": "Manus Province",
+        "name": "Manus",
         "isoCode": "MRL",
         "countryCode": "PG",
         "latitude": "-2.09411690",
-        "longitude": "146.87609510"
+        "longitude": "146.87609510",
+        "nameOrig": "Manus Province"
     },
     {
         "name": "Port Moresby",
@@ -25191,18 +25515,20 @@
         "longitude": "147.18026710"
     },
     {
-        "name": "New Ireland Province",
+        "name": "New Ireland",
         "isoCode": "NIK",
         "countryCode": "PG",
         "latitude": "-4.28532560",
-        "longitude": "152.92059180"
+        "longitude": "152.92059180",
+        "nameOrig": "New Ireland Province"
     },
     {
-        "name": "Oro Province",
+        "name": "Oro",
         "isoCode": "NPP",
         "countryCode": "PG",
         "latitude": "-8.89880630",
-        "longitude": "148.18929210"
+        "longitude": "148.18929210",
+        "nameOrig": "Oro Province"
     },
     {
         "name": "Bougainville",
@@ -25212,39 +25538,44 @@
         "longitude": "155.38071010"
     },
     {
-        "name": "Sandaun Province",
+        "name": "Sandaun",
         "isoCode": "SAN",
         "countryCode": "PG",
         "latitude": "-3.71261790",
-        "longitude": "141.68342750"
+        "longitude": "141.68342750",
+        "nameOrig": "Sandaun Province"
     },
     {
-        "name": "Southern Highlands Province",
+        "name": "Southern Highlands",
         "isoCode": "SHM",
         "countryCode": "PG",
         "latitude": "-6.41790830",
-        "longitude": "143.56356370"
+        "longitude": "143.56356370",
+        "nameOrig": "Southern Highlands Province"
     },
     {
-        "name": "West New Britain Province",
+        "name": "West New Britain",
         "isoCode": "WBK",
         "countryCode": "PG",
         "latitude": "-5.70474320",
-        "longitude": "150.02594660"
+        "longitude": "150.02594660",
+        "nameOrig": "West New Britain Province"
     },
     {
-        "name": "Western Highlands Province",
+        "name": "Western Highlands",
         "isoCode": "WHM",
         "countryCode": "PG",
         "latitude": "-5.62681280",
-        "longitude": "144.25931180"
+        "longitude": "144.25931180",
+        "nameOrig": "Western Highlands Province"
     },
     {
-        "name": "Western Province",
+        "name": "Western",
         "isoCode": "WPD",
         "countryCode": "PG",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "nameOrig": "Western Province"
     },
     {
         "name": "Ilocos",
@@ -25707,11 +26038,12 @@
         "longitude": "121.40694170"
     },
     {
-        "name": "Mountain Province",
+        "name": "Mountain",
         "isoCode": "MOU",
         "countryCode": "PH",
         "latitude": "40.70754370",
-        "longitude": "-73.95010330"
+        "longitude": "-73.95010330",
+        "nameOrig": "Mountain Province"
     },
     {
         "name": "Misamis Occidental",
@@ -27643,32 +27975,36 @@
         "longitude": "30.06188510"
     },
     {
-        "name": "Eastern Province",
+        "name": "Eastern",
         "isoCode": "02",
         "countryCode": "RW",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "nameOrig": "Eastern Province"
     },
     {
-        "name": "Northern Province",
+        "name": "Northern",
         "isoCode": "03",
         "countryCode": "RW",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "nameOrig": "Northern Province"
     },
     {
-        "name": "Western Province",
+        "name": "Western",
         "isoCode": "04",
         "countryCode": "RW",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "nameOrig": "Western Province"
     },
     {
-        "name": "Southern Province",
+        "name": "Southern",
         "isoCode": "05",
         "countryCode": "RW",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "nameOrig": "Southern Province"
     },
     {
         "name": "Riyadh",
@@ -27692,11 +28028,12 @@
         "longitude": "39.32062410"
     },
     {
-        "name": "Eastern Province",
+        "name": "Eastern",
         "isoCode": "04",
         "countryCode": "SA",
         "latitude": "24.04399320",
-        "longitude": "45.65892250"
+        "longitude": "45.65892250",
+        "nameOrig": "Eastern Province"
     },
     {
         "name": "Al-Qassim",
@@ -27762,18 +28099,20 @@
         "longitude": "42.86378750"
     },
     {
-        "name": "Central Province",
+        "name": "Central",
         "isoCode": "CE",
         "countryCode": "SB",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "nameOrig": "Central Province"
     },
     {
-        "name": "Choiseul Province",
+        "name": "Choiseul",
         "isoCode": "CH",
         "countryCode": "SB",
         "latitude": "-7.05014940",
-        "longitude": "156.95114590"
+        "longitude": "156.95114590",
+        "nameOrig": "Choiseul Province"
     },
     {
         "name": "Honiara",
@@ -27783,53 +28122,60 @@
         "longitude": "159.97289990"
     },
     {
-        "name": "Guadalcanal Province",
+        "name": "Guadalcanal",
         "isoCode": "GU",
         "countryCode": "SB",
         "latitude": "-9.57732840",
-        "longitude": "160.14558050"
+        "longitude": "160.14558050",
+        "nameOrig": "Guadalcanal Province"
     },
     {
-        "name": "Isabel Province",
+        "name": "Isabel",
         "isoCode": "IS",
         "countryCode": "SB",
         "latitude": "-8.05923530",
-        "longitude": "159.14470810"
+        "longitude": "159.14470810",
+        "nameOrig": "Isabel Province"
     },
     {
-        "name": "Makira-Ulawa Province",
+        "name": "Makira-Ulawa",
         "isoCode": "MK",
         "countryCode": "SB",
         "latitude": "-10.57374470",
-        "longitude": "161.80969410"
+        "longitude": "161.80969410",
+        "nameOrig": "Makira-Ulawa Province"
     },
     {
-        "name": "Malaita Province",
+        "name": "Malaita",
         "isoCode": "ML",
         "countryCode": "SB",
         "latitude": "-8.94461680",
-        "longitude": "160.90712360"
+        "longitude": "160.90712360",
+        "nameOrig": "Malaita Province"
     },
     {
-        "name": "Rennell and Bellona Province",
+        "name": "Rennell and Bellona",
         "isoCode": "RB",
         "countryCode": "SB",
         "latitude": "-11.61314350",
-        "longitude": "160.16939490"
+        "longitude": "160.16939490",
+        "nameOrig": "Rennell and Bellona Province"
     },
     {
-        "name": "Temotu Province",
+        "name": "Temotu",
         "isoCode": "TE",
         "countryCode": "SB",
         "latitude": "-10.68692900",
-        "longitude": "166.06239790"
+        "longitude": "166.06239790",
+        "nameOrig": "Temotu Province"
     },
     {
-        "name": "Western Province",
+        "name": "Western",
         "isoCode": "WE",
         "countryCode": "SB",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "nameOrig": "Western Province"
     },
     {
         "name": "Anse-aux-Pins",
@@ -29900,25 +30246,28 @@
         "nameOrig": "Žilina Region"
     },
     {
-        "name": "Eastern Province",
+        "name": "Eastern",
         "isoCode": "E",
         "countryCode": "SL",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "nameOrig": "Eastern Province"
     },
     {
-        "name": "Northern Province",
+        "name": "Northern",
         "isoCode": "N",
         "countryCode": "SL",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "nameOrig": "Northern Province"
     },
     {
-        "name": "Southern Province",
+        "name": "Southern",
         "isoCode": "S",
         "countryCode": "SL",
         "latitude": null,
-        "longitude": null
+        "longitude": null,
+        "nameOrig": "Southern Province"
     },
     {
         "name": "Western Area",
@@ -30349,7 +30698,7 @@
         "longitude": "28.64106410"
     },
     {
-        "name": "Principe Province",
+        "name": "Principe",
         "isoCode": "P",
         "countryCode": "ST",
         "latitude": "1.61393810",
@@ -30357,7 +30706,7 @@
         "nameOrig": "Príncipe Province"
     },
     {
-        "name": "Sao Tome Province",
+        "name": "Sao Tome",
         "isoCode": "S",
         "countryCode": "ST",
         "latitude": "0.33019240",
@@ -31358,18 +31707,20 @@
         "longitude": "100.88245510"
     },
     {
-        "name": "Gorno-Badakhshan Autonomous Province",
+        "name": "Gorno-Badakhshan Autonomous",
         "isoCode": "GB",
         "countryCode": "TJ",
         "latitude": "38.41273200",
-        "longitude": "73.08774900"
+        "longitude": "73.08774900",
+        "nameOrig": "Gorno-Badakhshan Autonomous Province"
     },
     {
-        "name": "Khatlon Province",
+        "name": "Khatlon",
         "isoCode": "KT",
         "countryCode": "TJ",
         "latitude": "37.91135620",
-        "longitude": "69.09702300"
+        "longitude": "69.09702300",
+        "nameOrig": "Khatlon Province"
     },
     {
         "name": "districts of Republican Subordination",
@@ -31379,11 +31730,12 @@
         "longitude": "70.24083250"
     },
     {
-        "name": "Sughd Province",
+        "name": "Sughd",
         "isoCode": "SU",
         "countryCode": "TJ",
         "latitude": "39.51553260",
-        "longitude": "69.09702300"
+        "longitude": "69.09702300",
+        "nameOrig": "Sughd Province"
     },
     {
         "name": "Aileu municipality",
@@ -35729,88 +36081,100 @@
         "longitude": "21.85685860"
     },
     {
-        "name": "Western Province",
+        "name": "Western",
         "isoCode": "01",
         "countryCode": "ZM",
         "latitude": "6.90160860",
-        "longitude": "80.00877460"
+        "longitude": "80.00877460",
+        "nameOrig": "Western Province"
     },
     {
-        "name": "Central Province",
+        "name": "Central",
         "isoCode": "02",
         "countryCode": "ZM",
         "latitude": "7.25649960",
-        "longitude": "80.72144170"
+        "longitude": "80.72144170",
+        "nameOrig": "Central Province"
     },
     {
-        "name": "Eastern Province",
+        "name": "Eastern",
         "isoCode": "03",
         "countryCode": "ZM",
         "latitude": "23.16696880",
-        "longitude": "49.36531490"
+        "longitude": "49.36531490",
+        "nameOrig": "Eastern Province"
     },
     {
-        "name": "Luapula Province",
+        "name": "Luapula",
         "isoCode": "04",
         "countryCode": "ZM",
         "latitude": "-11.56483100",
-        "longitude": "29.04599270"
+        "longitude": "29.04599270",
+        "nameOrig": "Luapula Province"
     },
     {
-        "name": "Northern Province",
+        "name": "Northern",
         "isoCode": "05",
         "countryCode": "ZM",
         "latitude": "8.88550270",
-        "longitude": "80.27673270"
+        "longitude": "80.27673270",
+        "nameOrig": "Northern Province"
     },
     {
-        "name": "Northwestern Province",
+        "name": "Northwestern",
         "isoCode": "06",
         "countryCode": "ZM",
         "latitude": "-13.00502580",
-        "longitude": "24.90422080"
+        "longitude": "24.90422080",
+        "nameOrig": "Northwestern Province"
     },
     {
-        "name": "Southern Province",
+        "name": "Southern",
         "isoCode": "07",
         "countryCode": "ZM",
         "latitude": "6.23737500",
-        "longitude": "80.54384500"
+        "longitude": "80.54384500",
+        "nameOrig": "Southern Province"
     },
     {
-        "name": "Copperbelt Province",
+        "name": "Copperbelt",
         "isoCode": "08",
         "countryCode": "ZM",
         "latitude": "-13.05700730",
-        "longitude": "27.54958460"
+        "longitude": "27.54958460",
+        "nameOrig": "Copperbelt Province"
     },
     {
-        "name": "Lusaka Province",
+        "name": "Lusaka",
         "isoCode": "09",
         "countryCode": "ZM",
         "latitude": "-15.36571290",
-        "longitude": "29.23207840"
+        "longitude": "29.23207840",
+        "nameOrig": "Lusaka Province"
     },
     {
-        "name": "Muchinga Province",
+        "name": "Muchinga",
         "isoCode": "10",
         "countryCode": "ZM",
         "latitude": "-15.38219300",
-        "longitude": "28.26158000"
+        "longitude": "28.26158000",
+        "nameOrig": "Muchinga Province"
     },
     {
-        "name": "Bulawayo Province",
+        "name": "Bulawayo",
         "isoCode": "BU",
         "countryCode": "ZW",
         "latitude": "-20.14895050",
-        "longitude": "28.53310380"
+        "longitude": "28.53310380",
+        "nameOrig": "Bulawayo Province"
     },
     {
-        "name": "Harare Province",
+        "name": "Harare",
         "isoCode": "HA",
         "countryCode": "ZW",
         "latitude": "-17.82162880",
-        "longitude": "31.04922590"
+        "longitude": "31.04922590",
+        "nameOrig": "Harare Province"
     },
     {
         "name": "Manicaland",
@@ -35820,52 +36184,59 @@
         "longitude": "32.17460500"
     },
     {
-        "name": "Mashonaland Central Province",
+        "name": "Mashonaland Central",
         "isoCode": "MC",
         "countryCode": "ZW",
         "latitude": "-16.76442950",
-        "longitude": "31.07937050"
+        "longitude": "31.07937050",
+        "nameOrig": "Mashonaland Central Province"
     },
     {
-        "name": "Mashonaland East Province",
+        "name": "Mashonaland East",
         "isoCode": "ME",
         "countryCode": "ZW",
         "latitude": "-18.58716420",
-        "longitude": "31.26263660"
+        "longitude": "31.26263660",
+        "nameOrig": "Mashonaland East Province"
     },
     {
-        "name": "Midlands Province",
+        "name": "Midlands",
         "isoCode": "MI",
         "countryCode": "ZW",
         "latitude": "-19.05520090",
-        "longitude": "29.60354950"
+        "longitude": "29.60354950",
+        "nameOrig": "Midlands Province"
     },
     {
-        "name": "Matabeleland North Province",
+        "name": "Matabeleland North",
         "isoCode": "MN",
         "countryCode": "ZW",
         "latitude": "-18.53315660",
-        "longitude": "27.54958460"
+        "longitude": "27.54958460",
+        "nameOrig": "Matabeleland North Province"
     },
     {
-        "name": "Matabeleland South Province",
+        "name": "Matabeleland South",
         "isoCode": "MS",
         "countryCode": "ZW",
         "latitude": "-21.05233700",
-        "longitude": "29.04599270"
+        "longitude": "29.04599270",
+        "nameOrig": "Matabeleland South Province"
     },
     {
-        "name": "Masvingo Province",
+        "name": "Masvingo",
         "isoCode": "MV",
         "countryCode": "ZW",
         "latitude": "-20.62415090",
-        "longitude": "31.26263660"
+        "longitude": "31.26263660",
+        "nameOrig": "Masvingo Province"
     },
     {
-        "name": "Mashonaland West Province",
+        "name": "Mashonaland West",
         "isoCode": "MW",
         "countryCode": "ZW",
         "latitude": "-17.48510290",
-        "longitude": "29.78892480"
+        "longitude": "29.78892480",
+        "nameOrig": "Mashonaland West Province"
     }
 ]
