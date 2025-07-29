@@ -41,7 +41,10 @@ module.exports = ({ config }) => {
         const country = findCountry(countryKey);
 
         const countryStates = lookup.statesByCountryThenState[norm(countryKey)];
-        if (!countryStates) throw new Error(`No states found for country: ${countryKey}`);
+        // if (!countryStates) throw new Error(`No states found for country: ${countryKey}`);
+        // not all countries have states.
+
+        if (!countryStates) return null;
 
         // const state = countryStates[norm(stateKey)];
 
@@ -52,6 +55,22 @@ module.exports = ({ config }) => {
 
         return state;
     };
+
+    // const findState = (stateKey, countryKey) => {
+    //     const country = findCountry(countryKey);
+
+    //     const countryStates = lookup.statesByCountryThenState[norm(countryKey)];
+    //     if (!countryStates) throw new Error(`No states found for country: ${countryKey}`);
+
+    //     // const state = countryStates[norm(stateKey)];
+
+    //     const states = lookup.states[stateKey.toUpperCase()] ?? [];
+    //     const state = states.find(state => state.countryCode === country.isoCode);
+
+    //     if (!state) throw new Error(`State not found: ${stateKey}; Country: ${countryKey}`);
+
+    //     return state;
+    // };
 
 
     const findCountries = (countryKey) => {
