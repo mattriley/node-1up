@@ -68,18 +68,7 @@ module.exports = config => {
 
 
 
-    function flattenReplacements(groupedMap) {
-        const flat = {};
-        for (const [replacement, chars] of Object.entries(groupedMap)) {
-            for (const ch of chars) {
-                flat[ch] = replacement;
-            }
-        }
-        return flat;
-    }
 
-    const accentReplacements = flattenReplacements(config.accentReplacements);
-
-    return { locationData, accentReplacements };
+    return { locationData };
 
 }

@@ -28,7 +28,7 @@ module.exports = ({ str }) => {
         for (const city of cities) {
             if (!city.state) continue;
             let state = str.applyReplacements(city.state, replacements);
-            state = str.removeAccents(state);
+            state = str.deaccent(state);
             if (state === city.state) continue;
             Object.assign(city, { state, stateOrig: city.state });
         }
@@ -37,7 +37,7 @@ module.exports = ({ str }) => {
         for (const city of cities) {
             if (!city.name) continue;
             let name = str.applyReplacements(city.name, replacements);
-            name = str.removeAccents(name);
+            name = str.deaccent(name);
             if (name === city.name) continue;
             Object.assign(city, { name, nameOrig: city.name });
         }
@@ -59,7 +59,7 @@ module.exports = ({ str }) => {
         // Apply string replacements.
         for (const state of states) {
             let name = str.applyReplacements(state.name, replacements);
-            name = str.removeAccents(name);
+            name = str.deaccent(name);
             if (name === state.name) continue;
             Object.assign(state, { name, nameOrig: state.name });
         }

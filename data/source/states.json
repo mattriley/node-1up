@@ -13413,12 +13413,11 @@
         "longitude": "17.52684710"
     },
     {
-        "name": "Medimurje County",
+        "name": "Međimurje County",
         "isoCode": "20",
         "countryCode": "HR",
         "latitude": "46.37666440",
-        "longitude": "16.42132980",
-        "nameOrig": "Međimurje County"
+        "longitude": "16.42132980"
     },
     {
         "name": "Zagreb",
@@ -20574,7 +20573,7 @@
         "longitude": "29.23121750"
     },
     {
-        "name": "Balți Municipality",
+        "name": "Balti Municipality",
         "isoCode": "BA",
         "countryCode": "MD",
         "latitude": "47.75399470",
@@ -20610,7 +20609,7 @@
         "longitude": "28.18902750"
     },
     {
-        "name": "Calarași District",
+        "name": "Calarasi District",
         "isoCode": "CL",
         "countryCode": "MD",
         "latitude": "47.28694600",
@@ -20618,11 +20617,12 @@
         "nameOrig": "Călărași District"
     },
     {
-        "name": "Cimișlia District",
+        "name": "Cimislia District",
         "isoCode": "CM",
         "countryCode": "MD",
         "latitude": "46.52508510",
-        "longitude": "28.77218350"
+        "longitude": "28.77218350",
+        "nameOrig": "Cimișlia District"
     },
     {
         "name": "Criuleni District",
@@ -20632,7 +20632,7 @@
         "longitude": "29.15575190"
     },
     {
-        "name": "Caușeni District",
+        "name": "Causeni District",
         "isoCode": "CS",
         "countryCode": "MD",
         "latitude": "46.65547150",
@@ -20647,7 +20647,7 @@
         "longitude": "28.20096530"
     },
     {
-        "name": "Chișinau Municipality",
+        "name": "Chisinau Municipality",
         "isoCode": "CU",
         "countryCode": "MD",
         "latitude": "47.01045290",
@@ -20655,11 +20655,12 @@
         "nameOrig": "Chișinău Municipality"
     },
     {
-        "name": "Dondușeni District",
+        "name": "Donduseni District",
         "isoCode": "DO",
         "countryCode": "MD",
         "latitude": "48.23383050",
-        "longitude": "27.59980870"
+        "longitude": "27.59980870",
+        "nameOrig": "Dondușeni District"
     },
     {
         "name": "Drochia District",
@@ -20677,14 +20678,15 @@
         "nameOrig": "Dubăsari District"
     },
     {
-        "name": "Edineț District",
+        "name": "Edinet District",
         "isoCode": "ED",
         "countryCode": "MD",
         "latitude": "48.16789910",
-        "longitude": "27.29361430"
+        "longitude": "27.29361430",
+        "nameOrig": "Edineț District"
     },
     {
-        "name": "Falești District",
+        "name": "Falesti District",
         "isoCode": "FA",
         "countryCode": "MD",
         "latitude": "47.56477250",
@@ -20692,11 +20694,12 @@
         "nameOrig": "Fălești District"
     },
     {
-        "name": "Florești District",
+        "name": "Floresti District",
         "isoCode": "FL",
         "countryCode": "MD",
         "latitude": "47.86678490",
-        "longitude": "28.33918640"
+        "longitude": "28.33918640",
+        "nameOrig": "Florești District"
     },
     {
         "name": "Gagauzia",
@@ -20713,7 +20716,7 @@
         "longitude": "27.51680100"
     },
     {
-        "name": "Hincești District",
+        "name": "Hincesti District",
         "isoCode": "HI",
         "countryCode": "MD",
         "latitude": "46.82811470",
@@ -20735,11 +20738,12 @@
         "longitude": "28.17681550"
     },
     {
-        "name": "Ocnița District",
+        "name": "Ocnita District",
         "isoCode": "OC",
         "countryCode": "MD",
         "latitude": "48.41104350",
-        "longitude": "27.47680920"
+        "longitude": "27.47680920",
+        "nameOrig": "Ocnița District"
     },
     {
         "name": "Orhei District",
@@ -20756,7 +20760,7 @@
         "longitude": "28.88710240"
     },
     {
-        "name": "Rișcani District",
+        "name": "Riscani District",
         "isoCode": "RI",
         "countryCode": "MD",
         "latitude": "47.90701530",
@@ -20764,7 +20768,7 @@
         "nameOrig": "Rîșcani District"
     },
     {
-        "name": "Șoldanești District",
+        "name": "Soldanesti District",
         "isoCode": "SD",
         "countryCode": "MD",
         "latitude": "47.81473890",
@@ -20794,7 +20798,7 @@
         "longitude": "28.28707830"
     },
     {
-        "name": "Strașeni District",
+        "name": "Straseni District",
         "isoCode": "ST",
         "countryCode": "MD",
         "latitude": "47.14502670",
@@ -20802,7 +20806,7 @@
         "nameOrig": "Strășeni District"
     },
     {
-        "name": "Ștefan Voda District",
+        "name": "Stefan Voda District",
         "isoCode": "SV",
         "countryCode": "MD",
         "latitude": "46.55404880",
@@ -20817,11 +20821,12 @@
         "longitude": "28.66716440"
     },
     {
-        "name": "Telenești District",
+        "name": "Telenesti District",
         "isoCode": "TE",
         "countryCode": "MD",
         "latitude": "47.49839620",
-        "longitude": "28.36760190"
+        "longitude": "28.36760190",
+        "nameOrig": "Telenești District"
     },
     {
         "name": "Ungheni District",
@@ -22219,52 +22224,46 @@
         "nameOrig": "Gżira"
     },
     {
-        "name": "Ghajnsielem",
+        "name": "Għajnsielem",
         "isoCode": "13",
         "countryCode": "MT",
         "latitude": "36.02479660",
-        "longitude": "14.28029610",
-        "nameOrig": "Għajnsielem"
+        "longitude": "14.28029610"
     },
     {
-        "name": "Gharb",
+        "name": "Għarb",
         "isoCode": "14",
         "countryCode": "MT",
         "latitude": "36.06890900",
-        "longitude": "14.20180980",
-        "nameOrig": "Għarb"
+        "longitude": "14.20180980"
     },
     {
-        "name": "Gharghur",
+        "name": "Għargħur",
         "isoCode": "15",
         "countryCode": "MT",
         "latitude": "35.92205690",
-        "longitude": "14.45631760",
-        "nameOrig": "Għargħur"
+        "longitude": "14.45631760"
     },
     {
-        "name": "Ghasri",
+        "name": "Għasri",
         "isoCode": "16",
         "countryCode": "MT",
         "latitude": "36.06680750",
-        "longitude": "14.21924750",
-        "nameOrig": "Għasri"
+        "longitude": "14.21924750"
     },
     {
-        "name": "Ghaxaq",
+        "name": "Għaxaq",
         "isoCode": "17",
         "countryCode": "MT",
         "latitude": "35.84403590",
-        "longitude": "14.51600900",
-        "nameOrig": "Għaxaq"
+        "longitude": "14.51600900"
     },
     {
-        "name": "Hamrun",
+        "name": "Ħamrun",
         "isoCode": "18",
         "countryCode": "MT",
         "latitude": "35.88612370",
-        "longitude": "14.48834420",
-        "nameOrig": "Ħamrun"
+        "longitude": "14.48834420"
     },
     {
         "name": "Iklin",
@@ -22345,12 +22344,11 @@
         "longitude": "14.40683570"
     },
     {
-        "name": "Mellieha",
+        "name": "Mellieħa",
         "isoCode": "30",
         "countryCode": "MT",
         "latitude": "35.95235290",
-        "longitude": "14.35009750",
-        "nameOrig": "Mellieħa"
+        "longitude": "14.35009750"
     },
     {
         "name": "Mgarr",
@@ -22561,12 +22559,11 @@
         "longitude": "14.51455280"
     },
     {
-        "name": "Xaghra",
+        "name": "Xagħra",
         "isoCode": "61",
         "countryCode": "MT",
         "latitude": "36.05084500",
-        "longitude": "14.26748200",
-        "nameOrig": "Xagħra"
+        "longitude": "14.26748200"
     },
     {
         "name": "Xewkija",
@@ -22576,12 +22573,11 @@
         "longitude": "14.25994370"
     },
     {
-        "name": "Xghajra",
+        "name": "Xgħajra",
         "isoCode": "63",
         "countryCode": "MT",
         "latitude": "35.88682820",
-        "longitude": "14.54723910",
-        "nameOrig": "Xgħajra"
+        "longitude": "14.54723910"
     },
     {
         "name": "Zabbar",
@@ -24217,12 +24213,11 @@
         "longitude": "-87.60698940"
     },
     {
-        "name": "Ostfold",
+        "name": "Østfold",
         "isoCode": "01",
         "countryCode": "NO",
         "latitude": "59.25582860",
-        "longitude": "11.32790060",
-        "nameOrig": "Østfold"
+        "longitude": "11.32790060"
     },
     {
         "name": "Akershus",
@@ -24302,28 +24297,25 @@
         "longitude": "6.33258790"
     },
     {
-        "name": "More og Romsdal",
+        "name": "Møre og Romsdal",
         "isoCode": "15",
         "countryCode": "NO",
         "latitude": "62.84068330",
-        "longitude": "7.00714300",
-        "nameOrig": "Møre og Romsdal"
+        "longitude": "7.00714300"
     },
     {
-        "name": "Sor-Trondelag",
+        "name": "Sør-Trøndelag",
         "isoCode": "16",
         "countryCode": "NO",
         "latitude": "63.01368230",
-        "longitude": "10.34871360",
-        "nameOrig": "Sør-Trøndelag"
+        "longitude": "10.34871360"
     },
     {
-        "name": "Nord-Trondelag",
+        "name": "Nord-Trøndelag",
         "isoCode": "17",
         "countryCode": "NO",
         "latitude": "64.43707920",
-        "longitude": "11.74629500",
-        "nameOrig": "Nord-Trøndelag"
+        "longitude": "11.74629500"
     },
     {
         "name": "Nordland",
@@ -24361,12 +24353,11 @@
         "longitude": "-8.29203460"
     },
     {
-        "name": "Trondelag",
+        "name": "Trøndelag",
         "isoCode": "50",
         "countryCode": "NO",
         "latitude": "63.54201250",
-        "longitude": "10.93692670",
-        "nameOrig": "Trøndelag"
+        "longitude": "10.93692670"
     },
     {
         "name": "Central",
@@ -26017,7 +26008,7 @@
         "longitude": "15.25591030"
     },
     {
-        "name": "Lodz Voivodeship",
+        "name": "Łodz Voivodeship",
         "isoCode": "LD",
         "countryCode": "PL",
         "latitude": "51.46347710",
@@ -26595,7 +26586,7 @@
         "longitude": "22.17226600"
     },
     {
-        "name": "Bistrița-Nasaud County",
+        "name": "Bistrita-Nasaud County",
         "isoCode": "BN",
         "countryCode": "RO",
         "latitude": "47.24861070",
@@ -26610,18 +26601,20 @@
         "longitude": "27.95947140"
     },
     {
-        "name": "Botoșani County",
+        "name": "Botosani County",
         "isoCode": "BT",
         "countryCode": "RO",
         "latitude": "47.89240420",
-        "longitude": "26.75917810"
+        "longitude": "26.75917810",
+        "nameOrig": "Botoșani County"
     },
     {
-        "name": "Brașov County",
+        "name": "Brasov County",
         "isoCode": "BV",
         "countryCode": "RO",
         "latitude": "45.77818440",
-        "longitude": "25.22258000"
+        "longitude": "25.22258000",
+        "nameOrig": "Brașov County"
     },
     {
         "name": "Buzau County",
@@ -26639,7 +26632,7 @@
         "longitude": "23.61214920"
     },
     {
-        "name": "Calarași County",
+        "name": "Calarasi County",
         "isoCode": "CL",
         "countryCode": "RO",
         "latitude": "44.36587150",
@@ -26647,18 +26640,20 @@
         "nameOrig": "Călărași County"
     },
     {
-        "name": "Caraș-Severin County",
+        "name": "Caras-Severin County",
         "isoCode": "CS",
         "countryCode": "RO",
         "latitude": "45.11396460",
-        "longitude": "22.07409930"
+        "longitude": "22.07409930",
+        "nameOrig": "Caraș-Severin County"
     },
     {
-        "name": "Constanța County",
+        "name": "Constanta County",
         "isoCode": "CT",
         "countryCode": "RO",
         "latitude": "44.21298700",
-        "longitude": "28.25500550"
+        "longitude": "28.25500550",
+        "nameOrig": "Constanța County"
     },
     {
         "name": "Covasna County",
@@ -26668,7 +26663,7 @@
         "longitude": "25.89189840"
     },
     {
-        "name": "Dambovița County",
+        "name": "Dambovita County",
         "isoCode": "DB",
         "countryCode": "RO",
         "latitude": "44.92898930",
@@ -26690,11 +26685,12 @@
         "longitude": "23.24270790"
     },
     {
-        "name": "Galați County",
+        "name": "Galati County",
         "isoCode": "GL",
         "countryCode": "RO",
         "latitude": "45.78005690",
-        "longitude": "27.82515760"
+        "longitude": "27.82515760",
+        "nameOrig": "Galați County"
     },
     {
         "name": "Giurgiu County",
@@ -26725,46 +26721,52 @@
         "longitude": "26.23248860"
     },
     {
-        "name": "Ialomița County",
+        "name": "Ialomita County",
         "isoCode": "IL",
         "countryCode": "RO",
         "latitude": "44.60313300",
-        "longitude": "27.37899140"
+        "longitude": "27.37899140",
+        "nameOrig": "Ialomița County"
     },
     {
-        "name": "Iași County",
+        "name": "Iasi County",
         "isoCode": "IS",
         "countryCode": "RO",
         "latitude": "47.26796530",
-        "longitude": "27.21856620"
+        "longitude": "27.21856620",
+        "nameOrig": "Iași County"
     },
     {
-        "name": "Mehedinți County",
+        "name": "Mehedinti County",
         "isoCode": "MH",
         "countryCode": "RO",
         "latitude": "44.55150530",
-        "longitude": "22.90441570"
+        "longitude": "22.90441570",
+        "nameOrig": "Mehedinți County"
     },
     {
-        "name": "Maramureș County",
+        "name": "Maramures County",
         "isoCode": "MM",
         "countryCode": "RO",
         "latitude": "46.55699040",
-        "longitude": "24.67232150"
+        "longitude": "24.67232150",
+        "nameOrig": "Maramureș County"
     },
     {
-        "name": "Mureș County",
+        "name": "Mures County",
         "isoCode": "MS",
         "countryCode": "RO",
         "latitude": "46.55699040",
-        "longitude": "24.67232150"
+        "longitude": "24.67232150",
+        "nameOrig": "Mureș County"
     },
     {
-        "name": "Neamț County",
+        "name": "Neamt County",
         "isoCode": "NT",
         "countryCode": "RO",
         "latitude": "46.97586850",
-        "longitude": "26.38187640"
+        "longitude": "26.38187640",
+        "nameOrig": "Neamț County"
     },
     {
         "name": "Olt County",
@@ -26817,11 +26819,12 @@
         "longitude": "29.03249120"
     },
     {
-        "name": "Timiș County",
+        "name": "Timis County",
         "isoCode": "TM",
         "countryCode": "RO",
         "latitude": "45.81389020",
-        "longitude": "21.33310550"
+        "longitude": "21.33310550",
+        "nameOrig": "Timiș County"
     },
     {
         "name": "Teleorman County",
@@ -31720,12 +31723,11 @@
         "longitude": "35.39050460"
     },
     {
-        "name": "Adiyaman",
+        "name": "Adıyaman",
         "isoCode": "02",
         "countryCode": "TR",
         "latitude": "37.90782910",
-        "longitude": "38.48499230",
-        "nameOrig": "Adıyaman"
+        "longitude": "38.48499230"
     },
     {
         "name": "Afyonkarahisar",
@@ -31735,7 +31737,7 @@
         "longitude": "30.71200230"
     },
     {
-        "name": "Agri",
+        "name": "Agrı",
         "isoCode": "04",
         "countryCode": "TR",
         "latitude": "39.62692180",
@@ -31771,20 +31773,18 @@
         "longitude": "41.76282230"
     },
     {
-        "name": "Aydin",
+        "name": "Aydın",
         "isoCode": "09",
         "countryCode": "TR",
         "latitude": "37.81170330",
-        "longitude": "28.48639630",
-        "nameOrig": "Aydın"
+        "longitude": "28.48639630"
     },
     {
-        "name": "Balikesir",
+        "name": "Balıkesir",
         "isoCode": "10",
         "countryCode": "TR",
         "latitude": "39.76167820",
-        "longitude": "28.11226790",
-        "nameOrig": "Balıkesir"
+        "longitude": "28.11226790"
     },
     {
         "name": "Bilecik",
@@ -31838,7 +31838,7 @@
         "nameOrig": "Çanakkale"
     },
     {
-        "name": "Cankiri",
+        "name": "Cankırı",
         "isoCode": "18",
         "countryCode": "TR",
         "latitude": "40.53690730",
@@ -31861,12 +31861,11 @@
         "longitude": "29.23207840"
     },
     {
-        "name": "Diyarbakir",
+        "name": "Diyarbakır",
         "isoCode": "21",
         "countryCode": "TR",
         "latitude": "38.10663720",
-        "longitude": "40.54268960",
-        "nameOrig": "Diyarbakır"
+        "longitude": "40.54268960"
     },
     {
         "name": "Edirne",
@@ -31876,7 +31875,7 @@
         "longitude": "26.51379640"
     },
     {
-        "name": "Elazig",
+        "name": "Elazıg",
         "isoCode": "23",
         "countryCode": "TR",
         "latitude": "38.49648040",
@@ -31993,15 +31992,14 @@
         "longitude": "35.74068820"
     },
     {
-        "name": "Kirklareli",
+        "name": "Kırklareli",
         "isoCode": "39",
         "countryCode": "TR",
         "latitude": "41.72597950",
-        "longitude": "27.48383900",
-        "nameOrig": "Kırklareli"
+        "longitude": "27.48383900"
     },
     {
-        "name": "Kirsehir",
+        "name": "Kırsehir",
         "isoCode": "40",
         "countryCode": "TR",
         "latitude": "39.22689050",
@@ -32170,7 +32168,7 @@
         "longitude": "39.43877780"
     },
     {
-        "name": "Sanliurfa",
+        "name": "Sanlıurfa",
         "isoCode": "63",
         "countryCode": "TR",
         "latitude": "37.35691020",
@@ -32228,12 +32226,11 @@
         "longitude": "33.61757700"
     },
     {
-        "name": "Kirikkale",
+        "name": "Kırıkkale",
         "isoCode": "71",
         "countryCode": "TR",
         "latitude": "39.88768780",
-        "longitude": "33.75552480",
-        "nameOrig": "Kırıkkale"
+        "longitude": "33.75552480"
     },
     {
         "name": "Batman",
@@ -32243,7 +32240,7 @@
         "longitude": "41.36057390"
     },
     {
-        "name": "Sirnak",
+        "name": "Sırnak",
         "isoCode": "73",
         "countryCode": "TR",
         "latitude": "37.41874810",
@@ -32251,12 +32248,11 @@
         "nameOrig": "Şırnak"
     },
     {
-        "name": "Bartin",
+        "name": "Bartın",
         "isoCode": "74",
         "countryCode": "TR",
         "latitude": "41.58105090",
-        "longitude": "32.46097940",
-        "nameOrig": "Bartın"
+        "longitude": "32.46097940"
     },
     {
         "name": "Ardahan",
@@ -32266,7 +32262,7 @@
         "longitude": "42.78316740"
     },
     {
-        "name": "Igdir",
+        "name": "Igdır",
         "isoCode": "76",
         "countryCode": "TR",
         "latitude": "39.88798410",
@@ -34884,11 +34880,12 @@
         "nameOrig": "Cao Bằng"
     },
     {
-        "name": "Sơn La",
+        "name": "Son La",
         "isoCode": "05",
         "countryCode": "VN",
         "latitude": "21.10222840",
-        "longitude": "103.72891670"
+        "longitude": "103.72891670",
+        "nameOrig": "Sơn La"
     },
     {
         "name": "Yen Bai",
@@ -34907,18 +34904,20 @@
         "nameOrig": "Tuyên Quang"
     },
     {
-        "name": "Lạng Sơn",
+        "name": "Lang Son",
         "isoCode": "09",
         "countryCode": "VN",
         "latitude": "21.85370800",
-        "longitude": "106.76151900"
+        "longitude": "106.76151900",
+        "nameOrig": "Lạng Sơn"
     },
     {
-        "name": "Quảng Ninh",
+        "name": "Quang Ninh",
         "isoCode": "13",
         "countryCode": "VN",
         "latitude": "21.00638200",
-        "longitude": "107.29251440"
+        "longitude": "107.29251440",
+        "nameOrig": "Quảng Ninh"
     },
     {
         "name": "Hoa Binh",
@@ -34969,7 +34968,7 @@
         "nameOrig": "Hà Tĩnh"
     },
     {
-        "name": "Quảng Binh",
+        "name": "Quang Binh",
         "isoCode": "24",
         "countryCode": "VN",
         "latitude": "17.61027150",
@@ -34977,11 +34976,12 @@
         "nameOrig": "Quảng Bình"
     },
     {
-        "name": "Quảng Trị",
+        "name": "Quang Tri",
         "isoCode": "25",
         "countryCode": "VN",
         "latitude": "16.74030740",
-        "longitude": "107.18546790"
+        "longitude": "107.18546790",
+        "nameOrig": "Quảng Trị"
     },
     {
         "name": "Thua Thien-Hue",
@@ -34992,11 +34992,12 @@
         "nameOrig": "Thừa Thiên-Huế"
     },
     {
-        "name": "Quảng Nam",
+        "name": "Quang Nam",
         "isoCode": "27",
         "countryCode": "VN",
         "latitude": "15.53935380",
-        "longitude": "108.01910200"
+        "longitude": "108.01910200",
+        "nameOrig": "Quảng Nam"
     },
     {
         "name": "Kon Tum",
@@ -35006,7 +35007,7 @@
         "longitude": "108.00046060"
     },
     {
-        "name": "Quảng Ngai",
+        "name": "Quang Ngai",
         "isoCode": "29",
         "countryCode": "VN",
         "latitude": "15.12138730",
@@ -35021,7 +35022,7 @@
         "longitude": "108.10937500"
     },
     {
-        "name": "Binh Dịnh",
+        "name": "Binh Đinh",
         "isoCode": "31",
         "countryCode": "VN",
         "latitude": "14.16653240",
@@ -35037,7 +35038,7 @@
         "nameOrig": "Phú Yên"
     },
     {
-        "name": "Dak Lak",
+        "name": "Đak Lak",
         "isoCode": "33",
         "countryCode": "VN",
         "latitude": "12.71001160",
@@ -35053,7 +35054,7 @@
         "nameOrig": "Khánh Hòa"
     },
     {
-        "name": "Lam Dong",
+        "name": "Lam Đong",
         "isoCode": "35",
         "countryCode": "VN",
         "latitude": "11.57527910",
@@ -35077,7 +35078,7 @@
         "nameOrig": "Tây Ninh"
     },
     {
-        "name": "Dong Nai",
+        "name": "Đong Nai",
         "isoCode": "39",
         "countryCode": "VN",
         "latitude": "11.06863050",
@@ -35100,7 +35101,7 @@
         "longitude": "106.64976230"
     },
     {
-        "name": "Ba Rịa-Vung Tau",
+        "name": "Ba Ria-Vung Tau",
         "isoCode": "43",
         "countryCode": "VN",
         "latitude": "10.54173970",
@@ -35115,7 +35116,7 @@
         "longitude": "105.12589550"
     },
     {
-        "name": "Dong Thap",
+        "name": "Đong Thap",
         "isoCode": "45",
         "countryCode": "VN",
         "latitude": "10.49379890",
@@ -35171,7 +35172,7 @@
         "nameOrig": "Sóc Trăng"
     },
     {
-        "name": "Bac Kạn",
+        "name": "Bac Kan",
         "isoCode": "53",
         "countryCode": "VN",
         "latitude": "22.30329230",
@@ -35187,7 +35188,7 @@
         "nameOrig": "Bắc Giang"
     },
     {
-        "name": "Bạc Lieu",
+        "name": "Bac Lieu",
         "isoCode": "55",
         "countryCode": "VN",
         "latitude": "9.29400270",
@@ -35203,7 +35204,7 @@
         "nameOrig": "Bắc Ninh"
     },
     {
-        "name": "Binh Dương",
+        "name": "Binh Duong",
         "isoCode": "57",
         "countryCode": "VN",
         "latitude": "11.32540240",
@@ -35211,7 +35212,7 @@
         "nameOrig": "Bình Dương"
     },
     {
-        "name": "Binh Phưoc",
+        "name": "Binh Phuoc",
         "isoCode": "58",
         "countryCode": "VN",
         "latitude": "11.75118940",
@@ -35227,11 +35228,12 @@
         "nameOrig": "Cà Mau"
     },
     {
-        "name": "Hải Dương",
+        "name": "Hai Duong",
         "isoCode": "61",
         "countryCode": "VN",
         "latitude": "20.93734130",
-        "longitude": "106.31455420"
+        "longitude": "106.31455420",
+        "nameOrig": "Hải Dương"
     },
     {
         "name": "Ha Nam",
@@ -35242,7 +35244,7 @@
         "nameOrig": "Hà Nam"
     },
     {
-        "name": "Hưng Yen",
+        "name": "Hung Yen",
         "isoCode": "66",
         "countryCode": "VN",
         "latitude": "20.85257110",
@@ -35250,7 +35252,7 @@
         "nameOrig": "Hưng Yên"
     },
     {
-        "name": "Nam Dịnh",
+        "name": "Nam Đinh",
         "isoCode": "67",
         "countryCode": "VN",
         "latitude": "20.43882250",
@@ -35258,7 +35260,7 @@
         "nameOrig": "Nam Định"
     },
     {
-        "name": "Phu Thọ",
+        "name": "Phu Tho",
         "isoCode": "68",
         "countryCode": "VN",
         "latitude": "21.26844300",
@@ -35282,7 +35284,7 @@
         "nameOrig": "Vĩnh Phúc"
     },
     {
-        "name": "Dien Bien",
+        "name": "Đien Bien",
         "isoCode": "71",
         "countryCode": "VN",
         "latitude": "21.80423090",
@@ -35290,7 +35292,7 @@
         "nameOrig": "Điện Biên"
     },
     {
-        "name": "Dak Nong",
+        "name": "Đak Nong",
         "isoCode": "72",
         "countryCode": "VN",
         "latitude": "12.26464760",
@@ -35306,7 +35308,7 @@
         "nameOrig": "Hậu Giang"
     },
     {
-        "name": "Can Thơ",
+        "name": "Can Tho",
         "isoCode": "CT",
         "countryCode": "VN",
         "latitude": "10.03418510",
@@ -35314,7 +35316,7 @@
         "nameOrig": "Cần Thơ"
     },
     {
-        "name": "Da Nẵng",
+        "name": "Đa Nang",
         "isoCode": "DN",
         "countryCode": "VN",
         "latitude": "16.05440680",
@@ -35330,7 +35332,7 @@
         "nameOrig": "Hà Nội"
     },
     {
-        "name": "Hải Phong",
+        "name": "Hai Phong",
         "isoCode": "HP",
         "countryCode": "VN",
         "latitude": "20.84491150",
@@ -35465,12 +35467,11 @@
         "longitude": "-172.70233830"
     },
     {
-        "name": "Dakovica District (Gjakove)",
+        "name": "Đakovica District (Gjakove)",
         "isoCode": "XDG",
         "countryCode": "XK",
         "latitude": "42.43757560",
-        "longitude": "20.37854380",
-        "nameOrig": "Đakovica District (Gjakove)"
+        "longitude": "20.37854380"
     },
     {
         "name": "Gjilan District",
