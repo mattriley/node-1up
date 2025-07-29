@@ -3,10 +3,9 @@ const replacements = {
     'Prefecture': ''
 };
 
-module.exports = ({ str }) => ({ cities = [], states = [], countries = [] }) => {
+module.exports = ({ str }) => {
 
-    // Cities
-    {
+    const fixCities = cities => {
         // Assign Hong Kong and Macao to China.
         cities.filter(city => ['HK', 'MO'].includes(city.countryCode)).forEach(city => {
             city.stateCode = city.countryCode;
@@ -33,20 +32,20 @@ module.exports = ({ str }) => ({ cities = [], states = [], countries = [] }) => 
             if (state === city.state) continue;
             Object.assign(city, { state, stateOrig: city.state });
         }
+
+        return cities;
     }
 
-    // States
-    {
+    const fixStates = states => {
         // Rename Malacca (state) to Melaka.
         const malaccaState = states.find(state => state.name === 'Malacca' && state.countryCode === 'MY');
         if (malaccaState) Object.assign(malaccaState, { name: 'Melaka', nameOrig: malaccaState.name });
 
 
-        // const countriesToRemoveStatesFrom = ['SG'];
-        // for (const state of states) {
-        //     if (!countriesToRemoveStatesFrom.includes(state.countryCode)) continue;
-        //     state.countryCode = 'INVALID'; // TODO: Remove from states list.
-        // }
+        const countriesToRemoveStatesFrom = ['SG'];
+        states = states.filter(state => {
+            return !countriesToRemoveStatesFrom.includes(state.countryCode)
+        });
 
         // Apply string replacements.
         for (const state of states) {
@@ -55,10 +54,11 @@ module.exports = ({ str }) => ({ cities = [], states = [], countries = [] }) => 
             if (name === state.name) continue;
             Object.assign(state, { name, nameOrig: state.name });
         }
+
+        return states;
     }
 
-    // Countries
-    {
+    const fixCountries = countries => {
 
         // Singapore does not have states.
         // const removeStatesFrom = ['Singapore'];
@@ -66,9 +66,9 @@ module.exports = ({ str }) => ({ cities = [], states = [], countries = [] }) => 
         //     if (!removeStatesFrom.includes(country)) continue;
         //     if (country.state) delete country.state;
         // }
-
+        return countries;
     }
 
-    return { cities, states, countries };
+    return { fixCities, fixStates, fixCountries };
 
 };

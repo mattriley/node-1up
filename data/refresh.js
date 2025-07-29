@@ -8,22 +8,25 @@ const outputDir = sourceDir;
 
 const refresh = async () => {
 
-    geo.applyFixes({ states });
+    states = geo.fixer.fixStates(states);
+
+
 
     await geo.geonames.admin1CodesASCII.download({ sourceDir, outputDir });
     let admin1Codes = await geo.geonames.admin1CodesASCII.toJson({ sourceDir, outputDir });
 
     await geo.geonames.cities1000.download({ sourceDir, outputDir });
     let cities = await geo.geonames.cities1000.toJson({ sourceDir, outputDir });
-    geo.applyFixes({ cities });
+    cities = geo.fixer.fixCities(cities);
 
     cities = geo.assignStateToCities({ cities, states, admin1Codes });
     cities = geo.assignFederalTerritoryToCities({ cities, federalTerritoryCities });
-    geo.applyFixes({ cities, states });
+    cities = geo.fixer.fixCities(cities);
+    states = geo.fixer.fixCities(states);
 
     await geo.geonames.countryInfo.download({ sourceDir, outputDir });
     let countries = await geo.geonames.countryInfo.toJson({ sourceDir });
-    geo.applyFixes({ countries });
+    countries = geo.fixer.fixCountries(countries);
 
     fs.writeFileSync(outputDir + '/cities.json', JSON.stringify(cities, null, 4));
     fs.writeFileSync(outputDir + '/states.json', JSON.stringify(states, null, 4));
