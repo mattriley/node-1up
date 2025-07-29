@@ -24,13 +24,22 @@ module.exports = ({ str }) => {
             delete city.stateCode;
         }
 
-        // Apply string replacements.
+        // Apply string replacements to states
         for (const city of cities) {
             if (!city.state) continue;
             let state = str.applyReplacements(city.state, replacements);
             state = str.removeAccents(state);
             if (state === city.state) continue;
             Object.assign(city, { state, stateOrig: city.state });
+        }
+
+        // Apply string replacements to cities
+        for (const city of cities) {
+            if (!city.name) continue;
+            let name = str.applyReplacements(city.name, replacements);
+            name = str.removeAccents(name);
+            if (name === city.name) continue;
+            Object.assign(city, { name, nameOrig: city.name });
         }
 
         return cities;

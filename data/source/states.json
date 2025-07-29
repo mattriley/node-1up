@@ -1848,11 +1848,12 @@
         "longitude": "17.84279300"
     },
     {
-        "name": "Brčko District",
+        "name": "Brcko District",
         "isoCode": "BRC",
         "countryCode": "BA",
         "latitude": "44.84059440",
-        "longitude": "18.74215300"
+        "longitude": "18.74215300",
+        "nameOrig": "Brčko District"
     },
     {
         "name": "Republika Srpska",
@@ -5350,12 +5351,12 @@
         "nameOrig": "Ñuble"
     },
     {
-        "name": "Region Metropolitana de Santiago",
+        "name": "Metropolitana de Santiago",
         "isoCode": "RM",
         "countryCode": "CL",
         "latitude": "-33.43755450",
         "longitude": "-70.65048960",
-        "nameOrig": "Región Metropolitana de Santiago"
+        "nameOrig": "Region Metropolitana de Santiago"
     },
     {
         "name": "Tarapaca",
@@ -6261,11 +6262,12 @@
         "nameOrig": "Tarrafal de São Nicolau"
     },
     {
-        "name": "Nicosia District (Lefkoşa)",
+        "name": "Nicosia District (Lefkosa)",
         "isoCode": "01",
         "countryCode": "CY",
         "latitude": "35.18556590",
-        "longitude": "33.38227640"
+        "longitude": "33.38227640",
+        "nameOrig": "Nicosia District (Lefkoşa)"
     },
     {
         "name": "Limassol District (Leymasun)",
@@ -6282,11 +6284,12 @@
         "longitude": "33.48319060"
     },
     {
-        "name": "Famagusta District (Mağusa)",
+        "name": "Famagusta District (Magusa)",
         "isoCode": "04",
         "countryCode": "CY",
         "latitude": "35.28570230",
-        "longitude": "33.84112880"
+        "longitude": "33.84112880",
+        "nameOrig": "Famagusta District (Mağusa)"
     },
     {
         "name": "Paphos District (Pafos)",
@@ -6303,7 +6306,7 @@
         "longitude": "33.23632460"
     },
     {
-        "name": "Praha, Hlavni město",
+        "name": "Praha, Hlavni mesto",
         "isoCode": "10",
         "countryCode": "CZ",
         "latitude": "50.07553810",
@@ -6311,7 +6314,7 @@
         "nameOrig": "Praha, Hlavní město"
     },
     {
-        "name": "Stredočeský kraj",
+        "name": "Stredocesky kraj",
         "isoCode": "20",
         "countryCode": "CZ",
         "latitude": "49.87822230",
@@ -6357,7 +6360,7 @@
         "nameOrig": "Kutná Hora"
     },
     {
-        "name": "Mělnik",
+        "name": "Melnik",
         "isoCode": "206",
         "countryCode": "CZ",
         "latitude": "50.31044150",
@@ -6380,11 +6383,12 @@
         "longitude": "15.04366040"
     },
     {
-        "name": "Praha-východ",
+        "name": "Praha-vychod",
         "isoCode": "209",
         "countryCode": "CZ",
         "latitude": "49.93893070",
-        "longitude": "14.79244720"
+        "longitude": "14.79244720",
+        "nameOrig": "Praha-východ"
     },
     {
         "name": "Praha-zapad",
@@ -6411,14 +6415,15 @@
         "nameOrig": "Rakovník"
     },
     {
-        "name": "Jihočeský kraj",
+        "name": "Jihocesky kraj",
         "isoCode": "31",
         "countryCode": "CZ",
         "latitude": "48.94577890",
-        "longitude": "14.44160550"
+        "longitude": "14.44160550",
+        "nameOrig": "Jihočeský kraj"
     },
     {
-        "name": "Česke Budějovice",
+        "name": "Ceske Budejovice",
         "isoCode": "311",
         "countryCode": "CZ",
         "latitude": "48.97755530",
@@ -6426,14 +6431,15 @@
         "nameOrig": "České Budějovice"
     },
     {
-        "name": "Český Krumlov",
+        "name": "Cesky Krumlov",
         "isoCode": "312",
         "countryCode": "CZ",
         "latitude": "48.81273540",
-        "longitude": "14.31746570"
+        "longitude": "14.31746570",
+        "nameOrig": "Český Krumlov"
     },
     {
-        "name": "Jindrichův Hradec",
+        "name": "Jindrichuv Hradec",
         "isoCode": "313",
         "countryCode": "CZ",
         "latitude": "49.14448230",
@@ -6471,11 +6477,12 @@
         "nameOrig": "Tábor"
     },
     {
-        "name": "Plzeňský kraj",
+        "name": "Plzensky kraj",
         "isoCode": "32",
         "countryCode": "CZ",
         "latitude": "49.41348120",
-        "longitude": "13.31572460"
+        "longitude": "13.31572460",
+        "nameOrig": "Plzeňský kraj"
     },
     {
         "name": "Domazlice",
@@ -6493,25 +6500,28 @@
         "longitude": "13.29509370"
     },
     {
-        "name": "Plzeň-město",
+        "name": "Plzen-mesto",
         "isoCode": "323",
         "countryCode": "CZ",
         "latitude": "49.73843140",
-        "longitude": "13.37363710"
+        "longitude": "13.37363710",
+        "nameOrig": "Plzeň-město"
     },
     {
-        "name": "Plzeň-jih",
+        "name": "Plzen-jih",
         "isoCode": "324",
         "countryCode": "CZ",
         "latitude": "49.59048850",
-        "longitude": "13.57158610"
+        "longitude": "13.57158610",
+        "nameOrig": "Plzeň-jih"
     },
     {
-        "name": "Plzeň-sever",
+        "name": "Plzen-sever",
         "isoCode": "325",
         "countryCode": "CZ",
         "latitude": "49.87748930",
-        "longitude": "13.25374280"
+        "longitude": "13.25374280",
+        "nameOrig": "Plzeň-sever"
     },
     {
         "name": "Rokycany",
@@ -6528,11 +6538,12 @@
         "longitude": "12.63619210"
     },
     {
-        "name": "Karlovarský kraj",
+        "name": "Karlovarsky kraj",
         "isoCode": "41",
         "countryCode": "CZ",
         "latitude": "50.14350000",
-        "longitude": "12.75018990"
+        "longitude": "12.75018990",
+        "nameOrig": "Karlovarský kraj"
     },
     {
         "name": "Cheb",
@@ -6556,7 +6567,7 @@
         "longitude": "12.60546360"
     },
     {
-        "name": "Ustecký kraj",
+        "name": "Ustecky kraj",
         "isoCode": "42",
         "countryCode": "CZ",
         "latitude": "50.61190370",
@@ -6564,7 +6575,7 @@
         "nameOrig": "Ústecký kraj"
     },
     {
-        "name": "Děčin",
+        "name": "Decin",
         "isoCode": "421",
         "countryCode": "CZ",
         "latitude": "50.77255630",
@@ -6579,7 +6590,7 @@
         "longitude": "13.30179100"
     },
     {
-        "name": "Litoměrice",
+        "name": "Litomerice",
         "isoCode": "423",
         "countryCode": "CZ",
         "latitude": "50.53841970",
@@ -6616,14 +6627,15 @@
         "nameOrig": "Ústí nad Labem"
     },
     {
-        "name": "Liberecký kraj",
+        "name": "Liberecky kraj",
         "isoCode": "51",
         "countryCode": "CZ",
         "latitude": "50.65942400",
-        "longitude": "14.76324240"
+        "longitude": "14.76324240",
+        "nameOrig": "Liberecký kraj"
     },
     {
-        "name": "Česka Lipa",
+        "name": "Ceska Lipa",
         "isoCode": "511",
         "countryCode": "CZ",
         "latitude": "50.67852010",
@@ -6652,7 +6664,7 @@
         "longitude": "15.32814090"
     },
     {
-        "name": "Kralovehradecký kraj",
+        "name": "Kralovehradecky kraj",
         "isoCode": "52",
         "countryCode": "CZ",
         "latitude": "50.35124840",
@@ -6668,7 +6680,7 @@
         "nameOrig": "Hradec Králové"
     },
     {
-        "name": "Jičin",
+        "name": "Jicin",
         "isoCode": "522",
         "countryCode": "CZ",
         "latitude": "50.43533250",
@@ -6684,7 +6696,7 @@
         "nameOrig": "Náchod"
     },
     {
-        "name": "Rychnov nad Kněznou",
+        "name": "Rychnov nad Kneznou",
         "isoCode": "524",
         "countryCode": "CZ",
         "latitude": "50.16596510",
@@ -6699,11 +6711,12 @@
         "longitude": "15.90909230"
     },
     {
-        "name": "Pardubický kraj",
+        "name": "Pardubicky kraj",
         "isoCode": "53",
         "countryCode": "CZ",
         "latitude": "49.94444790",
-        "longitude": "16.28569160"
+        "longitude": "16.28569160",
+        "nameOrig": "Pardubický kraj"
     },
     {
         "name": "Chrudim",
@@ -6735,14 +6748,15 @@
         "nameOrig": "Ústí nad Orlicí"
     },
     {
-        "name": "Kraj Vysočina",
+        "name": "Kraj Vysocina",
         "isoCode": "63",
         "countryCode": "CZ",
         "latitude": "49.44900520",
-        "longitude": "15.64059340"
+        "longitude": "15.64059340",
+        "nameOrig": "Kraj Vysočina"
     },
     {
-        "name": "Havličkův Brod",
+        "name": "Havlickuv Brod",
         "isoCode": "631",
         "countryCode": "CZ",
         "latitude": "49.60433640",
@@ -6765,7 +6779,7 @@
         "nameOrig": "Pelhřimov"
     },
     {
-        "name": "Trebič",
+        "name": "Trebic",
         "isoCode": "634",
         "countryCode": "CZ",
         "latitude": "49.21478690",
@@ -6773,7 +6787,7 @@
         "nameOrig": "Třebíč"
     },
     {
-        "name": "Zďar nad Sazavou",
+        "name": "Zdar nad Sazavou",
         "isoCode": "635",
         "countryCode": "CZ",
         "latitude": "49.56430120",
@@ -6781,11 +6795,12 @@
         "nameOrig": "Žďár nad Sázavou"
     },
     {
-        "name": "Jihomoravský kraj",
+        "name": "Jihomoravsky kraj",
         "isoCode": "64",
         "countryCode": "CZ",
         "latitude": "48.95445280",
-        "longitude": "16.76768990"
+        "longitude": "16.76768990",
+        "nameOrig": "Jihomoravský kraj"
     },
     {
         "name": "Blansko",
@@ -6795,11 +6810,12 @@
         "longitude": "16.64775520"
     },
     {
-        "name": "Brno-město",
+        "name": "Brno-mesto",
         "isoCode": "642",
         "countryCode": "CZ",
         "latitude": "49.19506020",
-        "longitude": "16.60683710"
+        "longitude": "16.60683710",
+        "nameOrig": "Brno-město"
     },
     {
         "name": "Brno-venkov",
@@ -6840,11 +6856,12 @@
         "longitude": "16.10378080"
     },
     {
-        "name": "Olomoucký kraj",
+        "name": "Olomoucky kraj",
         "isoCode": "71",
         "countryCode": "CZ",
         "latitude": "49.65865490",
-        "longitude": "17.08114060"
+        "longitude": "17.08114060",
+        "nameOrig": "Olomoucký kraj"
     },
     {
         "name": "Jesenik",
@@ -6862,11 +6879,12 @@
         "longitude": "17.25087870"
     },
     {
-        "name": "Prostějov",
+        "name": "Prostejov",
         "isoCode": "713",
         "countryCode": "CZ",
         "latitude": "49.44184010",
-        "longitude": "17.12779040"
+        "longitude": "17.12779040",
+        "nameOrig": "Prostějov"
     },
     {
         "name": "Prerov",
@@ -6885,7 +6903,7 @@
         "nameOrig": "Šumperk"
     },
     {
-        "name": "Zlinský kraj",
+        "name": "Zlinsky kraj",
         "isoCode": "72",
         "countryCode": "CZ",
         "latitude": "49.21622960",
@@ -6893,7 +6911,7 @@
         "nameOrig": "Zlínský kraj"
     },
     {
-        "name": "Kroměriz",
+        "name": "Kromeriz",
         "isoCode": "721",
         "countryCode": "CZ",
         "latitude": "49.29165820",
@@ -6901,7 +6919,7 @@
         "nameOrig": "Kroměříž"
     },
     {
-        "name": "Uherske Hradistě",
+        "name": "Uherske Hradiste",
         "isoCode": "722",
         "countryCode": "CZ",
         "latitude": "49.05979690",
@@ -6925,11 +6943,12 @@
         "nameOrig": "Zlín"
     },
     {
-        "name": "Moravskoslezský kraj",
+        "name": "Moravskoslezsky kraj",
         "isoCode": "80",
         "countryCode": "CZ",
         "latitude": "49.73053270",
-        "longitude": "18.23326370"
+        "longitude": "18.23326370",
+        "nameOrig": "Moravskoslezský kraj"
     },
     {
         "name": "Bruntal",
@@ -6940,7 +6959,7 @@
         "nameOrig": "Bruntál"
     },
     {
-        "name": "Frýdek-Mistek",
+        "name": "Frydek-Mistek",
         "isoCode": "802",
         "countryCode": "CZ",
         "latitude": "49.68193050",
@@ -6956,7 +6975,7 @@
         "nameOrig": "Karviná"
     },
     {
-        "name": "Nový Jičin",
+        "name": "Novy Jicin",
         "isoCode": "804",
         "countryCode": "CZ",
         "latitude": "49.59432510",
@@ -6971,11 +6990,12 @@
         "longitude": "17.91633800"
     },
     {
-        "name": "Ostrava-město",
+        "name": "Ostrava-mesto",
         "isoCode": "806",
         "countryCode": "CZ",
         "latitude": "49.82092260",
-        "longitude": "18.26252430"
+        "longitude": "18.26252430",
+        "nameOrig": "Ostrava-město"
     },
     {
         "name": "Brandenburg",
@@ -13570,18 +13590,20 @@
         "nameOrig": "Fejér County"
     },
     {
-        "name": "Győr-Moson-Sopron County",
+        "name": "Gyor-Moson-Sopron County",
         "isoCode": "GS",
         "countryCode": "HU",
         "latitude": "47.65092850",
-        "longitude": "17.25058830"
+        "longitude": "17.25058830",
+        "nameOrig": "Győr-Moson-Sopron County"
     },
     {
-        "name": "Győr",
+        "name": "Gyor",
         "isoCode": "GY",
         "countryCode": "HU",
         "latitude": "47.68745690",
-        "longitude": "17.65039740"
+        "longitude": "17.65039740",
+        "nameOrig": "Győr"
     },
     {
         "name": "Hajdu-Bihar County",
@@ -13599,7 +13621,7 @@
         "longitude": "20.20385590"
     },
     {
-        "name": "Hodmezővasarhely",
+        "name": "Hodmezovasarhely",
         "isoCode": "HV",
         "countryCode": "HU",
         "latitude": "46.41812620",
@@ -14628,11 +14650,12 @@
         "longitude": "42.23624350"
     },
     {
-        "name": "Al-Qādisiyyah Governorate",
+        "name": "Al-Qadisiyyah Governorate",
         "isoCode": "QA",
         "countryCode": "IQ",
         "latitude": "32.04369100",
-        "longitude": "45.14945050"
+        "longitude": "45.14945050",
+        "nameOrig": "Al-Qādisiyyah Governorate"
     },
     {
         "name": "Saladin Governorate",
@@ -18240,11 +18263,12 @@
         "longitude": "28.60897520"
     },
     {
-        "name": "Akmenė District Municipality",
+        "name": "Akmene District Municipality",
         "isoCode": "01",
         "countryCode": "LT",
         "latitude": "56.24550290",
-        "longitude": "22.74711690"
+        "longitude": "22.74711690",
+        "nameOrig": "Akmenė District Municipality"
     },
     {
         "name": "Alytus City Municipality",
@@ -18284,11 +18308,12 @@
         "longitude": "24.03424380"
     },
     {
-        "name": "Elektrėnai municipality",
+        "name": "Elektrenai municipality",
         "isoCode": "08",
         "countryCode": "LT",
         "latitude": "54.76539340",
-        "longitude": "24.77405830"
+        "longitude": "24.77405830",
+        "nameOrig": "Elektrėnai municipality"
     },
     {
         "name": "Ignalina District Municipality",
@@ -18349,25 +18374,28 @@
         "longitude": "23.63249410"
     },
     {
-        "name": "Kazlų Rūda municipality",
+        "name": "Kazlu Ruda municipality",
         "isoCode": "17",
         "countryCode": "LT",
         "latitude": "54.78075260",
-        "longitude": "23.48402430"
+        "longitude": "23.48402430",
+        "nameOrig": "Kazlų Rūda municipality"
     },
     {
-        "name": "Kėdainiai District Municipality",
+        "name": "Kedainiai District Municipality",
         "isoCode": "18",
         "countryCode": "LT",
         "latitude": "55.35609470",
-        "longitude": "23.98326830"
+        "longitude": "23.98326830",
+        "nameOrig": "Kėdainiai District Municipality"
     },
     {
-        "name": "Kelmė District Municipality",
+        "name": "Kelme District Municipality",
         "isoCode": "19",
         "countryCode": "LT",
         "latitude": "55.62663520",
-        "longitude": "22.87817200"
+        "longitude": "22.87817200",
+        "nameOrig": "Kelmė District Municipality"
     },
     {
         "name": "Klaipeda City Municipality",
@@ -18377,11 +18405,12 @@
         "longitude": "21.14427950"
     },
     {
-        "name": "Klaipėda District Municipality",
+        "name": "Klaipeda District Municipality",
         "isoCode": "21",
         "countryCode": "LT",
         "latitude": "55.68416150",
-        "longitude": "21.44164640"
+        "longitude": "21.44164640",
+        "nameOrig": "Klaipėda District Municipality"
     },
     {
         "name": "Kretinga District Municipality",
@@ -18406,11 +18435,12 @@
         "longitude": "23.51565050"
     },
     {
-        "name": "Marijampolė Municipality",
+        "name": "Marijampole Municipality",
         "isoCode": "25",
         "countryCode": "LT",
         "latitude": "54.57110940",
-        "longitude": "23.48593710"
+        "longitude": "23.48593710",
+        "nameOrig": "Marijampolė Municipality"
     },
     {
         "name": "Mazeikiai District Municipality",
@@ -18421,11 +18451,12 @@
         "nameOrig": "Mažeikiai District Municipality"
     },
     {
-        "name": "Molėtai District Municipality",
+        "name": "Moletai District Municipality",
         "isoCode": "27",
         "countryCode": "LT",
         "latitude": "55.22653090",
-        "longitude": "25.41800110"
+        "longitude": "25.41800110",
+        "nameOrig": "Molėtai District Municipality"
     },
     {
         "name": "Neringa Municipality",
@@ -18435,11 +18466,12 @@
         "longitude": "21.08390050"
     },
     {
-        "name": "Pagėgiai municipality",
+        "name": "Pagegiai municipality",
         "isoCode": "29",
         "countryCode": "LT",
         "latitude": "55.17213200",
-        "longitude": "21.96836140"
+        "longitude": "21.96836140",
+        "nameOrig": "Pagėgiai municipality"
     },
     {
         "name": "Pakruojis District Municipality",
@@ -18456,7 +18488,7 @@
         "longitude": "21.06776140"
     },
     {
-        "name": "Panevėzys City Municipality",
+        "name": "Panevezys City Municipality",
         "isoCode": "32",
         "countryCode": "LT",
         "latitude": "55.73479150",
@@ -18464,7 +18496,7 @@
         "nameOrig": "Panevėžys City Municipality"
     },
     {
-        "name": "Panevėzys District Municipality",
+        "name": "Panevezys District Municipality",
         "isoCode": "33",
         "countryCode": "LT",
         "latitude": "55.61667280",
@@ -18479,11 +18511,12 @@
         "longitude": "24.39629100"
     },
     {
-        "name": "Plungė District Municipality",
+        "name": "Plunge District Municipality",
         "isoCode": "35",
         "countryCode": "LT",
         "latitude": "55.91078400",
-        "longitude": "21.84540690"
+        "longitude": "21.84540690",
+        "nameOrig": "Plungė District Municipality"
     },
     {
         "name": "Prienai District Municipality",
@@ -18531,7 +18564,7 @@
         "nameOrig": "Šakiai District Municipality"
     },
     {
-        "name": "Salčininkai District Municipality",
+        "name": "Salcininkai District Municipality",
         "isoCode": "42",
         "countryCode": "LT",
         "latitude": "54.30976700",
@@ -18555,7 +18588,7 @@
         "nameOrig": "Šiauliai District Municipality"
     },
     {
-        "name": "Silalė District Municipality",
+        "name": "Silale District Municipality",
         "isoCode": "45",
         "countryCode": "LT",
         "latitude": "55.49268000",
@@ -18563,7 +18596,7 @@
         "nameOrig": "Šilalė District Municipality"
     },
     {
-        "name": "Silutė District Municipality",
+        "name": "Silute District Municipality",
         "isoCode": "46",
         "countryCode": "LT",
         "latitude": "55.35041400",
@@ -18586,7 +18619,7 @@
         "longitude": "21.52143310"
     },
     {
-        "name": "Svenčionys District Municipality",
+        "name": "Svencionys District Municipality",
         "isoCode": "49",
         "countryCode": "LT",
         "latitude": "55.10280980",
@@ -18594,11 +18627,12 @@
         "nameOrig": "Švenčionys District Municipality"
     },
     {
-        "name": "Tauragė District Municipality",
+        "name": "Taurage District Municipality",
         "isoCode": "50",
         "countryCode": "LT",
         "latitude": "55.25036600",
-        "longitude": "22.29095000"
+        "longitude": "22.29095000",
+        "nameOrig": "Tauragė District Municipality"
     },
     {
         "name": "Telsiai District Municipality",
@@ -18616,11 +18650,12 @@
         "longitude": "24.93468940"
     },
     {
-        "name": "Ukmergė District Municipality",
+        "name": "Ukmerge District Municipality",
         "isoCode": "53",
         "countryCode": "LT",
         "latitude": "55.24526500",
-        "longitude": "24.77607490"
+        "longitude": "24.77607490",
+        "nameOrig": "Ukmergė District Municipality"
     },
     {
         "name": "Utena District Municipality",
@@ -18630,11 +18665,12 @@
         "longitude": "25.68326420"
     },
     {
-        "name": "Varėna District Municipality",
+        "name": "Varena District Municipality",
         "isoCode": "55",
         "countryCode": "LT",
         "latitude": "54.22033300",
-        "longitude": "24.57899700"
+        "longitude": "24.57899700",
+        "nameOrig": "Varėna District Municipality"
     },
     {
         "name": "Vilkaviskis District Municipality",
@@ -18680,11 +18716,12 @@
         "longitude": "24.15126340"
     },
     {
-        "name": "Klaipėda County",
+        "name": "Klaipeda County",
         "isoCode": "KL",
         "countryCode": "LT",
         "latitude": "55.65197440",
-        "longitude": "21.37439560"
+        "longitude": "21.37439560",
+        "nameOrig": "Klaipėda County"
     },
     {
         "name": "Kaunas County",
@@ -18694,14 +18731,15 @@
         "longitude": "23.95257360"
     },
     {
-        "name": "Marijampolė County",
+        "name": "Marijampole County",
         "isoCode": "MR",
         "countryCode": "LT",
         "latitude": "54.78199710",
-        "longitude": "23.13413650"
+        "longitude": "23.13413650",
+        "nameOrig": "Marijampolė County"
     },
     {
-        "name": "Panevėzys County",
+        "name": "Panevezys County",
         "isoCode": "PN",
         "countryCode": "LT",
         "latitude": "55.97480490",
@@ -18717,11 +18755,12 @@
         "nameOrig": "Šiauliai County"
     },
     {
-        "name": "Tauragė County",
+        "name": "Taurage County",
         "isoCode": "TA",
         "countryCode": "LT",
         "latitude": "55.30725860",
-        "longitude": "22.35729390"
+        "longitude": "22.35729390",
+        "nameOrig": "Tauragė County"
     },
     {
         "name": "Telsiai County",
@@ -18872,11 +18911,12 @@
         "longitude": "21.60727590"
     },
     {
-        "name": "Aknīste Municipality",
+        "name": "Akniste Municipality",
         "isoCode": "004",
         "countryCode": "LV",
         "latitude": "56.16130370",
-        "longitude": "25.74848270"
+        "longitude": "25.74848270",
+        "nameOrig": "Aknīste Municipality"
     },
     {
         "name": "Aloja Municipality",
@@ -18893,11 +18933,12 @@
         "longitude": "21.55559190"
     },
     {
-        "name": "Alūksne Municipality",
+        "name": "Aluksne Municipality",
         "isoCode": "007",
         "countryCode": "LV",
         "latitude": "57.42544850",
-        "longitude": "27.04249680"
+        "longitude": "27.04249680",
+        "nameOrig": "Alūksne Municipality"
     },
     {
         "name": "Amata Municipality",
@@ -18921,11 +18962,12 @@
         "longitude": "22.90547810"
     },
     {
-        "name": "Babīte Municipality",
+        "name": "Babite Municipality",
         "isoCode": "012",
         "countryCode": "LV",
         "latitude": "56.95415500",
-        "longitude": "23.94539900"
+        "longitude": "23.94539900",
+        "nameOrig": "Babīte Municipality"
     },
     {
         "name": "Baldone Municipality",
@@ -18956,18 +18998,20 @@
         "longitude": "24.20006890"
     },
     {
-        "name": "Beverīna Municipality",
+        "name": "Beverina Municipality",
         "isoCode": "017",
         "countryCode": "LV",
         "latitude": "57.51971090",
-        "longitude": "25.60736540"
+        "longitude": "25.60736540",
+        "nameOrig": "Beverīna Municipality"
     },
     {
-        "name": "Brocēni Municipality",
+        "name": "Broceni Municipality",
         "isoCode": "018",
         "countryCode": "LV",
         "latitude": "56.73475410",
-        "longitude": "22.63573710"
+        "longitude": "22.63573710",
+        "nameOrig": "Brocēni Municipality"
     },
     {
         "name": "Burtnieki Municipality",
@@ -18991,11 +19035,12 @@
         "longitude": "26.30831720"
     },
     {
-        "name": "Cēsis Municipality",
+        "name": "Cesis Municipality",
         "isoCode": "022",
         "countryCode": "LV",
         "latitude": "57.31028970",
-        "longitude": "25.26761250"
+        "longitude": "25.26761250",
+        "nameOrig": "Cēsis Municipality"
     },
     {
         "name": "Cibla Municipality",
@@ -19047,11 +19092,12 @@
         "longitude": "23.21966340"
     },
     {
-        "name": "Ērgļi Municipality",
+        "name": "Ergli Municipality",
         "isoCode": "030",
         "countryCode": "LV",
         "latitude": "56.92370650",
-        "longitude": "25.67538520"
+        "longitude": "25.67538520",
+        "nameOrig": "Ērgļi Municipality"
     },
     {
         "name": "Garkalne Municipality",
@@ -19061,11 +19107,12 @@
         "longitude": "24.38261810"
     },
     {
-        "name": "Grobiņa Municipality",
+        "name": "Grobina Municipality",
         "isoCode": "032",
         "countryCode": "LV",
         "latitude": "56.53963200",
-        "longitude": "21.16689200"
+        "longitude": "21.16689200",
+        "nameOrig": "Grobiņa Municipality"
     },
     {
         "name": "Gulbene Municipality",
@@ -19082,7 +19129,7 @@
         "longitude": "24.19962720"
     },
     {
-        "name": "Iksķile Municipality",
+        "name": "Ikskile Municipality",
         "isoCode": "035",
         "countryCode": "LV",
         "latitude": "56.83736670",
@@ -19090,18 +19137,20 @@
         "nameOrig": "Ikšķile Municipality"
     },
     {
-        "name": "Ilūkste Municipality",
+        "name": "Ilukste Municipality",
         "isoCode": "036",
         "countryCode": "LV",
         "latitude": "55.97825470",
-        "longitude": "26.29650880"
+        "longitude": "26.29650880",
+        "nameOrig": "Ilūkste Municipality"
     },
     {
-        "name": "Inčukalns Municipality",
+        "name": "Incukalns Municipality",
         "isoCode": "037",
         "countryCode": "LV",
         "latitude": "57.09943420",
-        "longitude": "24.68555700"
+        "longitude": "24.68555700",
+        "nameOrig": "Inčukalns Municipality"
     },
     {
         "name": "Jaunjelgava Municipality",
@@ -19132,11 +19181,12 @@
         "longitude": "23.66104810"
     },
     {
-        "name": "Jēkabpils Municipality",
+        "name": "Jekabpils Municipality",
         "isoCode": "042",
         "countryCode": "LV",
         "latitude": "56.29193200",
-        "longitude": "25.98120170"
+        "longitude": "25.98120170",
+        "nameOrig": "Jēkabpils Municipality"
     },
     {
         "name": "Kandava Municipality",
@@ -19146,18 +19196,20 @@
         "longitude": "22.78018130"
     },
     {
-        "name": "Kārsava Municipality",
+        "name": "Karsava Municipality",
         "isoCode": "044",
         "countryCode": "LV",
         "latitude": "56.76458420",
-        "longitude": "27.73582950"
+        "longitude": "27.73582950",
+        "nameOrig": "Kārsava Municipality"
     },
     {
-        "name": "Kocēni Municipality",
+        "name": "Koceni Municipality",
         "isoCode": "045",
         "countryCode": "LV",
         "latitude": "57.52262920",
-        "longitude": "25.33495070"
+        "longitude": "25.33495070",
+        "nameOrig": "Kocēni Municipality"
     },
     {
         "name": "Koknese Municipality",
@@ -19167,11 +19219,12 @@
         "longitude": "25.48939090"
     },
     {
-        "name": "Krāslava Municipality",
+        "name": "Kraslava Municipality",
         "isoCode": "047",
         "countryCode": "LV",
         "latitude": "55.89514640",
-        "longitude": "27.18145770"
+        "longitude": "27.18145770",
+        "nameOrig": "Krāslava Municipality"
     },
     {
         "name": "Krimulda Municipality",
@@ -19188,32 +19241,36 @@
         "longitude": "26.24463970"
     },
     {
-        "name": "Kuldīga Municipality",
+        "name": "Kuldiga Municipality",
         "isoCode": "050",
         "countryCode": "LV",
         "latitude": "56.96872570",
-        "longitude": "21.96137390"
+        "longitude": "21.96137390",
+        "nameOrig": "Kuldīga Municipality"
     },
     {
-        "name": "Ķegums Municipality",
+        "name": "Kegums Municipality",
         "isoCode": "051",
         "countryCode": "LV",
         "latitude": "56.74753570",
-        "longitude": "24.71736450"
+        "longitude": "24.71736450",
+        "nameOrig": "Ķegums Municipality"
     },
     {
-        "name": "Ķekava Municipality",
+        "name": "Kekava Municipality",
         "isoCode": "052",
         "countryCode": "LV",
         "latitude": "56.80643510",
-        "longitude": "24.19394930"
+        "longitude": "24.19394930",
+        "nameOrig": "Ķekava Municipality"
     },
     {
-        "name": "Lielvārde Municipality",
+        "name": "Lielvarde Municipality",
         "isoCode": "053",
         "countryCode": "LV",
         "latitude": "56.73929760",
-        "longitude": "24.97116180"
+        "longitude": "24.97116180",
+        "nameOrig": "Lielvārde Municipality"
     },
     {
         "name": "Limbazi Municipality",
@@ -19224,25 +19281,28 @@
         "nameOrig": "Limbaži Municipality"
     },
     {
-        "name": "Līgatne Municipality",
+        "name": "Ligatne Municipality",
         "isoCode": "055",
         "countryCode": "LV",
         "latitude": "57.19442040",
-        "longitude": "25.09406810"
+        "longitude": "25.09406810",
+        "nameOrig": "Līgatne Municipality"
     },
     {
-        "name": "Līvāni Municipality",
+        "name": "Livani Municipality",
         "isoCode": "056",
         "countryCode": "LV",
         "latitude": "56.35509420",
-        "longitude": "26.17251900"
+        "longitude": "26.17251900",
+        "nameOrig": "Līvāni Municipality"
     },
     {
-        "name": "Lubāna Municipality",
+        "name": "Lubana Municipality",
         "isoCode": "057",
         "countryCode": "LV",
         "latitude": "56.89992690",
-        "longitude": "26.71987890"
+        "longitude": "26.71987890",
+        "nameOrig": "Lubāna Municipality"
     },
     {
         "name": "Ludza Municipality",
@@ -19266,28 +19326,31 @@
         "longitude": "25.06698950"
     },
     {
-        "name": "Mālpils Municipality",
+        "name": "Malpils Municipality",
         "isoCode": "061",
         "countryCode": "LV",
         "latitude": "57.00841190",
-        "longitude": "24.95742780"
+        "longitude": "24.95742780",
+        "nameOrig": "Mālpils Municipality"
     },
     {
-        "name": "Mārupe Municipality",
+        "name": "Marupe Municipality",
         "isoCode": "062",
         "countryCode": "LV",
         "latitude": "56.89657170",
-        "longitude": "24.04600490"
+        "longitude": "24.04600490",
+        "nameOrig": "Mārupe Municipality"
     },
     {
-        "name": "Mērsrags Municipality",
+        "name": "Mersrags Municipality",
         "isoCode": "063",
         "countryCode": "LV",
         "latitude": "57.33068810",
-        "longitude": "23.10237070"
+        "longitude": "23.10237070",
+        "nameOrig": "Mērsrags Municipality"
     },
     {
-        "name": "Nauksēni Municipality",
+        "name": "Naukseni Municipality",
         "isoCode": "064",
         "countryCode": "LV",
         "latitude": "57.92953610",
@@ -19302,11 +19365,12 @@
         "longitude": "25.32529690"
     },
     {
-        "name": "Nīca Municipality",
+        "name": "Nica Municipality",
         "isoCode": "066",
         "countryCode": "LV",
         "latitude": "56.34649830",
-        "longitude": "21.06549300"
+        "longitude": "21.06549300",
+        "nameOrig": "Nīca Municipality"
     },
     {
         "name": "Ogre Municipality",
@@ -19330,32 +19394,36 @@
         "longitude": "23.89948160"
     },
     {
-        "name": "Pārgauja Municipality",
+        "name": "Pargauja Municipality",
         "isoCode": "070",
         "countryCode": "LV",
         "latitude": "57.36481220",
-        "longitude": "24.98220450"
+        "longitude": "24.98220450",
+        "nameOrig": "Pārgauja Municipality"
     },
     {
-        "name": "Pāvilosta Municipality",
+        "name": "Pavilosta Municipality",
         "isoCode": "071",
         "countryCode": "LV",
         "latitude": "56.88654240",
-        "longitude": "21.19468490"
+        "longitude": "21.19468490",
+        "nameOrig": "Pāvilosta Municipality"
     },
     {
-        "name": "Pļaviņas Municipality",
+        "name": "Plavinas Municipality",
         "isoCode": "072",
         "countryCode": "LV",
         "latitude": "56.61773130",
-        "longitude": "25.71940430"
+        "longitude": "25.71940430",
+        "nameOrig": "Pļaviņas Municipality"
     },
     {
-        "name": "Preiļi Municipality",
+        "name": "Preili Municipality",
         "isoCode": "073",
         "countryCode": "LV",
         "latitude": "56.15111570",
-        "longitude": "26.74397670"
+        "longitude": "26.74397670",
+        "nameOrig": "Preiļi Municipality"
     },
     {
         "name": "Priekule Municipality",
@@ -19365,11 +19433,12 @@
         "longitude": "21.55033360"
     },
     {
-        "name": "Priekuļi Municipality",
+        "name": "Priekuli Municipality",
         "isoCode": "075",
         "countryCode": "LV",
         "latitude": "57.36171380",
-        "longitude": "25.44104230"
+        "longitude": "25.44104230",
+        "nameOrig": "Priekuļi Municipality"
     },
     {
         "name": "Rauna Municipality",
@@ -19379,18 +19448,20 @@
         "longitude": "25.61003390"
     },
     {
-        "name": "Rēzekne Municipality",
+        "name": "Rezekne Municipality",
         "isoCode": "077",
         "countryCode": "LV",
         "latitude": "56.32736380",
-        "longitude": "27.32843310"
+        "longitude": "27.32843310",
+        "nameOrig": "Rēzekne Municipality"
     },
     {
-        "name": "Riebiņi Municipality",
+        "name": "Riebini Municipality",
         "isoCode": "078",
         "countryCode": "LV",
         "latitude": "56.34361900",
-        "longitude": "26.80181380"
+        "longitude": "26.80181380",
+        "nameOrig": "Riebiņi Municipality"
     },
     {
         "name": "Roja Municipality",
@@ -19415,25 +19486,28 @@
         "longitude": "21.16181210"
     },
     {
-        "name": "Rugāji Municipality",
+        "name": "Rugaji Municipality",
         "isoCode": "082",
         "countryCode": "LV",
         "latitude": "57.00560230",
-        "longitude": "27.13172030"
+        "longitude": "27.13172030",
+        "nameOrig": "Rugāji Municipality"
     },
     {
-        "name": "Rundāle Municipality",
+        "name": "Rundale Municipality",
         "isoCode": "083",
         "countryCode": "LV",
         "latitude": "56.40972100",
-        "longitude": "24.01241390"
+        "longitude": "24.01241390",
+        "nameOrig": "Rundāle Municipality"
     },
     {
-        "name": "Rūjiena Municipality",
+        "name": "Rujiena Municipality",
         "isoCode": "084",
         "countryCode": "LV",
         "latitude": "57.89372910",
-        "longitude": "25.33910080"
+        "longitude": "25.33910080",
+        "nameOrig": "Rūjiena Municipality"
     },
     {
         "name": "Sala Municipality",
@@ -19443,11 +19517,12 @@
         "longitude": "16.49782170"
     },
     {
-        "name": "Salacgrīva Municipality",
+        "name": "Salacgriva Municipality",
         "isoCode": "086",
         "countryCode": "LV",
         "latitude": "57.75808830",
-        "longitude": "24.35431810"
+        "longitude": "24.35431810",
+        "nameOrig": "Salacgrīva Municipality"
     },
     {
         "name": "Salaspils Municipality",
@@ -19471,11 +19546,12 @@
         "longitude": "24.41831460"
     },
     {
-        "name": "Sēja Municipality",
+        "name": "Seja Municipality",
         "isoCode": "090",
         "countryCode": "LV",
         "latitude": "57.20069950",
-        "longitude": "24.59228210"
+        "longitude": "24.59228210",
+        "nameOrig": "Sēja Municipality"
     },
     {
         "name": "Sigulda Municipality",
@@ -19485,11 +19561,12 @@
         "longitude": "24.83142590"
     },
     {
-        "name": "Skrīveri Municipality",
+        "name": "Skriveri Municipality",
         "isoCode": "092",
         "countryCode": "LV",
         "latitude": "56.67613910",
-        "longitude": "25.09788490"
+        "longitude": "25.09788490",
+        "nameOrig": "Skrīveri Municipality"
     },
     {
         "name": "Skrunda Municipality",
@@ -19506,18 +19583,20 @@
         "longitude": "25.90027800"
     },
     {
-        "name": "Stopiņi Municipality",
+        "name": "Stopini Municipality",
         "isoCode": "095",
         "countryCode": "LV",
         "latitude": "56.93644900",
-        "longitude": "24.28729490"
+        "longitude": "24.28729490",
+        "nameOrig": "Stopiņi Municipality"
     },
     {
-        "name": "Strenči Municipality",
+        "name": "Strenci Municipality",
         "isoCode": "096",
         "countryCode": "LV",
         "latitude": "57.62254710",
-        "longitude": "25.80480860"
+        "longitude": "25.80480860",
+        "nameOrig": "Strenči Municipality"
     },
     {
         "name": "Talsi Municipality",
@@ -19527,11 +19606,12 @@
         "longitude": "22.57131250"
     },
     {
-        "name": "Tērvete Municipality",
+        "name": "Tervete Municipality",
         "isoCode": "098",
         "countryCode": "LV",
         "latitude": "56.41192010",
-        "longitude": "23.31883320"
+        "longitude": "23.31883320",
+        "nameOrig": "Tērvete Municipality"
     },
     {
         "name": "Tukums Municipality",
@@ -19541,11 +19621,12 @@
         "longitude": "23.15243790"
     },
     {
-        "name": "Vaiņode Municipality",
+        "name": "Vainode Municipality",
         "isoCode": "100",
         "countryCode": "LV",
         "latitude": "56.41542710",
-        "longitude": "21.85139840"
+        "longitude": "21.85139840",
+        "nameOrig": "Vaiņode Municipality"
     },
     {
         "name": "Valka Municipality",
@@ -19555,18 +19636,20 @@
         "longitude": "26.01700500"
     },
     {
-        "name": "Varakļāni Municipality",
+        "name": "Varaklani Municipality",
         "isoCode": "102",
         "countryCode": "LV",
         "latitude": "56.66880060",
-        "longitude": "26.56364140"
+        "longitude": "26.56364140",
+        "nameOrig": "Varakļāni Municipality"
     },
     {
-        "name": "Vārkava Municipality",
+        "name": "Varkava Municipality",
         "isoCode": "103",
         "countryCode": "LV",
         "latitude": "56.24657440",
-        "longitude": "26.56643710"
+        "longitude": "26.56643710",
+        "nameOrig": "Vārkava Municipality"
     },
     {
         "name": "Vecpiebalga Municipality",
@@ -19590,25 +19673,28 @@
         "longitude": "21.85875580"
     },
     {
-        "name": "Viesīte Municipality",
+        "name": "Viesite Municipality",
         "isoCode": "107",
         "countryCode": "LV",
         "latitude": "56.31130850",
-        "longitude": "25.50704640"
+        "longitude": "25.50704640",
+        "nameOrig": "Viesīte Municipality"
     },
     {
-        "name": "Viļaka Municipality",
+        "name": "Vilaka Municipality",
         "isoCode": "108",
         "countryCode": "LV",
         "latitude": "57.17222630",
-        "longitude": "27.66731880"
+        "longitude": "27.66731880",
+        "nameOrig": "Viļaka Municipality"
     },
     {
-        "name": "Viļāni Municipality",
+        "name": "Vilani Municipality",
         "isoCode": "109",
         "countryCode": "LV",
         "latitude": "56.54561710",
-        "longitude": "26.91679270"
+        "longitude": "26.91679270",
+        "nameOrig": "Viļāni Municipality"
     },
     {
         "name": "Zilupe Municipality",
@@ -19632,32 +19718,36 @@
         "longitude": "23.72135410"
     },
     {
-        "name": "Jēkabpils",
+        "name": "Jekabpils",
         "isoCode": "JKB",
         "countryCode": "LV",
         "latitude": "56.50145500",
-        "longitude": "25.87829900"
+        "longitude": "25.87829900",
+        "nameOrig": "Jēkabpils"
     },
     {
-        "name": "Jūrmala",
+        "name": "Jurmala",
         "isoCode": "JUR",
         "countryCode": "LV",
         "latitude": "56.94707900",
-        "longitude": "23.61684850"
+        "longitude": "23.61684850",
+        "nameOrig": "Jūrmala"
     },
     {
-        "name": "Liepāja",
+        "name": "Liepaja",
         "isoCode": "LPX",
         "countryCode": "LV",
         "latitude": "56.50466780",
-        "longitude": "21.01080600"
+        "longitude": "21.01080600",
+        "nameOrig": "Liepāja"
     },
     {
-        "name": "Rēzekne",
+        "name": "Rezekne",
         "isoCode": "REZ",
         "countryCode": "LV",
         "latitude": "56.50992230",
-        "longitude": "27.33313570"
+        "longitude": "27.33313570",
+        "nameOrig": "Rēzekne"
     },
     {
         "name": "Riga",
@@ -20484,11 +20574,12 @@
         "longitude": "29.23121750"
     },
     {
-        "name": "Bălți Municipality",
+        "name": "Balți Municipality",
         "isoCode": "BA",
         "countryCode": "MD",
         "latitude": "47.75399470",
-        "longitude": "27.91841480"
+        "longitude": "27.91841480",
+        "nameOrig": "Bălți Municipality"
     },
     {
         "name": "Bender Municipality",
@@ -20519,11 +20610,12 @@
         "longitude": "28.18902750"
     },
     {
-        "name": "Călărași District",
+        "name": "Calarași District",
         "isoCode": "CL",
         "countryCode": "MD",
         "latitude": "47.28694600",
-        "longitude": "28.27453100"
+        "longitude": "28.27453100",
+        "nameOrig": "Călărași District"
     },
     {
         "name": "Cimișlia District",
@@ -20540,11 +20632,12 @@
         "longitude": "29.15575190"
     },
     {
-        "name": "Căușeni District",
+        "name": "Caușeni District",
         "isoCode": "CS",
         "countryCode": "MD",
         "latitude": "46.65547150",
-        "longitude": "29.40912220"
+        "longitude": "29.40912220",
+        "nameOrig": "Căușeni District"
     },
     {
         "name": "Cantemir District",
@@ -20554,11 +20647,12 @@
         "longitude": "28.20096530"
     },
     {
-        "name": "Chișinău Municipality",
+        "name": "Chișinau Municipality",
         "isoCode": "CU",
         "countryCode": "MD",
         "latitude": "47.01045290",
-        "longitude": "28.86381020"
+        "longitude": "28.86381020",
+        "nameOrig": "Chișinău Municipality"
     },
     {
         "name": "Dondușeni District",
@@ -20575,11 +20669,12 @@
         "longitude": "27.86041140"
     },
     {
-        "name": "Dubăsari District",
+        "name": "Dubasari District",
         "isoCode": "DU",
         "countryCode": "MD",
         "latitude": "47.26439420",
-        "longitude": "29.15503480"
+        "longitude": "29.15503480",
+        "nameOrig": "Dubăsari District"
     },
     {
         "name": "Edineț District",
@@ -20589,11 +20684,12 @@
         "longitude": "27.29361430"
     },
     {
-        "name": "Fălești District",
+        "name": "Falești District",
         "isoCode": "FA",
         "countryCode": "MD",
         "latitude": "47.56477250",
-        "longitude": "27.72655930"
+        "longitude": "27.72655930",
+        "nameOrig": "Fălești District"
     },
     {
         "name": "Florești District",
@@ -20668,11 +20764,12 @@
         "nameOrig": "Rîșcani District"
     },
     {
-        "name": "Șoldănești District",
+        "name": "Șoldanești District",
         "isoCode": "SD",
         "countryCode": "MD",
         "latitude": "47.81473890",
-        "longitude": "28.78895860"
+        "longitude": "28.78895860",
+        "nameOrig": "Șoldănești District"
     },
     {
         "name": "Singerei District",
@@ -20697,18 +20794,20 @@
         "longitude": "28.28707830"
     },
     {
-        "name": "Strășeni District",
+        "name": "Strașeni District",
         "isoCode": "ST",
         "countryCode": "MD",
         "latitude": "47.14502670",
-        "longitude": "28.61367360"
+        "longitude": "28.61367360",
+        "nameOrig": "Strășeni District"
     },
     {
-        "name": "Ștefan Vodă District",
+        "name": "Ștefan Voda District",
         "isoCode": "SV",
         "countryCode": "MD",
         "latitude": "46.55404880",
-        "longitude": "29.70224200"
+        "longitude": "29.70224200",
+        "nameOrig": "Ștefan Vodă District"
     },
     {
         "name": "Taraclia District",
@@ -20803,7 +20902,7 @@
         "longitude": "19.52110630"
     },
     {
-        "name": "Niksić Municipality",
+        "name": "Niksic Municipality",
         "isoCode": "12",
         "countryCode": "ME",
         "latitude": "42.79971840",
@@ -20955,11 +21054,12 @@
         "longitude": "21.49317130"
     },
     {
-        "name": "Aračinovo Municipality",
+        "name": "Aracinovo Municipality",
         "isoCode": "02",
         "countryCode": "MK",
         "latitude": "42.02473810",
-        "longitude": "21.57664070"
+        "longitude": "21.57664070",
+        "nameOrig": "Aračinovo Municipality"
     },
     {
         "name": "Berovo Municipality",
@@ -21025,11 +21125,12 @@
         "longitude": "22.64221280"
     },
     {
-        "name": "Vevčani Municipality",
+        "name": "Vevcani Municipality",
         "isoCode": "12",
         "countryCode": "MK",
         "latitude": "41.24075430",
-        "longitude": "20.59156490"
+        "longitude": "20.59156490",
+        "nameOrig": "Vevčani Municipality"
     },
     {
         "name": "Veles Municipality",
@@ -21054,7 +21155,7 @@
         "nameOrig": "Vraneštica Municipality"
     },
     {
-        "name": "Vrapčiste Municipality",
+        "name": "Vrapciste Municipality",
         "isoCode": "16",
         "countryCode": "MK",
         "latitude": "41.87911600",
@@ -21097,11 +21198,12 @@
         "longitude": "20.85529190"
     },
     {
-        "name": "Delčevo Municipality",
+        "name": "Delcevo Municipality",
         "isoCode": "23",
         "countryCode": "MK",
         "latitude": "41.96843870",
-        "longitude": "22.76288300"
+        "longitude": "22.76288300",
+        "nameOrig": "Delčevo Municipality"
     },
     {
         "name": "Demir Kapija Municipality",
@@ -21139,11 +21241,12 @@
         "longitude": "20.92682010"
     },
     {
-        "name": "Gjorče Petrov Municipality",
+        "name": "Gjorce Petrov Municipality",
         "isoCode": "29",
         "countryCode": "MK",
         "latitude": "42.06063740",
-        "longitude": "21.32027360"
+        "longitude": "21.32027360",
+        "nameOrig": "Gjorče Petrov Municipality"
     },
     {
         "name": "Zelino Municipality",
@@ -21218,25 +21321,28 @@
         "longitude": "21.49317130"
     },
     {
-        "name": "Kičevo Municipality",
+        "name": "Kicevo Municipality",
         "isoCode": "40",
         "countryCode": "MK",
         "latitude": "41.51291120",
-        "longitude": "20.95250650"
+        "longitude": "20.95250650",
+        "nameOrig": "Kičevo Municipality"
     },
     {
-        "name": "Konče Municipality",
+        "name": "Konce Municipality",
         "isoCode": "41",
         "countryCode": "MK",
         "latitude": "41.51710110",
-        "longitude": "22.38146240"
+        "longitude": "22.38146240",
+        "nameOrig": "Konče Municipality"
     },
     {
-        "name": "Kočani Municipality",
+        "name": "Kocani Municipality",
         "isoCode": "42",
         "countryCode": "MK",
         "latitude": "41.98583740",
-        "longitude": "22.40530460"
+        "longitude": "22.40530460",
+        "nameOrig": "Kočani Municipality"
     },
     {
         "name": "Kratovo Municipality",
@@ -21361,11 +21467,12 @@
         "longitude": "21.68992100"
     },
     {
-        "name": "Pehčevo Municipality",
+        "name": "Pehcevo Municipality",
         "isoCode": "60",
         "countryCode": "MK",
         "latitude": "41.77371320",
-        "longitude": "22.88204890"
+        "longitude": "22.88204890",
+        "nameOrig": "Pehčevo Municipality"
     },
     {
         "name": "Plasnica Municipality",
@@ -21441,11 +21548,12 @@
         "nameOrig": "Sopište Municipality"
     },
     {
-        "name": "Staro Nagoričane Municipality",
+        "name": "Staro Nagoricane Municipality",
         "isoCode": "71",
         "countryCode": "MK",
         "latitude": "42.21916920",
-        "longitude": "21.90455410"
+        "longitude": "21.90455410",
+        "nameOrig": "Staro Nagoričane Municipality"
     },
     {
         "name": "Struga Municipality",
@@ -21462,11 +21570,12 @@
         "longitude": "22.64274280"
     },
     {
-        "name": "Studeničani Municipality",
+        "name": "Studenicani Municipality",
         "isoCode": "74",
         "countryCode": "MK",
         "latitude": "41.92256390",
-        "longitude": "21.53639650"
+        "longitude": "21.53639650",
+        "nameOrig": "Studeničani Municipality"
     },
     {
         "name": "Tearce Municipality",
@@ -21498,14 +21607,15 @@
         "nameOrig": "Centar Župa Municipality"
     },
     {
-        "name": "Čair Municipality",
+        "name": "Cair Municipality",
         "isoCode": "79",
         "countryCode": "MK",
         "latitude": "41.99303550",
-        "longitude": "21.43653180"
+        "longitude": "21.43653180",
+        "nameOrig": "Čair Municipality"
     },
     {
-        "name": "Časka Municipality",
+        "name": "Caska Municipality",
         "isoCode": "80",
         "countryCode": "MK",
         "latitude": "41.64743800",
@@ -21513,7 +21623,7 @@
         "nameOrig": "Čaška Municipality"
     },
     {
-        "name": "Česinovo-Oblesevo Municipality",
+        "name": "Cesinovo-Oblesevo Municipality",
         "isoCode": "81",
         "countryCode": "MK",
         "latitude": "41.86393160",
@@ -21521,11 +21631,12 @@
         "nameOrig": "Češinovo-Obleševo Municipality"
     },
     {
-        "name": "Čučer-Sandevo Municipality",
+        "name": "Cucer-Sandevo Municipality",
         "isoCode": "82",
         "countryCode": "MK",
         "latitude": "42.14839460",
-        "longitude": "21.40374070"
+        "longitude": "21.40374070",
+        "nameOrig": "Čučer-Sandevo Municipality"
     },
     {
         "name": "Stip Municipality",
@@ -22050,11 +22161,12 @@
         "longitude": "14.46650720"
     },
     {
-        "name": "Birżebbuġa",
+        "name": "Birzebbuga",
         "isoCode": "05",
         "countryCode": "MT",
         "latitude": "35.81359890",
-        "longitude": "14.52474630"
+        "longitude": "14.52474630",
+        "nameOrig": "Birżebbuġa"
     },
     {
         "name": "Cospicua",
@@ -22099,53 +22211,60 @@
         "longitude": "14.50290400"
     },
     {
-        "name": "Gżira",
+        "name": "Gzira",
         "isoCode": "12",
         "countryCode": "MT",
         "latitude": "35.90589700",
-        "longitude": "14.49533380"
+        "longitude": "14.49533380",
+        "nameOrig": "Gżira"
     },
     {
-        "name": "Għajnsielem",
+        "name": "Ghajnsielem",
         "isoCode": "13",
         "countryCode": "MT",
         "latitude": "36.02479660",
-        "longitude": "14.28029610"
+        "longitude": "14.28029610",
+        "nameOrig": "Għajnsielem"
     },
     {
-        "name": "Għarb",
+        "name": "Gharb",
         "isoCode": "14",
         "countryCode": "MT",
         "latitude": "36.06890900",
-        "longitude": "14.20180980"
+        "longitude": "14.20180980",
+        "nameOrig": "Għarb"
     },
     {
-        "name": "Għargħur",
+        "name": "Gharghur",
         "isoCode": "15",
         "countryCode": "MT",
         "latitude": "35.92205690",
-        "longitude": "14.45631760"
+        "longitude": "14.45631760",
+        "nameOrig": "Għargħur"
     },
     {
-        "name": "Għasri",
+        "name": "Ghasri",
         "isoCode": "16",
         "countryCode": "MT",
         "latitude": "36.06680750",
-        "longitude": "14.21924750"
+        "longitude": "14.21924750",
+        "nameOrig": "Għasri"
     },
     {
-        "name": "Għaxaq",
+        "name": "Ghaxaq",
         "isoCode": "17",
         "countryCode": "MT",
         "latitude": "35.84403590",
-        "longitude": "14.51600900"
+        "longitude": "14.51600900",
+        "nameOrig": "Għaxaq"
     },
     {
-        "name": "Ħamrun",
+        "name": "Hamrun",
         "isoCode": "18",
         "countryCode": "MT",
         "latitude": "35.88612370",
-        "longitude": "14.48834420"
+        "longitude": "14.48834420",
+        "nameOrig": "Ħamrun"
     },
     {
         "name": "Iklin",
@@ -22169,11 +22288,12 @@
         "longitude": "14.53202780"
     },
     {
-        "name": "Kerċem",
+        "name": "Kercem",
         "isoCode": "22",
         "countryCode": "MT",
         "latitude": "36.04479390",
-        "longitude": "14.22506050"
+        "longitude": "14.22506050",
+        "nameOrig": "Kerċem"
     },
     {
         "name": "Kirkop",
@@ -22225,18 +22345,20 @@
         "longitude": "14.40683570"
     },
     {
-        "name": "Mellieħa",
+        "name": "Mellieha",
         "isoCode": "30",
         "countryCode": "MT",
         "latitude": "35.95235290",
-        "longitude": "14.35009750"
+        "longitude": "14.35009750",
+        "nameOrig": "Mellieħa"
     },
     {
-        "name": "Mġarr",
+        "name": "Mgarr",
         "isoCode": "31",
         "countryCode": "MT",
         "latitude": "35.91893270",
-        "longitude": "14.36173430"
+        "longitude": "14.36173430",
+        "nameOrig": "Mġarr"
     },
     {
         "name": "Mosta",
@@ -22352,11 +22474,12 @@
         "longitude": "-85.89171270"
     },
     {
-        "name": "San Ġwann",
+        "name": "San Gwann",
         "isoCode": "49",
         "countryCode": "MT",
         "latitude": "35.90773650",
-        "longitude": "14.47524160"
+        "longitude": "14.47524160",
+        "nameOrig": "San Ġwann"
     },
     {
         "name": "Saint Lawrence",
@@ -22380,11 +22503,12 @@
         "longitude": "14.25994370"
     },
     {
-        "name": "Santa Luċija",
+        "name": "Santa Lucija",
         "isoCode": "53",
         "countryCode": "MT",
         "latitude": "35.85614200",
-        "longitude": "14.50436000"
+        "longitude": "14.50436000",
+        "nameOrig": "Santa Luċija"
     },
     {
         "name": "Santa Venera",
@@ -22394,11 +22518,12 @@
         "longitude": "14.47669740"
     },
     {
-        "name": "Siġġiewi",
+        "name": "Siggiewi",
         "isoCode": "55",
         "countryCode": "MT",
         "latitude": "35.84637420",
-        "longitude": "14.43157460"
+        "longitude": "14.43157460",
+        "nameOrig": "Siġġiewi"
     },
     {
         "name": "Sliema",
@@ -22436,11 +22561,12 @@
         "longitude": "14.51455280"
     },
     {
-        "name": "Xagħra",
+        "name": "Xaghra",
         "isoCode": "61",
         "countryCode": "MT",
         "latitude": "36.05084500",
-        "longitude": "14.26748200"
+        "longitude": "14.26748200",
+        "nameOrig": "Xagħra"
     },
     {
         "name": "Xewkija",
@@ -22450,46 +22576,52 @@
         "longitude": "14.25994370"
     },
     {
-        "name": "Xgħajra",
+        "name": "Xghajra",
         "isoCode": "63",
         "countryCode": "MT",
         "latitude": "35.88682820",
-        "longitude": "14.54723910"
+        "longitude": "14.54723910",
+        "nameOrig": "Xgħajra"
     },
     {
-        "name": "Żabbar",
+        "name": "Zabbar",
         "isoCode": "64",
         "countryCode": "MT",
         "latitude": "35.87247150",
-        "longitude": "14.54513540"
+        "longitude": "14.54513540",
+        "nameOrig": "Żabbar"
     },
     {
-        "name": "Żebbuġ Gozo",
+        "name": "Zebbug Gozo",
         "isoCode": "65",
         "countryCode": "MT",
         "latitude": "36.07164030",
-        "longitude": "14.24540800"
+        "longitude": "14.24540800",
+        "nameOrig": "Żebbuġ Gozo"
     },
     {
-        "name": "Żebbuġ Malta",
+        "name": "Zebbug Malta",
         "isoCode": "66",
         "countryCode": "MT",
         "latitude": "35.87646480",
-        "longitude": "14.43908400"
+        "longitude": "14.43908400",
+        "nameOrig": "Żebbuġ Malta"
     },
     {
-        "name": "Żejtun",
+        "name": "Zejtun",
         "isoCode": "67",
         "countryCode": "MT",
         "latitude": "35.85487140",
-        "longitude": "14.53639690"
+        "longitude": "14.53639690",
+        "nameOrig": "Żejtun"
     },
     {
-        "name": "Żurrieq",
+        "name": "Zurrieq",
         "isoCode": "68",
         "countryCode": "MT",
         "latitude": "35.82163060",
-        "longitude": "14.48106480"
+        "longitude": "14.48106480",
+        "nameOrig": "Żurrieq"
     },
     {
         "name": "Agalega",
@@ -25885,7 +26017,7 @@
         "longitude": "15.25591030"
     },
     {
-        "name": "Lodź Voivodeship",
+        "name": "Lodz Voivodeship",
         "isoCode": "LD",
         "countryCode": "PL",
         "latitude": "51.46347710",
@@ -25942,7 +26074,7 @@
         "longitude": "18.15311640"
     },
     {
-        "name": "Swiętokrzyskie Voivodeship",
+        "name": "Swietokrzyskie Voivodeship",
         "isoCode": "SK",
         "countryCode": "PL",
         "latitude": "50.62610410",
@@ -26448,11 +26580,12 @@
         "longitude": "26.10253840"
     },
     {
-        "name": "Bacău County",
+        "name": "Bacau County",
         "isoCode": "BC",
         "countryCode": "RO",
         "latitude": "46.32581840",
-        "longitude": "26.66237800"
+        "longitude": "26.66237800",
+        "nameOrig": "Bacău County"
     },
     {
         "name": "Bihor County",
@@ -26462,11 +26595,12 @@
         "longitude": "22.17226600"
     },
     {
-        "name": "Bistrița-Năsăud County",
+        "name": "Bistrița-Nasaud County",
         "isoCode": "BN",
         "countryCode": "RO",
         "latitude": "47.24861070",
-        "longitude": "24.53228140"
+        "longitude": "24.53228140",
+        "nameOrig": "Bistrița-Năsăud County"
     },
     {
         "name": "Braila",
@@ -26490,11 +26624,12 @@
         "longitude": "25.22258000"
     },
     {
-        "name": "Buzău County",
+        "name": "Buzau County",
         "isoCode": "BZ",
         "countryCode": "RO",
         "latitude": "45.33509120",
-        "longitude": "26.71075780"
+        "longitude": "26.71075780",
+        "nameOrig": "Buzău County"
     },
     {
         "name": "Cluj County",
@@ -26504,11 +26639,12 @@
         "longitude": "23.61214920"
     },
     {
-        "name": "Călărași County",
+        "name": "Calarași County",
         "isoCode": "CL",
         "countryCode": "RO",
         "latitude": "44.36587150",
-        "longitude": "26.75486070"
+        "longitude": "26.75486070",
+        "nameOrig": "Călărași County"
     },
     {
         "name": "Caraș-Severin County",
@@ -26652,11 +26788,12 @@
         "longitude": "24.22548070"
     },
     {
-        "name": "Sălaj County",
+        "name": "Salaj County",
         "isoCode": "SJ",
         "countryCode": "RO",
         "latitude": "47.20908130",
-        "longitude": "23.21219010"
+        "longitude": "23.21219010",
+        "nameOrig": "Sălaj County"
     },
     {
         "name": "Satu Mare County",
@@ -26723,11 +26860,12 @@
         "longitude": "20.44892160"
     },
     {
-        "name": "North Bačka District",
+        "name": "North Backa District",
         "isoCode": "01",
         "countryCode": "RS",
         "latitude": "45.98033940",
-        "longitude": "19.59070010"
+        "longitude": "19.59070010",
+        "nameOrig": "North Bačka District"
     },
     {
         "name": "Central Banat District",
@@ -26751,18 +26889,20 @@
         "longitude": "21.05425090"
     },
     {
-        "name": "West Bačka District",
+        "name": "West Backa District",
         "isoCode": "05",
         "countryCode": "RS",
         "latitude": "45.73553850",
-        "longitude": "19.18973640"
+        "longitude": "19.18973640",
+        "nameOrig": "West Bačka District"
     },
     {
-        "name": "South Bačka District",
+        "name": "South Backa District",
         "isoCode": "06",
         "countryCode": "RS",
         "latitude": "45.48903440",
-        "longitude": "19.69761870"
+        "longitude": "19.69761870",
+        "nameOrig": "South Bačka District"
     },
     {
         "name": "Srem District",
@@ -26772,11 +26912,12 @@
         "longitude": "19.80137730"
     },
     {
-        "name": "Mačva District",
+        "name": "Macva District",
         "isoCode": "08",
         "countryCode": "RS",
         "latitude": "44.59253140",
-        "longitude": "19.50822460"
+        "longitude": "19.50822460",
+        "nameOrig": "Mačva District"
     },
     {
         "name": "Kolubara District",
@@ -26793,11 +26934,12 @@
         "longitude": "20.99014260"
     },
     {
-        "name": "Braničevo District",
+        "name": "Branicevo District",
         "isoCode": "11",
         "countryCode": "RS",
         "latitude": "44.69822460",
-        "longitude": "21.54467750"
+        "longitude": "21.54467750",
+        "nameOrig": "Braničevo District"
     },
     {
         "name": "Sumadija District",
@@ -26822,11 +26964,12 @@
         "longitude": "22.09850860"
     },
     {
-        "name": "Zaječar District",
+        "name": "Zajecar District",
         "isoCode": "15",
         "countryCode": "RS",
         "latitude": "43.90150480",
-        "longitude": "22.27380110"
+        "longitude": "22.27380110",
+        "nameOrig": "Zaječar District"
     },
     {
         "name": "Zlatibor District",
@@ -26887,11 +27030,12 @@
         "longitude": "21.81293210"
     },
     {
-        "name": "Pčinja District",
+        "name": "Pcinja District",
         "isoCode": "24",
         "countryCode": "RS",
         "latitude": "42.58363620",
-        "longitude": "22.14302150"
+        "longitude": "22.14302150",
+        "nameOrig": "Pčinja District"
     },
     {
         "name": "Vojvodina",
@@ -28132,7 +28276,7 @@
         "nameOrig": "Västernorrland County"
     },
     {
-        "name": "Ajdovsčina Municipality",
+        "name": "Ajdovscina Municipality",
         "isoCode": "001",
         "countryCode": "SI",
         "latitude": "45.88707760",
@@ -28233,7 +28377,7 @@
         "longitude": "13.98940270"
     },
     {
-        "name": "Črensovci Municipality",
+        "name": "Crensovci Municipality",
         "isoCode": "015",
         "countryCode": "SI",
         "latitude": "46.57200290",
@@ -28241,7 +28385,7 @@
         "nameOrig": "Črenšovci Municipality"
     },
     {
-        "name": "Črna na Koroskem Municipality",
+        "name": "Crna na Koroskem Municipality",
         "isoCode": "016",
         "countryCode": "SI",
         "latitude": "46.47045290",
@@ -28249,11 +28393,12 @@
         "nameOrig": "Črna na Koroškem Municipality"
     },
     {
-        "name": "Črnomelj Municipality",
+        "name": "Crnomelj Municipality",
         "isoCode": "017",
         "countryCode": "SI",
         "latitude": "45.53612250",
-        "longitude": "15.19441430"
+        "longitude": "15.19441430",
+        "nameOrig": "Črnomelj Municipality"
     },
     {
         "name": "Destrnik Municipality",
@@ -28263,11 +28408,12 @@
         "longitude": "15.87779560"
     },
     {
-        "name": "Divača Municipality",
+        "name": "Divaca Municipality",
         "isoCode": "019",
         "countryCode": "SI",
         "latitude": "45.68060690",
-        "longitude": "13.97203120"
+        "longitude": "13.97203120",
+        "nameOrig": "Divača Municipality"
     },
     {
         "name": "Dobrepolje Municipality",
@@ -28406,11 +28552,12 @@
         "longitude": "14.28097290"
     },
     {
-        "name": "Ivančna Gorica Municipality",
+        "name": "Ivancna Gorica Municipality",
         "isoCode": "039",
         "countryCode": "SI",
         "latitude": "45.93958410",
-        "longitude": "14.80476260"
+        "longitude": "14.80476260",
+        "nameOrig": "Ivančna Gorica Municipality"
     },
     {
         "name": "Izola Municipality",
@@ -28442,18 +28589,20 @@
         "longitude": "14.60707270"
     },
     {
-        "name": "Kanal ob Soči Municipality",
+        "name": "Kanal ob Soci Municipality",
         "isoCode": "044",
         "countryCode": "SI",
         "latitude": "46.06735300",
-        "longitude": "13.62033500"
+        "longitude": "13.62033500",
+        "nameOrig": "Kanal ob Soči Municipality"
     },
     {
-        "name": "Kidričevo Municipality",
+        "name": "Kidricevo Municipality",
         "isoCode": "045",
         "countryCode": "SI",
         "latitude": "46.39575720",
-        "longitude": "15.79259060"
+        "longitude": "15.79259060",
+        "nameOrig": "Kidričevo Municipality"
     },
     {
         "name": "Kobarid Municipality",
@@ -28470,11 +28619,12 @@
         "longitude": "16.39367190"
     },
     {
-        "name": "Kočevje Municipality",
+        "name": "Kocevje Municipality",
         "isoCode": "048",
         "countryCode": "SI",
         "latitude": "45.64280000",
-        "longitude": "14.86158380"
+        "longitude": "14.86158380",
+        "nameOrig": "Kočevje Municipality"
     },
     {
         "name": "Komen Municipality",
@@ -28607,11 +28757,12 @@
         "nameOrig": "Loški Potok Municipality"
     },
     {
-        "name": "Luče Municipality",
+        "name": "Luce Municipality",
         "isoCode": "067",
         "countryCode": "SI",
         "latitude": "46.35449250",
-        "longitude": "14.74715040"
+        "longitude": "14.74715040",
+        "nameOrig": "Luče Municipality"
     },
     {
         "name": "Lukovica Municipality",
@@ -28680,11 +28831,12 @@
         "longitude": "15.19876780"
     },
     {
-        "name": "Moravče Municipality",
+        "name": "Moravce Municipality",
         "isoCode": "077",
         "countryCode": "SI",
         "latitude": "46.13627810",
-        "longitude": "14.74600100"
+        "longitude": "14.74600100",
+        "nameOrig": "Moravče Municipality"
     },
     {
         "name": "Moravske Toplice Municipality",
@@ -28786,11 +28938,12 @@
         "longitude": "14.25426890"
     },
     {
-        "name": "Podčetrtek Municipality",
+        "name": "Podcetrtek Municipality",
         "isoCode": "092",
         "countryCode": "SI",
         "latitude": "46.17395420",
-        "longitude": "15.60138160"
+        "longitude": "15.60138160",
+        "nameOrig": "Podčetrtek Municipality"
     },
     {
         "name": "Podvelka Municipality",
@@ -28828,18 +28981,20 @@
         "longitude": "16.09977920"
     },
     {
-        "name": "Rače–Fram Municipality",
+        "name": "Race–Fram Municipality",
         "isoCode": "098",
         "countryCode": "SI",
         "latitude": "46.45420830",
-        "longitude": "15.63294670"
+        "longitude": "15.63294670",
+        "nameOrig": "Rače–Fram Municipality"
     },
     {
-        "name": "Radeče Municipality",
+        "name": "Radece Municipality",
         "isoCode": "099",
         "countryCode": "SI",
         "latitude": "46.06669540",
-        "longitude": "15.18204380"
+        "longitude": "15.18204380",
+        "nameOrig": "Radeče Municipality"
     },
     {
         "name": "Radenci Municipality",
@@ -28909,11 +29064,12 @@
         "nameOrig": "Ruše Municipality"
     },
     {
-        "name": "Semič Municipality",
+        "name": "Semic Municipality",
         "isoCode": "109",
         "countryCode": "SI",
         "latitude": "45.65205340",
-        "longitude": "15.18207010"
+        "longitude": "15.18207010",
+        "nameOrig": "Semič Municipality"
     },
     {
         "name": "Sevnica Municipality",
@@ -28960,7 +29116,7 @@
         "nameOrig": "Starše Municipality"
     },
     {
-        "name": "Sveti Jurij ob Sčavnici Municipality",
+        "name": "Sveti Jurij ob Scavnici Municipality",
         "isoCode": "116",
         "countryCode": "SI",
         "latitude": "46.56874520",
@@ -28968,7 +29124,7 @@
         "nameOrig": "Sveti Jurij ob Ščavnici Municipality"
     },
     {
-        "name": "Senčur Municipality",
+        "name": "Sencur Municipality",
         "isoCode": "117",
         "countryCode": "SI",
         "latitude": "46.24336990",
@@ -29077,7 +29233,7 @@
         "longitude": "15.01319050"
     },
     {
-        "name": "Trzič Municipality",
+        "name": "Trzic Municipality",
         "isoCode": "131",
         "countryCode": "SI",
         "latitude": "46.35935140",
@@ -29085,7 +29241,7 @@
         "nameOrig": "Tržič Municipality"
     },
     {
-        "name": "Turnisče Municipality",
+        "name": "Turnisce Municipality",
         "isoCode": "132",
         "countryCode": "SI",
         "latitude": "46.61375040",
@@ -29093,7 +29249,7 @@
         "nameOrig": "Turnišče Municipality"
     },
     {
-        "name": "Velike Lasče Municipality",
+        "name": "Velike Lasce Municipality",
         "isoCode": "134",
         "countryCode": "SI",
         "latitude": "45.83365910",
@@ -29157,18 +29313,20 @@
         "longitude": "14.99643840"
     },
     {
-        "name": "Zavrč Municipality",
+        "name": "Zavrc Municipality",
         "isoCode": "143",
         "countryCode": "SI",
         "latitude": "46.35713000",
-        "longitude": "16.04777470"
+        "longitude": "16.04777470",
+        "nameOrig": "Zavrč Municipality"
     },
     {
-        "name": "Zreče Municipality",
+        "name": "Zrece Municipality",
         "isoCode": "144",
         "countryCode": "SI",
         "latitude": "46.41777860",
-        "longitude": "15.37094310"
+        "longitude": "15.37094310",
+        "nameOrig": "Zreče Municipality"
     },
     {
         "name": "Zelezniki Municipality",
@@ -29208,11 +29366,12 @@
         "longitude": "14.50634590"
     },
     {
-        "name": "Braslovče Municipality",
+        "name": "Braslovce Municipality",
         "isoCode": "151",
         "countryCode": "SI",
         "latitude": "46.28361920",
-        "longitude": "15.04183200"
+        "longitude": "15.04183200",
+        "nameOrig": "Braslovče Municipality"
     },
     {
         "name": "Cankova Municipality",
@@ -29271,11 +29430,12 @@
         "longitude": "15.82447220"
     },
     {
-        "name": "Hoče–Slivnica Municipality",
+        "name": "Hoce–Slivnica Municipality",
         "isoCode": "160",
         "countryCode": "SI",
         "latitude": "46.47785800",
-        "longitude": "15.64760050"
+        "longitude": "15.64760050",
+        "nameOrig": "Hoče–Slivnica Municipality"
     },
     {
         "name": "Hodos Municipality",
@@ -29344,11 +29504,12 @@
         "nameOrig": "Miklavž na Dravskem Polju Municipality"
     },
     {
-        "name": "Mirna Peč Municipality",
+        "name": "Mirna Pec Municipality",
         "isoCode": "170",
         "countryCode": "SI",
         "latitude": "45.84815740",
-        "longitude": "15.08794500"
+        "longitude": "15.08794500",
+        "nameOrig": "Mirna Peč Municipality"
     },
     {
         "name": "Oplotnica",
@@ -29416,11 +29577,12 @@
         "nameOrig": "Sodražica Municipality"
     },
     {
-        "name": "Solčava Municipality",
+        "name": "Solcava Municipality",
         "isoCode": "180",
         "countryCode": "SI",
         "latitude": "46.40235260",
-        "longitude": "14.68023040"
+        "longitude": "14.68023040",
+        "nameOrig": "Solčava Municipality"
     },
     {
         "name": "Sveta Ana Municipality",
@@ -29529,11 +29691,12 @@
         "nameOrig": "Šmartno pri Litiji Municipality"
     },
     {
-        "name": "Municipality of Apače",
+        "name": "Municipality of Apace",
         "isoCode": "195",
         "countryCode": "SI",
         "latitude": "46.69746790",
-        "longitude": "15.91025340"
+        "longitude": "15.91025340",
+        "nameOrig": "Municipality of Apače"
     },
     {
         "name": "Municipality of Cirkulane",
@@ -29564,21 +29727,23 @@
         "longitude": "15.15967360"
     },
     {
-        "name": "Poljčane Municipality",
+        "name": "Poljcane Municipality",
         "isoCode": "200",
         "countryCode": "SI",
         "latitude": "46.31398530",
-        "longitude": "15.57847910"
+        "longitude": "15.57847910",
+        "nameOrig": "Poljčane Municipality"
     },
     {
-        "name": "Renče–Vogrsko Municipality",
+        "name": "Rence–Vogrsko Municipality",
         "isoCode": "201",
         "countryCode": "SI",
         "latitude": "45.89546170",
-        "longitude": "13.67856730"
+        "longitude": "13.67856730",
+        "nameOrig": "Renče–Vogrsko Municipality"
     },
     {
-        "name": "Sredisče ob Dravi",
+        "name": "Sredisce ob Dravi",
         "isoCode": "202",
         "countryCode": "SI",
         "latitude": "46.39592820",
@@ -29631,11 +29796,12 @@
         "longitude": "14.36877670"
     },
     {
-        "name": "Rečica ob Savinji Municipality",
+        "name": "Recica ob Savinji Municipality",
         "isoCode": "209",
         "countryCode": "SI",
         "latitude": "46.32337900",
-        "longitude": "14.92236700"
+        "longitude": "14.92236700",
+        "nameOrig": "Rečica ob Savinji Municipality"
     },
     {
         "name": "Sveti Jurij v Slovenskih Goricah Municipality",
@@ -29715,7 +29881,7 @@
         "nameOrig": "Trnava Region"
     },
     {
-        "name": "Trenčin",
+        "name": "Trencin",
         "isoCode": "TC",
         "countryCode": "SK",
         "latitude": "48.80867580",
@@ -31319,7 +31485,7 @@
         "nameOrig": "Balkan Region"
     },
     {
-        "name": "Daşoguz",
+        "name": "Dasoguz",
         "isoCode": "D",
         "countryCode": "TM",
         "latitude": "41.83687370",
@@ -31554,11 +31720,12 @@
         "longitude": "35.39050460"
     },
     {
-        "name": "Adıyaman",
+        "name": "Adiyaman",
         "isoCode": "02",
         "countryCode": "TR",
         "latitude": "37.90782910",
-        "longitude": "38.48499230"
+        "longitude": "38.48499230",
+        "nameOrig": "Adıyaman"
     },
     {
         "name": "Afyonkarahisar",
@@ -31568,11 +31735,12 @@
         "longitude": "30.71200230"
     },
     {
-        "name": "Ağrı",
+        "name": "Agri",
         "isoCode": "04",
         "countryCode": "TR",
         "latitude": "39.62692180",
-        "longitude": "43.02159650"
+        "longitude": "43.02159650",
+        "nameOrig": "Ağrı"
     },
     {
         "name": "Amasya",
@@ -31603,18 +31771,20 @@
         "longitude": "41.76282230"
     },
     {
-        "name": "Aydın",
+        "name": "Aydin",
         "isoCode": "09",
         "countryCode": "TR",
         "latitude": "37.81170330",
-        "longitude": "28.48639630"
+        "longitude": "28.48639630",
+        "nameOrig": "Aydın"
     },
     {
-        "name": "Balıkesir",
+        "name": "Balikesir",
         "isoCode": "10",
         "countryCode": "TR",
         "latitude": "39.76167820",
-        "longitude": "28.11226790"
+        "longitude": "28.11226790",
+        "nameOrig": "Balıkesir"
     },
     {
         "name": "Bilecik",
@@ -31668,7 +31838,7 @@
         "nameOrig": "Çanakkale"
     },
     {
-        "name": "Cankırı",
+        "name": "Cankiri",
         "isoCode": "18",
         "countryCode": "TR",
         "latitude": "40.53690730",
@@ -31691,11 +31861,12 @@
         "longitude": "29.23207840"
     },
     {
-        "name": "Diyarbakır",
+        "name": "Diyarbakir",
         "isoCode": "21",
         "countryCode": "TR",
         "latitude": "38.10663720",
-        "longitude": "40.54268960"
+        "longitude": "40.54268960",
+        "nameOrig": "Diyarbakır"
     },
     {
         "name": "Edirne",
@@ -31705,11 +31876,12 @@
         "longitude": "26.51379640"
     },
     {
-        "name": "Elazığ",
+        "name": "Elazig",
         "isoCode": "23",
         "countryCode": "TR",
         "latitude": "38.49648040",
-        "longitude": "39.21990290"
+        "longitude": "39.21990290",
+        "nameOrig": "Elazığ"
     },
     {
         "name": "Erzincan",
@@ -31726,11 +31898,12 @@
         "longitude": "41.66945620"
     },
     {
-        "name": "Eskişehir",
+        "name": "Eskisehir",
         "isoCode": "26",
         "countryCode": "TR",
         "latitude": "39.63296570",
-        "longitude": "31.26263660"
+        "longitude": "31.26263660",
+        "nameOrig": "Eskişehir"
     },
     {
         "name": "Gaziantep",
@@ -31747,7 +31920,7 @@
         "longitude": "38.59355110"
     },
     {
-        "name": "Gumuşhane",
+        "name": "Gumushane",
         "isoCode": "29",
         "countryCode": "TR",
         "latitude": "40.28036730",
@@ -31791,11 +31964,12 @@
         "longitude": "28.76644080"
     },
     {
-        "name": "İzmir",
+        "name": "Izmir",
         "isoCode": "35",
         "countryCode": "TR",
         "latitude": "38.35916930",
-        "longitude": "27.26761160"
+        "longitude": "27.26761160",
+        "nameOrig": "İzmir"
     },
     {
         "name": "Kars",
@@ -31819,18 +31993,20 @@
         "longitude": "35.74068820"
     },
     {
-        "name": "Kırklareli",
+        "name": "Kirklareli",
         "isoCode": "39",
         "countryCode": "TR",
         "latitude": "41.72597950",
-        "longitude": "27.48383900"
+        "longitude": "27.48383900",
+        "nameOrig": "Kırklareli"
     },
     {
-        "name": "Kırşehir",
+        "name": "Kirsehir",
         "isoCode": "40",
         "countryCode": "TR",
         "latitude": "39.22689050",
-        "longitude": "33.97500180"
+        "longitude": "33.97500180",
+        "nameOrig": "Kırşehir"
     },
     {
         "name": "Kocaeli",
@@ -31869,11 +32045,12 @@
         "longitude": "28.11226790"
     },
     {
-        "name": "Kahramanmaraş",
+        "name": "Kahramanmaras",
         "isoCode": "46",
         "countryCode": "TR",
         "latitude": "37.75030360",
-        "longitude": "36.95410700"
+        "longitude": "36.95410700",
+        "nameOrig": "Kahramanmaraş"
     },
     {
         "name": "Mardin",
@@ -31883,32 +32060,36 @@
         "longitude": "40.61964870"
     },
     {
-        "name": "Muğla",
+        "name": "Mugla",
         "isoCode": "48",
         "countryCode": "TR",
         "latitude": "37.18358190",
-        "longitude": "28.48639630"
+        "longitude": "28.48639630",
+        "nameOrig": "Muğla"
     },
     {
-        "name": "Muş",
+        "name": "Mus",
         "isoCode": "49",
         "countryCode": "TR",
         "latitude": "38.94618880",
-        "longitude": "41.75389310"
+        "longitude": "41.75389310",
+        "nameOrig": "Muş"
     },
     {
-        "name": "Nevşehir",
+        "name": "Nevsehir",
         "isoCode": "50",
         "countryCode": "TR",
         "latitude": "38.69393990",
-        "longitude": "34.68565090"
+        "longitude": "34.68565090",
+        "nameOrig": "Nevşehir"
     },
     {
-        "name": "Niğde",
+        "name": "Nigde",
         "isoCode": "51",
         "countryCode": "TR",
         "latitude": "38.09930860",
-        "longitude": "34.68565090"
+        "longitude": "34.68565090",
+        "nameOrig": "Niğde"
     },
     {
         "name": "Ordu",
@@ -31960,11 +32141,12 @@
         "longitude": "37.12944970"
     },
     {
-        "name": "Tekirdağ",
+        "name": "Tekirdag",
         "isoCode": "59",
         "countryCode": "TR",
         "latitude": "41.11212270",
-        "longitude": "27.26761160"
+        "longitude": "27.26761160",
+        "nameOrig": "Tekirdağ"
     },
     {
         "name": "Tokat",
@@ -31988,18 +32170,20 @@
         "longitude": "39.43877780"
     },
     {
-        "name": "Şanlıurfa",
+        "name": "Sanliurfa",
         "isoCode": "63",
         "countryCode": "TR",
         "latitude": "37.35691020",
-        "longitude": "39.15436770"
+        "longitude": "39.15436770",
+        "nameOrig": "Şanlıurfa"
     },
     {
-        "name": "Uşak",
+        "name": "Usak",
         "isoCode": "64",
         "countryCode": "TR",
         "latitude": "38.54313190",
-        "longitude": "29.23207840"
+        "longitude": "29.23207840",
+        "nameOrig": "Uşak"
     },
     {
         "name": "Van",
@@ -32044,11 +32228,12 @@
         "longitude": "33.61757700"
     },
     {
-        "name": "Kırıkkale",
+        "name": "Kirikkale",
         "isoCode": "71",
         "countryCode": "TR",
         "latitude": "39.88768780",
-        "longitude": "33.75552480"
+        "longitude": "33.75552480",
+        "nameOrig": "Kırıkkale"
     },
     {
         "name": "Batman",
@@ -32058,18 +32243,20 @@
         "longitude": "41.36057390"
     },
     {
-        "name": "Şırnak",
+        "name": "Sirnak",
         "isoCode": "73",
         "countryCode": "TR",
         "latitude": "37.41874810",
-        "longitude": "42.49183380"
+        "longitude": "42.49183380",
+        "nameOrig": "Şırnak"
     },
     {
-        "name": "Bartın",
+        "name": "Bartin",
         "isoCode": "74",
         "countryCode": "TR",
         "latitude": "41.58105090",
-        "longitude": "32.46097940"
+        "longitude": "32.46097940",
+        "nameOrig": "Bartın"
     },
     {
         "name": "Ardahan",
@@ -32079,11 +32266,12 @@
         "longitude": "42.78316740"
     },
     {
-        "name": "Iğdır",
+        "name": "Igdir",
         "isoCode": "76",
         "countryCode": "TR",
         "latitude": "39.88798410",
-        "longitude": "44.00483650"
+        "longitude": "44.00483650",
+        "nameOrig": "Iğdır"
     },
     {
         "name": "Yalova",
@@ -34688,11 +34876,12 @@
         "nameOrig": "Hà Giang"
     },
     {
-        "name": "Cao Bằng",
+        "name": "Cao Bang",
         "isoCode": "04",
         "countryCode": "VN",
         "latitude": "22.63568900",
-        "longitude": "106.25221430"
+        "longitude": "106.25221430",
+        "nameOrig": "Cao Bằng"
     },
     {
         "name": "Sơn La",
@@ -34764,14 +34953,15 @@
         "nameOrig": "Thanh Hóa"
     },
     {
-        "name": "Nghệ An",
+        "name": "Nghe An",
         "isoCode": "22",
         "countryCode": "VN",
         "latitude": "19.23424890",
-        "longitude": "104.92003650"
+        "longitude": "104.92003650",
+        "nameOrig": "Nghệ An"
     },
     {
-        "name": "Ha Tĩnh",
+        "name": "Ha Tinh",
         "isoCode": "23",
         "countryCode": "VN",
         "latitude": "18.35595370",
@@ -34794,7 +34984,7 @@
         "longitude": "107.18546790"
     },
     {
-        "name": "Thừa Thien-Huế",
+        "name": "Thua Thien-Hue",
         "isoCode": "26",
         "countryCode": "VN",
         "latitude": "16.46739700",
@@ -34847,7 +35037,7 @@
         "nameOrig": "Phú Yên"
     },
     {
-        "name": "Dắk Lắk",
+        "name": "Dak Lak",
         "isoCode": "33",
         "countryCode": "VN",
         "latitude": "12.71001160",
@@ -34863,7 +35053,7 @@
         "nameOrig": "Khánh Hòa"
     },
     {
-        "name": "Lam Dồng",
+        "name": "Lam Dong",
         "isoCode": "35",
         "countryCode": "VN",
         "latitude": "11.57527910",
@@ -34871,11 +35061,12 @@
         "nameOrig": "Lâm Đồng"
     },
     {
-        "name": "Ninh Thuận",
+        "name": "Ninh Thuan",
         "isoCode": "36",
         "countryCode": "VN",
         "latitude": "11.67387670",
-        "longitude": "108.86295720"
+        "longitude": "108.86295720",
+        "nameOrig": "Ninh Thuận"
     },
     {
         "name": "Tay Ninh",
@@ -34886,7 +35077,7 @@
         "nameOrig": "Tây Ninh"
     },
     {
-        "name": "Dồng Nai",
+        "name": "Dong Nai",
         "isoCode": "39",
         "countryCode": "VN",
         "latitude": "11.06863050",
@@ -34894,7 +35085,7 @@
         "nameOrig": "Đồng Nai"
     },
     {
-        "name": "Binh Thuận",
+        "name": "Binh Thuan",
         "isoCode": "40",
         "countryCode": "VN",
         "latitude": "11.09037030",
@@ -34909,7 +35100,7 @@
         "longitude": "106.64976230"
     },
     {
-        "name": "Ba Rịa-Vũng Tau",
+        "name": "Ba Rịa-Vung Tau",
         "isoCode": "43",
         "countryCode": "VN",
         "latitude": "10.54173970",
@@ -34924,7 +35115,7 @@
         "longitude": "105.12589550"
     },
     {
-        "name": "Dồng Thap",
+        "name": "Dong Thap",
         "isoCode": "45",
         "countryCode": "VN",
         "latitude": "10.49379890",
@@ -34932,11 +35123,12 @@
         "nameOrig": "Đồng Tháp"
     },
     {
-        "name": "Tiền Giang",
+        "name": "Tien Giang",
         "isoCode": "46",
         "countryCode": "VN",
         "latitude": "10.44933240",
-        "longitude": "106.34205040"
+        "longitude": "106.34205040",
+        "nameOrig": "Tiền Giang"
     },
     {
         "name": "Kien Giang",
@@ -34947,18 +35139,20 @@
         "nameOrig": "Kiên Giang"
     },
     {
-        "name": "Vĩnh Long",
+        "name": "Vinh Long",
         "isoCode": "49",
         "countryCode": "VN",
         "latitude": "10.23957400",
-        "longitude": "105.95719280"
+        "longitude": "105.95719280",
+        "nameOrig": "Vĩnh Long"
     },
     {
-        "name": "Bến Tre",
+        "name": "Ben Tre",
         "isoCode": "50",
         "countryCode": "VN",
         "latitude": "10.24335560",
-        "longitude": "106.37555100"
+        "longitude": "106.37555100",
+        "nameOrig": "Bến Tre"
     },
     {
         "name": "Tra Vinh",
@@ -34969,7 +35163,7 @@
         "nameOrig": "Trà Vinh"
     },
     {
-        "name": "Soc Trăng",
+        "name": "Soc Trang",
         "isoCode": "52",
         "countryCode": "VN",
         "latitude": "9.60252100",
@@ -34977,18 +35171,20 @@
         "nameOrig": "Sóc Trăng"
     },
     {
-        "name": "Bắc Kạn",
+        "name": "Bac Kạn",
         "isoCode": "53",
         "countryCode": "VN",
         "latitude": "22.30329230",
-        "longitude": "105.87600400"
+        "longitude": "105.87600400",
+        "nameOrig": "Bắc Kạn"
     },
     {
-        "name": "Bắc Giang",
+        "name": "Bac Giang",
         "isoCode": "54",
         "countryCode": "VN",
         "latitude": "21.28199210",
-        "longitude": "106.19747690"
+        "longitude": "106.19747690",
+        "nameOrig": "Bắc Giang"
     },
     {
         "name": "Bạc Lieu",
@@ -34999,11 +35195,12 @@
         "nameOrig": "Bạc Liêu"
     },
     {
-        "name": "Bắc Ninh",
+        "name": "Bac Ninh",
         "isoCode": "56",
         "countryCode": "VN",
         "latitude": "21.12144400",
-        "longitude": "106.11105010"
+        "longitude": "106.11105010",
+        "nameOrig": "Bắc Ninh"
     },
     {
         "name": "Binh Dương",
@@ -35014,7 +35211,7 @@
         "nameOrig": "Bình Dương"
     },
     {
-        "name": "Binh Phước",
+        "name": "Binh Phưoc",
         "isoCode": "58",
         "countryCode": "VN",
         "latitude": "11.75118940",
@@ -35077,7 +35274,7 @@
         "nameOrig": "Thái Nguyên"
     },
     {
-        "name": "Vĩnh Phuc",
+        "name": "Vinh Phuc",
         "isoCode": "70",
         "countryCode": "VN",
         "latitude": "21.36088050",
@@ -35085,7 +35282,7 @@
         "nameOrig": "Vĩnh Phúc"
     },
     {
-        "name": "Diện Bien",
+        "name": "Dien Bien",
         "isoCode": "71",
         "countryCode": "VN",
         "latitude": "21.80423090",
@@ -35093,7 +35290,7 @@
         "nameOrig": "Điện Biên"
     },
     {
-        "name": "Dắk Nong",
+        "name": "Dak Nong",
         "isoCode": "72",
         "countryCode": "VN",
         "latitude": "12.26464760",
@@ -35101,18 +35298,20 @@
         "nameOrig": "Đắk Nông"
     },
     {
-        "name": "Hậu Giang",
+        "name": "Hau Giang",
         "isoCode": "73",
         "countryCode": "VN",
         "latitude": "9.75789800",
-        "longitude": "105.64125270"
+        "longitude": "105.64125270",
+        "nameOrig": "Hậu Giang"
     },
     {
-        "name": "Cần Thơ",
+        "name": "Can Thơ",
         "isoCode": "CT",
         "countryCode": "VN",
         "latitude": "10.03418510",
-        "longitude": "105.72255070"
+        "longitude": "105.72255070",
+        "nameOrig": "Cần Thơ"
     },
     {
         "name": "Da Nẵng",
@@ -35123,7 +35322,7 @@
         "nameOrig": "Đà Nẵng"
     },
     {
-        "name": "Ha Nội",
+        "name": "Ha Noi",
         "isoCode": "HN",
         "countryCode": "VN",
         "latitude": "21.02776440",
@@ -35139,7 +35338,7 @@
         "nameOrig": "Hải Phòng"
     },
     {
-        "name": "Hồ Chi Minh",
+        "name": "Ho Chi Minh",
         "isoCode": "SG",
         "countryCode": "VN",
         "latitude": "10.82309890",
@@ -35288,18 +35487,20 @@
         "longitude": "20.86599950"
     },
     {
-        "name": "Peć District",
+        "name": "Pec District",
         "isoCode": "XPE",
         "countryCode": "XK",
         "latitude": "42.65921550",
-        "longitude": "20.28876240"
+        "longitude": "20.28876240",
+        "nameOrig": "Peć District"
     },
     {
-        "name": "Pristina (Priştine)",
+        "name": "Pristina (Pristine)",
         "isoCode": "XPI",
         "countryCode": "XK",
         "latitude": "42.66291380",
-        "longitude": "21.16550280"
+        "longitude": "21.16550280",
+        "nameOrig": "Pristina (Priştine)"
     },
     {
         "name": "Prizren District",
