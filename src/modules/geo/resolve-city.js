@@ -34,7 +34,7 @@ module.exports = ({ self, arr }) => csc => {
         if (!cityKey) return null;
 
         const all = self.finder.findCities(cityKey);
-        const byCountry = countryKey ? all.filter(c => c.countryCode.toUpperCase() === countryKey.toUpperCase()) : all;
+        const byCountry = countryKey ? all.filter(c => c.countryCode === countryKey) : all;
         const byState = stateKey
             ? byCountry.filter(c => self.finder.findStates(stateKey).some(s => {
                 const stateCodeMatch = c.stateCode === s.isoCode;

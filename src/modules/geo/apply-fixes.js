@@ -44,6 +44,18 @@ module.exports = ({ str }) => ({ cities = [], states = [], countries = [] }) => 
         }
     }
 
+    // Countries
+    {
+
+        // Singapore does not have states.
+        const removeStatesFrom = ['Singapore'];
+        for (const country of countries) {
+            if (!removeStatesFrom.includes(country)) continue;
+            if (country.state) delete country.state;
+        }
+
+    }
+
     return { cities, states, countries };
 
 };
