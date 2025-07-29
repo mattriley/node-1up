@@ -10,7 +10,6 @@ module.exports = ({ test, assert }) => $ => {
             latitude: 1.24969,
             longitude: 103.83119,
             name: 'Sentosa',
-            stateCode: '',
             timezone: 'Asia/Singapore'
         };
         const actual = geo.finder.findCity('Sentosa', null, 'SG');

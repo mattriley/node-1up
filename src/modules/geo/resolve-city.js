@@ -16,6 +16,10 @@ module.exports = ({ self, arr }) => csc => {
 
     let { city: cityKey, state: stateKey, country: countryKey } = original;
 
+
+    const countryData = countryKey ? self.finder.findCountry(countryKey) : null;
+
+
     const result = { ...csc };
     const errors = {};
     const source = {};
@@ -34,11 +38,14 @@ module.exports = ({ self, arr }) => csc => {
         if (!cityKey) return null;
 
         const all = self.finder.findCities(cityKey);
-        const byCountry = countryKey ? all.filter(c => c.countryCode === countryKey) : all;
+        const byCountry = countryKey ? all.filter(c => {
+            const country = self.finder.findCountry(countryKey);
+            return c.countryCode === country.isoCode
+        }) : all;
         const byState = stateKey
-            ? byCountry.filter(c => self.finder.findStates(stateKey).some(s => {
-                const stateCodeMatch = c.stateCode === s.isoCode;
-                const stateNameMatch = c.state === s.name;
+            ? byCountry.filter(c => self.finder.findStates(stateKey).some(state => {
+                const stateCodeMatch = c.stateCode === state.isoCode;
+                const stateNameMatch = c.state === state.name;
                 return stateCodeMatch || stateNameMatch;
             }))
             : byCountry;
@@ -105,7 +112,6 @@ module.exports = ({ self, arr }) => csc => {
         }
 
         const city = findCityMatch();
-        console.warn({ cityKey })
 
         if (city) {
 

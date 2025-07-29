@@ -38,10 +38,16 @@ module.exports = ({ config }) => {
     const norm = s => s?.trim().toUpperCase();
 
     const findState = (stateKey, countryKey) => {
+        const country = findCountry(countryKey);
+
         const countryStates = lookup.statesByCountryThenState[norm(countryKey)];
         if (!countryStates) throw new Error(`No states found for country: ${countryKey}`);
 
-        const state = countryStates[norm(stateKey)];
+        // const state = countryStates[norm(stateKey)];
+
+        const states = lookup.states[stateKey.toUpperCase()] ?? [];
+        const state = states.find(state => state.countryCode === country.isoCode);
+
         if (!state) throw new Error(`State not found: ${stateKey}; Country: ${countryKey}`);
 
         return state;
@@ -60,7 +66,7 @@ module.exports = ({ config }) => {
     };
 
     const findStatesOfCountry = countryKey => {
-        return lookup.statesByCountry[countryKey.toUpperCase()];
+        return lookup.statesByCountry[countryKey.toUpperCase()]
     }
 
     return { findCity, findCities, findState, findStates, findCountries, findCountry, findStatesOfCountry, findCitiesOfState };

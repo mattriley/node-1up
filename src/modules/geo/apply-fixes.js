@@ -19,6 +19,12 @@ module.exports = ({ str }) => ({ cities = [], states = [], countries = [] }) => 
             if (city.state === 'Taiwan') delete city.state;
         }
 
+        const countriesToRemoveStatesFrom = ['SG'];
+        for (const city of cities) {
+            if (!countriesToRemoveStatesFrom.includes(city.countryCode)) continue;
+            delete city.stateCode;
+        }
+
         // Apply string replacements.
         for (const city of cities) {
             if (!city.state) continue;
@@ -35,6 +41,13 @@ module.exports = ({ str }) => ({ cities = [], states = [], countries = [] }) => 
         const malaccaState = states.find(state => state.name === 'Malacca' && state.countryCode === 'MY');
         if (malaccaState) Object.assign(malaccaState, { name: 'Melaka', nameOrig: malaccaState.name });
 
+
+        // const countriesToRemoveStatesFrom = ['SG'];
+        // for (const state of states) {
+        //     if (!countriesToRemoveStatesFrom.includes(state.countryCode)) continue;
+        //     state.countryCode = 'INVALID'; // TODO: Remove from states list.
+        // }
+
         // Apply string replacements.
         for (const state of states) {
             let name = str.applyReplacements(state.name, replacements);
@@ -48,11 +61,11 @@ module.exports = ({ str }) => ({ cities = [], states = [], countries = [] }) => 
     {
 
         // Singapore does not have states.
-        const removeStatesFrom = ['Singapore'];
-        for (const country of countries) {
-            if (!removeStatesFrom.includes(country)) continue;
-            if (country.state) delete country.state;
-        }
+        // const removeStatesFrom = ['Singapore'];
+        // for (const country of countries) {
+        //     if (!removeStatesFrom.includes(country)) continue;
+        //     if (country.state) delete country.state;
+        // }
 
     }
 
