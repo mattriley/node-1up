@@ -27,15 +27,15 @@ module.exports = ({ self, config }) => ({ latitude, longitude }) => {
     const cityData = closestCity;
 
     let stateData;
-    try {
-        if (cityData.stateCode) {
-            stateData = self.finder.findState(cityData.stateCode, cityData.countryCode);
-        }
-    } catch (err) {
-        if (cityData.state) {
-            stateData = self.finder.findState(cityData.state, cityData.countryCode);
-        }
+
+    if (cityData.stateCode) {
+        stateData = self.finder.findState(cityData.stateCode, cityData.countryCode);
     }
+
+    if (cityData.state) {
+        stateData = self.finder.findState(cityData.state, cityData.countryCode);
+    }
+
 
     const countryData = self.finder.findCountry(cityData.countryCode);
 
