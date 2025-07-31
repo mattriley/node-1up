@@ -31,4 +31,13 @@ module.exports = {
         'Nothing'
     ],
 
+    // iPhones up to ~iOS 10 (e.g., iPhone 5, 6, SE 1st gen) are known to store GPS time in local time
+    appleDevicesWithBrokenGpsUtc: [
+        'iphone 4', 'iphone 4s', 'iphone 5', 'iphone 5s', 'iphone 5c', 'iphone se'
+    ]
+
+    // appleDevicesWithBrokenGpsUtc: [
+    //     'iphone 4', 'iphone 4s', 'iphone 5', 'iphone 5s', 'iphone 5c', 'iphone se'
+    // ]
+
 };
