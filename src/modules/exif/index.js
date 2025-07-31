@@ -4,6 +4,7 @@ module.exports = {
     exifDateToIso: require('./exif-date-to-iso'),
     gpsDateToIso: require('./gps-date-to-iso'),
     isGpsTimeActuallyLocal: require('./is-gps-time-actually-local'),
+    isGpsTimeBroken: require('./is-gps-time-broken'),
     isProbablySmartDevice: require('./is-probably-smart-device'),
     isVideo: require('./is-video'),
     validate: require('./validate')
