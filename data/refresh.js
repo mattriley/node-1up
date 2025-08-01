@@ -26,6 +26,7 @@ const refresh = async () => {
     await geo.geonames.countryInfo.download({ sourceDir, outputDir });
     let countries = await geo.geonames.countryInfo.toJson({ sourceDir });
     countries = geo.fixer.fixCountries(countries);
+    countries = geo.assignTimezonesToCountries({ countries });
 
     fs.writeFileSync(outputDir + '/cities.json', JSON.stringify(cities, null, 4));
     fs.writeFileSync(outputDir + '/states.json', JSON.stringify(states, null, 4));

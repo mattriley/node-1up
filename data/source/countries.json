@@ -1,1010 +1,1997 @@
 [
     {
         "name": "Andorra",
-        "isoCode": "AD"
+        "isoCode": "AD",
+        "timezones": [
+            "Europe/Andorra"
+        ]
     },
     {
         "name": "United Arab Emirates",
-        "isoCode": "AE"
+        "isoCode": "AE",
+        "timezones": [
+            "Asia/Dubai"
+        ]
     },
     {
         "name": "Afghanistan",
-        "isoCode": "AF"
+        "isoCode": "AF",
+        "timezones": [
+            "Asia/Kabul"
+        ]
     },
     {
         "name": "Antigua and Barbuda",
-        "isoCode": "AG"
+        "isoCode": "AG",
+        "timezones": []
     },
     {
         "name": "Anguilla",
-        "isoCode": "AI"
+        "isoCode": "AI",
+        "timezones": [
+            "America/Port_of_Spain"
+        ]
     },
     {
         "name": "Albania",
-        "isoCode": "AL"
+        "isoCode": "AL",
+        "timezones": [
+            "Europe/Tirane"
+        ]
     },
     {
         "name": "Armenia",
-        "isoCode": "AM"
+        "isoCode": "AM",
+        "timezones": [
+            "Asia/Yerevan"
+        ]
     },
     {
         "name": "Angola",
-        "isoCode": "AO"
+        "isoCode": "AO",
+        "timezones": [
+            "Africa/Lagos"
+        ]
     },
     {
         "name": "Antarctica",
-        "isoCode": "AQ"
+        "isoCode": "AQ",
+        "timezones": [
+            "Antarctica/Rothera",
+            "Antarctica/Palmer",
+            "Antarctica/Mawson",
+            "Antarctica/Davis",
+            "Antarctica/Casey",
+            "Antarctica/Vostok",
+            "Antarctica/DumontDUrville",
+            "Antarctica/Syowa",
+            "Antarctica/Troll",
+            "Pacific/Auckland"
+        ]
     },
     {
         "name": "Argentina",
-        "isoCode": "AR"
+        "isoCode": "AR",
+        "timezones": [
+            "America/Argentina/Buenos_Aires",
+            "America/Argentina/Cordoba",
+            "America/Argentina/Salta",
+            "America/Argentina/Jujuy",
+            "America/Argentina/Tucuman",
+            "America/Argentina/Catamarca",
+            "America/Argentina/La_Rioja",
+            "America/Argentina/San_Juan",
+            "America/Argentina/Mendoza",
+            "America/Argentina/San_Luis",
+            "America/Argentina/Rio_Gallegos",
+            "America/Argentina/Ushuaia"
+        ]
     },
     {
         "name": "American Samoa",
-        "isoCode": "AS"
+        "isoCode": "AS",
+        "timezones": []
     },
     {
         "name": "Austria",
-        "isoCode": "AT"
+        "isoCode": "AT",
+        "timezones": [
+            "Europe/Vienna"
+        ]
     },
     {
         "name": "Australia",
-        "isoCode": "AU"
+        "isoCode": "AU",
+        "timezones": [
+            "Australia/Lord_Howe",
+            "Antarctica/Macquarie",
+            "Australia/Hobart",
+            "Australia/Currie",
+            "Australia/Melbourne",
+            "Australia/Sydney",
+            "Australia/Broken_Hill",
+            "Australia/Brisbane",
+            "Australia/Lindeman",
+            "Australia/Adelaide",
+            "Australia/Darwin",
+            "Australia/Perth",
+            "Australia/Eucla"
+        ]
     },
     {
         "name": "Aruba",
-        "isoCode": "AW"
+        "isoCode": "AW",
+        "timezones": [
+            "America/Curacao"
+        ]
     },
     {
         "name": "Aland Islands",
-        "isoCode": "AX"
+        "isoCode": "AX",
+        "timezones": []
     },
     {
         "name": "Azerbaijan",
-        "isoCode": "AZ"
+        "isoCode": "AZ",
+        "timezones": [
+            "Asia/Baku"
+        ]
     },
     {
         "name": "Bosnia and Herzegovina",
-        "isoCode": "BA"
+        "isoCode": "BA",
+        "timezones": []
     },
     {
         "name": "Barbados",
-        "isoCode": "BB"
+        "isoCode": "BB",
+        "timezones": [
+            "America/Barbados"
+        ]
     },
     {
         "name": "Bangladesh",
-        "isoCode": "BD"
+        "isoCode": "BD",
+        "timezones": [
+            "Asia/Dhaka"
+        ]
     },
     {
         "name": "Belgium",
-        "isoCode": "BE"
+        "isoCode": "BE",
+        "timezones": [
+            "Europe/Brussels"
+        ]
     },
     {
         "name": "Burkina Faso",
-        "isoCode": "BF"
+        "isoCode": "BF",
+        "timezones": [
+            "Africa/Abidjan"
+        ]
     },
     {
         "name": "Bulgaria",
-        "isoCode": "BG"
+        "isoCode": "BG",
+        "timezones": [
+            "Europe/Sofia"
+        ]
     },
     {
         "name": "Bahrain",
-        "isoCode": "BH"
+        "isoCode": "BH",
+        "timezones": [
+            "Asia/Qatar"
+        ]
     },
     {
         "name": "Burundi",
-        "isoCode": "BI"
+        "isoCode": "BI",
+        "timezones": [
+            "Africa/Maputo"
+        ]
     },
     {
         "name": "Benin",
-        "isoCode": "BJ"
+        "isoCode": "BJ",
+        "timezones": [
+            "Africa/Lagos"
+        ]
     },
     {
         "name": "Saint Barthelemy",
-        "isoCode": "BL"
+        "isoCode": "BL",
+        "timezones": []
     },
     {
         "name": "Bermuda",
-        "isoCode": "BM"
+        "isoCode": "BM",
+        "timezones": [
+            "Atlantic/Bermuda"
+        ]
     },
     {
         "name": "Brunei",
-        "isoCode": "BN"
+        "isoCode": "BN",
+        "timezones": [
+            "Asia/Brunei"
+        ]
     },
     {
         "name": "Bolivia",
-        "isoCode": "BO"
+        "isoCode": "BO",
+        "timezones": [
+            "America/La_Paz"
+        ]
     },
     {
         "name": "Bonaire, Saint Eustatius and Saba ",
-        "isoCode": "BQ"
+        "isoCode": "BQ",
+        "timezones": []
     },
     {
         "name": "Brazil",
-        "isoCode": "BR"
+        "isoCode": "BR",
+        "timezones": [
+            "America/Noronha",
+            "America/Belem",
+            "America/Fortaleza",
+            "America/Recife",
+            "America/Araguaina",
+            "America/Maceio",
+            "America/Bahia",
+            "America/Sao_Paulo",
+            "America/Campo_Grande",
+            "America/Cuiaba",
+            "America/Santarem",
+            "America/Porto_Velho",
+            "America/Boa_Vista",
+            "America/Manaus",
+            "America/Eirunepe",
+            "America/Rio_Branco"
+        ]
     },
     {
         "name": "Bahamas",
-        "isoCode": "BS"
+        "isoCode": "BS",
+        "timezones": [
+            "America/Nassau"
+        ]
     },
     {
         "name": "Bhutan",
-        "isoCode": "BT"
+        "isoCode": "BT",
+        "timezones": [
+            "Asia/Thimphu"
+        ]
     },
     {
         "name": "Bouvet Island",
-        "isoCode": "BV"
+        "isoCode": "BV",
+        "timezones": []
     },
     {
         "name": "Botswana",
-        "isoCode": "BW"
+        "isoCode": "BW",
+        "timezones": [
+            "Africa/Maputo"
+        ]
     },
     {
         "name": "Belarus",
-        "isoCode": "BY"
+        "isoCode": "BY",
+        "timezones": [
+            "Europe/Minsk"
+        ]
     },
     {
         "name": "Belize",
-        "isoCode": "BZ"
+        "isoCode": "BZ",
+        "timezones": [
+            "America/Belize"
+        ]
     },
     {
         "name": "Canada",
-        "isoCode": "CA"
+        "isoCode": "CA",
+        "timezones": [
+            "America/St_Johns",
+            "America/Halifax",
+            "America/Glace_Bay",
+            "America/Moncton",
+            "America/Goose_Bay",
+            "America/Blanc-Sablon",
+            "America/Toronto",
+            "America/Nipigon",
+            "America/Thunder_Bay",
+            "America/Iqaluit",
+            "America/Pangnirtung",
+            "America/Resolute",
+            "America/Atikokan",
+            "America/Rankin_Inlet",
+            "America/Winnipeg",
+            "America/Rainy_River",
+            "America/Regina",
+            "America/Swift_Current",
+            "America/Edmonton",
+            "America/Cambridge_Bay",
+            "America/Yellowknife",
+            "America/Inuvik",
+            "America/Creston",
+            "America/Dawson_Creek",
+            "America/Fort_Nelson",
+            "America/Vancouver",
+            "America/Whitehorse",
+            "America/Dawson"
+        ]
     },
     {
         "name": "Cocos Islands",
-        "isoCode": "CC"
+        "isoCode": "CC",
+        "timezones": []
     },
     {
         "name": "Democratic Republic of the Congo",
-        "isoCode": "CD"
+        "isoCode": "CD",
+        "timezones": []
     },
     {
         "name": "Central African Republic",
-        "isoCode": "CF"
+        "isoCode": "CF",
+        "timezones": []
     },
     {
         "name": "Republic of the Congo",
-        "isoCode": "CG"
+        "isoCode": "CG",
+        "timezones": []
     },
     {
         "name": "Switzerland",
-        "isoCode": "CH"
+        "isoCode": "CH",
+        "timezones": [
+            "Europe/Zurich"
+        ]
     },
     {
         "name": "Ivory Coast",
-        "isoCode": "CI"
+        "isoCode": "CI",
+        "timezones": []
     },
     {
         "name": "Cook Islands",
-        "isoCode": "CK"
+        "isoCode": "CK",
+        "timezones": [
+            "Pacific/Rarotonga"
+        ]
     },
     {
         "name": "Chile",
-        "isoCode": "CL"
+        "isoCode": "CL",
+        "timezones": [
+            "America/Santiago",
+            "Pacific/Easter"
+        ]
     },
     {
         "name": "Cameroon",
-        "isoCode": "CM"
+        "isoCode": "CM",
+        "timezones": [
+            "Africa/Lagos"
+        ]
     },
     {
         "name": "China",
-        "isoCode": "CN"
+        "isoCode": "CN",
+        "timezones": [
+            "Asia/Shanghai",
+            "Asia/Urumqi"
+        ]
     },
     {
         "name": "Colombia",
-        "isoCode": "CO"
+        "isoCode": "CO",
+        "timezones": [
+            "America/Bogota"
+        ]
     },
     {
         "name": "Costa Rica",
-        "isoCode": "CR"
+        "isoCode": "CR",
+        "timezones": [
+            "America/Costa_Rica"
+        ]
     },
     {
         "name": "Cuba",
-        "isoCode": "CU"
+        "isoCode": "CU",
+        "timezones": [
+            "America/Havana"
+        ]
     },
     {
         "name": "Cabo Verde",
-        "isoCode": "CV"
+        "isoCode": "CV",
+        "timezones": []
     },
     {
         "name": "Curacao",
-        "isoCode": "CW"
+        "isoCode": "CW",
+        "timezones": [
+            "America/Curacao"
+        ]
     },
     {
         "name": "Christmas Island",
-        "isoCode": "CX"
+        "isoCode": "CX",
+        "timezones": [
+            "Indian/Christmas"
+        ]
     },
     {
         "name": "Cyprus",
-        "isoCode": "CY"
+        "isoCode": "CY",
+        "timezones": [
+            "Asia/Nicosia"
+        ]
     },
     {
         "name": "Czechia",
-        "isoCode": "CZ"
+        "isoCode": "CZ",
+        "timezones": []
     },
     {
         "name": "Germany",
-        "isoCode": "DE"
+        "isoCode": "DE",
+        "timezones": [
+            "Europe/Zurich",
+            "Europe/Berlin"
+        ]
     },
     {
         "name": "Djibouti",
-        "isoCode": "DJ"
+        "isoCode": "DJ",
+        "timezones": [
+            "Africa/Nairobi"
+        ]
     },
     {
         "name": "Denmark",
-        "isoCode": "DK"
+        "isoCode": "DK",
+        "timezones": [
+            "Europe/Copenhagen"
+        ]
     },
     {
         "name": "Dominica",
-        "isoCode": "DM"
+        "isoCode": "DM",
+        "timezones": [
+            "America/Port_of_Spain"
+        ]
     },
     {
         "name": "Dominican Republic",
-        "isoCode": "DO"
+        "isoCode": "DO",
+        "timezones": [
+            "America/Santo_Domingo"
+        ]
     },
     {
         "name": "Algeria",
-        "isoCode": "DZ"
+        "isoCode": "DZ",
+        "timezones": [
+            "Africa/Algiers"
+        ]
     },
     {
         "name": "Ecuador",
-        "isoCode": "EC"
+        "isoCode": "EC",
+        "timezones": [
+            "America/Guayaquil",
+            "Pacific/Galapagos"
+        ]
     },
     {
         "name": "Estonia",
-        "isoCode": "EE"
+        "isoCode": "EE",
+        "timezones": [
+            "Europe/Tallinn"
+        ]
     },
     {
         "name": "Egypt",
-        "isoCode": "EG"
+        "isoCode": "EG",
+        "timezones": [
+            "Africa/Cairo"
+        ]
     },
     {
         "name": "Western Sahara",
-        "isoCode": "EH"
+        "isoCode": "EH",
+        "timezones": [
+            "Africa/El_Aaiun"
+        ]
     },
     {
         "name": "Eritrea",
-        "isoCode": "ER"
+        "isoCode": "ER",
+        "timezones": [
+            "Africa/Nairobi"
+        ]
     },
     {
         "name": "Spain",
-        "isoCode": "ES"
+        "isoCode": "ES",
+        "timezones": [
+            "Europe/Madrid",
+            "Africa/Ceuta",
+            "Atlantic/Canary"
+        ]
     },
     {
         "name": "Ethiopia",
-        "isoCode": "ET"
+        "isoCode": "ET",
+        "timezones": [
+            "Africa/Nairobi"
+        ]
     },
     {
         "name": "Finland",
-        "isoCode": "FI"
+        "isoCode": "FI",
+        "timezones": [
+            "Europe/Helsinki"
+        ]
     },
     {
         "name": "Fiji",
-        "isoCode": "FJ"
+        "isoCode": "FJ",
+        "timezones": [
+            "Pacific/Fiji"
+        ]
     },
     {
         "name": "Falkland Islands",
-        "isoCode": "FK"
+        "isoCode": "FK",
+        "timezones": [
+            "Atlantic/Stanley"
+        ]
     },
     {
         "name": "Micronesia",
-        "isoCode": "FM"
+        "isoCode": "FM",
+        "timezones": [
+            "Pacific/Chuuk",
+            "Pacific/Pohnpei",
+            "Pacific/Kosrae"
+        ]
     },
     {
         "name": "Faroe Islands",
-        "isoCode": "FO"
+        "isoCode": "FO",
+        "timezones": [
+            "Atlantic/Faroe"
+        ]
     },
     {
         "name": "France",
-        "isoCode": "FR"
+        "isoCode": "FR",
+        "timezones": [
+            "Europe/Paris"
+        ]
     },
     {
         "name": "Gabon",
-        "isoCode": "GA"
+        "isoCode": "GA",
+        "timezones": [
+            "Africa/Lagos"
+        ]
     },
     {
         "name": "United Kingdom",
-        "isoCode": "GB"
+        "isoCode": "GB",
+        "timezones": [
+            "Europe/London"
+        ]
     },
     {
         "name": "Grenada",
-        "isoCode": "GD"
+        "isoCode": "GD",
+        "timezones": [
+            "America/Port_of_Spain"
+        ]
     },
     {
         "name": "Georgia",
-        "isoCode": "GE"
+        "isoCode": "GE",
+        "timezones": [
+            "Asia/Tbilisi"
+        ]
     },
     {
         "name": "French Guiana",
-        "isoCode": "GF"
+        "isoCode": "GF",
+        "timezones": [
+            "America/Cayenne"
+        ]
     },
     {
         "name": "Guernsey",
-        "isoCode": "GG"
+        "isoCode": "GG",
+        "timezones": [
+            "Europe/London"
+        ]
     },
     {
         "name": "Ghana",
-        "isoCode": "GH"
+        "isoCode": "GH",
+        "timezones": [
+            "Africa/Accra"
+        ]
     },
     {
         "name": "Gibraltar",
-        "isoCode": "GI"
+        "isoCode": "GI",
+        "timezones": [
+            "Europe/Gibraltar"
+        ]
     },
     {
         "name": "Greenland",
-        "isoCode": "GL"
+        "isoCode": "GL",
+        "timezones": [
+            "America/Godthab",
+            "America/Danmarkshavn",
+            "America/Scoresbysund",
+            "America/Thule"
+        ]
     },
     {
         "name": "Gambia",
-        "isoCode": "GM"
+        "isoCode": "GM",
+        "timezones": [
+            "Africa/Abidjan"
+        ]
     },
     {
         "name": "Guinea",
-        "isoCode": "GN"
+        "isoCode": "GN",
+        "timezones": [
+            "Africa/Abidjan"
+        ]
     },
     {
         "name": "Guadeloupe",
-        "isoCode": "GP"
+        "isoCode": "GP",
+        "timezones": [
+            "America/Port_of_Spain"
+        ]
     },
     {
         "name": "Equatorial Guinea",
-        "isoCode": "GQ"
+        "isoCode": "GQ",
+        "timezones": [
+            "Africa/Abidjan"
+        ]
     },
     {
         "name": "Greece",
-        "isoCode": "GR"
+        "isoCode": "GR",
+        "timezones": [
+            "Europe/Athens"
+        ]
     },
     {
         "name": "South Georgia and the South Sandwich Islands",
-        "isoCode": "GS"
+        "isoCode": "GS",
+        "timezones": [
+            "Asia/Tbilisi"
+        ]
     },
     {
         "name": "Guatemala",
-        "isoCode": "GT"
+        "isoCode": "GT",
+        "timezones": [
+            "America/Guatemala"
+        ]
     },
     {
         "name": "Guam",
-        "isoCode": "GU"
+        "isoCode": "GU",
+        "timezones": [
+            "Pacific/Guam"
+        ]
     },
     {
         "name": "Guinea-Bissau",
-        "isoCode": "GW"
+        "isoCode": "GW",
+        "timezones": [
+            "Africa/Bissau"
+        ]
     },
     {
         "name": "Guyana",
-        "isoCode": "GY"
+        "isoCode": "GY",
+        "timezones": [
+            "America/Guyana"
+        ]
     },
     {
         "name": "Hong Kong",
-        "isoCode": "HK"
+        "isoCode": "HK",
+        "timezones": [
+            "Asia/Hong_Kong"
+        ]
     },
     {
         "name": "Heard Island and McDonald Islands",
-        "isoCode": "HM"
+        "isoCode": "HM",
+        "timezones": []
     },
     {
         "name": "Honduras",
-        "isoCode": "HN"
+        "isoCode": "HN",
+        "timezones": [
+            "America/Tegucigalpa"
+        ]
     },
     {
         "name": "Croatia",
-        "isoCode": "HR"
+        "isoCode": "HR",
+        "timezones": [
+            "Europe/Belgrade"
+        ]
     },
     {
         "name": "Haiti",
-        "isoCode": "HT"
+        "isoCode": "HT",
+        "timezones": [
+            "America/Port-au-Prince"
+        ]
     },
     {
         "name": "Hungary",
-        "isoCode": "HU"
+        "isoCode": "HU",
+        "timezones": [
+            "Europe/Budapest"
+        ]
     },
     {
         "name": "Indonesia",
-        "isoCode": "ID"
+        "isoCode": "ID",
+        "timezones": [
+            "Asia/Jakarta",
+            "Asia/Pontianak",
+            "Asia/Makassar",
+            "Asia/Jayapura"
+        ]
     },
     {
         "name": "Ireland",
-        "isoCode": "IE"
+        "isoCode": "IE",
+        "timezones": [
+            "Europe/Dublin"
+        ]
     },
     {
         "name": "Israel",
-        "isoCode": "IL"
+        "isoCode": "IL",
+        "timezones": [
+            "Asia/Jerusalem"
+        ]
     },
     {
         "name": "Isle of Man",
-        "isoCode": "IM"
+        "isoCode": "IM",
+        "timezones": [
+            "Europe/London"
+        ]
     },
     {
         "name": "India",
-        "isoCode": "IN"
+        "isoCode": "IN",
+        "timezones": [
+            "Asia/Kolkata"
+        ]
     },
     {
         "name": "British Indian Ocean Territory",
-        "isoCode": "IO"
+        "isoCode": "IO",
+        "timezones": [
+            "Indian/Chagos"
+        ]
     },
     {
         "name": "Iraq",
-        "isoCode": "IQ"
+        "isoCode": "IQ",
+        "timezones": [
+            "Asia/Baghdad"
+        ]
     },
     {
         "name": "Iran",
-        "isoCode": "IR"
+        "isoCode": "IR",
+        "timezones": [
+            "Asia/Tehran"
+        ]
     },
     {
         "name": "Iceland",
-        "isoCode": "IS"
+        "isoCode": "IS",
+        "timezones": [
+            "Atlantic/Reykjavik"
+        ]
     },
     {
         "name": "Italy",
-        "isoCode": "IT"
+        "isoCode": "IT",
+        "timezones": [
+            "Europe/Rome"
+        ]
     },
     {
         "name": "Jersey",
-        "isoCode": "JE"
+        "isoCode": "JE",
+        "timezones": [
+            "Europe/London"
+        ]
     },
     {
         "name": "Jamaica",
-        "isoCode": "JM"
+        "isoCode": "JM",
+        "timezones": [
+            "America/Jamaica"
+        ]
     },
     {
         "name": "Jordan",
-        "isoCode": "JO"
+        "isoCode": "JO",
+        "timezones": [
+            "America/St_Johns",
+            "America/Halifax",
+            "America/Glace_Bay",
+            "America/Moncton",
+            "America/Goose_Bay",
+            "America/Blanc-Sablon",
+            "America/Toronto",
+            "America/Nipigon",
+            "America/Thunder_Bay",
+            "America/Iqaluit",
+            "America/Pangnirtung",
+            "America/Resolute",
+            "America/Atikokan",
+            "America/Rankin_Inlet",
+            "America/Winnipeg",
+            "America/Rainy_River",
+            "America/Regina",
+            "America/Swift_Current",
+            "America/Edmonton",
+            "America/Cambridge_Bay",
+            "America/Yellowknife",
+            "America/Inuvik",
+            "America/Creston",
+            "America/Dawson_Creek",
+            "America/Fort_Nelson",
+            "America/Vancouver",
+            "America/Whitehorse",
+            "America/Dawson"
+        ]
     },
     {
         "name": "Japan",
-        "isoCode": "JP"
+        "isoCode": "JP",
+        "timezones": [
+            "Asia/Tokyo"
+        ]
     },
     {
         "name": "Kenya",
-        "isoCode": "KE"
+        "isoCode": "KE",
+        "timezones": [
+            "Africa/Nairobi"
+        ]
     },
     {
         "name": "Kyrgyzstan",
-        "isoCode": "KG"
+        "isoCode": "KG",
+        "timezones": [
+            "Asia/Bishkek"
+        ]
     },
     {
         "name": "Cambodia",
-        "isoCode": "KH"
+        "isoCode": "KH",
+        "timezones": [
+            "Asia/Bangkok"
+        ]
     },
     {
         "name": "Kiribati",
-        "isoCode": "KI"
+        "isoCode": "KI",
+        "timezones": [
+            "Pacific/Tarawa",
+            "Pacific/Enderbury",
+            "Pacific/Kiritimati"
+        ]
     },
     {
         "name": "Comoros",
-        "isoCode": "KM"
+        "isoCode": "KM",
+        "timezones": [
+            "Africa/Nairobi"
+        ]
     },
     {
         "name": "Saint Kitts and Nevis",
-        "isoCode": "KN"
+        "isoCode": "KN",
+        "timezones": []
     },
     {
         "name": "North Korea",
-        "isoCode": "KP"
+        "isoCode": "KP",
+        "timezones": []
     },
     {
         "name": "South Korea",
-        "isoCode": "KR"
+        "isoCode": "KR",
+        "timezones": []
     },
     {
         "name": "Kosovo",
-        "isoCode": "XK"
+        "isoCode": "XK",
+        "timezones": []
     },
     {
         "name": "Kuwait",
-        "isoCode": "KW"
+        "isoCode": "KW",
+        "timezones": [
+            "Asia/Riyadh"
+        ]
     },
     {
         "name": "Cayman Islands",
-        "isoCode": "KY"
+        "isoCode": "KY",
+        "timezones": [
+            "America/Cayman"
+        ]
     },
     {
         "name": "Kazakhstan",
-        "isoCode": "KZ"
+        "isoCode": "KZ",
+        "timezones": [
+            "Asia/Almaty",
+            "Asia/Qyzylorda",
+            "Asia/Aqtobe",
+            "Asia/Aqtau",
+            "Asia/Oral"
+        ]
     },
     {
         "name": "Laos",
-        "isoCode": "LA"
+        "isoCode": "LA",
+        "timezones": [
+            "Asia/Bangkok"
+        ]
     },
     {
         "name": "Lebanon",
-        "isoCode": "LB"
+        "isoCode": "LB",
+        "timezones": [
+            "Asia/Beirut"
+        ]
     },
     {
         "name": "Saint Lucia",
-        "isoCode": "LC"
+        "isoCode": "LC",
+        "timezones": [
+            "Australia/Lord_Howe",
+            "Antarctica/Macquarie",
+            "Australia/Hobart",
+            "Australia/Currie",
+            "Australia/Melbourne",
+            "Australia/Sydney",
+            "Australia/Broken_Hill",
+            "Australia/Brisbane",
+            "Australia/Lindeman",
+            "Australia/Adelaide",
+            "Australia/Darwin",
+            "Australia/Perth",
+            "Australia/Eucla"
+        ]
     },
     {
         "name": "Liechtenstein",
-        "isoCode": "LI"
+        "isoCode": "LI",
+        "timezones": [
+            "Europe/Zurich"
+        ]
     },
     {
         "name": "Sri Lanka",
-        "isoCode": "LK"
+        "isoCode": "LK",
+        "timezones": [
+            "Asia/Colombo"
+        ]
     },
     {
         "name": "Liberia",
-        "isoCode": "LR"
+        "isoCode": "LR",
+        "timezones": [
+            "America/Costa_Rica"
+        ]
     },
     {
         "name": "Lesotho",
-        "isoCode": "LS"
+        "isoCode": "LS",
+        "timezones": [
+            "Africa/Johannesburg"
+        ]
     },
     {
         "name": "Lithuania",
-        "isoCode": "LT"
+        "isoCode": "LT",
+        "timezones": [
+            "Europe/Vilnius"
+        ]
     },
     {
         "name": "Luxembourg",
-        "isoCode": "LU"
+        "isoCode": "LU",
+        "timezones": [
+            "Europe/Luxembourg"
+        ]
     },
     {
         "name": "Latvia",
-        "isoCode": "LV"
+        "isoCode": "LV",
+        "timezones": [
+            "Europe/Riga"
+        ]
     },
     {
         "name": "Libya",
-        "isoCode": "LY"
+        "isoCode": "LY",
+        "timezones": [
+            "Africa/Tripoli"
+        ]
     },
     {
         "name": "Morocco",
-        "isoCode": "MA"
+        "isoCode": "MA",
+        "timezones": [
+            "Africa/Casablanca"
+        ]
     },
     {
         "name": "Monaco",
-        "isoCode": "MC"
+        "isoCode": "MC",
+        "timezones": [
+            "Europe/Rome"
+        ]
     },
     {
         "name": "Moldova",
-        "isoCode": "MD"
+        "isoCode": "MD",
+        "timezones": [
+            "Europe/Chisinau"
+        ]
     },
     {
         "name": "Montenegro",
-        "isoCode": "ME"
+        "isoCode": "ME",
+        "timezones": [
+            "America/Noronha",
+            "America/Belem",
+            "America/Fortaleza",
+            "America/Recife",
+            "America/Araguaina",
+            "America/Maceio",
+            "America/Bahia",
+            "America/Sao_Paulo",
+            "America/Campo_Grande",
+            "America/Cuiaba",
+            "America/Santarem",
+            "America/Porto_Velho",
+            "America/Boa_Vista",
+            "America/Manaus",
+            "America/Eirunepe",
+            "America/Rio_Branco"
+        ]
     },
     {
         "name": "Saint Martin",
-        "isoCode": "MF"
+        "isoCode": "MF",
+        "timezones": [
+            "America/New_York",
+            "America/Detroit",
+            "America/Kentucky/Louisville",
+            "America/Kentucky/Monticello",
+            "America/Indiana/Indianapolis",
+            "America/Indiana/Vincennes",
+            "America/Indiana/Winamac",
+            "America/Indiana/Marengo",
+            "America/Indiana/Petersburg",
+            "America/Indiana/Vevay",
+            "America/Chicago",
+            "America/Indiana/Tell_City",
+            "America/Indiana/Knox",
+            "America/Menominee",
+            "America/North_Dakota/Center",
+            "America/North_Dakota/New_Salem",
+            "America/North_Dakota/Beulah",
+            "America/Denver",
+            "America/Boise",
+            "America/Phoenix",
+            "America/Los_Angeles",
+            "America/Metlakatla",
+            "America/Anchorage",
+            "America/Juneau",
+            "America/Sitka",
+            "America/Yakutat",
+            "America/Nome",
+            "America/Adak",
+            "Pacific/Honolulu"
+        ]
     },
     {
         "name": "Madagascar",
-        "isoCode": "MG"
+        "isoCode": "MG",
+        "timezones": [
+            "Africa/Nairobi"
+        ]
     },
     {
         "name": "Marshall Islands",
-        "isoCode": "MH"
+        "isoCode": "MH",
+        "timezones": [
+            "Pacific/Majuro",
+            "Pacific/Kwajalein"
+        ]
     },
     {
         "name": "North Macedonia",
-        "isoCode": "MK"
+        "isoCode": "MK",
+        "timezones": [
+            "Europe/Belgrade"
+        ]
     },
     {
         "name": "Mali",
-        "isoCode": "ML"
+        "isoCode": "ML",
+        "timezones": [
+            "Africa/Abidjan"
+        ]
     },
     {
         "name": "Myanmar",
-        "isoCode": "MM"
+        "isoCode": "MM",
+        "timezones": []
     },
     {
         "name": "Mongolia",
-        "isoCode": "MN"
+        "isoCode": "MN",
+        "timezones": [
+            "Asia/Ulaanbaatar",
+            "Asia/Hovd",
+            "Asia/Choibalsan"
+        ]
     },
     {
         "name": "Macao",
-        "isoCode": "MO"
+        "isoCode": "MO",
+        "timezones": [
+            "Asia/Shanghai",
+            "Asia/Urumqi"
+        ]
     },
     {
         "name": "Northern Mariana Islands",
-        "isoCode": "MP"
+        "isoCode": "MP",
+        "timezones": [
+            "Pacific/Guam"
+        ]
     },
     {
         "name": "Martinique",
-        "isoCode": "MQ"
+        "isoCode": "MQ",
+        "timezones": [
+            "America/Martinique"
+        ]
     },
     {
         "name": "Mauritania",
-        "isoCode": "MR"
+        "isoCode": "MR",
+        "timezones": [
+            "Africa/Abidjan"
+        ]
     },
     {
         "name": "Montserrat",
-        "isoCode": "MS"
+        "isoCode": "MS",
+        "timezones": [
+            "America/Argentina/Buenos_Aires",
+            "America/Argentina/Cordoba",
+            "America/Argentina/Salta",
+            "America/Argentina/Jujuy",
+            "America/Argentina/Tucuman",
+            "America/Argentina/Catamarca",
+            "America/Argentina/La_Rioja",
+            "America/Argentina/San_Juan",
+            "America/Argentina/Mendoza",
+            "America/Argentina/San_Luis",
+            "America/Argentina/Rio_Gallegos",
+            "America/Argentina/Ushuaia"
+        ]
     },
     {
         "name": "Malta",
-        "isoCode": "MT"
+        "isoCode": "MT",
+        "timezones": [
+            "Europe/Riga"
+        ]
     },
     {
         "name": "Mauritius",
-        "isoCode": "MU"
+        "isoCode": "MU",
+        "timezones": [
+            "Indian/Mauritius"
+        ]
     },
     {
         "name": "Maldives",
-        "isoCode": "MV"
+        "isoCode": "MV",
+        "timezones": [
+            "Indian/Maldives"
+        ]
     },
     {
         "name": "Malawi",
-        "isoCode": "MW"
+        "isoCode": "MW",
+        "timezones": [
+            "Africa/Maputo"
+        ]
     },
     {
         "name": "Mexico",
-        "isoCode": "MX"
+        "isoCode": "MX",
+        "timezones": [
+            "America/Costa_Rica"
+        ]
     },
     {
         "name": "Malaysia",
-        "isoCode": "MY"
+        "isoCode": "MY",
+        "timezones": [
+            "Asia/Kuala_Lumpur",
+            "Asia/Kuching"
+        ]
     },
     {
         "name": "Mozambique",
-        "isoCode": "MZ"
+        "isoCode": "MZ",
+        "timezones": [
+            "Africa/Maputo"
+        ]
     },
     {
         "name": "Namibia",
-        "isoCode": "NA"
+        "isoCode": "NA",
+        "timezones": [
+            "Africa/Windhoek"
+        ]
     },
     {
         "name": "New Caledonia",
-        "isoCode": "NC"
+        "isoCode": "NC",
+        "timezones": [
+            "Pacific/Noumea"
+        ]
     },
     {
         "name": "Niger",
-        "isoCode": "NE"
+        "isoCode": "NE",
+        "timezones": [
+            "Africa/Lagos"
+        ]
     },
     {
         "name": "Norfolk Island",
-        "isoCode": "NF"
+        "isoCode": "NF",
+        "timezones": [
+            "Pacific/Norfolk"
+        ]
     },
     {
         "name": "Nigeria",
-        "isoCode": "NG"
+        "isoCode": "NG",
+        "timezones": [
+            "Africa/Lagos"
+        ]
     },
     {
         "name": "Nicaragua",
-        "isoCode": "NI"
+        "isoCode": "NI",
+        "timezones": [
+            "America/Managua"
+        ]
     },
     {
         "name": "The Netherlands",
-        "isoCode": "NL"
+        "isoCode": "NL",
+        "timezones": [
+            "Europe/Amsterdam"
+        ]
     },
     {
         "name": "Norway",
-        "isoCode": "NO"
+        "isoCode": "NO",
+        "timezones": [
+            "Europe/Oslo"
+        ]
     },
     {
         "name": "Nepal",
-        "isoCode": "NP"
+        "isoCode": "NP",
+        "timezones": [
+            "Asia/Kathmandu"
+        ]
     },
     {
         "name": "Nauru",
-        "isoCode": "NR"
+        "isoCode": "NR",
+        "timezones": [
+            "Pacific/Nauru"
+        ]
     },
     {
         "name": "Niue",
-        "isoCode": "NU"
+        "isoCode": "NU",
+        "timezones": [
+            "Pacific/Niue"
+        ]
     },
     {
         "name": "New Zealand",
-        "isoCode": "NZ"
+        "isoCode": "NZ",
+        "timezones": [
+            "Pacific/Auckland",
+            "Pacific/Chatham"
+        ]
     },
     {
         "name": "Oman",
-        "isoCode": "OM"
+        "isoCode": "OM",
+        "timezones": [
+            "Asia/Dubai"
+        ]
     },
     {
         "name": "Panama",
-        "isoCode": "PA"
+        "isoCode": "PA",
+        "timezones": [
+            "America/Panama"
+        ]
     },
     {
         "name": "Peru",
-        "isoCode": "PE"
+        "isoCode": "PE",
+        "timezones": [
+            "America/Panama"
+        ]
     },
     {
         "name": "French Polynesia",
-        "isoCode": "PF"
+        "isoCode": "PF",
+        "timezones": [
+            "Pacific/Tahiti",
+            "Pacific/Marquesas",
+            "Pacific/Gambier"
+        ]
     },
     {
         "name": "Papua New Guinea",
-        "isoCode": "PG"
+        "isoCode": "PG",
+        "timezones": [
+            "Africa/Abidjan"
+        ]
     },
     {
         "name": "Philippines",
-        "isoCode": "PH"
+        "isoCode": "PH",
+        "timezones": [
+            "Asia/Manila"
+        ]
     },
     {
         "name": "Pakistan",
-        "isoCode": "PK"
+        "isoCode": "PK",
+        "timezones": [
+            "Asia/Karachi"
+        ]
     },
     {
         "name": "Poland",
-        "isoCode": "PL"
+        "isoCode": "PL",
+        "timezones": [
+            "Europe/Warsaw"
+        ]
     },
     {
         "name": "Saint Pierre and Miquelon",
-        "isoCode": "PM"
+        "isoCode": "PM",
+        "timezones": []
     },
     {
         "name": "Pitcairn",
-        "isoCode": "PN"
+        "isoCode": "PN",
+        "timezones": [
+            "Pacific/Pitcairn"
+        ]
     },
     {
         "name": "Puerto Rico",
-        "isoCode": "PR"
+        "isoCode": "PR",
+        "timezones": [
+            "America/Argentina/Buenos_Aires",
+            "America/Argentina/Cordoba",
+            "America/Argentina/Salta",
+            "America/Argentina/Jujuy",
+            "America/Argentina/Tucuman",
+            "America/Argentina/Catamarca",
+            "America/Argentina/La_Rioja",
+            "America/Argentina/San_Juan",
+            "America/Argentina/Mendoza",
+            "America/Argentina/San_Luis",
+            "America/Argentina/Rio_Gallegos",
+            "America/Argentina/Ushuaia"
+        ]
     },
     {
         "name": "Palestinian Territory",
-        "isoCode": "PS"
+        "isoCode": "PS",
+        "timezones": []
     },
     {
         "name": "Portugal",
-        "isoCode": "PT"
+        "isoCode": "PT",
+        "timezones": [
+            "Europe/Lisbon",
+            "Atlantic/Madeira",
+            "Atlantic/Azores"
+        ]
     },
     {
         "name": "Palau",
-        "isoCode": "PW"
+        "isoCode": "PW",
+        "timezones": [
+            "Europe/Madrid",
+            "Africa/Ceuta",
+            "Atlantic/Canary"
+        ]
     },
     {
         "name": "Paraguay",
-        "isoCode": "PY"
+        "isoCode": "PY",
+        "timezones": [
+            "America/Asuncion"
+        ]
     },
     {
         "name": "Qatar",
-        "isoCode": "QA"
+        "isoCode": "QA",
+        "timezones": [
+            "Asia/Qatar"
+        ]
     },
     {
         "name": "Reunion",
-        "isoCode": "RE"
+        "isoCode": "RE",
+        "timezones": []
     },
     {
         "name": "Romania",
-        "isoCode": "RO"
+        "isoCode": "RO",
+        "timezones": [
+            "Europe/Bucharest"
+        ]
     },
     {
         "name": "Serbia",
-        "isoCode": "RS"
+        "isoCode": "RS",
+        "timezones": [
+            "Europe/Belgrade"
+        ]
     },
     {
         "name": "Russia",
-        "isoCode": "RU"
+        "isoCode": "RU",
+        "timezones": [
+            "Europe/Kaliningrad",
+            "Europe/Moscow",
+            "Europe/Simferopol",
+            "Europe/Volgograd",
+            "Europe/Samara",
+            "Asia/Yekaterinburg",
+            "Asia/Omsk",
+            "Asia/Novosibirsk",
+            "Asia/Novokuznetsk",
+            "Asia/Krasnoyarsk",
+            "Asia/Irkutsk",
+            "Asia/Chita",
+            "Asia/Yakutsk",
+            "Asia/Khandyga",
+            "Asia/Vladivostok",
+            "Asia/Sakhalin",
+            "Asia/Ust-Nera",
+            "Asia/Magadan",
+            "Asia/Srednekolymsk",
+            "Asia/Kamchatka",
+            "Asia/Anadyr"
+        ]
     },
     {
         "name": "Rwanda",
-        "isoCode": "RW"
+        "isoCode": "RW",
+        "timezones": [
+            "Africa/Maputo"
+        ]
     },
     {
         "name": "Saudi Arabia",
-        "isoCode": "SA"
+        "isoCode": "SA",
+        "timezones": [
+            "Asia/Riyadh"
+        ]
     },
     {
         "name": "Solomon Islands",
-        "isoCode": "SB"
+        "isoCode": "SB",
+        "timezones": [
+            "Pacific/Guadalcanal"
+        ]
     },
     {
         "name": "Seychelles",
-        "isoCode": "SC"
+        "isoCode": "SC",
+        "timezones": [
+            "Indian/Mahe"
+        ]
     },
     {
         "name": "Sudan",
-        "isoCode": "SD"
+        "isoCode": "SD",
+        "timezones": [
+            "Africa/Khartoum"
+        ]
     },
     {
         "name": "South Sudan",
-        "isoCode": "SS"
+        "isoCode": "SS",
+        "timezones": [
+            "Africa/Khartoum"
+        ]
     },
     {
         "name": "Sweden",
-        "isoCode": "SE"
+        "isoCode": "SE",
+        "timezones": [
+            "Europe/Stockholm"
+        ]
     },
     {
         "name": "Singapore",
-        "isoCode": "SG"
+        "isoCode": "SG",
+        "timezones": [
+            "Asia/Singapore"
+        ]
     },
     {
         "name": "Saint Helena",
-        "isoCode": "SH"
+        "isoCode": "SH",
+        "timezones": [
+            "Australia/Lord_Howe",
+            "Antarctica/Macquarie",
+            "Australia/Hobart",
+            "Australia/Currie",
+            "Australia/Melbourne",
+            "Australia/Sydney",
+            "Australia/Broken_Hill",
+            "Australia/Brisbane",
+            "Australia/Lindeman",
+            "Australia/Adelaide",
+            "Australia/Darwin",
+            "Australia/Perth",
+            "Australia/Eucla"
+        ]
     },
     {
         "name": "Slovenia",
-        "isoCode": "SI"
+        "isoCode": "SI",
+        "timezones": [
+            "Europe/Belgrade"
+        ]
     },
     {
         "name": "Svalbard and Jan Mayen",
-        "isoCode": "SJ"
+        "isoCode": "SJ",
+        "timezones": []
     },
     {
         "name": "Slovakia",
-        "isoCode": "SK"
+        "isoCode": "SK",
+        "timezones": [
+            "Europe/Prague"
+        ]
     },
     {
         "name": "Sierra Leone",
-        "isoCode": "SL"
+        "isoCode": "SL",
+        "timezones": [
+            "Africa/Abidjan"
+        ]
     },
     {
         "name": "San Marino",
-        "isoCode": "SM"
+        "isoCode": "SM",
+        "timezones": [
+            "Europe/Rome"
+        ]
     },
     {
         "name": "Senegal",
-        "isoCode": "SN"
+        "isoCode": "SN",
+        "timezones": [
+            "Africa/Abidjan"
+        ]
     },
     {
         "name": "Somalia",
-        "isoCode": "SO"
+        "isoCode": "SO",
+        "timezones": [
+            "Africa/Nairobi"
+        ]
     },
     {
         "name": "Suriname",
-        "isoCode": "SR"
+        "isoCode": "SR",
+        "timezones": [
+            "America/Paramaribo"
+        ]
     },
     {
         "name": "Sao Tome and Principe",
-        "isoCode": "ST"
+        "isoCode": "ST",
+        "timezones": []
     },
     {
         "name": "El Salvador",
-        "isoCode": "SV"
+        "isoCode": "SV",
+        "timezones": [
+            "America/Santiago",
+            "Pacific/Easter"
+        ]
     },
     {
         "name": "Sint Maarten",
-        "isoCode": "SX"
+        "isoCode": "SX",
+        "timezones": [
+            "Europe/Amsterdam"
+        ]
     },
     {
         "name": "Syria",
-        "isoCode": "SY"
+        "isoCode": "SY",
+        "timezones": [
+            "Asia/Damascus"
+        ]
     },
     {
         "name": "Eswatini",
-        "isoCode": "SZ"
+        "isoCode": "SZ",
+        "timezones": []
     },
     {
         "name": "Turks and Caicos Islands",
-        "isoCode": "TC"
+        "isoCode": "TC",
+        "timezones": []
     },
     {
         "name": "Chad",
-        "isoCode": "TD"
+        "isoCode": "TD",
+        "timezones": [
+            "Africa/Ndjamena"
+        ]
     },
     {
         "name": "French Southern Territories",
-        "isoCode": "TF"
+        "isoCode": "TF",
+        "timezones": []
     },
     {
         "name": "Togo",
-        "isoCode": "TG"
+        "isoCode": "TG",
+        "timezones": [
+            "Africa/Abidjan"
+        ]
     },
     {
         "name": "Thailand",
-        "isoCode": "TH"
+        "isoCode": "TH",
+        "timezones": [
+            "Asia/Bangkok"
+        ]
     },
     {
         "name": "Tajikistan",
-        "isoCode": "TJ"
+        "isoCode": "TJ",
+        "timezones": [
+            "Asia/Dushanbe"
+        ]
     },
     {
         "name": "Tokelau",
-        "isoCode": "TK"
+        "isoCode": "TK",
+        "timezones": [
+            "Pacific/Fakaofo"
+        ]
     },
     {
         "name": "Timor Leste",
-        "isoCode": "TL"
+        "isoCode": "TL",
+        "timezones": []
     },
     {
         "name": "Turkmenistan",
-        "isoCode": "TM"
+        "isoCode": "TM",
+        "timezones": [
+            "Asia/Ashgabat"
+        ]
     },
     {
         "name": "Tunisia",
-        "isoCode": "TN"
+        "isoCode": "TN",
+        "timezones": [
+            "Africa/Tunis"
+        ]
     },
     {
         "name": "Tonga",
-        "isoCode": "TO"
+        "isoCode": "TO",
+        "timezones": [
+            "Pacific/Tongatapu"
+        ]
     },
     {
         "name": "Turkey",
-        "isoCode": "TR"
+        "isoCode": "TR",
+        "timezones": [
+            "Europe/Istanbul"
+        ]
     },
     {
         "name": "Trinidad and Tobago",
-        "isoCode": "TT"
+        "isoCode": "TT",
+        "timezones": []
     },
     {
         "name": "Tuvalu",
-        "isoCode": "TV"
+        "isoCode": "TV",
+        "timezones": [
+            "Pacific/Funafuti"
+        ]
     },
     {
         "name": "Taiwan",
-        "isoCode": "TW"
+        "isoCode": "TW",
+        "timezones": [
+            "Asia/Taipei"
+        ]
     },
     {
         "name": "Tanzania",
-        "isoCode": "TZ"
+        "isoCode": "TZ",
+        "timezones": [
+            "Africa/Nairobi"
+        ]
     },
     {
         "name": "Ukraine",
-        "isoCode": "UA"
+        "isoCode": "UA",
+        "timezones": [
+            "Europe/Kiev",
+            "Europe/Uzhgorod",
+            "Europe/Zaporozhye"
+        ]
     },
     {
         "name": "Uganda",
-        "isoCode": "UG"
+        "isoCode": "UG",
+        "timezones": [
+            "Africa/Nairobi"
+        ]
     },
     {
         "name": "United States Minor Outlying Islands",
-        "isoCode": "UM"
+        "isoCode": "UM",
+        "timezones": []
     },
     {
         "name": "United States",
-        "isoCode": "US"
+        "isoCode": "US",
+        "timezones": [
+            "America/New_York",
+            "America/Detroit",
+            "America/Kentucky/Louisville",
+            "America/Kentucky/Monticello",
+            "America/Indiana/Indianapolis",
+            "America/Indiana/Vincennes",
+            "America/Indiana/Winamac",
+            "America/Indiana/Marengo",
+            "America/Indiana/Petersburg",
+            "America/Indiana/Vevay",
+            "America/Chicago",
+            "America/Indiana/Tell_City",
+            "America/Indiana/Knox",
+            "America/Menominee",
+            "America/North_Dakota/Center",
+            "America/North_Dakota/New_Salem",
+            "America/North_Dakota/Beulah",
+            "America/Denver",
+            "America/Boise",
+            "America/Phoenix",
+            "America/Los_Angeles",
+            "America/Metlakatla",
+            "America/Anchorage",
+            "America/Juneau",
+            "America/Sitka",
+            "America/Yakutat",
+            "America/Nome",
+            "America/Adak",
+            "Pacific/Honolulu"
+        ]
     },
     {
         "name": "Uruguay",
-        "isoCode": "UY"
+        "isoCode": "UY",
+        "timezones": [
+            "America/Montevideo"
+        ]
     },
     {
         "name": "Uzbekistan",
-        "isoCode": "UZ"
+        "isoCode": "UZ",
+        "timezones": [
+            "Asia/Samarkand",
+            "Asia/Tashkent"
+        ]
     },
     {
         "name": "Vatican",
-        "isoCode": "VA"
+        "isoCode": "VA",
+        "timezones": []
     },
     {
         "name": "Saint Vincent and the Grenadines",
-        "isoCode": "VC"
+        "isoCode": "VC",
+        "timezones": []
     },
     {
         "name": "Venezuela",
-        "isoCode": "VE"
+        "isoCode": "VE",
+        "timezones": [
+            "America/Caracas"
+        ]
     },
     {
         "name": "British Virgin Islands",
-        "isoCode": "VG"
+        "isoCode": "VG",
+        "timezones": []
     },
     {
         "name": "U.S. Virgin Islands",
-        "isoCode": "VI"
+        "isoCode": "VI",
+        "timezones": []
     },
     {
         "name": "Vietnam",
-        "isoCode": "VN"
+        "isoCode": "VN",
+        "timezones": [
+            "Asia/Bangkok",
+            "Asia/Ho_Chi_Minh"
+        ]
     },
     {
         "name": "Vanuatu",
-        "isoCode": "VU"
+        "isoCode": "VU",
+        "timezones": [
+            "Pacific/Efate"
+        ]
     },
     {
         "name": "Wallis and Futuna",
-        "isoCode": "WF"
+        "isoCode": "WF",
+        "timezones": []
     },
     {
         "name": "Samoa",
-        "isoCode": "WS"
+        "isoCode": "WS",
+        "timezones": [
+            "America/New_York",
+            "America/Detroit",
+            "America/Kentucky/Louisville",
+            "America/Kentucky/Monticello",
+            "America/Indiana/Indianapolis",
+            "America/Indiana/Vincennes",
+            "America/Indiana/Winamac",
+            "America/Indiana/Marengo",
+            "America/Indiana/Petersburg",
+            "America/Indiana/Vevay",
+            "America/Chicago",
+            "America/Indiana/Tell_City",
+            "America/Indiana/Knox",
+            "America/Menominee",
+            "America/North_Dakota/Center",
+            "America/North_Dakota/New_Salem",
+            "America/North_Dakota/Beulah",
+            "America/Denver",
+            "America/Boise",
+            "America/Phoenix",
+            "America/Los_Angeles",
+            "America/Metlakatla",
+            "America/Anchorage",
+            "America/Juneau",
+            "America/Sitka",
+            "America/Yakutat",
+            "America/Nome",
+            "America/Adak",
+            "Pacific/Honolulu"
+        ]
     },
     {
         "name": "Yemen",
-        "isoCode": "YE"
+        "isoCode": "YE",
+        "timezones": [
+            "Asia/Riyadh"
+        ]
     },
     {
         "name": "Mayotte",
-        "isoCode": "YT"
+        "isoCode": "YT",
+        "timezones": [
+            "Africa/Nairobi"
+        ]
     },
     {
         "name": "South Africa",
-        "isoCode": "ZA"
+        "isoCode": "ZA",
+        "timezones": [
+            "Africa/Johannesburg"
+        ]
     },
     {
         "name": "Zambia",
-        "isoCode": "ZM"
+        "isoCode": "ZM",
+        "timezones": [
+            "Africa/Maputo"
+        ]
     },
     {
         "name": "Zimbabwe",
-        "isoCode": "ZW"
+        "isoCode": "ZW",
+        "timezones": [
+            "Africa/Maputo"
+        ]
     },
     {
         "name": "Serbia and Montenegro",
-        "isoCode": "CS"
+        "isoCode": "CS",
+        "timezones": [
+            "Europe/Belgrade"
+        ]
     },
     {
         "name": "Netherlands Antilles",
-        "isoCode": "AN"
+        "isoCode": "AN",
+        "timezones": [
+            "Europe/Amsterdam"
+        ]
     }
 ]
