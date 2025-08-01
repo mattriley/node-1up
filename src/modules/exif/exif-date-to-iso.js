@@ -1,29 +1,25 @@
 const { DateTime } = require('luxon');
 
-module.exports = () => ({ exif, timezone, dateField = 'DateTimeOriginal' }) => {
+module.exports = () => ({ exif = {}, dateField = 'DateTimeOriginal', timezone }) => {
 
     const exifDate = exif[dateField];
     if (!exifDate) throw new Error(`${dateField} not found`);
 
     let [date, time] = exifDate.split(' ');
     date = date.replaceAll(':', '-');
-    let exifDateAsIso = [date, time].join('T');
+    const exifDateAsIso = [date, time].join('T');
 
-    const parserArgs = {
-        zone: timezone ?? 'utc',
-        setZone: Boolean(timezone),
-        includeOffset: Boolean(timezone)
-    };
+    const timezoneForLuxon = timezone ?? 'utc';
 
     const debug = {
         dateField,
         exifDate,
         exifDateAsIso,
         timezone,
-        ...parserArgs
+        timezoneForLuxon
     };
 
-    const dt = DateTime.fromISO(exifDateAsIso, parserArgs);
+    const dt = DateTime.fromISO(exifDateAsIso, { zone: timezoneForLuxon });
     if (!dt.isValid) return { error: dt.invalidExplanation, debug };
 
     iso = timezone ? dt.toISO({ suppressMilliseconds: true }) : dt.toFormat("yyyy-MM-dd'T'HH:mm:ss");
