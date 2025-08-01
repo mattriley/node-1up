@@ -42,6 +42,7 @@
         "module-indexgen": "^0.41.0",
         "module-testrunner": "^0.21.0",
         "npm-check-updates": "^16.14.4",
-        "task-library": "^0.274.0"
+        "task-library": "^0.274.0",
+        "tz-lookup": "^6.1.25"
     }
 }

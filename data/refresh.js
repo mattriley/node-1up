@@ -9,8 +9,7 @@ const outputDir = sourceDir;
 const refresh = async () => {
 
     states = geo.fixer.fixStates(states);
-
-
+    states = geo.assignTimezonesToStates({ states });
 
     await geo.geonames.admin1CodesASCII.download({ sourceDir, outputDir });
     let admin1Codes = await geo.geonames.admin1CodesASCII.toJson({ sourceDir, outputDir });
@@ -31,7 +30,6 @@ const refresh = async () => {
     fs.writeFileSync(outputDir + '/cities.json', JSON.stringify(cities, null, 4));
     fs.writeFileSync(outputDir + '/states.json', JSON.stringify(states, null, 4));
     fs.writeFileSync(outputDir + '/countries.json', JSON.stringify(countries, null, 4));
-
 
 }
 
