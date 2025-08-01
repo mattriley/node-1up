@@ -8,12 +8,13 @@ module.exports = () => ({ exif, timezone, dateField = 'DateTimeOriginal' }) => {
     let [date, time] = exifDate.split(' ');
     date = date.replaceAll(':', '-');
     let iso = [date, time].join('T');
-    if (!timezone) return iso;
+    if (!timezone) return { iso };
 
     const dt = DateTime.fromISO(iso, { zone: timezone, setZone: true });
-    if (!dt.isValid) return;
+    if (!dt.isValid) return { iso, timezone, error: dt.invalidExplanation }
 
-    return dt.toISO({ suppressMilliseconds: true });
+    iso = dt.toISO({ suppressMilliseconds: true });
+    return { iso, timezone };
 
 };
 
