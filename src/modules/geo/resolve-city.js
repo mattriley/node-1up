@@ -171,6 +171,10 @@ module.exports = ({ self, arr }) => csc => {
         ...(errors[field]?.length ? { errors: errors[field] } : {})
     });
 
+    let timezone = city?.timezone;
+    timezone ??= state?.timezone;
+    timezone ??= country?.timezones.length === 1 ? country.timezones[0] : null;
+
     return {
         city: resolveField('city', city?.name, null),
         state: resolveField('state', state?.name, state?.isoCode),
@@ -181,7 +185,7 @@ module.exports = ({ self, arr }) => csc => {
             stateCode: state?.isoCode ?? null,
             country: country?.name ?? original.country ?? null,
             countryCode: country?.isoCode ?? null,
-            timezone: city?.timezone ?? null
+            timezone: timezone
         },
         complete
     };

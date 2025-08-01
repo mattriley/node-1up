@@ -229,7 +229,7 @@ module.exports = ({ test, assert }) => $ => {
                 countryCode: 'AU',
                 state: 'Australian Capital Territory',
                 stateCode: 'ACT',
-                timezone: null
+                timezone: 'Australia/Sydney'
             },
             city: {
                 name: null,
@@ -266,7 +266,7 @@ module.exports = ({ test, assert }) => $ => {
                 countryCode: 'AU',
                 state: 'Victoria',
                 stateCode: 'VIC',
-                timezone: null
+                timezone: 'Australia/Melbourne'
             },
             city: {
                 name: null,
@@ -447,7 +447,7 @@ module.exports = ({ test, assert }) => $ => {
                 countryCode: 'CN',
                 state: 'Hong Kong SAR',
                 stateCode: 'HK',
-                timezone: null
+                timezone: 'Asia/Hong_Kong'
             },
             city: {
                 name: null,
