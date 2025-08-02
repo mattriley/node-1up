@@ -20,6 +20,7 @@ const outerCompose = ({ config, overrides = {} } = {}) => {
     const { fun } = compose.make('fun', { is });
     const { str } = compose.deep('str', { arr });
     const { net } = compose.make('net');
+    const { date } = compose.make('date', { obj });
 
     compose.deep('fsx', { is, fs, fsp });
     compose.asis('any');
@@ -27,7 +28,7 @@ const outerCompose = ({ config, overrides = {} } = {}) => {
     compose.make('bool');
     compose.make('path', { arr });
     compose.make('pipe', { is, fun });
-    compose.deep('exif', { obj });
+    compose.deep('exif', { obj, date });
 
     return {
         ...compose.modules,

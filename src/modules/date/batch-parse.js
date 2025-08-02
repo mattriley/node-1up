@@ -1,0 +1,37 @@
+const { DateTime } = require('luxon');
+
+module.exports = $ => ({ data, sources, timezoneSource, toIso }) => {
+
+    data ??= {};
+    sources ??= [];
+    const timezone = $.obj.dig(data, timezoneSource);
+    const timezoneForLuxon = timezone ?? 'UTC';
+
+    return sources.map(source => {
+        const [dateSource, timeSource] = [source].flat();
+        const sourceDate = $.obj.dig(data, dateSource);
+        const sourceTime = timeSource ? $.obj.dig(data, timeSource) : undefined;
+
+        if (dateSource && !sourceDate) return { dateSource, error: 'Date Source not found' };
+        if (timeSource && !sourceTime) return { timeSource, error: 'Time Source not found' };
+
+        const isoForLuxon = toIso(sourceDate, sourceTime);
+
+        const debug = {
+            dateSource,
+            sourceDate,
+            timeSource,
+            sourceTime,
+            timezone,
+            isoForLuxon,
+            timezoneForLuxon
+        };
+
+        const dt = DateTime.fromISO(isoForLuxon, { zone: timezoneForLuxon });
+        if (!dt.isValid) return { error: dt.invalidExplanation, debug };
+
+        const iso = dt.toISO({ suppressMilliseconds: true });
+        return { iso, timezone, debug };
+    });
+
+};
