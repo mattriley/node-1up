@@ -1,9 +1,12 @@
 const { DateTime } = require('luxon');
 
+const toIsoDefault = (date, time) => time ? `${date}T${time}` : date;
+
 module.exports = $ => ({ data, sources, timezoneSource, toIso }) => {
 
     data ??= {};
     sources ??= [];
+    toIso ??= toIsoDefault;
     const timezone = $.obj.dig(data, timezoneSource);
     const timezoneForLuxon = timezone ?? 'UTC';
 
