@@ -30,7 +30,7 @@ module.exports = $ => ({ data, sources, timezoneSource, toIso }) => {
         const dt = DateTime.fromISO(isoForLuxon, { zone: timezoneForLuxon });
         if (!dt.isValid) return { error: dt.invalidExplanation, debug };
 
-        const iso = dt.toISO({ suppressMilliseconds: true });
+        const iso = timezone ? dt.toISO({ suppressMilliseconds: true }) : dt.toFormat("yyyy-MM-dd'T'HH:mm:ss");
         return { iso, timezone, debug };
     });
 
