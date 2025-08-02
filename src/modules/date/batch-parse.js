@@ -13,7 +13,7 @@ module.exports = $ => ({ data, sources, timezoneSource, toIso }) => {
         const sourceTime = timeSource ? $.obj.dig(data, timeSource) : undefined;
 
         if (dateSource && !sourceDate) return { dateSource, error: 'Date Source not found' };
-        if (timeSource && !sourceTime) return { timeSource, error: 'Time Source not found' };
+        if (timeSource && !sourceTime) return { dateSource, sourceDate, timeSource, error: 'Time Source not found' };
 
         const isoForLuxon = toIso(sourceDate, sourceTime);
 
