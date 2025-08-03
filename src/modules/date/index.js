@@ -1,3 +1,4 @@
 module.exports = {
-    batchParse: require('./batch-parse')
+    batchParse: require('./batch-parse'),
+    firstGood: require('./first-good')
 };
