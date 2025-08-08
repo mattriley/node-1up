@@ -1,9 +1,10 @@
-module.exports = ({ is }) => (config = {}) => {
-    config = { delimiter: null, depth: Infinity, mutate: true, ...config };
+module.exports = ({ fun, is }) => config => {
+
+    const defaults = { delimiter: null, depth: Infinity, mutate: true };
+    const parseOptions = fun.parseConfig(defaults, config);
 
     return (obj, options = {}) => {
-        options = { ...config, ...options };
-        const { delimiter, depth, mutate } = options;
+        const { delimiter, depth, mutate } = parseOptions(options);
         const result = {};
 
         const recurse = (value, parentKey = '', currentDepth = 0) => {
