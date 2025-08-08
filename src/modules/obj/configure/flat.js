@@ -3,7 +3,7 @@ module.exports = ({ fun, is }) => config => {
     const defaults = { delimiter: null, depth: Infinity, mutate: true };
     const parseOptions = fun.parseConfig(defaults, config);
 
-    return (obj, options = {}) => {
+    return (obj, options) => {
         const { delimiter, depth, mutate } = parseOptions(options);
         const result = {};
 
