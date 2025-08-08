@@ -1,16 +1,20 @@
-module.exports = ({ self }) => (config = {}) => {
-    config = { depth: Infinity, ...config };
+module.exports = ({ self, fun }) => config => {
 
-    // REFACTOR
-    config.delimiters = Array.isArray(config.delimiters) ? config.delimiters : [config.delimiters ?? '.'];
+    const defaults = { depth: Infinity, delimiters: ['.'] };
+    const parseOptions = fun.parseConfig(defaults, config);
+    const regexMemo = {};
 
-    const splitter = self.buildDelimitersRegex(config.delimiters);
+    const getRegex = delimiters => {
+        const key = JSON.stringify(delimiters);
+        const regex = regexMemo[key] ?? self.buildDelimitersRegex(delimiters);
+        regexMemo[key] ??= regex;
+        return regex;
+    }
 
-    const splitPath = path => path.split(splitter);
-
-    return (obj, paths, options = {}) => {
-        options = { ...config, ...options };
-        const { depth } = options;
+    return (obj, paths, ...options) => {
+        const { depth, delimiters } = parseOptions(options);
+        const splitter = getRegex(delimiters);
+        const splitPath = path => path.split(splitter);
 
         if (obj == null || !Array.isArray(paths)) return {};
 
