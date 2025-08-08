@@ -1,16 +1,16 @@
 module.exports = ({ self }) => (config = {}) => {
-    config.depth ??= Infinity;
+    config = { depth: Infinity, ...config };
 
-    const delimiters = Array.isArray(config.delimiters)
-        ? config.delimiters
-        : [config.delimiters ?? '.'];
+    // REFACTOR
+    config.delimiters = Array.isArray(config.delimiters) ? config.delimiters : [config.delimiters ?? '.'];
 
-    const splitter = self.buildDelimitersRegex(delimiters);
+    const splitter = self.buildDelimitersRegex(config.delimiters);
 
     const splitPath = path => path.split(splitter);
 
     return (obj, paths, options = {}) => {
-        options.depth ??= config.depth;
+        options = { ...config, ...options };
+        const { depth } = options;
 
         if (obj == null || !Array.isArray(paths)) return {};
 
@@ -31,7 +31,7 @@ module.exports = ({ self }) => (config = {}) => {
         // Full deep path extractor
         for (const path of paths) {
             const keys = splitPath(path);
-            if (keys.length === 0 || keys.length > options.depth) continue;
+            if (keys.length === 0 || keys.length > depth) continue;
 
             let sourceCursor = obj;
             let targetCursor = result;
