@@ -17,6 +17,7 @@ module.exports = () => (defaults = {}, config = {}) => {
             throw new Error(`[parseConfig] "options" must be an array. Received: ${typeof args}`);
         }
 
+        const argsOrig = args;
         args = [...args];
         let overrides = {};
 
@@ -41,6 +42,14 @@ module.exports = () => (defaults = {}, config = {}) => {
             acc[defaultKeys[i]] = val;
             return acc;
         }, {});
+
+        // console.warn({
+        //     argsOrig,
+        //     defaults,
+        //     config,
+        //     options,
+        //     overrides
+        // });
 
         return {
             ...defaults,
