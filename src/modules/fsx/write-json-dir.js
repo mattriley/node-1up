@@ -1,1 +1,1 @@
-module.exports = ({ self }) => self.configure.writeJsonDir;
+module.exports = ({ self }) => self.configure.writeJsonDir();

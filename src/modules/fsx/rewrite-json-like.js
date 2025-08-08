@@ -1,1 +1,1 @@
-module.exports = ({ self }) => self.configure.rewriteJsonLike;
+module.exports = ({ self }) => self.configure.rewriteJsonLike();

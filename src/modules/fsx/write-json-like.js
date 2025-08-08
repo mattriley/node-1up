@@ -1,1 +1,1 @@
-module.exports = ({ self }) => self.configure.writeJsonLike;
+module.exports = ({ self }) => self.configure.writeJsonLike();
