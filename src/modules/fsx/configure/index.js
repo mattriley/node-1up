@@ -1,4 +1,5 @@
 module.exports = {
     batchWrite: require('./batch-write'),
-    rewriteJsonLike: require('./rewrite-json-like')
+    rewriteJsonLike: require('./rewrite-json-like'),
+    writeJsonDir: require('./write-json-dir')
 };
