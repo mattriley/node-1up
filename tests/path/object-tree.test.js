@@ -1,4 +1,3 @@
-// Tests expanded with help of ChatGPT.
 
 module.exports = ({ test, assert }) => lib => {
 

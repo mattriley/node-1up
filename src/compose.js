@@ -33,7 +33,7 @@ const outerCompose = ({ config, overrides = {} } = {}) => {
     compose.asis('any');
     compose.deep('geo', { str, arr, net });
     compose.make('bool');
-    compose.make('path', { fun, arr });
+    compose.deep('path', { fun, arr });
     compose.make('pipe', { is, fun });
     compose.deep('exif', { obj, date });
 

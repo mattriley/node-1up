@@ -1,3 +1,4 @@
 module.exports = {
-    insertBeforeLast: require('./insert-before-last')
+    insertBeforeLast: require('./insert-before-last'),
+    objectTree: require('./object-tree')
 };
