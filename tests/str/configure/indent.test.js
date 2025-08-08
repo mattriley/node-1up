@@ -31,7 +31,7 @@ module.exports = ({ test, assert }) => ({ str }) => {
     test('indent overrides depth and size when calling function', () => {
         const indenter = str.configure.indent({ depth: 2, size: 3 });
         const expected = '  foo'; // 1 * 2 spaces
-        const actual = indenter('foo', 1, 2);
+        const actual = indenter('foo', ' ', 1, 2);
         assert.equal(actual, expected);
     });
 

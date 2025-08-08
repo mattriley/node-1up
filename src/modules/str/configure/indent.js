@@ -1,9 +1,10 @@
-module.exports = () => (config = {}) => {
-    config.char = ' ';
-    config.size ??= 4;
-    config.depth ??= 1;
+const defaults = { char: ' ', size: 4, depth: 1 };
 
-    return (line, depth = config.depth, size = config.size) => {
-        return ' '.repeat(depth * size) + line;
+module.exports = ({ fun }) => (config = {}) => {
+    const parseArgs = fun.parseConfig(defaults, config);
+
+    return (line, ...args) => {
+        const { char, size, depth } = parseArgs(...args);
+        return char.repeat(depth * size) + line;
     };
 };

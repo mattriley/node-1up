@@ -1,5 +1,6 @@
 module.exports = {
     invokeEach: require('./invoke-each'),
     invokeOrReturn: require('./invoke-or-return'),
-    isPlain: require('./is-plain')
+    isPlain: require('./is-plain'),
+    parseConfig: require('./parse-config')
 };
