@@ -4,7 +4,7 @@
 
 - Prefer `delimiter` over `separator`.
 
-### Configure pattern
+### Configuration pattern
 
 ```js
 module.exports = ({ fun }) => config => {    // No need to default config object.
