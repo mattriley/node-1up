@@ -1,4 +1,5 @@
 module.exports = {
+    configure: require('./configure'),
     dedupeAdjacent: require('./dedupe-adjacent'),
     dedupeAdjacentInPlace: require('./dedupe-adjacent-in-place'),
     ensure: require('./ensure'),

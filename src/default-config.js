@@ -8,10 +8,16 @@ module.exports = {
         indent: 4
     },
 
+    array: {
+        delimiter: ',',
+        finalDelimiter: undefined // defaults to delimiter
+    },
 
-
-    delimiter: ',',
-    locationData: { cities: [], states: [], countries: [] },
+    locationData: {
+        cities: [],
+        states: [],
+        countries: []
+    },
 
     videoMajorBrands: ['mp42', 'qt', 'isom'],
     videoFileTypes: ['mp4', 'mov', 'avi', 'mkv', 'webm', '3gp', 'mts', 'm4v'],
