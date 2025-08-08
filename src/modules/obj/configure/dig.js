@@ -1,10 +1,19 @@
-module.exports = ({ self, arr }) => (config = {}) => {
-    config = { defaultValue: undefined, depth: Infinity, delimiters: ['.'], ...config };
-    const delimiterRegex = self.buildDelimitersRegex(config.delimiters);
+module.exports = ({ self, fun, arr }) => config => {
 
-    return (obj, path, defaultValue = config.defaultValue, options = {}) => {
-        options = { ...config, ...options };
-        const { depth } = options;
+    const defaults = { defaultValue: undefined, depth: Infinity, delimiters: ['.'] };
+    const parseOptions = fun.parseConfig(defaults, config);
+    const regexMemo = {};
+
+    const getRegex = delimiters => {
+        const key = JSON.stringify(delimiters);
+        const regex = regexMemo[key] ?? self.buildDelimitersRegex(delimiters);
+        regexMemo[key] ??= regex;
+        return regex;
+    }
+
+    return (obj, path, ...options) => {
+        const { defaultValue, depth, delimiters } = parseOptions(options);
+        const delimiterRegex = getRegex(delimiters);
 
         if (!obj) return obj;
 
