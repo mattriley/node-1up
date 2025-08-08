@@ -1,11 +1,12 @@
 const DEFAULT_KEYS = ['length', 'some', 'exists'];
 
 module.exports = ({ self }) => (config = {}) => {
-    config.mutate ??= true;
+    config = { mutate: true, ...config };
     for (const key of DEFAULT_KEYS) config[key] ??= key;
 
     return (obj, options = {}) => {
-        options.mutate ??= config.mutate;
+        options = { ...config, ...options };
+        const { mutate } = options;
 
         if (!self.isPlain(obj)) return obj;
 
@@ -31,6 +32,6 @@ module.exports = ({ self }) => (config = {}) => {
             }
         }
 
-        return options.mutate ? Object.assign(obj, acc) : { ...obj, ...acc };
+        return mutate ? Object.assign(obj, acc) : { ...obj, ...acc };
     };
 };

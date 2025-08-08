@@ -1,16 +1,15 @@
 module.exports = ({ self, arr }) => (config = {}) => {
-    config.defaultValue ??= undefined;
-    config.depth ??= Infinity;
-    config.delimiters ??= ['.'];
+    config = { defaultValue: undefined, depth: Infinity, delimiters: ['.'], ...config };
     const delimiterRegex = self.buildDelimitersRegex(config.delimiters);
 
     return (obj, path, defaultValue = config.defaultValue, options = {}) => {
-        options.depth ??= config.depth;
+        options = { ...config, ...options };
+        const { depth } = options;
 
         if (!obj) return obj;
 
-        function findKey(currentValue, keysRemaining, results = [], depth = 0) {
-            if (keysRemaining.length === 0 || depth >= options.depth) {
+        function findKey(currentValue, keysRemaining, results = [], currentDepth = 0) {
+            if (keysRemaining.length === 0 || currentDepth >= depth) {
                 results.push(currentValue);
                 return results;
             }
@@ -21,7 +20,7 @@ module.exports = ({ self, arr }) => (config = {}) => {
                 const key = step.join('.');
                 if (currentValue?.[key] !== undefined) {
                     const newKeysRemaining = keysRemaining.slice(step.length);
-                    findKey(currentValue[key], newKeysRemaining, results, depth + 1);
+                    findKey(currentValue[key], newKeysRemaining, results, currentDepth + 1);
                 }
             }
 
