@@ -1,31 +1,43 @@
 module.exports = () => (defaults = {}, config = {}) => {
     const keys = Object.keys(defaults);
 
-    return (...args) => {
-        const inputArgs = [...args];
+    return (options = []) => {
+        if (Array.isArray(options)) {
+            const input = [...options];
 
-        const hasOptions =
-            inputArgs.length > 0 &&
-            typeof inputArgs[inputArgs.length - 1] === 'object' &&
-            !Array.isArray(inputArgs[inputArgs.length - 1]);
+            const hasOverrides =
+                input.length > 0 &&
+                typeof input[input.length - 1] === 'object' &&
+                !Array.isArray(input[input.length - 1]);
 
-        const optionsArg = hasOptions ? inputArgs.pop() : {};
-        const mapped = {};
+            const overrides = hasOverrides ? input.pop() : {};
+            const mapped = {};
 
-        if (inputArgs.length > keys.length) {
-            const extras = inputArgs.slice(keys.length);
-            throw new Error(`[parseConfig] Too many positional arguments: ${JSON.stringify(extras)}`);
+            if (input.length > keys.length) {
+                const extras = input.slice(keys.length);
+                throw new Error(`[parseConfig] Too many positional options: ${JSON.stringify(extras)}`);
+            }
+
+            for (let i = 0; i < input.length; i++) {
+                mapped[keys[i]] = input[i];
+            }
+
+            return {
+                ...defaults,
+                ...config,
+                ...mapped,
+                ...overrides
+            };
         }
 
-        for (let i = 0; i < inputArgs.length; i++) {
-            mapped[keys[i]] = inputArgs[i];
+        if (typeof options === 'object' && options !== null) {
+            return {
+                ...defaults,
+                ...config,
+                ...options
+            };
         }
 
-        return {
-            ...defaults,
-            ...config,
-            ...mapped,
-            ...optionsArg
-        };
+        throw new Error(`[parseConfig] Expected options to be array or object, got: ${typeof options}`);
     };
 };

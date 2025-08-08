@@ -1,9 +1,9 @@
 module.exports = ({ fun }) => config => {
     const defaults = { delimiter: ', ', final: ' & ' };
-    const parseArgs = fun.parseConfig(defaults, config);
+    const parseOptions = fun.parseConfig(defaults, config);
 
-    return (arr, ...args) => {
-        const { delimiter, final } = parseArgs(...args);
+    return (arr, ...options) => {
+        const { delimiter, final } = parseOptions(options);
         const copy = [...arr];
         const last = copy.pop();
         if (!copy.length) return last;
