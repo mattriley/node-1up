@@ -1,17 +1,16 @@
 module.exports = () => (config = {}) => {
-    config.depth ??= Infinity;
-    config.mutate ??= true;
+    config = { depth: Infinity, mutate: true, ...config };
 
     return (obj, path, value, options = {}) => {
-        options.depth ??= config.depth;
-        options.mutate ??= config.mutate;
+        options = { ...config, ...options };
+        const { depth, mutate } = options;
 
-        if (typeof path !== 'string' || path === '') return options.mutate ? obj : { ...obj };
+        if (typeof path !== 'string' || path === '') return mutate ? obj : { ...obj };
 
         const keys = path.split('.');
-        const limit = Math.min(keys.length, options.depth);
+        const limit = Math.min(keys.length, depth);
 
-        const base = options.mutate ? obj : structuredClone(obj ?? {}); // or use a deep clone util if needed
+        const base = mutate ? obj : structuredClone(obj ?? {}); // or use a deep clone util if needed
         let cursor = base;
 
         for (let i = 0; i < limit - 1; i++) {

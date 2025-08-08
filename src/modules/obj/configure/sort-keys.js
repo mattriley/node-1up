@@ -1,18 +1,17 @@
 module.exports = ({ self }) => (config = {}) => {
-    config.depth ??= Infinity;
-    config.mutate ??= true;
+    config = { depth: Infinity, mutate: true, ...config };
 
     return (obj, options = {}) => {
-        options.depth ??= config.depth;
-        options.mutate ??= config.mutate;
+        options = { ...config, ...options };
+        const { depth, mutate } = options;
 
-        const sortKeys = (obj, currentDepth = options.depth) => {
+        const sortKeys = (obj, currentDepth = depth) => {
             if (currentDepth < 1 || obj === null || typeof obj !== 'object') {
                 return obj;
             }
 
             if (Array.isArray(obj)) {
-                if (options.mutate) {
+                if (mutate) {
                     for (let i = 0; i < obj.length; i++) {
                         obj[i] = sortKeys(obj[i], currentDepth - 1);
                     }
@@ -25,7 +24,7 @@ module.exports = ({ self }) => (config = {}) => {
             if (self.isPlain(obj)) {
                 const sortedEntries = Object.entries(obj).sort(([a], [b]) => a.localeCompare(b));
 
-                if (options.mutate) {
+                if (mutate) {
                     for (const key in obj) delete obj[key];
                     for (const [key, value] of sortedEntries) {
                         obj[key] = sortKeys(value, currentDepth - 1);
