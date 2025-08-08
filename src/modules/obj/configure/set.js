@@ -1,9 +1,10 @@
-module.exports = () => (config = {}) => {
-    config = { depth: Infinity, mutate: true, ...config };
+module.exports = ({ fun }) => config => {
 
-    return (obj, path, value, options = {}) => {
-        options = { ...config, ...options };
-        const { depth, mutate } = options;
+    const defaults = { depth: Infinity, mutate: true };
+    const parseOptions = fun.parseConfig(defaults, config);
+
+    return (obj, path, value, ...options) => {
+        const { depth, mutate } = parseOptions(options);
 
         if (typeof path !== 'string' || path === '') return mutate ? obj : { ...obj };
 
