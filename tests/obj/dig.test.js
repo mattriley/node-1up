@@ -25,4 +25,25 @@ module.exports = ({ test, assert }) => ({ obj }) => {
         assert.deepEqual(actual.sort(), [expectedFirst, expectedSecond].sort());
     });
 
+    test('path not found with default value', () => {
+
+        const input = {
+            exifr: {
+                id: 'exifr:10ef5f3c-3bc3-4af2-8de7-1689fb4d1307',
+                partitionKey: undefined
+            },
+            'exifr.extract': {
+                id: 'exifr.extract:10ef5f3c-3bc3-4af2-8de7-1689fb4d1307',
+                partitionKey: undefined
+            },
+            category: {
+                id: 'category:10c3734271ab373bcd6f4661f8313d62d9897c86',
+                partitionKey: 'Uncategorised'
+            }
+        }
+
+        const actual = obj.dig(input, 'import', {});
+        assert.deepEqual(actual, {});
+    });
+
 };

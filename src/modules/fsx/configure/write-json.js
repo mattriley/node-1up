@@ -1,4 +1,4 @@
-module.exports = ({ fsp, fun, globalConfig }) => config => {
+module.exports = ({ self, fsp, fun, globalConfig }) => config => {
 
     const parseOptions = fun.parseConfig(globalConfig.json, config);
 
@@ -7,6 +7,7 @@ module.exports = ({ fsp, fun, globalConfig }) => config => {
 
         try {
             const json = JSON.stringify(data, null, indent);
+            await self.mkdirp({ filepath });
             await fsp.writeFile(filepath, json);
         } catch (err) {
             err.data = { filepath };

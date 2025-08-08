@@ -9,13 +9,13 @@ module.exports = ({ self, fun, arr }) => config => {
         const regex = regexMemo[key] ?? self.buildDelimitersRegex(delimiters);
         regexMemo[key] ??= regex;
         return regex;
-    }
+    };
 
     return (obj, path, ...options) => {
         const { defaultValue, depth, delimiters } = parseOptions(options);
         const delimiterRegex = getRegex(delimiters);
 
-        if (!obj) return obj;
+        if (!obj) return defaultValue ?? {};
 
         function findKey(currentValue, keysRemaining, results = [], currentDepth = 0) {
             if (keysRemaining.length === 0 || currentDepth >= depth) {
@@ -39,7 +39,7 @@ module.exports = ({ self, fun, arr }) => config => {
         const keys = path.split(delimiterRegex);
         const results = findKey(obj, keys);
 
-        if (results.length === 0) return defaultValue;
+        if (results.length === 0) return defaultValue ?? {};
         return results.length === 1 ? results[0] : results;
     };
 };

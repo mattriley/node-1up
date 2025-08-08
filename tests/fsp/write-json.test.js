@@ -7,6 +7,8 @@ module.exports = ({ test, assert, compose }) => () => {
         const targetPath = 'foo/bar.json';
         const overrides = {
             fsp: {
+                mkdir: () => { },
+                mkdirp: () => { },
                 writeFile: (path, data) => {
                     assert.equal(path, targetPath);
                     assert.equal(data, expected);
