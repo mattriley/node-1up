@@ -1,4 +1,5 @@
 module.exports = ({ fun }) => config => {
+
     const defaults = { delimiter: '"', allowEscaped: false };
     const parseOptions = fun.parseConfig(defaults, config);
 
@@ -6,6 +7,8 @@ module.exports = ({ fun }) => config => {
         const { delimiter, allowEscaped } = parseOptions(options);
 
         if (typeof str !== 'string') return str;
+
+        console.warn({ delimiter, allowEscaped });
 
         if (typeof delimiter !== 'string' || delimiter.length !== 1) {
             throw new TypeError('Delimiter must be a single character string');

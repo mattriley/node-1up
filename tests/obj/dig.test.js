@@ -14,16 +14,21 @@ module.exports = ({ test, assert }) => ({ obj }) => {
         assert.deepEqual(actual, expected);
     });
 
-    test('combination of path lengths with two results', () => {
-        const expectedFirst = 1;
-        const expectedSecond = 2;
+    test('throws if path resolution is ambiguous due to overlapping keys', () => {
         const input = {
-            'a.b': { 'c': { 'd.e.f': expectedFirst } },
-            'a': { 'b.c.d': { 'e.f': expectedSecond } }
+            'a.b': { c: { 'd.e.f': 1 } },
+            a: { 'b.c.d': { 'e.f': 2 } }
         };
-        const actual = obj.dig(input, 'a.b.c.d.e.f');
-        assert.deepEqual(actual.sort(), [expectedFirst, expectedSecond].sort());
+
+        assert.throws(
+            () => obj.dig(input, 'a.b.c.d.e.f'),
+            err =>
+                err instanceof Error &&
+                err.message === '[dig] Found multiple matches for path "a.b.c.d.e.f": 2 results'
+        );
     });
+
+
 
     test('path not found with default value', () => {
 

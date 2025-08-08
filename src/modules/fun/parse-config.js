@@ -10,44 +10,43 @@ module.exports = () => (defaults = {}, config = {}) => {
 
     const keys = Object.keys(defaults);
 
-    const omitUndefined = obj =>
-        Object.fromEntries(Object.entries(obj).filter(([_, val]) => val !== undefined));
+    return (args = []) => {
+        args = [...args];
 
-    return (options = []) => {
-        if (Array.isArray(options)) {
-            const input = [...options];
+        if (Array.isArray(args)) {
 
             const hasOverrides =
-                input.length > 0 &&
-                typeof input[input.length - 1] === 'object' &&
-                !Array.isArray(input[input.length - 1]);
+                args.length > 0 &&
+                typeof args[args.length - 1] === 'object' &&
+                !Array.isArray(args[args.length - 1]);
 
-            const overrides = hasOverrides ? input.pop() : {};
-            const mapped = {};
+            const overrides = hasOverrides ? args.pop() : {};
 
-            if (input.length > keys.length) {
-                const extras = input.slice(keys.length);
+            const options = args.reduce((acc, val, i) => {
+                acc[keys[i]] = val;
+                return acc;
+            }, {});
+
+
+            if (args.length > keys.length) {
+                const extras = args.slice(keys.length);
                 throw new Error(`[parseConfig] Too many positional options: ${JSON.stringify(extras)}`);
             }
 
-            for (let i = 0; i < input.length; i++) {
-                const val = input[i];
-                if (val !== undefined) mapped[keys[i]] = val;
-            }
 
             return {
                 ...defaults,
-                ...omitUndefined(config),
-                ...mapped,
-                ...omitUndefined(overrides)
+                ...config,
+                ...options,
+                ...overrides
             };
         }
 
         if (typeof options === 'object' && options !== null) {
             return {
                 ...defaults,
-                ...omitUndefined(config),
-                ...omitUndefined(options)
+                ...config,
+                ...options
             };
         }
 

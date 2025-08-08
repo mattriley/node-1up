@@ -7,16 +7,25 @@ module.exports = $ => ({ data, sources, timezoneSource, toIso }) => {
     data ??= {};
     sources ??= [];
     toIso ??= toIsoDefault;
-    const timezone = $.obj.dig(data, timezoneSource);
+
+    const rawTimezone = $.obj.dig(data, timezoneSource);
+    const timezone = typeof rawTimezone === 'string' && rawTimezone.trim() ? rawTimezone : undefined;
     const timezoneForLuxon = timezone ?? 'UTC';
 
     return sources.map(source => {
-        const [dateSource, timeSource] = [source].flat();
+        const [dateSource, timeSource] = source;
         const sourceDate = $.obj.dig(data, dateSource);
         const sourceTime = timeSource ? $.obj.dig(data, timeSource) : undefined;
 
-        if (dateSource && !sourceDate) return { dateSource, error: 'Date Source not found' };
-        if (timeSource && !sourceTime) return { dateSource, sourceDate, timeSource, error: 'Time Source not found' };
+        const isValidString = val => typeof val === 'string' && val.trim();
+
+        if (dateSource && !isValidString(sourceDate)) {
+            return { dateSource, error: 'Date Source not found' };
+        }
+
+        if (timeSource && !isValidString(sourceTime)) {
+            return { dateSource, sourceDate, timeSource, error: 'Time Source not found' };
+        }
 
         const isoForLuxon = toIso(sourceDate, sourceTime);
 
@@ -33,7 +42,10 @@ module.exports = $ => ({ data, sources, timezoneSource, toIso }) => {
         const dt = DateTime.fromISO(isoForLuxon, { zone: timezoneForLuxon });
         if (!dt.isValid) return { error: dt.invalidExplanation, debug };
 
-        const iso = timezone ? dt.toISO({ suppressMilliseconds: true }) : dt.toFormat("yyyy-MM-dd'T'HH:mm:ss");
+        const iso = timezone
+            ? dt.toISO({ suppressMilliseconds: true })
+            : dt.toFormat("yyyy-MM-dd'T'HH:mm:ss");
+
         return { iso, timezone, debug };
     });
 

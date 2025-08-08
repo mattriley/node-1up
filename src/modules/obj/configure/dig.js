@@ -1,6 +1,6 @@
 module.exports = ({ self, fun, arr }) => config => {
 
-    const defaults = { defaultValue: undefined, depth: Infinity, delimiters: ['.'] };
+    const defaults = { defaultValue: null, depth: Infinity, delimiters: ['.'] };
     const parseOptions = fun.parseConfig(defaults, config);
     const regexMemo = {};
 
@@ -15,7 +15,9 @@ module.exports = ({ self, fun, arr }) => config => {
         const { defaultValue, depth, delimiters } = parseOptions(options);
         const delimiterRegex = getRegex(delimiters);
 
-        if (!obj) return defaultValue ?? {};
+        // defaultValue is null - should be {}
+
+        if (!obj) return defaultValue;
 
         function findKey(currentValue, keysRemaining, results = [], currentDepth = 0) {
             if (keysRemaining.length === 0 || currentDepth >= depth) {
@@ -39,7 +41,11 @@ module.exports = ({ self, fun, arr }) => config => {
         const keys = path.split(delimiterRegex);
         const results = findKey(obj, keys);
 
-        if (results.length === 0) return defaultValue ?? {};
-        return results.length === 1 ? results[0] : results;
+        if (results.length === 0) return defaultValue;
+        if (results.length > 1) {
+            throw new Error(`[dig] Found multiple matches for path "${path}": ${results.length} results`);
+        }
+
+        return results[0];
     };
 };
