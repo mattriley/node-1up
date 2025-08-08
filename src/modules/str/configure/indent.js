@@ -1,6 +1,5 @@
-const defaults = { char: ' ', size: 4, depth: 1 };
-
-module.exports = ({ fun }) => (config = {}) => {
+module.exports = ({ fun }) => config => {
+    const defaults = { size: 4, depth: 1, char: ' ' };
     const parseArgs = fun.parseConfig(defaults, config);
 
     return (line, ...args) => {
