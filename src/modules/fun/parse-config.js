@@ -1,12 +1,10 @@
-module.exports = () => (defaults = {}, config = {}) => {
-    const isPlainObject = obj =>
-        typeof obj === 'object' && obj !== null && obj.constructor === Object;
+module.exports = ({ is }) => (defaults = {}, config = {}) => {
 
-    if (!isPlainObject(defaults)) {
+    if (!is.plainObject(defaults)) {
         throw new Error(`[parseConfig] "defaults" must be a plain object. Received: ${JSON.stringify(defaults)}`);
     }
 
-    if (!isPlainObject(config)) {
+    if (!is.plainObject(config)) {
         throw new Error(`[parseConfig] "config" must be a plain object. Received: ${JSON.stringify(config)}`);
     }
 
@@ -21,7 +19,7 @@ module.exports = () => (defaults = {}, config = {}) => {
         let overrides = {};
 
         const last = input[input.length - 1];
-        if (isPlainObject(last)) {
+        if (is.plainObject(last)) {
             const keys = Object.keys(last);
             const matchesDefaults = keys.every(k => defaultKeys.includes(k));
             const hasRelevantKey = keys.some(k => defaultKeys.includes(k));
@@ -48,4 +46,5 @@ module.exports = () => (defaults = {}, config = {}) => {
             ...overrides
         };
     };
+
 };
