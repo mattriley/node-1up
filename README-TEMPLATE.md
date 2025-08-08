@@ -7,18 +7,23 @@
 ### Configure pattern
 
 ```js
-module.exports = ({ self }) => (config = {}) => {
-    // New config object to avoid mutation.
-    // Input overrides defaults.
-    config = { depth: Infinity, mutate: true, defaultValue: null, ...config };
+module.exports = ({ fun }) => config => {    // No need to default config object.
 
-    return (val, options = {}) => {
-        // New options object to avoid mutation.
-        // Input overrides config.
-        options = { ...config, ...options };
-        // Destructure options for readability.
-        const { depth, mutate, defaultValue } = options;
+    // Order of defaults dictates order of options below.
+    const defaults = { depth: Infinity, mutate: true, defaultValue: null };
+    const parseOptions = fun.parseConfig(defaults, config);
+
+    return (val, ...options) => {    // Note options spread.
+        const { depth, mutate, defaultValue } = parseOptions(options);
+        // Spread options for readability.
 ```
+
+Where applicable, provide options:
+
+- `depth: Infinity` for recursive functions.
+- `mutate: true` for transformations.
+
+
 
 ## Architecture
 
