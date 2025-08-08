@@ -8,36 +8,4 @@ module.exports = {
     videoMajorBrands: ['mp42', 'qt', 'isom'],
     videoFileTypes: ['mp4', 'mov', 'avi', 'mkv', 'webm', '3gp', 'mts', 'm4v'],
 
-    smartDeviceBrands: [
-        'Apple',
-        'Samsung',
-        'Google',
-        'Xiaomi',
-        'HUAWEI',
-        'Sony',
-        'LG',
-        'OnePlus',
-        'OPPO',
-        'vivo',
-        'realme',
-        'motorola',
-        'Nokia',
-        'ASUS',
-        'Lenovo',
-        'HONOR',
-        'ZTE',
-        'TECNO',
-        'Infinix',
-        'Nothing'
-    ],
-
-    // iPhones up to ~iOS 10 (e.g., iPhone 5, 6, SE 1st gen) are known to store GPS time in local time
-    appleDevicesWithBrokenGpsUtc: [
-        'iphone 4', 'iphone 4s', 'iphone 5', 'iphone 5s', 'iphone 5c', 'iphone se'
-    ]
-
-    // appleDevicesWithBrokenGpsUtc: [
-    //     'iphone 4', 'iphone 4s', 'iphone 5', 'iphone 5s', 'iphone 5c', 'iphone se'
-    // ]
-
 };
