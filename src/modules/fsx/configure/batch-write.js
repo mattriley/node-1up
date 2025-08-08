@@ -1,11 +1,12 @@
 const path = require('path');
 
-module.exports = ({ fsp }) => (config = {}) => {
-    config = { concurrencyLimit: 512, ...config }
+module.exports = ({ fsp, fun }) => config => {
 
-    return async (instructions, onWriteCallback, options = {}) => {
-        options = { ...config, ...options };
-        const { concurrencyLimit } = options;
+    const defaults = { concurrencyLimit: 512 }
+    const parseOptions = fun.parseConfig(defaults, config);
+
+    return async (instructions, onWriteCallback, ...options) => {
+        const { concurrencyLimit } = parseOptions(options);
 
         const createdDirs = new Set();
         let active = 0;
