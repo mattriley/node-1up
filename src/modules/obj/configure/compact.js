@@ -1,11 +1,4 @@
-const isRemovable = val =>
-    val === undefined ||
-    val === null ||
-    val === '' ||
-    (Array.isArray(val) && val.length === 0) ||
-    (typeof val === 'object' && val !== null && Object.keys(val).length === 0);
-
-module.exports = ({ is }) => (config = {}) => {
+module.exports = ({ self, is }) => (config = {}) => {
     config = { depth: Infinity, mutate: true, defaultValue: null, ...config };
 
     return (val, options = {}) => {
@@ -14,7 +7,7 @@ module.exports = ({ is }) => (config = {}) => {
 
         const compact = (val, currentDepth) => {
             if (currentDepth < 0 || !is.jsonCompatible(val)) return undefined;
-            if (isRemovable(val)) return undefined;
+            if (self.isEmpty(val)) return undefined;
 
             if (Array.isArray(val)) {
                 const result = mutate ? val : [...val];
@@ -25,7 +18,7 @@ module.exports = ({ is }) => (config = {}) => {
                         continue;
                     }
                     const cleaned = compact(item, currentDepth - 1);
-                    if (isRemovable(cleaned)) {
+                    if (self.isEmpty(cleaned)) {
                         result.splice(i, 1);
                     } else {
                         result[i] = cleaned;
@@ -43,7 +36,7 @@ module.exports = ({ is }) => (config = {}) => {
                         continue;
                     }
                     const cleaned = compact(item, currentDepth - 1);
-                    if (isRemovable(cleaned)) {
+                    if (self.isEmpty(cleaned)) {
                         delete result[key];
                     } else {
                         result[key] = cleaned;

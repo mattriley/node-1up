@@ -10,6 +10,7 @@ module.exports = {
     flat: require('./flat'),
     flatMapKeys: require('./flat-map-keys'),
     freezeDeep: require('./freeze-deep'),
+    isEmpty: require('./is-empty'),
     isEqual: require('./is-equal'),
     isPlain: require('./is-plain'),
     jsonSchema: require('./json-schema'),
