@@ -8,48 +8,45 @@ module.exports = () => (defaults = {}, config = {}) => {
         throw new Error(`[parseConfig] "config" must be a plain object. Received: ${JSON.stringify(config)}`);
     }
 
-    const keys = Object.keys(defaults);
+    const defaultKeys = Object.keys(defaults);
+    const isPlainObject = val =>
+        typeof val === 'object' && val !== null && val.constructor === Object;
 
     return (args = []) => {
+        if (!Array.isArray(args)) {
+            throw new Error(`[parseConfig] "options" must be an array. Received: ${typeof args}`);
+        }
+
         args = [...args];
+        let overrides = {};
 
-        if (Array.isArray(args)) {
+        const maybeLast = args[args.length - 1];
 
-            const hasOverrides =
-                args.length > 0 &&
-                typeof args[args.length - 1] === 'object' &&
-                !Array.isArray(args[args.length - 1]);
+        if (isPlainObject(maybeLast)) {
+            const keys = Object.keys(maybeLast);
+            const hasValidKeys = keys.every(k => defaultKeys.includes(k));
+            const hasAtLeastOne = keys.some(k => defaultKeys.includes(k));
 
-            const overrides = hasOverrides ? args.pop() : {};
-
-            const options = args.reduce((acc, val, i) => {
-                acc[keys[i]] = val;
-                return acc;
-            }, {});
-
-
-            if (args.length > keys.length) {
-                const extras = args.slice(keys.length);
-                throw new Error(`[parseConfig] Too many positional options: ${JSON.stringify(extras)}`);
+            if (keys.length > 0 && hasValidKeys && hasAtLeastOne) {
+                overrides = args.pop(); // it's a valid options bag
             }
-
-
-            return {
-                ...defaults,
-                ...config,
-                ...options,
-                ...overrides
-            };
         }
 
-        if (typeof options === 'object' && options !== null) {
-            return {
-                ...defaults,
-                ...config,
-                ...options
-            };
+        if (args.length > defaultKeys.length) {
+            const extras = args.slice(defaultKeys.length);
+            throw new Error(`[parseConfig] Too many positional options: ${JSON.stringify(extras)}`);
         }
 
-        throw new Error(`[parseConfig] "options" must be an array or object. Received: ${typeof options}`);
+        const options = args.reduce((acc, val, i) => {
+            acc[defaultKeys[i]] = val;
+            return acc;
+        }, {});
+
+        return {
+            ...defaults,
+            ...config,
+            ...options,
+            ...overrides
+        };
     };
 };
