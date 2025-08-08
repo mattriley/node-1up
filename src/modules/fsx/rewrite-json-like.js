@@ -1,7 +1,1 @@
-module.exports = ({ self, config }) => async (path, transform, indent = config.indent) => {
-
-    const current = await self.readJsonLike(path);
-    const updated = await transform(current);
-    return self.writeJsonLike(path, updated, indent);
-
-};
+module.exports = ({ self }) => self.configure.rewriteJsonLike;

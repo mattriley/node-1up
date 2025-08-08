@@ -1,5 +1,7 @@
 module.exports = {
 
+    jsonIndent: 4,
+
     indent: 4,
     delimiter: ',',
     pathDelimiter: '/',

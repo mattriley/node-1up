@@ -11,8 +11,15 @@ const outerCompose = ({ config, overrides = {} } = {}) => {
 
     Object.assign(globalThis, { _ });
 
-    const functionAlias = [['Value', 'Val']];
-    const { compose } = composer(modules, { functionAlias, overrides, defaultConfig, config: [config, buildLookups] });
+    const composerOptions = {
+        overrides,
+        defaultConfig,
+        config: [config, buildLookups],
+        configAlias: ['globalConfig'],
+        functionAlias: [['Value', 'Val']]
+    };
+
+    const { compose } = composer(modules, composerOptions);
 
     const { is } = compose.make('is');
     const { fun } = compose.make('fun', { is });
