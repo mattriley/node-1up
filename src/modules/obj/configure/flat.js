@@ -1,22 +1,18 @@
 module.exports = ({ is }) => (config = {}) => {
-    config.delimiter ??= null;
-    config.depth ??= Infinity;
-    config.mutate ??= true;
+    config = { delimiter: null, depth: Infinity, mutate: true, ...config };
 
     return (obj, options = {}) => {
-        options.delimiter ??= config.delimiter;
-        options.depth ??= config.depth;
-        options.mutate ??= config.mutate;
-
+        options = { ...config, ...options };
+        const { delimiter, depth, mutate } = options;
         const result = {};
 
         const recurse = (value, parentKey = '', currentDepth = 0) => {
             for (const [key, val] of Object.entries(value)) {
-                const isLeaf = !is.plainObject(val) || currentDepth >= options.depth;
+                const isLeaf = !is.plainObject(val) || currentDepth >= depth;
 
-                const newKey = options.delimiter && parentKey
-                    ? `${parentKey}${options.delimiter}${key}`
-                    : options.delimiter
+                const newKey = delimiter && parentKey
+                    ? `${parentKey}${delimiter}${key}`
+                    : delimiter
                         ? key
                         : key; // no prefixing at all
 
@@ -24,13 +20,13 @@ module.exports = ({ is }) => (config = {}) => {
                     if (newKey in result) throw new Error(`Collision: ${newKey}`);
                     result[newKey] = val;
                 } else {
-                    recurse(val, options.delimiter ? newKey : '', currentDepth + 1);
+                    recurse(val, delimiter ? newKey : '', currentDepth + 1);
                 }
             }
         };
 
         recurse(obj);
 
-        return options.mutate ? Object.assign(obj, result) : result;
+        return mutate ? Object.assign(obj, result) : result;
     };
 };
