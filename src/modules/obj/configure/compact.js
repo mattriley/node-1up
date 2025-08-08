@@ -1,9 +1,10 @@
-module.exports = ({ self, is }) => (config = {}) => {
-    config = { depth: Infinity, mutate: true, defaultValue: null, ...config };
+module.exports = ({ self, fun, is }) => config => {
 
-    return (val, options = {}) => {
-        options = { ...config, ...options };
-        const { depth, mutate, defaultValue } = options;
+    const defaults = { depth: Infinity, mutate: true, defaultValue: null };
+    const parseOptions = fun.parseConfig(defaults, config);
+
+    return (val, ...options) => {
+        const { depth, mutate, defaultValue } = parseOptions(options);;
 
         const compact = (val, currentDepth) => {
             if (currentDepth < 0 || !is.jsonCompatible(val)) return undefined;
