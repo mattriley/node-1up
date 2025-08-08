@@ -15,9 +15,9 @@ const outerCompose = ({ config, overrides = {} } = {}) => {
     const { compose } = composer(modules, { functionAlias, overrides, defaultConfig, config: [config, buildLookups] });
 
     const { is } = compose.make('is');
-    const { arr } = compose.make('arr', { is });
-    const { obj } = compose.deep('obj', { is, arr });
     const { fun } = compose.make('fun', { is });
+    const { arr } = compose.make('arr', { is });
+    const { obj } = compose.deep('obj', { fun, arr, is });
     const { str } = compose.deep('str', { fun, arr });
     const { net } = compose.make('net');
     const { date } = compose.make('date', { obj });
