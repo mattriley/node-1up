@@ -13,7 +13,7 @@ module.exports = $ => ({ data, sources, timezoneSource, toIso }) => {
     const timezoneForLuxon = timezone ?? 'UTC';
 
     return sources.map(source => {
-        const [dateSource, timeSource] = source;
+        const [dateSource, timeSource] = [source].flat();
         const sourceDate = $.obj.dig(data, dateSource);
         const sourceTime = timeSource ? $.obj.dig(data, timeSource) : undefined;
 
