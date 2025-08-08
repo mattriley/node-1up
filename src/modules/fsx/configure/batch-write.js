@@ -1,10 +1,11 @@
 const path = require('path');
 
 module.exports = ({ fsp }) => (config = {}) => {
-    config.concurrencyLimit ??= 512;
+    config = { concurrencyLimit: 512, ...config }
 
     return async (instructions, onWriteCallback, options = {}) => {
-        options.concurrencyLimit ??= config.concurrencyLimit;
+        options = { ...config, ...options };
+        const { concurrencyLimit } = options;
 
         const createdDirs = new Set();
         let active = 0;
@@ -34,7 +35,7 @@ module.exports = ({ fsp }) => (config = {}) => {
         };
 
         const run = () => {
-            while (active < options.concurrencyLimit) {
+            while (active < concurrencyLimit) {
                 const task = next();
                 if (!task) break;
                 active++;
