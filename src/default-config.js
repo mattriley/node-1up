@@ -1,10 +1,16 @@
 module.exports = {
 
-    jsonIndent: 4,
+    path: {
+        delimiter: '/',
+    },
 
-    indent: 4,
+    json: {
+        indent: 4
+    },
+
+
+
     delimiter: ',',
-    pathDelimiter: '/',
     locationData: { cities: [], states: [], countries: [] },
 
     videoMajorBrands: ['mp42', 'qt', 'isom'],

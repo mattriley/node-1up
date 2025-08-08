@@ -2,8 +2,7 @@ const path = require('path');
 
 module.exports = ({ self, fun, is, fsp, globalConfig }) => config => {
 
-    const defaults = { indent: globalConfig.jsonIndent };
-    const parseOptions = fun.parseConfig(defaults, config);
+    const parseOptions = fun.parseConfig(globalConfig.json, config);
 
     return async (dirpath, data, ...options) => {
         const { indent } = parseOptions(options);

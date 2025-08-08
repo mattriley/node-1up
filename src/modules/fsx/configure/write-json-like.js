@@ -7,8 +7,7 @@ const stringifyImplementations = {
 
 module.exports = ({ fsp, fun, globalConfig }) => config => {
 
-    const defaults = { indent: globalConfig.jsonIndent };
-    const parseOptions = fun.parseConfig(defaults, config);
+    const parseOptions = fun.parseConfig(globalConfig.json, config);
 
     return async (filepath, data, ...options) => {
         const { indent } = parseOptions(options);

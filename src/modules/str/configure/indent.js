@@ -1,4 +1,5 @@
 module.exports = ({ fun }) => config => {
+
     const defaults = { size: 4, depth: 1, char: ' ' };
     const parseOptions = fun.parseConfig(defaults, config);
 

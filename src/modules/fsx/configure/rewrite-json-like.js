@@ -1,7 +1,6 @@
 module.exports = ({ self, fun, globalConfig }) => config => {
 
-    const defaults = { indent: globalConfig.jsonIndent };
-    const parseOptions = fun.parseConfig(defaults, config);
+    const parseOptions = fun.parseConfig(globalConfig.json, config);
 
     async (path, transform, ...options) => {
         const { indent } = parseOptions(options);
