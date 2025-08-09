@@ -14,6 +14,7 @@ module.exports = ({ self, fun }) => config => {
             if (!Array.isArray(val)) continue;
 
             const elements = val.map(el => el?.id ?? el);
+
             const containsIds = val.some(el => el && typeof el === 'object' && 'id' in el);
 
             acc[`${key}.${length}`] = elements.length;

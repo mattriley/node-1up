@@ -43,7 +43,13 @@ module.exports = ({ self, fun, arr }) => config => {
 
         if (results.length === 0) return defaultValue;
         if (results.length > 1) {
-            if (ambig === 'first') return results[0];
+            if (ambig === 'first') {
+                // console.warn('---');
+                // console.warn(results)
+                // console.warn({ path })
+                // console.warn(obj)
+                return results[0];
+            }
             throw new Error(`[dig] Found multiple matches for path "${path}": ${results.length} results`);
         }
 

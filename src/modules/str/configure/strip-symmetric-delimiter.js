@@ -8,8 +8,6 @@ module.exports = ({ fun }) => config => {
 
         if (typeof str !== 'string') return str;
 
-        console.warn({ delimiter, allowEscaped });
-
         if (typeof delimiter !== 'string' || delimiter.length !== 1) {
             throw new TypeError('Delimiter must be a single character string');
         }
