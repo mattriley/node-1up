@@ -1,1 +1,1 @@
-module.exports = ({ self }) => self.configure.stripSymmetricDelimiter()
+module.exports = ({ self }) => self.configure.dequote()

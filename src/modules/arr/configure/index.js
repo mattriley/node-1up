@@ -1,4 +1,4 @@
 module.exports = {
-    ensure: require('./ensure'),
-    join: require('./join')
+    join: require('./join'),
+    parse: require('./parse')
 };
