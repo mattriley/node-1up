@@ -1,5 +1,4 @@
 module.exports = {
-    any: require('./any'),
     arr: require('./arr'),
     bool: require('./bool'),
     date: require('./date'),
