@@ -11,12 +11,10 @@ module.exports = ({ self, fun, arr }) => config => {
         return regex;
     };
 
+
     return (obj, path, ...options) => {
         const { defaultValue, depth, delimiters, ambig } = parseOptions(options);
         const delimiterRegex = getRegex(delimiters);
-
-        // defaultValue is null - should be {}
-
         if (!obj) return defaultValue;
 
         function findKey(currentValue, keysRemaining, results = [], currentDepth = 0) {
@@ -43,13 +41,7 @@ module.exports = ({ self, fun, arr }) => config => {
 
         if (results.length === 0) return defaultValue;
         if (results.length > 1) {
-            if (ambig === 'first') {
-                // console.warn('---');
-                // console.warn(results)
-                // console.warn({ path })
-                // console.warn(obj)
-                return results[0];
-            }
+            if (ambig === 'first') return results[0];
             throw new Error(`[dig] Found multiple matches for path "${path}": ${results.length} results`);
         }
 
