@@ -1,6 +1,6 @@
 module.exports = {
+    dequote: require('./dequote'),
     indent: require('./indent'),
     join: require('./join'),
-    sentenceCase: require('./sentence-case'),
-    stripSymmetricDelimiter: require('./strip-symmetric-delimiter')
+    sentenceCase: require('./sentence-case')
 };
