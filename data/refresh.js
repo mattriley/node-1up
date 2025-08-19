@@ -13,11 +13,6 @@ const refresh = async () => {
 
     await geo.geonames.admin1CodesASCII.download({ sourceDir, outputDir });
     let admin1Codes = await geo.geonames.admin1CodesASCII.toJson({ sourceDir, outputDir });
-    // columns: ['code', 'name', 'asciiName', 'geonameid'],
-    // "countryCode": "TH",
-    // "isoCode": "62",
-    // "name": "Phuket"
-    // todo: add states from admin1Codes 
 
     admin1Codes.forEach(admin1Code => {
         let state = states.find(state => state.name === admin1Code.name && state.countryCode === admin1Code.countryCode);
@@ -26,13 +21,9 @@ const refresh = async () => {
             "name": admin1Code.name,
             "isoCode": admin1Code.isoCode,
             "countryCode": admin1Code.countryCode,
-            // "latitude": "14.52891540",
-            // "longitude": "100.91014210",
-            // "timezone": "Asia/Bangkok"
         }
         states.push(state);
     });
-
 
     await geo.geonames.cities1000.download({ sourceDir, outputDir });
     let cities = await geo.geonames.cities1000.toJson({ sourceDir, outputDir });
