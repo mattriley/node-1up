@@ -8,7 +8,7 @@ module.exports = ({ test, assert }) => $ => {
         const input = { latitude: -37.814, longitude: 144.96332 };
 
         const expected = {
-            csc: {
+            location: {
                 city: 'Melbourne',
                 country: 'Australia',
                 countryCode: 'AU',
@@ -31,7 +31,7 @@ module.exports = ({ test, assert }) => $ => {
         const input = { latitude: 22.20056, longitude: 113.54611 };
 
         const expected = {
-            csc: {
+            location: {
                 city: 'Macau',
                 country: 'China',
                 countryCode: 'CN',
@@ -54,7 +54,7 @@ module.exports = ({ test, assert }) => $ => {
         const input = { latitude: -37.84634722222223, longitude: 145.42723055555555 };
 
         const expected = {
-            csc: {
+            location: {
                 city: 'Monbulk',
                 country: 'Australia',
                 countryCode: 'AU',
@@ -77,7 +77,7 @@ module.exports = ({ test, assert }) => $ => {
         const input = { latitude: -37.84634722222223, longitude: 145.42723055555555 };
 
         const expected = {
-            csc: {
+            location: {
                 city: 'Monbulk',
                 country: 'Australia',
                 countryCode: 'AU',

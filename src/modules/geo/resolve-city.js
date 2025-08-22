@@ -1,4 +1,4 @@
-module.exports = ({ self, arr }) => csc => {
+module.exports = ({ self, arr }) => location => {
     const ERROR_CODES = {
         MISSING: 'missing',
         AMBIGUOUS: 'ambiguous',
@@ -9,18 +9,14 @@ module.exports = ({ self, arr }) => csc => {
     const normalize = s => s?.trim();
 
     const original = {
-        city: normalize(csc.city),
-        state: normalize(csc.state),
-        country: normalize(csc.country),
+        city: normalize(location.city),
+        state: normalize(location.state),
+        country: normalize(location.country),
     };
 
     let { city: cityKey, state: stateKey, country: countryKey } = original;
 
-
-    const countryData = countryKey ? self.finder.findCountry(countryKey) : null;
-
-
-    const result = { ...csc };
+    const result = { ...location };
     const errors = {};
     const source = {};
 
@@ -179,7 +175,7 @@ module.exports = ({ self, arr }) => csc => {
         city: resolveField('city', city?.name, null),
         state: resolveField('state', state?.name, state?.isoCode),
         country: resolveField('country', country?.name, country?.isoCode),
-        csc: {
+        location: {
             city: city?.name ?? original.city ?? null,
             state: state?.name ?? original.state ?? null,
             stateCode: state?.isoCode ?? null,
