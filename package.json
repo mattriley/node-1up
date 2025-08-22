@@ -22,7 +22,8 @@
         "pre": "npx task pre",
         "setup": "npm i && npx task setup",
         "start": "npx task start",
-        "test": "npx task test"
+        "test": "npx task test",
+        "data": "node ./data/refresh.js"
     },
     "dependencies": {
         "tz-lookup": "^6.1.25",

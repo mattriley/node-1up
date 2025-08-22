@@ -3,7 +3,6 @@ module.exports = ({ config }) => {
     const { locationData } = config;
     const { lookup } = locationData;
 
-    // City not found: Kobe; State: 28; Country: JP
     const findCity = (cityKey, stateKey, countryKey) => {
         const cities = lookup.cities[cityKey.toUpperCase()] ?? [];
 
@@ -55,23 +54,6 @@ module.exports = ({ config }) => {
 
         return state;
     };
-
-    // const findState = (stateKey, countryKey) => {
-    //     const country = findCountry(countryKey);
-
-    //     const countryStates = lookup.statesByCountryThenState[norm(countryKey)];
-    //     if (!countryStates) throw new Error(`No states found for country: ${countryKey}`);
-
-    //     // const state = countryStates[norm(stateKey)];
-
-    //     const states = lookup.states[stateKey.toUpperCase()] ?? [];
-    //     const state = states.find(state => state.countryCode === country.isoCode);
-
-    //     if (!state) throw new Error(`State not found: ${stateKey}; Country: ${countryKey}`);
-
-    //     return state;
-    // };
-
 
     const findCountries = (countryKey) => {
         return lookup.countries[countryKey.toUpperCase()] ?? [];
