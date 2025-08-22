@@ -27,16 +27,15 @@ const refresh = async () => {
 
     await geo.geonames.cities1000.download({ sourceDir, outputDir });
     let cities = await geo.geonames.cities1000.toJson({ sourceDir, outputDir });
-    cities = geo.fixer.fixCities(cities);
+    cities = geo.fixCities(cities);
 
     cities = geo.assignStateToCities({ cities, states, admin1Codes });
     cities = geo.assignFederalTerritoryToCities({ cities, federalTerritoryCities });
-    cities = geo.fixer.fixCities(cities);
-    states = geo.fixer.fixCities(states);
+    cities = geo.fixCities(cities);
+    states = geo.fixCities(states);
 
     await geo.geonames.countryInfo.download({ sourceDir, outputDir });
     let countries = await geo.geonames.countryInfo.toJson({ sourceDir });
-    countries = geo.fixer.fixCountries(countries);
     countries = geo.assignTimezonesToCountries({ countries });
 
     fs.writeFileSync(outputDir + '/cities.json', JSON.stringify(cities, null, 4));
