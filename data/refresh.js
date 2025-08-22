@@ -8,8 +8,8 @@ const outputDir = sourceDir;
 
 const refresh = async () => {
 
-    states = geo.fixStates(states);
-    states = geo.assignTimezonesToStates({ states });
+    states = geo.data.fixStates(states);
+    states = geo.data.assignTimezonesToStates({ states });
 
     await geo.geonames.admin1CodesASCII.download({ sourceDir, outputDir });
     let admin1Codes = await geo.geonames.admin1CodesASCII.toJson({ sourceDir, outputDir });
@@ -27,16 +27,15 @@ const refresh = async () => {
 
     await geo.geonames.cities1000.download({ sourceDir, outputDir });
     let cities = await geo.geonames.cities1000.toJson({ sourceDir, outputDir });
-    cities = geo.fixCities(cities);
-
-    cities = geo.assignStateToCities({ cities, states, admin1Codes });
-    cities = geo.assignFederalTerritoryToCities({ cities, federalTerritoryCities });
-    cities = geo.fixCities(cities);
-    states = geo.fixCities(states);
+    cities = geo.data.fixCities(cities);
+    cities = geo.data.assignStateToCities({ cities, states, admin1Codes });
+    cities = geo.data.assignFederalTerritoryToCities({ cities, federalTerritoryCities });
+    cities = geo.data.fixCities(cities);
+    states = geo.data.fixCities(states);
 
     await geo.geonames.countryInfo.download({ sourceDir, outputDir });
     let countries = await geo.geonames.countryInfo.toJson({ sourceDir });
-    countries = geo.assignTimezonesToCountries({ countries });
+    countries = geo.data.assignTimezonesToCountries({ countries });
 
     fs.writeFileSync(outputDir + '/cities.json', JSON.stringify(cities, null, 4));
     fs.writeFileSync(outputDir + '/states.json', JSON.stringify(states, null, 4));
