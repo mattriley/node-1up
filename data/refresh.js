@@ -1,6 +1,6 @@
 const fs = require('fs');
 const { geo } = require('..');
-let states = require('./source/statesOrig.json');
+const statesOrig = require('./source/statesOrig.json');
 const federalTerritoryCities = require('./source/federal-territory-cities.json');
 
 const sourceDir = __dirname + '/source';
@@ -8,22 +8,12 @@ const outputDir = sourceDir;
 
 const refresh = async () => {
 
-    states = geo.data.fixStates(states);
-    states = geo.data.assignTimezonesToStates({ states });
-
     await geo.geonames.admin1CodesASCII.download({ sourceDir, outputDir });
-    let admin1Codes = await geo.geonames.admin1CodesASCII.toJson({ sourceDir, outputDir });
+    const admin1Codes = await geo.geonames.admin1CodesASCII.toJson({ sourceDir, outputDir });
 
-    admin1Codes.forEach(admin1Code => {
-        let state = states.find(state => state.name === admin1Code.name && state.countryCode === admin1Code.countryCode);
-        if (state) return;
-        state = {
-            "name": admin1Code.name,
-            "isoCode": admin1Code.isoCode,
-            "countryCode": admin1Code.countryCode,
-        }
-        states.push(state);
-    });
+    let states = geo.data.fixStates(statesOrig);
+    states = geo.data.assignTimezonesToStates({ states });
+    states = geo.data.assignMissingStates({ states, admin1Codes });
 
     await geo.geonames.cities1000.download({ sourceDir, outputDir });
     let cities = await geo.geonames.cities1000.toJson({ sourceDir, outputDir });
