@@ -8,7 +8,7 @@ const outputDir = sourceDir;
 
 const refresh = async () => {
 
-    states = geo.fixer.fixStates(states);
+    states = geo.fixStates(states);
     states = geo.assignTimezonesToStates({ states });
 
     await geo.geonames.admin1CodesASCII.download({ sourceDir, outputDir });

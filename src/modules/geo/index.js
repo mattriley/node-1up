@@ -4,6 +4,7 @@ module.exports = {
     assignTimezonesToCountries: require('./assign-timezones-to-countries'),
     assignTimezonesToStates: require('./assign-timezones-to-states'),
     finder: require('./finder'),
+    fixStates: require('./fix-states'),
     fixer: require('./fixer'),
     geonames: require('./geonames'),
     haversineDistanceKm: require('./haversine-distance-km'),
