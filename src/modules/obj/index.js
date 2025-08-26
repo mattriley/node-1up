@@ -17,6 +17,7 @@ module.exports = {
     mapKeys: require('./map-keys'),
     mapValues: require('./map-values'),
     mapValuesAsync: require('./map-values-async'),
+    meta: require('./meta'),
     pick: require('./pick'),
     set: require('./set'),
     sortKeys: require('./sort-keys'),
