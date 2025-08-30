@@ -35,6 +35,7 @@ const outerCompose = ({ config, overrides = {} } = {}) => {
     compose.deep('path', { fun, arr });
     compose.make('pipe', { is, fun });
     compose.deep('exif', { obj, date });
+    compose.deep('img');
 
     return {
         ...compose.modules,

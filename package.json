@@ -2,6 +2,9 @@
     "name": "1up",
     "version": "1.224.0",
     "description": "",
+    "bin": {
+        "batch-resize": "./bin/batch-resize.js"
+    },
     "license": "ISC",
     "homepage": "https://github.com/mattriley/node-1up",
     "repository": "github:mattriley/node-1up",
@@ -26,14 +29,15 @@
         "data": "node ./data/refresh.js"
     },
     "dependencies": {
-        "tz-lookup": "^6.1.25",
         "adm-zip": "^0.5.16",
         "country-city-state": "^1.0.9",
         "country-timezone": "^1.0.8",
         "fast-deep-equal": "^3.1.3",
         "lodash": "^4.17.21",
         "luxon": "^3.7.1",
-        "module-composer": "^0.172.0"
+        "module-composer": "^0.172.0",
+        "sharp": "^0.34.3",
+        "tz-lookup": "^6.1.25"
     },
     "devDependencies": {
         "cloc": "^1.98.0-cloc",
@@ -46,5 +50,8 @@
         "module-testrunner": "^0.21.0",
         "npm-check-updates": "^16.14.4",
         "task-library": "^0.274.0"
+    },
+    "engines": {
+        "node": ">=18"
     }
 }
