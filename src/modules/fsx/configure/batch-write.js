@@ -1,16 +1,53 @@
 const path = require('path');
 
-module.exports = ({ fsp, fun }) => config => {
-
-    const defaults = { concurrencyLimit: 512 }
+module.exports = ({ fsp, fun }) => (config = {}) => {
+    const defaults = {
+        concurrencyLimit: 512,
+        compare: true,               // false | true
+        compareChunkSize: 64 * 1024,  // 64KB chunks for content compare
+        compareMinBytes: 64 * 1024,   // < this size → always overwrite
+    };
     const parseOptions = fun.parseConfig(defaults, config);
 
-    return async (instructions, onWriteCallback, ...options) => {
-        const { concurrencyLimit } = parseOptions(options);
+    // Safe compare = size check first, then chunked compare
+    async function shouldWrite(filename, nextBuf, chunkSize) {
+        let stat;
+        try {
+            stat = await fsp.stat(filename);
+        } catch (e) {
+            if (e && e.code === 'ENOENT') return true; // file missing
+            throw e;
+        }
+        if (stat.size !== nextBuf.length) return true; // size mismatch → rewrite
+
+        const fh = await fsp.open(filename, 'r');
+        try {
+            const tmp = Buffer.allocUnsafe(Math.min(chunkSize, nextBuf.length));
+            let offset = 0;
+            while (offset < nextBuf.length) {
+                const toRead = Math.min(tmp.length, nextBuf.length - offset);
+                const { bytesRead } = await fh.read(tmp, 0, toRead, offset);
+                if (bytesRead !== toRead) return true; // unexpected short read
+                if (Buffer.compare(tmp.subarray(0, toRead), nextBuf.subarray(offset, offset + toRead)) !== 0) {
+                    return true; // content differs
+                }
+                offset += toRead;
+            }
+            return false; // identical
+        } finally {
+            await fh.close();
+        }
+    }
+
+    return async (instructions, onWriteCallback = () => { }, ...options) => {
+        const { concurrencyLimit, compare, compareChunkSize, compareMinBytes } = parseOptions(options);
 
         const createdDirs = new Set();
         let active = 0;
         let index = 0;
+
+        // stats (returned)
+        const stats = { written: 0, skipped: 0, failed: 0 };
 
         const next = () => {
             if (index >= instructions.length) return null;
@@ -24,9 +61,22 @@ module.exports = ({ fsp, fun }) => config => {
                     }
 
                     const buffer = Buffer.isBuffer(content) ? content : Buffer.from(content);
-                    await fsp.writeFile(filename, buffer);
-                    onWriteCallback(filename, { success: true });
+
+                    let needWrite = true;
+                    if (compare && buffer.length >= compareMinBytes) {
+                        needWrite = await shouldWrite(filename, buffer, compareChunkSize);
+                    }
+
+                    if (needWrite) {
+                        await fsp.writeFile(filename, buffer);
+                        stats.written++;
+                        onWriteCallback(filename, { success: true, skipped: false });
+                    } else {
+                        stats.skipped++;
+                        onWriteCallback(filename, { success: true, skipped: true });
+                    }
                 } catch (error) {
+                    stats.failed++;
                     onWriteCallback(filename, { success: false, error });
                 } finally {
                     active--;
@@ -40,19 +90,18 @@ module.exports = ({ fsp, fun }) => config => {
                 const task = next();
                 if (!task) break;
                 active++;
-                task(); // don't await — fire-and-forget inside throttled loop
+                task(); // fire-and-forget within throttle
             }
-        }
+        };
 
-        return new Promise(resolve => {
+        return new Promise((resolve) => {
             run();
             const checkDone = setInterval(() => {
                 if (active === 0 && index >= instructions.length) {
                     clearInterval(checkDone);
-                    resolve();
+                    resolve(stats); // <-- return stats
                 }
             }, 10);
         });
-
     };
 };
