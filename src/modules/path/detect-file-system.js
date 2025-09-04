@@ -16,7 +16,7 @@ const normalizeFsType = (t) => (t || "").toLowerCase().replace(/\s+/g, "");
  * Detect filesystem limits for a given path's directory.
  * Returns { fsType, nameMax, pathMax, units, note? }
  */
-module.exports = ({ self }) => async (targetPath = ".") => {
+module.exports = ({ config }) => async (targetPath = ".") => {
     const platform = os.platform();
     const absDir = path.resolve(targetPath);
 
@@ -24,14 +24,14 @@ module.exports = ({ self }) => async (targetPath = ".") => {
         if (platform === "darwin") {
             const out = await execCmd(`stat -f %T ${JSON.stringify(absDir)}`);
             const fsType = normalizeFsType(out);
-            const limits = self.FS_LIMITS[fsType];
-            return limits ? { fsType, ...limits } : { ...self.PLATFORM_DEFAULTS.darwin, fsType };
+            const limits = config.path.fsLimits[fsType];
+            return limits ? { fsType, ...limits } : { ...config.path.platformDefaults.darwin, fsType };
         }
         if (platform === "linux") {
             const out = await execCmd(`stat -f -c %T ${JSON.stringify(absDir)}`);
             const key = normalizeFsType(out);
-            const limits = self.FS_LIMITS[key] || self.FS_LIMITS[out];
-            return limits ? { fsType: key, ...limits } : { ...self.PLATFORM_DEFAULTS.linux, fsType: key };
+            const limits = config.path.fsLimits[key] || config.path.fsLimits[out];
+            return limits ? { fsType: key, ...limits } : { ...config.path.platformDefaults.linux, fsType: key };
         }
         if (platform === "win32") {
             const abs = path.resolve(absDir);
@@ -44,13 +44,13 @@ module.exports = ({ self }) => async (targetPath = ".") => {
             ].join(" ");
             const out = await execCmd(`powershell -NoProfile -Command "${ps}"`);
             const fsType = normalizeFsType(out || "NTFS");
-            const limits = self.FS_LIMITS[fsType];
-            return limits ? { fsType, ...limits } : { ...self.PLATFORM_DEFAULTS.win32, fsType };
+            const limits = config.path.fsLimits[fsType];
+            return limits ? { fsType, ...limits } : { ...config.path.platformDefaults.win32, fsType };
         }
     } catch (_) {
         // fall through
     }
 
-    const def = self.PLATFORM_DEFAULTS[os.platform()] || { nameMax: 255, pathMax: 4096, units: "bytes", fsType: "unknown" };
+    const def = config.path.platformDefaults[os.platform()] || { nameMax: 255, pathMax: 4096, units: "bytes", fsType: "unknown" };
     return def;
 };

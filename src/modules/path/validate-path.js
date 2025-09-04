@@ -13,7 +13,7 @@ const ERROR_CODES = {
 const BYTE_LEN = (s) => Buffer.byteLength(s, "utf8");
 const normalizeFsType = (t) => (t || "").toLowerCase().replace(/\s+/g, "");
 
-module.exports = ({ self }) => {
+module.exports = ({ self, config }) => {
 
     /**
      * Resolve which limits to use.
@@ -34,10 +34,10 @@ module.exports = ({ self }) => {
         }
         if (assumeFs && typeof assumeFs === "string") {
             const key = normalizeFsType(assumeFs);
-            const limits = self.FS_LIMITS[key];
+            const limits = config.path.fsLimits[key];
             if (limits) return { fsType: key, ...limits };
             // unknown string → fall back to platform defaults but keep the label
-            const def = self.PLATFORM_DEFAULTS[os.platform()];
+            const def = config.path.platformDefaults[os.platform()];
             return { ...def, fsType: key };
         }
         return self.detectFileSystem(path.dirname(path.resolve(forPath || ".")));

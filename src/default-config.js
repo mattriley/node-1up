@@ -1,3 +1,6 @@
+const fsLimits = require('./config/fs-limits');
+const platformDefaults = require('./config/platform-defaults');
+
 module.exports = {
 
     path: {
@@ -21,5 +24,10 @@ module.exports = {
 
     videoMajorBrands: ['mp42', 'qt', 'isom'],
     videoFileTypes: ['mp4', 'mov', 'avi', 'mkv', 'webm', '3gp', 'mts', 'm4v'],
+
+    path: {
+        fsLimits,
+        platformDefaults
+    }
 
 };
