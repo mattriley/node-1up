@@ -8,11 +8,11 @@ module.exports = ({ config }) => ({ exif = {} }) => {
 
     const hasVideoFileType =
         'FileType' in exif &&
-        config.videoFileTypes.includes(exif.FileType.toLowerCase());
+        config.exif.videoFileTypes.includes(exif.FileType.toLowerCase());
 
     const hasVideoMajorBrand =
         'MajorBrand' in exif &&
-        config.videoMajorBrands.includes(exif.MajorBrand.toLowerCase());
+        config.exif.videoMajorBrands.includes(exif.MajorBrand.toLowerCase());
 
     const isVideo =
         hasDuration ||
