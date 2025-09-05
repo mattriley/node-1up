@@ -12,5 +12,6 @@ module.exports = {
     obj: require('./obj'),
     path: require('./path'),
     pipe: require('./pipe'),
+    proc: require('./proc'),
     str: require('./str')
 };

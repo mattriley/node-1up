@@ -24,14 +24,14 @@ module.exports = ({ config }) => async (targetPath = ".") => {
         if (platform === "darwin") {
             const out = await execCmd(`stat -f %T ${JSON.stringify(absDir)}`);
             const fsType = normalizeFsType(out);
-            const limits = config.path.fsLimits[fsType];
-            return limits ? { fsType, ...limits } : { ...config.path.platformDefaults.darwin, fsType };
+            const limits = config.os.fileSystemLimits[fsType];
+            return limits ? { fsType, ...limits } : { ...config.os.platformDefaults.darwin, fsType };
         }
         if (platform === "linux") {
             const out = await execCmd(`stat -f -c %T ${JSON.stringify(absDir)}`);
             const key = normalizeFsType(out);
-            const limits = config.path.fsLimits[key] || config.path.fsLimits[out];
-            return limits ? { fsType: key, ...limits } : { ...config.path.platformDefaults.linux, fsType: key };
+            const limits = config.os.fileSystemLimits[key] || config.os.fileSystemLimits[out];
+            return limits ? { fsType: key, ...limits } : { ...config.os.platformDefaults.linux, fsType: key };
         }
         if (platform === "win32") {
             const abs = path.resolve(absDir);
@@ -44,13 +44,13 @@ module.exports = ({ config }) => async (targetPath = ".") => {
             ].join(" ");
             const out = await execCmd(`powershell -NoProfile -Command "${ps}"`);
             const fsType = normalizeFsType(out || "NTFS");
-            const limits = config.path.fsLimits[fsType];
-            return limits ? { fsType, ...limits } : { ...config.path.platformDefaults.win32, fsType };
+            const limits = config.os.fileSystemLimits[fsType];
+            return limits ? { fsType, ...limits } : { ...config.os.platformDefaults.win32, fsType };
         }
     } catch (_) {
         // fall through
     }
 
-    const def = config.path.platformDefaults[os.platform()] || { nameMax: 255, pathMax: 4096, units: "bytes", fsType: "unknown" };
+    const def = config.os.platformDefaults[os.platform()] || { nameMax: 255, pathMax: 4096, units: "bytes", fsType: "unknown" };
     return def;
 };

@@ -34,10 +34,10 @@ module.exports = ({ self, config }) => {
         }
         if (assumeFs && typeof assumeFs === "string") {
             const key = normalizeFsType(assumeFs);
-            const limits = config.path.fsLimits[key];
+            const limits = config.os.fileSystemLimits[key];
             if (limits) return { fsType: key, ...limits };
             // unknown string → fall back to platform defaults but keep the label
-            const def = config.path.platformDefaults[os.platform()];
+            const def = config.os.platformDefaults[os.platform()];
             return { ...def, fsType: key };
         }
         return self.detectFileSystem(path.dirname(path.resolve(forPath || ".")));
