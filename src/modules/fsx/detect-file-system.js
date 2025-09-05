@@ -28,13 +28,13 @@ module.exports = ({ config, self }) => {
 
         try {
             if (platform === "darwin") {
-                return await self.fsDetectMacOS(absDir);
+                return await self.detectMacos(absDir);
             }
             if (platform === "linux") {
-                return await self.fsDetectLinux(absDir);
+                return await self.detectLinux(absDir);
             }
             if (platform === "win32") {
-                return await self.fsDetectWindows(absDir);
+                return await self.detectWindows(absDir);
             }
         } catch (_) {
             // fall through to defaults
