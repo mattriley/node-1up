@@ -31,6 +31,60 @@ module.exports = {
             'canon', 'nikon', 'fujifilm', 'panasonic', 'olympus',
             'leica', 'pentax', 'ricoh', 'sigma', 'hasselblad'
         ],
+        smartModels: [
+            // Apple
+            'iphone',
+            'ipad',
+
+            // Google
+            'pixel',
+            'nexus',
+
+            // Samsung
+            'galaxy',
+
+            // Xiaomi / Redmi / Poco / Mi / Mix
+            'redmi',
+            'mi',
+            'mix',
+            'poco',
+
+            // OnePlus
+            'oneplus',
+
+            // Sony
+            'xperia',
+
+            // Motorola
+            'moto',
+
+            // Huawei / Honor
+            'mate',
+            'nova',
+            'honor',
+
+            // Oppo / Realme / Vivo
+            'realme',
+            'oppo',
+            'vivo',
+
+            // Asus
+            'zenfone'
+        ],
+        mobileSoftware: [
+            // Core OS
+            'ios',
+            'ipad os',
+            'android',
+
+            // Common Android skins
+            'miui',        // Xiaomi
+            'one ui',      // Samsung
+            'coloros',     // Oppo
+            'oxygenos',    // OnePlus
+            'funtouch',    // Vivo
+            'emui'         // Huawei
+        ],
         videoMajorBrands: ['mp42', 'qt', 'isom'],
         videoFileTypes: ['mp4', 'mov', 'avi', 'mkv', 'webm', '3gp', 'mts', 'm4v'],
     },

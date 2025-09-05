@@ -1,24 +1,32 @@
-// True = smart device (phone/tablet), false = dedicated camera.
-
-// single regex per check (case-insensitive)
-const MODEL_RE = /(iphone|ipad|pixel|redmi|mi(?:\s|-)|mix\s|xperia|galaxy|moto\s|oneplus|honor|nova|poco|realme|mate|nexus|zenfone)/i;
-const SOFT_RE = /(ios|ipad os|android|miui|one ui|coloros|oxygenos|funtouch)/i;
-
 const hasOwn = (o, k) => o != null && Object.prototype.hasOwnProperty.call(o, k);
 
 // minimal, fast numeric parse
-const toNumber = v => {
-    if (v == null) return NaN;
-    if (typeof v === 'number') return v;
-    // handles "4.2 mm", "26 mm", etc. parseFloat stops at first non-number
-    const n = parseFloat(v);
+const toNumber = (v) => {
+    if (v == null) { return NaN; }
+    if (typeof v === 'number') { return v; }
+    const n = parseFloat(v); // handles "4.2 mm", "26 mm", etc.
     return Number.isFinite(n) ? n : NaN;
+};
+
+// escape a literal to be safe in a regex alternation
+const escapeRe = (s) => String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+// compile a single case-insensitive regex from an array of literals
+const compileListRe = (arr) => {
+    const items = Array.isArray(arr) ? arr.filter(Boolean).map(escapeRe) : [];
+    if (items.length === 0) { return null; }
+    // Keep it simple: an alternation; we *don’t* add word boundaries because many models contain spaces
+    return new RegExp(`(?:${items.join('|')})`, 'i');
 };
 
 module.exports = ({ config }) => {
 
-    const smartMakes = new Set(config.exif.smartMakes);
-    const cameraMakes = new Set(config.exif.cameraMakes);
+    // Precompute lookups & regexes once (avoid per-call allocations)
+    const smartMakes = new Set((config.exif.smartMakes || []).map((s) => String(s).toLowerCase()));
+    const cameraMakes = new Set((config.exif.cameraMakes || []).map((s) => String(s).toLowerCase()));
+
+    const MODEL_RE = compileListRe(config.exif.smartModels || []);
+    const SOFT_RE = compileListRe(config.exif.mobileSoftware || []);
 
     return ({ exif = {} }) => {
 
@@ -30,17 +38,17 @@ module.exports = ({ config }) => {
         const make = rawMake.toLowerCase();
 
         // 1) Make is a known phone/tablet brand → smart
-        if (make && smartMakes.has(make)) return true;
+        if (make && smartMakes.has(make)) { return true; }
 
         // 2) Model looks like a phone → smart
-        if (rawModel && MODEL_RE.test(rawModel)) return true;
+        if (rawModel && MODEL_RE && MODEL_RE.test(rawModel)) { return true; }
 
         // 3) Software hints at mobile OS → smart
-        if (rawSoftware && SOFT_RE.test(rawSoftware)) return true;
+        if (rawSoftware && SOFT_RE && SOFT_RE.test(rawSoftware)) { return true; }
 
         // 4) Fallback only if GPS exists (skip focal parsing otherwise)
         const hasGps = ('GPSLatitude' in exif) || ('GPSLongitude' in exif) || ('GPSPosition' in exif);
-        if (!hasGps) return false;
+        if (!hasGps) { return false; }
 
         // Quick phone-like optics check
         const focalMm = toNumber(exif.FocalLength);                // e.g., "4.2 mm" → 4.2
@@ -49,11 +57,13 @@ module.exports = ({ config }) => {
             (Number.isFinite(focalMm) && focalMm < 8) ||
             (Number.isFinite(focal35) && focal35 >= 20 && focal35 <= 35);
 
-        if (!phoneLikeFocal) return false;
+        if (!phoneLikeFocal) { return false; }
 
         // Not a classic camera brand → smart
-        if (make && !cameraMakes.has(make)) return true;
+        if (make && !cameraMakes.has(make)) { return true; }
 
         return false;
+
     };
+
 };
