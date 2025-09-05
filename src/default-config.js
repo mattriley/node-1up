@@ -23,67 +23,35 @@ module.exports = {
     },
 
     exif: {
-        smartMakes: [
-            'apple', 'samsung', 'google', 'xiaomi', 'huawei', 'oneplus', 'oppo', 'vivo',
-            'nokia', 'sony', 'motorola', 'lg', 'zte', 'meizu', 'realme', 'asus'
-        ],
         cameraMakes: [
             'canon', 'nikon', 'fujifilm', 'panasonic', 'olympus',
             'leica', 'pentax', 'ricoh', 'sigma', 'hasselblad'
         ],
+        // Each entry: [model keyword, expected make]
         smartModels: [
-            // Apple
-            'iphone',
-            'ipad',
-
-            // Google
-            'pixel',
-            'nexus',
-
-            // Samsung
-            'galaxy',
-
-            // Xiaomi / Redmi / Poco / Mi / Mix
-            'redmi',
-            'mi',
-            'mix',
-            'poco',
-
-            // OnePlus
-            'oneplus',
-
-            // Sony
-            'xperia',
-
-            // Motorola
-            'moto',
-
-            // Huawei / Honor
-            'mate',
-            'nova',
-            'honor',
-
-            // Oppo / Realme / Vivo
-            'realme',
-            'oppo',
-            'vivo',
-
-            // Asus
-            'zenfone'
+            ['iphone', 'apple'],
+            ['ipad', 'apple'],
+            ['pixel', 'google'],
+            ['nexus', 'google'],
+            ['galaxy', 'samsung'],
+            ['redmi', 'xiaomi'],
+            ['mi', 'xiaomi'],
+            ['mix', 'xiaomi'],
+            ['poco', 'xiaomi'],
+            ['oneplus', 'oneplus'],
+            ['xperia', 'sony'],
+            ['moto', 'motorola'],
+            ['mate', 'huawei'],
+            ['nova', 'huawei'],
+            ['honor', 'huawei'],
+            ['realme', 'realme'],
+            ['oppo', 'oppo'],
+            ['vivo', 'vivo'],
+            ['zenfone', 'asus']
         ],
         mobileSoftware: [
-            // Core OS
-            'ios',
-            'ipad os',
-            'android',
-
-            // Common Android skins
-            'miui',        // Xiaomi
-            'one ui',      // Samsung
-            'coloros',     // Oppo
-            'oxygenos',    // OnePlus
-            'funtouch',    // Vivo
-            'emui'         // Huawei
+            'ios', 'ipad os', 'android',
+            'miui', 'one ui', 'coloros', 'oxygenos', 'funtouch', 'emui'
         ],
         videoMajorBrands: ['mp42', 'qt', 'isom'],
         videoFileTypes: ['mp4', 'mov', 'avi', 'mkv', 'webm', '3gp', 'mts', 'm4v'],
