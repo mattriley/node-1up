@@ -1,7 +1,7 @@
-// smart-or-camera.js
-// Decide if EXIF looks like a smart device (phone/tablet) vs dedicated camera,
-// using only cameraMakes (negative list), smartModels ([model, make] pairs), and mobileSoftware.
-// Adds a cheap positive signal: accept when Make ∈ derivedSmartMakes.
+// is-smart-device.js
+// Decide if EXIF looks like a smart device (phone/tablet) vs dedicated camera.
+// Uses: cameraMakes (negative list), smartModels ([model, make] pairs), mobileSoftware (positive list).
+// Adds cheap positive signal: derivedSmartMakes from smartModels.
 
 const hasOwn = (o, k) => o != null && Object.prototype.hasOwnProperty.call(o, k);
 
@@ -34,39 +34,57 @@ module.exports = ({ config }) => {
 
     return ({ exif = {} }) => {
 
+        // Normalize: guard against null/undefined exif
+        exif = exif || {};
+
         const rawMake = hasOwn(exif, 'Make') ? String(exif.Make) : '';
         const rawModel = hasOwn(exif, 'Model') ? String(exif.Model) : '';
         const rawSoftware = hasOwn(exif, 'Software') ? String(exif.Software) : '';
 
         const make = rawMake.toLowerCase();
 
-        // Strong negative first: known dedicated camera brand
-        if (make && cameraMakes.has(make)) { return false; }
+        // Strong negative: known dedicated camera brand
+        if (make && cameraMakes.has(make)) {
+            // Allow override ONLY if software clearly indicates a mobile OS/vendor skin.
+            // (Do NOT let a model keyword override a camera make on its own.)
+            if (rawSoftware && SOFT_RE && SOFT_RE.test(rawSoftware)) {
+                return true;
+            }
+            return false;
+        }
 
-        // Cheap positive: if Make is one of the derived smart makes, accept quickly
-        if (make && derivedSmartMakes.has(make)) { return true; }
+        // Cheap positive: Make ∈ derivedSmartMakes
+        if (make && derivedSmartMakes.has(make)) {
+            return true;
+        }
 
-        // Model indicates a smartphone/tablet; accept if make is absent or consistent
+        // Model indicates a smartphone/tablet; accept if Make is absent,
+        // consistent, or neutral (not a known camera make and not a known smart make).
         if (rawModel && MODEL_RE && MODEL_RE.test(rawModel)) {
             const lm = rawModel.toLowerCase();
             for (let i = 0; i < modelPairs.length; i += 1) {
                 const [modelKey, expectedMake] = modelPairs[i];
                 if (lm.includes(modelKey)) {
-                    if (!make || make === expectedMake) {
+                    const makeIsNeutral = make && !cameraMakes.has(make) && !derivedSmartMakes.has(make);
+                    if (!make || make === expectedMake || makeIsNeutral) {
                         return true;
                     }
-                    // Conflicting make → defer to other signals
+                    // Conflicting known camera make stays a veto unless Software overrides.
                     break;
                 }
             }
         }
 
         // Software hint for mobile OS / vendor skin
-        if (rawSoftware && SOFT_RE && SOFT_RE.test(rawSoftware)) { return true; }
+        if (rawSoftware && SOFT_RE && SOFT_RE.test(rawSoftware)) {
+            return true;
+        }
 
-        // Fallback: optics + GPS heuristic (only if GPS exists)
+        // Fallback: optics + GPS heuristic
         const hasGps = ('GPSLatitude' in exif) || ('GPSLongitude' in exif) || ('GPSPosition' in exif);
-        if (!hasGps) { return false; }
+        if (!hasGps) {
+            return false;
+        }
 
         const focalMm = toNumber(exif.FocalLength);
         const focal35 = toNumber(exif.FocalLengthIn35mmFormat);
@@ -74,9 +92,11 @@ module.exports = ({ config }) => {
             (Number.isFinite(focalMm) && focalMm < 8) ||
             (Number.isFinite(focal35) && focal35 >= 20 && focal35 <= 35);
 
-        if (!phoneLikeFocal) { return false; }
+        if (!phoneLikeFocal) {
+            return false;
+        }
 
-        // GPS present + phone-like optics, and not a known camera brand
+        // If GPS + phone-like optics, and Make not in cameraMakes → smart
         return true;
 
     };
