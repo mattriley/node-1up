@@ -22,12 +22,22 @@ module.exports = {
         countries: []
     },
 
-    videoMajorBrands: ['mp42', 'qt', 'isom'],
-    videoFileTypes: ['mp4', 'mov', 'avi', 'mkv', 'webm', '3gp', 'mts', 'm4v'],
+    exif: {
+        smartMakes: [
+            'apple', 'samsung', 'google', 'xiaomi', 'huawei', 'oneplus', 'oppo', 'vivo',
+            'nokia', 'sony', 'motorola', 'lg', 'zte', 'meizu', 'realme', 'asus'
+        ],
+        cameraMakes: [
+            'canon', 'nikon', 'fujifilm', 'panasonic', 'olympus',
+            'leica', 'pentax', 'ricoh', 'sigma', 'hasselblad'
+        ],
+        videoMajorBrands: ['mp42', 'qt', 'isom'],
+        videoFileTypes: ['mp4', 'mov', 'avi', 'mkv', 'webm', '3gp', 'mts', 'm4v'],
+    },
 
     os: {
         fileSystemLimits,
-        platformDefaults
+        platformDefaults,
     }
 
 };
