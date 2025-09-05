@@ -17,11 +17,11 @@ module.exports = ({ self }) => (obj, schema) => {
         const typeHandlers = {
             array: () => {
                 if (prop.items?.type === 'object' && prop.items?.properties) {
-                    return [fillDefaults({}, prop.items)];
+                    return [self.applyDefaultValues({}, prop.items)];
                 }
                 return [];
             },
-            object: () => fillDefaults({}, prop),
+            object: () => self.applyDefaultValues({}, prop),
             string: () => '',
             number: () => 0,
             integer: () => 0,

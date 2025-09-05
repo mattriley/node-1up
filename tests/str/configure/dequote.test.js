@@ -15,8 +15,8 @@ module.exports = ({ test, assert }) => ({ str }) => {
     });
 
     test('handles custom delimiter', () => {
-        const unquote = str.configure.dequote({ delimiter: "'" });
-        const actual = unquote("'world'");
+        const unquote = str.configure.dequote({ delimiter: '\'' });
+        const actual = unquote('\'world\'');
         const expected = 'world';
         assert.equal(actual, expected);
     });

@@ -50,4 +50,4 @@ module.exports = ({ test, assert }) => lib => {
         assert.deepEqual(result, [1, 2, 3]);
     });
 
-}
+};

@@ -14,7 +14,7 @@ module.exports = ({ str }) => states => {
 
     // Remove states from certain countries.
     states = states.filter(state => {
-        return !countriesToRemoveStatesFrom.includes(state.countryCode)
+        return !countriesToRemoveStatesFrom.includes(state.countryCode);
     });
 
     // Apply string replacements.

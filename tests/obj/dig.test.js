@@ -45,7 +45,7 @@ module.exports = ({ test, assert }) => ({ obj }) => {
                 id: 'category:10c3734271ab373bcd6f4661f8313d62d9897c86',
                 partitionKey: 'Uncategorised'
             }
-        }
+        };
 
         const actual = obj.dig(input, 'import', {});
         assert.deepEqual(actual, {});

@@ -5,6 +5,7 @@ const fs = require('fs');
 const realCliPath = fs.realpathSync(__filename);
 const ROOT = path.resolve(path.dirname(realCliPath), '../../..');
 const pkg = require(path.join(ROOT, 'package.json'));
+const process = require('node:process');
 
 const DEFAULT_ALLOW_EXT = [
     '.jpg', '.jpeg', '.png', '.webp', '.avif',
@@ -12,7 +13,7 @@ const DEFAULT_ALLOW_EXT = [
 ];
 
 // simple flag parsing (supports --key value and --key=value)
-const parseArgs = (argv) => {
+const parseArgs = argv => {
     const args = argv.slice(2);
     const positionals = [];
     const flags = new Map();

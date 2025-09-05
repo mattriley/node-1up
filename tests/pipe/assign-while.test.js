@@ -46,25 +46,12 @@ module.exports = ({ test, assert }) => lib => {
             [
                 acc => ({ count: (acc.count || 0) + 1 }),
                 acc => ({ count: (acc.count || 0) + 1 }),
-                acc => ({ done: true }) // won't run
+                () => ({ done: true }) // won't run
             ]);
 
         const result = fn({}, {});
         assert.deepStrictEqual(result, { count: 1, done: true }); // Corrected expectation
     });
-
-    // test('pipeAssignWhile: executes all steps if predicate always true', () => {
-    //     const fn = pipeAssignWhile(
-    //         () => true,
-    //         [
-    //             acc => ({ count: (acc.count || 0) + 1 }),
-    //             acc => ({ count: (acc.count || 0) + 1 }),
-    //             acc => ({ done: true })
-    //         ]);
-
-    //     const result = fn({});
-    //     assert.deepStrictEqual(result, { count: 2, done: true });
-    // });
 
     test('pipeAssignWhile: executes all steps if predicate always true', () => {
         const fn = pipeAssignWhile(
@@ -72,7 +59,7 @@ module.exports = ({ test, assert }) => lib => {
             [
                 acc => ({ count: (acc.count || 0) + 1 }),
                 acc => ({ count: (acc.count || 0) + 1 }),
-                acc => ({ done: true })
+                () => ({ done: true })
             ]);
 
         const result = fn({}, {});

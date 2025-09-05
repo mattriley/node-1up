@@ -1,1 +1,1 @@
-module.exports = ({ self }) => self.configure.dequote()
+module.exports = ({ self }) => self.configure.dequote();

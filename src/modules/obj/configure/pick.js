@@ -9,7 +9,7 @@ module.exports = ({ self, fun }) => config => {
         const regex = regexMemo[key] ?? self.buildDelimitersRegex(delimiters);
         regexMemo[key] ??= regex;
         return regex;
-    }
+    };
 
     return (obj, paths, ...options) => {
         const { depth, delimiters } = parseOptions(options);

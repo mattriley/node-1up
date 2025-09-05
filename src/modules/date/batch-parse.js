@@ -44,7 +44,7 @@ module.exports = $ => ({ data, sources, timezoneSource, toIso }) => {
 
         const iso = timezone
             ? dt.toISO({ suppressMilliseconds: true })
-            : dt.toFormat("yyyy-MM-dd'T'HH:mm:ss");
+            : dt.toFormat('yyyy-MM-dd\'T\'HH:mm:ss');
 
         return { iso, timezone, debug };
     });

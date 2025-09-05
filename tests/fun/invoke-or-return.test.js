@@ -15,7 +15,7 @@ module.exports = ({ test, assert }) => ({ fun }) => {
     });
 
     test('invokeOrReturn: invokes anonymous inline function (no prototype)', () => {
-        const result = invokeOrReturn((x) => x * 2, 4);
+        const result = invokeOrReturn(x => x * 2, 4);
         assert.strictEqual(result, 8);
     });
 

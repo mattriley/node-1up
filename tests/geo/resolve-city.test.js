@@ -32,7 +32,7 @@ module.exports = ({ test, assert }) => $ => {
                 state: { name: 'Victoria', code: 'VIC', source: 'inferred' },
                 country: { name: 'Australia', code: 'AU', source: 'input' },
                 complete: true
-            }
+            };
 
             const actual = $.geo.resolveCity(input);
 
@@ -60,7 +60,7 @@ module.exports = ({ test, assert }) => $ => {
             },
             country: { name: 'Australia', code: 'AU', source: 'inferred' },
             complete: true
-        }
+        };
 
         const actual = geo.resolveCity(input);
 
@@ -83,7 +83,7 @@ module.exports = ({ test, assert }) => $ => {
             state: { name: 'Victoria', code: 'VIC', source: 'input' },
             country: { name: 'Australia', code: 'AU', source: 'inferred' },
             complete: true
-        }
+        };
 
         const actual = geo.resolveCity(input);
 
@@ -141,7 +141,7 @@ module.exports = ({ test, assert }) => $ => {
                 ]
             },
             complete: false
-        }
+        };
 
         const actual = geo.resolveCity(input);
 
@@ -188,7 +188,7 @@ module.exports = ({ test, assert }) => $ => {
             },
             country: { name: 'Australia', code: 'AU', source: 'input' },
             complete: false
-        }
+        };
 
         const actual = geo.resolveCity(input);
 
@@ -211,7 +211,7 @@ module.exports = ({ test, assert }) => $ => {
             state: { name: 'Victoria', code: 'VIC', source: 'inferred' },
             country: { name: 'Australia', code: 'AU', source: 'input' },
             complete: true
-        }
+        };
 
         const actual = geo.resolveCity(input);
 
@@ -249,7 +249,7 @@ module.exports = ({ test, assert }) => $ => {
             },
             country: { name: 'Australia', code: 'AU', source: 'inferred' },
             complete: false
-        }
+        };
 
         const actual = geo.resolveCity(input);
 
@@ -282,7 +282,7 @@ module.exports = ({ test, assert }) => $ => {
             state: { name: 'Victoria', code: 'VIC', source: 'input' },
             country: { name: 'Australia', code: 'AU', source: 'input' },
             complete: false
-        }
+        };
 
         const actual = geo.resolveCity(input);
 
@@ -325,7 +325,7 @@ module.exports = ({ test, assert }) => $ => {
             },
             country: { name: 'Australia', code: 'AU', source: 'input' },
             complete: false
-        }
+        };
 
         const actual = geo.resolveCity(input);
 
@@ -383,7 +383,7 @@ module.exports = ({ test, assert }) => $ => {
                 ]
             },
             complete: false
-        }
+        };
 
         const actual = geo.resolveCity(location);
 
@@ -406,7 +406,7 @@ module.exports = ({ test, assert }) => $ => {
             state: { name: 'California', code: 'CA', source: 'input' },
             country: { name: 'United States', code: 'US', source: 'inferred' },
             complete: true
-        }
+        };
 
         const actual = geo.resolveCity(location);
 
@@ -430,7 +430,7 @@ module.exports = ({ test, assert }) => $ => {
             state: { name: 'California', code: 'CA', source: 'input' },
             country: { name: 'United States', code: 'US', source: 'input' },
             complete: true
-        }
+        };
 
         const actual = geo.resolveCity(location);
 
@@ -463,7 +463,7 @@ module.exports = ({ test, assert }) => $ => {
             state: { name: 'Hong Kong SAR', code: 'HK', source: 'input' },
             country: { name: 'China', code: 'CN', source: 'input' },
             complete: false
-        }
+        };
 
         const actual = geo.resolveCity(location);
 
@@ -510,7 +510,7 @@ module.exports = ({ test, assert }) => $ => {
             },
             country: { name: 'United States', code: 'US', source: 'input' },
             complete: false
-        }
+        };
 
         const actual = geo.resolveCity(location);
         assert.deepEqual(actual, expected);
@@ -546,7 +546,7 @@ module.exports = ({ test, assert }) => $ => {
                 name: 'Melaka',
                 source: 'inferred'
             }
-        }
+        };
 
         const actual = geo.resolveCity(location);
         assert.deepEqual(actual, expected);
@@ -568,7 +568,7 @@ module.exports = ({ test, assert }) => $ => {
                 timezone: 'Asia/Tokyo'
             },
             complete: true
-        }
+        };
 
         const actual = geo.resolveCity(location);
         assert.deepEqual(actual, expected);
@@ -638,7 +638,7 @@ module.exports = ({ test, assert }) => $ => {
                 name: 'Hyogo',
                 source: 'inferred'
             }
-        }
+        };
 
         const actual = geo.resolveCity(location);
         assert.deepEqual(actual, expected);

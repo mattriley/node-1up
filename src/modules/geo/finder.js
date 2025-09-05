@@ -26,13 +26,13 @@ module.exports = ({ config }) => {
         return lookup.citiesByStateThenCountry[key] ?? [];
     };
 
-    const findCities = (cityKey) => {
+    const findCities = cityKey => {
         return lookup.cities[cityKey.toUpperCase()] ?? [];
-    }
+    };
 
-    const findStates = (stateKey) => {
+    const findStates = stateKey => {
         return lookup.states[stateKey.toUpperCase()] ?? [];
-    }
+    };
 
     const norm = s => s?.trim().toUpperCase();
 
@@ -55,9 +55,9 @@ module.exports = ({ config }) => {
         return state;
     };
 
-    const findCountries = (countryKey) => {
+    const findCountries = countryKey => {
         return lookup.countries[countryKey.toUpperCase()] ?? [];
-    }
+    };
 
     const findCountry = countryKey => {
         if (!countryKey) return null;
@@ -68,8 +68,8 @@ module.exports = ({ config }) => {
     };
 
     const findStatesOfCountry = countryKey => {
-        return lookup.statesByCountry[countryKey.toUpperCase()]
-    }
+        return lookup.statesByCountry[countryKey.toUpperCase()];
+    };
 
     return { findCity, findCities, findState, findStates, findCountries, findCountry, findStatesOfCountry, findCitiesOfState };
 

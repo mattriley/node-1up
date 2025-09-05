@@ -41,7 +41,7 @@ const outerCompose = ({ config, overrides = {} } = {}) => {
     return {
         ...compose.modules,
         configure: config => outerCompose({ config })
-    }
+    };
 
 };
 

@@ -31,4 +31,4 @@ module.exports = () => val => {
     }
 
     return { valid: true };
-}
+};

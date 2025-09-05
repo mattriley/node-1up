@@ -11,7 +11,7 @@ module.exports = ({ test }) => lib => {
             d: [],
             e: {},
             f: { x: '', y: {}, z: 'ok' },
-            g: [null, '', {}, 'value'],
+            g: [null, '', {}, 'value']
         };
 
         const expected = {
@@ -29,7 +29,7 @@ module.exports = ({ test }) => lib => {
             b: Symbol('sym'),
             c: BigInt(10),
             d: 'ok',
-            e: [BigInt(1), 'valid', {}, undefined],
+            e: [BigInt(1), 'valid', {}, undefined]
         };
 
         const expected = {

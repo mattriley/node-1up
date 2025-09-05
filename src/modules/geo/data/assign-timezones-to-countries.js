@@ -1,4 +1,4 @@
-const ctz = require("country-timezone");
+const ctz = require('country-timezone');
 
 module.exports = () => ({ countries }) => {
 

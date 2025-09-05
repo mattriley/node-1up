@@ -4,7 +4,7 @@ module.exports = ({ self, fun, is }) => config => {
     const parseOptions = fun.parseConfig(defaults, config);
 
     return (val, ...options) => {
-        const { depth, mutate, defaultValue } = parseOptions(options);;
+        const { depth, mutate, defaultValue } = parseOptions(options);
 
         const compact = (val, currentDepth) => {
             if (currentDepth < 0 || !is.jsonCompatible(val)) return undefined;

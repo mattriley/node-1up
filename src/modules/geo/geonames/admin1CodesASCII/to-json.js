@@ -14,7 +14,7 @@ module.exports = ({ net }) => async ({ sourceDir, sourceFile, source, outputDir,
             return {
                 countryCode,
                 isoCode: admin1Code,
-                name: parts[1],
+                name: parts[1]
                 // asciiName: parts[2],
                 // geonameid: parseInt(parts[3], 10)
             };

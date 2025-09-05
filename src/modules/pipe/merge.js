@@ -6,4 +6,4 @@ module.exports = ({ self }) => (...args) => {
         return merge(state ?? {}, stepResult);
     });
 
-}
+};

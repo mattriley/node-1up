@@ -1,17 +1,17 @@
-const { exec } = require("child_process");
+const { exec } = require('child_process');
 
 const makeExecError = ({ message, cmd, stdout, stderr, code, signal }) => {
     const err = new Error(message || `Command failed: ${cmd}`);
-    err.name = "ExecError";
+    err.name = 'ExecError';
     err.cmd = cmd;
-    err.stdout = stdout ?? "";
-    err.stderr = stderr ?? "";
-    err.code = typeof code === "number" ? code : null;
+    err.stdout = stdout ?? '';
+    err.stderr = stderr ?? '';
+    err.code = typeof code === 'number' ? code : null;
     err.signal = signal ?? null;
     return err;
 };
 
-const trim = (s) => String(s ?? "").trim();
+const trim = s => String(s ?? '').trim();
 
 module.exports = () => (cmd, options = {}) => {
 

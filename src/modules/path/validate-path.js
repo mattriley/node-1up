@@ -1,17 +1,18 @@
-const os = require("os");
-const path = require("path");
+const os = require('os');
+const path = require('path');
+const Buffer = require('buffer');
 
 const ERROR_CODES = {
-    EMPTY_STRING: "EMPTY_STRING",
-    NULL_BYTE: "NULL_BYTE",
-    TOTAL_TOO_LONG: "TOTAL_TOO_LONG",
-    SEGMENT_TOO_LONG: "SEGMENT_TOO_LONG",
-    INVALID_CHAR: "INVALID_CHAR",
-    RESERVED_NAME: "RESERVED_NAME"
+    EMPTY_STRING: 'EMPTY_STRING',
+    NULL_BYTE: 'NULL_BYTE',
+    TOTAL_TOO_LONG: 'TOTAL_TOO_LONG',
+    SEGMENT_TOO_LONG: 'SEGMENT_TOO_LONG',
+    INVALID_CHAR: 'INVALID_CHAR',
+    RESERVED_NAME: 'RESERVED_NAME'
 };
 
-const BYTE_LEN = (s) => Buffer.byteLength(s, "utf8");
-const normalizeFsType = (t) => (t || "").toLowerCase().replace(/\s+/g, "");
+const BYTE_LEN = s => Buffer.byteLength(s, 'utf8');
+const normalizeFsType = t => (t || '').toLowerCase().replace(/\s+/g, '');
 
 module.exports = ({ fsx, config }) => {
 
@@ -23,16 +24,16 @@ module.exports = ({ fsx, config }) => {
      *  3) auto-detect based on path
      */
     const resolveLimits = async ({ assumeLimits, assumeFs, forPath }) => {
-        if (assumeLimits && typeof assumeLimits === "object") {
+        if (assumeLimits && typeof assumeLimits === 'object') {
             const { nameMax, pathMax, units } = assumeLimits;
             return {
-                fsType: assumeLimits.fsType || "custom",
+                fsType: assumeLimits.fsType || 'custom',
                 nameMax: Number(nameMax),
                 pathMax: Number(pathMax),
-                units: units === "bytes" ? "bytes" : "chars"
+                units: units === 'bytes' ? 'bytes' : 'chars'
             };
         }
-        if (assumeFs && typeof assumeFs === "string") {
+        if (assumeFs && typeof assumeFs === 'string') {
             const key = normalizeFsType(assumeFs);
             const limits = config.os.fileSystemLimits[key];
             if (limits) return { fsType: key, ...limits };
@@ -40,7 +41,7 @@ module.exports = ({ fsx, config }) => {
             const def = config.os.platformDefaults[os.platform()];
             return { ...def, fsType: key };
         }
-        return fsx.detectFileSystem(path.dirname(path.resolve(forPath || ".")));
+        return fsx.detectFileSystem(path.dirname(path.resolve(forPath || '.')));
     };
 
     /**
@@ -51,11 +52,11 @@ module.exports = ({ fsx, config }) => {
      *  - longPaths: boolean (Windows-only relaxation to ~32k; you must still use \\?\ paths in practice)
      */
     return async (filePath, { assumeFs, assumeLimits, longPaths = false } = {}) => {
-        if (typeof filePath !== "string" || filePath.trim() === "") {
-            return { valid: false, code: ERROR_CODES.EMPTY_STRING, reason: "Path must be a non-empty string" };
+        if (typeof filePath !== 'string' || filePath.trim() === '') {
+            return { valid: false, code: ERROR_CODES.EMPTY_STRING, reason: 'Path must be a non-empty string' };
         }
-        if (filePath.includes("\0")) {
-            return { valid: false, code: ERROR_CODES.NULL_BYTE, reason: "Path contains null byte" };
+        if (filePath.includes('\0')) {
+            return { valid: false, code: ERROR_CODES.NULL_BYTE, reason: 'Path contains null byte' };
         }
 
         const fsInfo = await resolveLimits({ assumeFs, assumeLimits, forPath: filePath });
@@ -63,11 +64,11 @@ module.exports = ({ fsx, config }) => {
 
         // Windows long-path relaxation (validator only)
         let effectivePathMax = pathMax;
-        if (os.platform() === "win32" && longPaths) {
+        if (os.platform() === 'win32' && longPaths) {
             effectivePathMax = 32767; // theoretical API limit for \\?\ paths
         }
 
-        const measure = (s) => (units === "bytes" ? BYTE_LEN(s) : s.length);
+        const measure = s => (units === 'bytes' ? BYTE_LEN(s) : s.length);
 
         // Total length (use absolute to avoid surprises)
         const absolute = path.resolve(filePath);
@@ -82,7 +83,7 @@ module.exports = ({ fsx, config }) => {
         }
 
         // Per-segment length
-        const splitter = os.platform() === "win32" ? /[\\/]+/ : /\/+/;
+        const splitter = os.platform() === 'win32' ? /[\\/]+/ : /\/+/;
         const segments = filePath.split(splitter).filter(Boolean);
 
         for (const seg of segments) {
@@ -98,7 +99,7 @@ module.exports = ({ fsx, config }) => {
         }
 
         // Windows-only extra checks (only enforce when actually running on Windows)
-        if (os.platform() === "win32") {
+        if (os.platform() === 'win32') {
             const INVALID_CHARS = /[<>:"/\\|?*]/;
             for (const seg of segments) {
                 if (INVALID_CHARS.test(seg)) {
@@ -111,12 +112,12 @@ module.exports = ({ fsx, config }) => {
                 }
             }
             const RESERVED = new Set([
-                "CON", "PRN", "AUX", "NUL",
-                "COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9",
-                "LPT1", "LPT2", "LPT3", "LPT4", "LPT5", "LPT6", "LPT7", "LPT8", "LPT9"
+                'CON', 'PRN', 'AUX', 'NUL',
+                'COM1', 'COM2', 'COM3', 'COM4', 'COM5', 'COM6', 'COM7', 'COM8', 'COM9',
+                'LPT1', 'LPT2', 'LPT3', 'LPT4', 'LPT5', 'LPT6', 'LPT7', 'LPT8', 'LPT9'
             ]);
             for (const seg of segments) {
-                const base = seg.split(".")[0].toUpperCase();
+                const base = seg.split('.')[0].toUpperCase();
                 if (RESERVED.has(base)) {
                     return {
                         valid: false,

@@ -1,3 +1,4 @@
+const process = require('node:process');
 const os = require('node:os');
 const { Worker } = require('node:worker_threads');
 
@@ -11,7 +12,7 @@ module.exports = ({ fsp, fun }) => (config = {}) => {
         batchSizeFallback: 2000,
         rowsChunkSizeFallback: 8192,
         // New option:
-        quiet: false,
+        quiet: false
     };
     const parseOptions = fun.parseConfig(defaults, config);
 
@@ -32,7 +33,7 @@ module.exports = ({ fsp, fun }) => (config = {}) => {
         } else if (!Number.isFinite(uvSize) || uvSize < recommendedUv) {
             process.stderr.write(
                 `[WARN] UV_THREADPOOL_SIZE=${shownUv} is below the recommended ${recommendedUv}.\n` +
-                `       Consider setting it higher for best async fs performance.\n`
+                '       Consider setting it higher for best async fs performance.\n'
             );
         }
 
@@ -76,8 +77,8 @@ module.exports = ({ fsp, fun }) => (config = {}) => {
                 const offset = buf.byteOffset | 0;
                 const length = buf.byteLength | 0;
 
-                const run = (worker) => {
-                    worker.once('message', (msg) => {
+                const run = worker => {
+                    worker.once('message', msg => {
                         this.idle.push(worker);
                         msg && msg.ok ? resolve(msg.val)
                             : reject(new Error(`JSON.parse failed: ${msg ? msg.err : 'no response'}`));
@@ -94,7 +95,7 @@ module.exports = ({ fsp, fun }) => (config = {}) => {
             while (this.idle.length && this.queue.length) {
                 const w = this.idle.pop();
                 const t = this.queue.shift();
-                w.once('message', (msg) => {
+                w.once('message', msg => {
                     this.idle.push(w);
                     msg && msg.ok ? t.resolve(msg.val)
                         : t.reject(new Error(`JSON.parse failed: ${msg ? msg.err : 'no response'}`));
@@ -176,7 +177,7 @@ module.exports = ({ fsp, fun }) => (config = {}) => {
         const {
             concurrencyIO, concurrencyCPU,
             workersFallback, batchSizeFallback, rowsChunkSizeFallback,
-            quiet,
+            quiet
         } = parseOptions(options);
 
         // Log once, only if actually executing
@@ -187,14 +188,14 @@ module.exports = ({ fsp, fun }) => (config = {}) => {
         if (useAsyncIO) {
             // ---- Fast path A: async I/O + parse worker pool ----
             const parsePool = new JsonParsePool(concurrencyCPU);
-            const readAndParse = async (absPath) => {
+            const readAndParse = async absPath => {
                 const buf = await fsp.readFile(absPath);
                 const val = await parsePool.parseBuffer(buf);
                 if (Array.isArray(val)) { for (let i = 0; i < val.length; i++) out.push(val[i]); }
                 else out.push(val);
             };
             try {
-                await runPool(files, concurrencyIO, async (p) => {
+                await runPool(files, concurrencyIO, async p => {
                     try { await readAndParse(p); }
                     catch (err) { err.message = `[readJson:${p}] ${err.message}`; throw err; }
                 });
@@ -213,7 +214,7 @@ module.exports = ({ fsp, fun }) => (config = {}) => {
             const spawn = () => {
                 const w = spawnIoParseWorker(rowsChunkSizeFallback);
                 alive++;
-                w.on('message', (m) => {
+                w.on('message', m => {
                     if (!m || typeof m !== 'object') return;
                     if (m.type === 'rows' && Array.isArray(m.rows)) {
                         const rows = m.rows;
@@ -226,14 +227,14 @@ module.exports = ({ fsp, fun }) => (config = {}) => {
                         }
                     }
                 });
-                w.on('exit', (code) => { alive--; if (code !== 0) throw new Error(`json worker exited ${code}`); });
-                w.on('error', (e) => { throw e; });
+                w.on('exit', code => { alive--; if (code !== 0) throw new Error(`json worker exited ${code}`); });
+                w.on('error', e => { throw e; });
             };
 
             const pool = Math.min(workersFallback, Math.max(1, batches.length));
             for (let i = 0; i < pool; i++) spawn();
 
-            await new Promise((resolve) => {
+            await new Promise(resolve => {
                 const tick = () => { if (alive === 0) return resolve(); setTimeout(tick, 10); };
                 tick();
             });

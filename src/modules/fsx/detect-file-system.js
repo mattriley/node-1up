@@ -1,7 +1,7 @@
-const os = require("os");
-const path = require("path");
+const os = require('os');
+const path = require('path');
 
-const normalizeFsType = (t) => (t || "").toLowerCase().replace(/\s+/g, "");
+const normalizeFsType = t => (t || '').toLowerCase().replace(/\s+/g, '');
 
 module.exports = ({ config, self }) => {
 
@@ -16,31 +16,31 @@ module.exports = ({ config, self }) => {
     // lookup by explicit FS type (no exec)
     const fromType = (fsType, target = undefined) => {
         const key = normalizeFsType(fsType);
-        const plat = config.os.platformDefaults[os.platform()] || { nameMax: 255, pathMax: 4096, units: "bytes", fsType: "unknown" };
+        const plat = config.os.platformDefaults[os.platform()] || { nameMax: 255, pathMax: 4096, units: 'bytes', fsType: 'unknown' };
         const limits = config.os.fileSystemLimits[key];
         return pick(limits, plat, key, target);
     };
 
     // main router (default path = ".")
-    const detect = async (targetPath = ".") => {
+    const detect = async (targetPath = '.') => {
         const platform = os.platform();
         const absDir = path.resolve(targetPath);
 
         try {
-            if (platform === "darwin") {
+            if (platform === 'darwin') {
                 return await self.detectMacos(absDir);
             }
-            if (platform === "linux") {
+            if (platform === 'linux') {
                 return await self.detectLinux(absDir);
             }
-            if (platform === "win32") {
+            if (platform === 'win32') {
                 return await self.detectWindows(absDir);
             }
         } catch (_) {
             // fall through to defaults
         }
 
-        const def = config.os.platformDefaults[platform] || { nameMax: 255, pathMax: 4096, units: "bytes", fsType: "unknown" };
+        const def = config.os.platformDefaults[platform] || { nameMax: 255, pathMax: 4096, units: 'bytes', fsType: 'unknown' };
         return { ...def, target: absDir };
     };
 

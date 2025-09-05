@@ -1,4 +1,4 @@
-const tzlookup = require("tz-lookup");
+const tzlookup = require('tz-lookup');
 
 module.exports = () => ({ states }) => {
 

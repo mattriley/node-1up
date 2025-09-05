@@ -48,7 +48,7 @@ module.exports = config => {
 
     lookup.citiesByStateThenCountry = {};
 
-    for (const [cityKey, cityList] of Object.entries(lookup.cities)) {
+    for (const [_, cityList] of Object.entries(lookup.cities)) {
         for (const city of cityList) {
             if (!city.stateCode) continue;
             const stateCode = city.stateCode.toUpperCase();
@@ -71,4 +71,4 @@ module.exports = config => {
 
     return { locationData };
 
-}
+};

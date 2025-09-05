@@ -13,6 +13,8 @@ const os = require('os');
 const crypto = require('crypto');
 const { spawn } = require('child_process');
 const sharp = require('sharp');
+const process = require('node:process');
+const Buffer = require('buffer');
 
 // ---------------- Defaults ----------------
 const DEFAULT_ALLOW_EXT = [
@@ -77,11 +79,11 @@ const DEFAULTS = {
 };
 
 // ---------------- Utils ----------------
-const exists = async (p) => { try { await fsp.access(p); return true; } catch { return false; } };
+const exists = async p => { try { await fsp.access(p); return true; } catch { return false; } };
 const clamp = (x, lo, hi) => Math.max(lo, Math.min(hi, x));
-const lowerDot = (s) => (s.startsWith('.') ? s : '.' + s).toLowerCase();
+const lowerDot = s => (s.startsWith('.') ? s : '.' + s).toLowerCase();
 
-const isTransientResourceError = (err) => {
+const isTransientResourceError = err => {
     const code = err?.code;
     const msg = String(err?.message || '').toLowerCase();
     return code === 'EMFILE' || code === 'ENFILE' || code === 'ENOSPC' || code === 'ENOMEM' ||
@@ -102,7 +104,7 @@ const utf8Truncate = (str, maxBytes) => {
     return buf.slice(0, end).toString('utf8');
 };
 
-const sanitizeSeg = (s) => s.replace(/[\\/:*?"<>|]+/g, '_');
+const sanitizeSeg = s => s.replace(/[\\/:*?"<>|]+/g, '_');
 const makeFlatName = ({ relDir, base, outExt, strategy, sep, maxBytes }) => {
     let nameBase;
     if (strategy === 'path') {
@@ -192,7 +194,7 @@ async function sipsConvert(src, outFile, quality, maxDim /* optional */) {
         let errOut = '';
         p.stderr.on('data', d => { errOut += String(d); });
         p.on('error', reject);
-        p.on('close', (code) => {
+        p.on('close', code => {
             if (code === 0) resolve();
             else reject(new Error(errOut.trim() || `sips exit ${code}`));
         });
@@ -230,8 +232,8 @@ const createAdaptiveLimiter = ({ initial, min, max, windowMs, targetLatencyMs, l
             const { fn, start, resolve, reject } = q.shift();
             inFlight++;
             fn()
-                .then((res) => { resolve(res); sumLatency += (Date.now() - start); samples++; })
-                .catch((err) => {
+                .then(res => { resolve(res); sumLatency += (Date.now() - start); samples++; })
+                .catch(err => {
                     reject(err);
                     sumLatency += (Date.now() - start); samples++;
                     if (isTransientResourceError(err)) emfileCount++;
@@ -240,7 +242,7 @@ const createAdaptiveLimiter = ({ initial, min, max, windowMs, targetLatencyMs, l
         }
     };
 
-    const schedule = (fn) => new Promise((resolve, reject) => { q.push({ fn, start: Date.now(), resolve, reject }); pump(); });
+    const schedule = fn => new Promise((resolve, reject) => { q.push({ fn, start: Date.now(), resolve, reject }); pump(); });
     const dispose = () => clearInterval(timer);
     return { schedule, dispose };
 };
@@ -367,7 +369,7 @@ const processFileFactory = (cfg, allowSet, stats, log, onFile, inputRoot, output
         }
 
         // Encode (with fallback)
-        const doEncode = async (tgt) => {
+        const doEncode = async tgt => {
             const { outFile } = await computeOut(inputPath, outputPath, base, tgt.outExt ?? extLower);
             const tmpFile = outFile + `.tmp-${process.pid}-${Math.random().toString(36).slice(2, 8)}`;
             try {
@@ -452,7 +454,7 @@ module.exports = () => async (options = {}) => {
     const allowSet = new Set(
         (cfg.includeExt ? cfg.includeExt.map(lowerDot) : DEFAULT_ALLOW_EXT)
             .filter(Boolean)
-            .map((e) => e.toLowerCase())
+            .map(e => e.toLowerCase())
     );
     if (cfg.excludeExt) {
         for (const e of cfg.excludeExt.map(lowerDot)) allowSet.delete(e);
@@ -474,7 +476,7 @@ module.exports = () => async (options = {}) => {
     if (!cfg.overwrite) await fsp.mkdir(outputAbs, { recursive: true });
 
     const stats = { converted: 0, copied: 0, kept: 0, errors: 0, results: [] };
-    const onFile = cfg.onFile ? (x) => { stats.results.push(x); cfg.onFile(x); } : (x) => { stats.results.push(x); };
+    const onFile = cfg.onFile ? x => { stats.results.push(x); cfg.onFile(x); } : x => { stats.results.push(x); };
     const processFile = processFileFactory(cfg, allowSet, stats, log, onFile, inputAbs, outputAbs || '');
 
     // Limiter
@@ -515,7 +517,7 @@ module.exports = () => async (options = {}) => {
                 fn().then(resolve, reject).finally(() => { inFlight--; pump(); });
             }
         };
-        limiter = { schedule: (fn) => new Promise((res, rej) => { q.push({ fn, resolve: res, reject: rej }); pump(); }) };
+        limiter = { schedule: fn => new Promise((res, rej) => { q.push({ fn, resolve: res, reject: rej }); pump(); }) };
     }
 
     // Queue & drain

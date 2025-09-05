@@ -5,5 +5,5 @@ module.exports = ({ arr, fun, globalConfig }) => config => {
     return (pathname, item, ...options) => {
         const { delimiter } = parseOptions(options);
         return arr.insertBeforeLast(pathname.split(delimiter), item).join(delimiter);
-    }
+    };
 };

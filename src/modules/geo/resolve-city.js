@@ -3,7 +3,7 @@ module.exports = ({ self, arr }) => location => {
         MISSING: 'missing',
         AMBIGUOUS: 'ambiguous',
         INVALID: 'invalid',
-        CONFLICT: 'conflict',
+        CONFLICT: 'conflict'
     };
 
     const normalize = s => s?.trim();
@@ -11,7 +11,7 @@ module.exports = ({ self, arr }) => location => {
     const original = {
         city: normalize(location.city),
         state: normalize(location.state),
-        country: normalize(location.country),
+        country: normalize(location.country)
     };
 
     let { city: cityKey, state: stateKey, country: countryKey } = original;
@@ -36,7 +36,7 @@ module.exports = ({ self, arr }) => location => {
         const all = self.finder.findCities(cityKey);
         const byCountry = countryKey ? all.filter(c => {
             const country = self.finder.findCountry(countryKey);
-            return c.countryCode === country.isoCode
+            return c.countryCode === country.isoCode;
         }) : all;
         const byState = stateKey
             ? byCountry.filter(c => self.finder.findStates(stateKey).some(state => {

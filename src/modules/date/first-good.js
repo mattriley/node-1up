@@ -7,4 +7,4 @@ module.exports = $ => ({ data, sources, timezoneSource, toIso }) => {
     const { iso, timezone } = firstGood;
     return { iso, timezone, debug };
 
-}
+};

@@ -36,4 +36,4 @@ module.exports = () => val => {
 
     result.valid = true;
     return result;
-}
+};

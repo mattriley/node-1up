@@ -4,4 +4,4 @@ module.exports = ({ self }) => (...args) => {
         return Object.assign(state ?? {}, stepResult);
     });
 
-}
+};

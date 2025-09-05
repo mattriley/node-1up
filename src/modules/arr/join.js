@@ -1,1 +1,1 @@
-module.exports = ({ self }) => self.configure.join()
+module.exports = ({ self }) => self.configure.join();

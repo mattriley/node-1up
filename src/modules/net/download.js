@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const AdmZip = require('adm-zip');
+const Buffer = require('buffer');
 
 /**
  * Utility: detects whether a file or buffer is a ZIP archive (based on magic number).
@@ -65,7 +66,7 @@ module.exports = () => async ({
             console.log(`✅ Downloaded and extracted ${entryName} from zip`);
         } else {
             text = buffer.toString('utf-8');
-            console.log(`✅ Downloaded text file`);
+            console.log('✅ Downloaded text file');
         }
 
         // ✅ 4. Write to disk if requested

@@ -18,7 +18,7 @@ module.exports = ({ net }) => async ({ sourceDir, sourceFile, source, outputDir,
         ],
         transform: parts => ({
             name: parts[4],
-            isoCode: parts[0],
+            isoCode: parts[0]
             // iso3: parts[1],
             // isoNumeric: parts[2],
             // fips: parts[3],

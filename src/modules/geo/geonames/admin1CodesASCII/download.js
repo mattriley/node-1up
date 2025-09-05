@@ -6,4 +6,4 @@ module.exports = ({ net }) => async ({ sourceDir, outputDir }) => {
         sourceDir, outputDir
     });
 
-}
+};

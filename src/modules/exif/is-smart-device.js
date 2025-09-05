@@ -17,7 +17,7 @@ const SOFT_RE = /(ios|ipad os|android|miui|one ui|coloros|oxygenos|funtouch)/i;
 const hasOwn = (o, k) => o != null && Object.prototype.hasOwnProperty.call(o, k);
 
 // minimal, fast numeric parse
-const toNumber = (v) => {
+const toNumber = v => {
     if (v == null) return NaN;
     if (typeof v === 'number') return v;
     // handles "4.2 mm", "26 mm", etc. parseFloat stops at first non-number

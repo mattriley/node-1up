@@ -4,7 +4,7 @@ const platformDefaults = require('./config/os-platform-defaults');
 module.exports = {
 
     path: {
-        delimiter: '/',
+        delimiter: '/'
     },
 
     json: {

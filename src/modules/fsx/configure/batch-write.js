@@ -1,11 +1,13 @@
 const path = require('path');
+const { Buffer } = require('buffer');
+
 
 module.exports = ({ fsp, fun }) => (config = {}) => {
     const defaults = {
         concurrencyLimit: 512,
         compare: true,               // false | true
         compareChunkSize: 64 * 1024,  // 64KB chunks for content compare
-        compareMinBytes: 64 * 1024,   // < this size → always overwrite
+        compareMinBytes: 64 * 1024   // < this size → always overwrite
     };
     const parseOptions = fun.parseConfig(defaults, config);
 
@@ -94,7 +96,7 @@ module.exports = ({ fsp, fun }) => (config = {}) => {
             }
         };
 
-        return new Promise((resolve) => {
+        return new Promise(resolve => {
             run();
             const checkDone = setInterval(() => {
                 if (active === 0 && index >= instructions.length) {
