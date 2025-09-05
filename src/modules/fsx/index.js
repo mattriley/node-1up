@@ -3,7 +3,7 @@ module.exports = {
     batchReadJson: require('./batch-read-json'),
     batchWrite: require('./batch-write'),
     configure: require('./configure'),
-    detectFs: require('./detect-fs'),
+    detectFileSystem: require('./detect-file-system'),
     detectLinux: require('./detect-linux'),
     detectMacos: require('./detect-macos'),
     detectWindows: require('./detect-windows'),

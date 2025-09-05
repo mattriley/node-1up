@@ -13,7 +13,7 @@ const ERROR_CODES = {
 const BYTE_LEN = (s) => Buffer.byteLength(s, "utf8");
 const normalizeFsType = (t) => (t || "").toLowerCase().replace(/\s+/g, "");
 
-module.exports = ({ self, config }) => {
+module.exports = ({ fsx, config }) => {
 
     /**
      * Resolve which limits to use.
@@ -40,7 +40,7 @@ module.exports = ({ self, config }) => {
             const def = config.os.platformDefaults[os.platform()];
             return { ...def, fsType: key };
         }
-        return self.detectFileSystem(path.dirname(path.resolve(forPath || ".")));
+        return fsx.detectFileSystem(path.dirname(path.resolve(forPath || ".")));
     };
 
     /**

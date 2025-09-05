@@ -16,7 +16,7 @@ module.exports = ({ config, self }) => {
     // lookup by explicit FS type (no exec)
     const fromType = (fsType, target = undefined) => {
         const key = normalizeFsType(fsType);
-        const plat = config.path.platformDetails[os.platform()] || { nameMax: 255, pathMax: 4096, units: "bytes", fsType: "unknown" };
+        const plat = config.os.platformDefaults[os.platform()] || { nameMax: 255, pathMax: 4096, units: "bytes", fsType: "unknown" };
         const limits = config.os.fileSystemLimits[key];
         return pick(limits, plat, key, target);
     };
@@ -40,7 +40,7 @@ module.exports = ({ config, self }) => {
             // fall through to defaults
         }
 
-        const def = config.path.platformDetails[platform] || { nameMax: 255, pathMax: 4096, units: "bytes", fsType: "unknown" };
+        const def = config.os.platformDefaults[platform] || { nameMax: 255, pathMax: 4096, units: "bytes", fsType: "unknown" };
         return { ...def, target: absDir };
     };
 

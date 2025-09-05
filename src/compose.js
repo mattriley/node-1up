@@ -28,11 +28,11 @@ const outerCompose = ({ config, overrides = {} } = {}) => {
     const { str } = compose.deep('str', { fun, arr });
     const { net } = compose.make('net');
     const { date } = compose.make('date', { obj });
+    const { fsx } = compose.deep('fsx', { fun, is, fs, fsp });
 
-    compose.deep('fsx', { fun, is, fs, fsp });
     compose.deep('geo', { str, arr, net });
     compose.make('bool');
-    compose.deep('path', { fun, arr });
+    compose.deep('path', { fun, arr, fsx });
     compose.make('pipe', { is, fun });
     compose.deep('exif', { obj, date });
     compose.deep('img');
