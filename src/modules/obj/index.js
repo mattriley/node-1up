@@ -1,6 +1,6 @@
 module.exports = {
     _buildDelimitersRegex: require('./_build-delimiters-regex'),
-    applyCorrections: require('./apply-corrections'),
+    applyCorrectionsMut: require('./apply-corrections-mut'),
     buildLookup: require('./build-lookup'),
     compact: require('./compact'),
     compactMut: require('./compact.mut'),
