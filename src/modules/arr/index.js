@@ -1,9 +1,9 @@
 module.exports = {
     configure: require('./configure'),
     dedupeAdjacent: require('./dedupe-adjacent'),
-    dedupeAdjacentInPlace: require('./dedupe-adjacent-in-place'),
+    dedupeAdjacentMut: require('./dedupe-adjacent.mut'),
     insertBeforeLast: require('./insert-before-last'),
-    insertBeforeLastInPlace: require('./insert-before-last-in-place'),
+    insertBeforeLastMut: require('./insert-before-last.mut'),
     join: require('./join'),
     mapChunksAsync: require('./map-chunks-async'),
     only: require('./only'),

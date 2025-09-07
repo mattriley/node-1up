@@ -1,5 +1,4 @@
 module.exports = {
-    assignMeta: require('./assign-meta'),
     compact: require('./compact'),
     dig: require('./dig'),
     flat: require('./flat'),

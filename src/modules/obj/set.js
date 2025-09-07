@@ -1,1 +1,1 @@
-module.exports = ({ self }) => self.configure.set();
+module.exports = ({ self }) => self.configure.set({ mutate: false });

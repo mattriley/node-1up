@@ -1,1 +1,1 @@
-module.exports = ({ self }) => self.configure.compact();
+module.exports = ({ self }) => self.configure.compact({ mutate: false });

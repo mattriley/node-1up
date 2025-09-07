@@ -1,1 +1,1 @@
-module.exports = ({ self }) => self.configure.sortKeys();
+module.exports = ({ self }) => self.configure.sortKeys({ mutate: false });

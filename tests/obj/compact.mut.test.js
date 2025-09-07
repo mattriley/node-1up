@@ -1,7 +1,8 @@
 const assert = require('assert');
 
 module.exports = ({ test }) => lib => {
-    const compact = lib.obj.compact;
+
+    const fn = lib.obj.compactMut;
 
     test('compact: deeply removes empty values', () => {
         const input = {
@@ -19,7 +20,7 @@ module.exports = ({ test }) => lib => {
             g: ['value']
         };
 
-        compact(input);
+        fn(input);
         assert.deepStrictEqual(input, expected);
     });
 
@@ -37,7 +38,7 @@ module.exports = ({ test }) => lib => {
             e: ['valid']
         };
 
-        compact(input);
+        fn(input);
         assert.deepStrictEqual(input, expected);
     });
 
@@ -62,7 +63,7 @@ module.exports = ({ test }) => lib => {
             g: [{ i: 'yes' }]
         };
 
-        compact(input);
+        fn(input);
         assert.deepStrictEqual(input, expected);
     });
 
@@ -76,7 +77,7 @@ module.exports = ({ test }) => lib => {
 
         const expected = { ...input };
 
-        compact(input);
+        fn(input);
         assert.deepStrictEqual(input, expected);
     });
 
@@ -88,20 +89,20 @@ module.exports = ({ test }) => lib => {
         };
 
         const copy = JSON.parse(JSON.stringify(input));
-        compact(input);
+        fn(input);
         assert.deepStrictEqual(input, copy);
     });
 
     test('compact: primitive input returns value or undefined', () => {
-        assert.strictEqual(compact('valid'), 'valid');
-        assert.strictEqual(compact(''), undefined);
-        assert.strictEqual(compact(null), undefined);
-        assert.strictEqual(compact(undefined), undefined);
-        assert.strictEqual(compact(42), 42);
-        assert.strictEqual(compact(false), false);
-        assert.strictEqual(compact(true), true);
-        assert.strictEqual(compact(() => { }), undefined);
-        assert.strictEqual(compact(Symbol('x')), undefined);
-        assert.strictEqual(compact(BigInt(10)), undefined);
+        assert.strictEqual(fn('valid'), 'valid');
+        assert.strictEqual(fn(''), undefined);
+        assert.strictEqual(fn(null), undefined);
+        assert.strictEqual(fn(undefined), undefined);
+        assert.strictEqual(fn(42), 42);
+        assert.strictEqual(fn(false), false);
+        assert.strictEqual(fn(true), true);
+        assert.strictEqual(fn(() => { }), undefined);
+        assert.strictEqual(fn(Symbol('x')), undefined);
+        assert.strictEqual(fn(BigInt(10)), undefined);
     });
 };

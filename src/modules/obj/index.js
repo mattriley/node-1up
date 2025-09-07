@@ -1,14 +1,15 @@
 module.exports = {
     _buildDelimitersRegex: require('./_build-delimiters-regex'),
     applyCorrections: require('./apply-corrections'),
-    assignMeta: require('./assign-meta'),
     buildLookup: require('./build-lookup'),
     compact: require('./compact'),
+    compactMut: require('./compact.mut'),
     configure: require('./configure'),
     dig: require('./dig'),
     entries: require('./entries'),
     flat: require('./flat'),
     flatMapKeys: require('./flat-map-keys'),
+    flatMut: require('./flat.mut'),
     freezeDeep: require('./freeze-deep'),
     isEmpty: require('./is-empty'),
     isEqual: require('./is-equal'),
@@ -20,7 +21,9 @@ module.exports = {
     meta: require('./meta'),
     pick: require('./pick'),
     set: require('./set'),
+    setMut: require('./set.mut'),
     sortKeys: require('./sort-keys'),
+    sortKeysMut: require('./sort-keys.mut'),
     toArray: require('./to-array'),
     transformEntries: require('./transform-entries')
 };

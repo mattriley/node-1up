@@ -1,9 +1,11 @@
 module.exports = ({ test, assert }) => lib => {
 
+    const fn = lib.arr.insertBeforeLastMut;
+
     test('insert at second last position', () => {
         const input = ['foo', 'bar', 'qux'];
         const expected = ['foo', 'bar', 'baz', 'qux'];
-        const actual = lib.arr.insertBeforeLastInPlace(input, 'baz');
+        const actual = fn(input, 'baz');
         assert.deepEqual(actual, expected);
         assert.equal(actual, input);
     });
@@ -11,7 +13,7 @@ module.exports = ({ test, assert }) => lib => {
     test('inserts at last position when array contains only one item', () => {
         const input = ['foo'];
         const expected = ['foo', 'bar'];
-        const actual = lib.arr.insertBeforeLastInPlace(input, 'bar');
+        const actual = fn(input, 'bar');
         assert.deepEqual(actual, expected);
         assert.equal(actual, input);
     });
