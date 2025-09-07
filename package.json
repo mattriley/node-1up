@@ -1,6 +1,6 @@
 {
     "name": "1up",
-    "version": "1.225.0",
+    "version": "1.226.0",
     "description": "",
     "bin": {
         "batch-resize": "./bin/batch-resize.js"
