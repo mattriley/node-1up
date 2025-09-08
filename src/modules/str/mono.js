@@ -6,6 +6,10 @@ module.exports = () => str => {
     const offsetLower = 0x1D68A - 'a'.charCodeAt(0); // Offset for lowercase
 
     return str.split('').map(char => {
+        if (char === ' ') {
+            // Replace normal space with U+2007 FIGURE SPACE
+            return '\u2007';
+        }
         if (char >= '0' && char <= '9') {
             return String.fromCodePoint(char.charCodeAt(0) + offsetNums);
         }
@@ -17,5 +21,4 @@ module.exports = () => str => {
         }
         return char; // Return unchanged if not alphanumeric
     }).join('');
-
 };
