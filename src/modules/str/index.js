@@ -3,6 +3,7 @@ module.exports = {
     configure: require('./configure'),
     deaccent: require('./deaccent'),
     dequote: require('./dequote'),
+    dequoteConfigure: require('./dequote.configure'),
     indent: require('./indent'),
     join: require('./join'),
     mono: require('./mono'),
