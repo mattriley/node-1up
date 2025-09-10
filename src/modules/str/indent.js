@@ -1,1 +1,7 @@
-module.exports = ({ self }) => self.configure.indent();
+module.exports = ({ self }) => {
+
+    const indent = self.indentConfigure();
+    indent.configure = self.indentConfigure;
+    return indent;
+
+}
