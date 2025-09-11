@@ -1,4 +1,5 @@
 module.exports = ({ fun }) => config => {
+
     const defaults = { delimiter: ', ', final: ' & ' };
     const parseOptions = fun.parseConfig(defaults, config);
 
@@ -10,4 +11,5 @@ module.exports = ({ fun }) => config => {
         const csv = copy.join(delimiter);
         return [csv, last].join(final);
     };
+
 };

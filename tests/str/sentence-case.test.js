@@ -29,7 +29,7 @@ module.exports = ({ test, assert }) => ({ str }) => {
     });
 
     test('string with acronyms', () => {
-        const sentenceCase = str.configure.sentenceCase({ acronyms: ['ID', 'URL'] });
+        const sentenceCase = str.sentenceCase.configure({ acronyms: ['ID', 'URL'] });
         const input = 'userIDLookupURL';
         const expected = 'User ID lookup URL';
         const actual = sentenceCase(input);

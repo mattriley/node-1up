@@ -1,5 +1,5 @@
 module.exports = {
-    admin1CodesASCII: require('./admin1CodesASCII'),
+    admin1CodesAscii: require('./admin1CodesASCII'),
     cities1000: require('./cities1000'),
     countryInfo: require('./countryInfo')
 };

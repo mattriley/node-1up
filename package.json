@@ -46,7 +46,7 @@
         "eslint": "^8.50.0",
         "eslint-plugin-import": "^2.28.1",
         "husky": "^8.0.3",
-        "module-indexgen": "^0.41.0",
+        "module-indexgen": "file:../node-module-indexgen",
         "module-testrunner": "^0.21.0",
         "npm-check-updates": "^16.14.4",
         "task-library": "^0.274.0"

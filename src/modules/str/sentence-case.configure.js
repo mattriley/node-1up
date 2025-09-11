@@ -1,4 +1,5 @@
 module.exports = ({ fun }) => config => {
+
     const defaults = { acronyms: [] };
     const parseOptions = fun.parseConfig(defaults, config);
 
