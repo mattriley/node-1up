@@ -1,6 +1,6 @@
 module.exports = ({ test, assert }) => ({ obj }) => {
 
-    const metaCustom = obj.configure.meta({ length: 'len', some: 'any', exists: 'has' });
+    const metaCustom = obj.meta.configure({ length: 'len', some: 'any', exists: 'has' });
 
     test('array with id-based objects only adds length', () => {
         const input = {
