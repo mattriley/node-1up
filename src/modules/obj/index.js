@@ -1,4 +1,5 @@
 module.exports = {
+    applyCorrectionsConfigure: require('./apply-corrections.configure'),
     compactConfigure: require('./compact.configure'),
     digConfigure: require('./dig.configure'),
     flatConfigure: require('./flat.configure'),
@@ -7,7 +8,7 @@ module.exports = {
     setConfigure: require('./set.configure'),
     sortKeysConfigure: require('./sort-keys.configure'),
     _buildDelimitersRegex: require('./_build-delimiters-regex'),
-    applyCorrectionsMut: require('./apply-corrections-mut'),
+    applyCorrections: require('./apply-corrections'),
     buildLookup: require('./build-lookup'),
     compact: require('./compact'),
     dig: require('./dig'),
