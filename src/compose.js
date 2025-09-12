@@ -6,6 +6,7 @@ const buildLookups = require('./build-lookups');
 
 const outerCompose = ({ config, overrides = {} } = {}) => {
 
+    const os = overrides.os ?? require('os');
     const fs = overrides.fs ?? require('fs');
     const fsp = overrides.fsp ?? fs.promises;
 
@@ -28,11 +29,11 @@ const outerCompose = ({ config, overrides = {} } = {}) => {
     const { str } = compose.deep('str', { fun, arr });
     const { net } = compose.make('net');
     const { date } = compose.make('date', { obj });
-    const { fsx } = compose.deep('fsx', { fun, is, fs, fsp });
+    const { fsx } = compose.deep('fsx', { fun, is, os, fs, fsp });
 
     compose.deep('geo', { str, arr, net });
     compose.make('bool');
-    compose.deep('path', { fun, arr, fsx });
+    compose.deep('path', { fun, arr, fsx, os });
     compose.make('pipe', { is, fun });
     compose.deep('exif', { obj, date });
     compose.deep('img');

@@ -1,4 +1,3 @@
-const os = require('os');
 const path = require('path');
 const Buffer = require('buffer');
 
@@ -14,7 +13,7 @@ const ERROR_CODES = {
 const BYTE_LEN = s => Buffer.byteLength(s, 'utf8');
 const normalizeFsType = t => (t || '').toLowerCase().replace(/\s+/g, '');
 
-module.exports = ({ fsx, config }) => {
+module.exports = ({ os, fsx, config }) => {
 
     /**
      * Resolve which limits to use.
