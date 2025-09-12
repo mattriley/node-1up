@@ -5,6 +5,7 @@ module.exports = {
     flatMut: require('./flat.mut'),
     metaConfigure: require('./meta.configure'),
     pickConfigure: require('./pick.configure'),
+    setConfigure: require('./set.configure'),
     setMut: require('./set.mut'),
     sortKeysMut: require('./sort-keys.mut'),
     _buildDelimitersRegex: require('./_build-delimiters-regex'),

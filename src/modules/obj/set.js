@@ -1,1 +1,7 @@
-module.exports = ({ self }) => self.configure.set({ mutate: false });
+module.exports = ({ self }) => {
+
+    const configure = self.setConfigure;
+    const set = configure.set({ mutate: false });
+    return Object.assign(set, { configure });
+
+}
