@@ -1,5 +1,5 @@
 module.exports = {
-    compactMut: require('./compact.mut'),
+    compactConfigure: require('./compact.configure'),
     flatMut: require('./flat.mut'),
     setMut: require('./set.mut'),
     sortKeysMut: require('./sort-keys.mut'),
