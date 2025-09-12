@@ -3,6 +3,7 @@ module.exports = {
     digConfigure: require('./dig.configure'),
     flatConfigure: require('./flat.configure'),
     flatMut: require('./flat.mut'),
+    metaConfigure: require('./meta.configure'),
     setMut: require('./set.mut'),
     sortKeysMut: require('./sort-keys.mut'),
     _buildDelimitersRegex: require('./_build-delimiters-regex'),
