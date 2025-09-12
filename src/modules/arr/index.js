@@ -1,5 +1,5 @@
 module.exports = {
-    dedupeAdjacentMut: require('./dedupe-adjacent.mut'),
+    dedupeAdjacentConfigure: require('./dedupe-adjacent.configure'),
     insertBeforeLastMut: require('./insert-before-last.mut'),
     joinConfigure: require('./join.configure'),
     parseConfigure: require('./parse.configure'),

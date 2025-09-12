@@ -1,5 +1,8 @@
-module.exports = () => arr => {
+module.exports = ({ self }) => {
 
-    return arr.filter((el, i) => i === 0 || el !== arr[i - 1]);
+    const configure = self.dedupeAdjacentConfigure;
+    const dedupeAdjacent = configure();
+    const mut = configure({ mutate: true });
+    return Object.assign(dedupeAdjacent, { configure, mut });
 
 };

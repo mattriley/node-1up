@@ -1,6 +1,8 @@
 module.exports = ({ test, assert }) => lib => {
 
-    const fn = lib.arr.dedupeAdjacentMut
+    console.warn(lib.arr.dedupeAdjacent)
+
+    const fn = lib.arr.dedupeAdjacent.mut
 
     test('deduplicates adjacent values in place', () => {
         const input = ['a', 'b', 'b', 'c', 'b'];
