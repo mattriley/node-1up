@@ -1,6 +1,6 @@
 module.exports = ({ test, assert }) => lib => {
 
-    const fn = lib.arr.insertBeforeLast.mut;
+    const fn = lib.arr.insertBeforeLast.configure({ mutate: true });
 
     test('insert at second last position', () => {
         const input = ['foo', 'bar', 'qux'];
