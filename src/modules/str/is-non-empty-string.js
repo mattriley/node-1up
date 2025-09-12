@@ -1,5 +1,5 @@
 module.exports = () => val => {
 
-    return typeof val === 'string' && v.trim() !== '';
+    return typeof val === 'string' && val.trim() !== '';
 
 };
