@@ -1,1 +1,7 @@
-module.exports = ({ self }) => self.configure.writeJson();
+module.exports = ({ self }) => {
+
+    const writeJson = self.writeJsonConfigure();
+    writeJson.configure = self.writeJsonConfigure;
+    return writeJson;
+
+}
