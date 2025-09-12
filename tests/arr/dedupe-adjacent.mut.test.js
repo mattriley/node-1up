@@ -1,7 +1,5 @@
 module.exports = ({ test, assert }) => lib => {
 
-    console.warn(lib.arr.dedupeAdjacent)
-
     const fn = lib.arr.dedupeAdjacent.mut
 
     test('deduplicates adjacent values in place', () => {
