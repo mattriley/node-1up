@@ -1,5 +1,11 @@
 module.exports = () => arr => {
 
-    return arr.map((_, i) => arr.slice(0, i + 1));
+    const out = [];
+    const prefix = [];
+    for (const x of arr) {
+        prefix.push(x);
+        out.push([...prefix]); // shallow copy once per step
+    }
+    return out;
 
 };
