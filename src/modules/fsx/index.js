@@ -1,5 +1,6 @@
 module.exports = {
     batchReadJsonConfigure: require('./batch-read-json.configure'),
+    batchWriteConfigure: require('./batch-write.configure'),
     assertExistsSync: require('./assert-exists-sync'),
     batchReadJson: require('./batch-read-json'),
     batchWrite: require('./batch-write'),
