@@ -7,6 +7,7 @@ module.exports = {
     deaccent: require('./deaccent'),
     dequote: require('./dequote'),
     indent: require('./indent'),
+    isNonEmptyString: require('./is-non-empty-string'),
     join: require('./join'),
     mono: require('./mono'),
     padZero: require('./pad-zero'),

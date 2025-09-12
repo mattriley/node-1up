@@ -2,16 +2,14 @@ const { DateTime } = require('luxon');
 
 const toIsoDefault = (date, time) => (time ? `${date}T${time}` : date);
 
-module.exports = ({ obj }) => ({ data, sources, timezoneSource, toIso }) => {
+module.exports = ({ str, obj }) => ({ data, sources, timezoneSource, toIso }) => {
     data ??= {};
     sources ??= [];
     toIso ??= toIsoDefault;
 
-    const isNonEmptyString = (v) => typeof v === 'string' && v.trim() !== '';
-
     // Resolve timezone (optional). If empty/invalid, fall back to 'UTC'.
     const rawTimezone = obj.dig(data, timezoneSource);
-    const timezone = isNonEmptyString(rawTimezone) ? rawTimezone.trim() : undefined;
+    const timezone = str.isNonEmptyString(rawTimezone) ? rawTimezone.trim() : undefined;
     const timezoneForLuxon = timezone ?? 'UTC';
 
     // Normalize `sources`: each item can be 'datePath' or ['datePath', 'timePath']
@@ -25,8 +23,8 @@ module.exports = ({ obj }) => ({ data, sources, timezoneSource, toIso }) => {
         const sourceDateRaw = obj.dig(data, dateSource);
         const sourceTimeRaw = timeSource ? obj.dig(data, timeSource) : undefined;
 
-        const sourceDate = isNonEmptyString(sourceDateRaw) ? sourceDateRaw.trim() : '';
-        const sourceTime = isNonEmptyString(sourceTimeRaw) ? sourceTimeRaw.trim() : '';
+        const sourceDate = str.isNonEmptyString(sourceDateRaw) ? sourceDateRaw.trim() : '';
+        const sourceTime = str.isNonEmptyString(sourceTimeRaw) ? sourceTimeRaw.trim() : '';
 
         const debug = {
             dateSource,
@@ -38,7 +36,7 @@ module.exports = ({ obj }) => ({ data, sources, timezoneSource, toIso }) => {
         };
 
         // Required fields checks
-        if (!isNonEmptyString(dateSource)) {
+        if (!str.isNonEmptyString(dateSource)) {
             return { error: 'Date Source path missing', debug };
         }
         if (!sourceDate) {
