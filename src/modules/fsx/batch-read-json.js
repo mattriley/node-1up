@@ -1,1 +1,7 @@
-module.exports = ({ self }) => self.configure.batchReadJson();
+module.exports = ({ self }) => {
+
+    const batchReadJson = self.batchReadJsonConfigure();
+    batchReadJson.configure = self.batchReadJsonConfigure;
+    return batchReadJson;
+
+}
