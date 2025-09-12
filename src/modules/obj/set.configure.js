@@ -1,6 +1,6 @@
 module.exports = ({ fun }) => config => {
 
-    const defaults = { depth: Infinity, mutate: true };
+    const defaults = { depth: Infinity, mutate: false };
     const parseOptions = fun.parseConfig(defaults, config);
 
     return (obj, path, value, ...options) => {

@@ -2,7 +2,7 @@ const assert = require('assert');
 
 module.exports = ({ test }) => lib => {
 
-    const fn = lib.obj.compact.mut;
+    const fn = lib.obj.compact.configure({ mutate: true });
 
     test('compact: deeply removes empty values', () => {
         const input = {
