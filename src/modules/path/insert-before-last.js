@@ -1,1 +1,7 @@
-module.exports = ({ self }) => self.configure.insertBeforeLast();
+module.exports = ({ self }) => {
+
+    const configure = self.insertBeforeLastConfigure;
+    const insertBeforeLast = configure();
+    return Object.assign(insertBeforeLast, { configure });
+
+}
