@@ -1,5 +1,3 @@
-// Tests expanded with help from ChatGPT on 21 June 2025.
-
 module.exports = ({ test, assert }) => lib => {
 
     test('deduplicates adjacent values', () => {
