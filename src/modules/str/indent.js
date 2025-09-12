@@ -1,7 +1,7 @@
 module.exports = ({ self }) => {
 
-    const indent = self.indentConfigure();
-    indent.configure = self.indentConfigure;
-    return indent;
+    const configure = self.indentConfigure;
+    const indent = configure();
+    return Object.assign(indent, { configure });
 
 }
