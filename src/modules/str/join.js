@@ -1,7 +1,7 @@
 module.exports = ({ self }) => {
 
-    const join = self.joinConfigure();
-    join.configure = self.joinConfigure;
-    return join;
+    const configure = self.joinConfigure;
+    const join = configure();
+    return Object.assign(join, { configure });
 
 };
