@@ -1,7 +1,7 @@
 module.exports = ({ self }) => {
 
-    const batchWrite = self.batchWriteConfigure();
-    batchWrite.configure = batchWrite;
-    return batchWrite;
+    const configure = self.batchWriteConfigure;
+    const batchWrite = configure();
+    return Object.assign(batchWrite, { configure });
 
 }
