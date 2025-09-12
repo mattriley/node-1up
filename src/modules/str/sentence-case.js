@@ -1,7 +1,7 @@
 module.exports = ({ self }) => {
 
-    const sentenceCase = self.sentenceCaseConfigure();
-    sentenceCase.configure = self.sentenceCaseConfigure;
-    return sentenceCase;
+    const configure = self.sentenceCaseConfigure;
+    const sentenceCase = configure();
+    return Object.assign(sentenceCase, { configure });
 
 }
