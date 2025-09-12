@@ -26,7 +26,7 @@ module.exports = ({ test, assert, compose }) => () => {
         assert.ok(done);
     };
 
-    test('write a json file with default configured indent', { only: true }, async () => {
+    test('write a json file with default configured indent', async () => {
         const expected = JSON.stringify(targetObject, null, 4);
         await runTest(undefined, expected);
     });
