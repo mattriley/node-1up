@@ -1,7 +1,7 @@
 module.exports = ({ self }) => {
 
-    const rewriteJsonLike = self.rewriteJsonLikeConfigure();
-    rewriteJsonLike.configure = self.rewriteJsonLikeConfigure;
-    return rewriteJsonLike;
+    const configure = self.rewriteJsonLikeConfigure;
+    const rewriteJsonLike = configure();
+    return Object.assign(rewriteJsonLike, { configure });
 
 }
