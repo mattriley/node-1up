@@ -1,7 +1,7 @@
 module.exports = ({ self }) => {
 
-    const parse = self.parseConfigure();
-    parse.configure = self.configure;
-    return parse;
+    const configure = self.parseConfigure;
+    const parse = configure();
+    return Object.assign(parse, { configure });
 
 };
