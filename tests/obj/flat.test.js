@@ -7,7 +7,7 @@ module.exports = ({ test, assert }) => lib => {
                 b: 2
             }
         };
-        const actual = lib.obj.configure.flat({ mutate: false })(input);
+        const actual = lib.obj.flat.configure({ mutate: false })(input);
         const expected = { a: 1, b: 2 };
         assert.deepEqual(actual, expected);
     });
@@ -19,7 +19,7 @@ module.exports = ({ test, assert }) => lib => {
                 b: 2
             }
         };
-        const actual = lib.obj.configure.flat({ mutate: false, delimiter: '.' })(input);
+        const actual = lib.obj.flat.configure({ mutate: false, delimiter: '.' })(input);
         const expected = { a: 1, 'sub.b': 2 };
         assert.deepEqual(actual, expected);
     });
@@ -31,7 +31,7 @@ module.exports = ({ test, assert }) => lib => {
                 a: 1
             }
         };
-        assert.throws(() => lib.obj.configure.flat({ mutate: false })(input), /Collision: a/);
+        assert.throws(() => lib.obj.flat.configure({ mutate: false })(input), /Collision: a/);
     });
 
 };
