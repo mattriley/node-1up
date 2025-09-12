@@ -1,6 +1,6 @@
 module.exports = {
     insertBeforeLastConfigure: require('./insert-before-last.configure'),
-    configure: require('./configure'),
+    objectTreeConfigure: require('./object-tree.configure'),
     insertBeforeLast: require('./insert-before-last'),
     objectTree: require('./object-tree'),
     steps: require('./steps'),
