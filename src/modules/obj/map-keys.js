@@ -30,9 +30,7 @@ module.exports = () => (...args) => {
     for (const key in obj) {
         if (Object.hasOwn(obj, key)) {
             const val = obj[key];
-            const newKey = useNamed
-                ? iteratee({ [keyName]: key, [valName]: val, [objName]: obj })
-                : iteratee(key, val, obj);
+            const newKey = useNamed? iteratee({ [keyName]: key, [valName]: val, [objName]: obj }): iteratee(key, val, obj);
             result[newKey] = val;
         }
     }

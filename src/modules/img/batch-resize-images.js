@@ -120,7 +120,7 @@ const makeFlatName = ({ relDir, base, outExt, strategy, sep, maxBytes }) => {
 };
 
 async function uniquify(destDir, filename) {
-    let candidate = path.join(destDir, filename);
+    const candidate = path.join(destDir, filename);
     if (!(await exists(candidate))) return candidate;
     const dot = filename.lastIndexOf('.');
     const stem = dot === -1 ? filename : filename.slice(0, dot);
@@ -273,13 +273,13 @@ function encoderForExt(extLower) {
 }
 function applyEncoder(pipeline, key, quality, opts = {}) {
     switch (key) {
-    case 'jpeg': return pipeline.jpeg({ quality });
-    case 'png': return pipeline.png();
-    case 'webp': return pipeline.webp({ quality });
-    case 'avif': return pipeline.avif({ quality });
-    case 'heif': return pipeline.heif({ quality, compression: opts.heifCompression });
-    case 'tiff': return pipeline.tiff({ quality });
-    default: throw new Error(`No encoder for key: ${key}`);
+        case 'jpeg': return pipeline.jpeg({ quality });
+        case 'png': return pipeline.png();
+        case 'webp': return pipeline.webp({ quality });
+        case 'avif': return pipeline.avif({ quality });
+        case 'heif': return pipeline.heif({ quality, compression: opts.heifCompression });
+        case 'tiff': return pipeline.tiff({ quality });
+        default: throw new Error(`No encoder for key: ${key}`);
     }
 }
 
@@ -297,11 +297,11 @@ const processFileFactory = (cfg, allowSet, stats, log, onFile, inputRoot, output
             });
             const outFile = await uniquify(outputRoot, flatName);
             return { outDir: outputRoot, outFile };
-        } else {
-            const outDir = cfg.overwrite ? path.dirname(inputPath) : path.dirname(outputPath);
-            const outFile = path.join(outDir, `${base}${outExt}`);
-            return { outDir, outFile };
         }
+        const outDir = cfg.overwrite ? path.dirname(inputPath) : path.dirname(outputPath);
+        const outFile = path.join(outDir, `${base}${outExt}`);
+        return { outDir, outFile };
+
     };
 
     const attemptEncodeTo = async (src, outFile, encoderKey, quality, heifCompression) => {
@@ -464,7 +464,7 @@ module.exports = () => async (options = {}) => {
     if (cfg.autoThreads) {
         // defer sizing to limiter setup
     } else {
-        let t = cfg.sharpThreads != null ? cfg.sharpThreads : Math.max(1, Math.floor((os.cpus()?.length || 4) / 2));
+        const t = cfg.sharpThreads != null ? cfg.sharpThreads : Math.max(1, Math.floor((os.cpus()?.length || 4) / 2));
         if (t === 0) sharp.concurrency(0); else sharp.concurrency(t);
     }
 

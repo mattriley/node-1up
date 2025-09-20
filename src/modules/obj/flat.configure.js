@@ -11,11 +11,7 @@ module.exports = ({ fun, is }) => config => {
             for (const [key, val] of Object.entries(value)) {
                 const isLeaf = !is.plainObject(val) || currentDepth >= depth;
 
-                const newKey = delimiter && parentKey
-                    ? `${parentKey}${delimiter}${key}`
-                    : delimiter
-                        ? key
-                        : key; // no prefixing at all
+                const newKey = delimiter && parentKey? `${parentKey}${delimiter}${key}`: delimiter? key: key; // no prefixing at all
 
                 if (isLeaf) {
                     if (newKey in result) throw new Error(`Collision: ${newKey}`);

@@ -20,7 +20,7 @@ module.exports = ({ proc, self, config }) => async absDir => {
 
     if (limits) {
         return { fsType, ...limits, target: absDir };
-    } else {
-        return { ...self.PLATFORM_DEFAULTS.win32, fsType, target: absDir };
     }
+    return { ...self.PLATFORM_DEFAULTS.win32, fsType, target: absDir };
+
 };

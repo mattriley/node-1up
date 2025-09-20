@@ -8,7 +8,7 @@ module.exports = ({ proc, config }) => async absDir => {
 
     if (limits) {
         return { fsType: key, ...limits, target: absDir };
-    } else {
-        return { ...config.os.platformDefaults.linux, fsType: key, target: absDir };
     }
+    return { ...config.os.platformDefaults.linux, fsType: key, target: absDir };
+
 };

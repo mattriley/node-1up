@@ -27,9 +27,7 @@ module.exports = ({ self }) => {
                 propSchema.items?.properties
             ) {
                 obj[key] = val.map(item => {
-                    return self.isPlain(item)
-                        ? removeNonEnumValues(item, propSchema.items)
-                        : item;
+                    return self.isPlain(item)? removeNonEnumValues(item, propSchema.items): item;
                 });
             }
         }

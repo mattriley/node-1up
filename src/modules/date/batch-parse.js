@@ -62,9 +62,7 @@ module.exports = ({ str, obj }) => ({ data, sources, timezoneSource, toIso }) =>
         // Output format:
         // - If a timezone was provided, emit full ISO with zone (no ms)
         // - If not, emit 'yyyy-MM-dd\'T\'HH:mm:ss' (no zone)
-        const iso = timezone
-            ? dt.toISO({ suppressMilliseconds: true })
-            : dt.toFormat('yyyy-MM-dd\'T\'HH:mm:ss');
+        const iso = timezone? dt.toISO({ suppressMilliseconds: true }): dt.toFormat('yyyy-MM-dd\'T\'HH:mm:ss');
 
         return { iso, timezone, debug: { ...debug, isoForLuxon } };
     });

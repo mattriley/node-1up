@@ -17,9 +17,9 @@ module.exports = ({ self, fun }) => config => {
                         obj[i] = sortKeys(obj[i], currentDepth - 1);
                     }
                     return obj;
-                } else {
-                    return obj.map(item => sortKeys(item, currentDepth - 1));
                 }
+                return obj.map(item => sortKeys(item, currentDepth - 1));
+
             }
 
             if (self.isPlain(obj)) {
@@ -31,13 +31,13 @@ module.exports = ({ self, fun }) => config => {
                         obj[key] = sortKeys(value, currentDepth - 1);
                     }
                     return obj;
-                } else {
-                    const result = {};
-                    for (const [key, value] of sortedEntries) {
-                        result[key] = sortKeys(value, currentDepth - 1);
-                    }
-                    return result;
                 }
+                const result = {};
+                for (const [key, value] of sortedEntries) {
+                    result[key] = sortKeys(value, currentDepth - 1);
+                }
+                return result;
+
             }
 
             return obj;

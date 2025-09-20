@@ -8,9 +8,9 @@ module.exports = ({ config, self }) => {
     const pick = (limits, fallback, fsType, target) => {
         if (limits) {
             return { fsType, ...limits, target };
-        } else {
-            return { ...fallback, fsType, target };
         }
+        return { ...fallback, fsType, target };
+
     };
 
     // lookup by explicit FS type (no exec)

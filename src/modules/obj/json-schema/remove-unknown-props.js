@@ -20,9 +20,7 @@ module.exports = ({ self }) => {
 
             if (Array.isArray(val) && propSchema.type === 'array' && propSchema.items?.type === 'object') {
                 obj[key] = val.map(item => {
-                    return self.isPlain(item)
-                        ? removeUnknownProps(item, propSchema.items)
-                        : item;
+                    return self.isPlain(item)? removeUnknownProps(item, propSchema.items): item;
                 });
             }
         }

@@ -8,7 +8,7 @@ module.exports = ({ proc, self }) => async absDir => {
 
     if (limits) {
         return { fsType, ...limits, target: absDir };
-    } else {
-        return { ...self.PLATFORM_DEFAULTS.darwin, fsType, target: absDir };
     }
+    return { ...self.PLATFORM_DEFAULTS.darwin, fsType, target: absDir };
+
 };

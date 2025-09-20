@@ -30,9 +30,7 @@ module.exports = () => async (...args) => {
     for (const key in obj) {
         if (Object.hasOwn(obj, key)) {
             const val = obj[key];
-            const newVal = useNamed
-                ? await iteratee({ [keyName]: key, [valName]: val, [objName]: obj })
-                : await iteratee(val, key, obj);
+            const newVal = useNamed? await iteratee({ [keyName]: key, [valName]: val, [objName]: obj }): await iteratee(val, key, obj);
             result[key] = newVal;
         }
     }

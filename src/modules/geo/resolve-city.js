@@ -38,21 +38,15 @@ module.exports = ({ self, arr }) => location => {
             const country = self.finder.findCountry(countryKey);
             return c.countryCode === country.isoCode;
         }) : all;
-        const byState = stateKey
-            ? byCountry.filter(c => self.finder.findStates(stateKey).some(state => {
-                const stateCodeMatch = c.stateCode === state.isoCode;
-                const stateNameMatch = c.state === state.name;
-                return stateCodeMatch || stateNameMatch;
-            }))
-            : byCountry;
+        const byState = stateKey? byCountry.filter(c => self.finder.findStates(stateKey).some(state => {
+            const stateCodeMatch = c.stateCode === state.isoCode;
+            const stateNameMatch = c.state === state.name;
+            return stateCodeMatch || stateNameMatch;
+        })): byCountry;
 
         const city = arr.only(byState);
         if (!city && byState.length > 1) {
-            const context = countryKey
-                ? `in ${countryKey}`
-                : stateKey
-                    ? `matching state ${stateKey}`
-                    : 'globally';
+            const context = countryKey? `in ${countryKey}`: stateKey? `matching state ${stateKey}`: 'globally';
 
             addError('city', ERROR_CODES.AMBIGUOUS, `Ambiguous: ${cityKey} (${byState.length} matches ${context})`);
         }
@@ -181,7 +175,7 @@ module.exports = ({ self, arr }) => location => {
             stateCode: state?.isoCode ?? null,
             country: country?.name ?? original.country ?? null,
             countryCode: country?.isoCode ?? null,
-            timezone: timezone
+            timezone
         },
         complete
     };

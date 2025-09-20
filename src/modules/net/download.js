@@ -41,11 +41,11 @@ module.exports = () => async ({
                 if (!entry) throw new Error(`❌ ${entryName} not found in ZIP`);
                 const text = entry.getData().toString('utf-8');
                 return text;
-            } else {
-                const text = buffer.toString('utf-8');
-                console.log(`📄 Loaded local text file: ${resolvedFile}`);
-                return text;
             }
+            const text = buffer.toString('utf-8');
+            console.log(`📄 Loaded local text file: ${resolvedFile}`);
+            return text;
+
         }
 
         // ✅ 3. Download from remote
