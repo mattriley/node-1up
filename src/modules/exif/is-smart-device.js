@@ -5,25 +5,25 @@
 
 const hasOwn = (o, k) => o != null && Object.prototype.hasOwnProperty.call(o, k);
 
-const toNumber = (v) => {
+const toNumber = v => {
     if (v == null) { return NaN; }
     if (typeof v === 'number') { return v; }
     const n = parseFloat(v);
     return Number.isFinite(n) ? n : NaN;
 };
 
-const escapeRe = (s) => String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const escapeRe = s => String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-const compileAlternationRe = (list) => {
-    const items = (Array.isArray(list) ? list : []).map((x) => Array.isArray(x) ? x[0] : x).filter(Boolean);
+const compileAlternationRe = list => {
+    const items = (Array.isArray(list) ? list : []).map(x => Array.isArray(x) ? x[0] : x).filter(Boolean);
     if (items.length === 0) { return null; }
-    const alts = items.map((s) => escapeRe(String(s)));
+    const alts = items.map(s => escapeRe(String(s)));
     return new RegExp(`(?:${alts.join('|')})`, 'i');
 };
 
 module.exports = ({ config }) => {
 
-    const cameraMakes = new Set((config.exif.cameraMakes || []).map((s) => String(s).toLowerCase()));
+    const cameraMakes = new Set((config.exif.cameraMakes || []).map(s => String(s).toLowerCase()));
 
     // Flatten pairs; also build fast indices
     const modelPairs = (config.exif.smartModels || []).map(([m, mk]) => [String(m).toLowerCase(), String(mk).toLowerCase()]);

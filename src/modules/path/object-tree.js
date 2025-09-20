@@ -4,4 +4,4 @@ module.exports = ({ self }) => {
     const objectTree = configure();
     return Object.assign(objectTree, { configure });
 
-}
+};

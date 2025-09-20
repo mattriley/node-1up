@@ -54,12 +54,12 @@ module.exports = {
             'miui', 'one ui', 'coloros', 'oxygenos', 'funtouch', 'emui'
         ],
         videoMajorBrands: ['mp42', 'qt', 'isom'],
-        videoFileTypes: ['mp4', 'mov', 'avi', 'mkv', 'webm', '3gp', 'mts', 'm4v'],
+        videoFileTypes: ['mp4', 'mov', 'avi', 'mkv', 'webm', '3gp', 'mts', 'm4v']
     },
 
     os: {
         fileSystemLimits,
-        platformDefaults,
+        platformDefaults
     }
 
 };

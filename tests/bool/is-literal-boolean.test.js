@@ -1,34 +1,34 @@
 module.exports = ({ test, assert }) => lib => {
 
     // ── positives ────────────────────────────────────────────────────────────
-    test("returns true for 'true'", () => {
+    test('returns true for \'true\'', () => {
         assert.strictEqual(lib.bool.isLiteralBoolean('true'), true);
     });
 
-    test("returns true for 'false'", () => {
+    test('returns true for \'false\'', () => {
         assert.strictEqual(lib.bool.isLiteralBoolean('false'), true);
     });
 
     // ── negatives: casing / whitespace ───────────────────────────────────────
-    test("returns false for 'True' (case-sensitive)", () => {
+    test('returns false for \'True\' (case-sensitive)', () => {
         assert.strictEqual(lib.bool.isLiteralBoolean('True'), false);
     });
 
-    test("returns false for 'FALSE' (case-sensitive)", () => {
+    test('returns false for \'FALSE\' (case-sensitive)', () => {
         assert.strictEqual(lib.bool.isLiteralBoolean('FALSE'), false);
     });
 
-    test("returns false for ' true ' (leading/trailing spaces)", () => {
+    test('returns false for \' true \' (leading/trailing spaces)', () => {
         assert.strictEqual(lib.bool.isLiteralBoolean(' true '), false);
     });
 
     // ── negatives: other strings ─────────────────────────────────────────────
-    test("returns false for 'yes'/'no'", () => {
+    test('returns false for \'yes\'/\'no\'', () => {
         assert.strictEqual(lib.bool.isLiteralBoolean('yes'), false);
         assert.strictEqual(lib.bool.isLiteralBoolean('no'), false);
     });
 
-    test("returns false for '0'/'1'", () => {
+    test('returns false for \'0\'/\'1\'', () => {
         assert.strictEqual(lib.bool.isLiteralBoolean('0'), false);
         assert.strictEqual(lib.bool.isLiteralBoolean('1'), false);
     });

@@ -2,9 +2,6 @@
     "name": "1up",
     "version": "1.229.0",
     "description": "",
-    "bin": {
-        "batch-resize": "./bin/batch-resize.js"
-    },
     "license": "ISC",
     "homepage": "https://github.com/mattriley/node-1up",
     "repository": "github:mattriley/node-1up",
@@ -17,16 +14,19 @@
         "url": "https://github.com/mattriley/node-1up/issues",
         "email": "m@ttriley.dev"
     },
+    "bin": {
+        "batch-resize": "./bin/batch-resize.js"
+    },
     "main": "./index.js",
     "scripts": {
         "cov": "npx task cov",
+        "data": "node ./data/refresh.js",
         "deploy": "npx task deploy",
         "lint": "npx task lint",
         "pre": "npx task pre",
         "setup": "npm i && npx task setup",
         "start": "npx task start",
-        "test": "npx task test",
-        "data": "node ./data/refresh.js"
+        "test": "npx task test"
     },
     "dependencies": {
         "adm-zip": "^0.5.16",

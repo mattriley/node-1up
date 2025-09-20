@@ -52,7 +52,7 @@ module.exports = ({ test, assert }) => $ => {
         const { stdout } = await fn('node -e "process.stdout.write(process.cwd())"', { cwd: tmp });
 
         // Also normalize path separators/casing (Windows safety)
-        const norm = (p) => path.normalize(p);
+        const norm = p => path.normalize(p);
         assert.equal(norm(stdout), norm(expected));
     });
 

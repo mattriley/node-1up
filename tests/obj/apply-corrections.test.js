@@ -1,4 +1,4 @@
-module.exports = ({ test, assert, compose }) => lib => {
+module.exports = ({ test, assert }) => lib => {
 
     const applyCorrections = lib.obj.applyCorrections;
 

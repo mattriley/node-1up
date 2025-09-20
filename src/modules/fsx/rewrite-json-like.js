@@ -4,4 +4,4 @@ module.exports = ({ self }) => {
     const rewriteJsonLike = configure();
     return Object.assign(rewriteJsonLike, { configure });
 
-}
+};

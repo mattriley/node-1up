@@ -4,4 +4,4 @@ module.exports = ({ self }) => {
     const meta = configure();
     return Object.assign(meta, { configure });
 
-}
+};

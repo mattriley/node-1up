@@ -4,4 +4,4 @@ module.exports = ({ self }) => {
     const batchReadJson = configure();
     return Object.assign(batchReadJson, { configure });
 
-}
+};

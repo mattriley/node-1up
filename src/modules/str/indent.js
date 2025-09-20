@@ -4,4 +4,4 @@ module.exports = ({ self }) => {
     const indent = configure();
     return Object.assign(indent, { configure });
 
-}
+};

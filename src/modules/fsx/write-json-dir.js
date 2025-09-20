@@ -4,4 +4,4 @@ module.exports = ({ self }) => {
     const writeJsonDir = configure();
     return Object.assign(writeJsonDir, { configure });
 
-}
+};

@@ -273,13 +273,13 @@ function encoderForExt(extLower) {
 }
 function applyEncoder(pipeline, key, quality, opts = {}) {
     switch (key) {
-        case 'jpeg': return pipeline.jpeg({ quality });
-        case 'png': return pipeline.png();
-        case 'webp': return pipeline.webp({ quality });
-        case 'avif': return pipeline.avif({ quality });
-        case 'heif': return pipeline.heif({ quality, compression: opts.heifCompression });
-        case 'tiff': return pipeline.tiff({ quality });
-        default: throw new Error(`No encoder for key: ${key}`);
+    case 'jpeg': return pipeline.jpeg({ quality });
+    case 'png': return pipeline.png();
+    case 'webp': return pipeline.webp({ quality });
+    case 'avif': return pipeline.avif({ quality });
+    case 'heif': return pipeline.heif({ quality, compression: opts.heifCompression });
+    case 'tiff': return pipeline.tiff({ quality });
+    default: throw new Error(`No encoder for key: ${key}`);
     }
 }
 

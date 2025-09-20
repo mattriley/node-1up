@@ -4,4 +4,4 @@ module.exports = ({ self }) => {
     const pick = configure();
     return Object.assign(pick, { configure });
 
-}
+};

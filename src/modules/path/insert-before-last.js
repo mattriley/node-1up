@@ -4,4 +4,4 @@ module.exports = ({ self }) => {
     const insertBeforeLast = configure();
     return Object.assign(insertBeforeLast, { configure });
 
-}
+};

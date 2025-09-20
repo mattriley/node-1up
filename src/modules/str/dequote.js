@@ -4,4 +4,4 @@ module.exports = ({ self }) => {
     const dequote = configure();
     return Object.assign(dequote, { configure });
 
-}
+};

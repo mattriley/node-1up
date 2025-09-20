@@ -1,34 +1,34 @@
 module.exports = ({ test, assert }) => lib => {
 
     // ── positives ────────────────────────────────────────────────────────────
-    test("returns true for 'true'", () => {
+    test('returns true for \'true\'', () => {
         assert.strictEqual(lib.bool.parseLiteralBoolean('true'), true);
     });
 
-    test("returns false for 'false'", () => {
+    test('returns false for \'false\'', () => {
         assert.strictEqual(lib.bool.parseLiteralBoolean('false'), false);
     });
 
     // ── negatives: casing and whitespace ─────────────────────────────────────
-    test("returns undefined for 'True' (case-sensitive)", () => {
+    test('returns undefined for \'True\' (case-sensitive)', () => {
         assert.strictEqual(lib.bool.parseLiteralBoolean('True'), undefined);
     });
 
-    test("returns undefined for ' FALSE ' (extra spaces)", () => {
+    test('returns undefined for \' FALSE \' (extra spaces)', () => {
         assert.strictEqual(lib.bool.parseLiteralBoolean(' FALSE '), undefined);
     });
 
     // ── non-boolean strings ──────────────────────────────────────────────────
-    test("returns undefined for 'yes'/'no'", () => {
+    test('returns undefined for \'yes\'/\'no\'', () => {
         assert.strictEqual(lib.bool.parseLiteralBoolean('yes'), undefined);
         assert.strictEqual(lib.bool.parseLiteralBoolean('no'), undefined);
     });
 
-    test("returns undefined for empty string", () => {
+    test('returns undefined for empty string', () => {
         assert.strictEqual(lib.bool.parseLiteralBoolean(''), undefined);
     });
 
-    test("returns undefined for arbitrary strings", () => {
+    test('returns undefined for arbitrary strings', () => {
         assert.strictEqual(lib.bool.parseLiteralBoolean('foo'), undefined);
         assert.strictEqual(lib.bool.parseLiteralBoolean('0'), undefined);
         assert.strictEqual(lib.bool.parseLiteralBoolean('1'), undefined);

@@ -68,7 +68,7 @@ module.exports = ({ test, assert }) => lib => {
             data,
             sources: ['d'],
             timezoneSource: 'tz',
-            toIso: (date) => date // pass-through
+            toIso: date => date // pass-through
         });
         const out = res[0];
 

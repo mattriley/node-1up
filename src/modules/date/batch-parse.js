@@ -13,7 +13,7 @@ module.exports = ({ str, obj }) => ({ data, sources, timezoneSource, toIso }) =>
     const timezoneForLuxon = timezone ?? 'UTC';
 
     // Normalize `sources`: each item can be 'datePath' or ['datePath', 'timePath']
-    const normalized = sources.map((src) => {
+    const normalized = sources.map(src => {
         if (Array.isArray(src)) return [src[0], src[1]];
         return [src, undefined];
     });
@@ -64,7 +64,7 @@ module.exports = ({ str, obj }) => ({ data, sources, timezoneSource, toIso }) =>
         // - If not, emit 'yyyy-MM-dd\'T\'HH:mm:ss' (no zone)
         const iso = timezone
             ? dt.toISO({ suppressMilliseconds: true })
-            : dt.toFormat("yyyy-MM-dd'T'HH:mm:ss");
+            : dt.toFormat('yyyy-MM-dd\'T\'HH:mm:ss');
 
         return { iso, timezone, debug: { ...debug, isoForLuxon } };
     });

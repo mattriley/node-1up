@@ -4,4 +4,4 @@ module.exports = ({ self }) => {
     const writeJson = configure();
     return Object.assign(writeJson, { configure });
 
-}
+};

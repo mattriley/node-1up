@@ -4,4 +4,4 @@ module.exports = ({ self }) => {
     const sortKeys = configure();
     return Object.assign(sortKeys, { configure });
 
-}
+};

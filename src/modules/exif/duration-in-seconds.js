@@ -1,10 +1,10 @@
-const toNum = (v) => {
+const toNum = v => {
     if (typeof v === 'number') { return v; }
     if (typeof v === 'string') { return Number(v); }
     return NaN;
 };
 
-const parseColonTime = (str) => {
+const parseColonTime = str => {
     const parts = String(str).split(':');
     if (parts.length < 2 || parts.length > 3) { return NaN; }
 
@@ -20,7 +20,7 @@ const parseColonTime = (str) => {
 };
 
 // Minimal ISO-8601 duration parser for PT… strings (hours/minutes/seconds only)
-const parseIsoDuration = (str) => {
+const parseIsoDuration = str => {
     const m = String(str).match(/^P(?:T(?:(\d+(?:\.\d+)?)H)?(?:(\d+(?:\.\d+)?)M)?(?:(\d+(?:\.\d+)?)S)?)$/i);
     if (!m) { return NaN; }
 
@@ -36,7 +36,7 @@ const parseIsoDuration = (str) => {
 };
 
 // Parses strings like "1234", "1234 ms", "12.3s", "5 min", "1.5h"
-const parseWithUnits = (str) => {
+const parseWithUnits = str => {
     const m = String(str).trim().match(/^(\d+(?:\.\d+)?)(?:\s*(ms|s|sec|seconds|m|min|minutes|h|hr|hours))?$/i);
     if (!m) { return NaN; }
     const n = Number(m[1]);

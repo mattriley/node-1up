@@ -4,4 +4,4 @@ module.exports = ({ self }) => {
     const join = configure();
     return Object.assign(join, { configure });
 
-}
+};

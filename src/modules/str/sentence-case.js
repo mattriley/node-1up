@@ -4,4 +4,4 @@ module.exports = ({ self }) => {
     const sentenceCase = configure();
     return Object.assign(sentenceCase, { configure });
 
-}
+};
