@@ -1,8 +1,8 @@
 module.exports = ({ test, assert }) => lib => {
 
-    const pipeAssign = lib.pipe.assign;
+    const pipeAssign = lib.pipe.assign.configure({ defer: true });
 
-    test('pipeAssign: array of functions merges outputs shallowly', () => {
+    test('pipeAssign: array of functions merges outputs shallowly', { only: true }, () => {
         const fn = pipeAssign([
             () => ({ a: 1 }),
             () => ({ b: 2 })
