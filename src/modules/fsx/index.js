@@ -14,14 +14,14 @@ module.exports = {
     detectWindows: require('./detect-windows'),
     isDirEmpty: require('./is-dir-empty'),
     mkdirp: require('./mkdirp'),
-    readJson: require('./read-json'),
     readJsonDir: require('./read-json-dir'),
     readJsonLike: require('./read-json-like'),
+    readJson: require('./read-json'),
     readTextSwapExtSync: require('./read-text-swap-ext-sync'),
     remkdir: require('./remkdir'),
     rename: require('./rename'),
     rewriteJsonLike: require('./rewrite-json-like'),
-    writeJson: require('./write-json'),
     writeJsonDir: require('./write-json-dir'),
-    writeJsonLike: require('./write-json-like')
+    writeJsonLike: require('./write-json-like'),
+    writeJson: require('./write-json')
 };

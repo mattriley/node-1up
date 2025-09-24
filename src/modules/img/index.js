@@ -1,4 +1,4 @@
 module.exports = {
-    batchResizeImages: require('./batch-resize-images'),
-    batchResizeImagesCli: require('./batch-resize-images-cli')
+    batchResizeImagesCli: require('./batch-resize-images-cli'),
+    batchResizeImages: require('./batch-resize-images')
 };

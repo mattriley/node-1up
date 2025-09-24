@@ -1,8 +1,8 @@
 module.exports = {
     _pipe: require('./_pipe'),
-    assign: require('./assign'),
     assignAsync: require('./assign-async'),
     assignWhile: require('./assign-while'),
+    assign: require('./assign'),
     async: require('./async'),
     merge: require('./merge'),
     setup: require('./setup'),

@@ -24,19 +24,19 @@ const outerCompose = ({ config, overrides = {} } = {}) => {
 
     const { is } = compose.make('is');
     const { fun } = compose.make('fun', { is });
-    const { arr } = compose.deep('arr', { fun, is });
+    const { arr } = compose.make('arr', { fun, is });
     const { obj } = compose.deep('obj', { fun, arr, is });
     const { str } = compose.deep('str', { fun, arr });
     const { net } = compose.make('net');
     const { date } = compose.make('date', { str, obj });
-    const { fsx } = compose.deep('fsx', { fun, is, os, fs, fsp });
+    const { fsx } = compose.make('fsx', { fun, is, os, fs, fsp });
 
     compose.deep('geo', { str, arr, net });
     compose.make('bool');
-    compose.deep('path', { fun, arr, fsx, os });
+    compose.make('path', { fun, arr, fsx, os });
     compose.make('pipe', { is, fun });
     compose.deep('exif', { obj, date });
-    compose.deep('img');
+    compose.make('img');
     compose.make('proc');
 
     return {
