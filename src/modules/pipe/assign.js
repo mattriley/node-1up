@@ -1,7 +1,7 @@
-module.exports = ({ self }) => (...args) => {
+module.exports = ({ self }) => {
 
-    return self.with({ args }, ({ state, stepResult }) => {
-        return Object.assign(state ?? {}, stepResult);
-    });
+    const configure = self.assignConfigure;
+    const assign = configure();
+    return Object.assign(assign, { configure });
 
 };
