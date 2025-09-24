@@ -1,2 +1,1 @@
-const modules = require('./src/composed');
-module.exports = _.omit(modules, ['fsx', 'fsp']);
+module.exports = require('./src/composed');

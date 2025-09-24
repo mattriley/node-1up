@@ -29,7 +29,7 @@ const outerCompose = ({ config, overrides = {} } = {}) => {
     const { str } = compose.deep('str', { fun, arr });
     const { net } = compose.make('net');
     const { date } = compose.make('date', { str, obj });
-    const { fsx } = compose.make('fsx', { fun, is, os, fs, fsp });
+    const { fsx } = compose.deep('fsx', { fun, is, os, fs, fsp });
 
     compose.deep('geo', { str, arr, net });
     compose.make('bool');
