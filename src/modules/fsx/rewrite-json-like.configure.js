@@ -2,7 +2,7 @@ module.exports = ({ self, fun, globalConfig }) => config => {
 
     const parseOptions = fun.parseConfig(globalConfig.json, config);
 
-    async (path, transform, ...options) => {
+    return async (path, transform, ...options) => {
         const { indent } = parseOptions(options);
 
         const current = await self.readJsonLike(path);
