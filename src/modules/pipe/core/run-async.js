@@ -1,15 +1,15 @@
-module.exports = ({ fun }) => ({ steps, predicate, stateKey, nextState }) => {
+module.exports = ({ fun }) => async ({ state, context, steps, predicate, stateKey, applyStep }) => {
+    let s = state;
 
-    return async (state, context) => {
-        for (const step of steps) {
-            if (predicate && !predicate(state)) break;
-            const result = await fun.invokeOrReturn(step, context ?? state);
-            if (result !== undefined) {
-                state = nextState({ stepResult: result, state });
-                if (context) context[stateKey] = state; // keep in sync
-            }
+    for (const step of steps) {
+        if (predicate && !predicate(s)) break;
+
+        const result = await fun.invokeOrReturn(step, context ?? s);
+        if (result !== undefined) {
+            s = applyStep({ stepResult: result, state: s });
+            if (context) context[stateKey] = s; // keep in sync
         }
-        return state;
-    };
+    }
 
+    return s;
 };

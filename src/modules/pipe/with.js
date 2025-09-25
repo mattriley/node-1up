@@ -1,11 +1,9 @@
-module.exports = ({ self }) => (config, nextState) => {
+module.exports = ({ self }) => (config, applyStep) => {
 
     const { steps, defaultContext, stateKey, predicate } =
         self.core.resolveArgs(...config.args);
 
-    const runner = config.async
-        ? self.core.runAsync({ steps, predicate, stateKey, nextState })
-        : self.core.runSync({ steps, predicate, stateKey, nextState });
+    const runner = config.async ? self.core.runAsync : self.core.runSync;
 
     return (initial, ctx) => {
         const context = (defaultContext || ctx)
@@ -14,7 +12,14 @@ module.exports = ({ self }) => (config, nextState) => {
 
         if (context) context[stateKey] = initial;
 
-        return runner(initial, context);
+        return runner({
+            state: initial,
+            context,
+            steps,
+            predicate,
+            stateKey,
+            applyStep
+        });
     };
 
 };
