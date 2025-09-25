@@ -1,4 +1,4 @@
-module.exports = () => ({ steps, predicate, stateKey, fun, nextState }) => {
+module.exports = ({ fun }) => ({ steps, predicate, stateKey, nextState }) => {
 
     return (state, context) => {
         for (const step of steps) {
