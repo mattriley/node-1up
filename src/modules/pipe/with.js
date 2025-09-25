@@ -1,22 +1,35 @@
 module.exports = ({ is, fun }) => {
 
+    const isPlainObj = v => v != null && typeof v === 'object' && !Array.isArray(v);
+
     const cleanArgs = (...args) => {
-        let steps, defaultContext, stateKey = 'state', predicate;
+        let steps;
+        let defaultContext;
+        let stateKey = 'state';
+        let predicate;
 
         for (const arg of args) {
-            if (is.plainFunction(arg)) {
+            if (is.plainFunction && is.plainFunction(arg)) {
+                // last plain function wins as predicate (back-compat)
                 predicate = arg;
-            } else if (Array.isArray(arg)) {
-                steps = arg;
-            } else if (typeof arg === 'string') {
+                continue;
+            }
+            if (Array.isArray(arg)) {
+                steps = arg; // first array wins
+                continue;
+            }
+            if (typeof arg === 'string') {
                 stateKey = arg;
-            } else if (typeof arg === 'object' && arg !== null) {
+                continue;
+            }
+            if (isPlainObj(arg)) {
+                // If all values are functions and steps not set, treat as object-of-functions
                 const values = Object.values(arg);
                 const allFuncs = values.length > 0 && values.every(v => typeof v === 'function');
                 if (!steps && allFuncs) {
-                    steps = values; // object-of-functions still supported
+                    steps = values;
                 } else {
-                    defaultContext = arg; // options/context
+                    defaultContext = arg; // treat as options/context
                 }
             }
         }
@@ -25,11 +38,10 @@ module.exports = ({ is, fun }) => {
             throw new TypeError('Expected an array or object of functions');
         }
 
-        // ✅ allow functions OR plain objects as steps
+        // Allow each step to be a function OR a plain object
         for (const step of steps) {
             const isFn = typeof step === 'function';
-            const isPlainObj = step && typeof step === 'object' && !Array.isArray(step);
-            if (!isFn && !isPlainObj) {
+            if (!isFn && !isPlainObj(step)) {
                 throw new TypeError('All elements must be functions or plain objects');
             }
         }
@@ -40,37 +52,41 @@ module.exports = ({ is, fun }) => {
     return (config, nextState) => {
         const { steps, defaultContext, stateKey, predicate } = cleanArgs(...config.args);
 
-        return (initial, context) => {
-            context = (defaultContext || context)
-                ? { ...(defaultContext || {}), ...(context || {}) }
-                : null;
-
-            let state = initial;
-            if (context) context[stateKey] = state;
-
-            if (config.async) {
-                return (async () => {
-                    for (const step of steps) {
-                        if (predicate && !predicate(state)) break;
-                        const result = await fun.invokeOrReturn(step, context ?? state);
-                        if (result !== undefined) {
-                            state = nextState({ stepResult: result, state });
-                        }
-                    }
-                    return state;
-                })();
-            }
+        const runSync = (state, context) => {
             for (const step of steps) {
                 if (predicate && !predicate(state)) break;
                 const result = fun.invokeOrReturn(step, context ?? state);
                 if (result !== undefined) {
                     state = nextState({ stepResult: result, state });
+                    if (context) context[stateKey] = state; // keep in sync
                 }
             }
             return state;
+        };
 
+        const runAsync = async (state, context) => {
+            for (const step of steps) {
+                if (predicate && !predicate(state)) break;
+                const result = await fun.invokeOrReturn(step, context ?? state);
+                if (result !== undefined) {
+                    state = nextState({ stepResult: result, state });
+                    if (context) context[stateKey] = state; // keep in sync
+                }
+            }
+            return state;
+        };
+
+        const runner = config.async ? runAsync : runSync;
+
+        return (initial, ctx) => {
+            const context = (defaultContext || ctx)
+                ? { ...(defaultContext || {}), ...(ctx || {}) }
+                : null;
+
+            if (context) context[stateKey] = initial;
+
+            return runner(initial, context);
         };
     };
-
 
 };
