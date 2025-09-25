@@ -7,7 +7,7 @@ module.exports = ({ self, fun }) => {
         return (...args) => {
             const { defer } = parseOptions();
 
-            const exec = self.with({ args }, ({ state, stepResult }) => {
+            const exec = self.core.configure({ args }, ({ state, stepResult }) => {
                 return Object.assign(state ?? {}, stepResult);
             });
 

@@ -1,6 +1,6 @@
 module.exports = ({ self }) => (...args) => {
 
-    return self.with({ args }, ({ stepResult }) => {
+    return self.core.configure({ args }, ({ stepResult }) => {
         return stepResult;
     });
 
