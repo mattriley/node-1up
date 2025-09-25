@@ -2,7 +2,16 @@ module.exports = ({ test, assert }) => lib => {
 
     const pipeAssign = lib.pipe.assign.configure({ defer: true });
 
-    test('pipeAssign: array of functions merges outputs shallowly', { only: true }, () => {
+    test('pipeAssign: objects and functions accepted', () => {
+        const fn = pipeAssign([
+            { a: 1 },
+            () => ({ b: 2 })
+        ]);
+        const result = fn({});
+        assert.deepStrictEqual(result, { a: 1, b: 2 });
+    });
+
+    test('pipeAssign: array of functions merges outputs shallowly', () => {
         const fn = pipeAssign([
             () => ({ a: 1 }),
             () => ({ b: 2 })

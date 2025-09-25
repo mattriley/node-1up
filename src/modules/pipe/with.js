@@ -14,9 +14,9 @@ module.exports = ({ is, fun }) => {
                 const values = Object.values(arg);
                 const allFuncs = values.length > 0 && values.every(v => typeof v === 'function');
                 if (!steps && allFuncs) {
-                    steps = values;
+                    steps = values; // object-of-functions still supported
                 } else {
-                    defaultContext = arg;
+                    defaultContext = arg; // options/context
                 }
             }
         }
@@ -25,9 +25,12 @@ module.exports = ({ is, fun }) => {
             throw new TypeError('Expected an array or object of functions');
         }
 
+        // ✅ allow functions OR plain objects as steps
         for (const step of steps) {
-            if (typeof step !== 'function') {
-                throw new TypeError('All elements must be functions');
+            const isFn = typeof step === 'function';
+            const isPlainObj = step && typeof step === 'object' && !Array.isArray(step);
+            if (!isFn && !isPlainObj) {
+                throw new TypeError('All elements must be functions or plain objects');
             }
         }
 
@@ -38,7 +41,10 @@ module.exports = ({ is, fun }) => {
         const { steps, defaultContext, stateKey, predicate } = cleanArgs(...config.args);
 
         return (initial, context) => {
-            context = defaultContext || context ? { ...defaultContext, ...context } : null;
+            context = (defaultContext || context)
+                ? { ...(defaultContext || {}), ...(context || {}) }
+                : null;
+
             let state = initial;
             if (context) context[stateKey] = state;
 
