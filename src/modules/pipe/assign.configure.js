@@ -1,17 +1,14 @@
-module.exports = ({ self, fun }) => {
+module.exports = ({ self, fun }) => config => {
 
-    return config => {
-        const defaults = { defer: false };
-        const parseOptions = fun.parseConfig(defaults, config);
+    const defaults = { defer: false };
+    const parseOptions = fun.parseConfig(defaults, config);
 
-        return (...args) => {
-            const { defer } = parseOptions();
+    return (...args) => {
+        const opts = parseOptions();
 
-            const exec = self.core.configure({ args }, ({ state, stepResult }) => {
-                return Object.assign(state ?? {}, stepResult);
-            });
-
-            return defer ? exec : exec();
-        };
+        return self.core.configure({ args, ...opts }, ({ state, stepResult }) => {
+            return Object.assign(state ?? {}, stepResult);
+        });
     };
-}
+
+};
