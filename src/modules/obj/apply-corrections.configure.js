@@ -1,13 +1,13 @@
-module.exports = ({ self, fun }) => config => {
+module.exports = $ => config => {
     const defaults = { mutate: false };
-    const parseOptions = fun.parseConfig(defaults, config);
+    const parseOptions = $.fun.parseConfig(defaults, config);
 
     return (obj, remap, options) => {
         const { mutate } = parseOptions(options);
 
-        if (!self.isPlain(obj) || !remap) return obj;
+        if (!$.self.isPlain(obj) || !remap) return obj;
 
-        const lookupByField = self.transformEntries('key:corrections', remap, entries => {
+        const lookupByField = $.self.transformEntries('key:corrections', remap, entries => {
             return entries.map(({ key, corrections }) => {
                 const lookup = {};
 

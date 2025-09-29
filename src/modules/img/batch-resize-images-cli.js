@@ -40,7 +40,7 @@ const getBool = (m, k) => m.has(k) && String(m.get(k)) !== 'false';
 const getStr = (m, k, d = null) => m.has(k) ? String(m.get(k)) : d;
 const getList = (m, k) => m.has(k) ? String(m.get(k)).split(',').map(s => s.trim()).filter(Boolean) : null;
 
-module.exports = ({ self }) => async () => {
+module.exports = $ => async () => {
     const { positionals, flags } = parseArgs(process.argv);
 
     // --version
@@ -195,7 +195,7 @@ Examples:
     }
 
     try {
-        const summary = await self.batchResizeImages(options);
+        const summary = await $.self.batchResizeImages(options);
         const code = summary.errors > 0 ? 1 : 0;
         console.log(`\nDone. converted=${summary.converted} copied=${summary.copied} kept=${summary.kept} errors=${summary.errors}`);
         process.exit(code);

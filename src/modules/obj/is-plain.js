@@ -1,1 +1,1 @@
-module.exports = ({ is }) => is.plainObject;
+module.exports = $ => $.is.plainObject;

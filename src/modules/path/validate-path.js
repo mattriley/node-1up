@@ -13,7 +13,7 @@ const ERROR_CODES = {
 const BYTE_LEN = s => Buffer.byteLength(s, 'utf8');
 const normalizeFsType = t => (t || '').toLowerCase().replace(/\s+/g, '');
 
-module.exports = ({ os, fsx, config }) => {
+module.exports = $ => {
 
     /**
      * Resolve which limits to use.
@@ -34,13 +34,13 @@ module.exports = ({ os, fsx, config }) => {
         }
         if (assumeFs && typeof assumeFs === 'string') {
             const key = normalizeFsType(assumeFs);
-            const limits = config.os.fileSystemLimits[key];
+            const limits = $.config.os.fileSystemLimits[key];
             if (limits) return { fsType: key, ...limits };
             // unknown string → fall back to platform defaults but keep the label
-            const def = config.os.platformDefaults[os.platform()];
+            const def = $.config.os.platformDefaults[$.os.platform()];
             return { ...def, fsType: key };
         }
-        return fsx.detectFileSystem(path.dirname(path.resolve(forPath || '.')));
+        return $.fsx.detectFileSystem(path.dirname(path.resolve(forPath || '.')));
     };
 
     /**
@@ -63,7 +63,7 @@ module.exports = ({ os, fsx, config }) => {
 
         // Windows long-path relaxation (validator only)
         let effectivePathMax = pathMax;
-        if (os.platform() === 'win32' && longPaths) {
+        if ($.os.platform() === 'win32' && longPaths) {
             effectivePathMax = 32767; // theoretical API limit for \\?\ paths
         }
 
@@ -82,7 +82,7 @@ module.exports = ({ os, fsx, config }) => {
         }
 
         // Per-segment length
-        const splitter = os.platform() === 'win32' ? /[\\/]+/ : /\/+/;
+        const splitter = $.os.platform() === 'win32' ? /[\\/]+/ : /\/+/;
         const segments = filePath.split(splitter).filter(Boolean);
 
         for (const seg of segments) {
@@ -98,7 +98,7 @@ module.exports = ({ os, fsx, config }) => {
         }
 
         // Windows-only extra checks (only enforce when actually running on Windows)
-        if (os.platform() === 'win32') {
+        if ($.os.platform() === 'win32') {
             const INVALID_CHARS = /[<>:"/\\|?*]/;
             for (const seg of segments) {
                 if (INVALID_CHARS.test(seg)) {

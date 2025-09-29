@@ -1,6 +1,6 @@
-module.exports = ({ self, fun }) => config => {
+module.exports = $ => config => {
     const defaults = { depth: Infinity, mutate: false };
-    const parseOptions = fun.parseConfig(defaults, config);
+    const parseOptions = $.fun.parseConfig(defaults, config);
 
     return (obj, options) => {
         const { depth, mutate } = parseOptions(options);
@@ -21,7 +21,7 @@ module.exports = ({ self, fun }) => config => {
 
             }
 
-            if (self.isPlain(obj)) {
+            if ($.self.isPlain(obj)) {
                 const sortedEntries = Object.entries(obj).sort(([a], [b]) => a.localeCompare(b));
 
                 if (mutate) {
