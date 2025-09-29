@@ -5,7 +5,7 @@ module.exports = $ => config => {
     const defaults = { destKey: undefined, sortPrefixScope: 'all', enabledKey: 'sortPrefix', mono: false };
     const parseOptions = $.fun.parseConfig(defaults, config);
 
-    return (files, sourceKey, ...options) => {
+    return (files, sourceKey, options) => {
         const { destKey = sourceKey, sortPrefixScope, enabledKey, mono } = parseOptions(options);
 
         if (sortPrefixScope === 'none') return files;
