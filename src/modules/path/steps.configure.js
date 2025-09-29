@@ -1,8 +1,9 @@
-module.exports = () => config => {
+module.exports = $ => config => {
     const parseOptions = $.fun.parseConfig($.defaults.path, config);
 
-    return (pathname, options) => {
-        const { delimiter } = parseOptions(options);
+    return (pathname, delimiter = '/') => {
+        console.warn(pathname, delimiter);
+        // const { delimiter } = parseOptions(options);
 
         const parts = pathname.split(delimiter).filter(Boolean); // ignore empty parts
         const prefixes = [];
