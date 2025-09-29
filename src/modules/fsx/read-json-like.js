@@ -5,14 +5,14 @@ const parseImplementations = {
     json: jsonlike => JSON.parse(jsonlike)
 };
 
-module.exports = ({ fsp }) => async filepath => {
+module.exports = $ => async filepath => {
 
     const ext = path.parse(filepath).ext.substring(1);
     const parse = parseImplementations[ext];
     if (!parse) throw new Error(`Unrecognised JSON-like extension: ${ext}`);
 
     try {
-        const jsonlike = await fsp.readFile(filepath, 'utf8');
+        const jsonlike = await $.fsp.readFile(filepath, 'utf8');
         return parse(jsonlike);
     } catch (err) {
         err.data = { filepath };
