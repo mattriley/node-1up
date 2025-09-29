@@ -1,8 +1,7 @@
 const path = require('path');
 const { Buffer } = require('buffer');
 
-
-module.exports = $ => (config = {}) => {
+module.exports = $ => config => {
     const defaults = {
         concurrencyLimit: 512,
         compare: true,               // false | true

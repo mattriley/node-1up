@@ -1,6 +1,6 @@
 const path = require('path');
 
-module.exports = ({ fsp }) => input => {
+module.exports = $ => input => {
     let dirpath, filepath;
 
     // Support single string argument as dirpath
@@ -21,5 +21,5 @@ module.exports = ({ fsp }) => input => {
 
     const targetDir = hasFile ? path.dirname(filepath) : dirpath;
 
-    return fsp.mkdir(targetDir, { recursive: true });
+    return $.fsp.mkdir(targetDir, { recursive: true });
 };

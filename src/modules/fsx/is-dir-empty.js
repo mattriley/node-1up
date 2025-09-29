@@ -1,6 +1,6 @@
-module.exports = ({ fsp }) => async dirpath => {
+module.exports = $ => async dirpath => {
 
-    const dir = await fsp.opendir(dirpath);
+    const dir = await $.fsp.opendir(dirpath);
 
     try {
         const { done } = await dir[Symbol.asyncIterator]().next();

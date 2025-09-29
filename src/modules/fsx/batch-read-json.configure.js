@@ -2,7 +2,7 @@ const process = require('node:process');
 const os = require('node:os');
 const { Worker } = require('node:worker_threads');
 
-module.exports = ({ fsp, fun }) => (config = {}) => {
+module.exports = $ => (config = {}) => {
     const defaults = {
         // Fast-path (async I/O) knobs:
         concurrencyIO: Math.min(192, os.cpus().length * 12),
@@ -14,7 +14,7 @@ module.exports = ({ fsp, fun }) => (config = {}) => {
         // New option:
         quiet: false
     };
-    const parseOptions = fun.parseConfig(defaults, config);
+    const parseOptions = $.fun.parseConfig(defaults, config);
 
     // One-time log guard
     let logged = false;
@@ -185,7 +185,7 @@ module.exports = ({ fsp, fun }) => (config = {}) => {
             // ---- Fast path A: async I/O + parse worker pool ----
             const parsePool = new JsonParsePool(concurrencyCPU);
             const readAndParse = async absPath => {
-                const buf = await fsp.readFile(absPath);
+                const buf = await $.fsp.readFile(absPath);
                 const val = await parsePool.parseBuffer(buf);
                 if (Array.isArray(val)) { for (let i = 0; i < val.length; i++) out.push(val[i]); }
                 else out.push(val);
