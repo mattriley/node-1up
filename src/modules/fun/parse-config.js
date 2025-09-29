@@ -10,15 +10,31 @@ module.exports = ({ is }) => (defaults = {}, config = {}) => {
     const defaultKeys = Object.keys(defaults);
     const defaultKeySet = new Set(defaultKeys);
 
-    return (args = []) => {
-        if (!Array.isArray(args)) {
-            throw new Error(`[parseConfig] "options" must be an array. Received: ${typeof args}`);
+    return (options = []) => {
+        // New path: plain-object options
+        if (is.plainObject(options)) {
+            // Validate keys are known
+            for (const key of Object.keys(options)) {
+                if (!defaultKeySet.has(key)) {
+                    throw new Error(`[parseConfig] Unknown option key: "${key}"`);
+                }
+            }
+            return {
+                ...defaults,
+                ...config,
+                ...options
+            };
+        }
+
+        // Legacy path: array with positional + optional overrides object
+        if (!Array.isArray(options)) {
+            throw new Error(`[parseConfig] "options" must be an array or a plain object. Received: ${typeof options}`);
         }
 
         let overrides = {};
-        let input = args;
+        let input = options;
 
-        const last = args[args.length - 1];
+        const last = options[options.length - 1];
 
         if (is.plainObject(last)) {
             const keys = Object.keys(last);
@@ -36,7 +52,7 @@ module.exports = ({ is }) => (defaults = {}, config = {}) => {
 
                 if (matchCount > 0) {
                     overrides = last;
-                    input = args.slice(0, -1);
+                    input = options.slice(0, -1);
                 }
             }
         }
