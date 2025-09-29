@@ -3,7 +3,6 @@ module.exports = $ => config => {
 
     return (arr, options) => {
         const { delimiter, finalDelimiter = delimiter } = parseOptions(options);
-
         const n = Array.isArray(arr) ? arr.length : 0;
 
         if (n === 0) return '';

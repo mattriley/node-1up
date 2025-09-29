@@ -3,11 +3,11 @@ module.exports = ({ fun }) => config => {
     const parseOptions = fun.parseConfig(defaults, config);
 
     return (arr, item, options) => {
-        const { mutate } = parseOptions(options);
+        options = parseOptions(options);
 
         const idx = arr.length < 2 ? arr.length : arr.length - 1; // push if <2, else before last
 
-        if (mutate) {
+        if (options.mutate) {
             arr.splice(idx, 0, item);
             return arr;
         }

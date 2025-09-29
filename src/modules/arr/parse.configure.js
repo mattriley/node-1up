@@ -1,8 +1,8 @@
 module.exports = $ => config => {
     const parseOptions = $.fun.parseConfig($.defaults.array, config);
 
-    return (val, delimiter) => {
-        ({ delimiter } = parseOptions({ delimiter }));
+    return (val, delimiter, options) => {
+        options = parseOptions({ delimiter, ...options });
 
         if (val == null) return [];
         if (Array.isArray(val)) return val;
@@ -10,7 +10,7 @@ module.exports = $ => config => {
         const s = String(val).trim();
         if (!s) return [];
 
-        const parts = s.split(delimiter);
+        const parts = s.split(options.delimiter);
         const out = [];
         for (let i = 0; i < parts.length; i++) {
             const token = parts[i].trim();
