@@ -1,8 +1,10 @@
 module.exports = ({ fun }) => config => {
-    const parseOptions = fun.parseConfig({ mutate: false }, config);
+    const defaults = { mutate: false }
+    const parseOptions = fun.parseConfig(defaults, config);
 
-    return (arr, item, ...options) => {
+    return (arr, item, options) => {
         const { mutate } = parseOptions(options);
+
         const idx = arr.length < 2 ? arr.length : arr.length - 1; // push if <2, else before last
 
         if (mutate) {

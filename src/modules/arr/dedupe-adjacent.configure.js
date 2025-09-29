@@ -1,14 +1,8 @@
 module.exports = $ => config => {
-
-    const defaults = {
-        mutate: false,
-        equal: Object.is
-    };
-
+    const defaults = { mutate: false, equal: Object.is };
     const parseOptions = $.fun.parseConfig(defaults, config);
 
     return (arr, options) => {
-
         const { mutate, equal } = parseOptions(options);
 
         const n = arr.length;
