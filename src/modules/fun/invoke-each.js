@@ -1,5 +1,5 @@
-module.exports = ({ self }) => (funs, ...args) => {
+module.exports = $ => (funs, ...args) => {
 
-    return Object.values(funs).map(fun => self.invokeOrReturn(fun, ...args));
+    return Object.values(funs).map(fun => $.self.invokeOrReturn(fun, ...args));
 
 };

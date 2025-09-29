@@ -1,9 +1,9 @@
-module.exports = ({ is }) => (defaults = {}, config = {}) => {
-    if (!is.plainObject(defaults)) {
+module.exports = $ => (defaults = {}, config = {}) => {
+    if (!$.is.plainObject(defaults)) {
         throw new Error(`[parseConfig] "defaults" must be a plain object. Received: ${JSON.stringify(defaults)}`);
     }
 
-    if (!is.plainObject(config)) {
+    if (!$.is.plainObject(config)) {
         throw new Error(`[parseConfig] "config" must be a plain object. Received: ${JSON.stringify(config)}`);
     }
 
@@ -12,7 +12,7 @@ module.exports = ({ is }) => (defaults = {}, config = {}) => {
 
     return (options = []) => {
         // New path: plain-object options
-        if (is.plainObject(options)) {
+        if ($.is.plainObject(options)) {
             // Validate keys are known
             for (const key of Object.keys(options)) {
                 if (!defaultKeySet.has(key)) {
@@ -36,7 +36,7 @@ module.exports = ({ is }) => (defaults = {}, config = {}) => {
 
         const last = options[options.length - 1];
 
-        if (is.plainObject(last)) {
+        if ($.is.plainObject(last)) {
             const keys = Object.keys(last);
 
             if (keys.length > 0) {

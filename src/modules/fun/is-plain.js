@@ -1,1 +1,1 @@
-module.exports = ({ is }) => is.plainFunction;
+module.exports = $ => $.is.plainFunction;

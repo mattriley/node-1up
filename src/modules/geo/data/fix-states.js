@@ -6,7 +6,7 @@ const replacements = {
 
 const countriesToRemoveStatesFrom = ['SG'];
 
-module.exports = ({ str }) => states => {
+module.exports = $ => states => {
 
     // Rename Malacca (state) to Melaka.
     const malaccaState = states.find(state => state.name === 'Malacca' && state.countryCode === 'MY');
@@ -19,8 +19,8 @@ module.exports = ({ str }) => states => {
 
     // Apply string replacements.
     for (const state of states) {
-        let name = str.applyReplacements(state.name, replacements);
-        name = str.deaccent(name);
+        let name = $.str.applyReplacements(state.name, replacements);
+        name = $.str.deaccent(name);
         if (name === state.name) continue;
         Object.assign(state, { name, nameOrig: state.name });
     }

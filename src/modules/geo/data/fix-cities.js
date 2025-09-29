@@ -6,7 +6,7 @@ const replacements = {
 
 const countriesToRemoveStatesFrom = ['SG'];
 
-module.exports = ({ str }) => cities => {
+module.exports = $ => cities => {
 
     // Assign Hong Kong and Macao to China.
     cities.filter(city => ['HK', 'MO'].includes(city.countryCode)).forEach(city => {
@@ -29,8 +29,8 @@ module.exports = ({ str }) => cities => {
     // Apply string replacements to states
     for (const city of cities) {
         if (!city.state) continue;
-        let state = str.applyReplacements(city.state, replacements);
-        state = str.deaccent(state);
+        let state = $.str.applyReplacements(city.state, replacements);
+        state = $.str.deaccent(state);
         if (state === city.state) continue;
         Object.assign(city, { state, stateOrig: city.state });
     }
@@ -38,8 +38,8 @@ module.exports = ({ str }) => cities => {
     // Apply string replacements to cities
     for (const city of cities) {
         if (!city.name) continue;
-        let name = str.applyReplacements(city.name, replacements);
-        name = str.deaccent(name);
+        let name = $.str.applyReplacements(city.name, replacements);
+        name = $.str.deaccent(name);
         if (name === city.name) continue;
         Object.assign(city, { name, nameOrig: city.name });
     }

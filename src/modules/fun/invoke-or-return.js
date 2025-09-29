@@ -1,5 +1,5 @@
-module.exports = ({ is }) => (val, ...args) => {
+module.exports = $ => (val, ...args) => {
 
-    return val && is.plainFunction(val) ? val(...args) : val;
+    return val && $.is.plainFunction(val) ? val(...args) : val;
 
 };
