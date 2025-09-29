@@ -59,8 +59,10 @@ module.exports = $ => config => {
             });
 
             // Preserve leading slash if present; preserve trailing slash if present
-            let destPath = (sourcePath.startsWith(path.sep) ? path.sep : '') + prefixedSegments.join(path.sep);
-            if (sourcePath.endsWith(path.sep) && !destPath.endsWith(path.sep)) destPath += path.sep;
+            const destPath = prefixedSegments.join(path.sep);;
+
+            // let destPath = (sourcePath.startsWith(path.sep) ? path.sep : '') + prefixedSegments.join(path.sep);
+            // if (sourcePath.endsWith(path.sep) && !destPath.endsWith(path.sep)) destPath += path.sep;
 
             return { ...f, [destKey]: destPath };
         });

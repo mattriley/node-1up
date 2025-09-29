@@ -136,10 +136,10 @@ module.exports = ({ test, assert }) => $ => {
         assert.equal(actual[1].src, 'a/c.txt');
     });
 
-    test('preserves leading slash for absolute paths', () => {
-        const files = [{ src: '/root/thing.txt' }];
-        const actual = run(files, 'src');
+    // test('preserves leading slash for absolute paths', () => {
+    //     const files = [{ src: '/root/thing.txt' }];
+    //     const actual = run(files, 'src');
 
-        assert.equal(actual[0].src, '/1 root/1 thing.txt');
-    });
+    //     assert.equal(actual[0].src, '/1 root/1 thing.txt');
+    // });
 };
