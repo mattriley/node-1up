@@ -1,8 +1,7 @@
 module.exports = $ => config => {
-
     const parseOptions = $.fun.parseConfig($.defaults.json, config);
 
-    return async (path, transform, ...options) => {
+    return async (path, transform, options) => {
         const { indent } = parseOptions(options);
 
         const current = await $.self.readJsonLike(path);
