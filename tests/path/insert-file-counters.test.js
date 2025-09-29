@@ -1,3 +1,4 @@
+// tests/path/insert-file-counters.extended.test.js
 module.exports = ({ test, assert }) => $ => {
 
     const run = $.path.insertFileCounters;
@@ -128,8 +129,74 @@ module.exports = ({ test, assert }) => $ => {
         assert.equal(actual[2].src, 'a (3)/3.jpeg');
     });
 
-    // Edge-ish behaviour note:
-    // The implementation uses node:path.parse, so inputs ending with a path
-    // separator (i.e., directory references rather than files) won’t be
-    // decorated because parse(dirPath).base === '' — keep inputs as file paths.
+    // =========================
+    // Extended: valueKey support
+    // =========================
+
+    test('accepts array of segment objects using default valueKey "value"', () => {
+        const files = [
+            { src: [{ value: 'a' }, { value: 'b' }, { value: 'x.txt' }] },
+            { src: [{ value: 'a' }, { value: 'c' }, { value: 'y.txt' }] }
+        ];
+        const actual = run(files, 'src');
+
+        assert.equal(actual[0].src, 'a (2)/b (1)/x.txt');
+        assert.equal(actual[1].src, 'a (2)/c (1)/y.txt');
+    });
+
+    test('respects custom valueKey option (e.g., "name")', () => {
+        const files = [
+            { src: [{ name: 'a' }, { name: 'b' }, { name: 'x.txt' }] },
+            { src: [{ name: 'a' }, { name: 'c' }, { name: 'y.txt' }] }
+        ];
+        const actual = run(files, 'src', { valueKey: 'name' });
+
+        assert.equal(actual[0].src, 'a (2)/b (1)/x.txt');
+        assert.equal(actual[1].src, 'a (2)/c (1)/y.txt');
+    });
+
+    test('mix of string and object paths share the same counters', () => {
+        const files = [
+            { src: 'a/b/x.txt' },
+            { src: [{ value: 'a' }, { value: 'c' }, { value: 'y.txt' }] },
+            { src: 'a/b/z.txt' }
+        ];
+        const actual = run(files, 'src');
+
+        // counts:
+        // 'a' -> 3
+        // 'a/b' -> 2 (files 1 and 3)
+        // 'a/c' -> 1 (file 2)
+        assert.equal(actual[0].src, 'a (3)/b (2)/x.txt');
+        assert.equal(actual[1].src, 'a (3)/c (1)/y.txt');
+        assert.equal(actual[2].src, 'a (3)/b (2)/z.txt');
+    });
+
+    test('single-segment object path (no directory) is returned unchanged with same identity', () => {
+        const file = { src: [{ value: 'readme.md' }] };
+        const files = [file];
+        const actual = run(files, 'src');
+
+        // unchanged string in-place and same reference
+        assert.strictEqual(actual[0], file);
+        assert.deepEqual(actual[0].src, [{ value: 'readme.md' }]);
+    });
+
+    test('custom destKey works with object-segment input', () => {
+        const files = [
+            { src: [{ value: 'a' }, { value: 'b' }, { value: 'x.txt' }] }
+        ];
+        const actual = run(files, 'src', { destKey: 'out' });
+
+        // source unchanged (array-of-segments stays as-is)
+        assert.deepEqual(actual[0].src, [{ value: 'a' }, { value: 'b' }, { value: 'x.txt' }]);
+        // out has decorated string path
+        assert.equal(actual[0].out, 'a (1)/b (1)/x.txt');
+    });
+
+    // Edge-ish behaviour reminder from previous suite:
+    // The implementation uses node:path.parse for string input; if you pass a raw
+    // directory string ending with a separator, parse(dir).base === '' so that item
+    // won’t be decorated. For object-segment inputs, we manually derive dir/base.
+
 };
