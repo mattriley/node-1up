@@ -3,7 +3,7 @@ module.exports = ({ test, assert }) => ({ obj }) => {
     test('combination of path lengths with no result', () => {
         const expected = 1;
         const input = {};
-        const actual = obj.dig(input, 'a.b.c.d.e.f', { defaultValue: expected });
+        const actual = obj.dig(input, 'a.b.c.d.e.f', expected);
         assert.deepEqual(actual, expected);
     });
 
@@ -47,7 +47,7 @@ module.exports = ({ test, assert }) => ({ obj }) => {
             }
         };
 
-        const actual = obj.dig(input, 'import', { defaultValue: {} });
+        const actual = obj.dig(input, 'import', {});
         assert.deepEqual(actual, {});
     });
 

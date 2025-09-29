@@ -11,13 +11,13 @@ module.exports = $ => config => {
         return regex;
     };
 
-    return (obj, path, options) => {
-        const { defaultValue, depth, delimiters, ambig } = parseOptions(options);
-        const delimiterRegex = getRegex(delimiters);
-        if (!obj) return defaultValue;
+    return (obj, path, defaultValue, options) => {
+        options = parseOptions({ defaultValue, ...options });
+        const delimiterRegex = getRegex(options.delimiters);
+        if (!obj) return options.defaultValue;
 
         function findKey(currentValue, keysRemaining, results = [], currentDepth = 0) {
-            if (keysRemaining.length === 0 || currentDepth >= depth) {
+            if (keysRemaining.length === 0 || currentDepth >= options.depth) {
                 results.push(currentValue);
                 return results;
             }
@@ -38,9 +38,9 @@ module.exports = $ => config => {
         const keys = path.split(delimiterRegex);
         const results = findKey(obj, keys);
 
-        if (results.length === 0) return defaultValue;
+        if (results.length === 0) return options.defaultValue;
         if (results.length > 1) {
-            if (ambig === 'first') return results[0];
+            if (options.ambig === 'first') return results[0];
             throw new Error(`[dig] Found multiple matches for path "${path}": ${results.length} results`);
         }
 
