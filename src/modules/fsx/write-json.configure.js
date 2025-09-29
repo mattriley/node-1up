@@ -2,10 +2,10 @@ module.exports = $ => config => {
     const parseOptions = $.fun.parseConfig($.defaults.json, config);
 
     return async (filepath, data, options) => {
-        const { indent } = parseOptions(options);
+        options = parseOptions(options);
 
         try {
-            const json = JSON.stringify(data, null, indent);
+            const json = JSON.stringify(data, null, options.indent);
             await $.self.mkdirp({ filepath });
             await $.fsp.writeFile(filepath, json);
         } catch (err) {

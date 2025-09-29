@@ -3,14 +3,14 @@ module.exports = $ => config => {
     const parseOptions = $.fun.parseConfig(defaults, config);
 
     return (val, options) => {
-        const { depth, mutate, defaultValue } = parseOptions(options);
+        options = parseOptions(options);
 
         const compact = (val, currentDepth) => {
             if (currentDepth < 0 || !$.is.jsonCompatible(val)) return undefined;
             if ($.self.isEmpty(val)) return undefined;
 
             if (Array.isArray(val)) {
-                const result = mutate ? val : [...val];
+                const result = options.mutate ? val : [...val];
                 for (let i = result.length - 1; i >= 0; i--) {
                     const item = result[i];
                     if (!$.is.jsonCompatible(item)) {
@@ -24,11 +24,11 @@ module.exports = $ => config => {
                         result[i] = cleaned;
                     }
                 }
-                return result.length ? result : defaultValue;
+                return result.length ? result : options.defaultValue;
             }
 
             if (typeof val === 'object' && val !== null) {
-                const result = mutate ? val : { ...val };
+                const result = options.mutate ? val : { ...val };
                 for (const key of Object.keys(result)) {
                     const item = result[key];
                     if (!$.is.jsonCompatible(item)) {
@@ -42,12 +42,12 @@ module.exports = $ => config => {
                         result[key] = cleaned;
                     }
                 }
-                return Object.keys(result).length ? result : defaultValue;
+                return Object.keys(result).length ? result : options.defaultValue;
             }
 
             return val;
         };
 
-        return compact(val, depth);
+        return compact(val, options.depth);
     };
 };

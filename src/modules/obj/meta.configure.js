@@ -3,7 +3,7 @@ module.exports = $ => config => {
     const parseOptions = $.fun.parseConfig(defaults, config);
 
     return (obj, options) => {
-        const { length, some, exists } = parseOptions(options);
+        options = parseOptions(options);
 
         if (!$.self.isPlain(obj)) return obj;
 
@@ -16,15 +16,15 @@ module.exports = $ => config => {
 
             const containsIds = val.some(el => el && typeof el === 'object' && 'id' in el);
 
-            acc[`${key}.${length}`] = elements.length;
+            acc[`${key}.${options.length}`] = elements.length;
 
             if (!containsIds) {
-                acc[`${key}.${some}`] = elements.length > 0;
+                acc[`${key}.${options.some}`] = elements.length > 0;
 
                 for (let i = 0; i < elements.length; i++) {
                     const original = val[i];
                     if (typeof original !== 'object' || original === null) {
-                        acc[`${key}.${elements[i]}.${exists}`] = true;
+                        acc[`${key}.${elements[i]}.${options.exists}`] = true;
                     }
                 }
             }

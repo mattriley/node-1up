@@ -44,7 +44,7 @@ module.exports = ({ test, assert }) => ({ str }) => {
 
     test('removes escaped quotes when allowEscaped = true (per call)', () => {
         const unquote = str.dequote.configure();
-        const actual = unquote('\\"bar\\"', { delimiter: '"', allowEscaped: true });
+        const actual = unquote('\\"bar\\"', '"', { allowEscaped: true });
         const expected = 'bar';
         assert.equal(actual, expected);
     });

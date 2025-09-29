@@ -2,14 +2,14 @@ module.exports = $ => config => {
     const parseOptions = $.fun.parseConfig($.defaults.path, config);
 
     return (pathname, delimiter) => {
-        ({ delimiter } = parseOptions({ delimiter }));
+        options = parseOptions({ delimiter });
 
-        const parts = pathname.split(delimiter).filter(Boolean); // ignore empty parts
+        const parts = pathname.split(options.delimiter).filter(Boolean); // ignore empty parts
         const prefixes = [];
         let acc = '';
 
         for (const part of parts) {
-            acc = acc ? acc + delimiter + part : part;
+            acc = acc ? acc + options.delimiter + part : part;
             prefixes.push(acc);
         }
 

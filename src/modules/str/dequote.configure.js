@@ -2,8 +2,10 @@ module.exports = $ => config => {
     const defaults = { delimiter: '"', allowEscaped: false };
     const parseOptions = $.fun.parseConfig(defaults, config);
 
-    return (str, options) => {
-        const { delimiter, allowEscaped } = parseOptions(options);
+    return (str, delimiter, options) => {
+        options = parseOptions({ delimiter, ...options });
+        delimiter = options.delimiter;
+        const { allowEscaped } = options;
 
         if (typeof str !== 'string') return str;
 

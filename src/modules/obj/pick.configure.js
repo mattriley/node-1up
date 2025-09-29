@@ -11,8 +11,8 @@ module.exports = $ => config => {
     };
 
     return (obj, paths, options) => {
-        const { depth, delimiters } = parseOptions(options);
-        const splitter = getRegex(delimiters);
+        options = parseOptions(options);
+        const splitter = getRegex(options.delimiters);
         const splitPath = path => path.split(splitter);
 
         if (obj == null || !Array.isArray(paths)) return {};
@@ -34,7 +34,7 @@ module.exports = $ => config => {
         // Full deep path extractor
         for (const path of paths) {
             const keys = splitPath(path);
-            if (keys.length === 0 || keys.length > depth) continue;
+            if (keys.length === 0 || keys.length > options.depth) continue;
 
             let sourceCursor = obj;
             let targetCursor = result;

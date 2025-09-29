@@ -3,7 +3,7 @@ module.exports = $ => config => {
     const parseOptions = $.fun.parseConfig(defaults, config);
 
     return (obj, remap, options) => {
-        const { mutate } = parseOptions(options);
+        options = parseOptions(options);
 
         if (!$.self.isPlain(obj) || !remap) return obj;
 
@@ -27,7 +27,7 @@ module.exports = $ => config => {
             });
         });
 
-        const target = mutate ? obj : { ...obj };
+        const target = options.mutate ? obj : { ...obj };
 
         for (const [key, lookup] of Object.entries(lookupByField)) {
             const original = obj[key];

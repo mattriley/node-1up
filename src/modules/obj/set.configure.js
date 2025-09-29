@@ -3,14 +3,14 @@ module.exports = $ => config => {
     const parseOptions = $.fun.parseConfig(defaults, config);
 
     return (obj, path, value, options) => {
-        const { depth, mutate } = parseOptions(options);
+        options = parseOptions(options);
 
-        if (typeof path !== 'string' || path === '') return mutate ? obj : { ...obj };
+        if (typeof path !== 'string' || path === '') return options.mutate ? obj : { ...obj };
 
         const keys = path.split('.');
-        const limit = Math.min(keys.length, depth);
+        const limit = Math.min(keys.length, options.depth);
 
-        const base = mutate ? obj : structuredClone(obj ?? {}); // or use a deep clone util if needed
+        const base = options.mutate ? obj : structuredClone(obj ?? {}); // or use a deep clone util if needed
         let cursor = base;
 
         for (let i = 0; i < limit - 1; i++) {
