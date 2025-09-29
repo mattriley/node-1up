@@ -2,11 +2,11 @@ const path = require('path');
 
 module.exports = $ => config => {
 
-    const defaults = { destKey: undefined, sortPrefixScope: 'all', mono: false };
+    const defaults = { destKey: undefined, sortPrefixScope: 'all', enabledKey: 'sortPrefix', mono: false };
     const parseOptions = $.fun.parseConfig(defaults, config);
 
     return (files, sourceKey, ...options) => {
-        const { destKey = sourceKey, sortPrefixScope, mono } = parseOptions(options);
+        const { destKey = sourceKey, sortPrefixScope, enabledKey, mono } = parseOptions(options);
 
         if (sortPrefixScope === 'none') return files;
 
@@ -47,6 +47,9 @@ module.exports = $ => config => {
 
             let cumulative = '';
             const prefixedSegments = segments.map(seg => {
+
+                if (seg[enabledKey] === false) return seg.value;
+
                 // Maintain cumulative step using the platform separator
                 cumulative = cumulative ? cumulative + path.sep + seg.value : seg.value;
 
