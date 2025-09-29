@@ -6,10 +6,9 @@ const stringifyImplementations = {
 };
 
 module.exports = $ => config => {
-
     const parseOptions = $.fun.parseConfig($.defaults.json, config);
 
-    return async (filepath, data, ...options) => {
+    return async (filepath, data, options) => {
         const { indent } = parseOptions(options);
 
         const ext = path.parse(filepath).ext.substring(1);
@@ -23,6 +22,5 @@ module.exports = $ => config => {
             err.data = { filepath };
             throw err;
         }
-
     };
 };

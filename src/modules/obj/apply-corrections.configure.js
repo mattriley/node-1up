@@ -1,9 +1,8 @@
 module.exports = ({ self, fun }) => config => {
-
     const defaults = { mutate: false };
     const parseOptions = fun.parseConfig(defaults, config);
 
-    return (obj, remap, ...options) => {
+    return (obj, remap, options) => {
         const { mutate } = parseOptions(options);
 
         if (!self.isPlain(obj) || !remap) return obj;

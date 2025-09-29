@@ -1,10 +1,9 @@
 const path = require('path');
 
 module.exports = $ => config => {
-
     const parseOptions = $.fun.parseConfig($.defaults.json, config);
 
-    return async (dirpath, data, ...options) => {
+    return async (dirpath, data, options) => {
         const { indent } = parseOptions(options);
 
         if (!$.is.plainObject(data)) throw new Error('data must be plain object');
@@ -19,6 +18,5 @@ module.exports = $ => config => {
         });
 
         await Promise.all(promises);
-
     };
 };
