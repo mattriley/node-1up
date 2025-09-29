@@ -1,9 +1,9 @@
 module.exports = $ => config => {
-
     const parseOptions = $.fun.parseConfig($.defaults.array, config);
 
-    return (arr, ...options) => {
+    return (arr, options) => {
         const { delimiter, finalDelimiter = delimiter } = parseOptions(options);
+
         const n = Array.isArray(arr) ? arr.length : 0;
 
         if (n === 0) return '';
