@@ -1,15 +1,13 @@
-module.exports = ({ fun }) => config => {
+module.exports = $ => config => {
+    const defaults = { delimiter: ', ', finalDelimiter: ' & ' };
+    const parseOptions = $.fun.parseConfig(defaults, config);
 
-    const defaults = { delimiter: ', ', final: ' & ' };
-    const parseOptions = fun.parseConfig(defaults, config);
-
-    return (arr, ...options) => {
-        const { delimiter, final } = parseOptions(options);
+    return (arr, options) => {
+        const { delimiter, finalDelimiter } = parseOptions(options);
         const copy = [...arr];
         const last = copy.pop();
         if (!copy.length) return last;
         const csv = copy.join(delimiter);
-        return [csv, last].join(final);
+        return [csv, last].join(finalDelimiter);
     };
-
 };
