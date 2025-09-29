@@ -33,20 +33,29 @@ module.exports = $ => config => {
         return files.map(f => {
             const sourcePath = f[sourceKey];
 
+            let segments;
+
+            if (typeof sourcePath === 'string') {
+                segments = sourcePath.split(path.sep).filter(s => s.length > 0 || sourcePath.endsWith(path.sep)).map(value => ({ value }))
+            } else {
+                segments = sourcePath;
+            }
+
+
             // Rebuild path by prefixing each segment with the formatted value for its cumulative step.
             // We compute cumulative keys as we walk the segments.
-            const segments = sourcePath.split(path.sep).filter(s => s.length > 0 || sourcePath.endsWith(path.sep));
+
             let cumulative = '';
             const prefixedSegments = segments.map(seg => {
                 // Maintain cumulative step using the platform separator
-                cumulative = cumulative ? cumulative + path.sep + seg : seg;
+                cumulative = cumulative ? cumulative + path.sep + seg.value : seg.value;
 
                 const stepVal = sortPrefixByPath[cumulative];
                 // If somehow missing, fall back to 0 (still formatted consistently)
                 const prefix = formatPrefixValue(stepVal ?? 0);
 
                 // Use a single space as separator between prefix and the original segment for readability
-                return `${prefix} ${seg}`;
+                return `${prefix} ${seg.value}`;
             });
 
             // Preserve leading slash if present; preserve trailing slash if present
