@@ -2,11 +2,19 @@ const path = require('path');
 
 module.exports = $ => config => {
 
-    const defaults = { destKey: undefined, sortPrefixScope: 'all', enabledKey: 'sortPrefix', mono: false };
+    const defaults = {
+        destKey: undefined,
+        sortPrefixScope: 'all',
+        enabledKey: 'sortPrefix',
+        valueKey: 'value',
+        mono: false
+    };
+
+
     const parseOptions = $.fun.parseConfig(defaults, config);
 
     return (files, sourceKey, options) => {
-        const { destKey = sourceKey, sortPrefixScope, enabledKey, mono } = parseOptions(options);
+        const { destKey = sourceKey, sortPrefixScope, valueKey, enabledKey, mono } = parseOptions(options);
 
         if (sortPrefixScope === 'none') return files;
 
@@ -38,7 +46,7 @@ module.exports = $ => config => {
             if (typeof sourcePath === 'string') {
                 // Remove empty segments (so a trailing slash doesn't create a blank segment)
                 const parts = sourcePath.split(path.sep).filter(s => s.length > 0);
-                segments = parts.map(value => ({ value }));
+                segments = parts.map(value => ({ [valueKey]: value }));
             } else {
                 segments = sourcePath;
             }
@@ -50,17 +58,17 @@ module.exports = $ => config => {
             let cumulative = '';
             const prefixedSegments = segments.map(seg => {
 
-                if (seg[enabledKey] === false) return seg.value;
+                if (seg[enabledKey] === false) return seg[valueKey];
 
                 // Maintain cumulative step using the platform separator
-                cumulative = cumulative ? cumulative + path.sep + seg.value : seg.value;
+                cumulative = cumulative ? cumulative + path.sep + seg[valueKey] : seg[valueKey];
 
                 const stepVal = sortPrefixByPath[cumulative];
                 // If somehow missing, fall back to 0 (still formatted consistently)
                 const prefix = formatPrefixValue(stepVal ?? 0);
 
                 // Use a single space as separator between prefix and the original segment for readability
-                return `${prefix} ${seg.value}`;
+                return `${prefix} ${seg[valueKey]}`;
             });
 
             // Preserve leading slash if present; preserve trailing slash if present
