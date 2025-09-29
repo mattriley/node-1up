@@ -6,7 +6,7 @@ module.exports = $ => config => {
         enabledKey: 'sortPrefix',
         valueKey: 'value',
         mono: false,
-        pathSep: $.globalConfig.path.delimiter
+        pathSep: $.defaults.path.delimiter
     };
 
     const parseOptions = $.fun.parseConfig(defaults, config);

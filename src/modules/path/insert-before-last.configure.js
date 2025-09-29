@@ -1,9 +1,9 @@
-module.exports = ({ arr, fun, globalConfig }) => config => {
+module.exports = $ => config => {
 
-    const parseOptions = fun.parseConfig(globalConfig.path, config);
+    const parseOptions = $.fun.parseConfig($.defaults.path, config);
 
     return (pathname, item, ...options) => {
         const { delimiter } = parseOptions(options);
-        return arr.insertBeforeLast(pathname.split(delimiter), item).join(delimiter);
+        return $.arr.insertBeforeLast(pathname.split(delimiter), item).join(delimiter);
     };
 };

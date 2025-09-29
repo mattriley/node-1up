@@ -5,9 +5,9 @@ const stringifyImplementations = {
     json: (data, indent) => JSON.stringify(data, null, indent)
 };
 
-module.exports = ({ fsp, fun, globalConfig }) => config => {
+module.exports = $ => config => {
 
-    const parseOptions = fun.parseConfig(globalConfig.json, config);
+    const parseOptions = $.fun.parseConfig($.defaults.json, config);
 
     return async (filepath, data, ...options) => {
         const { indent } = parseOptions(options);
@@ -18,7 +18,7 @@ module.exports = ({ fsp, fun, globalConfig }) => config => {
 
         try {
             const jsonlike = stringify(data, indent);
-            await fsp.writeFile(filepath, jsonlike);
+            await $.fsp.writeFile(filepath, jsonlike);
         } catch (err) {
             err.data = { filepath };
             throw err;

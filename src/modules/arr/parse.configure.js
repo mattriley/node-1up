@@ -1,6 +1,6 @@
-module.exports = ({ fun, globalConfig }) => config => {
+module.exports = $ => config => {
 
-    const parseOptions = fun.parseConfig(globalConfig.array, config);
+    const parseOptions = $.fun.parseConfig($.defaults.array, config);
 
     return (val, ...options) => {
         const { delimiter } = parseOptions(options);

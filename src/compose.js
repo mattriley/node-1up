@@ -16,7 +16,7 @@ const outerCompose = ({ config, overrides = {} } = {}) => {
         overrides,
         defaultConfig,
         config: [config, buildLookups],
-        configAlias: ['globalConfig'],
+        configAlias: ['defaults'],
         functionAlias: [['Value', 'Val']]
     };
 
