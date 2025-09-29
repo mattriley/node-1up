@@ -1,7 +1,7 @@
 module.exports = $ => config => {
     const parseOptions = $.fun.parseConfig($.defaults.path, config);
 
-    return (pathname, delimiter = '/') => {
+    return (pathname, delimiter) => {
         ({ delimiter } = parseOptions({ delimiter }));
 
         const parts = pathname.split(delimiter).filter(Boolean); // ignore empty parts
