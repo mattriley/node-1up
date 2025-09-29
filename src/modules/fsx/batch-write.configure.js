@@ -2,27 +2,27 @@ const path = require('path');
 const { Buffer } = require('buffer');
 
 
-module.exports = ({ fsp, fun }) => (config = {}) => {
+module.exports = $ => (config = {}) => {
     const defaults = {
         concurrencyLimit: 512,
         compare: true,               // false | true
         compareChunkSize: 64 * 1024,  // 64KB chunks for content compare
         compareMinBytes: 64 * 1024   // < this size → always overwrite
     };
-    const parseOptions = fun.parseConfig(defaults, config);
+    const parseOptions = $.fun.parseConfig(defaults, config);
 
     // Safe compare = size check first, then chunked compare
     async function shouldWrite(filename, nextBuf, chunkSize) {
         let stat;
         try {
-            stat = await fsp.stat(filename);
+            stat = await $.fsp.stat(filename);
         } catch (e) {
             if (e && e.code === 'ENOENT') return true; // file missing
             throw e;
         }
         if (stat.size !== nextBuf.length) return true; // size mismatch → rewrite
 
-        const fh = await fsp.open(filename, 'r');
+        const fh = await $.fsp.open(filename, 'r');
         try {
             const tmp = Buffer.allocUnsafe(Math.min(chunkSize, nextBuf.length));
             let offset = 0;
@@ -41,7 +41,7 @@ module.exports = ({ fsp, fun }) => (config = {}) => {
         }
     }
 
-    return async (instructions, onWriteCallback = () => { }, ...options) => {
+    return async (instructions, onWriteCallback = () => { }, options) => {
         const { concurrencyLimit, compare, compareChunkSize, compareMinBytes } = parseOptions(options);
 
         const createdDirs = new Set();
@@ -58,7 +58,7 @@ module.exports = ({ fsp, fun }) => (config = {}) => {
                 try {
                     const dir = path.dirname(filename);
                     if (!createdDirs.has(dir)) {
-                        await fsp.mkdir(dir, { recursive: true });
+                        await $.fsp.mkdir(dir, { recursive: true });
                         createdDirs.add(dir);
                     }
 
@@ -70,7 +70,7 @@ module.exports = ({ fsp, fun }) => (config = {}) => {
                     }
 
                     if (needWrite) {
-                        await fsp.writeFile(filename, buffer);
+                        await $.fsp.writeFile(filename, buffer);
                         stats.written++;
                         onWriteCallback(filename, { success: true, skipped: false });
                     } else {

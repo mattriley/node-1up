@@ -37,7 +37,7 @@ module.exports = ({ fsp, fun }) => (config = {}) => {
             );
         }
 
-        const which = useAsyncIO? 'async I/O + parse-worker path': 'worker threads (sync fs) fallback path';
+        const which = useAsyncIO ? 'async I/O + parse-worker path' : 'worker threads (sync fs) fallback path';
         process.stderr.write(
             `[INFO] batch-read-json: using ${which}. UV_THREADPOOL_SIZE=${shownUv}, recommended=${recommendedUv}${useAsyncIO ? '' : ' (async-path disabled)'}\n`
         );
@@ -78,7 +78,7 @@ module.exports = ({ fsp, fun }) => (config = {}) => {
                 const run = worker => {
                     worker.once('message', msg => {
                         this.idle.push(worker);
-                        msg && msg.ok ? resolve(msg.val): reject(new Error(`JSON.parse failed: ${msg ? msg.err : 'no response'}`));
+                        msg && msg.ok ? resolve(msg.val) : reject(new Error(`JSON.parse failed: ${msg ? msg.err : 'no response'}`));
                         this.#drain();
                     });
                     worker.postMessage({ ab, offset, length }, [ab]);
@@ -94,7 +94,7 @@ module.exports = ({ fsp, fun }) => (config = {}) => {
                 const t = this.queue.shift();
                 w.once('message', msg => {
                     this.idle.push(w);
-                    msg && msg.ok ? t.resolve(msg.val): t.reject(new Error(`JSON.parse failed: ${msg ? msg.err : 'no response'}`));
+                    msg && msg.ok ? t.resolve(msg.val) : t.reject(new Error(`JSON.parse failed: ${msg ? msg.err : 'no response'}`));
                     this.#drain();
                 });
                 w.postMessage({ ab: t.ab, offset: t.offset, length: t.length }, [t.ab]);
@@ -161,7 +161,7 @@ module.exports = ({ fsp, fun }) => (config = {}) => {
         return new Worker(code, { eval: true });
     }
 
-    return async (files, ...options) => {
+    return async (files, options) => {
         if (!files || files.length === 0) return [];
 
         // Detect env *at call time*
