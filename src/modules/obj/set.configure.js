@@ -1,9 +1,8 @@
 module.exports = ({ fun }) => config => {
-
     const defaults = { depth: Infinity, mutate: false };
     const parseOptions = fun.parseConfig(defaults, config);
 
-    return (obj, path, value, ...options) => {
+    return (obj, path, value, options) => {
         const { depth, mutate } = parseOptions(options);
 
         if (typeof path !== 'string' || path === '') return mutate ? obj : { ...obj };

@@ -1,8 +1,7 @@
 module.exports = $ => config => {
-
     const parseOptions = $.fun.parseConfig($.defaults.json, config);
 
-    return async (filepath, data, ...options) => {
+    return async (filepath, data, options) => {
         const { indent } = parseOptions(options);
 
         try {

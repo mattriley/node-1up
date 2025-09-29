@@ -19,7 +19,7 @@ module.exports = ({ test, assert, compose }) => () => {
 
         const { fsx } = compose({ overrides });
         if (indent) {
-            await fsx.writeJson(targetPath, targetObject, indent);
+            await fsx.writeJson(targetPath, targetObject, { indent });
         } else {
             await fsx.writeJson(targetPath, targetObject);
         }

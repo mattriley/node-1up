@@ -1,9 +1,8 @@
 module.exports = ({ self, fun }) => config => {
-
     const defaults = { depth: Infinity, mutate: false };
     const parseOptions = fun.parseConfig(defaults, config);
 
-    return (obj, ...options) => {
+    return (obj, options) => {
         const { depth, mutate } = parseOptions(options);
 
         const sortKeys = (obj, currentDepth = depth) => {

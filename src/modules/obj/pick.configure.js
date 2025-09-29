@@ -1,17 +1,16 @@
-module.exports = ({ self, fun }) => config => {
-
+module.exports = $ => config => {
     const defaults = { depth: Infinity, delimiters: ['.'] };
-    const parseOptions = fun.parseConfig(defaults, config);
+    const parseOptions = $.fun.parseConfig(defaults, config);
     const regexMemo = {};
 
     const getRegex = delimiters => {
         const key = JSON.stringify(delimiters);
-        const regex = regexMemo[key] ?? self.buildDelimitersRegex(delimiters);
+        const regex = regexMemo[key] ?? $.self.buildDelimitersRegex(delimiters);
         regexMemo[key] ??= regex;
         return regex;
     };
 
-    return (obj, paths, ...options) => {
+    return (obj, paths, options) => {
         const { depth, delimiters } = parseOptions(options);
         const splitter = getRegex(delimiters);
         const splitPath = path => path.split(splitter);
