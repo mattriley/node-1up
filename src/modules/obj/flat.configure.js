@@ -1,17 +1,16 @@
-module.exports = ({ fun, is }) => config => {
-
+module.exports = $ => config => {
     const defaults = { delimiter: null, depth: Infinity, mutate: true };
-    const parseOptions = fun.parseConfig(defaults, config);
+    const parseOptions = $.fun.parseConfig(defaults, config);
 
-    return (obj, ...options) => {
+    return (obj, options) => {
         const { delimiter, depth, mutate } = parseOptions(options);
         const result = {};
 
         const recurse = (value, parentKey = '', currentDepth = 0) => {
             for (const [key, val] of Object.entries(value)) {
-                const isLeaf = !is.plainObject(val) || currentDepth >= depth;
+                const isLeaf = !$.is.plainObject(val) || currentDepth >= depth;
 
-                const newKey = delimiter && parentKey? `${parentKey}${delimiter}${key}`: delimiter? key: key; // no prefixing at all
+                const newKey = delimiter && parentKey ? `${parentKey}${delimiter}${key}` : delimiter ? key : key; // no prefixing at all
 
                 if (isLeaf) {
                     if (newKey in result) throw new Error(`Collision: ${newKey}`);
