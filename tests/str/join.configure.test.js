@@ -30,7 +30,7 @@ module.exports = ({ test, assert }) => $ => {
 
     test('join with overridden delimiter and final at call time', () => {
         const joinLast = $.str.join.configure();
-        const actual = joinLast(['x', 'y', 'z'], { delimiter: ' - ', finalDelimiter: ' ~ ' });
+        const actual = joinLast(['x', 'y', 'z'], ' - ', ' ~ ');
         const expected = 'x - y ~ z';
         assert.equal(actual, expected);
     });
