@@ -4,7 +4,7 @@ module.exports = $ => config => {
     const defaults = { destKey: undefined };
     const parseOptions = $.fun.parseConfig(defaults, config);
 
-    return (files, sourceKey, ...options) => {
+    return (files, sourceKey, options) => {
         const { destKey = sourceKey } = parseOptions(options);
 
         const allDirnames = files.flatMap(f => $.path.steps(path.dirname(f[sourceKey])));

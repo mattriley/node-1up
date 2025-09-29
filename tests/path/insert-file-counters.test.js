@@ -86,7 +86,7 @@ module.exports = ({ test, assert }) => $ => {
 
     test('writes to custom destKey without touching the sourceKey', () => {
         const files = [{ src: 'a/b/file.txt' }];
-        const actual = run(files, 'src', 'out');
+        const actual = run(files, 'src', { destKey: 'out' });
 
         // src unchanged
         assert.equal(actual[0].src, 'a/b/file.txt');
