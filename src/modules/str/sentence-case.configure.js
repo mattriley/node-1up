@@ -3,7 +3,7 @@ module.exports = $ => config => {
     const parseOptions = $.fun.parseConfig(defaults, config);
 
     return (str, options) => {
-        const { acronyms } = parseOptions(options);
+        options = parseOptions(options);
 
         if (!str) return '';
 
@@ -17,7 +17,7 @@ module.exports = $ => config => {
             .split(/\s+/)
             .map(word => {
                 const upper = word.toUpperCase();
-                if (acronyms.includes(upper)) return upper;
+                if (options.acronyms.includes(upper)) return upper;
                 return word.toLowerCase();
             });
 
