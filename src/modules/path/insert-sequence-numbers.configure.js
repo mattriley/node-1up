@@ -36,7 +36,9 @@ module.exports = $ => config => {
             let segments;
 
             if (typeof sourcePath === 'string') {
-                segments = sourcePath.split(path.sep).filter(s => s.length > 0 || sourcePath.endsWith(path.sep)).map(value => ({ value }))
+                // Remove empty segments (so a trailing slash doesn't create a blank segment)
+                const parts = sourcePath.split(path.sep).filter(s => s.length > 0);
+                segments = parts.map(value => ({ value }));
             } else {
                 segments = sourcePath;
             }
