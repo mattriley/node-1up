@@ -8,12 +8,10 @@
 
 ```js
 module.exports = ({ fun }) => config => {    // No need to default config object.
-
-    // Order of defaults dictates order of options below.
     const defaults = { depth: Infinity, mutate: true, defaultValue: null };
     const parseOptions = fun.parseConfig(defaults, config);
 
-    return (val, ...options) => {    // Note options spread.
+    return (val, options) => {
         const { depth, mutate, defaultValue } = parseOptions(options);
         // Spread options for readability.
 ```
