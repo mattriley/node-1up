@@ -1,10 +1,8 @@
-// Optimised on 21 June 2025.
-
 const { setImmediate } = require('timers/promises');
 
 module.exports = () => async (arr, chunkSize, loopPredicate, mapFunction) => {
 
-    const shouldContinue = typeof loopPredicate === 'function'? loopPredicate: () => loopPredicate ?? true;
+    const shouldContinue = typeof loopPredicate === 'function' ? loopPredicate : () => loopPredicate ?? true;
 
     const results = [];
 
