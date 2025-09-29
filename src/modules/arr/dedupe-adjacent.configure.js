@@ -1,9 +1,16 @@
-module.exports = ({ fun }) => config => {
-    // defaults: non-mutating, and Object.is equality
-    const parseOptions = fun.parseConfig({ mutate: false, equal: Object.is }, config);
+module.exports = $ => config => {
 
-    return (arr, ...options) => {
+    const defaults = {
+        mutate: false,
+        equal: Object.is
+    };
+
+    const parseOptions = $.fun.parseConfig(defaults, config);
+
+    return (arr, options) => {
+
         const { mutate, equal } = parseOptions(options);
+
         const n = arr.length;
         if (n <= 1) return mutate ? arr : arr.slice(); // preserve current contract
 
