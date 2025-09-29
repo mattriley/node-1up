@@ -10,18 +10,6 @@ module.exports = $ => config => {
         const s = String(val).trim();
         if (!s) return [];
 
-        const isRegex = delimiter instanceof RegExp;
-
-        // Fast path: if delimiter not present, return single token
-        if (isRegex) {
-            const rx = delimiter.global
-                ? new RegExp(delimiter.source, delimiter.flags.replace(/g/g, ''))
-                : delimiter;
-            if (!rx.test(s)) return [s];
-        } else {
-            if (!s.includes(delimiter)) return [s];
-        }
-
         const parts = s.split(delimiter);
         const out = [];
         for (let i = 0; i < parts.length; i++) {
