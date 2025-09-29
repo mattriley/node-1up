@@ -1,9 +1,8 @@
-module.exports = ({ fun }) => config => {
-
+module.exports = $ => config => {
     const defaults = { acronyms: [] };
-    const parseOptions = fun.parseConfig(defaults, config);
+    const parseOptions = $.fun.parseConfig(defaults, config);
 
-    return (str, ...options) => {
+    return (str, options) => {
         const { acronyms } = parseOptions(options);
 
         if (!str) return '';

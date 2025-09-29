@@ -23,9 +23,9 @@ module.exports = ({ test, assert }) => ({ str }) => {
 
     test('throws error if delimiter is invalid', () => {
         const unquote = str.dequote.configure();
-        assert.throws(() => unquote('"test"', 'ab'), TypeError);
-        assert.throws(() => unquote('"test"', ''), TypeError);
-        assert.throws(() => unquote('"test"', 1), TypeError);
+        assert.throws(() => unquote('"test"', { delimiter: 'ab' }), TypeError);
+        assert.throws(() => unquote('"test"', { delimiter: '' }), TypeError);
+        assert.throws(() => unquote('"test"', { delimiter: 1 }), TypeError);
     });
 
     test('returns unchanged if input is not a string', () => {
@@ -44,7 +44,7 @@ module.exports = ({ test, assert }) => ({ str }) => {
 
     test('removes escaped quotes when allowEscaped = true (per call)', () => {
         const unquote = str.dequote.configure();
-        const actual = unquote('\\"bar\\"', '"', { allowEscaped: true });
+        const actual = unquote('\\"bar\\"', { delimiter: '"', allowEscaped: true });
         const expected = 'bar';
         assert.equal(actual, expected);
     });

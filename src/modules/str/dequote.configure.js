@@ -1,9 +1,8 @@
-module.exports = ({ fun }) => config => {
-
+module.exports = $ => config => {
     const defaults = { delimiter: '"', allowEscaped: false };
-    const parseOptions = fun.parseConfig(defaults, config);
+    const parseOptions = $.fun.parseConfig(defaults, config);
 
-    return (str, ...options) => {
+    return (str, options) => {
         const { delimiter, allowEscaped } = parseOptions(options);
 
         if (typeof str !== 'string') return str;
