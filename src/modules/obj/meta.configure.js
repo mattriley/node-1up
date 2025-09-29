@@ -1,12 +1,11 @@
-module.exports = ({ self, fun }) => config => {
-
+module.exports = $ => config => {
     const defaults = { length: 'length', some: 'some', exists: 'exists' };
-    const parseOptions = fun.parseConfig(defaults, config);
+    const parseOptions = $.fun.parseConfig(defaults, config);
 
-    return (obj, ...options) => {
+    return (obj, options) => {
         const { length, some, exists } = parseOptions(options);
 
-        if (!self.isPlain(obj)) return obj;
+        if (!$.self.isPlain(obj)) return obj;
 
         const acc = {}; // holds computed keys
 

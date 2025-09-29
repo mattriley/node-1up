@@ -1,18 +1,17 @@
-module.exports = ({ self, fun, arr }) => config => {
+module.exports = $ => config => {
 
     const defaults = { defaultValue: null, depth: Infinity, delimiters: ['.'], ambig: 'error' };
-    const parseOptions = fun.parseConfig(defaults, config);
+    const parseOptions = $.fun.parseConfig(defaults, config);
     const regexMemo = {};
 
     const getRegex = delimiters => {
         const key = JSON.stringify(delimiters);
-        const regex = regexMemo[key] ?? self.buildDelimitersRegex(delimiters);
+        const regex = regexMemo[key] ?? $.self.buildDelimitersRegex(delimiters);
         regexMemo[key] ??= regex;
         return regex;
     };
 
-
-    return (obj, path, ...options) => {
+    return (obj, path, options) => {
         const { defaultValue, depth, delimiters, ambig } = parseOptions(options);
         const delimiterRegex = getRegex(delimiters);
         if (!obj) return defaultValue;
@@ -23,7 +22,7 @@ module.exports = ({ self, fun, arr }) => config => {
                 return results;
             }
 
-            const steps = arr.steps(keysRemaining);
+            const steps = $.arr.steps(keysRemaining);
 
             for (const step of steps) {
                 const key = step.join('.');
