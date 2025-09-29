@@ -1,6 +1,6 @@
-module.exports = ({ test, assert }) => lib => {
+module.exports = ({ test, assert }) => $ => {
 
-    const run = lib.path.insertFileCounters;
+    const run = $.path.insertFileCounters;
 
     test('adds counts to each directory segment across files (basic two-branch example)', () => {
         const files = [

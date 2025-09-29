@@ -1,4 +1,4 @@
-module.exports = ({ test, assert }) => lib => {
+module.exports = ({ test, assert }) => $ => {
 
     // Helper to mirror the library’s zero-padding logic:
     // width is derived from the number of files (max value).
@@ -9,7 +9,7 @@ module.exports = ({ test, assert }) => lib => {
     const expectPrefixed = (segments, prefixes) =>
         segments.map((seg, i) => `${mono(pad(prefixes[i], prefixes.length ? Math.max(...prefixes) : 0))} ${seg}`).join('/');
 
-    const run = lib.path.insertSequenceNumbers;
+    const run = $.path.insertSequenceNumbers;
 
     test('prefixes each segment using earliest file position where that cumulative path appears (basic branching)', () => {
         const files = [
