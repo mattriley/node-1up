@@ -1,82 +1,92 @@
 const path = require('path');
 
 module.exports = $ => config => {
-
     const defaults = {
         destKey: undefined,
         sortPrefixScope: 'all',
         enabledKey: 'sortPrefix',
         valueKey: 'value',
-        mono: false
+        mono: false,
     };
 
-
     const parseOptions = $.fun.parseConfig(defaults, config);
+    const SEP = path.sep;
+
+    // Format the numeric prefix once we know max file count
+    const makeFormatter = (mono, maxVal) => {
+        return val => {
+            const s = $.str.padZero(val, maxVal);
+            return mono ? $.str.mono(s) : s;
+        };
+    };
+
+    // Build map of earliest index (1-based) for each cumulative path step
+    const buildStepIndex = (files, sourceKey) => {
+        return files.reduce((acc, f, i) => {
+            const sortValue = i + 1; // assumes files are already in order
+            const steps = $.path.steps(f[sourceKey]);
+            for (let k = 0; k < steps.length; k++) {
+                const step = steps[k];
+                const existing = acc[step];
+                acc[step] = existing ? Math.min(existing, sortValue) : sortValue;
+            }
+            return acc;
+        }, Object.create(null));
+    };
+
+    // Normalise a sourcePath into [{[valueKey]: 'seg'}, ...]
+    const toSegments = (sourcePath, valueKey) => {
+        if (typeof sourcePath === 'string') {
+            // Drop empty parts so trailing slash doesn’t produce a blank segment
+            const parts = sourcePath.split(SEP);
+            const out = [];
+            for (let i = 0; i < parts.length; i++) {
+                const p = parts[i];
+                if (p.length > 0) out.push({ [valueKey]: p });
+            }
+            return out;
+        }
+        // Assume pre-tokenised [{ valueKey, ... }] form
+        return sourcePath;
+    };
 
     return (files, sourceKey, options) => {
-        const { destKey = sourceKey, sortPrefixScope, valueKey, enabledKey, mono } = parseOptions(options);
+        const { destKey = sourceKey, sortPrefixScope, valueKey, enabledKey, mono } =
+            parseOptions(options);
 
-        if (sortPrefixScope === 'none') return files;
+        if (sortPrefixScope === 'none' || files.length === 0) return files;
 
         const maxPrefixVal = files.length;
-
-        const formatPrefixValue = val => {
-            const sequenceNumber = $.str.padZero(val, maxPrefixVal);
-            return mono ? $.str.mono(sequenceNumber) : sequenceNumber;
-        };
-
-        // Build a map from each cumulative path step to the earliest (1-based) index it appears at.
-        const sortPrefixByPath = files.reduce((acc, f, i) => {
-            const sortValue = i + 1; // assumes files are already in order
-            const pathSteps = $.path.steps(f[sourceKey]); // cumulative steps, e.g. ['a', 'a/b', 'a/b/c.txt']
-
-            return pathSteps.reduce((inner, step) => {
-                const current = inner[step];
-                const nextVal = current ? _.min([current, sortValue]) : sortValue;
-                if (nextVal !== current) inner[step] = nextVal;
-                return inner;
-            }, acc);
-        }, {});
+        const formatPrefixValue = makeFormatter(mono, maxPrefixVal);
+        const stepIndex = buildStepIndex(files, sourceKey);
 
         return files.map(f => {
-            const sourcePath = f[sourceKey];
+            const src = f[sourceKey];
+            const segs = toSegments(src, valueKey);
 
-            let segments;
-
-            if (typeof sourcePath === 'string') {
-                // Remove empty segments (so a trailing slash doesn't create a blank segment)
-                const parts = sourcePath.split(path.sep).filter(s => s.length > 0);
-                segments = parts.map(value => ({ [valueKey]: value }));
-            } else {
-                segments = sourcePath;
-            }
-
-
-            // Rebuild path by prefixing each segment with the formatted value for its cumulative step.
-            // We compute cumulative keys as we walk the segments.
-
+            // Rebuild with prefixes; compute cumulative step as we go
             let cumulative = '';
-            const prefixedSegments = segments.map(seg => {
+            const out = new Array(segs.length);
 
-                if (seg[enabledKey] === false) return seg[valueKey];
+            for (let i = 0; i < segs.length; i++) {
+                const seg = segs[i];
+                const val = seg[valueKey];
 
-                // Maintain cumulative step using the platform separator
-                cumulative = cumulative ? cumulative + path.sep + seg[valueKey] : seg[valueKey];
+                if (seg[enabledKey] === false) {
+                    // Do NOT advance cumulative when disabled; keep behaviour
+                    out[i] = val;
+                    continue;
+                }
 
-                const stepVal = sortPrefixByPath[cumulative];
-                // If somehow missing, fall back to 0 (still formatted consistently)
+                cumulative = cumulative ? (cumulative + SEP + val) : val;
+
+                const stepVal = stepIndex[cumulative];
                 const prefix = formatPrefixValue(stepVal ?? 0);
 
-                // Use a single space as separator between prefix and the original segment for readability
-                return `${prefix} ${seg[valueKey]}`;
-            });
+                out[i] = `${prefix} ${val}`;
+            }
 
-            // Preserve leading slash if present; preserve trailing slash if present
-            const destPath = prefixedSegments.join(path.sep);;
-
-            // let destPath = (sourcePath.startsWith(path.sep) ? path.sep : '') + prefixedSegments.join(path.sep);
-            // if (sourcePath.endsWith(path.sep) && !destPath.endsWith(path.sep)) destPath += path.sep;
-
+            const destPath = out.join(SEP);
             return { ...f, [destKey]: destPath };
         });
     };
