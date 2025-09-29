@@ -1,6 +1,6 @@
 module.exports = ({ test, assert }) => lib => {
 
-    const run = lib.path.appendFileCounters;
+    const run = lib.path.insertFileCounters;
 
     test('adds counts to each directory segment across files (basic two-branch example)', () => {
         const files = [
