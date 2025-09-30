@@ -7,10 +7,8 @@ module.exports = ({ test, assert }) => $ => {
 
     // Helpers
     const segs = s => s.split(DELIM).map(v => ({ value: v }));
-    const vals = segments =>
-        segments.flatMap(s => Array.isArray(s.value) ? s.value : [s.value]);
-    const render = segments =>
-        vals(segments).join(DELIM);
+    const vals = segments => segments.map(s => s.value); // values are ALWAYS strings now
+    const render = segments => segments.map(s => s.value).join(DELIM);
 
     test('adds counts to each directory segment across files (basic two-branch example)', () => {
         const files = [
@@ -85,7 +83,7 @@ module.exports = ({ test, assert }) => $ => {
         assert.equal(render(actual[2]), 'beta (2)/c (1)/c.txt');
     });
 
-    test('preserves additional segment props (only replaces .value)', () => {
+    test('preserves additional segment props (only replaces .value) and value is string', () => {
         const files = [[
             { value: 'a', flag: true },
             { value: 'b', meta: { id: 42 } },
@@ -97,6 +95,11 @@ module.exports = ({ test, assert }) => $ => {
         assert.equal(actual[0][0].flag, true);
         assert.deepEqual(actual[0][1].meta, { id: 42 });
         assert.equal(actual[0][2].ix, 7);
+
+        // values are strings
+        assert.strictEqual(typeof actual[0][0].value, 'string');
+        assert.strictEqual(typeof actual[0][1].value, 'string');
+        assert.strictEqual(typeof actual[0][2].value, 'string');
 
         assert.equal(render(actual[0]), 'a (1)/b (1)/f.txt');
     });
@@ -216,12 +219,12 @@ module.exports = ({ test, assert }) => $ => {
     });
 
     // =========================
-    // NEW: path-string segment splitting
+    // Path-string segment splitting
     // =========================
 
-    test('splits a path-string segment and decorates each directory part', () => {
+    test('splits a path-string segment and decorates each directory part, but returns string value', () => {
         const files = [
-            // first segment contains a PATH STRING 'a/b' (should split to ['a','b'])
+            // first segment contains a PATH STRING 'a/b' (should split to ['a','b'] internally)
             [
                 { value: 'a/b' },
                 { value: 'x.txt' }
@@ -233,19 +236,20 @@ module.exports = ({ test, assert }) => $ => {
         ];
         const actual = run(files);
 
-        // After split & decorate:
-        assert.deepEqual(vals(actual[0]), ['a (2)', 'b (1)', 'x.txt']);
-        assert.deepEqual(vals(actual[1]), ['a (2)', 'c (1)', 'y.txt']);
+        // After split & decorate, the segment value is a STRING with internal delimiter
+        assert.deepEqual(vals(actual[0]), ['a (2)/b (1)', 'x.txt']);
+        assert.deepEqual(vals(actual[1]), ['a (2)/c (1)', 'y.txt']);
 
-        // Also ensure shape changed for multi-part strings: becomes arrays at that segment
-        assert.ok(Array.isArray(actual[0][0].value), 'first segment value should be array after split');
-        assert.ok(Array.isArray(actual[1][0].value), 'first segment value should be array after split');
-
+        // Rendered full path is correct
         assert.equal(render(actual[0]), 'a (2)/b (1)/x.txt');
         assert.equal(render(actual[1]), 'a (2)/c (1)/y.txt');
+
+        // Values are strings
+        assert.strictEqual(typeof actual[0][0].value, 'string');
+        assert.strictEqual(typeof actual[1][0].value, 'string');
     });
 
-    test('path-string segment with fileCounters=false still splits but does not decorate', () => {
+    test('path-string segment with fileCounters=false splits for counting but returns undecorated string', () => {
         const files = [
             [
                 { value: 'root/child', fileCounters: false },
@@ -259,15 +263,15 @@ module.exports = ({ test, assert }) => $ => {
         const actual = run(files);
 
         // Counts would be: 'root' -> 2, 'root/child' -> 1, 'root/other' -> 1
-        // But decoration is suppressed on that segment
-        assert.deepEqual(vals(actual[0]), ['root', 'child', 'a.txt']);
-        assert.deepEqual(vals(actual[1]), ['root', 'other', 'b.txt']);
-
-        // Shape is arrays because split occurred
-        assert.ok(Array.isArray(actual[0][0].value));
-        assert.ok(Array.isArray(actual[1][0].value));
+        // But decoration is suppressed on that segment; still returned as a STRING path
+        assert.deepEqual(vals(actual[0]), ['root/child', 'a.txt']);
+        assert.deepEqual(vals(actual[1]), ['root/other', 'b.txt']);
 
         assert.equal(render(actual[0]), 'root/child/a.txt');
         assert.equal(render(actual[1]), 'root/other/b.txt');
+
+        // Values are strings
+        assert.strictEqual(typeof actual[0][0].value, 'string');
+        assert.strictEqual(typeof actual[1][0].value, 'string');
     });
 };

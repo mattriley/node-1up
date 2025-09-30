@@ -6,7 +6,7 @@ module.exports = $ => files => {
 
     const DELIM = $.config.path.delimiter;
 
-    // Tokenise a segment value into an array of parts (without decorating)
+    // Normalise a segment's value into an array of tokens for counting
     const tokensOf = seg => {
         const v = seg.value;
         if (Array.isArray(v)) return v;
@@ -14,11 +14,11 @@ module.exports = $ => files => {
         return [String(v)];
     };
 
-    // Build a rendered string (like $.here.renderPath) from segments
+    // Render segments into a plain path string (like $.here.renderPath)
     const renderFromSegments = segments =>
         segments.flatMap(tokensOf).join(DELIM);
 
-    // 1) Render once; extract dir for each file
+    // 1) Render & parse once per file to get directory portion
     const entries = files.map(segments => {
         const rendered = renderFromSegments(segments);
         const { dir } = path.parse(rendered);
@@ -35,9 +35,9 @@ module.exports = $ => files => {
 
     const shouldDecorate = seg => seg.fileCounters !== false;
 
-    // 3) Decorate directory tokens, keep filename tokens as-is
+    // 3) Decorate directory tokens; always return string values for segments
     return entries.map(({ segments, dir }) => {
-        if (!dir) return segments;
+        if (!dir) return segments; // keep identity when no directories
 
         const dirSteps = $.path.steps(dir);
         const dirCount = dirSteps.length;
@@ -47,32 +47,20 @@ module.exports = $ => files => {
         let seen = 0;
 
         for (const seg of segments) {
-            const original = seg.value;
             const toks = tokensOf(seg);
 
             const mapped = toks.map(t => {
                 if (seen < dirCount) {
-                    acc = acc ? path.join(acc, t) : t; // build cumulative path
+                    acc = acc ? path.join(acc, t) : t;
                     const c = counts.get(acc) || 0;
                     seen += 1;
                     return shouldDecorate(seg) ? `${t} (${c})` : t;
                 }
-                return t; // filename part
+                return t; // filename part remains unchanged
             });
 
-            // Preserve shape:
-            // - if original was array -> keep array
-            // - if original was string:
-            //     * 1 token -> return string
-            //     * >1 tokens -> return array (because we split it)
-            // - else -> single string
-            const nextValue = Array.isArray(original)
-                ? mapped
-                : (typeof original === 'string'
-                    ? (mapped.length === 1 ? mapped[0] : mapped)
-                    : mapped[0]);
-
-            out.push({ ...seg, value: nextValue });
+            // ALWAYS return segment.value as a single string path
+            out.push({ ...seg, value: mapped.join(DELIM) });
         }
 
         return out;
