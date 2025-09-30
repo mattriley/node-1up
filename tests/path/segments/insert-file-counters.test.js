@@ -29,7 +29,6 @@ module.exports = ({ test, assert }) => $ => {
 
         const actual = run(files);
 
-        // unchanged content and same reference
         assert.strictEqual(actual[0], file);
         assert.deepEqual(actual[0], segs('readme.md'));
         assert.equal(render(actual[0]), 'readme.md');
@@ -43,11 +42,6 @@ module.exports = ({ test, assert }) => $ => {
         ];
         const actual = run(files);
 
-        // counts:
-        // 'a' -> 3
-        // 'a/b' -> 2
-        // 'a/b/c' -> 1
-        // 'a/b/c/d' -> 1
         assert.deepEqual(vals(actual[0]), ['a (3)', 'b (2)', 'c (1)', 'd (1)', 'e.txt']);
         assert.deepEqual(vals(actual[1]), ['a (3)', 'b (2)', 'other.txt']);
         assert.deepEqual(vals(actual[2]), ['a (3)', 'z.txt']);
@@ -64,10 +58,6 @@ module.exports = ({ test, assert }) => $ => {
         ];
         const actual = run(files);
 
-        // cumulative paths:
-        // 'x' -> 2
-        // 'x/y' -> 2
-        // 'x/y/x' -> 1
         assert.deepEqual(vals(actual[0]), ['x (2)', 'y (2)', 'x (1)', 'file.txt']);
         assert.deepEqual(vals(actual[1]), ['x (2)', 'y (2)', 'other.txt']);
 
@@ -83,10 +73,6 @@ module.exports = ({ test, assert }) => $ => {
         ];
         const actual = run(files);
 
-        // counts:
-        // 'alpha' -> 1
-        // 'beta' -> 2
-        // 'beta/c' -> 1
         assert.deepEqual(vals(actual[0]), ['alpha (1)', 'a.txt']);
         assert.deepEqual(vals(actual[1]), ['beta (2)', 'b.txt']);
         assert.deepEqual(vals(actual[2]), ['beta (2)', 'c (1)', 'c.txt']);
@@ -104,9 +90,7 @@ module.exports = ({ test, assert }) => $ => {
         ]];
         const actual = run(files);
 
-        // values decorated
         assert.deepEqual(vals(actual[0]), ['a (1)', 'b (1)', 'f.txt']);
-        // other props preserved
         assert.equal(actual[0][0].flag, true);
         assert.deepEqual(actual[0][1].meta, { id: 42 });
         assert.equal(actual[0][2].ix, 7);
@@ -140,10 +124,6 @@ module.exports = ({ test, assert }) => $ => {
         ];
         const actual = run(files);
 
-        // counts:
-        // 'a' -> 4
-        // 'a/b' -> 2
-        // 'a/c' -> 1
         assert.deepEqual(vals(actual[0]), ['a (4)', 'b (2)', 'x.txt']);
         assert.deepEqual(vals(actual[1]), ['a (4)', 'b (2)', 'z.txt']);
         assert.deepEqual(vals(actual[2]), ['a (4)', 'c (1)', 'y.txt']);
@@ -161,13 +141,8 @@ module.exports = ({ test, assert }) => $ => {
         const src = [a, b];
         const out = run(src);
 
-        // outer array is new
         assert.notStrictEqual(out, src);
-
-        // a (root) is the same identity
         assert.strictEqual(out[0], a);
-
-        // b (has directory) is a different array (decorated copy)
         assert.notStrictEqual(out[1], b);
         assert.deepEqual(vals(out[1]), ['docs (1)', 'guide.md']);
         assert.equal(render(out[1]), 'docs (1)/guide.md');
@@ -190,7 +165,50 @@ module.exports = ({ test, assert }) => $ => {
         assert.equal(render(actual[2]), 'a (3)/3.jpeg');
     });
 
-    // Edge-ish behaviour reminder:
-    // The implementation should key counts by cumulative system paths (using node:path.join),
-    // consistent with what $.path.steps(dir) returns. These tests rely on that.
+    // =========================
+    // NEW: per-segment fileCounters flag
+    // =========================
+
+    test('respects per-segment fileCounters=false (directory segment shows no counter)', () => {
+        const files = [
+            [
+                { value: 'a', fileCounters: false },
+                { value: 'b' },
+                { value: 'x.txt' }
+            ],
+            [
+                { value: 'a', fileCounters: false },
+                { value: 'c' },
+                { value: 'y.txt' }
+            ]
+        ];
+        const actual = run(files);
+
+        // counts would be: 'a' -> 2, 'a/b' -> 1, 'a/c' -> 1
+        // but 'a' opts out of decoration
+        assert.deepEqual(vals(actual[0]), ['a', 'b (1)', 'x.txt']);
+        assert.deepEqual(vals(actual[1]), ['a', 'c (1)', 'y.txt']);
+
+        assert.equal(render(actual[0]), 'a/b (1)/x.txt');
+        assert.equal(render(actual[1]), 'a/c (1)/y.txt');
+    });
+
+    test('fileCounters defaults to true (omitting flag decorates as usual)', () => {
+        const files = [
+            [
+                { value: 'a' },            // defaults to true -> decorate
+                { value: 'b' },
+                { value: 'x.txt' }
+            ],
+            [
+                { value: 'a' },
+                { value: 'c' },
+                { value: 'y.txt' }
+            ]
+        ];
+        const actual = run(files);
+
+        assert.deepEqual(vals(actual[0]), ['a (2)', 'b (1)', 'x.txt']);
+        assert.deepEqual(vals(actual[1]), ['a (2)', 'c (1)', 'y.txt']);
+    });
 };

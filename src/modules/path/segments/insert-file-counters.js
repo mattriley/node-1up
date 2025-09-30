@@ -1,12 +1,14 @@
-// insert-file-counters (segments-in -> segments-out)
+// path/segments/insert-file-counters.js
 const path = require('path');
 
 module.exports = $ => files => {
     if (!files || files.length === 0) return files;
 
-    // Render once; count cumulative dir steps
+    // Render once; count cumulative dir steps across all files
     const entries = files.map(segments => {
-        const rendered = segments.flatMap(s => Array.isArray(s.value) ? s.value : [s.value])
+        // Mirror $.here.renderPath for segments without depending on $
+        const rendered = segments
+            .flatMap(s => Array.isArray(s.value) ? s.value : [s.value])
             .join($.config.path.delimiter);
         const { dir } = path.parse(rendered);
         return { segments, dir };
@@ -15,11 +17,13 @@ module.exports = $ => files => {
     const counts = new Map();
     for (const { dir } of entries) {
         if (!dir) continue;
-        const steps = $.path.steps(dir); // e.g. ['a', 'a/b', 'a/b/c']
+        const steps = $.path.steps(dir); // e.g., ['a', 'a/b', 'a/b/c']
         for (const step of steps) counts.set(step, (counts.get(step) || 0) + 1);
     }
 
-    // decorate directory segments
+    const shouldDecorate = seg => seg.fileCounters !== false;
+
+    // Decorate directory segments; preserve scalar/array shape for .value
     return entries.map(({ segments, dir }) => {
         if (!dir) return segments;
 
@@ -36,12 +40,15 @@ module.exports = $ => files => {
 
             const mapped = values.map(v => {
                 if (seen < dirCount) {
+                    // advance cumulative path and count, regardless of decoration
                     acc = acc ? path.join(acc, v) : v;
                     const c = counts.get(acc) || 0;
                     seen += 1;
-                    return `${v} (${c})`;
+
+                    // Only render the "(n)" if this segment allows it
+                    return shouldDecorate(seg) ? `${v} (${c})` : v;
                 }
-                return v;
+                return v; // filename piece stays as-is
             });
 
             out.push({ ...seg, value: wasArray ? mapped : mapped[0] });
