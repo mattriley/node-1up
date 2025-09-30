@@ -8,6 +8,7 @@ module.exports = {
     insertFileCounters: require('./insert-file-counters'),
     insertSequenceNumbers: require('./insert-sequence-numbers'),
     objectTree: require('./object-tree'),
+    segments: require('./segments'),
     steps: require('./steps'),
     validatePath: require('./validate-path')
 };
