@@ -1,8 +1,6 @@
-// tests/path/segments/insert-file-counters.test.js
 module.exports = ({ test, assert }) => $ => {
-    // Adjust if your export name differs
-    const run = $.path.segments.insertFileCounters;
 
+    const run = $.path.segments.insertFileCounters;
     const DELIM = $.config.path.delimiter;
 
     // Helpers

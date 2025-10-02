@@ -1,5 +1,5 @@
-// tests/path/segments/insert-sequence-numbers.test.js
 module.exports = ({ test, assert }) => $ => {
+
     const run = $.path.segments.insertSequenceNumbers;
     const DELIM = $.config.path.delimiter;
 
