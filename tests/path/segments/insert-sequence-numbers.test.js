@@ -1,16 +1,19 @@
+// tests/path/segments/insert-sequence-numbers.test.js
 module.exports = ({ test, assert }) => $ => {
 
     const run = $.path.segments.insertSequenceNumbers;
     const DELIM = $.config.path.delimiter;
 
     const segs = s => s.split(DELIM).map(v => ({ value: v }));
-    const vals = segments => segments.map(s => s.value);
-    const render = segments => vals(segments).join(DELIM);
+    const file = s => ({ segments: segs(s) });
+
+    const vals = f => (f.segments || []).map(s => s.value);
+    const render = f => vals(f).join(DELIM);
 
     test('adds numeric prefixes to each segment including filename', () => {
         const files = [
-            segs('a/b/x.txt'),
-            segs('a/c/y.txt')
+            file('a/b/x.txt'),
+            file('a/c/y.txt')
         ];
         const actual = run(files);
 
@@ -20,13 +23,13 @@ module.exports = ({ test, assert }) => $ => {
         assert.equal(render(actual[1]), '1 a/2 c/2 y.txt');
     });
 
-    test('file at project root: single segment gets prefixed (still same identity array)', () => {
-        const file = segs('readme.md');
-        const files = [file];
+    test('file at project root: single segment gets prefixed (still same identity object)', () => {
+        const f = file('readme.md');
+        const files = [f];
         const actual = run(files);
 
-        // same array reference preserved
-        assert.strictEqual(actual[0], file);
+        // same file object reference preserved
+        assert.strictEqual(actual[0], f);
         // filename token is decorated
         assert.deepEqual(vals(actual[0]), ['1 readme.md']);
         assert.equal(render(actual[0]), '1 readme.md');
@@ -34,9 +37,9 @@ module.exports = ({ test, assert }) => $ => {
 
     test('deep nested paths get cumulative prefixes (including filename)', () => {
         const files = [
-            segs('a/b/c/d/e.txt'),
-            segs('a/b/other.txt'),
-            segs('a/z.txt')
+            file('a/b/c/d/e.txt'),
+            file('a/b/other.txt'),
+            file('a/z.txt')
         ];
         const actual = run(files);
 
@@ -52,8 +55,8 @@ module.exports = ({ test, assert }) => $ => {
 
     test('repeated folder names at different depths are disambiguated by full cumulative path', () => {
         const files = [
-            segs('x/y/x/file.txt'),
-            segs('x/y/other.txt')
+            file('x/y/x/file.txt'),
+            file('x/y/other.txt')
         ];
         const actual = run(files);
 
@@ -66,9 +69,9 @@ module.exports = ({ test, assert }) => $ => {
 
     test('multiple top-level roots get independent numbering', () => {
         const files = [
-            segs('alpha/a.txt'),
-            segs('beta/b.txt'),
-            segs('beta/c/c.txt')
+            file('alpha/a.txt'),
+            file('beta/b.txt'),
+            file('beta/c/c.txt')
         ];
         const actual = run(files);
 
@@ -82,11 +85,13 @@ module.exports = ({ test, assert }) => $ => {
     });
 
     test('sequenceNumbers=false disables decoration for that segment but still advances cumulative', () => {
-        const files = [[
-            { value: 'a', sequenceNumbers: false },
-            { value: 'b' },
-            { value: 'file.txt' }
-        ]];
+        const files = [{
+            segments: [
+                { value: 'a', sequenceNumbers: false },
+                { value: 'b' },
+                { value: 'file.txt' }
+            ]
+        }];
         const actual = run(files);
 
         // 'a' not decorated, but cumulative advanced, so b and file get the correct index
@@ -95,26 +100,28 @@ module.exports = ({ test, assert }) => $ => {
     });
 
     test('splits path-string segments and rejoins with delimiter (filename prefixed too)', () => {
-        const files = [[
-            { value: 'root/child' },
-            { value: 'file.txt' }
-        ]];
+        const files = [{
+            segments: [
+                { value: 'root/child' },
+                { value: 'file.txt' }
+            ]
+        }];
         const actual = run(files);
 
         assert.deepEqual(vals(actual[0]), ['1 root/1 child', '1 file.txt']);
-        assert.strictEqual(typeof actual[0][0].value, 'string');
+        assert.strictEqual(typeof actual[0].segments[0].value, 'string');
         assert.equal(render(actual[0]), '1 root/1 child/1 file.txt');
     });
 
     test('mono option applies mono-space formatting to prefixes (smoke check)', () => {
         const files = [
-            segs('a/b/file.txt'),
-            segs('c/d/file.txt')
+            file('a/b/file.txt'),
+            file('c/d/file.txt')
         ];
         const actual = run(files, { mono: true });
 
         // Loose check: value starts with some non-space prefix then a space then 'a'
-        assert.match(actual[0][0].value, /^\S+\s+a$/);
+        assert.match(actual[0].segments[0].value, /^\S+\s+a$/);
     });
 
     // ---------------------------
@@ -123,7 +130,7 @@ module.exports = ({ test, assert }) => $ => {
     test('padZero uses two digits when file count >= 10 (directory and filename)', () => {
         // Create 12 files: a..l/f.txt
         const letters = Array.from({ length: 12 }, (_, i) => String.fromCharCode(97 + i)); // 'a'..'l'
-        const files = letters.map(ch => segs(`${ch}/f.txt`));
+        const files = letters.map(ch => file(`${ch}/f.txt`));
 
         const actual = run(files);
 

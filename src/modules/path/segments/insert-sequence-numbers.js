@@ -7,20 +7,26 @@ module.exports = $ => (files, options = {}) => {
     const { mono = false } = options;
     const DELIM = $.config.path.delimiter;
 
+    // Tokenize a segment.value into tokens
     const tokensOf = seg => {
-        const v = seg.value;
+        const v = seg?.value;
         if (Array.isArray(v)) return v;
         if (typeof v === 'string') return v.split(DELIM).filter(Boolean);
-        return [String(v)];
+        return [String(v ?? '')];
     };
 
+    // Render a file's path from its segments (like $.here.renderPath)
     const renderPath = segments =>
-        segments.flatMap(tokensOf).join(DELIM);
+        (Array.isArray(segments) ? segments : [])
+            .flatMap(tokensOf)
+            .join(DELIM);
 
-    const buildStepIndex = files => {
+    // Build earliest 1-based index for each cumulative path step across all files
+    const buildStepIndex = fileList => {
         const index = Object.create(null);
-        for (let i = 0; i < files.length; i++) {
-            const rendered = renderPath(files[i]);
+        for (let i = 0; i < fileList.length; i++) {
+            const segs = Array.isArray(fileList[i]?.segments) ? fileList[i].segments : [];
+            const rendered = renderPath(segs);
             const steps = $.path.steps(rendered); // includes filename step
             const sortValue = i + 1;
             for (let k = 0; k < steps.length; k++) {
@@ -42,11 +48,16 @@ module.exports = $ => (files, options = {}) => {
     const stepIndex = buildStepIndex(files);
     const formatPrefix = makeFormatter(mono, files.length);
 
-    return files.map(segments => {
-        const rendered = renderPath(segments);
-        if (!rendered) return segments;
+    // Output list (copy outer array)
+    const out = files.slice();
 
-        // Special-case: single segment, single token — decorate in-place to preserve array identity
+    for (let fi = 0; fi < files.length; fi++) {
+        const file = files[fi];
+        const segments = Array.isArray(file?.segments) ? file.segments : [];
+        const rendered = renderPath(segments);
+        if (!rendered) continue;
+
+        // Special-case: single segment, single token — decorate in-place to preserve file identity
         if (segments.length === 1) {
             const seg0 = segments[0];
             const toks0 = tokensOf(seg0);
@@ -55,19 +66,21 @@ module.exports = $ => (files, options = {}) => {
                 const idx = stepIndex[tok] ?? 0; // cumulative is just the token itself
                 const allow = seg0.sequenceNumbers !== false;
                 const decorated = allow ? `${formatPrefix(idx)} ${tok}` : tok;
-                // mutate the existing array element (preserve array identity)
+                // mutate the existing segment object; preserves file identity
                 segments[0] = { ...seg0, value: decorated };
-                return segments;
+                out[fi] = file; // same reference
+                continue;
             }
         }
 
-        // General case: return a new array with decorated segment values
-        const out = new Array(segments.length);
+        // General case: copy-on-write, compute decorated string values
         let cumulative = '';
+        let changed = false;
+        const nextSegs = new Array(segments.length);
 
-        for (let i = 0; i < segments.length; i++) {
-            const seg = segments[i];
-            const allowPrefix = seg.sequenceNumbers !== false;
+        for (let si = 0; si < segments.length; si++) {
+            const seg = segments[si];
+            const allowPrefix = seg?.sequenceNumbers !== false;
 
             const tokens = tokensOf(seg);
             const mapped = new Array(tokens.length);
@@ -79,9 +92,19 @@ module.exports = $ => (files, options = {}) => {
                 mapped[t] = allowPrefix ? `${formatPrefix(idx)} ${tok}` : tok;
             }
 
-            out[i] = { ...seg, value: mapped.join(DELIM) };
+            const newValue = mapped.join(DELIM);
+            if (newValue !== (seg.value ?? '')) {
+                changed = true;
+                nextSegs[si] = { ...seg, value: newValue };
+            } else {
+                nextSegs[si] = seg;
+            }
         }
 
-        return out;
-    });
+        if (changed) {
+            out[fi] = { ...file, segments: nextSegs };
+        }
+    }
+
+    return out;
 };
