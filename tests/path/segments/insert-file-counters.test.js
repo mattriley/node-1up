@@ -1,3 +1,4 @@
+// tests/path/segments/insert-file-counters.test.js
 module.exports = ({ test, assert }) => $ => {
 
     const run = $.path.segments.insertFileCounters;
@@ -5,13 +6,14 @@ module.exports = ({ test, assert }) => $ => {
 
     // Helpers
     const segs = s => s.split(DELIM).map(v => ({ value: v }));
-    const vals = segments => segments.map(s => s.value); // values are ALWAYS strings now
-    const render = segments => segments.map(s => s.value).join(DELIM);
+    const file = s => ({ segments: segs(s) });
+    const vals = f => (f.segments || []).map(s => s.value); // values are ALWAYS strings now
+    const render = f => (f.segments || []).map(s => s.value).join(DELIM);
 
     test('adds counts to each directory segment across files (basic two-branch example)', () => {
         const files = [
-            segs('a/b/x.txt'),
-            segs('a/c/y.txt')
+            file('a/b/x.txt'),
+            file('a/c/y.txt')
         ];
         const actual = run(files);
 
@@ -23,21 +25,23 @@ module.exports = ({ test, assert }) => $ => {
     });
 
     test('file at project root (single segment) is returned unchanged and same object identity', () => {
-        const file = segs('readme.md');
-        const files = [file];
+        const f = file('readme.md');
+        const files = [f];
 
         const actual = run(files);
 
-        assert.strictEqual(actual[0], file);
-        assert.deepEqual(actual[0], segs('readme.md'));
+        // same file object reference preserved
+        assert.strictEqual(actual[0], f);
+        // segments content unchanged
+        assert.deepEqual(actual[0].segments, segs('readme.md'));
         assert.equal(render(actual[0]), 'readme.md');
     });
 
     test('deep nested path gets cumulative counts per level', () => {
         const files = [
-            segs('a/b/c/d/e.txt'),
-            segs('a/b/other.txt'),
-            segs('a/z.txt')
+            file('a/b/c/d/e.txt'),
+            file('a/b/other.txt'),
+            file('a/z.txt')
         ];
         const actual = run(files);
 
@@ -52,8 +56,8 @@ module.exports = ({ test, assert }) => $ => {
 
     test('repeated folder names at different depths are counted by full path, not basename', () => {
         const files = [
-            segs('x/y/x/file.txt'),
-            segs('x/y/other.txt')
+            file('x/y/x/file.txt'),
+            file('x/y/other.txt')
         ];
         const actual = run(files);
 
@@ -66,9 +70,9 @@ module.exports = ({ test, assert }) => $ => {
 
     test('multiple top-level roots are independent', () => {
         const files = [
-            segs('alpha/a.txt'),
-            segs('beta/b.txt'),
-            segs('beta/c/c.txt')
+            file('alpha/a.txt'),
+            file('beta/b.txt'),
+            file('beta/c/c.txt')
         ];
         const actual = run(files);
 
@@ -82,31 +86,33 @@ module.exports = ({ test, assert }) => $ => {
     });
 
     test('preserves additional segment props (only replaces .value) and value is string', () => {
-        const files = [[
-            { value: 'a', flag: true },
-            { value: 'b', meta: { id: 42 } },
-            { value: 'f.txt', ix: 7 }
-        ]];
+        const files = [{
+            segments: [
+                { value: 'a', flag: true },
+                { value: 'b', meta: { id: 42 } },
+                { value: 'f.txt', ix: 7 }
+            ]
+        }];
         const actual = run(files);
 
         assert.deepEqual(vals(actual[0]), ['a (1)', 'b (1)', 'f.txt']);
-        assert.equal(actual[0][0].flag, true);
-        assert.deepEqual(actual[0][1].meta, { id: 42 });
-        assert.equal(actual[0][2].ix, 7);
+        assert.equal(actual[0].segments[0].flag, true);
+        assert.deepEqual(actual[0].segments[1].meta, { id: 42 });
+        assert.equal(actual[0].segments[2].ix, 7);
 
         // values are strings
-        assert.strictEqual(typeof actual[0][0].value, 'string');
-        assert.strictEqual(typeof actual[0][1].value, 'string');
-        assert.strictEqual(typeof actual[0][2].value, 'string');
+        assert.strictEqual(typeof actual[0].segments[0].value, 'string');
+        assert.strictEqual(typeof actual[0].segments[1].value, 'string');
+        assert.strictEqual(typeof actual[0].segments[2].value, 'string');
 
         assert.equal(render(actual[0]), 'a (1)/b (1)/f.txt');
     });
 
     test('handles many files in the same folder (counter equals file count)', () => {
         const files = [
-            segs('photos/1.jpg'),
-            segs('photos/2.jpg'),
-            segs('photos/3.jpg')
+            file('photos/1.jpg'),
+            file('photos/2.jpg'),
+            file('photos/3.jpg')
         ];
         const actual = run(files);
 
@@ -121,10 +127,10 @@ module.exports = ({ test, assert }) => $ => {
 
     test('mix of simple and deep paths share the same top-level counts', () => {
         const files = [
-            segs('a/b/x.txt'),
-            segs('a/b/z.txt'),
-            segs('a/c/y.txt'),
-            segs('a/top.txt')
+            file('a/b/x.txt'),
+            file('a/b/z.txt'),
+            file('a/c/y.txt'),
+            file('a/top.txt')
         ];
         const actual = run(files);
 
@@ -140,13 +146,13 @@ module.exports = ({ test, assert }) => $ => {
     });
 
     test('returns a new array for files list but preserves per-item identity when no directory', () => {
-        const a = segs('readme.md');
-        const b = segs('docs/guide.md');
+        const a = file('readme.md');        // no directory
+        const b = file('docs/guide.md');    // has directory
         const src = [a, b];
         const out = run(src);
 
         assert.notStrictEqual(out, src);
-        assert.strictEqual(out[0], a);
+        assert.strictEqual(out[0], a); // unchanged file keeps identity
         assert.notStrictEqual(out[1], b);
         assert.deepEqual(vals(out[1]), ['docs (1)', 'guide.md']);
         assert.equal(render(out[1]), 'docs (1)/guide.md');
@@ -154,9 +160,9 @@ module.exports = ({ test, assert }) => $ => {
 
     test('works with numeric basenames and mixed extensions', () => {
         const files = [
-            segs('a/1'),
-            segs('a/2.txt'),
-            segs('a/3.jpeg')
+            file('a/1'),
+            file('a/2.txt'),
+            file('a/3.jpeg')
         ];
         const actual = run(files);
 
@@ -175,16 +181,20 @@ module.exports = ({ test, assert }) => $ => {
 
     test('respects per-segment fileCounters=false (directory segment shows no counter)', () => {
         const files = [
-            [
-                { value: 'a', fileCounters: false },
-                { value: 'b' },
-                { value: 'x.txt' }
-            ],
-            [
-                { value: 'a', fileCounters: false },
-                { value: 'c' },
-                { value: 'y.txt' }
-            ]
+            {
+                segments: [
+                    { value: 'a', fileCounters: false },
+                    { value: 'b' },
+                    { value: 'x.txt' }
+                ]
+            },
+            {
+                segments: [
+                    { value: 'a', fileCounters: false },
+                    { value: 'c' },
+                    { value: 'y.txt' }
+                ]
+            }
         ];
         const actual = run(files);
 
@@ -199,16 +209,20 @@ module.exports = ({ test, assert }) => $ => {
 
     test('fileCounters defaults to true (omitting flag decorates as usual)', () => {
         const files = [
-            [
-                { value: 'a' },
-                { value: 'b' },
-                { value: 'x.txt' }
-            ],
-            [
-                { value: 'a' },
-                { value: 'c' },
-                { value: 'y.txt' }
-            ]
+            {
+                segments: [
+                    { value: 'a' },
+                    { value: 'b' },
+                    { value: 'x.txt' }
+                ]
+            },
+            {
+                segments: [
+                    { value: 'a' },
+                    { value: 'c' },
+                    { value: 'y.txt' }
+                ]
+            }
         ];
         const actual = run(files);
 
@@ -222,15 +236,19 @@ module.exports = ({ test, assert }) => $ => {
 
     test('splits a path-string segment and decorates each directory part, but returns string value', () => {
         const files = [
-            // first segment contains a PATH STRING 'a/b' (should split to ['a','b'] internally)
-            [
-                { value: 'a/b' },
-                { value: 'x.txt' }
-            ],
-            [
-                { value: 'a/c' },
-                { value: 'y.txt' }
-            ]
+            {
+                segments: [
+                    // first segment contains a PATH STRING 'a/b' (should split to ['a','b'] internally)
+                    { value: 'a/b' },
+                    { value: 'x.txt' }
+                ]
+            },
+            {
+                segments: [
+                    { value: 'a/c' },
+                    { value: 'y.txt' }
+                ]
+            }
         ];
         const actual = run(files);
 
@@ -243,20 +261,24 @@ module.exports = ({ test, assert }) => $ => {
         assert.equal(render(actual[1]), 'a (2)/c (1)/y.txt');
 
         // Values are strings
-        assert.strictEqual(typeof actual[0][0].value, 'string');
-        assert.strictEqual(typeof actual[1][0].value, 'string');
+        assert.strictEqual(typeof actual[0].segments[0].value, 'string');
+        assert.strictEqual(typeof actual[1].segments[0].value, 'string');
     });
 
     test('path-string segment with fileCounters=false splits for counting but returns undecorated string', () => {
         const files = [
-            [
-                { value: 'root/child', fileCounters: false },
-                { value: 'a.txt' }
-            ],
-            [
-                { value: 'root/other', fileCounters: false },
-                { value: 'b.txt' }
-            ]
+            {
+                segments: [
+                    { value: 'root/child', fileCounters: false },
+                    { value: 'a.txt' }
+                ]
+            },
+            {
+                segments: [
+                    { value: 'root/other', fileCounters: false },
+                    { value: 'b.txt' }
+                ]
+            }
         ];
         const actual = run(files);
 
@@ -269,7 +291,7 @@ module.exports = ({ test, assert }) => $ => {
         assert.equal(render(actual[1]), 'root/other/b.txt');
 
         // Values are strings
-        assert.strictEqual(typeof actual[0][0].value, 'string');
-        assert.strictEqual(typeof actual[1][0].value, 'string');
+        assert.strictEqual(typeof actual[0].segments[0].value, 'string');
+        assert.strictEqual(typeof actual[1].segments[0].value, 'string');
     });
 };

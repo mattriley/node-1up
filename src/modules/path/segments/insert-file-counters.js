@@ -6,63 +6,91 @@ module.exports = $ => files => {
 
     const DELIM = $.config.path.delimiter;
 
-    // Normalise a segment's value into an array of tokens for counting
+    // Normalize a segment's value into tokens we can count over
     const tokensOf = seg => {
-        const v = seg.value;
+        const v = seg?.value;
         if (Array.isArray(v)) return v;
         if (typeof v === 'string') return v.split(DELIM).filter(Boolean);
-        return [String(v)];
+        return [String(v ?? '')];
     };
 
     // Render segments into a plain path string (like $.here.renderPath)
     const renderFromSegments = segments =>
-        segments.flatMap(tokensOf).join(DELIM);
+        (Array.isArray(segments) ? segments : [])
+            .flatMap(tokensOf)
+            .join(DELIM);
 
-    // 1) Render & parse once per file to get directory portion
-    const entries = files.map(segments => {
+    // Build entries with pre-rendered dir for each file
+    const entries = files.map((file, idx) => {
+        const segments = Array.isArray(file?.segments) ? file.segments : [];
         const rendered = renderFromSegments(segments);
         const { dir } = path.parse(rendered);
-        return { segments, dir };
+        return { idx, file, segments, dir };
     });
 
-    // 2) Count cumulative directory steps across all files
+    // Count cumulative directory steps across all files
     const counts = new Map();
     for (const { dir } of entries) {
         if (!dir) continue;
         const steps = $.path.steps(dir); // e.g. ['a', 'a/b', 'a/b/c']
-        for (const step of steps) counts.set(step, (counts.get(step) || 0) + 1);
+        for (const step of steps) {
+            counts.set(step, (counts.get(step) || 0) + 1);
+        }
     }
 
-    const shouldDecorate = seg => seg.fileCounters !== false;
+    const shouldDecorate = seg => seg?.fileCounters !== false;
 
-    // 3) Decorate directory tokens; always return string values for segments
-    return entries.map(({ segments, dir }) => {
-        if (!dir) return segments; // keep identity when no directories
+    // Decorate directory tokens; keep filename tokens untouched.
+    // Always return string values for segments.
+    const out = files.slice();
+
+    for (const { idx, file, segments, dir } of entries) {
+        // No directories → preserve identity
+        if (!dir || segments.length === 0) continue;
 
         const dirSteps = $.path.steps(dir);
         const dirCount = dirSteps.length;
 
-        const out = [];
+        const nextSegs = new Array(segments.length);
         let acc = '';
         let seen = 0;
+        let changed = false;
 
-        for (const seg of segments) {
+        for (let s = 0; s < segments.length; s++) {
+            const seg = segments[s];
             const toks = tokensOf(seg);
 
-            const mapped = toks.map(t => {
-                if (seen < dirCount) {
-                    acc = acc ? path.join(acc, t) : t;
-                    const c = counts.get(acc) || 0;
-                    seen += 1;
-                    return shouldDecorate(seg) ? `${t} (${c})` : t;
-                }
-                return t; // filename part remains unchanged
-            });
+            const mapped = new Array(toks.length);
+            for (let t = 0; t < toks.length; t++) {
+                const tok = toks[t];
 
-            // ALWAYS return segment.value as a single string path
-            out.push({ ...seg, value: mapped.join(DELIM) });
+                if (seen < dirCount) {
+                    // This token is part of directories: always advance cumulative,
+                    // only decorate if segment allows it.
+                    acc = acc ? path.join(acc, tok) : tok;
+                    const c = counts.get(acc) || 0;
+                    const outTok = shouldDecorate(seg) ? `${tok} (${c})` : tok;
+                    mapped[t] = outTok;
+                    seen += 1;
+                } else {
+                    // Filename (or tokens beyond dirCount): never decorate
+                    mapped[t] = tok;
+                }
+            }
+
+            const newValue = mapped.join(DELIM);
+            if (newValue !== (seg.value ?? '')) {
+                changed = true;
+                nextSegs[s] = { ...seg, value: newValue };
+            } else {
+                nextSegs[s] = seg;
+            }
         }
 
-        return out;
-    });
+        if (changed) {
+            out[idx] = { ...file, segments: nextSegs };
+        }
+    }
+
+    return out;
 };
