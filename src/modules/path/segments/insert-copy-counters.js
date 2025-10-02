@@ -1,4 +1,3 @@
-// path/segments/append-copy-counters.js
 module.exports = $ => files => {
     if (!files || files.length === 0) return files;
 
@@ -35,12 +34,12 @@ module.exports = $ => files => {
     // Build groups (preserve stable order)
     const groups = Object.create(null);
     for (let i = 0; i < files.length; i++) {
-        const segments = files[i] || [];
-        const k = keyOf(segments);
+        const segs = Array.isArray(files[i]?.segments) ? files[i].segments : [];
+        const k = keyOf(segs);
         (groups[k] || (groups[k] = [])).push(i);
     }
 
-    // Copy-on-write result
+    // Copy-on-write result (preserve file identity if unchanged)
     const out = files.slice();
 
     // Append .<n> to the last segment for groups with duplicates
@@ -50,11 +49,12 @@ module.exports = $ => files => {
 
         for (let g = 0; g < idxs.length; g++) {
             const i = idxs[g];
-            const segments = files[i] || [];
-            if (!segments.length) continue;
+            const file = files[i];
+            const segs = Array.isArray(file?.segments) ? file.segments : [];
+            if (!segs.length) continue;
 
-            const lastIx = segments.length - 1;
-            const { last, full, baseKey, hasNumeric } = parseLast(segments);
+            const lastIx = segs.length - 1;
+            const { last, baseKey, hasNumeric } = parseLast(segs);
 
             // If it already ends with ".digits", skip modifying (no double-add)
             if (hasNumeric) continue;
@@ -67,10 +67,11 @@ module.exports = $ => files => {
             const nextSuffix = newFull.slice(valuePart.length); // works even if value==''
 
             // Clone segments array; replace only the last segment object
-            const nextSegments = segments.slice();
+            const nextSegments = segs.slice();
             nextSegments[lastIx] = { ...last, suffix: nextSuffix };
 
-            out[i] = nextSegments;
+            // Replace the file with a shallow copy that has updated segments
+            out[i] = { ...file, segments: nextSegments };
         }
     }
 
