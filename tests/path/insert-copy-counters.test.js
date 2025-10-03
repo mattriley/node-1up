@@ -1,7 +1,7 @@
 // tests/path/segments/insert-copy-counters.test.js
 module.exports = ({ test, assert }) => $ => {
 
-    const run = $.path.segments.insertCopyCounters;
+    const run = $.path.insertCopyCounters;
     const DELIM = $.config.path.delimiter;
 
     // Helpers
