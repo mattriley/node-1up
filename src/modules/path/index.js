@@ -5,6 +5,7 @@ module.exports = {
     insertBeforeLast: require('./insert-before-last'),
     insertChunkNumbers: require('./insert-chunk-numbers'),
     insertCopyCounters: require('./insert-copy-counters'),
+    insertCustomCounters: require('./insert-custom-counters'),
     insertFileCounters: require('./insert-file-counters'),
     insertSequenceNumbers: require('./insert-sequence-numbers'),
     objectTree: require('./object-tree'),
