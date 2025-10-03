@@ -3,6 +3,7 @@ module.exports = {
     objectTreeConfigure: require('./object-tree.configure'),
     stepsConfigure: require('./steps.configure'),
     insertBeforeLast: require('./insert-before-last'),
+    insertChunkNumbers: require('./insert-chunk-numbers'),
     insertCopyCounters: require('./insert-copy-counters'),
     insertFileCounters: require('./insert-file-counters'),
     insertSequenceNumbers: require('./insert-sequence-numbers'),
