@@ -6,6 +6,8 @@ module.exports = $ => files => {
 
     const DELIM = $.config.path.delimiter;
 
+    const isTraversal = tok => tok === '..' || tok === '.';
+
     // Normalize a segment's value into tokens we can count over
     const tokensOf = seg => {
         const v = seg?.value;
@@ -29,11 +31,20 @@ module.exports = $ => files => {
     });
 
     // Count cumulative directory steps across all files
+    // Skip traversal-only keys so we never count/decorate them.
     const counts = new Map();
     for (const { dir } of entries) {
         if (!dir) continue;
-        const steps = $.path.steps(dir); // e.g. ['a', 'a/b', 'a/b/c']
+        const steps = $.path.steps(dir); // e.g. ['a', 'a/b', 'a/b/c'] (may include traversal tokens)
         for (const step of steps) {
+            if (
+                step === '..' ||
+                step === '.' ||
+                step.endsWith(`${DELIM}..`) ||
+                step.endsWith(`${DELIM}.`)
+            ) {
+                continue;
+            }
             counts.set(step, (counts.get(step) || 0) + 1);
         }
     }
@@ -65,13 +76,16 @@ module.exports = $ => files => {
                 const tok = toks[t];
 
                 if (seen < dirCount) {
-                    // This token is part of directories: always advance cumulative,
-                    // only decorate if segment allows it.
-                    acc = acc ? path.join(acc, tok) : tok;
+                    // Build acc WITHOUT normalising to keep keys aligned with $.path.steps
+                    acc = acc ? `${acc}${DELIM}${tok}` : tok;
+
                     const c = counts.get(acc) || 0;
-                    const outTok = shouldDecorate(seg) ? `${tok} (${c})` : tok;
+                    const outTok = shouldDecorate(seg) && !isTraversal(tok)
+                        ? `${tok} (${c})`
+                        : tok;
+
                     mapped[t] = outTok;
-                    seen += 1;
+                    seen += 1; // advance through directory tokens regardless of traversal
                 } else {
                     // Filename (or tokens beyond dirCount): never decorate
                     mapped[t] = tok;
@@ -79,7 +93,8 @@ module.exports = $ => files => {
             }
 
             const newValue = mapped.join(DELIM);
-            if (newValue !== (seg.value ?? '')) {
+            const prevValue = typeof seg.value === 'string' ? seg.value : Array.isArray(seg.value) ? seg.value.join(DELIM) : String(seg.value ?? '');
+            if (newValue !== prevValue) {
                 changed = true;
                 nextSegs[s] = { ...seg, value: newValue };
             } else {
