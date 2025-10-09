@@ -1,7 +1,8 @@
-module.exports = ({ self }) => (...args) => {
+module.exports = ({ self }) => {
 
-    return self.core.configure({ args, async: true }, ({ state, stepResult }) => {
-        return Object.assign(state ?? {}, stepResult);
-    });
+    const configure = self.assignAsyncConfigure;
+    const assignAsync = configure();
+    const defer = configure({ defer: true });
+    return Object.assign(assignAsync, { configure, defer });
 
 };
