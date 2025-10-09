@@ -1,6 +1,6 @@
 module.exports = ({ test, assert }) => lib => {
 
-    const pipeMerge = lib.pipe.merge;
+    const pipeMerge = lib.pipe.merge; // single-argument convention
 
     test('pipeMerge: array of functions merges outputs', () => {
         const fn = pipeMerge([
@@ -8,6 +8,7 @@ module.exports = ({ test, assert }) => lib => {
             () => ({ b: 2 }),
             () => ({ c: 3 })
         ]);
+        // single arg without stateKey => treated as initial
         const result = fn({});
         assert.deepStrictEqual(result, { a: 1, b: 2, c: 3 });
     });
@@ -17,7 +18,7 @@ module.exports = ({ test, assert }) => lib => {
             one: () => ({ a: 1 }),
             two: () => ({ b: 2 })
         });
-        const result = fn({});
+        const result = fn({}); // initial
         assert.deepStrictEqual(result, { a: 1, b: 2 });
     });
 
@@ -26,7 +27,8 @@ module.exports = ({ test, assert }) => lib => {
             ({ val }) => ({ a: val }),
             ({ val }) => ({ b: val + 1 })
         ]);
-        const result = fn({}, { val: 10 });
+        // single arg with stateKey => treated as context
+        const result = fn({ state: {}, val: 10 });
         assert.deepStrictEqual(result, { a: 10, b: 11 });
     });
 
@@ -34,13 +36,13 @@ module.exports = ({ test, assert }) => lib => {
         const fn = pipeMerge([
             () => ({ b: 2 })
         ]);
-        const result = fn({ a: 1 });
+        const result = fn({ a: 1 }); // initial
         assert.deepStrictEqual(result, { a: 1, b: 2 });
     });
 
     test('pipeMerge: empty array returns initial unchanged', () => {
         const fn = pipeMerge([]);
-        const result = fn({ a: 1 });
+        const result = fn({ a: 1 }); // initial
         assert.deepStrictEqual(result, { a: 1 });
     });
 
@@ -49,7 +51,7 @@ module.exports = ({ test, assert }) => lib => {
             () => ({ a: 1 }),
             () => ({ a: 2 })
         ]);
-        const result = fn({});
+        const result = fn({}); // initial
         assert.deepStrictEqual(result, { a: 2 });
     });
 

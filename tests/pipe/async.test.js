@@ -1,13 +1,14 @@
 module.exports = ({ test, assert }) => lib => {
 
-    const pipeAsync = lib.pipe.async;
+    const pipeAsync = lib.pipe.async; // non-deferred, single-arg calling convention
 
     test('pipeAsync: runs async functions in sequence', async () => {
         const fn = pipeAsync([
             async ({ x }) => ({ ...x, a: 1 }),
             async ({ x }) => ({ ...x, b: 2 })
         ]);
-        const result = await fn({}, {});
+        // Single arg: include stateKey so this is treated as context; initial is context[state]
+        const result = await fn({ state: {}, x: {} });
         assert.deepStrictEqual(result, { b: 2 });
     });
 
@@ -16,7 +17,7 @@ module.exports = ({ test, assert }) => lib => {
             one: async ({ x }) => ({ ...x, a: 1 }),
             two: async ({ x }) => ({ ...x, b: 2 })
         });
-        const result = await fn({}, {});
+        const result = await fn({ state: {}, x: {} });
         assert.deepStrictEqual(result, { b: 2 });
     });
 
@@ -26,6 +27,7 @@ module.exports = ({ test, assert }) => lib => {
             async () => undefined,
             async () => ({ b: 2 })
         ]);
+        // Single arg without stateKey => treated as initial
         const result = await fn({});
         assert.deepStrictEqual(result, { b: 2 });
     });
@@ -35,7 +37,8 @@ module.exports = ({ test, assert }) => lib => {
             async ({ val }) => ({ a: val }),
             async ({ val }) => ({ b: val + 1 })
         ]);
-        const result = await fn({}, { val: 10 });
+        // Provide context via single arg that contains stateKey
+        const result = await fn({ state: {}, val: 10 });
         assert.deepStrictEqual(result, { b: 11 });
     });
 

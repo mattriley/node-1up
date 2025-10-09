@@ -4,13 +4,15 @@ module.exports = ({ test, assert }) => lib => {
 
     test('pipeAssignWhile: runs all functions when predicate is always true', () => {
         const fn = pipeAssignWhile(
-            () => true, {},
+            () => true,
             [
                 () => ({ a: 1 }),
                 () => ({ b: 2 }),
                 () => ({ c: 3 })
-            ]);
+            ]
+        );
 
+        // single arg (no stateKey) → treated as initial
         const result = fn({});
         assert.deepStrictEqual(result, { a: 1, b: 2, c: 3 });
     });
@@ -21,24 +23,13 @@ module.exports = ({ test, assert }) => lib => {
             [
                 () => ({ a: 1 }),
                 () => ({ b: 2 })
-            ]);
+            ]
+        );
 
+        // single arg (no stateKey) → treated as initial
         const result = fn({ x: 1 });
         assert.deepStrictEqual(result, { x: 1 });
     });
-
-    // test('pipeAssignWhile: conditionally executes based on state', () => {
-    //     const fn = pipeAssignWhile(
-    //         acc => (acc.count || 0) < 2,
-    //         [
-    //             acc => ({ count: (acc.count || 0) + 1 }),
-    //             acc => ({ count: (acc.count || 0) + 1 }),
-    //             acc => ({ done: true }) // won't run
-    //         ]);
-
-    //     const result = fn({});
-    //     assert.deepStrictEqual(result, { count: 2 }); // Corrected expectation
-    // });
 
     test('pipeAssignWhile: conditionally executes based on state', () => {
         const fn = pipeAssignWhile(
@@ -46,11 +37,13 @@ module.exports = ({ test, assert }) => lib => {
             [
                 acc => ({ count: (acc.count || 0) + 1 }),
                 acc => ({ count: (acc.count || 0) + 1 }),
-                () => ({ done: true }) // won't run
-            ]);
+                () => ({ done: true }) // won't run once predicate false
+            ]
+        );
 
-        const result = fn({}, {});
-        assert.deepStrictEqual(result, { count: 1, done: true }); // Corrected expectation
+        // single arg (no stateKey) → treated as initial
+        const result = fn({});
+        assert.deepStrictEqual(result, { count: 2 });
     });
 
     test('pipeAssignWhile: executes all steps if predicate always true', () => {
@@ -60,10 +53,11 @@ module.exports = ({ test, assert }) => lib => {
                 acc => ({ count: (acc.count || 0) + 1 }),
                 acc => ({ count: (acc.count || 0) + 1 }),
                 () => ({ done: true })
-            ]);
+            ]
+        );
 
-        const result = fn({}, {});
-        assert.deepStrictEqual(result, { count: 1, done: true });
+        const result = fn({});
+        assert.deepStrictEqual(result, { count: 2, done: true });
     });
 
     test('pipeAssignWhile: context is passed to all functions', () => {
@@ -72,9 +66,11 @@ module.exports = ({ test, assert }) => lib => {
             [
                 ({ value }) => ({ a: value }),
                 ({ value }) => ({ b: value + 1 })
-            ]);
+            ]
+        );
 
-        const result = fn({}, { value: 5 });
+        // single arg with stateKey → treated as context
+        const result = fn({ state: {}, value: 5 });
         assert.deepStrictEqual(result, { a: 5, b: 6 });
     });
 
@@ -84,7 +80,8 @@ module.exports = ({ test, assert }) => lib => {
             {
                 one: () => ({ a: 1 }),
                 two: () => ({ b: 2 })
-            });
+            }
+        );
 
         const result = fn({});
         assert.deepStrictEqual(result, { a: 1, b: 2 });
@@ -96,22 +93,21 @@ module.exports = ({ test, assert }) => lib => {
         assert.deepStrictEqual(result, { x: 1 });
     });
 
-
     test('pipeAssignWhile: throws on non-function in array', () => {
         assert.throws(() => {
-            pipeAssignWhile([() => ({}), 'bad']);
+            pipeAssignWhile(() => true, [() => ({}), 'bad']);
         }, /must be functions/);
     });
 
     test('pipeAssignWhile: throws on non-function in object', () => {
         assert.throws(() => {
-            pipeAssignWhile({ ok: () => ({}), nope: 'bad' });
+            pipeAssignWhile(() => true, { ok: () => ({}), nope: 'bad' });
         }, /Expected an array or object of functions/);
     });
 
     test('pipeAssignWhile: throws on invalid input type', () => {
         assert.throws(() => {
-            pipeAssignWhile('not valid');
+            pipeAssignWhile(() => true, 'not valid');
         }, /Expected an array or object of functions/);
     });
 
