@@ -1,28 +1,25 @@
+// executor.js
 module.exports = ({ self, fun }) => (config, applyStep) => {
     const { steps, defaultContext, stateKey, predicate } =
         self.core.resolveArgs(...config.args);
 
     const runner = config.async ? self.core.runAsync : self.core.runSync;
-    const defer = !!config.defer; // just coerce to boolean
+    const defer = !!config.defer;
 
-    // Single-arg exec:
-    // - If arg is an object and has stateKey -> treat as context
-    // - Otherwise -> treat as initial
+    // Pull the single "value" from args in non-deferred mode.
+    // Convention: config.args = [steps, value?] for non-deferred calls
+    const valueFromArgs = config.args.length ? config.args[config.args.length - 1] : undefined;
+
     const exec = (value = {}) => {
         const isObj = value !== null && typeof value === 'object';
         const isContext = isObj && (stateKey in value);
 
-        // Build context
         const context = isContext
-            // Merge provided context over defaultContext (provided wins)
             ? (defaultContext ? { ...defaultContext, ...value } : value)
-            // If value is initial, only use defaultContext (or null if absent)
             : (defaultContext ? { ...defaultContext } : null);
 
-        // Determine initial state
         const initial = isContext ? value[stateKey] : value;
 
-        // Ensure context[stateKey] mirrors the current state when context exists
         if (context) {
             context[stateKey] = initial;
         }
@@ -38,6 +35,7 @@ module.exports = ({ self, fun }) => (config, applyStep) => {
         });
     };
 
-    // non-deferred branch still returns a function, defaulting state sensibly
-    return defer ? exec : (...args) => exec(...args);
+    // If deferred, return a function that accepts the single value later.
+    // If not deferred, execute immediately using the value provided alongside steps.
+    return defer ? exec : exec(valueFromArgs);
 };

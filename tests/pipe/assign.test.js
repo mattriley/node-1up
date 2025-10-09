@@ -1,6 +1,6 @@
+// tests/pipe/assign.test.js
 module.exports = ({ test, assert }) => lib => {
 
-    // Defer-on variant
     const pipeAssign = lib.pipe.assign.configure({ defer: true });
 
     test('pipeAssign: objects and functions accepted', () => {
@@ -8,7 +8,7 @@ module.exports = ({ test, assert }) => lib => {
             { a: 1 },
             () => ({ b: 2 })
         ]);
-        const result = fn({}); // single arg without `stateKey` => treated as initial
+        const result = fn({});
         assert.deepStrictEqual(result, { a: 1, b: 2 });
     });
 
@@ -17,7 +17,7 @@ module.exports = ({ test, assert }) => lib => {
             () => ({ a: 1 }),
             () => ({ b: 2 })
         ]);
-        const result = fn({}); // initial
+        const result = fn({});
         assert.deepStrictEqual(result, { a: 1, b: 2 });
     });
 
@@ -26,7 +26,7 @@ module.exports = ({ test, assert }) => lib => {
             one: () => ({ a: 1 }),
             two: () => ({ b: 2 })
         });
-        const result = fn({}); // initial
+        const result = fn({});
         assert.deepStrictEqual(result, { a: 1, b: 2 });
     });
 
@@ -35,7 +35,7 @@ module.exports = ({ test, assert }) => lib => {
             () => ({ a: 1 }),
             () => ({ a: 2 })
         ]);
-        const result = fn({}); // initial
+        const result = fn({});
         assert.deepStrictEqual(result, { a: 2 });
     });
 
@@ -44,8 +44,6 @@ module.exports = ({ test, assert }) => lib => {
             ({ val }) => ({ a: val }),
             ({ val }) => ({ b: val + 1 })
         ]);
-        // Provide a single argument that includes the stateKey so it's treated as context.
-        // Assume default stateKey = 'state'. If your stateKey differs, update here.
         const result = fn({ state: {}, val: 5 });
         assert.deepStrictEqual(result, { a: 5, b: 6 });
     });
@@ -54,13 +52,13 @@ module.exports = ({ test, assert }) => lib => {
         const fn = pipeAssign([
             () => ({ b: 2 })
         ]);
-        const result = fn({ a: 1 }); // initial
+        const result = fn({ a: 1 });
         assert.deepStrictEqual(result, { a: 1, b: 2 });
     });
 
     test('pipeAssign: empty array returns initial unchanged', () => {
         const fn = pipeAssign([]);
-        const result = fn({ a: 1 }); // initial
+        const result = fn({ a: 1 });
         assert.deepStrictEqual(result, { a: 1 });
     });
 
@@ -82,11 +80,9 @@ module.exports = ({ test, assert }) => lib => {
         }, /Expected an array or object of functions/);
     });
 
-    // Bonus sanity checks for new calling convention:
-
+    // Context contains stateKey: state is read from context[stateKey]
     test('pipeAssign: single arg treated as context when it contains stateKey; state is read from context[stateKey]', () => {
         const fn = pipeAssign([
-            // read both context.val and current state via context.state
             (ctx) => {
                 assert.ok('state' in ctx);
                 const base = (ctx.state && typeof ctx.state === 'object') ? ctx.state.base : 0;
@@ -99,29 +95,18 @@ module.exports = ({ test, assert }) => lib => {
         assert.deepStrictEqual(result, { base: 3, out: 7 });
     });
 
-    test('pipeAssign: single arg without stateKey is treated as initial', () => {
-        const fn = pipeAssign([
-            () => ({ plus: 1 })
-        ]);
-
-        const result = fn({ base: 2 }); // treated as initial, not context
-        assert.deepStrictEqual(result, { base: 2, plus: 1 });
-    });
-
-    // Also verify non-deferred entry defaults to defer=false but still returns a callable
-    test('pipeAssign (non-deferred): still returns a function and uses single-arg convention', () => {
-        const direct = lib.pipe.assign; // calling directly should default defer to false
-        const fn = direct([
+    // Non-deferred defaults to immediate: call returns a RESULT, not a function
+    test('pipeAssign (non-deferred): immediate invocation with single value', () => {
+        const direct = lib.pipe.assign; // defer: false by default
+        const result1 = direct([
             ({ k }) => ({ a: k || 1 })
-        ]);
+        ], { state: {}, k: 2 });
+        assert.deepStrictEqual(result1, { a: 2 });
 
-        // No stateKey in the arg => treated as initial, but since step reads from context,
-        // we pass a context-like single arg that includes stateKey so it’s treated as context.
-        const r1 = fn({ state: {}, k: 2 });
-        assert.deepStrictEqual(r1, { a: 2 });
-
-        const r2 = fn({}); // initial, no context.k, default to 1
-        assert.deepStrictEqual(r2, { a: 1 });
+        const result2 = direct([
+            ({ k }) => ({ a: k || 1 })
+        ], {}); // no stateKey/no k -> initial {}
+        assert.deepStrictEqual(result2, { a: 1 });
     });
 
 };
