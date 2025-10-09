@@ -6,8 +6,8 @@ module.exports = ({ self, fun }) => config => {
     return (...args) => {
         const options = parseOptions();
 
-        return self.core.configure({ args, ...options }, ({ state, stepResult }) => {
-            return Object.assign(state ?? {}, stepResult);
+        return self.core.configure({ args, ...options, async: true }, ({ stepResult }) => {
+            return stepResult;
         });
     };
 
