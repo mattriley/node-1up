@@ -1,7 +1,8 @@
-module.exports = ({ self }) => (...args) => {
+module.exports = ({ self }) => {
 
-    return self.core.configure({ args }, ({ stepResult }) => {
-        return stepResult;
-    });
+    const configure = self.pipeConfigure;
+    const pipe = configure();
+    const defer = configure({ defer: true });
+    return Object.assign(pipe, { configure, defer });
 
 };
