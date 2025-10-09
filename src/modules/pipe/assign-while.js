@@ -1,7 +1,8 @@
-module.exports = ({ self }) => (...args) => {
+module.exports = ({ self }) => {
 
-    return self.core.configure({ args }, ({ state, stepResult }) => {
-        return Object.assign(state ?? {}, stepResult);
-    });
+    const configure = self.assignWhileConfigure;
+    const assignWhile = configure();
+    const defer = configure({ defer: true });
+    return Object.assign(assignWhile, { configure, defer });
 
 };

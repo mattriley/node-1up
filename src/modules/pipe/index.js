@@ -1,4 +1,5 @@
 module.exports = {
+    assignWhileConfigure: require('./assign-while.configure'),
     assignConfigure: require('./assign.configure'),
     asyncConfigure: require('./async.configure'),
     mergeConfigure: require('./merge.configure'),
