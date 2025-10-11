@@ -13,7 +13,7 @@ module.exports = ({ test, assert }) => lib => {
                 () => ({ b: 2 }),
                 () => ({ c: 3 })
             ],
-            {} // initial
+            {} // initial (no stateKey -> pure initial)
         );
         assert.deepStrictEqual(result, { a: 1, b: 2, c: 3 });
     });
@@ -25,7 +25,7 @@ module.exports = ({ test, assert }) => lib => {
                 () => ({ a: 1 }),
                 () => ({ b: 2 })
             ],
-            { x: 1 }
+            { x: 1 } // initial
         );
         assert.deepStrictEqual(result, { x: 1 });
     });
@@ -38,7 +38,7 @@ module.exports = ({ test, assert }) => lib => {
                 acc => ({ count: (acc.count || 0) + 1 }),
                 () => ({ done: true }) // won’t run once predicate flips false (based on current core)
             ],
-            {}
+            {} // initial
         );
         // Observed current behaviour: first increment applied, then done is set
         assert.deepStrictEqual(result, { count: 1, done: true });
@@ -52,20 +52,21 @@ module.exports = ({ test, assert }) => lib => {
                 acc => ({ count: (acc.count || 0) + 1 }),
                 () => ({ done: true })
             ],
-            {}
+            {} // initial
         );
         // Observed current behaviour: only first increment applied before done
         assert.deepStrictEqual(result, { count: 1, done: true });
     });
 
-    test('pipeAssignWhile (immediate): context is passed to all functions', () => {
+    test('pipeAssignWhile (immediate): context is passed to all functions when stateKey is provided', () => {
         const result = pipeAssignWhile(
             () => true,
             [
                 ({ value }) => ({ a: value }),
                 ({ value }) => ({ b: value + 1 })
             ],
-            { state: {}, value: 5 } // has stateKey -> treated as context
+            'state',                 // <-- explicit stateKey (context mode)
+            { state: {}, value: 5 }  // treated as context
         );
         assert.deepStrictEqual(result, { a: 5, b: 6 });
     });
@@ -77,7 +78,7 @@ module.exports = ({ test, assert }) => lib => {
                 one: () => ({ a: 1 }),
                 two: () => ({ b: 2 })
             },
-            {}
+            {} // initial
         );
         assert.deepStrictEqual(result, { a: 1, b: 2 });
     });
@@ -103,6 +104,7 @@ module.exports = ({ test, assert }) => lib => {
 
     test('pipeAssignWhile: throws on invalid input type', () => {
         assert.throws(() => {
+            // @ts-expect-error
             pipeAssignWhile(() => true, 'not valid', {});
         }, /Expected an array or object of functions/);
     });
@@ -122,20 +124,36 @@ module.exports = ({ test, assert }) => lib => {
         assert.deepStrictEqual(result, { a: 1, b: 2 });
     });
 
+    test('pipeAssignWhile (deferred): context is passed when stateKey is provided', () => {
+        const fn = pipeAssignWhile.defer(
+            () => true,
+            [
+                ({ x }) => ({ a: x }),
+                ({ x }) => ({ b: x + 1 })
+            ],
+            'state' // explicit stateKey
+        );
+
+        const result = fn({ state: {}, x: 3 });
+        assert.deepStrictEqual(result, { a: 3, b: 4 });
+    });
+
     test('pipeAssignWhile.configure({ defer: true }) behaves like pipeAssignWhile.defer', () => {
         const fnA = pipeAssignWhile.defer(
             () => true,
             [
                 ({ x }) => ({ a: x }),
                 ({ x }) => ({ b: x + 1 })
-            ]
+            ],
+            'state'
         );
         const fnB = pipeAssignWhile.configure({ defer: true })(
             () => true,
             [
                 ({ x }) => ({ a: x }),
                 ({ x }) => ({ b: x + 1 })
-            ]
+            ],
+            'state'
         );
 
         assert.strictEqual(typeof fnA, 'function');
@@ -157,13 +175,13 @@ module.exports = ({ test, assert }) => lib => {
                 acc => ({ count: (acc.count || 0) + 1 }),
                 acc => ({ count: (acc.count || 0) + 1 })
             ],
-            { count: 0 }
+            { count: 0 } // initial
         );
         // Observed current behaviour: single increment
         assert.deepStrictEqual(result, { count: 1 });
     });
 
-    test('pipeAssignWhile.configure({ defer: false }): respects context when value has stateKey', () => {
+    test('pipeAssignWhile.configure({ defer: false }): respects context when stateKey is provided', () => {
         const immediate = pipeAssignWhile.configure({ defer: false });
         const result = immediate(
             () => true,
@@ -171,6 +189,7 @@ module.exports = ({ test, assert }) => lib => {
                 ({ value }) => ({ a: value }),
                 ({ value }) => ({ b: value + 1 })
             ],
+            'state',                 // <-- stateKey explicitly
             { state: {}, value: 10 } // treated as context
         );
         assert.deepStrictEqual(result, { a: 10, b: 11 });

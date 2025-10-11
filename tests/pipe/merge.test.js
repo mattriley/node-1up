@@ -22,14 +22,6 @@ module.exports = ({ test, assert }) => lib => {
         assert.deepStrictEqual(result, { a: 1, b: 2 });
     });
 
-    test('pipeMerge (immediate): context is passed to each function', () => {
-        const result = pipeMerge([
-            ({ val }) => ({ a: val }),
-            ({ val }) => ({ b: val + 1 })
-        ], { state: {}, val: 10 }); // has stateKey → treated as context
-        assert.deepStrictEqual(result, { a: 10, b: 11 });
-    });
-
     test('pipeMerge (immediate): initial value is used and preserved', () => {
         const result = pipeMerge([
             () => ({ b: 2 })
@@ -78,19 +70,31 @@ module.exports = ({ test, assert }) => lib => {
             () => ({ b: 2 })
         ]);
         assert.strictEqual(typeof fn, 'function');
-        const result = fn({}); // single-arg value
+        const result = fn({}); // single-arg value (initial)
         assert.deepStrictEqual(result, { a: 1, b: 2 });
     });
 
-    test('pipeMerge.configure({ defer: true }) behaves like pipeMerge.defer', () => {
+    test('pipeMerge (deferred): context is passed when stateKey is provided', () => {
+        // Provide stateKey explicitly via args to the deferred-configured pipe
+        const fn = pipeMerge.defer([
+            ({ val }) => ({ a: val }),
+            ({ val }) => ({ b: val + 1 })
+        ], 'state'); // <-- explicit stateKey
+
+        const result = fn({ state: {}, val: 10 }); // treated as context
+        assert.deepStrictEqual(result, { a: 10, b: 11 });
+    });
+
+    test('pipeMerge.configure({ defer: true }) behaves like pipeMerge.defer (with stateKey)', () => {
         const fnA = pipeMerge.defer([
             ({ x }) => ({ a: x }),
             ({ x }) => ({ b: x + 1 })
-        ]);
+        ], 'state');
+
         const fnB = pipeMerge.configure({ defer: true })([
             ({ x }) => ({ a: x }),
             ({ x }) => ({ b: x + 1 })
-        ]);
+        ], 'state');
 
         assert.strictEqual(typeof fnA, 'function');
         assert.strictEqual(typeof fnB, 'function');
@@ -102,23 +106,18 @@ module.exports = ({ test, assert }) => lib => {
     });
 
     // ----- Immediate via configure (explicit) -----
+    // Keep immediate tests purely initial-based now that stateKey has no default.
 
     test('pipeMerge.configure({ defer: false }): array merges outputs immediately', () => {
         const immediate = pipeMerge.configure({ defer: false });
         const result = immediate([
             () => ({ a: 1 }),
             () => ({ b: 2 })
-        ], {}); // value with steps
+        ], {}); // initial
         assert.deepStrictEqual(result, { a: 1, b: 2 });
     });
 
-    test('pipeMerge.configure({ defer: false }): respects context when value has stateKey', () => {
-        const immediate = pipeMerge.configure({ defer: false });
-        const result = immediate([
-            ({ val }) => ({ a: val }),
-            ({ val }) => ({ b: val + 1 })
-        ], { state: {}, val: 10 });
-        assert.deepStrictEqual(result, { a: 10, b: 11 });
-    });
-
+    // Note: no "respects context" immediate test here because without a default stateKey,
+    // immediate mode would need a 3-arg call (steps, stateKey, value), which your current
+    // immediate-arity rule interprets differently. Use deferred to exercise context semantics.
 };

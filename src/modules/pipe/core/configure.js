@@ -6,36 +6,61 @@ module.exports = ({ self, fun }) => (config, applyStep) => {
     const runner = config.async ? self.core.runAsync : self.core.runSync;
     const defer = !!config.defer;
 
-    // Pull the single "value" from args in non-deferred mode.
-    // Convention: config.args = [steps, value?] for non-deferred calls
-    const valueFromArgs = config.args.length ? config.args[config.args.length - 1] : undefined;
+    // Immediate-mode value selection:
+    // - If there is only one arg and it's an array => that's steps only (no initial)
+    // - Otherwise => use the LAST arg as the value (works for pipe, assign, assignWhile, etc.)
+    const valueFromArgs = (() => {
+        const args = config.args || [];
+        if (args.length === 1 && Array.isArray(args[0])) return undefined;
+        return args.length ? args[args.length - 1] : undefined;
+    })();
 
     const exec = (value = {}) => {
-        const isObj = value !== null && typeof value === 'object';
-        const isContext = isObj && (stateKey in value);
+        const hasStateKey = typeof stateKey === 'string' && stateKey.length > 0;
 
-        const context = isContext
-            ? (defaultContext ? { ...defaultContext, ...value } : value)
-            : (defaultContext ? { ...defaultContext } : null);
+        if (hasStateKey) {
+            // Treat the incoming value as CONTEXT no matter what
+            const valueObj =
+                value !== null && typeof value === 'object' ? value : {};
 
-        const initial = isContext ? value[stateKey] : value;
+            // Merge defaultContext under provided context (provided wins)
+            const context = defaultContext
+                ? { ...defaultContext, ...valueObj }
+                : { ...valueObj };
 
-        if (context) {
-            context[stateKey] = initial;
+            // Always ensure context[stateKey] exists; default to {}
+            if (!(stateKey in context) || context[stateKey] == null) {
+                context[stateKey] = {};
+            }
+
+            const initial = context[stateKey];
+
+            return runner({
+                state: initial,
+                context,
+                steps,
+                predicate,
+                stateKey,
+                applyStep,
+                fun
+            });
         }
+
+        // No stateKey => treat value as INITIAL; do not mutate context with an undefined key
+        const context = defaultContext ? { ...defaultContext } : null;
+        const initial = value;
 
         return runner({
             state: initial,
             context,
             steps,
             predicate,
-            stateKey,
+            stateKey, // undefined (by design) when not provided
             applyStep,
             fun
         });
     };
 
-    // If deferred, return a function that accepts the single value later.
-    // If not deferred, execute immediately using the value provided alongside steps.
+    // Deferred: return callable; Immediate: execute now with computed value
     return defer ? exec : exec(valueFromArgs);
 };

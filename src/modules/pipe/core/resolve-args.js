@@ -4,7 +4,7 @@ module.exports = ({ is }) => (...args) => {
 
     let steps;
     let defaultContext;
-    let stateKey = 'state';
+    let stateKey;
     let predicate;
 
     for (const arg of args) {
