@@ -8,8 +8,8 @@ const outputDir = sourceDir;
 
 const refresh = async () => {
 
-    await geo.geonames.admin1CodesASCII.download({ sourceDir, outputDir });
-    const admin1Codes = await geo.geonames.admin1CodesASCII.toJson({ sourceDir, outputDir });
+    await geo.geonames.admin1CodesAscii.download({ sourceDir, outputDir });
+    const admin1Codes = await geo.geonames.admin1CodesAscii.toJson({ sourceDir, outputDir });
 
     let states = geo.data.fixStates(statesOrig);
     states = geo.data.assignTimezonesToStates({ states });
