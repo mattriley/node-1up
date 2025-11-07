@@ -15,7 +15,7 @@
         "email": "m@ttriley.dev"
     },
     "bin": {
-        "batch-resize": "./bin/batch-resize.js"
+        "1up-image-optim": "./bin/image-optim.sh"
     },
     "main": "./index.js",
     "scripts": {
