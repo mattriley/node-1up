@@ -6,7 +6,6 @@ module.exports = {
     fsx: require('./fsx'),
     fun: require('./fun'),
     geo: require('./geo'),
-    img: require('./img'),
     is: require('./is'),
     net: require('./net'),
     obj: require('./obj'),
