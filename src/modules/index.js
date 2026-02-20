@@ -1,4 +1,5 @@
 module.exports = {
+    _configure: require('./_configure'),
     arr: require('./arr'),
     bool: require('./bool'),
     date: require('./date'),
