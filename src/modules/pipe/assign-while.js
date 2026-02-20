@@ -1,8 +1,3 @@
-module.exports = ({ self }) => {
+const configurable = require('../_configure');
 
-    const configure = self.assignWhileConfigure;
-    const assignWhile = configure();
-    const defer = configure({ defer: true });
-    return Object.assign(assignWhile, { configure, defer });
-
-};
+module.exports = configurable('assignWhileConfigure', { withDefer: true });

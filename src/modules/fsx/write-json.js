@@ -1,7 +1,3 @@
-module.exports = ({ self }) => {
+const configurable = require('../_configure');
 
-    const configure = self.writeJsonConfigure;
-    const writeJson = configure();
-    return Object.assign(writeJson, { configure });
-
-};
+module.exports = configurable('writeJsonConfigure');

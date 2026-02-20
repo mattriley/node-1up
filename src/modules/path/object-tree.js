@@ -1,7 +1,3 @@
-module.exports = ({ self }) => {
+const configurable = require('../_configure');
 
-    const configure = self.objectTreeConfigure;
-    const objectTree = configure();
-    return Object.assign(objectTree, { configure });
-
-};
+module.exports = configurable('objectTreeConfigure');

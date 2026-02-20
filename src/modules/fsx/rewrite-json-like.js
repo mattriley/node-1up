@@ -1,7 +1,3 @@
-module.exports = ({ self }) => {
+const configurable = require('../_configure');
 
-    const configure = self.rewriteJsonLikeConfigure;
-    const rewriteJsonLike = configure();
-    return Object.assign(rewriteJsonLike, { configure });
-
-};
+module.exports = configurable('rewriteJsonLikeConfigure');

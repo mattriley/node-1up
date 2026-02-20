@@ -1,7 +1,3 @@
-module.exports = ({ self }) => {
+const configurable = require('../_configure');
 
-    const configure = self.dequoteConfigure;
-    const dequote = configure();
-    return Object.assign(dequote, { configure });
-
-};
+module.exports = configurable('dequoteConfigure');

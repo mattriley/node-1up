@@ -1,7 +1,3 @@
-module.exports = ({ self }) => {
+const configurable = require('../_configure');
 
-    const configure = self.pickConfigure;
-    const pick = configure();
-    return Object.assign(pick, { configure });
-
-};
+module.exports = configurable('pickConfigure');

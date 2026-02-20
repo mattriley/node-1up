@@ -1,7 +1,3 @@
-module.exports = ({ self }) => {
+const configurable = require('../_configure');
 
-    const configure = self.sortKeysConfigure;
-    const sortKeys = configure();
-    return Object.assign(sortKeys, { configure });
-
-};
+module.exports = configurable('sortKeysConfigure');

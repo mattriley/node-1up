@@ -1,7 +1,3 @@
-module.exports = ({ self }) => {
+const configurable = require('../_configure');
 
-    const configure = self.sentenceCaseConfigure;
-    const sentenceCase = configure();
-    return Object.assign(sentenceCase, { configure });
-
-};
+module.exports = configurable('sentenceCaseConfigure');

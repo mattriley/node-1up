@@ -1,7 +1,3 @@
-module.exports = ({ self }) => {
+const configurable = require('../_configure');
 
-    const configure = self.omitConfigure;
-    const omit = configure();
-    return Object.assign(omit, { configure });
-
-};
+module.exports = configurable('omitConfigure');

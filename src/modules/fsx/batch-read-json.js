@@ -1,7 +1,3 @@
-module.exports = ({ self }) => {
+const configurable = require('../_configure');
 
-    const configure = self.batchReadJsonConfigure;
-    const batchReadJson = configure();
-    return Object.assign(batchReadJson, { configure });
-
-};
+module.exports = configurable('batchReadJsonConfigure');

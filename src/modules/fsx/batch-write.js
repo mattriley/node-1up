@@ -1,7 +1,3 @@
-module.exports = ({ self }) => {
+const configurable = require('../_configure');
 
-    const configure = self.batchWriteConfigure;
-    const batchWrite = configure();
-    return Object.assign(batchWrite, { configure });
-
-};
+module.exports = configurable('batchWriteConfigure');

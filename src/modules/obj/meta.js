@@ -1,7 +1,3 @@
-module.exports = ({ self }) => {
+const configurable = require('../_configure');
 
-    const configure = self.metaConfigure;
-    const meta = configure();
-    return Object.assign(meta, { configure });
-
-};
+module.exports = configurable('metaConfigure');

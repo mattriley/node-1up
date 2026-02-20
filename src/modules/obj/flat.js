@@ -1,7 +1,3 @@
-module.exports = ({ self }) => {
+const configurable = require('../_configure');
 
-    const configure = self.flatConfigure;
-    const flat = configure();
-    return Object.assign(flat, { configure });
-
-};
+module.exports = configurable('flatConfigure');

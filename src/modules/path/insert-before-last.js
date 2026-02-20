@@ -1,7 +1,3 @@
-module.exports = ({ self }) => {
+const configurable = require('../_configure');
 
-    const configure = self.insertBeforeLastConfigure;
-    const insertBeforeLast = configure();
-    return Object.assign(insertBeforeLast, { configure });
-
-};
+module.exports = configurable('insertBeforeLastConfigure');

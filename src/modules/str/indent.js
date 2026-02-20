@@ -1,7 +1,3 @@
-module.exports = ({ self }) => {
+const configurable = require('../_configure');
 
-    const configure = self.indentConfigure;
-    const indent = configure();
-    return Object.assign(indent, { configure });
-
-};
+module.exports = configurable('indentConfigure');

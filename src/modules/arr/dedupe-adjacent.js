@@ -1,7 +1,3 @@
-module.exports = ({ self }) => {
+const configurable = require('../_configure');
 
-    const configure = self.dedupeAdjacentConfigure;
-    const dedupeAdjacent = configure();
-    return Object.assign(dedupeAdjacent, { configure });
-
-};
+module.exports = configurable('dedupeAdjacentConfigure');

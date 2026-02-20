@@ -1,7 +1,3 @@
-module.exports = ({ self }) => {
+const configurable = require('../_configure');
 
-    const configure = self.digConfigure;
-    const dig = configure();
-    return Object.assign(dig, { configure });
-
-};
+module.exports = configurable('digConfigure');

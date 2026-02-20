@@ -1,7 +1,3 @@
-module.exports = ({ self }) => {
+const configurable = require('../_configure');
 
-    const configure = self.joinConfigure;
-    const join = configure();
-    return Object.assign(join, { configure });
-
-};
+module.exports = configurable('joinConfigure');
