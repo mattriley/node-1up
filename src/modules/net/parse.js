@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
-const { Readable } = require('stream');
 
 module.exports = () => async ({
     delimiter = '\t',
@@ -15,12 +14,12 @@ module.exports = () => async ({
     outputFile,
     outputDir
 } = {}) => {
+    let lines;
     let inputStream;
+    const results = [];
 
     if (source) {
-        inputStream = Readable.from(
-            source.split(/\r?\n/).filter(line => line.trim().length > 0)
-        );
+        lines = source.split(/\r?\n/).filter(line => line.trim().length > 0);
     } else {
         const resolvedPath = sourceFile ?? path.join(sourceDir ?? '.', defaultFilename);
         if (!fs.existsSync(resolvedPath)) {
@@ -29,17 +28,27 @@ module.exports = () => async ({
         inputStream = fs.createReadStream(resolvedPath);
     }
 
-    const rl = readline.createInterface({ input: inputStream });
-    const results = [];
-
-    for await (const line of rl) {
-        if (typeof filter === 'function' && !filter(line)) continue;
+    const parseLine = line => {
+        if (typeof filter === 'function' && !filter(line)) return;
 
         const parts = line.split(delimiter);
-        if (parts.length < columns.length) continue;
+        if (parts.length < columns.length) return;
 
         const item = transform(parts);
-        if (item) results.push(item);
+        if (item) {
+            results.push(item);
+        }
+    };
+
+    if (lines) {
+        for (const line of lines) {
+            parseLine(line);
+        }
+    } else {
+        const rl = readline.createInterface({ input: inputStream });
+        for await (const line of rl) {
+            parseLine(line);
+        }
     }
 
     let finalOutputPath = null;
