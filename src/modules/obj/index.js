@@ -20,7 +20,6 @@ module.exports = {
     isEmpty: require('./is-empty'),
     isEqual: require('./is-equal'),
     isPlain: require('./is-plain'),
-    jsonSchema: require('./json-schema'),
     mapKeys: require('./map-keys'),
     mapValuesAsync: require('./map-values-async'),
     mapValues: require('./map-values'),

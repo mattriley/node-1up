@@ -38,7 +38,7 @@ const outerCompose = ({ config, overrides = {} } = {}) => {
     compose.deep('exif', { obj, date });
     compose.make('proc');
 
-    compose.deep('json');
+    compose.deep('json', { obj });
 
     return {
         ...compose.modules,

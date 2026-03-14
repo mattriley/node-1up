@@ -1,3 +1,4 @@
 module.exports = {
-    flexischema: require('./flexischema')
+    flexischema: require('./flexischema'),
+    schema: require('./schema')
 };
