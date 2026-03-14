@@ -1,7 +1,7 @@
-module.exports = ({ self }) => {
+module.exports = $ => {
 
     const removeUnknownProps = (obj, schema) => {
-        if (!self.isPlain(obj) || !schema?.properties) return obj;
+        if (!$.obj.isPlain(obj) || !schema?.properties) return obj;
 
         const allowedKeys = Object.keys(schema.properties);
 
@@ -14,13 +14,13 @@ module.exports = ({ self }) => {
             const propSchema = schema.properties[key];
             const val = obj[key];
 
-            if (self.isPlain(val) && propSchema.type === 'object' && propSchema.properties) {
+            if ($.obj.isPlain(val) && propSchema.type === 'object' && propSchema.properties) {
                 removeUnknownProps(val, propSchema);
             }
 
             if (Array.isArray(val) && propSchema.type === 'array' && propSchema.items?.type === 'object') {
                 obj[key] = val.map(item => {
-                    return self.isPlain(item)? removeUnknownProps(item, propSchema.items): item;
+                    return $.obj.isPlain(item) ? removeUnknownProps(item, propSchema.items) : item;
                 });
             }
         }
