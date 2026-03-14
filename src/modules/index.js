@@ -8,6 +8,7 @@ module.exports = {
     fun: require('./fun'),
     geo: require('./geo'),
     is: require('./is'),
+    json: require('./json'),
     net: require('./net'),
     obj: require('./obj'),
     path: require('./path'),
