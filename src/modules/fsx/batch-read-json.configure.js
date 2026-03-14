@@ -9,7 +9,6 @@ module.exports = $ => (config = {}) => {
         workers: Math.min(32, Math.max(4, CPU_COUNT * 2)),
         batchSize: 4000,
         rowsChunkSize: 16384,
-        parser: 'json',
         parsers: {
             json: {
                 module: null,
@@ -20,6 +19,9 @@ module.exports = $ => (config = {}) => {
                 method: 'parse'
             }
         },
+        parserExtensions: {
+            '.json': 'json'
+        },
         quiet: false
     };
 
@@ -27,18 +29,16 @@ module.exports = $ => (config = {}) => {
 
     let logged = false;
 
-    const logIfNeeded = ({ quiet, parserName, parserModule }) => {
+    const logIfNeeded = ({ quiet, parserExtensions }) => {
         if (logged || quiet) {
             return;
         }
 
         logged = true;
 
-        const label = parserName || parserModule || 'json';
-
         process.stderr.write(
             '[INFO] batch-read-json: using max-throughput worker path ' +
-            `(sync fs + parse in workers, parser=${label})\n`
+            `(sync fs + parse in workers, parserExtensions=${Object.keys(parserExtensions).length})\n`
         );
     };
 
@@ -88,6 +88,19 @@ module.exports = $ => (config = {}) => {
         throw new Error('Invalid parser option');
     };
 
+    const normaliseParserExtensions = ({ parserExtensions, parsers }) => {
+        const out = {};
+
+        for (const key of Object.keys(parserExtensions || {})) {
+            out[key.toLowerCase()] = normaliseParser({
+                parser: parserExtensions[key],
+                parsers
+            });
+        }
+
+        return out;
+    };
+
     const makeBatches = (files, batchSize) => {
         const batches = [];
 
@@ -117,30 +130,61 @@ module.exports = $ => (config = {}) => {
         return out;
     };
 
-    const createWorkerSource = ({ rowsChunkSize, parserModule, parserMethod }) => {
+    const createWorkerSource = ({ rowsChunkSize, parserExtensions }) => {
         return `
             const { parentPort } = require('node:worker_threads');
             const fs = require('node:fs');
+            const path = require('node:path');
 
             const ROWS_CHUNK = Math.max(1024, ${rowsChunkSize} | 0);
-            const PARSER_MODULE = ${JSON.stringify(parserModule)};
-            const PARSER_METHOD = ${JSON.stringify(parserMethod)};
+            const PARSER_EXTENSIONS = ${JSON.stringify(parserExtensions)};
 
-            const parserExport = PARSER_MODULE ? require(PARSER_MODULE) : JSON;
-            const parse = PARSER_MODULE
-                ? (typeof parserExport === 'function'
-                    ? parserExport
-                    : parserExport[PARSER_METHOD])
-                : JSON.parse;
+            const parserCache = Object.create(null);
 
-            if (typeof parse !== 'function') {
-                throw new Error(
-                    'Invalid parser export for module ' +
-                    String(PARSER_MODULE) +
-                    ' using method ' +
-                    String(PARSER_METHOD)
-                );
-            }
+            const getParserCacheKey = spec => {
+                return JSON.stringify([
+                    spec && 'module' in spec ? spec.module : null,
+                    spec && spec.method || 'parse'
+                ]);
+            };
+
+            const loadParser = spec => {
+                const key = getParserCacheKey(spec);
+
+                if (key in parserCache) {
+                    return parserCache[key];
+                }
+
+                const parserExport = spec && spec.module ? require(spec.module) : JSON;
+                const parse = spec && spec.module
+                    ? (typeof parserExport === 'function'
+                        ? parserExport
+                        : parserExport[spec.method || 'parse'])
+                    : JSON.parse;
+
+                if (typeof parse !== 'function') {
+                    throw new Error(
+                        'Invalid parser export for module ' +
+                        String(spec && spec.module) +
+                        ' using method ' +
+                        String(spec && spec.method)
+                    );
+                }
+
+                parserCache[key] = parse;
+
+                return parse;
+            };
+
+            const getParserForFile = file => {
+                const ext = path.extname(file).toLowerCase();
+
+                if (!(ext in PARSER_EXTENSIONS)) {
+                    throw new Error('No parser configured for extension ' + ext);
+                }
+
+                return loadParser(PARSER_EXTENSIONS[ext]);
+            };
 
             const sendRows = rows => {
                 for (let i = 0; i < rows.length; i += ROWS_CHUNK) {
@@ -155,10 +199,11 @@ module.exports = $ => (config = {}) => {
                 const rows = [];
 
                 for (let i = 0; i < files.length; i++) {
-                    const path = files[i];
+                    const file = files[i];
 
                     try {
-                        const text = fs.readFileSync(path, 'utf8');
+                        const parse = getParserForFile(file);
+                        const text = fs.readFileSync(file, 'utf8');
                         const value = parse(text);
 
                         if (Array.isArray(value)) {
@@ -176,7 +221,7 @@ module.exports = $ => (config = {}) => {
                     } catch (error) {
                         parentPort.postMessage({
                             type: 'error',
-                            err: '[readJson:' + path + '] ' + (error && error.message || String(error))
+                            err: '[readJson:' + file + '] ' + (error && error.message || String(error))
                         });
                         return;
                     }
@@ -201,11 +246,10 @@ module.exports = $ => (config = {}) => {
         `;
     };
 
-    const spawnWorker = ({ rowsChunkSize, parserModule, parserMethod }) => {
+    const spawnWorker = ({ rowsChunkSize, parserExtensions }) => {
         const code = createWorkerSource({
             rowsChunkSize,
-            parserModule,
-            parserMethod
+            parserExtensions
         });
 
         return new Worker(code, { eval: true });
@@ -215,8 +259,7 @@ module.exports = $ => (config = {}) => {
         batches,
         workers,
         rowsChunkSize,
-        parserModule,
-        parserMethod
+        parserExtensions
     }) => {
         return new Promise((resolve, reject) => {
             const chunks = [];
@@ -308,8 +351,7 @@ module.exports = $ => (config = {}) => {
             for (const _ of Array.from({ length: poolSize })) {
                 const worker = spawnWorker({
                     rowsChunkSize,
-                    parserModule,
-                    parserMethod
+                    parserExtensions
                 });
 
                 pool.push(worker);
@@ -330,17 +372,19 @@ module.exports = $ => (config = {}) => {
             workers,
             batchSize,
             rowsChunkSize,
-            parser,
             parsers,
+            parserExtensions,
             quiet
         } = parseOptions(options);
 
-        const parserSpec = normaliseParser({ parser, parsers });
+        const normalisedParserExtensions = normaliseParserExtensions({
+            parserExtensions,
+            parsers
+        });
 
         logIfNeeded({
             quiet,
-            parserName: parserSpec.name,
-            parserModule: parserSpec.module
+            parserExtensions: normalisedParserExtensions
         });
 
         const batches = makeBatches(files, batchSize);
@@ -348,8 +392,7 @@ module.exports = $ => (config = {}) => {
             batches,
             workers,
             rowsChunkSize,
-            parserModule: parserSpec.module,
-            parserMethod: parserSpec.method
+            parserExtensions: normalisedParserExtensions
         });
 
         return flattenChunks(chunks);

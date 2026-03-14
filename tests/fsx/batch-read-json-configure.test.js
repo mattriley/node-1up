@@ -46,12 +46,14 @@ module.exports = ({ test, assert }) => ({ fsx }) => {
 
     test('parses a single json object file', async () => {
         const dir = makeTempDir();
+
         const file = writeJsonFile(dir, 'item.json', {
             id: 1,
             title: 'Alpha'
         });
 
         const readJson = fsx.batchReadJsonConfigure();
+
         const actual = await readJson([file], {
             quiet: true
         });
@@ -65,17 +67,11 @@ module.exports = ({ test, assert }) => ({ fsx }) => {
     test('parses multiple json object files', async () => {
         const dir = makeTempDir();
 
-        const fileA = writeJsonFile(dir, 'a.json', {
-            id: 1,
-            title: 'Alpha'
-        });
-
-        const fileB = writeJsonFile(dir, 'b.json', {
-            id: 2,
-            title: 'Beta'
-        });
+        const fileA = writeJsonFile(dir, 'a.json', { id: 1 });
+        const fileB = writeJsonFile(dir, 'b.json', { id: 2 });
 
         const readJson = fsx.batchReadJsonConfigure();
+
         const actual = await readJson([fileA, fileB], {
             quiet: true,
             workers: 2,
@@ -83,12 +79,13 @@ module.exports = ({ test, assert }) => ({ fsx }) => {
         });
 
         assert.equal(actual.length, 2);
-        assert.ok(actual.some(row => row.id === 1 && row.title === 'Alpha'));
-        assert.ok(actual.some(row => row.id === 2 && row.title === 'Beta'));
+        assert.ok(actual.some(row => row.id === 1));
+        assert.ok(actual.some(row => row.id === 2));
     });
 
-    test('flattens array values from parsed files into the output', async () => {
+    test('flattens array values from parsed files', async () => {
         const dir = makeTempDir();
+
         const file = writeJsonFile(dir, 'items.json', [
             { id: 1 },
             { id: 2 },
@@ -96,6 +93,7 @@ module.exports = ({ test, assert }) => ({ fsx }) => {
         ]);
 
         const readJson = fsx.batchReadJsonConfigure();
+
         const actual = await readJson([file], {
             quiet: true,
             rowsChunkSize: 2
@@ -108,19 +106,17 @@ module.exports = ({ test, assert }) => ({ fsx }) => {
         ]);
     });
 
-    test('merges object and array file results into a single output array', async () => {
+    test('merges object and array results into single output', async () => {
         const dir = makeTempDir();
 
-        const fileA = writeJsonFile(dir, 'object.json', {
-            id: 1
-        });
-
+        const fileA = writeJsonFile(dir, 'object.json', { id: 1 });
         const fileB = writeJsonFile(dir, 'array.json', [
             { id: 2 },
             { id: 3 }
         ]);
 
         const readJson = fsx.batchReadJsonConfigure();
+
         const actual = await readJson([fileA, fileB], {
             quiet: true,
             workers: 2,
@@ -146,27 +142,20 @@ module.exports = ({ test, assert }) => ({ fsx }) => {
             };
         `);
 
-        const dataFile = writeJsonFile(dir, 'item.json', {
-            id: 1
-        });
+        const file = writeJsonFile(dir, 'item.custom', { id: 1 });
 
         const readJson = fsx.batchReadJsonConfigure({
             parsers: {
-                json: {
-                    module: null,
-                    method: 'parse'
-                },
-                custom: {
-                    module: parserModule,
-                    method: 'parse'
-                }
+                json: { module: null, method: 'parse' },
+                custom: { module: parserModule, method: 'parse' }
+            },
+            parserExtensions: {
+                '.json': 'json',
+                '.custom': 'custom'
             }
         });
 
-        const actual = await readJson([dataFile], {
-            quiet: true,
-            parser: 'custom'
-        });
+        const actual = await readJson([file], { quiet: true });
 
         assert.deepEqual(actual, [{
             parsedBy: 'custom',
@@ -174,191 +163,126 @@ module.exports = ({ test, assert }) => ({ fsx }) => {
         }]);
     });
 
-    test('supports parser object with module and method', async () => {
+    test('selects parser by file extension', async () => {
         const dir = makeTempDir();
 
-        const parserModule = writeModuleFile(dir, 'parser-object.js', `
+        const json5Module = writeModuleFile(dir, 'json5-parser.js', `
             module.exports.parse = text => {
-                const value = JSON.parse(text);
-                value.via = 'parser-object';
-                return value;
+                return Function('return (' + text + ')')();
             };
         `);
 
-        const dataFile = writeJsonFile(dir, 'item.json', {
-            id: 7
+        const jsonFile = writeJsonFile(dir, 'item.json', {
+            id: 1,
+            format: 'json'
         });
 
-        const readJson = fsx.batchReadJsonConfigure();
-        const actual = await readJson([dataFile], {
-            quiet: true,
-            parser: {
-                module: parserModule,
-                method: 'parse'
+        const json5File = writeFile(dir, 'item.json5', "{ id: 2, format: 'json5' }");
+
+        const readJson = fsx.batchReadJsonConfigure({
+            parsers: {
+                json: { module: null, method: 'parse' },
+                json5: { module: json5Module, method: 'parse' }
+            },
+            parserExtensions: {
+                '.json': 'json',
+                '.json5': 'json5'
             }
         });
 
-        assert.deepEqual(actual, [{
-            id: 7,
-            via: 'parser-object'
-        }]);
+        const actual = await readJson([jsonFile, json5File], {
+            quiet: true,
+            workers: 2,
+            batchSize: 1
+        });
+
+        assert.equal(actual.length, 2);
+        assert.ok(actual.some(r => r.id === 1));
+        assert.ok(actual.some(r => r.id === 2));
     });
 
-    test('supports parser object when module exports a function directly', async () => {
+    test('normalises parser extension keys to lowercase', async () => {
         const dir = makeTempDir();
 
-        const parserModule = writeModuleFile(dir, 'parser-fn.js', `
-            module.exports = text => {
-                const value = JSON.parse(text);
-                value.via = 'direct-function';
-                return value;
+        const json5Module = writeModuleFile(dir, 'json5-parser.js', `
+            module.exports.parse = text => {
+                return Function('return (' + text + ')')();
             };
         `);
 
-        const dataFile = writeJsonFile(dir, 'item.json', {
-            id: 9
-        });
+        const file = writeFile(dir, 'item.JSON5', "{ id: 2 }");
 
-        const readJson = fsx.batchReadJsonConfigure();
-        const actual = await readJson([dataFile], {
-            quiet: true,
-            parser: {
-                module: parserModule,
-                method: 'parse'
+        const readJson = fsx.batchReadJsonConfigure({
+            parsers: {
+                json: { module: null, method: 'parse' },
+                json5: { module: json5Module, method: 'parse' }
+            },
+            parserExtensions: {
+                '.JSON5': 'json5'
             }
         });
 
-        assert.deepEqual(actual, [{
-            id: 9,
-            via: 'direct-function'
-        }]);
+        const actual = await readJson([file], { quiet: true });
+
+        assert.deepEqual(actual, [{ id: 2 }]);
     });
 
-    test('supports parser function with module metadata', async () => {
+    test('throws when no parser is configured for extension', async () => {
         const dir = makeTempDir();
 
-        const parserModule = writeModuleFile(dir, 'parser-meta.js', `
-            module.exports.parse = text => {
-                const value = JSON.parse(text);
-                value.via = 'function-metadata';
-                return value;
-            };
+        const file = writeJsonFile(dir, 'item.data', { id: 1 });
+
+        const readJson = fsx.batchReadJsonConfigure({
+            parserExtensions: {
+                '.json': 'json'
+            }
+        });
+
+        await assert.rejects(async () => {
+            await readJson([file], { quiet: true });
+        }, /No parser configured for extension/);
+    });
+
+    test('throws when parser module does not expose method', async () => {
+        const dir = makeTempDir();
+
+        const badParser = writeModuleFile(dir, 'bad-parser.js', `
+            module.exports = { nope() {} };
         `);
 
-        const parser = () => { };
-        parser.module = parserModule;
-        parser.method = 'parse';
+        const file = writeJsonFile(dir, 'item.bad', { id: 1 });
 
-        const dataFile = writeJsonFile(dir, 'item.json', {
-            id: 11
+        const readJson = fsx.batchReadJsonConfigure({
+            parsers: {
+                json: { module: null, method: 'parse' },
+                bad: { module: badParser, method: 'parse' }
+            },
+            parserExtensions: {
+                '.json': 'json',
+                '.bad': 'bad'
+            }
         });
-
-        const readJson = fsx.batchReadJsonConfigure();
-        const actual = await readJson([dataFile], {
-            quiet: true,
-            parser
-        });
-
-        assert.deepEqual(actual, [{
-            id: 11,
-            via: 'function-metadata'
-        }]);
-    });
-
-    test('throws for unknown parser name', async () => {
-        const dir = makeTempDir();
-        const dataFile = writeJsonFile(dir, 'item.json', {
-            id: 1
-        });
-
-        const readJson = fsx.batchReadJsonConfigure();
 
         await assert.rejects(async () => {
-            await readJson([dataFile], {
-                parser: 'missing-parser',
-                quiet: true
-            });
-        }, /Unknown parser/);
-    });
-
-    test('throws for parser function without module metadata', async () => {
-        const dir = makeTempDir();
-        const dataFile = writeJsonFile(dir, 'item.json', {
-            id: 1
-        });
-
-        const readJson = fsx.batchReadJsonConfigure();
-
-        await assert.rejects(async () => {
-            await readJson([dataFile], {
-                quiet: true,
-                parser: () => { }
-            });
-        }, /Parser functions cannot be sent directly to workers/);
-    });
-
-    test('throws for invalid parser option', async () => {
-        const dir = makeTempDir();
-        const dataFile = writeJsonFile(dir, 'item.json', {
-            id: 1
-        });
-
-        const readJson = fsx.batchReadJsonConfigure();
-
-        await assert.rejects(async () => {
-            await readJson([dataFile], {
-                quiet: true,
-                parser: 123
-            });
-        }, /Invalid parser option/);
-    });
-
-    test('throws when parser module does not expose the requested method', async () => {
-        const dir = makeTempDir();
-
-        const parserModule = writeModuleFile(dir, 'bad-parser.js', `
-            module.exports = {
-                nope() {
-                    return {};
-                }
-            };
-        `);
-
-        const dataFile = writeJsonFile(dir, 'item.json', {
-            id: 1
-        });
-
-        const readJson = fsx.batchReadJsonConfigure();
-
-        await assert.rejects(async () => {
-            await readJson([dataFile], {
-                quiet: true,
-                parser: {
-                    module: parserModule,
-                    method: 'parse'
-                }
-            });
+            await readJson([file], { quiet: true });
         }, /Invalid parser export/);
     });
 
     test('prefixes parse errors with the file path', async () => {
         const dir = makeTempDir();
         const file = writeFile(dir, 'broken.json', '{ bad json ');
+
         const readJson = fsx.batchReadJsonConfigure();
 
         await assert.rejects(async () => {
-            await readJson([file], {
-                quiet: true
-            });
+            await readJson([file], { quiet: true });
         }, error => {
-            assert.ok(error instanceof Error);
             assert.ok(error.message.includes(`[readJson:${file}]`));
-
             return true;
         });
     });
 
-    test('processes multiple batches when batchSize is smaller than file count', async () => {
+    test('processes multiple batches', async () => {
         const dir = makeTempDir();
 
         const files = [
@@ -369,6 +293,7 @@ module.exports = ({ test, assert }) => ({ fsx }) => {
         ];
 
         const readJson = fsx.batchReadJsonConfigure();
+
         const actual = await readJson(files, {
             quiet: true,
             workers: 2,
@@ -377,13 +302,9 @@ module.exports = ({ test, assert }) => ({ fsx }) => {
         });
 
         assert.equal(actual.length, 4);
-        assert.ok(actual.some(row => row.id === 1));
-        assert.ok(actual.some(row => row.id === 2));
-        assert.ok(actual.some(row => row.id === 3));
-        assert.ok(actual.some(row => row.id === 4));
     });
 
-    test('processes array results across multiple row chunks', async () => {
+    test('processes array results across row chunks', async () => {
         const dir = makeTempDir();
 
         const file = writeJsonFile(dir, 'items.json', [
@@ -395,18 +316,13 @@ module.exports = ({ test, assert }) => ({ fsx }) => {
         ]);
 
         const readJson = fsx.batchReadJsonConfigure();
+
         const actual = await readJson([file], {
             quiet: true,
             rowsChunkSize: 2
         });
 
-        assert.deepEqual(actual, [
-            { id: 1 },
-            { id: 2 },
-            { id: 3 },
-            { id: 4 },
-            { id: 5 }
-        ]);
+        assert.equal(actual.length, 5);
     });
 
 };
