@@ -7,7 +7,7 @@ module.exports = ({ test, assert }) => ({ json }) => {
             }
         };
         const expected = null;
-        const actual = json.schema.deleteProperties(expected, schema);
+        const actual = json.schema.removeDeletedProps(expected, schema);
         assert.deepEqual(actual, expected);
     });
 
@@ -16,7 +16,7 @@ module.exports = ({ test, assert }) => ({ json }) => {
             title: 'Hello'
         };
         const expected = input;
-        const actual = json.schema.deleteProperties(input);
+        const actual = json.schema.removeDeletedProps(input);
         assert.deepEqual(actual, expected);
     });
 
@@ -26,7 +26,7 @@ module.exports = ({ test, assert }) => ({ json }) => {
         };
         const schema = {};
         const expected = input;
-        const actual = json.schema.deleteProperties(input, schema);
+        const actual = json.schema.removeDeletedProps(input, schema);
         assert.deepEqual(actual, expected);
     });
 
@@ -41,7 +41,7 @@ module.exports = ({ test, assert }) => ({ json }) => {
             }
         };
 
-        const actual = json.schema.deleteProperties(input, schema);
+        const actual = json.schema.removeDeletedProps(input, schema);
 
         assert.equal(actual, input);
         assert.deepEqual(actual, {
@@ -60,7 +60,7 @@ module.exports = ({ test, assert }) => ({ json }) => {
             }
         };
 
-        const actual = json.schema.deleteProperties(input, schema);
+        const actual = json.schema.removeDeletedProps(input, schema);
 
         assert.deepEqual(actual, {
             title: 'Hello'
@@ -77,7 +77,7 @@ module.exports = ({ test, assert }) => ({ json }) => {
             }
         };
 
-        const actual = json.schema.deleteProperties(input, schema);
+        const actual = json.schema.removeDeletedProps(input, schema);
 
         assert.deepEqual(actual, {
             title: 'Hello'
@@ -94,7 +94,7 @@ module.exports = ({ test, assert }) => ({ json }) => {
             }
         };
 
-        const actual = json.schema.deleteProperties(input, schema);
+        const actual = json.schema.removeDeletedProps(input, schema);
 
         assert.deepEqual(actual, {
             title: 'Hello'
@@ -116,7 +116,7 @@ module.exports = ({ test, assert }) => ({ json }) => {
             }
         };
 
-        const actual = json.schema.deleteProperties(input, schema);
+        const actual = json.schema.removeDeletedProps(input, schema);
 
         assert.deepEqual(actual, {
             title: 'Hello',
@@ -134,7 +134,7 @@ module.exports = ({ test, assert }) => ({ json }) => {
             }
         };
 
-        const actual = json.schema.deleteProperties(input, schema);
+        const actual = json.schema.removeDeletedProps(input, schema);
 
         assert.deepEqual(actual, {
             title: 'Hello'
@@ -152,7 +152,7 @@ module.exports = ({ test, assert }) => ({ json }) => {
             }
         };
 
-        const actual = json.schema.deleteProperties(input, schema);
+        const actual = json.schema.removeDeletedProps(input, schema);
 
         assert.deepEqual(actual, {
             title: 'Hello'
@@ -178,7 +178,7 @@ module.exports = ({ test, assert }) => ({ json }) => {
             }
         };
 
-        const actual = json.schema.deleteProperties(input, schema);
+        const actual = json.schema.removeDeletedProps(input, schema);
 
         assert.deepEqual(actual, {
             meta: {
