@@ -17,4 +17,16 @@ module.exports = ({ test, assert }) => $ => {
         assert.deepEqual(actual, expected);
     });
 
+    test('supplementary misspelling lookup resolves city, state, and country fallbacks', () => {
+        const city = geo.finder.findCity('Canbera', null, 'AU');
+        const state = geo.finder.findState('Califronia', 'Untied States');
+        const country = geo.finder.findCountry('Untied States');
+
+        assert.equal(city.name, 'Canberra');
+        assert.equal(state.name, 'California');
+        assert.equal(state.isoCode, 'CA');
+        assert.equal(country.name, 'United States');
+        assert.equal(country.isoCode, 'US');
+    });
+
 };

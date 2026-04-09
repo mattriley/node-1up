@@ -437,6 +437,33 @@ module.exports = ({ test, assert }) => $ => {
         assert.deepEqual(actual, expected);
     });
 
+    test('supplementary misspelling lookup resolves city, state, and country inputs', () => {
+        const location = {
+            city: 'Los Angelas',
+            state: 'Califronia',
+            country: 'Untied States'
+        };
+
+        const expected = {
+            location: {
+                city: 'Los Angeles',
+                country: 'United States',
+                countryCode: 'US',
+                state: 'California',
+                stateCode: 'CA',
+                timezone: 'America/Los_Angeles'
+            },
+            city: { name: 'Los Angeles', code: null, source: 'input' },
+            state: { name: 'California', code: 'CA', source: 'input' },
+            country: { name: 'United States', code: 'US', source: 'input' },
+            complete: true
+        };
+
+        const actual = geo.resolveCity(location);
+
+        assert.deepEqual(actual, expected);
+    });
+
     test('(none), HK, CN', () => {
         const location = { country: 'CN', state: 'HK' };
 

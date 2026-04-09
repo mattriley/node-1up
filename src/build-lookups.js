@@ -2,7 +2,12 @@ const { obj } = require('./modules');
 
 module.exports = config => {
 
-    const { cities, states, countries } = config.locationData;
+    const {
+        cities,
+        states,
+        countries,
+        misspellings = {}
+    } = config.locationData;
 
     const lookupPlan = {
         countries: [countries, 'name', 'isoCode'],
@@ -20,7 +25,30 @@ module.exports = config => {
 
 
     // ─── Helpers ───────────────────────────────────────────────────────────────────
-    const norm = s => s?.trim().toUpperCase(); // " Victoria " → "victoria", "US" → "us"
+    const norm = s => s?.trim().toUpperCase();
+
+    const dedupeItems = items => _.uniqBy(items, item => JSON.stringify(item));
+
+    const buildSupplementaryLookup = (baseLookup, aliases = {}) => {
+        return Object.fromEntries(
+            Object.entries(aliases).flatMap(([misspelling, canonicalKeys]) => {
+                const keys = _.castArray(canonicalKeys);
+                const matches = dedupeItems(keys.flatMap(key => {
+                    return baseLookup[norm(key)] ?? [];
+                }));
+
+                if (!matches.length) return [];
+
+                return [[norm(misspelling), matches]];
+            })
+        );
+    };
+
+    lookup.supplementary = {
+        countries: buildSupplementaryLookup(lookup.countries, misspellings.countries),
+        states: buildSupplementaryLookup(lookup.states, misspellings.states),
+        cities: buildSupplementaryLookup(lookup.cities, misspellings.cities)
+    };
 
     // states assumed shape: { isoCode, name, countryCode, countryName }
     const groupedByCountry = _.groupBy(states, st => norm(st.countryCode));

@@ -19,7 +19,12 @@ module.exports = {
     locationData: {
         cities: [],
         states: [],
-        countries: []
+        countries: [],
+        misspellings: {
+            cities: {},
+            states: {},
+            countries: {}
+        }
     },
 
     exif: {
